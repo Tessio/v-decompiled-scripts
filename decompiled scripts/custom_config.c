@@ -1,0 +1,9 @@
+void main() // Position - 0x0 Hash - 0xAC59A63B ^0xCDFAD7D8
+{
+	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(3))
+		SCRIPT::TERMINATE_THIS_THREAD();
+
+	SCRIPT::TERMINATE_THIS_THREAD();
+	return;
+}
+
