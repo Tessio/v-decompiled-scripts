@@ -161,7 +161,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				break;
 		
 			case 4:
-				if (Global_98441)
+				if (Global_98591)
 					iLocal_96 = 5;
 			
 				func_4();

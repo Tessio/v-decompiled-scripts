@@ -117,7 +117,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x10F Hash - 0xADC
 
 Hash func_3(eCharacter echParam0) // Position - 0x134 Hash - 0xE4CEEC2C ^0xE4CEEC2C
 {
-	return Global_2169[echParam0 /*29*/];
+	return Global_2201[echParam0 /*29*/];
 }
 
 BOOL func_4(eCharacter echParam0) // Position - 0x143 Hash - 0x8907F004 ^0x8907F004

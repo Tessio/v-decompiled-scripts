@@ -140,34 +140,34 @@ void func_2() // Position - 0xAE Hash - 0x9849FBAF ^0xF10EECE0
 	return;
 }
 
-void func_3(var uParam0) // Position - 0x116 Hash - 0x4D586789 ^0x72E5C9C2
+void func_3(var uParam0) // Position - 0x116 Hash - 0x3CACD920 ^0xD902FF0F
 {
 	eEventType type;
 
 	type = *uParam0;
 
-	if (_IS_FMMC_ACTIVE() && func_4(type) && type != EVENT_ERRORS_ARRAY_OVERFLOW && NETWORK::NETWORK_CAN_BAIL())
+	if (_IS_FMMC_ACTIVE() && func_4(type) && type != EVENT_ERRORS_INSTRUCTION_LIMIT && NETWORK::NETWORK_CAN_BAIL())
 		NETWORK::NETWORK_BAIL(0, 1, 0);
 
 	return;
 }
 
-BOOL func_4(eEventType eetParam0) // Position - 0x14F Hash - 0x6AE23759 ^0x6AE23759
+BOOL func_4(eEventType eetParam0) // Position - 0x14F Hash - 0x827D6A08 ^0x827D6A08
 {
-	return eetParam0 == EVENT_ERRORS_INSTRUCTION_LIMIT || eetParam0 == EVENT_ERRORS_STACK_OVERFLOW || eetParam0 == EVENT_0x063E563B || eetParam0 == EVENT_ERRORS_ARRAY_OVERFLOW;
+	return eetParam0 == EVENT_ERRORS_STACK_OVERFLOW || eetParam0 == EVENT_0x063E563B || eetParam0 == EVENT_0x9DEA6A90 || eetParam0 == EVENT_ERRORS_INSTRUCTION_LIMIT;
 }
 
 BOOL _IS_FMMC_ACTIVE() // Position - 0x17D Hash - 0x9A79549B ^0x4A0EF303
 {
-	return Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_193 != 0;
+	return Global_1845221[PLAYER::PLAYER_ID() /*889*/].f_193 != 0;
 }
 
 int func_6(var uParam0) // Position - 0x194 Hash - 0xF9C22FE1 ^0x58D68A6C
 {
-	if (Global_33227.f_61 < 20)
+	if (Global_33366.f_61 < 20)
 	{
-		Global_33227[Global_33227.f_61 /*3*/] = { *uParam0 };
-		Global_33227.f_61 = Global_33227.f_61 + 1;
+		Global_33366[Global_33366.f_61 /*3*/] = { *uParam0 };
+		Global_33366.f_61 = Global_33366.f_61 + 1;
 		return 1;
 	}
 
@@ -179,9 +179,9 @@ BOOL func_7(var uParam0, var uParam1) // Position - 0x1C7 Hash - 0x8236090F ^0x5
 	*uParam1 = 0;
 	*uParam1 = 0;
 
-	while (*uParam1 < Global_33227.f_61)
+	while (*uParam1 < Global_33366.f_61)
 	{
-		if (Global_33227[*uParam1 /*3*/] == *uParam0 && Global_33227[*uParam1 /*3*/].f_2 == uParam0->f_2)
+		if (Global_33366[*uParam1 /*3*/] == *uParam0 && Global_33366[*uParam1 /*3*/].f_2 == uParam0->f_2)
 			return true;
 	
 		*uParam1 = *uParam1 + 1;
@@ -190,11 +190,11 @@ BOOL func_7(var uParam0, var uParam1) // Position - 0x1C7 Hash - 0x8236090F ^0x5
 	return false;
 }
 
-void func_8(eEventGroup eegParam0, int iParam1, eEventType eetParam2, var uParam3) // Position - 0x215 Hash - 0xE80F0CB3 ^0x3305D20C
+void func_8(eEventGroup eegParam0, int iParam1, eEventType eetParam2, var uParam3) // Position - 0x215 Hash - 0x9C73253D ^0x683A08A
 {
 	var eventData;
 
-	if (eetParam2 == EVENT_ERRORS_ARRAY_OVERFLOW || eetParam2 == EVENT_ERRORS_INSTRUCTION_LIMIT || eetParam2 == EVENT_ERRORS_STACK_OVERFLOW || eetParam2 == EVENT_0x063E563B)
+	if (eetParam2 == EVENT_ERRORS_INSTRUCTION_LIMIT || eetParam2 == EVENT_ERRORS_STACK_OVERFLOW || eetParam2 == EVENT_0x063E563B || eetParam2 == EVENT_0x9DEA6A90)
 		if (SCRIPT::GET_EVENT_DATA(eegParam0, iParam1, &eventData, 1))
 			uParam3->f_2 = eventData;
 

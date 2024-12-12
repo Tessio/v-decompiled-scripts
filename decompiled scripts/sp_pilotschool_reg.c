@@ -4,7 +4,7 @@ void main() // Position - 0x0 Hash - 0x31F89A10 ^0x5B83DDB2
 	MISC::START_SAVE_DATA(&Global_3145728, 1, true);
 	func_1();
 	MISC::STOP_SAVE_DATA();
-	MISC::SET_BIT(&Global_4543942, 1);
+	MISC::SET_BIT(&Global_4546881, 1);
 	return;
 }
 

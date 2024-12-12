@@ -499,7 +499,7 @@ void func_16(BOOL bParam0) // Position - 0x6C0 Hash - 0x87A820D7 ^0x87FF4F2D
 
 void func_17() // Position - 0x6F8 Hash - 0xC536DD5 ^0xC536DD5
 {
-	Global_21152 = 0;
+	Global_21291 = 0;
 	func_18();
 	return;
 }
@@ -507,12 +507,12 @@ void func_17() // Position - 0x6F8 Hash - 0xC536DD5 ^0xC536DD5
 void func_18() // Position - 0x708 Hash - 0xF6D04E68 ^0x80AE5309
 {
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
-	Global_23297 = 0;
+	Global_23436 = 0;
 
 	if (AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
-		Global_22286 = 6;
+		Global_22425 = 6;
 	}
 
 	return;
@@ -520,7 +520,7 @@ void func_18() // Position - 0x708 Hash - 0xF6D04E68 ^0x80AE5309
 
 void func_19() // Position - 0x729 Hash - 0xC536DD5 ^0xC536DD5
 {
-	Global_21152 = 0;
+	Global_21291 = 0;
 	func_20();
 	return;
 }
@@ -530,9 +530,9 @@ void func_20() // Position - 0x739 Hash - 0x21027D29 ^0xBEB9ECFD
 	if (AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 	{
 		AUDIO::RESTART_SCRIPTED_CONVERSATION();
-		Global_23297 = 0;
+		Global_23436 = 0;
 		AUDIO::STOP_SCRIPTED_CONVERSATION(true);
-		Global_22286 = 6;
+		Global_22425 = 6;
 		return;
 	}
 
@@ -541,13 +541,13 @@ void func_20() // Position - 0x739 Hash - 0x21027D29 ^0xBEB9ECFD
 
 char* func_21() // Position - 0x75D Hash - 0x706533BC ^0xD13E19C6
 {
-	if (IS_BIT_SET(Global_113969.f_24989, 3))
+	if (IS_BIT_SET(Global_114135.f_24990, 3))
 		return "BB4_loiter";
-	else if (IS_BIT_SET(Global_113969.f_24989, 2))
+	else if (IS_BIT_SET(Global_114135.f_24990, 2))
 		return "BB3_loiter";
-	else if (IS_BIT_SET(Global_113969.f_24989, 1))
+	else if (IS_BIT_SET(Global_114135.f_24990, 1))
 		return "BB2_loiter";
-	else if (IS_BIT_SET(Global_113969.f_24989, 0))
+	else if (IS_BIT_SET(Global_114135.f_24990, 0))
 		return "BB1_loiter";
 
 	return "MAUDE_loiter";
@@ -559,15 +559,15 @@ struct<6> func_22() // Position - 0x7BE Hash - 0xB37EF8EF ^0xB37EF8EF
 
 	TEXT_LABEL_ASSIGN_STRING(&unk, "NULL", 24);
 
-	if (Global_22286 == 4)
-		return Global_21905;
+	if (Global_22425 == 4)
+		return Global_22044;
 
 	return unk;
 }
 
 BOOL _CONVERSATION_IS_DIALOGUE_IN_PROGRESS() // Position - 0x7E2 Hash - 0x152DA0B2 ^0x220E93E9
 {
-	if (Global_22286 != 0 || AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
+	if (Global_22425 != 0 || AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 		return true;
 
 	return false;
@@ -1099,39 +1099,39 @@ void _CONVERSATION_ADD_LINE_NO_SUBTITLE(var uParam0, char* sParam1, char* sParam
 		if (iParam3 < 12)
 			iParam3 = 7;
 
-	MISC::SET_BIT(&Global_21152, 0);
-	Global_22289 = iParam3;
-	TEXT_LABEL_ASSIGN_STRING(&Global_22276, sParam2, 24);
+	MISC::SET_BIT(&Global_21291, 0);
+	Global_22428 = iParam3;
+	TEXT_LABEL_ASSIGN_STRING(&Global_22415, sParam2, 24);
 	return;
 }
 
 void func_45(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0x12B2 Hash - 0xC6B752B2 ^0xC6B752B2
 {
-	Global_21740 = { *uParam0 };
-	Global_8116 = echParam1;
-	TEXT_LABEL_ASSIGN_STRING(&Global_22356, sParam2, 24);
-	Global_23275 = iParam5;
+	Global_21879 = { *uParam0 };
+	Global_8235 = echParam1;
+	TEXT_LABEL_ASSIGN_STRING(&Global_22495, sParam2, 24);
+	Global_23414 = iParam5;
 
 	if (iParam3 == 0)
 	{
-		Global_23273 = 1;
-		Global_23271 = 0;
+		Global_23412 = 1;
+		Global_23410 = 0;
 	}
 	else
 	{
-		Global_23273 = 0;
-		Global_23271 = 1;
+		Global_23412 = 0;
+		Global_23410 = 1;
 	}
 
 	if (iParam4 == 0)
 	{
-		Global_23274 = 1;
-		Global_23272 = 0;
+		Global_23413 = 1;
+		Global_23411 = 0;
 	}
 	else
 	{
-		Global_23274 = 0;
-		Global_23272 = 1;
+		Global_23413 = 0;
+		Global_23411 = 1;
 	}
 
 	return;
@@ -1139,13 +1139,13 @@ void func_45(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int 
 
 char* func_46() // Position - 0x1308 Hash - 0x706533BC ^0xD3EDF5AC
 {
-	if (IS_BIT_SET(Global_113969.f_24989, 3))
+	if (IS_BIT_SET(Global_114135.f_24990, 3))
 		return "BB4AUD";
-	else if (IS_BIT_SET(Global_113969.f_24989, 2))
+	else if (IS_BIT_SET(Global_114135.f_24990, 2))
 		return "BB3AUD";
-	else if (IS_BIT_SET(Global_113969.f_24989, 1))
+	else if (IS_BIT_SET(Global_114135.f_24990, 1))
 		return "BB2AUD";
-	else if (IS_BIT_SET(Global_113969.f_24989, 0))
+	else if (IS_BIT_SET(Global_114135.f_24990, 0))
 		return "BB1AUD";
 
 	return "MAUDEAU";
@@ -1160,7 +1160,7 @@ void _CONVERSATION_INITIALIZE_ACTOR(var uParam0, int iParam1, Ped pedParam2, cha
 	uParam0->[iParam1 /*10*/].f_8 = iParam4;
 	uParam0->[iParam1 /*10*/].f_9 = iParam5;
 
-	if (!Global_79389)
+	if (!Global_79539)
 	{
 		if (!PED::IS_PED_INJURED(pedParam2))
 			if (uParam0->[iParam1 /*10*/].f_8 == 0)
@@ -1208,13 +1208,13 @@ void func_48(BOOL bParam0, var uParam1) // Position - 0x1404 Hash - 0xCCDE5809 ^
 
 int func_49() // Position - 0x14F2 Hash - 0x521E51C3 ^0x521E51C3
 {
-	if (IS_BIT_SET(Global_113969.f_24989, 3))
+	if (IS_BIT_SET(Global_114135.f_24990, 3))
 		return 4;
-	else if (IS_BIT_SET(Global_113969.f_24989, 2))
+	else if (IS_BIT_SET(Global_114135.f_24990, 2))
 		return 4;
-	else if (IS_BIT_SET(Global_113969.f_24989, 1))
+	else if (IS_BIT_SET(Global_114135.f_24990, 1))
 		return 4;
-	else if (IS_BIT_SET(Global_113969.f_24989, 0))
+	else if (IS_BIT_SET(Global_114135.f_24990, 0))
 		return 3;
 
 	return 4;
@@ -1332,7 +1332,7 @@ Hash func_53(int iParam0) // Position - 0x1778 Hash - 0xBF0B24A5 ^0xBF0B24A5
 
 Hash func_54(int iParam0) // Position - 0x179E Hash - 0xE4CEEC2C ^0xE4CEEC2C
 {
-	return Global_2169[iParam0 /*29*/];
+	return Global_2201[iParam0 /*29*/];
 }
 
 BOOL func_55(int iParam0) // Position - 0x17AD Hash - 0x8907F004 ^0x8907F004

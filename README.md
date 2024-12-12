@@ -2,6 +2,10 @@
 
 Decompiled scripts from GTAV build 3323, for educational purposes only.
 
+# Older scripts
+
+* [Build 2699](https://github.com/Tessio/v-decompiled-scripts/tree/619d43ed52e08eaee3660e7e9fb040b5dd72ea6a)
+
 ## Credits
 
 * [alloc8or](https://github.com/alloc8or) - [GTAV Natives](https://github.com/alloc8or/gta5-nativedb-data)

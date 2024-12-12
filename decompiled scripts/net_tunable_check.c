@@ -43,10 +43,10 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 
 	while (true)
 	{
-		if (_SHOULD_NETWORK_SCRIPT_TERMINATE() || Global_1955906 == 1)
+		if (_SHOULD_NETWORK_SCRIPT_TERMINATE() || Global_1956681 == 1)
 			func_6();
 	
-		if (func_1(&uLocal_19, &Global_298114))
+		if (func_1(&uLocal_19, &Global_298557))
 			func_6();
 	
 		SYSTEM::WAIT(0);
@@ -21385,10 +21385,10 @@ void func_2(int iParam0, var uParam1) // Position - 0x1CD Hash - 0x3381FBA6 ^0xB
 
 int func_3() // Position - 0x1D086 Hash - 0xA5E19383 ^0xA5E19383
 {
-	if (Global_2692501)
+	if (Global_2692732)
 		return 32;
 
-	return 32 - Global_2692502;
+	return 32 - Global_2692733;
 }
 
 Hash func_4(int iParam0) // Position - 0x1D0A1 Hash - 0x18A4787C ^0xC10CB6F5
@@ -21513,14 +21513,14 @@ void func_6() // Position - 0x1D32F Hash - 0xCE5FB49E ^0x214A59D5
 
 BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x1D33B Hash - 0x52E21E9B ^0xD0F85E96
 {
-	if (Global_1575055 == false)
+	if (Global_1575056 == false)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			return true;
 
 	if (func_14())
 		return true;
 
-	if (Global_2698758)
+	if (Global_2699004)
 		return true;
 
 	if (func_13())
@@ -21559,7 +21559,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x1D3BF Hash - 0x90B5
 
 Hash func_9() // Position - 0x1D3F2 Hash - 0x61402777 ^0xB9FAC976
 {
-	switch (Global_2698865)
+	switch (Global_2699111)
 	{
 		case 0:
 			return joaat("freemode");
@@ -21573,12 +21573,12 @@ Hash func_9() // Position - 0x1D3F2 Hash - 0x61402777 ^0xB9FAC976
 
 int func_10() // Position - 0x1D416 Hash - 0x21D64237 ^0x21D64237
 {
-	return Global_32948;
+	return Global_33087;
 }
 
 BOOL func_11() // Position - 0x1D421 Hash - 0x974E48B4 ^0x974E48B4
 {
-	return Global_2684504.f_700;
+	return Global_2684718.f_700;
 }
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x1D430 Hash - 0xA28ADBB4 ^0x6EB81E64
@@ -21591,11 +21591,11 @@ BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x1D430 Hash - 0xA28AD
 
 BOOL func_13() // Position - 0x1D447 Hash - 0x47FF56D2 ^0x47FF56D2
 {
-	return Global_2696172;
+	return Global_2696416;
 }
 
 BOOL func_14() // Position - 0x1D453 Hash - 0x974E48B4 ^0x974E48B4
 {
-	return Global_2684504.f_695;
+	return Global_2684718.f_695;
 }
 

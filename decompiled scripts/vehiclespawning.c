@@ -214,14 +214,14 @@ void func_6(var uParam0) // Position - 0x1DB Hash - 0x7623605C ^0x6B47B1A0
 
 int _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x214 Hash - 0x52E21E9B ^0xD0F85E96
 {
-	if (Global_1575055 == false)
+	if (Global_1575056 == false)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			return 1;
 
 	if (func_14())
 		return 1;
 
-	if (Global_2698758)
+	if (Global_2699004)
 		return 1;
 
 	if (func_13())
@@ -260,7 +260,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x298 Hash - 0x90B516
 
 Hash func_9() // Position - 0x2CB Hash - 0x61402777 ^0xB9FAC976
 {
-	switch (Global_2698865)
+	switch (Global_2699111)
 	{
 		case 0:
 			return joaat("freemode");
@@ -274,12 +274,12 @@ Hash func_9() // Position - 0x2CB Hash - 0x61402777 ^0xB9FAC976
 
 int func_10() // Position - 0x2EF Hash - 0x21D64237 ^0x21D64237
 {
-	return Global_32948;
+	return Global_33087;
 }
 
 BOOL func_11() // Position - 0x2FA Hash - 0x974E48B4 ^0x974E48B4
 {
-	return Global_2684504.f_700;
+	return Global_2684718.f_700;
 }
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x309 Hash - 0xA28ADBB4 ^0x6EB81E64
@@ -292,12 +292,12 @@ BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x309 Hash - 0xA28ADBB
 
 BOOL func_13() // Position - 0x320 Hash - 0x47FF56D2 ^0x47FF56D2
 {
-	return Global_2696172;
+	return Global_2696416;
 }
 
 BOOL func_14() // Position - 0x32C Hash - 0x974E48B4 ^0x974E48B4
 {
-	return Global_2684504.f_695;
+	return Global_2684718.f_695;
 }
 
 void func_15() // Position - 0x33B Hash - 0x66E327B2 ^0x39BE3C9E
@@ -421,6 +421,6 @@ int _NETWORK_ENSURE_SCRIPT_IS_NETWORKED(int iParam0, int iParam1, BOOL bNoTermin
 BOOL func_19(BOOL bParam0) // Position - 0x4FB Hash - 0x1CCCE169 ^0x1CCCE169
 {
 	bParam0;
-	return Global_1575055;
+	return Global_1575056;
 }
 
