@@ -499,7 +499,7 @@ void func_16(BOOL bParam0) // Position - 0x6C0 (1728)
 
 void func_17() // Position - 0x6F8 (1784)
 {
-	Global_21451 = 0;
+	Global_21849 = 0;
 	func_18();
 	return;
 }
@@ -507,12 +507,12 @@ void func_17() // Position - 0x6F8 (1784)
 void func_18() // Position - 0x708 (1800)
 {
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
-	Global_23596 = 0;
+	Global_23994 = 0;
 
 	if (AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
-		Global_22585 = 6;
+		Global_22983 = 6;
 	}
 
 	return;
@@ -520,7 +520,7 @@ void func_18() // Position - 0x708 (1800)
 
 void func_19() // Position - 0x729 (1833)
 {
-	Global_21451 = 0;
+	Global_21849 = 0;
 	func_20();
 	return;
 }
@@ -530,9 +530,9 @@ void func_20() // Position - 0x739 (1849)
 	if (AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 	{
 		AUDIO::RESTART_SCRIPTED_CONVERSATION();
-		Global_23596 = 0;
+		Global_23994 = 0;
 		AUDIO::STOP_SCRIPTED_CONVERSATION(true);
-		Global_22585 = 6;
+		Global_22983 = 6;
 		return;
 	}
 
@@ -541,13 +541,13 @@ void func_20() // Position - 0x739 (1849)
 
 char* func_21() // Position - 0x75D (1885)
 {
-	if (IS_BIT_SET(Global_114344.f_24990, 3))
+	if (IS_BIT_SET(Global_114904.f_24993, 3))
 		return "BB4_loiter";
-	else if (IS_BIT_SET(Global_114344.f_24990, 2))
+	else if (IS_BIT_SET(Global_114904.f_24993, 2))
 		return "BB3_loiter";
-	else if (IS_BIT_SET(Global_114344.f_24990, 1))
+	else if (IS_BIT_SET(Global_114904.f_24993, 1))
 		return "BB2_loiter";
-	else if (IS_BIT_SET(Global_114344.f_24990, 0))
+	else if (IS_BIT_SET(Global_114904.f_24993, 0))
 		return "BB1_loiter";
 
 	return "MAUDE_loiter";
@@ -559,15 +559,15 @@ struct<6> func_22() // Position - 0x7BE (1982)
 
 	TEXT_LABEL_ASSIGN_STRING(&unk, "NULL", 24);
 
-	if (Global_22585 == 4)
-		return Global_22204;
+	if (Global_22983 == 4)
+		return Global_22602;
 
 	return unk;
 }
 
 BOOL func_23() // Position - 0x7E2 (2018)
 {
-	if (Global_22585 != 0 || AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
+	if (Global_22983 != 0 || AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 		return true;
 
 	return false;
@@ -1099,39 +1099,39 @@ void _CONVERSATION_ADD_LINE_NO_SUBTITLE(var uParam0, char* sParam1, char* sParam
 		if (iParam3 < 12)
 			iParam3 = 7;
 
-	MISC::SET_BIT(&Global_21451, 0);
-	Global_22588 = iParam3;
-	TEXT_LABEL_ASSIGN_STRING(&Global_22575, sParam2, 24);
+	MISC::SET_BIT(&Global_21849, 0);
+	Global_22986 = iParam3;
+	TEXT_LABEL_ASSIGN_STRING(&Global_22973, sParam2, 24);
 	return;
 }
 
 void func_45(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0x12B2 (4786)
 {
-	Global_22039 = { *uParam0 };
-	Global_8391 = echParam1;
-	TEXT_LABEL_ASSIGN_STRING(&Global_22655, sParam2, 24);
-	Global_23574 = iParam5;
+	Global_22437 = { *uParam0 };
+	Global_8779 = echParam1;
+	TEXT_LABEL_ASSIGN_STRING(&Global_23053, sParam2, 24);
+	Global_23972 = iParam5;
 
 	if (iParam3 == 0)
 	{
-		Global_23572 = 1;
-		Global_23570 = 0;
+		Global_23970 = 1;
+		Global_23968 = 0;
 	}
 	else
 	{
-		Global_23572 = 0;
-		Global_23570 = 1;
+		Global_23970 = 0;
+		Global_23968 = 1;
 	}
 
 	if (iParam4 == 0)
 	{
-		Global_23573 = 1;
-		Global_23571 = 0;
+		Global_23971 = 1;
+		Global_23969 = 0;
 	}
 	else
 	{
-		Global_23573 = 0;
-		Global_23571 = 1;
+		Global_23971 = 0;
+		Global_23969 = 1;
 	}
 
 	return;
@@ -1139,13 +1139,13 @@ void func_45(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int 
 
 char* func_46() // Position - 0x1308 (4872)
 {
-	if (IS_BIT_SET(Global_114344.f_24990, 3))
+	if (IS_BIT_SET(Global_114904.f_24993, 3))
 		return "BB4AUD";
-	else if (IS_BIT_SET(Global_114344.f_24990, 2))
+	else if (IS_BIT_SET(Global_114904.f_24993, 2))
 		return "BB3AUD";
-	else if (IS_BIT_SET(Global_114344.f_24990, 1))
+	else if (IS_BIT_SET(Global_114904.f_24993, 1))
 		return "BB2AUD";
-	else if (IS_BIT_SET(Global_114344.f_24990, 0))
+	else if (IS_BIT_SET(Global_114904.f_24993, 0))
 		return "BB1AUD";
 
 	return "MAUDEAU";
@@ -1160,7 +1160,7 @@ void _CONVERSATION_INITIALIZE_ACTOR(var uParam0, int iParam1, Ped pedParam2, cha
 	uParam0->[iParam1 /*10*/].f_8 = iParam4;
 	uParam0->[iParam1 /*10*/].f_9 = iParam5;
 
-	if (!Global_79744)
+	if (!Global_80280)
 	{
 		if (!PED::IS_PED_INJURED(pedParam2))
 			if (uParam0->[iParam1 /*10*/].f_8 == 0)
@@ -1208,13 +1208,13 @@ void func_48(BOOL bParam0, var uParam1) // Position - 0x1404 (5124)
 
 int func_49() // Position - 0x14F2 (5362)
 {
-	if (IS_BIT_SET(Global_114344.f_24990, 3))
+	if (IS_BIT_SET(Global_114904.f_24993, 3))
 		return 4;
-	else if (IS_BIT_SET(Global_114344.f_24990, 2))
+	else if (IS_BIT_SET(Global_114904.f_24993, 2))
 		return 4;
-	else if (IS_BIT_SET(Global_114344.f_24990, 1))
+	else if (IS_BIT_SET(Global_114904.f_24993, 1))
 		return 4;
-	else if (IS_BIT_SET(Global_114344.f_24990, 0))
+	else if (IS_BIT_SET(Global_114904.f_24993, 0))
 		return 3;
 
 	return 4;
@@ -1332,7 +1332,7 @@ Hash func_53(int iParam0) // Position - 0x1778 (6008)
 
 Hash func_54(int iParam0) // Position - 0x179E (6046)
 {
-	return Global_2241[iParam0 /*29*/];
+	return Global_2339[iParam0 /*29*/];
 }
 
 BOOL func_55(int iParam0) // Position - 0x17AD (6061)

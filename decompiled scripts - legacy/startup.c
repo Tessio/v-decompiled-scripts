@@ -109,13 +109,13 @@ void main() // Position - 0x0 (0)
 
 	MISC::SET_INSTANCE_PRIORITY_MODE(0);
 	func_77();
-	Global_4547468 = 0;
-	MISC::SET_BIT(&Global_4547468, 0);
-	MISC::SET_BIT(&Global_4547468, 1);
+	Global_4525702 = 0;
+	MISC::SET_BIT(&Global_4525702, 0);
+	MISC::SET_BIT(&Global_4525702, 1);
 
 	for (i = 0; i < 132; i = i + 1)
 	{
-		func_34(&Global_1312335[i /*1951*/], i);
+		func_34(&Global_1312440[i /*1951*/], i);
 	}
 
 	func_33();
@@ -129,7 +129,7 @@ void main() // Position - 0x0 (0)
 	}
 
 	BUILTIN::WAIT(0);
-	Global_79746 = true;
+	Global_80282 = true;
 	Global_3 = flag;
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 
@@ -141,22 +141,22 @@ void main() // Position - 0x0 (0)
 			func_32(joaat("standard_global_reg"), DEFAULT);
 			SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("standard_global_reg");
 		
-			while (!IS_BIT_SET(Global_4547468, 0) || !IS_BIT_SET(Global_4547468, 1) || !IS_BIT_SET(Global_4547468, 2))
+			while (!IS_BIT_SET(Global_4525702, 0) || !IS_BIT_SET(Global_4525702, 1) || !IS_BIT_SET(Global_4525702, 2))
 			{
-				!IS_BIT_SET(Global_4547468, 0);
-				!IS_BIT_SET(Global_4547468, 1);
-				!IS_BIT_SET(Global_4547468, 2);
+				!IS_BIT_SET(Global_4525702, 0);
+				!IS_BIT_SET(Global_4525702, 1);
+				!IS_BIT_SET(Global_4525702, 2);
 				BUILTIN::WAIT(0);
 			}
 		
-			MISC::START_SAVE_DATA(&Global_114344, 1, true);
-			MISC::REGISTER_FLOAT_TO_SAVE(&Global_114344, "fSaveVersion");
+			MISC::START_SAVE_DATA(&Global_114904, 1, true);
+			MISC::REGISTER_FLOAT_TO_SAVE(&Global_114904, "fSaveVersion");
 			MISC::STOP_SAVE_DATA();
 		
 			if (Global_1)
-				Global_0 = Global_114344;
+				Global_0 = Global_114904;
 		
-			Global_114344 = 1.7f;
+			Global_114904 = 1.7f;
 		
 			if (Global_1)
 				if (Global_0 != 1.7f)
@@ -164,23 +164,23 @@ void main() // Position - 0x0 (0)
 			break;
 	}
 
-	MISC::START_SAVE_DATA(&Global_2359296, 5572, false);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&Global_2359296, 5572, "g_savedMPGlobals");
+	MISC::START_SAVE_DATA(&Global_2359296, 5575, false);
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&Global_2359296, 5575, "g_savedMPGlobals");
 
 	for (i = 0; i < 1; i = i + 1)
 	{
-		func_19(&Global_2359296[i /*5571*/], i);
-		func_17(&Global_2359296[i /*5571*/], i);
-		func_14(&Global_2359296[i /*5571*/], i);
-		func_12(&Global_2359296[i /*5571*/], i);
-		func_11(&Global_2359296[i /*5571*/], i);
-		func_10(&Global_2359296[i /*5571*/], i);
-		func_3(&Global_2359296[i /*5571*/], i);
+		func_19(&Global_2359296[i /*5574*/], i);
+		func_17(&Global_2359296[i /*5574*/], i);
+		func_14(&Global_2359296[i /*5574*/], i);
+		func_12(&Global_2359296[i /*5574*/], i);
+		func_11(&Global_2359296[i /*5574*/], i);
+		func_10(&Global_2359296[i /*5574*/], i);
+		func_3(&Global_2359296[i /*5574*/], i);
 	}
 
 	MISC::STOP_SAVE_STRUCT();
 	MISC::STOP_SAVE_DATA();
-	num = 5572;
+	num = 5575;
 	sizeOfSaveData = MISC::GET_SIZE_OF_SAVE_DATA(false);
 	num != sizeOfSaveData;
 
@@ -197,74 +197,74 @@ void main() // Position - 0x0 (0)
 
 void func_1() // Position - 0x308 (776)
 {
-	Global_33[0] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1680.49f, -929.44f, -0.462531f, "vbca_tunnel1");
-	Global_33[1] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1562.04f, -876.91f, -0.471913f, "vbca_tunnel2");
-	Global_33[2] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1429.65f, -823.211f, -0.432763f, "vbca_tunnel3");
-	Global_33[3] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1316.9f, -843.515f, 1.43639f, "vbca_tunnel4");
-	Global_33[4] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1249.67f, -896.27f, 0.293292f, "vbca_tunnel5");
-	Global_33[5] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-38.9818f, -570.534f, 28.4812f, "v_31_tun_01");
-	Global_33[6] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(481.908f, -577.602f, 2.41908f, "v_31_newtunnel1");
-	Global_33[7] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1029.02f, -260.955f, 48.2681f, "v_31_newtun5");
-	Global_33[8] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1022.25f, -205.648f, 42.8956f, "v_31_newtun4b");
-	Global_33[9] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(823.852f, -299.823f, 4.54864f, "v_31_newtun3");
-	Global_33[10] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(615.395f, -409.282f, -1.57599f, "v_31_newtun2");
-	Global_33[11] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1190.58f, -685.387f, 11.0753f, "sm20_tun4");
-	Global_33[12] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1292.36f, -730.629f, 11.0934f, "sm20_tun3");
-	Global_33[13] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1411.97f, -759.518f, 15.5455f, "sm20_tun2");
-	Global_33[14] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1531.56f, -762.391f, 15.3451f, "sm20_tun1");
-	Global_33[15] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(558.653f, -1486.49f, 21.4096f, "sc1_rd_inttunshort");
-	Global_33[16] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(569.673f, -1920.17f, 21.1009f, "sc1_rd_inttun3b_end");
-	Global_33[17] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(512.412f, -1908.55f, 21.2086f, "sc1_rd_inttun3b");
-	Global_33[18] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(434.343f, -1945.27f, 17.3936f, "sc1_rd_inttun3");
-	Global_33[19] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(513.914f, -2009.82f, 21.1486f, "sc1_rd_inttun2b_end");
-	Global_33[20] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(465.139f, -2025.49f, 19.4406f, "sc1_rd_inttun2b");
-	Global_33[21] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(406.938f, -1978.14f, 16.3512f, "sc1_rd_inttun2");
-	Global_33[22] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(319.321f, -1896.97f, 22.4086f, "sc1_rd_inttun1");
-	Global_33[23] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-573.473f, -580.793f, 25.3082f, "kt1_04_roadtunnel_int");
-	Global_33[24] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-675.628f, -606.272f, 25.3078f, "kt1_03_carpark_int");
-	Global_33[25] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1314.63f, -904.059f, 53.0877f, "id2_21_a_tun5");
-	Global_33[26] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1248.64f, -773.6f, 44.5493f, "id2_21_a_tun4");
-	Global_33[27] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1213.45f, -597.799f, 37.7533f, "id2_21_a_tun3");
-	Global_33[28] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1083.25f, -502.542f, 34.6573f, "id2_21_a_tun2");
-	Global_33[29] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(926.428f, -488.737f, 33.8564f, "id2_21_a_tun1");
-	Global_33[30] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(732.663f, -2486.45f, 11.0686f, "id1_11_tunnel8_int");
-	Global_33[31] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(749.494f, -2364.79f, 16.2255f, "id1_11_tunnel7_int");
-	Global_33[32] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(758.957f, -2260.08f, 23.4637f, "id1_11_tunnel6_int");
-	Global_33[33] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(769.889f, -2124.24f, 21.8223f, "id1_11_tunnel5_int");
-	Global_33[34] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(789.138f, -1963.58f, 20.6408f, "id1_11_tunnel4_int");
-	Global_33[35] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(815.852f, -1832.2f, 22.9671f, "id1_11_tunnel3_int");
-	Global_33[36] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(829.752f, -1718.51f, 20.4594f, "id1_11_tunnel2_int");
-	Global_33[37] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(829.845f, -1718.51f, 20.1823f, "id1_11_tunnel1_int");
-	Global_33[38] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(274.441f, -636.403f, 29.0854f, "dt1_rd1_tun3");
-	Global_33[39] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(142.198f, -581.121f, 31.2974f, "dt1_rd1_tun2");
-	Global_33[40] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(204.925f, -601.567f, 29.3757f, "dt1_rd1_tun");
-	Global_33[41] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(2571.05f, 3907.95f, 41.1896f, "cs4_rwayb_tunnelint");
-	Global_33[42] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-493.613f, 4275.55f, 89.1677f, "cs3_03railtunnel_int4");
-	Global_33[43] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-476.018f, 4201.55f, 87.9392f, "cs3_03railtunnel_int3");
-	Global_33[44] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-457.748f, 4125.51f, 86.1208f, "cs3_03railtunnel_int2");
-	Global_33[45] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-442.948f, 4064.86f, 84.1041f, "cs3_03railtunnel_int1");
-	Global_33[46] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(2159.62f, 5995.87f, 51.2999f, "cs2_roadsb_tunnel_03");
-	Global_33[47] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(2250.3f, 5915.56f, 49.6273f, "cs2_roadsb_tunnel_02");
-	Global_33[48] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(2341.18f, 5814.9f, 46.7075f, "cs2_roadsb_tunnel_01");
-	Global_33[49] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-537.422f, 4613.09f, 89.7512f, "cs1_14brailway6");
-	Global_33[50] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-540.452f, 4719.74f, 89.7576f, "cs1_14brailway5");
-	Global_33[51] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-543.783f, 4821.95f, 89.7357f, "cs1_14brailway4");
-	Global_33[52] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-546.036f, 4923.02f, 89.8919f, "cs1_14brailway3");
-	Global_33[53] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-546.265f, 4999.07f, 90.8104f, "cs1_14brailway2");
-	Global_33[54] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-539.261f, 5077.03f, 91.6235f, "cs1_14brailway1");
-	Global_33[55] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-183.656f, 4664.52f, 130.5f, "cs1_12_tunnel03_int");
-	Global_33[56] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-273.86f, 4752.12f, 138.21f, "cs1_12_tunnel02_int");
-	Global_33[57] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-410.302f, 4860.98f, 144.864f, "cs1_12_tunnel01_int");
-	Global_33[58] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-2596.83f, 3088.87f, 15.4225f, "ch1_roadsdint_tun2");
-	Global_33[59] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-2583.04f, 3268.07f, 13.3157f, "ch1_roadsdint_tun1");
-	Global_33[60] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-179.51f, -180.189f, 43.6251f, "bt1_04_carpark");
+	Global_31[0] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1680.49f, -929.44f, -0.462531f, "vbca_tunnel1");
+	Global_31[1] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1562.04f, -876.91f, -0.471913f, "vbca_tunnel2");
+	Global_31[2] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1429.65f, -823.211f, -0.432763f, "vbca_tunnel3");
+	Global_31[3] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1316.9f, -843.515f, 1.43639f, "vbca_tunnel4");
+	Global_31[4] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1249.67f, -896.27f, 0.293292f, "vbca_tunnel5");
+	Global_31[5] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-38.9818f, -570.534f, 28.4812f, "v_31_tun_01");
+	Global_31[6] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(481.908f, -577.602f, 2.41908f, "v_31_newtunnel1");
+	Global_31[7] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1029.02f, -260.955f, 48.2681f, "v_31_newtun5");
+	Global_31[8] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1022.25f, -205.648f, 42.8956f, "v_31_newtun4b");
+	Global_31[9] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(823.852f, -299.823f, 4.54864f, "v_31_newtun3");
+	Global_31[10] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(615.395f, -409.282f, -1.57599f, "v_31_newtun2");
+	Global_31[11] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1190.58f, -685.387f, 11.0753f, "sm20_tun4");
+	Global_31[12] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1292.36f, -730.629f, 11.0934f, "sm20_tun3");
+	Global_31[13] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1411.97f, -759.518f, 15.5455f, "sm20_tun2");
+	Global_31[14] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-1531.56f, -762.391f, 15.3451f, "sm20_tun1");
+	Global_31[15] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(558.653f, -1486.49f, 21.4096f, "sc1_rd_inttunshort");
+	Global_31[16] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(569.673f, -1920.17f, 21.1009f, "sc1_rd_inttun3b_end");
+	Global_31[17] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(512.412f, -1908.55f, 21.2086f, "sc1_rd_inttun3b");
+	Global_31[18] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(434.343f, -1945.27f, 17.3936f, "sc1_rd_inttun3");
+	Global_31[19] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(513.914f, -2009.82f, 21.1486f, "sc1_rd_inttun2b_end");
+	Global_31[20] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(465.139f, -2025.49f, 19.4406f, "sc1_rd_inttun2b");
+	Global_31[21] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(406.938f, -1978.14f, 16.3512f, "sc1_rd_inttun2");
+	Global_31[22] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(319.321f, -1896.97f, 22.4086f, "sc1_rd_inttun1");
+	Global_31[23] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-573.473f, -580.793f, 25.3082f, "kt1_04_roadtunnel_int");
+	Global_31[24] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-675.628f, -606.272f, 25.3078f, "kt1_03_carpark_int");
+	Global_31[25] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1314.63f, -904.059f, 53.0877f, "id2_21_a_tun5");
+	Global_31[26] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1248.64f, -773.6f, 44.5493f, "id2_21_a_tun4");
+	Global_31[27] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1213.45f, -597.799f, 37.7533f, "id2_21_a_tun3");
+	Global_31[28] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(1083.25f, -502.542f, 34.6573f, "id2_21_a_tun2");
+	Global_31[29] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(926.428f, -488.737f, 33.8564f, "id2_21_a_tun1");
+	Global_31[30] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(732.663f, -2486.45f, 11.0686f, "id1_11_tunnel8_int");
+	Global_31[31] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(749.494f, -2364.79f, 16.2255f, "id1_11_tunnel7_int");
+	Global_31[32] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(758.957f, -2260.08f, 23.4637f, "id1_11_tunnel6_int");
+	Global_31[33] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(769.889f, -2124.24f, 21.8223f, "id1_11_tunnel5_int");
+	Global_31[34] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(789.138f, -1963.58f, 20.6408f, "id1_11_tunnel4_int");
+	Global_31[35] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(815.852f, -1832.2f, 22.9671f, "id1_11_tunnel3_int");
+	Global_31[36] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(829.752f, -1718.51f, 20.4594f, "id1_11_tunnel2_int");
+	Global_31[37] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(829.845f, -1718.51f, 20.1823f, "id1_11_tunnel1_int");
+	Global_31[38] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(274.441f, -636.403f, 29.0854f, "dt1_rd1_tun3");
+	Global_31[39] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(142.198f, -581.121f, 31.2974f, "dt1_rd1_tun2");
+	Global_31[40] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(204.925f, -601.567f, 29.3757f, "dt1_rd1_tun");
+	Global_31[41] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(2571.05f, 3907.95f, 41.1896f, "cs4_rwayb_tunnelint");
+	Global_31[42] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-493.613f, 4275.55f, 89.1677f, "cs3_03railtunnel_int4");
+	Global_31[43] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-476.018f, 4201.55f, 87.9392f, "cs3_03railtunnel_int3");
+	Global_31[44] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-457.748f, 4125.51f, 86.1208f, "cs3_03railtunnel_int2");
+	Global_31[45] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-442.948f, 4064.86f, 84.1041f, "cs3_03railtunnel_int1");
+	Global_31[46] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(2159.62f, 5995.87f, 51.2999f, "cs2_roadsb_tunnel_03");
+	Global_31[47] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(2250.3f, 5915.56f, 49.6273f, "cs2_roadsb_tunnel_02");
+	Global_31[48] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(2341.18f, 5814.9f, 46.7075f, "cs2_roadsb_tunnel_01");
+	Global_31[49] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-537.422f, 4613.09f, 89.7512f, "cs1_14brailway6");
+	Global_31[50] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-540.452f, 4719.74f, 89.7576f, "cs1_14brailway5");
+	Global_31[51] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-543.783f, 4821.95f, 89.7357f, "cs1_14brailway4");
+	Global_31[52] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-546.036f, 4923.02f, 89.8919f, "cs1_14brailway3");
+	Global_31[53] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-546.265f, 4999.07f, 90.8104f, "cs1_14brailway2");
+	Global_31[54] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-539.261f, 5077.03f, 91.6235f, "cs1_14brailway1");
+	Global_31[55] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-183.656f, 4664.52f, 130.5f, "cs1_12_tunnel03_int");
+	Global_31[56] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-273.86f, 4752.12f, 138.21f, "cs1_12_tunnel02_int");
+	Global_31[57] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-410.302f, 4860.98f, 144.864f, "cs1_12_tunnel01_int");
+	Global_31[58] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-2596.83f, 3088.87f, 15.4225f, "ch1_roadsdint_tun2");
+	Global_31[59] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-2583.04f, 3268.07f, 13.3157f, "ch1_roadsdint_tun1");
+	Global_31[60] = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(-179.51f, -180.189f, 43.6251f, "bt1_04_carpark");
 	return;
 }
 
 void func_2() // Position - 0xA26 (2598)
 {
-	Global_153220 = 1;
-	Global_153221 = 1;
+	Global_153783 = 1;
+	Global_153784 = 1;
 	return;
 }
 
@@ -285,15 +285,15 @@ void func_4(ePedComponentType epctParam0, int iParam1) // Position - 0xA70 (2672
 
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "g_SaveData_DATE_ScriptSaves", 32);
 	TEXT_LABEL_APPEND_INT(&arrayName, iParam1, 32);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5544.f_19), 8, &arrayName);
-	MISC::START_SAVE_STRUCT_WITH_SIZE(&epctParam0->f_5544.f_19[0 /*7*/], 7, "TEMPSTAT_DATE");
-	MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5544.f_19[0 /*7*/], "TEMPSTAT_DATE.year");
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5544.f_19[0 /*7*/].f_1), "TEMPSTAT_DATE.month");
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5544.f_19[0 /*7*/].f_2), "TEMPSTAT_DATE.day");
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5544.f_19[0 /*7*/].f_3), "TEMPSTAT_DATE.hour");
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5544.f_19[0 /*7*/].f_4), "TEMPSTAT_DATE.minute");
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5544.f_19[0 /*7*/].f_5), "TEMPSTAT_DATE.seconds");
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5544.f_19[0 /*7*/].f_6), "TEMPSTAT_DATE.Milliseconds");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5547.f_19), 8, &arrayName);
+	MISC::START_SAVE_STRUCT_WITH_SIZE(&epctParam0->f_5547.f_19[0 /*7*/], 7, "TEMPSTAT_DATE");
+	MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5547.f_19[0 /*7*/], "TEMPSTAT_DATE.year");
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5547.f_19[0 /*7*/].f_1), "TEMPSTAT_DATE.month");
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5547.f_19[0 /*7*/].f_2), "TEMPSTAT_DATE.day");
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5547.f_19[0 /*7*/].f_3), "TEMPSTAT_DATE.hour");
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5547.f_19[0 /*7*/].f_4), "TEMPSTAT_DATE.minute");
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5547.f_19[0 /*7*/].f_5), "TEMPSTAT_DATE.seconds");
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5547.f_19[0 /*7*/].f_6), "TEMPSTAT_DATE.Milliseconds");
 	MISC::STOP_SAVE_STRUCT();
 	MISC::STOP_SAVE_ARRAY();
 	return;
@@ -305,11 +305,11 @@ void func_5(ePedComponentType epctParam0, int iParam1) // Position - 0xB3A (2874
 
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "g_SaveData_VECTOR_ScriptSaves", 32);
 	TEXT_LABEL_APPEND_INT(&arrayName, iParam1, 32);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5544.f_15), 4, &arrayName);
-	MISC::START_SAVE_STRUCT_WITH_SIZE(&epctParam0->f_5544.f_15[0 /*3*/], 3, "TEMPSTAT_VEC");
-	MISC::REGISTER_FLOAT_TO_SAVE(&epctParam0->f_5544.f_15[0 /*3*/], "TEMPSTAT_VEC.x");
-	MISC::REGISTER_FLOAT_TO_SAVE(&(epctParam0->f_5544.f_15[0 /*3*/].f_1), "TEMPSTAT_VEC.y");
-	MISC::REGISTER_FLOAT_TO_SAVE(&(epctParam0->f_5544.f_15[0 /*3*/].f_2), "TEMPSTAT_VEC.z");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5547.f_15), 4, &arrayName);
+	MISC::START_SAVE_STRUCT_WITH_SIZE(&epctParam0->f_5547.f_15[0 /*3*/], 3, "TEMPSTAT_VEC");
+	MISC::REGISTER_FLOAT_TO_SAVE(&epctParam0->f_5547.f_15[0 /*3*/], "TEMPSTAT_VEC.x");
+	MISC::REGISTER_FLOAT_TO_SAVE(&(epctParam0->f_5547.f_15[0 /*3*/].f_1), "TEMPSTAT_VEC.y");
+	MISC::REGISTER_FLOAT_TO_SAVE(&(epctParam0->f_5547.f_15[0 /*3*/].f_2), "TEMPSTAT_VEC.z");
 	MISC::STOP_SAVE_STRUCT();
 	MISC::STOP_SAVE_ARRAY();
 	return;
@@ -321,8 +321,8 @@ void func_6(ePedComponentType epctParam0, int iParam1) // Position - 0xBB3 (2995
 
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "g_SaveData_STRING_ScriptSaves", 32);
 	TEXT_LABEL_APPEND_INT(&arrayName, iParam1, 32);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5544.f_6), 9, &arrayName);
-	MISC::REGISTER_TEXT_LABEL_31_TO_SAVE(&epctParam0->f_5544.f_6[0 /*8*/], "TEMPSTAT_LABEL");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5547.f_6), 9, &arrayName);
+	MISC::REGISTER_TEXT_LABEL_31_TO_SAVE(&epctParam0->f_5547.f_6[0 /*8*/], "TEMPSTAT_LABEL");
 	MISC::STOP_SAVE_ARRAY();
 	return;
 }
@@ -333,8 +333,8 @@ void func_7(ePedComponentType epctParam0, int iParam1) // Position - 0xBEE (3054
 
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "g_SaveData_BOOL_ScriptSaves", 32);
 	TEXT_LABEL_APPEND_INT(&arrayName, iParam1, 32);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5544.f_4), 2, &arrayName);
-	MISC::REGISTER_BOOL_TO_SAVE(&epctParam0->f_5544.f_4[0], "TEMPSTAT_BOOL");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5547.f_4), 2, &arrayName);
+	MISC::REGISTER_BOOL_TO_SAVE(&epctParam0->f_5547.f_4[0], "TEMPSTAT_BOOL");
 	MISC::STOP_SAVE_ARRAY();
 	return;
 }
@@ -345,8 +345,8 @@ void func_8(ePedComponentType epctParam0, int iParam1) // Position - 0xC28 (3112
 
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "g_SaveData_FLOAT_ScriptSaves", 32);
 	TEXT_LABEL_APPEND_INT(&arrayName, iParam1, 32);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5544.f_2), 2, &arrayName);
-	MISC::REGISTER_FLOAT_TO_SAVE(&epctParam0->f_5544.f_2[0], "TEMPSTAT_FLOAT");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5547.f_2), 2, &arrayName);
+	MISC::REGISTER_FLOAT_TO_SAVE(&epctParam0->f_5547.f_2[0], "TEMPSTAT_FLOAT");
 	MISC::STOP_SAVE_ARRAY();
 	return;
 }
@@ -357,8 +357,8 @@ void func_9(ePedComponentType epctParam0, int iParam1) // Position - 0xC62 (3170
 
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "g_SaveData_INT_ScriptSaves", 32);
 	TEXT_LABEL_APPEND_INT(&arrayName, iParam1, 32);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5544), 2, &arrayName);
-	MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5544[0], "TEMPSTAT_INT1");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5547), 2, &arrayName);
+	MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5547[0], "TEMPSTAT_INT1");
 	MISC::STOP_SAVE_ARRAY();
 	return;
 }
@@ -375,54 +375,54 @@ void func_10(ePedComponentType epctParam0, int iParam1) // Position - 0xC98 (322
 
 	TEXT_LABEL_ASSIGN_STRING(&structName, "MP_ATM_SAVED", 24);
 	TEXT_LABEL_APPEND_INT(&structName, iParam1, 24);
-	MISC::START_SAVE_STRUCT_WITH_SIZE(&(epctParam0->f_5394), 150, &structName);
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5394), "MPATM_CARET_");
+	MISC::START_SAVE_STRUCT_WITH_SIZE(&(epctParam0->f_5397), 150, &structName);
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5397), "MPATM_CARET_");
 	i = 0;
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "MPATMLOGVAL", 16);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5394.f_1), 17, &arrayName);
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5397.f_1), 17, &arrayName);
 
 	for (i = 0; i < 16; i = i + 1)
 	{
 		name = { arrayName };
 		TEXT_LABEL_APPEND_INT(&name, i, 16);
-		MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5394.f_1[i], &name);
+		MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5397.f_1[i], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "MPATMLOGSCRS", 16);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5394.f_18), 97, &arrayName);
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5397.f_18), 97, &arrayName);
 
 	for (i = 0; i < 16; i = i + 1)
 	{
 		name2 = { arrayName };
 		TEXT_LABEL_APPEND_INT(&name2, i, 16);
-		MISC::REGISTER_TEXT_LABEL_23_TO_SAVE(&epctParam0->f_5394.f_18[i /*6*/], &name2);
+		MISC::REGISTER_TEXT_LABEL_23_TO_SAVE(&epctParam0->f_5397.f_18[i /*6*/], &name2);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "MPATMLOGACT", 16);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5394.f_115), 17, &arrayName);
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5397.f_115), 17, &arrayName);
 
 	for (i = 0; i < 16; i = i + 1)
 	{
 		name3 = { arrayName };
 		TEXT_LABEL_APPEND_INT(&name3, i, 16);
-		MISC::REGISTER_ENUM_TO_SAVE(&epctParam0->f_5394.f_115[i], &name3);
+		MISC::REGISTER_ENUM_TO_SAVE(&epctParam0->f_5397.f_115[i], &name3);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
 	TEXT_LABEL_ASSIGN_STRING(&arrayName, "MPATMLOGDAT", 16);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5394.f_132), 17, &arrayName);
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5397.f_132), 17, &arrayName);
 
 	for (i = 0; i < 16; i = i + 1)
 	{
 		name4 = { arrayName };
 		TEXT_LABEL_APPEND_INT(&name4, i, 16);
-		MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5394.f_132[i], &name4);
+		MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5397.f_132[i], &name4);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::REGISTER_BOOL_TO_SAVE(&(epctParam0->f_5394.f_149), "mpAnyVecBought");
+	MISC::REGISTER_BOOL_TO_SAVE(&(epctParam0->f_5397.f_149), "mpAnyVecBought");
 	MISC::STOP_SAVE_STRUCT();
 	return;
 }
@@ -435,24 +435,24 @@ void func_11(ePedComponentType epctParam0, int iParam1) // Position - 0xE12 (360
 
 	TEXT_LABEL_ASSIGN_STRING(&structName, "MP_BOUNTY_SAVED", 24);
 	TEXT_LABEL_APPEND_INT(&structName, iParam1, 24);
-	MISC::START_SAVE_STRUCT_WITH_SIZE(&(epctParam0->f_5153), 241, &structName);
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153), "BOUNTY_GAMERH64_1");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_1), "BOUNTY_GAMERH64_2");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_2), "BOUNTY_GAMERH64_3");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_3), "BOUNTY_GAMERH64_4");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_4), "BOUNTY_GAMERH64_5");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_5), "BOUNTY_GAMERH64_6");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_6), "BOUNTY_GAMERH64_7");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_7), "BOUNTY_GAMERH64_8");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_8), "BOUNTY_GAMERH64_9");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_9), "BOUNTY_GAMERH64_10");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_10), "BOUNTY_GAMERH64_11");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_11), "BOUNTY_GAMERH64_12");
-	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_12), "BOUNTY_GAMERH64_13");
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5153.f_13), "BOUNTY_TIME");
-	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5153.f_14), "BOUNTY_VALUE");
+	MISC::START_SAVE_STRUCT_WITH_SIZE(&(epctParam0->f_5156), 241, &structName);
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156), "BOUNTY_GAMERH64_1");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_1), "BOUNTY_GAMERH64_2");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_2), "BOUNTY_GAMERH64_3");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_3), "BOUNTY_GAMERH64_4");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_4), "BOUNTY_GAMERH64_5");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_5), "BOUNTY_GAMERH64_6");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_6), "BOUNTY_GAMERH64_7");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_7), "BOUNTY_GAMERH64_8");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_8), "BOUNTY_GAMERH64_9");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_9), "BOUNTY_GAMERH64_10");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_10), "BOUNTY_GAMERH64_11");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_11), "BOUNTY_GAMERH64_12");
+	MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_12), "BOUNTY_GAMERH64_13");
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5156.f_13), "BOUNTY_TIME");
+	MISC::REGISTER_INT_TO_SAVE(&(epctParam0->f_5156.f_14), "BOUNTY_VALUE");
 	TEXT_LABEL_APPEND_STRING(&structName, "_GH", 24);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5153.f_15), 209, &structName);
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5156.f_15), 209, &structName);
 
 	for (i = 0; i < 16; i = i + 1)
 	{
@@ -460,80 +460,80 @@ void func_11(ePedComponentType epctParam0, int iParam1) // Position - 0xE12 (360
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_1", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&epctParam0->f_5153.f_15[i /*13*/], &name);
+		MISC::REGISTER_INT64_TO_SAVE(&epctParam0->f_5156.f_15[i /*13*/], &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_2", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_1), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_1), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_3", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_2), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_2), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_4", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_3), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_3), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_5", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_4), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_4), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_6", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_5), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_5), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_7", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_6), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_6), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_8", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_7), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_7), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_9", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_8), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_8), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_10", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_9), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_9), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_11", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_10), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_10), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_12", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_11), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_11), &name);
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_STRING(&name, "64_", 32);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
 		TEXT_LABEL_APPEND_STRING(&name, "_13", 32);
-		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5153.f_15[i /*13*/].f_12), &name);
+		MISC::REGISTER_INT64_TO_SAVE(&(epctParam0->f_5156.f_15[i /*13*/].f_12), &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
 	TEXT_LABEL_ASSIGN_STRING(&structName, "MP_BOUNTY_SAVED", 24);
 	TEXT_LABEL_APPEND_INT(&structName, iParam1, 24);
 	TEXT_LABEL_APPEND_STRING(&structName, "_TIM", 24);
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5153.f_224), 17, &structName);
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(epctParam0->f_5156.f_224), 17, &structName);
 
 	for (i = 0; i < 16; i = i + 1)
 	{
 		TEXT_LABEL_COPY(&name, { structName }, 8);
 		TEXT_LABEL_APPEND_INT(&name, i, 32);
-		MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5153.f_224[i], &name);
+		MISC::REGISTER_INT_TO_SAVE(&epctParam0->f_5156.f_224[i], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
@@ -565,7 +565,7 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 	var name6;
 	var name7;
 
-	MISC::START_SAVE_STRUCT_WITH_SIZE(panParam0, 4472, sParam1);
+	MISC::START_SAVE_STRUCT_WITH_SIZE(panParam0, 4475, sParam1);
 	MISC::REGISTER_INT_TO_SAVE(panParam0, "CASH_GIVEN_TOTAL");
 	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_1), "CASH_GIVEN_TIME");
 	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_2), "LAST_SAVED_CAR");
@@ -659,8 +659,8 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_1302), "iReceiveLJCashTime");
 	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_1303), "LAST_ACC_PROP");
 	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_1304), "MULTI1_PROP_VAL");
-	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_1337), "LAST_ACC_SMPLINT");
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_1305), 32, "PROP_ARY_VAL");
+	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_1340), "LAST_ACC_SMPLINT");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_1305), 35, "PROP_ARY_VAL");
 
 	for (k = 0; k < panParam0->f_1305; k = k + 1)
 	{
@@ -670,37 +670,37 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_1338), "KR_PATCH_UPDATE");
+	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_1341), "KR_PATCH_UPDATE");
 	k = 0;
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2694), 919, "DLC_MODS");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2697), 919, "DLC_MODS");
 
-	for (k = 0; k < panParam0->f_2694; k = k + 1)
+	for (k = 0; k < panParam0->f_2697; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "DLC_MODS_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_2694[k], &name);
+		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_2697[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
 	k = 0;
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_3613), 627, "DLC_SUPERMODS");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_3616), 627, "DLC_SUPERMODS");
 
-	for (k = 0; k < panParam0->f_3613; k = k + 1)
+	for (k = 0; k < panParam0->f_3616; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "DLC_SMODS_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_3613[k], &name);
+		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_3616[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_1339), 274, "OUTFIT_CompDraw");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_1342), 274, "OUTFIT_CompDraw");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "CompDraw", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::START_SAVE_ARRAY_WITH_SIZE(&panParam0->f_1339[k /*13*/], 13, &name);
+		MISC::START_SAVE_ARRAY_WITH_SIZE(&panParam0->f_1342[k /*13*/], 13, &name);
 	
 		for (l = 0; l < 12; l = l + 1)
 		{
@@ -709,21 +709,21 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 			TEXT_LABEL_APPEND_INT(&name, k, 16);
 			TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 			TEXT_LABEL_APPEND_INT(&name, l, 16);
-			MISC::REGISTER_INT_TO_SAVE(&panParam0->f_1339[k /*13*/][l], &name);
+			MISC::REGISTER_INT_TO_SAVE(&panParam0->f_1342[k /*13*/][l], &name);
 		}
 	
 		MISC::STOP_SAVE_ARRAY();
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_1613), 274, "OUTFIT_CompTex");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_1616), 274, "OUTFIT_CompTex");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "CompTex", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::START_SAVE_ARRAY_WITH_SIZE(&panParam0->f_1613[k /*13*/], 13, &name);
+		MISC::START_SAVE_ARRAY_WITH_SIZE(&panParam0->f_1616[k /*13*/], 13, &name);
 	
 		for (l = 0; l < 12; l = l + 1)
 		{
@@ -732,21 +732,21 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 			TEXT_LABEL_APPEND_INT(&name, k, 16);
 			TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 			TEXT_LABEL_APPEND_INT(&name, l, 16);
-			MISC::REGISTER_INT_TO_SAVE(&panParam0->f_1613[k /*13*/][l], &name);
+			MISC::REGISTER_INT_TO_SAVE(&panParam0->f_1616[k /*13*/][l], &name);
 		}
 	
 		MISC::STOP_SAVE_ARRAY();
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_1887), 211, "OUTFIT_PropID");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_1890), 211, "OUTFIT_PropID");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "PropID", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::START_SAVE_ARRAY_WITH_SIZE(&panParam0->f_1887[k /*10*/], 10, &name);
+		MISC::START_SAVE_ARRAY_WITH_SIZE(&panParam0->f_1890[k /*10*/], 10, &name);
 	
 		for (l = 0; l < 9; l = l + 1)
 		{
@@ -755,21 +755,21 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 			TEXT_LABEL_APPEND_INT(&name, k, 16);
 			TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 			TEXT_LABEL_APPEND_INT(&name, l, 16);
-			MISC::REGISTER_INT_TO_SAVE(&panParam0->f_1887[k /*10*/][l], &name);
+			MISC::REGISTER_INT_TO_SAVE(&panParam0->f_1890[k /*10*/][l], &name);
 		}
 	
 		MISC::STOP_SAVE_ARRAY();
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2098), 211, "OUTFIT_PropTex");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2101), 211, "OUTFIT_PropTex");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "PropTex", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::START_SAVE_ARRAY_WITH_SIZE(&panParam0->f_2098[k /*10*/], 10, &name);
+		MISC::START_SAVE_ARRAY_WITH_SIZE(&panParam0->f_2101[k /*10*/], 10, &name);
 	
 		for (l = 0; l < 9; l = l + 1)
 		{
@@ -778,113 +778,113 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 			TEXT_LABEL_APPEND_INT(&name, k, 16);
 			TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 			TEXT_LABEL_APPEND_INT(&name, l, 16);
-			MISC::REGISTER_INT_TO_SAVE(&panParam0->f_2098[k /*10*/][l], &name);
+			MISC::REGISTER_INT_TO_SAVE(&panParam0->f_2101[k /*10*/][l], &name);
 		}
 	
 		MISC::STOP_SAVE_ARRAY();
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2309), 22, "OUTFIT_Stored");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2312), 22, "OUTFIT_Stored");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "Stored", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2309[k], &name);
+		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2312[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2331), 22, "OUTFIT_CrewTatA");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2334), 22, "OUTFIT_CrewTatA");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "CrewDecalA", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2331[k], &name);
+		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2334[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2353), 22, "OUTFIT_CrewTatB");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2356), 22, "OUTFIT_CrewTatB");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "CrewDecalB", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2353[k], &name);
+		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2356[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2375), 22, "OUTFIT_CrewTatC");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2378), 22, "OUTFIT_CrewTatC");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "CrewDecalC", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2375[k], &name);
+		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2378[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2397), 22, "OUTFIT_CrewTatD");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2400), 22, "OUTFIT_CrewTatD");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "CrewDecalD", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2397[k], &name);
+		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2400[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2419), 22, "OUTFIT_CrewTatE");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2422), 22, "OUTFIT_CrewTatE");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "CrewDecalE", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2419[k], &name);
+		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2422[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2441), 22, "OUTFIT_CrewTatF");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2444), 22, "OUTFIT_CrewTatF");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "CrewDecalF", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2441[k], &name);
+		MISC::REGISTER_BOOL_TO_SAVE(&panParam0->f_2444[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2632), 22, "OUTFIT_Shirt");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2635), 22, "OUTFIT_Shirt");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "ShirtDecal", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_2632[k], &name);
+		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_2635[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2463), 169, "OUTFIT_Name");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2466), 169, "OUTFIT_Name");
 
 	for (k = 0; k < 21; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "Name", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_TEXT_LABEL_31_TO_SAVE(&panParam0->f_2463[k /*8*/], &name);
+		MISC::REGISTER_TEXT_LABEL_31_TO_SAVE(&panParam0->f_2466[k /*8*/], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2654), 40, "LAST_JobGamer");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_2657), 40, "LAST_JobGamer");
 
 	for (k = 0; k < 3; k = k + 1)
 	{
@@ -892,82 +892,82 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_1", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&panParam0->f_2654[k /*13*/], &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&panParam0->f_2657[k /*13*/], &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_2", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_1), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_1), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_3", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_2), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_2), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_4", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_3), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_3), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_5", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_4), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_4), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_6", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_5), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_5), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_7", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_6), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_6), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_8", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_7), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_7), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_9", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_8), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_8), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_10", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_9), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_9), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_11", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_10), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_10), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_12", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_11), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_11), &name3);
 		name3 = { name };
 		TEXT_LABEL_APPEND_STRING(&name3, "_13", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2654[k /*13*/].f_12), &name3);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_2657[k /*13*/].f_12), &name3);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::REGISTER_BOOL_TO_SAVE(&(panParam0->f_4240), "DO_CompletedObjectives");
-	MISC::REGISTER_BOOL_TO_SAVE(&(panParam0->f_4241), "DO_LoggedInToday");
-	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_4242), "DO_xValue");
-	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_4243), "DO_LastHistoryLength");
-	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_4244), "DO_LastResetTime");
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4245), 10, "DO_Objectives");
+	MISC::REGISTER_BOOL_TO_SAVE(&(panParam0->f_4243), "DO_CompletedObjectives");
+	MISC::REGISTER_BOOL_TO_SAVE(&(panParam0->f_4244), "DO_LoggedInToday");
+	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_4245), "DO_xValue");
+	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_4246), "DO_LastHistoryLength");
+	MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_4247), "DO_LastResetTime");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4248), 10, "DO_Objectives");
 
 	for (k = 0; k < 3; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "Objective", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_4245[k /*3*/], &name);
+		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_4248[k /*3*/], &name);
 		TEXT_LABEL_ASSIGN_STRING(&name, "Completed", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_BOOL_TO_SAVE(&(panParam0->f_4245[k /*3*/].f_1), &name);
+		MISC::REGISTER_BOOL_TO_SAVE(&(panParam0->f_4248[k /*3*/].f_1), &name);
 		TEXT_LABEL_ASSIGN_STRING(&name, "Initial", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_4245[k /*3*/].f_2), &name);
+		MISC::REGISTER_INT_TO_SAVE(&(panParam0->f_4248[k /*3*/].f_2), &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4255), 25, "DO_History");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4258), 25, "DO_History");
 
 	for (k = 0; k < 24; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "History", 16);
 		TEXT_LABEL_APPEND_STRING(&name, "_", 16);
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
-		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_4255[k], &name);
+		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_4258[k], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4280), 49, "LAST_JobGamer_TL");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4283), 49, "LAST_JobGamer_TL");
 
 	for (k = 0; k < 3; k = k + 1)
 	{
@@ -975,31 +975,31 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
 		name4 = { name };
 		TEXT_LABEL_APPEND_STRING(&name4, "_1", 16);
-		MISC::REGISTER_TEXT_LABEL_63_TO_SAVE(&panParam0->f_4280[k /*16*/], &name4);
+		MISC::REGISTER_TEXT_LABEL_63_TO_SAVE(&panParam0->f_4283[k /*16*/], &name4);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4329), 11, "BGSAVEINT");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4332), 11, "BGSAVEINT");
 
 	for (i = 0; i < 10; i = i + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "BGSAVEINT", 16);
 		TEXT_LABEL_APPEND_INT(&name, i, 16);
-		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_4329[i], &name);
+		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_4332[i], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4340), 3, "PROPLIB");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4343), 3, "PROPLIB");
 
-	for (i = 0; i < panParam0->f_4340; i = i + 1)
+	for (i = 0; i < panParam0->f_4343; i = i + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&name, "PROPLIB", 16);
 		TEXT_LABEL_APPEND_INT(&name, i, 16);
-		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_4340[i], &name);
+		MISC::REGISTER_INT_TO_SAVE(&panParam0->f_4343[i], &name);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4343), 40, "LAST_GOGamer");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4346), 40, "LAST_GOGamer");
 
 	for (k = 0; k < 3; k = k + 1)
 	{
@@ -1007,47 +1007,47 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_1", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&panParam0->f_4343[k /*13*/], &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&panParam0->f_4346[k /*13*/], &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_2", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_1), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_1), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_3", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_2), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_2), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_4", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_3), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_3), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_5", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_4), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_4), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_6", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_5), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_5), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_7", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_6), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_6), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_8", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_7), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_7), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_9", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_8), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_8), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_10", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_9), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_9), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_11", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_10), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_10), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_12", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_11), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_11), &name5);
 		name5 = { name };
 		TEXT_LABEL_APPEND_STRING(&name5, "_13", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4343[k /*13*/].f_12), &name5);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4346[k /*13*/].f_12), &name5);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4383), 40, "LAST_GOJobGamer");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4386), 40, "LAST_GOJobGamer");
 
 	for (k = 0; k < 3; k = k + 1)
 	{
@@ -1055,47 +1055,47 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_1", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&panParam0->f_4383[k /*13*/], &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&panParam0->f_4386[k /*13*/], &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_2", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_1), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_1), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_3", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_2), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_2), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_4", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_3), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_3), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_5", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_4), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_4), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_6", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_5), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_5), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_7", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_6), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_6), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_8", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_7), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_7), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_9", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_8), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_8), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_10", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_9), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_9), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_11", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_10), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_10), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_12", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_11), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_11), &name6);
 		name6 = { name };
 		TEXT_LABEL_APPEND_STRING(&name6, "_13", 16);
-		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4383[k /*13*/].f_12), &name6);
+		MISC::REGISTER_INT64_TO_SAVE(&(panParam0->f_4386[k /*13*/].f_12), &name6);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
-	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4423), 49, "LAST_GOJobGamer_TL");
+	MISC::START_SAVE_ARRAY_WITH_SIZE(&(panParam0->f_4426), 49, "LAST_GOJobGamer_TL");
 
 	for (k = 0; k < 3; k = k + 1)
 	{
@@ -1103,7 +1103,7 @@ void func_13(Any* panParam0, const char* sParam1) // Position - 0x1259 (4697)
 		TEXT_LABEL_APPEND_INT(&name, k, 16);
 		name7 = { name };
 		TEXT_LABEL_APPEND_STRING(&name7, "_1", 16);
-		MISC::REGISTER_TEXT_LABEL_63_TO_SAVE(&panParam0->f_4423[k /*16*/], &name7);
+		MISC::REGISTER_TEXT_LABEL_63_TO_SAVE(&panParam0->f_4426[k /*16*/], &name7);
 	}
 
 	MISC::STOP_SAVE_ARRAY();
@@ -1414,7 +1414,7 @@ void func_21(float fParam0) // Position - 0x2BA8 (11176)
 
 void func_22() // Position - 0x2C0A (11274)
 {
-	Global_114344.f_26438.f_4 = 0;
+	Global_114904.f_26441.f_4 = 0;
 	return;
 }
 
@@ -1424,12 +1424,12 @@ void func_23() // Position - 0x2C1C (11292)
 	int outValue2;
 	int outValue3;
 
-	STATS::STAT_GET_INT(joaat("CONTENT_HANGER_VEH"), &outValue, -1);
-	STATS::STAT_GET_INT(joaat("CONTENT_MARINA_VEH"), &outValue2, -1);
-	STATS::STAT_GET_INT(joaat("CONTENT_HELI_VEH"), &outValue3, -1);
+	STATS::STAT_GET_INT(joaat("CONTENT_HANGER_VEH") /* TUNEABLE: CONTENT_HANGER_VEH */, &outValue, -1);
+	STATS::STAT_GET_INT(joaat("CONTENT_MARINA_VEH") /* TUNEABLE: CONTENT_MARINA_VEH */, &outValue2, -1);
+	STATS::STAT_GET_INT(joaat("CONTENT_HELI_VEH") /* TUNEABLE: CONTENT_HELI_VEH */, &outValue3, -1);
 
 	if (outValue >= 0 && outValue2 >= 0 && outValue3 >= 0)
-		Global_114344.f_668.f_1316 = Global_114344.f_668.f_1316 - outValue;
+		Global_114904.f_668.f_1319 = Global_114904.f_668.f_1319 - outValue;
 
 	return;
 }
@@ -1444,11 +1444,11 @@ void func_24() // Position - 0x2C7B (11387)
 	{
 		for (j = 171; j <= 198; j = j + 1)
 		{
-			if (IS_BIT_SET(Global_114344.f_25186[j], i))
+			if (IS_BIT_SET(Global_114904.f_25189[j], i))
 			{
-				MISC::CLEAR_BIT(&Global_114344.f_25186[j], i);
+				MISC::CLEAR_BIT(&Global_114904.f_25189[j], i);
 				num = j + (198 - 171) + 1;
-				MISC::SET_BIT(&Global_114344.f_25186[num], i);
+				MISC::SET_BIT(&Global_114904.f_25189[num], i);
 			}
 		}
 	}
@@ -1459,7 +1459,7 @@ void func_24() // Position - 0x2C7B (11387)
 void func_25() // Position - 0x2CE7 (11495)
 {
 	if (func_26(54) || func_26(55) || func_26(56) || func_26(57) || func_26(58))
-		MISC::SET_BIT(&(Global_114344.f_10020.f_25), 6);
+		MISC::SET_BIT(&(Global_114904.f_10023.f_25), 6);
 
 	return;
 }
@@ -1469,7 +1469,7 @@ BOOL func_26(int iParam0) // Position - 0x2D36 (11574)
 	if (iParam0 == 94 || iParam0 == -1)
 		return false;
 
-	return Global_114344.f_9089.f_330[iParam0 /*6*/];
+	return Global_114904.f_9092.f_330[iParam0 /*6*/];
 }
 
 void func_27() // Position - 0x2D62 (11618)
@@ -1479,25 +1479,25 @@ void func_27() // Position - 0x2D62 (11618)
 
 void func_28() // Position - 0x2D6A (11626)
 {
-	if (Global_114344.f_9089.f_99.f_205[7] != 0)
-		if (!Global_114344.f_9089.f_330[86 /*6*/])
-			Global_114344.f_9089.f_330[86 /*6*/] = true;
+	if (Global_114904.f_9092.f_99.f_205[7] != 0)
+		if (!Global_114904.f_9092.f_330[86 /*6*/])
+			Global_114904.f_9092.f_330[86 /*6*/] = true;
 
-	if (Global_114344.f_9089.f_99.f_205[8] != 0)
-		if (!Global_114344.f_9089.f_330[71 /*6*/])
-			Global_114344.f_9089.f_330[71 /*6*/] = true;
+	if (Global_114904.f_9092.f_99.f_205[8] != 0)
+		if (!Global_114904.f_9092.f_330[71 /*6*/])
+			Global_114904.f_9092.f_330[71 /*6*/] = true;
 
-	if (Global_114344.f_9089.f_99.f_205[9] != 0)
-		if (!Global_114344.f_9089.f_330[91 /*6*/])
-			Global_114344.f_9089.f_330[91 /*6*/] = true;
+	if (Global_114904.f_9092.f_99.f_205[9] != 0)
+		if (!Global_114904.f_9092.f_330[91 /*6*/])
+			Global_114904.f_9092.f_330[91 /*6*/] = true;
 
-	if (Global_114344.f_9089.f_99.f_205[10] != 0)
-		if (!Global_114344.f_9089.f_330[67 /*6*/])
-			Global_114344.f_9089.f_330[67 /*6*/] = true;
+	if (Global_114904.f_9092.f_99.f_205[10] != 0)
+		if (!Global_114904.f_9092.f_330[67 /*6*/])
+			Global_114904.f_9092.f_330[67 /*6*/] = true;
 
-	if (Global_114344.f_9089.f_99.f_205[11] != 0)
-		if (!Global_114344.f_9089.f_330[77 /*6*/])
-			Global_114344.f_9089.f_330[77 /*6*/] = true;
+	if (Global_114904.f_9092.f_99.f_205[11] != 0)
+		if (!Global_114904.f_9092.f_330[77 /*6*/])
+			Global_114904.f_9092.f_330[77 /*6*/] = true;
 
 	func_29(195, 198);
 	func_29(195, 197);
@@ -1517,33 +1517,33 @@ void func_29(int iParam0, int iParam1) // Position - 0x2E8A (11914)
 	float num5;
 	float num6;
 
-	unk = { Global_114344.f_10198[iParam0 /*12*/] };
-	num = Global_114344.f_10198[iParam0 /*12*/].f_4;
-	flag = Global_114344.f_10198[iParam0 /*12*/].f_5;
-	num2 = Global_114344.f_10198[iParam0 /*12*/].f_6;
-	num3 = Global_114344.f_10198[iParam0 /*12*/].f_7;
-	num4 = Global_114344.f_10198[iParam0 /*12*/].f_8;
-	unk5 = Global_114344.f_10198[iParam0 /*12*/].f_9;
-	num5 = Global_114344.f_10198[iParam0 /*12*/].f_10;
-	num6 = Global_114344.f_10198[iParam0 /*12*/].f_11;
-	Global_114344.f_10198[iParam0 /*12*/] = { Global_114344.f_10198[iParam1 /*12*/] };
-	Global_114344.f_10198[iParam0 /*12*/].f_4 = Global_114344.f_10198[iParam1 /*12*/].f_4;
-	Global_114344.f_10198[iParam0 /*12*/].f_5 = Global_114344.f_10198[iParam1 /*12*/].f_5;
-	Global_114344.f_10198[iParam0 /*12*/].f_6 = Global_114344.f_10198[iParam1 /*12*/].f_6;
-	Global_114344.f_10198[iParam0 /*12*/].f_7 = Global_114344.f_10198[iParam1 /*12*/].f_7;
-	Global_114344.f_10198[iParam0 /*12*/].f_8 = Global_114344.f_10198[iParam1 /*12*/].f_8;
-	Global_114344.f_10198[iParam0 /*12*/].f_9 = Global_114344.f_10198[iParam1 /*12*/].f_9;
-	Global_114344.f_10198[iParam0 /*12*/].f_10 = Global_114344.f_10198[iParam1 /*12*/].f_10;
-	Global_114344.f_10198[iParam0 /*12*/].f_11 = Global_114344.f_10198[iParam1 /*12*/].f_11;
-	Global_114344.f_10198[iParam1 /*12*/] = { unk };
-	Global_114344.f_10198[iParam1 /*12*/].f_4 = num;
-	Global_114344.f_10198[iParam1 /*12*/].f_5 = flag;
-	Global_114344.f_10198[iParam1 /*12*/].f_6 = num2;
-	Global_114344.f_10198[iParam1 /*12*/].f_7 = num3;
-	Global_114344.f_10198[iParam1 /*12*/].f_8 = num4;
-	Global_114344.f_10198[iParam1 /*12*/].f_9 = unk5;
-	Global_114344.f_10198[iParam1 /*12*/].f_10 = num5;
-	Global_114344.f_10198[iParam1 /*12*/].f_11 = num6;
+	unk = { Global_114904.f_10201[iParam0 /*12*/] };
+	num = Global_114904.f_10201[iParam0 /*12*/].f_4;
+	flag = Global_114904.f_10201[iParam0 /*12*/].f_5;
+	num2 = Global_114904.f_10201[iParam0 /*12*/].f_6;
+	num3 = Global_114904.f_10201[iParam0 /*12*/].f_7;
+	num4 = Global_114904.f_10201[iParam0 /*12*/].f_8;
+	unk5 = Global_114904.f_10201[iParam0 /*12*/].f_9;
+	num5 = Global_114904.f_10201[iParam0 /*12*/].f_10;
+	num6 = Global_114904.f_10201[iParam0 /*12*/].f_11;
+	Global_114904.f_10201[iParam0 /*12*/] = { Global_114904.f_10201[iParam1 /*12*/] };
+	Global_114904.f_10201[iParam0 /*12*/].f_4 = Global_114904.f_10201[iParam1 /*12*/].f_4;
+	Global_114904.f_10201[iParam0 /*12*/].f_5 = Global_114904.f_10201[iParam1 /*12*/].f_5;
+	Global_114904.f_10201[iParam0 /*12*/].f_6 = Global_114904.f_10201[iParam1 /*12*/].f_6;
+	Global_114904.f_10201[iParam0 /*12*/].f_7 = Global_114904.f_10201[iParam1 /*12*/].f_7;
+	Global_114904.f_10201[iParam0 /*12*/].f_8 = Global_114904.f_10201[iParam1 /*12*/].f_8;
+	Global_114904.f_10201[iParam0 /*12*/].f_9 = Global_114904.f_10201[iParam1 /*12*/].f_9;
+	Global_114904.f_10201[iParam0 /*12*/].f_10 = Global_114904.f_10201[iParam1 /*12*/].f_10;
+	Global_114904.f_10201[iParam0 /*12*/].f_11 = Global_114904.f_10201[iParam1 /*12*/].f_11;
+	Global_114904.f_10201[iParam1 /*12*/] = { unk };
+	Global_114904.f_10201[iParam1 /*12*/].f_4 = num;
+	Global_114904.f_10201[iParam1 /*12*/].f_5 = flag;
+	Global_114904.f_10201[iParam1 /*12*/].f_6 = num2;
+	Global_114904.f_10201[iParam1 /*12*/].f_7 = num3;
+	Global_114904.f_10201[iParam1 /*12*/].f_8 = num4;
+	Global_114904.f_10201[iParam1 /*12*/].f_9 = unk5;
+	Global_114904.f_10201[iParam1 /*12*/].f_10 = num5;
+	Global_114904.f_10201[iParam1 /*12*/].f_11 = num6;
 	return;
 }
 
@@ -1553,9 +1553,9 @@ void func_30() // Position - 0x308E (12430)
 
 	for (i = 0; i < 16; i = i + 1)
 	{
-		if (!func_31(Global_114344.f_24908[i /*4*/]))
-			if (Global_114344.f_24908[i /*4*/] != _CHAR_NULL)
-				Global_114344.f_24908[i /*4*/] = _CHAR_NULL;
+		if (!func_31(Global_114904.f_24911[i /*4*/]))
+			if (Global_114904.f_24911[i /*4*/] != _CHAR_NULL)
+				Global_114904.f_24911[i /*4*/] = _CHAR_NULL;
 	}
 
 	return;
@@ -1615,7 +1615,7 @@ int func_34(var uParam0, int iParam1) // Position - 0x3176 (12662)
 	}
 
 	uParam0->f_32 = func_67(iParam1);
-	uParam0->f_16 = { func_66(iParam1) };
+	TEXT_LABEL_ASSIGN_STRING(&(uParam0->f_16), func_66(iParam1), 16);
 	uParam0->f_20 = { func_65(iParam1) };
 	func_63(uParam0, iParam1);
 	func_61(uParam0, iParam1);
@@ -12104,450 +12104,450 @@ struct<4> func_65(int iParam0) // Position - 0x21584 (136580)
 	return unk;
 }
 
-struct<4> func_66(int iParam0) // Position - 0x21C4C (138316)
+char* func_66(int iParam0) // Position - 0x21C4C (138316)
 {
-	var unk;
+	char* str;
 
 	switch (iParam0)
 	{
 		case 1:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_1" /*Eclipse Towers, Apt 31*/, 16);
+			str = "MP_PROP_1" /*Eclipse Towers, Apt 31*/;
 			break;
 	
 		case 2:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_2" /*Eclipse Towers, Apt 9*/, 16);
+			str = "MP_PROP_2" /*Eclipse Towers, Apt 9*/;
 			break;
 	
 		case 3:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_3" /*Eclipse Towers, Apt 40*/, 16);
+			str = "MP_PROP_3" /*Eclipse Towers, Apt 40*/;
 			break;
 	
 		case 4:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_4" /*Eclipse Towers, Apt 5*/, 16);
+			str = "MP_PROP_4" /*Eclipse Towers, Apt 5*/;
 			break;
 	
 		case 5:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_5" /*3 Alta St, Apt 10*/, 16);
+			str = "MP_PROP_5" /*3 Alta St, Apt 10*/;
 			break;
 	
 		case 6:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_6" /*3 Alta St, Apt 57*/, 16);
+			str = "MP_PROP_6" /*3 Alta St, Apt 57*/;
 			break;
 	
 		case 7:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_7" /*Del Perro Heights, Apt 20*/, 16);
+			str = "MP_PROP_7" /*Del Perro Heights, Apt 20*/;
 			break;
 	
 		case 8:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_8" /*1162 Power St, Apt 3*/, 16);
+			str = "MP_PROP_8" /*1162 Power St, Apt 3*/;
 			break;
 	
 		case 9:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_9" /*0605 Spanish Ave, Apt 1*/, 16);
+			str = "MP_PROP_9" /*0605 Spanish Ave, Apt 1*/;
 			break;
 	
 		case 10:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_10" /*0604 Las Lagunas Blvd, Apt 4*/, 16);
+			str = "MP_PROP_10" /*0604 Las Lagunas Blvd, Apt 4*/;
 			break;
 	
 		case 11:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_11" /*0184 Milton Rd, Apt 13*/, 16);
+			str = "MP_PROP_11" /*0184 Milton Rd, Apt 13*/;
 			break;
 	
 		case 12:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_12" /*The Royale, Apt 19*/, 16);
+			str = "MP_PROP_12" /*The Royale, Apt 19*/;
 			break;
 	
 		case 13:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_13" /*0504 S Mo Milton Dr*/, 16);
+			str = "MP_PROP_13" /*0504 S Mo Milton Dr*/;
 			break;
 	
 		case 14:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_14" /*0115 Bay City Ave, Apt 45*/, 16);
+			str = "MP_PROP_14" /*0115 Bay City Ave, Apt 45*/;
 			break;
 	
 		case 15:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_15" /*0325 South Rockford Dr*/, 16);
+			str = "MP_PROP_15" /*0325 South Rockford Dr*/;
 			break;
 	
 		case 16:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_16" /*Dream Tower, Apt 15*/, 16);
+			str = "MP_PROP_16" /*Dream Tower, Apt 15*/;
 			break;
 	
 		case 17:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_17" /*2143 Las Lagunas Blvd, Apt 9*/, 16);
+			str = "MP_PROP_17" /*2143 Las Lagunas Blvd, Apt 9*/;
 			break;
 	
 		case 18:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_18" /*1561 San Vitas St, Apt 2*/, 16);
+			str = "MP_PROP_18" /*1561 San Vitas St, Apt 2*/;
 			break;
 	
 		case 19:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_19" /*0112 S Rockford Dr, Apt 13*/, 16);
+			str = "MP_PROP_19" /*0112 S Rockford Dr, Apt 13*/;
 			break;
 	
 		case 20:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_20" /*2057 Vespucci Blvd, Apt 1*/, 16);
+			str = "MP_PROP_20" /*2057 Vespucci Blvd, Apt 1*/;
 			break;
 	
 		case 21:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_21" /*0069 Cougar Ave, Apt 19*/, 16);
+			str = "MP_PROP_21" /*0069 Cougar Ave, Apt 19*/;
 			break;
 	
 		case 22:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_22" /*1237 Prosperity St, Apt 21*/, 16);
+			str = "MP_PROP_22" /*1237 Prosperity St, Apt 21*/;
 			break;
 	
 		case 23:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_23" /*1115 Blvd Del Perro, Apt 18*/, 16);
+			str = "MP_PROP_23" /*1115 Blvd Del Perro, Apt 18*/;
 			break;
 	
 		case 24:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_24" /*0120 Murrieta Heights*/, 16);
+			str = "MP_PROP_24" /*0120 Murrieta Heights*/;
 			break;
 	
 		case 25:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_25" /*Unit 14 Popular St*/, 16);
+			str = "MP_PROP_25" /*Unit 14 Popular St*/;
 			break;
 	
 		case 26:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_26" /*Unit 2 Popular St*/, 16);
+			str = "MP_PROP_26" /*Unit 2 Popular St*/;
 			break;
 	
 		case 27:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_27" /*331 Supply St*/, 16);
+			str = "MP_PROP_27" /*331 Supply St*/;
 			break;
 	
 		case 28:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_28" /*Unit 1 Olympic Fwy*/, 16);
+			str = "MP_PROP_28" /*Unit 1 Olympic Fwy*/;
 			break;
 	
 		case 29:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_29" /*0754 Roy Lowenstein Blvd*/, 16);
+			str = "MP_PROP_29" /*0754 Roy Lowenstein Blvd*/;
 			break;
 	
 		case 30:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_30" /*12 Little Bighorn Ave*/, 16);
+			str = "MP_PROP_30" /*12 Little Bighorn Ave*/;
 			break;
 	
 		case 31:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_31" /*Unit 124 Popular St*/, 16);
+			str = "MP_PROP_31" /*Unit 124 Popular St*/;
 			break;
 	
 		case 32:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_32" /*0552 Roy Lowenstein Blvd*/, 16);
+			str = "MP_PROP_32" /*0552 Roy Lowenstein Blvd*/;
 			break;
 	
 		case 33:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_33" /*0432 Davis Ave*/, 16);
+			str = "MP_PROP_33" /*0432 Davis Ave*/;
 			break;
 	
 		case 34:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_34" /*Del Perro Heights, Apt 7*/, 16);
+			str = "MP_PROP_34" /*Del Perro Heights, Apt 7*/;
 			break;
 	
 		case 35:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_35" /*Weazel Plaza, Apt 101*/, 16);
+			str = "MP_PROP_35" /*Weazel Plaza, Apt 101*/;
 			break;
 	
 		case 36:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_36" /*Weazel Plaza, Apt 70*/, 16);
+			str = "MP_PROP_36" /*Weazel Plaza, Apt 70*/;
 			break;
 	
 		case 37:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_37" /*Weazel Plaza, Apt 26*/, 16);
+			str = "MP_PROP_37" /*Weazel Plaza, Apt 26*/;
 			break;
 	
 		case 38:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_38" /*4 Integrity Way, Apt 30*/, 16);
+			str = "MP_PROP_38" /*4 Integrity Way, Apt 30*/;
 			break;
 	
 		case 39:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_39" /*4 Integrity Way, Apt 35*/, 16);
+			str = "MP_PROP_39" /*4 Integrity Way, Apt 35*/;
 			break;
 	
 		case 40:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_40" /*Richards Majestic, Apt 4*/, 16);
+			str = "MP_PROP_40" /*Richards Majestic, Apt 4*/;
 			break;
 	
 		case 41:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_41" /*Richards Majestic, Apt 51*/, 16);
+			str = "MP_PROP_41" /*Richards Majestic, Apt 51*/;
 			break;
 	
 		case 42:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_42" /*Tinsel Towers, Apt 45*/, 16);
+			str = "MP_PROP_42" /*Tinsel Towers, Apt 45*/;
 			break;
 	
 		case 43:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_43" /*Tinsel Towers, Apt 29*/, 16);
+			str = "MP_PROP_43" /*Tinsel Towers, Apt 29*/;
 			break;
 	
 		case 44:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_44" /*142 Paleto Blvd*/, 16);
+			str = "MP_PROP_44" /*142 Paleto Blvd*/;
 			break;
 	
 		case 45:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_45" /*1 Strawberry Ave*/, 16);
+			str = "MP_PROP_45" /*1 Strawberry Ave*/;
 			break;
 	
 		case 46:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_46" /*1932 Grapeseed Ave*/, 16);
+			str = "MP_PROP_46" /*1932 Grapeseed Ave*/;
 			break;
 	
 		case 47:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_48" /*1920 Senora Way*/, 16);
+			str = "MP_PROP_48" /*1920 Senora Way*/;
 			break;
 	
 		case 48:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_49" /*2000 Great Ocean Highway*/, 16);
+			str = "MP_PROP_49" /*2000 Great Ocean Highway*/;
 			break;
 	
 		case 49:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_50" /*197 Route 68*/, 16);
+			str = "MP_PROP_50" /*197 Route 68*/;
 			break;
 	
 		case 50:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_51" /*870 Route 68 Approach*/, 16);
+			str = "MP_PROP_51" /*870 Route 68 Approach*/;
 			break;
 	
 		case 51:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_52" /*1200 Route 68*/, 16);
+			str = "MP_PROP_52" /*1200 Route 68*/;
 			break;
 	
 		case 52:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_57" /*8754 Route 68*/, 16);
+			str = "MP_PROP_57" /*8754 Route 68*/;
 			break;
 	
 		case 53:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_59" /*1905 Davis Ave*/, 16);
+			str = "MP_PROP_59" /*1905 Davis Ave*/;
 			break;
 	
 		case 54:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_60" /*1623 South Shambles St*/, 16);
+			str = "MP_PROP_60" /*1623 South Shambles St*/;
 			break;
 	
 		case 55:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_61" /*4531 Dry Dock St*/, 16);
+			str = "MP_PROP_61" /*4531 Dry Dock St*/;
 			break;
 	
 		case 56:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_62" /*1337 Exceptionalists Way*/, 16);
+			str = "MP_PROP_62" /*1337 Exceptionalists Way*/;
 			break;
 	
 		case 57:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_63" /*Unit 76 Greenwich Parkway*/, 16);
+			str = "MP_PROP_63" /*Unit 76 Greenwich Parkway*/;
 			break;
 	
 		case 58:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_64" /*Garage Innocence Blvd*/, 16);
+			str = "MP_PROP_64" /*Garage Innocence Blvd*/;
 			break;
 	
 		case 59:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_65" /*634 Blvd Del Perro*/, 16);
+			str = "MP_PROP_65" /*634 Blvd Del Perro*/;
 			break;
 	
 		case 60:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_66" /*0897 Mirror Park Blvd*/, 16);
+			str = "MP_PROP_66" /*0897 Mirror Park Blvd*/;
 			break;
 	
 		case 61:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_67" /*Eclipse Towers, Apt 3*/, 16);
+			str = "MP_PROP_67" /*Eclipse Towers, Apt 3*/;
 			break;
 	
 		case 62:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_68" /*Del Perro Heights, Apt 4*/, 16);
+			str = "MP_PROP_68" /*Del Perro Heights, Apt 4*/;
 			break;
 	
 		case 63:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_69" /*Richards Majestic, Apt 2*/, 16);
+			str = "MP_PROP_69" /*Richards Majestic, Apt 2*/;
 			break;
 	
 		case 64:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_70" /*Tinsel Towers, Apt 42*/, 16);
+			str = "MP_PROP_70" /*Tinsel Towers, Apt 42*/;
 			break;
 	
 		case 65:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_71" /*4 Integrity Way, Apt 28*/, 16);
+			str = "MP_PROP_71" /*4 Integrity Way, Apt 28*/;
 			break;
 	
 		case 66:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_72" /*4 Hangman Ave*/, 16);
+			str = "MP_PROP_72" /*4 Hangman Ave*/;
 			break;
 	
 		case 67:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_73" /*12 Sustancia Rd*/, 16);
+			str = "MP_PROP_73" /*12 Sustancia Rd*/;
 			break;
 	
 		case 68:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_74" /*4584 Procopio Dr*/, 16);
+			str = "MP_PROP_74" /*4584 Procopio Dr*/;
 			break;
 	
 		case 69:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_75" /*4401 Procopio Dr*/, 16);
+			str = "MP_PROP_75" /*4401 Procopio Dr*/;
 			break;
 	
 		case 70:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_76" /*0232 Paleto Blvd*/, 16);
+			str = "MP_PROP_76" /*0232 Paleto Blvd*/;
 			break;
 	
 		case 71:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_77" /*140 Zancudo Ave*/, 16);
+			str = "MP_PROP_77" /*140 Zancudo Ave*/;
 			break;
 	
 		case 72:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_78" /*1893 Grapeseed Ave*/, 16);
+			str = "MP_PROP_78" /*1893 Grapeseed Ave*/;
 			break;
 	
 		case 83:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_79" /*Eclipse Towers, Penthouse Suite 1*/, 16);
+			str = "MP_PROP_79" /*Eclipse Towers, Penthouse Suite 1*/;
 			break;
 	
 		case 84:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_80" /*Eclipse Towers, Penthouse Suite 2*/, 16);
+			str = "MP_PROP_80" /*Eclipse Towers, Penthouse Suite 2*/;
 			break;
 	
 		case 85:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_81" /*Eclipse Towers, Penthouse Suite 3*/, 16);
+			str = "MP_PROP_81" /*Eclipse Towers, Penthouse Suite 3*/;
 			break;
 	
 		case 73:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_83" /*3655 Wild Oats Drive*/, 16);
+			str = "MP_PROP_83" /*3655 Wild Oats Drive*/;
 			break;
 	
 		case 74:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_84" /*2044 North Conker Avenue*/, 16);
+			str = "MP_PROP_84" /*2044 North Conker Avenue*/;
 			break;
 	
 		case 75:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_85" /*2868 Hillcrest Avenue*/, 16);
+			str = "MP_PROP_85" /*2868 Hillcrest Avenue*/;
 			break;
 	
 		case 76:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_86" /*2862 Hillcrest Avenue*/, 16);
+			str = "MP_PROP_86" /*2862 Hillcrest Avenue*/;
 			break;
 	
 		case 77:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_87" /*3677 Whispymound Drive*/, 16);
+			str = "MP_PROP_87" /*3677 Whispymound Drive*/;
 			break;
 	
 		case 78:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_89" /*2117 Milton Road*/, 16);
+			str = "MP_PROP_89" /*2117 Milton Road*/;
 			break;
 	
 		case 79:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_90" /*2866 Hillcrest Avenue*/, 16);
+			str = "MP_PROP_90" /*2866 Hillcrest Avenue*/;
 			break;
 	
 		case 80:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_92" /*2874 Hillcrest Avenue*/, 16);
+			str = "MP_PROP_92" /*2874 Hillcrest Avenue*/;
 			break;
 	
 		case 81:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_94" /*2113 Mad Wayne Thunder Drive*/, 16);
+			str = "MP_PROP_94" /*2113 Mad Wayne Thunder Drive*/;
 			break;
 	
 		case 82:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_95" /*2045 North Conker Avenue*/, 16);
+			str = "MP_PROP_95" /*2045 North Conker Avenue*/;
 			break;
 	
 		case 86:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "PM_SPAWN_Y" /*Private Yacht*/, 16);
+			str = "PM_SPAWN_Y" /*Private Yacht*/;
 			break;
 	
 		case 87:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_OFF1" /*Lombank West*/, 16);
+			str = "MP_PROP_OFF1" /*Lombank West*/;
 			break;
 	
 		case 88:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_OFF2" /*Maze Bank West*/, 16);
+			str = "MP_PROP_OFF2" /*Maze Bank West*/;
 			break;
 	
 		case 89:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_OFF3" /*Arcadius Business Center*/, 16);
+			str = "MP_PROP_OFF3" /*Arcadius Business Center*/;
 			break;
 	
 		case 90:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_OFF4" /*Maze Bank Tower*/, 16);
+			str = "MP_PROP_OFF4" /*Maze Bank Tower*/;
 			break;
 	
 		case 91:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH1" /*Rancho Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH1" /*Rancho Clubhouse*/;
 			break;
 	
 		case 92:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH2" /*Del Perro Beach Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH2" /*Del Perro Beach Clubhouse*/;
 			break;
 	
 		case 93:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH3" /*Pillbox Hill Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH3" /*Pillbox Hill Clubhouse*/;
 			break;
 	
 		case 94:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH4" /*Great Chaparral Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH4" /*Great Chaparral Clubhouse*/;
 			break;
 	
 		case 95:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH5" /*Paleto Bay Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH5" /*Paleto Bay Clubhouse*/;
 			break;
 	
 		case 96:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH6" /*Sandy Shores Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH6" /*Sandy Shores Clubhouse*/;
 			break;
 	
 		case 97:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH7" /*La Mesa Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH7" /*La Mesa Clubhouse*/;
 			break;
 	
 		case 98:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH8" /*Downtown Vinewood Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH8" /*Downtown Vinewood Clubhouse*/;
 			break;
 	
 		case 99:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH9" /*Hawick Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH9" /*Hawick Clubhouse*/;
 			break;
 	
 		case 100:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH10" /*Grapeseed Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH10" /*Grapeseed Clubhouse*/;
 			break;
 	
 		case 101:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH11" /*Paleto Bay Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH11" /*Paleto Bay Clubhouse*/;
 			break;
 	
 		case 102:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_CLUBH12" /*Vespucci Beach Clubhouse*/, 16);
+			str = "MP_PROP_CLUBH12" /*Vespucci Beach Clubhouse*/;
 			break;
 	
 		case 103:
 		case 106:
 		case 109:
 		case 112:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_OFFG1" /*Office Garage 1*/, 16);
+			str = "MP_PROP_OFFG1" /*Office Garage 1*/;
 			break;
 	
 		case 104:
 		case 107:
 		case 110:
 		case 113:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_OFFG2" /*Office Garage 2*/, 16);
+			str = "MP_PROP_OFFG2" /*Office Garage 2*/;
 			break;
 	
 		case 105:
 		case 108:
 		case 111:
 		case 114:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_OFFG3" /*Office Garage 3*/, 16);
+			str = "MP_PROP_OFFG3" /*Office Garage 3*/;
 			break;
 	
 		case 115:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "IE_WARE_1" /*Vehicle Warehouse*/, 16);
+			str = "IE_WARE_1" /*Vehicle Warehouse*/;
 			break;
 	}
 
-	return unk;
+	return str;
 }
 
-int func_67(int iParam0) // Position - 0x2239F (140191)
+int func_67(int iParam0) // Position - 0x222C9 (139977)
 {
 	int num;
 	BOOL flag;
@@ -12574,12 +12574,12 @@ int func_67(int iParam0) // Position - 0x2239F (140191)
 		if (NETSHOPPING::NET_GAMESERVER_CATALOG_ITEM_KEY_IS_VALID(hashKey))
 		{
 			price = NETSHOPPING::NET_GAMESERVER_GET_PRICE(hashKey, joaat("CATEGORY_PROPERTIE"), true);
-			unk17 = { func_66(iParam0) };
+			TEXT_LABEL_ASSIGN_STRING(&unk17, func_66(iParam0), 16);
 			return price;
 		}
 		else
 		{
-			unk21 = { func_66(iParam0) };
+			TEXT_LABEL_ASSIGN_STRING(&unk21, func_66(iParam0), 16);
 		}
 	}
 
@@ -12766,166 +12766,166 @@ int func_67(int iParam0) // Position - 0x2239F (140191)
 			return Global_262145.f_3738;
 	
 		case 61:
-			return Global_262145.f_7138[0];
+			return Global_262145.f_7221[0];
 	
 		case 62:
-			return Global_262145.f_7138[1];
+			return Global_262145.f_7221[1];
 	
 		case 63:
-			return Global_262145.f_7138[2];
+			return Global_262145.f_7221[2];
 	
 		case 64:
-			return Global_262145.f_7138[3];
+			return Global_262145.f_7221[3];
 	
 		case 65:
-			return Global_262145.f_7138[4];
+			return Global_262145.f_7221[4];
 	
 		case 66:
-			return Global_262145.f_8454;
+			return Global_262145.f_8537;
 	
 		case 67:
-			return Global_262145.f_8455;
+			return Global_262145.f_8538;
 	
 		case 68:
-			return Global_262145.f_8456;
+			return Global_262145.f_8539;
 	
 		case 69:
-			return Global_262145.f_8457;
+			return Global_262145.f_8540;
 	
 		case 70:
-			return Global_262145.f_8458;
+			return Global_262145.f_8541;
 	
 		case 71:
-			return Global_262145.f_8459;
+			return Global_262145.f_8542;
 	
 		case 72:
-			return Global_262145.f_8460;
+			return Global_262145.f_8543;
 	
 		case 73:
-			return Global_262145.f_13282;
+			return Global_262145.f_13371;
 	
 		case 74:
-			return Global_262145.f_13283;
+			return Global_262145.f_13372;
 	
 		case 75:
-			return Global_262145.f_13284;
+			return Global_262145.f_13373;
 	
 		case 76:
-			return Global_262145.f_13285;
+			return Global_262145.f_13374;
 	
 		case 77:
-			return Global_262145.f_13286;
+			return Global_262145.f_13375;
 	
 		case 78:
-			return Global_262145.f_13287;
+			return Global_262145.f_13376;
 	
 		case 79:
-			return Global_262145.f_13288;
+			return Global_262145.f_13377;
 	
 		case 80:
-			return Global_262145.f_13289;
+			return Global_262145.f_13378;
 	
 		case 81:
-			return Global_262145.f_13290;
+			return Global_262145.f_13379;
 	
 		case 82:
-			return Global_262145.f_13291;
+			return Global_262145.f_13380;
 	
 		case 83:
-			return Global_262145.f_13279;
+			return Global_262145.f_13368;
 	
 		case 84:
-			return Global_262145.f_13280;
+			return Global_262145.f_13369;
 	
 		case 85:
-			return Global_262145.f_13281;
+			return Global_262145.f_13370;
 	
 		case 86:
 			return 27000000;
 	
 		case 87:
-			return Global_262145.f_15839;
+			return Global_262145.f_15928;
 	
 		case 88:
-			return Global_262145.f_15840;
+			return Global_262145.f_15929;
 	
 		case 89:
-			return Global_262145.f_15841;
+			return Global_262145.f_15930;
 	
 		case 90:
-			return Global_262145.f_15842;
+			return Global_262145.f_15931;
 	
 		case 91:
-			return Global_262145.f_17835;
+			return Global_262145.f_17924;
 	
 		case 92:
-			return Global_262145.f_17837;
+			return Global_262145.f_17926;
 	
 		case 93:
-			return Global_262145.f_17833;
+			return Global_262145.f_17922;
 	
 		case 94:
-			return Global_262145.f_17842;
+			return Global_262145.f_17931;
 	
 		case 95:
-			return Global_262145.f_17839;
+			return Global_262145.f_17928;
 	
 		case 96:
-			return Global_262145.f_17841;
+			return Global_262145.f_17930;
 	
 		case 97:
-			return Global_262145.f_17834;
+			return Global_262145.f_17923;
 	
 		case 98:
-			return Global_262145.f_17832;
+			return Global_262145.f_17921;
 	
 		case 99:
-			return Global_262145.f_17831;
+			return Global_262145.f_17920;
 	
 		case 100:
-			return Global_262145.f_17840;
+			return Global_262145.f_17929;
 	
 		case 101:
-			return Global_262145.f_17838;
+			return Global_262145.f_17927;
 	
 		case 102:
-			return Global_262145.f_17836;
+			return Global_262145.f_17925;
 	
 		case 103:
-			return Global_262145.f_19405;
+			return Global_262145.f_19494;
 	
 		case 104:
-			return Global_262145.f_19299;
+			return Global_262145.f_19388;
 	
 		case 105:
-			return Global_262145.f_19300;
+			return Global_262145.f_19389;
 	
 		case 106:
-			return Global_262145.f_19405;
+			return Global_262145.f_19494;
 	
 		case 107:
-			return Global_262145.f_19299;
+			return Global_262145.f_19388;
 	
 		case 108:
-			return Global_262145.f_19300;
+			return Global_262145.f_19389;
 	
 		case 109:
-			return Global_262145.f_19405;
+			return Global_262145.f_19494;
 	
 		case 110:
-			return Global_262145.f_19299;
+			return Global_262145.f_19388;
 	
 		case 111:
-			return Global_262145.f_19300;
+			return Global_262145.f_19389;
 	
 		case 112:
-			return Global_262145.f_19405;
+			return Global_262145.f_19494;
 	
 		case 113:
-			return Global_262145.f_19299;
+			return Global_262145.f_19388;
 	
 		case 114:
-			return Global_262145.f_19300;
+			return Global_262145.f_19389;
 	
 		case 115:
 			return 3000000;
@@ -12934,12 +12934,12 @@ int func_67(int iParam0) // Position - 0x2239F (140191)
 	return 0;
 }
 
-void func_68(char* sParam0, int iParam1, int iParam2, BOOL bParam3) // Position - 0x22C3A (142394)
+void func_68(char* sParam0, int iParam1, int iParam2, BOOL bParam3) // Position - 0x22B64 (142180)
 {
 	var unk;
 
 	TEXT_LABEL_ASSIGN_STRING(sParam0, "FACTORY_INDEX_", 64);
-	unk = { func_66(iParam1) };
+	TEXT_LABEL_ASSIGN_STRING(&unk, func_66(iParam1), 16);
 	TEXT_LABEL_ASSIGN_STRING(sParam0, "PR_", 64);
 	TEXT_LABEL_APPEND_STRING(sParam0, &unk, 64);
 	TEXT_LABEL_APPEND_STRING(sParam0, "_t0_v", 64);
@@ -12951,7 +12951,7 @@ void func_68(char* sParam0, int iParam1, int iParam2, BOOL bParam3) // Position 
 	return;
 }
 
-BOOL func_69(int iParam0) // Position - 0x22C7D (142461)
+BOOL func_69(int iParam0) // Position - 0x22BA7 (142247)
 {
 	if (func_70())
 		if (iParam0 == 88 || iParam0 == 94 || iParam0 == 18 || iParam0 == 56)
@@ -12960,12 +12960,12 @@ BOOL func_69(int iParam0) // Position - 0x22C7D (142461)
 	return false;
 }
 
-BOOL func_70() // Position - 0x22CBA (142522)
+BOOL func_70() // Position - 0x22BE4 (142308)
 {
 	return func_72() || func_71();
 }
 
-int func_71() // Position - 0x22CD0 (142544)
+int func_71() // Position - 0x22BFA (142330)
 {
 	switch (NETWORK::GET_USER_STARTER_ACCESS())
 	{
@@ -12982,7 +12982,7 @@ int func_71() // Position - 0x22CD0 (142544)
 	return 0;
 }
 
-int func_72() // Position - 0x22CFE (142590)
+int func_72() // Position - 0x22C28 (142376)
 {
 	switch (NETWORK::GET_USER_PREMIUM_ACCESS())
 	{
@@ -12999,7 +12999,7 @@ int func_72() // Position - 0x22CFE (142590)
 	return 0;
 }
 
-BOOL func_73(int iParam0) // Position - 0x22D2C (142636)
+BOOL func_73(int iParam0) // Position - 0x22C56 (142422)
 {
 	if (_IS_EXCLUSIVE_CONTENT_UNLOCKED() && func_74())
 		if (iParam0 == 31)
@@ -13012,7 +13012,7 @@ BOOL func_73(int iParam0) // Position - 0x22D2C (142636)
 	return false;
 }
 
-int func_74() // Position - 0x22D64 (142692)
+int func_74() // Position - 0x22C8E (142478)
 {
 	int outValue;
 	int outValue2;
@@ -13020,13 +13020,13 @@ int func_74() // Position - 0x22D64 (142692)
 	int profileSetting;
 	int profileSetting2;
 
-	if (IS_BIT_SET(Global_28, 5))
-		if (IS_BIT_SET(Global_28, 1) || IS_BIT_SET(Global_28, 3))
+	if (IS_BIT_SET(Global_26, 5))
+		if (IS_BIT_SET(Global_26, 1) || IS_BIT_SET(Global_26, 3))
 			return 1;
 		else
 			return 0;
 
-	if (STATS::STAT_GET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT"), &outValue, -1))
+	if (STATS::STAT_GET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT") /* TUNEABLE: SP_UNLOCK_EXCLUS_CONTENT */, &outValue, -1))
 		if (IS_BIT_SET(outValue, 5))
 			if (IS_BIT_SET(outValue, 1) || IS_BIT_SET(outValue, 3))
 				return 1;
@@ -13035,9 +13035,9 @@ int func_74() // Position - 0x22D64 (142692)
 
 	if (STATS::STAT_SLOT_IS_LOADED(0))
 	{
-		if (Global_153226.f_3)
+		if (Global_153789.f_3)
 		{
-			statHash = joaat("MPPLY_PLAT_UP_LB_CHECK");
+			statHash = joaat("MPPLY_PLAT_UP_LB_CHECK") /* TUNEABLE: MPPLY_PLAT_UP_LB_CHECK */;
 		
 			if (STATS::STAT_GET_INT(statHash, &outValue2, -1))
 				if (IS_BIT_SET(outValue2, 5))
@@ -13059,14 +13059,14 @@ int func_74() // Position - 0x22D64 (142692)
 		{
 			if (NETWORK::NETWORK_HAS_ROS_PRIVILEGE_SPECIAL_EDITION_CONTENT())
 			{
-				STATS::STAT_GET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT"), &profileSetting2, -1);
+				STATS::STAT_GET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT") /* TUNEABLE: SP_UNLOCK_EXCLUS_CONTENT */, &profileSetting2, -1);
 				MISC::SET_BIT(&profileSetting2, 1);
 				MISC::SET_BIT(&profileSetting2, 3);
 				MISC::SET_BIT(&profileSetting2, 5);
-				MISC::SET_BIT(&Global_28, 1);
-				MISC::SET_BIT(&Global_28, 3);
-				MISC::SET_BIT(&Global_28, 5);
-				STATS::STAT_SET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT"), profileSetting2, true);
+				MISC::SET_BIT(&Global_26, 1);
+				MISC::SET_BIT(&Global_26, 3);
+				MISC::SET_BIT(&Global_26, 5);
+				STATS::STAT_SET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT") /* TUNEABLE: SP_UNLOCK_EXCLUS_CONTENT */, profileSetting2, true);
 			
 				if (MISC::ARE_PROFILE_SETTINGS_VALID())
 				{
@@ -13084,13 +13084,13 @@ int func_74() // Position - 0x22D64 (142692)
 	return 0;
 }
 
-int _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0x22E9D (143005)
+int _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0x22DC7 (142791)
 {
 	int profileSetting;
 
-	if (Global_153224 == 2)
+	if (Global_153787 == 2)
 		return 1;
-	else if (Global_153224 == 3)
+	else if (Global_153787 == 3)
 		return 0;
 
 	if (NETWORK::NETWORK_IS_SIGNED_IN())
@@ -13099,14 +13099,14 @@ int _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0x22E9D (143005)
 		{
 			if (NETWORK::NETWORK_HAS_ROS_PRIVILEGE_PLAYED_LAST_GEN())
 			{
-				STATS::STAT_GET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT"), &profileSetting, -1);
+				STATS::STAT_GET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT") /* TUNEABLE: SP_UNLOCK_EXCLUS_CONTENT */, &profileSetting, -1);
 				MISC::SET_BIT(&profileSetting, 2);
 				MISC::SET_BIT(&profileSetting, 4);
 				MISC::SET_BIT(&profileSetting, 6);
-				MISC::SET_BIT(&Global_28, 2);
-				MISC::SET_BIT(&Global_28, 4);
-				MISC::SET_BIT(&Global_28, 6);
-				STATS::STAT_SET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT"), profileSetting, true);
+				MISC::SET_BIT(&Global_26, 2);
+				MISC::SET_BIT(&Global_26, 4);
+				MISC::SET_BIT(&Global_26, 6);
+				STATS::STAT_SET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT") /* TUNEABLE: SP_UNLOCK_EXCLUS_CONTENT */, profileSetting, true);
 			
 				if (MISC::ARE_PROFILE_SETTINGS_VALID())
 				{
@@ -13127,7 +13127,7 @@ int _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0x22E9D (143005)
 	return 0;
 }
 
-BOOL _NETSHOPPING_SHOULD_USE_TRANSACTION_SYSTEM() // Position - 0x22F55 (143189)
+BOOL _NETSHOPPING_SHOULD_USE_TRANSACTION_SYSTEM() // Position - 0x22E7F (142975)
 {
 	if (MISC::IS_PC_VERSION())
 		return NETSHOPPING::NET_GAMESERVER_USE_SERVER_TRANSACTIONS();
@@ -13135,7 +13135,7 @@ BOOL _NETSHOPPING_SHOULD_USE_TRANSACTION_SYSTEM() // Position - 0x22F55 (143189)
 	return false;
 }
 
-void func_77() // Position - 0x22F6C (143212)
+void func_77() // Position - 0x22E96 (142998)
 {
 	int i;
 	BOOL flag;
@@ -13178,7 +13178,7 @@ void func_77() // Position - 0x22F6C (143212)
 	return;
 }
 
-BOOL func_78(int iParam0) // Position - 0x22FF2 (143346)
+BOOL func_78(int iParam0) // Position - 0x22F1C (143132)
 {
 	switch (iParam0)
 	{
@@ -13190,7 +13190,7 @@ BOOL func_78(int iParam0) // Position - 0x22FF2 (143346)
 	return false;
 }
 
-BOOL func_79(int iParam0, int iParam1) // Position - 0x23015 (143381)
+BOOL func_79(int iParam0, int iParam1) // Position - 0x22F3F (143167)
 {
 	switch (iParam0)
 	{
@@ -13208,7 +13208,7 @@ BOOL func_79(int iParam0, int iParam1) // Position - 0x23015 (143381)
 	return true;
 }
 
-Hash func_80(int iParam0) // Position - 0x23051 (143441)
+Hash func_80(int iParam0) // Position - 0x22F7B (143227)
 {
 	switch (iParam0)
 	{
@@ -13261,7 +13261,7 @@ Hash func_80(int iParam0) // Position - 0x23051 (143441)
 	return -1;
 }
 
-BOOL func_81() // Position - 0x23125 (143653)
+BOOL func_81() // Position - 0x2304F (143439)
 {
 	if (LOBBY::LOBBY_AUTO_MULTIPLAYER_FREEMODE() || LOBBY::LOBBY_AUTO_MULTIPLAYER_MENU() || NETWORK::GET_IS_LAUNCH_FROM_LIVE_AREA() || NETWORK::GET_IS_LIVE_AREA_LAUNCH_WITH_CONTENT())
 		return 1;
@@ -13269,7 +13269,7 @@ BOOL func_81() // Position - 0x23125 (143653)
 	return 0;
 }
 
-void func_82(int iParam0) // Position - 0x2315A (143706)
+void func_82(int iParam0) // Position - 0x23084 (143492)
 {
 	int i;
 

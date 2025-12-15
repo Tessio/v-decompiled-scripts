@@ -136,11 +136,11 @@
 	var uLocal_134 = 0;
 	var uLocal_135 = 0;
 	var uLocal_136 = 0;
-	int iLocal_137 = 0;
+	var uLocal_137 = 0;
 	var uLocal_138 = 0;
-	float fLocal_139 = 0f;
+	int iLocal_139 = 0;
 	var uLocal_140 = 0;
-	var uLocal_141 = 0;
+	float fLocal_141 = 0f;
 	var uLocal_142 = 0;
 	var uLocal_143 = 0;
 	var uLocal_144 = 0;
@@ -160,6 +160,8 @@
 	var uLocal_158 = 0;
 	var uLocal_159 = 0;
 	var uLocal_160 = 0;
+	var uLocal_161 = 0;
+	var uLocal_162 = 0;
 #endregion
 
 void main() // Position - 0x0 (0)
@@ -194,8 +196,8 @@ void main() // Position - 0x0 (0)
 	fLocal_92 = 0f;
 	fLocal_93 = 2f;
 	fLocal_94 = 100f;
-	iLocal_137 = -1;
-	fLocal_139 = 0.5f;
+	iLocal_139 = -1;
+	fLocal_141 = 0.5f;
 	return;
 }
 

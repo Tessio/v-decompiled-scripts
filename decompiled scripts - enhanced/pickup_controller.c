@@ -400,7 +400,7 @@ BOOL func_5(int iParam0) // Position - 0x195 (405)
 	if (iParam0 == 94 || iParam0 == -1)
 		return false;
 
-	return Global_114370.f_9089.f_330[iParam0 /*6*/];
+	return Global_114931.f_9092.f_330[iParam0 /*6*/];
 }
 
 void func_6() // Position - 0x1C1 (449)
@@ -445,9 +445,9 @@ BOOL _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0x271 (625)
 {
 	int profileSetting;
 
-	if (Global_153251 == 2)
+	if (Global_153815 == 2)
 		return true;
-	else if (Global_153251 == 3)
+	else if (Global_153815 == 3)
 		return false;
 
 	if (NETWORK::NETWORK_IS_SIGNED_IN())
@@ -456,14 +456,14 @@ BOOL _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0x271 (625)
 		{
 			if (NETWORK::NETWORK_HAS_ROS_PRIVILEGE_PLAYED_LAST_GEN())
 			{
-				STATS::STAT_GET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT"), &profileSetting, -1);
+				STATS::STAT_GET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT") /* TUNEABLE: SP_UNLOCK_EXCLUS_CONTENT */, &profileSetting, -1);
 				MISC::SET_BIT(&profileSetting, 2);
 				MISC::SET_BIT(&profileSetting, 4);
 				MISC::SET_BIT(&profileSetting, 6);
-				MISC::SET_BIT(&Global_28, 2);
-				MISC::SET_BIT(&Global_28, 4);
-				MISC::SET_BIT(&Global_28, 6);
-				STATS::STAT_SET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT"), profileSetting, true);
+				MISC::SET_BIT(&Global_26, 2);
+				MISC::SET_BIT(&Global_26, 4);
+				MISC::SET_BIT(&Global_26, 6);
+				STATS::STAT_SET_INT(joaat("SP_UNLOCK_EXCLUS_CONTENT") /* TUNEABLE: SP_UNLOCK_EXCLUS_CONTENT */, profileSetting, true);
 			
 				if (MISC::ARE_PROFILE_SETTINGS_VALID())
 				{
@@ -570,55 +570,55 @@ BOOL func_13(int iParam0) // Position - 0x589 (1417)
 	if (iParam0 == 146 || iParam0 == -1)
 		return false;
 
-	return Global_114370.f_9089.f_99.f_58[iParam0];
+	return Global_114931.f_9092.f_99.f_58[iParam0];
 }
 
 void func_14() // Position - 0x5B6 (1462)
 {
-	switch (Global_33543)
+	switch (Global_34037)
 	{
 		case 0:
 			break;
 	
 		case 1:
-			switch (Global_33544)
+			switch (Global_34038)
 			{
 				case 0:
-					if (OBJECT::DOES_PICKUP_EXIST(uLocal_18[Global_33545]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_18[Global_33545]))
-						Global_33546 = false;
+					if (OBJECT::DOES_PICKUP_EXIST(uLocal_18[Global_34039]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_18[Global_34039]))
+						Global_34040 = false;
 					else
-						Global_33546 = true;
+						Global_34040 = true;
 					break;
 			
 				case 1:
-					if (OBJECT::DOES_PICKUP_EXIST(uLocal_84[Global_33545]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_84[Global_33545]))
-						Global_33546 = false;
+					if (OBJECT::DOES_PICKUP_EXIST(uLocal_84[Global_34039]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_84[Global_34039]))
+						Global_34040 = false;
 					else
-						Global_33546 = true;
+						Global_34040 = true;
 					break;
 			
 				case 2:
-					if (OBJECT::DOES_PICKUP_EXIST(uLocal_161[Global_33545]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_161[Global_33545]))
-						Global_33546 = false;
+					if (OBJECT::DOES_PICKUP_EXIST(uLocal_161[Global_34039]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_161[Global_34039]))
+						Global_34040 = false;
 					else
-						Global_33546 = true;
+						Global_34040 = true;
 					break;
 			
 				case 3:
-					Global_33543 = 3;
+					Global_34037 = 3;
 					break;
 			}
 		
-			Global_33543 = 2;
+			Global_34037 = 2;
 			break;
 	
 		case 2:
 			break;
 	
 		case 3:
-			Global_33545 = 0;
-			Global_33546 = false;
-			Global_33543 = 0;
+			Global_34039 = 0;
+			Global_34040 = false;
+			Global_34037 = 0;
 			break;
 	}
 
@@ -741,7 +741,7 @@ void func_22() // Position - 0x81B (2075)
 
 BOOL func_23(int iParam0) // Position - 0x84D (2125)
 {
-	return Global_44392 == iParam0;
+	return Global_44886 == iParam0;
 }
 
 void func_24() // Position - 0x85B (2139)
