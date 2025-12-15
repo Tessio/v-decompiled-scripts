@@ -4,8 +4,8 @@ Decompiled scripts from GTAV build 3323, for educational purposes only.
 
 # Older scripts
 
-* [Build idk - 1.71 - Enhanced](https://github.com/Tessio/v-decompiled-scripts/tree/2590216eb6257c179611c230df35463cacaadeac)
-* [Build idk - 1.71 - Legacy](https://github.com/Tessio/v-decompiled-scripts/tree/796c79c47fbd9e8bc2096f9599a0b2782de196aa)
+* [Build 889.15 - 1.71 - Enhanced](https://github.com/Tessio/v-decompiled-scripts/tree/2590216eb6257c179611c230df35463cacaadeac)
+* [Build 3570 - 1.71 - Legacy](https://github.com/Tessio/v-decompiled-scripts/tree/796c79c47fbd9e8bc2096f9599a0b2782de196aa)
 * [Build idk - 1.70](https://github.com/Tessio/v-decompiled-scripts/tree/57fca3155df63e8c0c18b5f79dc5f7f31939a063)
 * [Build 3323 - 1.69](https://github.com/Tessio/v-decompiled-scripts/tree/619d43ed52e08eaee3660e7e9fb040b5dd72ea6a)
 
