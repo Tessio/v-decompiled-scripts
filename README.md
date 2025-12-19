@@ -4,7 +4,7 @@ Decompiled scripts from GTAV build 1013.17 - 3717, for educational purposes only
 
 # Older scripts
 
-- [Build 1013.17 - 1.72 - Enhanced](https://github.com/Tessio/v-decompiled-scripts/tree/b82cebced86508c459cc88fdc787bb072250f03a/decompiled%20scripts%20-%20enhanced)
+* [Build 1013.17 - 1.72 - Enhanced](https://github.com/Tessio/v-decompiled-scripts/tree/b82cebced86508c459cc88fdc787bb072250f03a/decompiled%20scripts%20-%20enhanced)
 * [Build 3717 - 1.72 - Legacy](https://github.com/Tessio/v-decompiled-scripts/tree/b82cebced86508c459cc88fdc787bb072250f03a/decompiled%20scripts%20-%20legacy)
 * [Build 889.15 - 1.71 - Enhanced](https://github.com/Tessio/v-decompiled-scripts/tree/2590216eb6257c179611c230df35463cacaadeac)
 * [Build 3570 - 1.71 - Legacy](https://github.com/Tessio/v-decompiled-scripts/tree/796c79c47fbd9e8bc2096f9599a0b2782de196aa)
