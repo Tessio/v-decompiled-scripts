@@ -2531,7 +2531,7 @@ int func_42(int iParam0, int iParam1, int iParam2, Player plParam3) // Position 
 			break;
 	
 		case 2:
-			switch (Global_1983166[plParam3 /*149*/].f_121.f_5)
+			switch (Global_1983167[plParam3 /*149*/].f_121.f_5)
 			{
 				case 0:
 					return 991;
@@ -5690,7 +5690,7 @@ BOOL func_155(int iParam0, int iParam1, Player plParam2) // Position - 0x4DA6 (1
 BOOL func_156(Player plParam0) // Position - 0x4E71 (20081)
 {
 	if (plParam0 != -1)
-		return IS_BIT_SET(Global_1980732[plParam0 /*53*/].f_1, 1);
+		return IS_BIT_SET(Global_1980733[plParam0 /*53*/].f_1, 1);
 
 	return false;
 }
@@ -7784,7 +7784,7 @@ float func_201(int iParam0, int iParam1, Player plParam2) // Position - 0x74D1 (
 BOOL func_202(Player plParam0) // Position - 0x7BFC (31740)
 {
 	if (func_15(plParam0))
-		return IS_BIT_SET(Global_1983166[plParam0 /*149*/].f_145.f_1, 0);
+		return IS_BIT_SET(Global_1983167[plParam0 /*149*/].f_145.f_1, 0);
 
 	return false;
 }
@@ -19949,7 +19949,7 @@ BOOL func_411(int iParam0, Player plParam1) // Position - 0x161CA (90570)
 BOOL func_412(Player plParam0, int iParam1) // Position - 0x161E1 (90593)
 {
 	if (func_15(plParam0))
-		return IS_BIT_SET(Global_1983166[plParam0 /*149*/].f_62.f_10, iParam1);
+		return IS_BIT_SET(Global_1983167[plParam0 /*149*/].f_62.f_10, iParam1);
 
 	return false;
 }
@@ -20126,7 +20126,7 @@ BOOL func_419(Player plParam0) // Position - 0x164BD (91325)
 BOOL func_420(Player plParam0, int iParam1) // Position - 0x164E3 (91363)
 {
 	if (plParam0 != -1)
-		return IS_BIT_SET(Global_1980732[plParam0 /*53*/].f_3, iParam1);
+		return IS_BIT_SET(Global_1980733[plParam0 /*53*/].f_3, iParam1);
 
 	return false;
 }
@@ -20197,7 +20197,7 @@ BOOL func_424(Player plParam0, int iParam1) // Position - 0x165CC (91596)
 BOOL func_425(Player plParam0, int iParam1) // Position - 0x165EA (91626)
 {
 	if (plParam0 != -1)
-		return IS_BIT_SET(Global_1980732[plParam0 /*53*/].f_2, iParam1);
+		return IS_BIT_SET(Global_1980733[plParam0 /*53*/].f_2, iParam1);
 
 	return false;
 }
@@ -23986,7 +23986,7 @@ BOOL func_526() // Position - 0x1A502 (107778)
 
 int func_527() // Position - 0x1A510 (107792)
 {
-	return Global_1978614;
+	return Global_1978615;
 }
 
 BOOL func_528(Player plParam0) // Position - 0x1A51C (107804)

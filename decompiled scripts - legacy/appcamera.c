@@ -272,35 +272,35 @@ void main() // Position - 0x0 (0)
 		fLocal_97 = 0.435f;
 	}
 
-	Global_24016 = 0;
-	Global_24017 = 0;
+	Global_24016 = false;
+	Global_24017 = false;
 
 	if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 	{
 		if (PED::IS_PED_ON_MOUNT(PLAYER::PLAYER_PED_ID()))
-			Global_24016 = 1;
+			Global_24016 = true;
 	
 		if (GRAPHICS::GET_USINGNIGHTVISION())
-			Global_24016 = 1;
+			Global_24016 = true;
 	
 		if (VEHICLE::IS_VEHICLE_DRIVEABLE(PED::GET_VEHICLE_PED_IS_ENTERING(PLAYER::PLAYER_PED_ID()), false))
-			Global_24016 = 1;
+			Global_24016 = true;
 	
 		if (PED::GET_PED_CONFIG_FLAG(PLAYER::PLAYER_PED_ID(), 78, true))
-			Global_24016 = 1;
+			Global_24016 = true;
 	
 		if (PED::IS_PED_IN_ANY_TRAIN(PLAYER::PLAYER_PED_ID()))
-			Global_24016 = 1;
+			Global_24016 = true;
 	
 		if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false))
 		{
 			if (bLocal_129 == true)
-				Global_24016 = 1;
+				Global_24016 = true;
 		
 			veLocal_147 = PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), false);
 		
 			if (ENTITY::GET_ENTITY_MODEL(veLocal_147) == joaat("rhino") || ENTITY::GET_ENTITY_MODEL(veLocal_147) == joaat("cutter") || ENTITY::GET_ENTITY_MODEL(veLocal_147) == joaat("submersible") || ENTITY::GET_ENTITY_MODEL(veLocal_147) == joaat("khanjali") || ENTITY::GET_ENTITY_MODEL(veLocal_147) == joaat("barrage") && VEHICLE::IS_TURRET_SEAT(veLocal_147, _GET_VEHICLE_SEAT_PED_IS_IN(PLAYER::PLAYER_PED_ID(), true)))
-				Global_24016 = 1;
+				Global_24016 = true;
 			else if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_147, -1, false) == PLAYER::PLAYER_PED_ID())
 				if (ENTITY::GET_ENTITY_UPRIGHT_VALUE(veLocal_147) > 0f)
 					if (!Global_80280)
@@ -364,7 +364,7 @@ void main() // Position - 0x0 (0)
 
 	fLocal_76 = { Global_21570 };
 	fLocal_79 = { Global_21563[Global_21555 /*3*/] };
-	Global_24017 = 1;
+	Global_24017 = true;
 	bLocal_116 = true;
 	bLocal_117 = true;
 	bLocal_118 = true;
@@ -624,9 +624,9 @@ void main() // Position - 0x0 (0)
 								}
 								else if (Global_21610.f_1 != 9)
 								{
-									if (Global_24017 == 1)
+									if (Global_24017 == true)
 									{
-										if (Global_24016 == 0)
+										if (Global_24016 == false)
 											func_139();
 									}
 									else if (Global_10088 - Global_10087 > Global_10089)
@@ -642,10 +642,10 @@ void main() // Position - 0x0 (0)
 												AUDIO::STOP_SOUND(iLocal_110);
 												iLocal_141 = 0;
 											
-												if (Global_24016 == 0)
+												if (Global_24016 == false)
 												{
 													func_157();
-													Global_24016 = 1;
+													Global_24016 = true;
 													HUD::CLEAR_FLOATING_HELP(0, true);
 													bLocal_126 = false;
 													bLocal_116 = true;
@@ -696,10 +696,10 @@ void main() // Position - 0x0 (0)
 												AUDIO::STOP_SOUND(iLocal_110);
 												iLocal_141 = 0;
 											
-												if (Global_24016 == 0)
+												if (Global_24016 == false)
 												{
 													func_157();
-													Global_24016 = 1;
+													Global_24016 = true;
 													HUD::CLEAR_FLOATING_HELP(0, true);
 													bLocal_126 = false;
 													bLocal_116 = true;
@@ -748,7 +748,7 @@ void main() // Position - 0x0 (0)
 										iLocal_100 = 0;
 									}
 								
-									if (Global_24016 == 1)
+									if (Global_24016 == true)
 									{
 										func_106();
 									}
@@ -816,13 +816,13 @@ void main() // Position - 0x0 (0)
 											bLocal_127 = false;
 											MISC::SET_BIT(&Global_9463, 18);
 										
-											if (Global_24016 == 0)
+											if (Global_24016 == false)
 												func_129(true, true);
 										}
 									}
 								
 									if (bLocal_125 == false)
-										if (bLocal_126 && Global_24016 == 0)
+										if (bLocal_126 && Global_24016 == false)
 											if (iLocal_128 == 0 && iLocal_123 == 0 && Global_24019 == false)
 												func_12();
 										else
@@ -837,8 +837,8 @@ void main() // Position - 0x0 (0)
 				else
 				{
 					if (Global_21610.f_1 > 3)
-						if (Global_24017 == 1)
-							if (Global_24016 == 0)
+						if (Global_24017 == true)
+							if (Global_24016 == false)
 								func_139();
 				
 					func_6();
@@ -993,8 +993,8 @@ void main() // Position - 0x0 (0)
 			func_140(false);
 			iLocal_113 = 0;
 			func_131(true);
-			Global_24016 = 0;
-			Global_24017 = 0;
+			Global_24016 = false;
+			Global_24017 = false;
 			Global_24019 = false;
 			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&iLocal_138);
 			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&iLocal_139);
@@ -1278,7 +1278,7 @@ void func_7() // Position - 0x149B (5275)
 			iLocal_141 = 0;
 			bLocal_124 = false;
 			func_129(false, true);
-			Global_24016 = 1;
+			Global_24016 = true;
 			HUD::CLEAR_FLOATING_HELP(0, true);
 			bLocal_126 = false;
 			bLocal_116 = true;
@@ -1989,7 +1989,7 @@ void func_12() // Position - 0x175E (5982)
 			Global_24020 = 1;
 			iLocal_141 = 0;
 			bLocal_124 = true;
-			Global_24016 = 1;
+			Global_24016 = true;
 			HUD::CLEAR_FLOATING_HELP(0, true);
 			bLocal_126 = false;
 			bLocal_116 = true;
@@ -6860,7 +6860,7 @@ BOOL func_76() // Position - 0xB89F (47263)
 			break;
 	}
 
-	if (Global_1978492)
+	if (Global_1978493)
 		return true;
 
 	return false;
@@ -7780,7 +7780,7 @@ void func_107() // Position - 0xCCC8 (52424)
 		MOBILE::SET_MOBILE_PHONE_ROTATION(fLocal_76, 0);
 	}
 
-	Global_24016 = 0;
+	Global_24016 = false;
 	func_136(false, false);
 	func_140(false);
 	iLocal_113 = 0;
@@ -8800,7 +8800,7 @@ void func_131(BOOL bParam0) // Position - 0xE431 (58417)
 {
 	if (*Global_4718592.f_186042 == 0 && *Global_4718592.f_186043 == 0 && !Global_1945445)
 		if (func_132(PLAYER::PLAYER_ID()) && bParam0)
-			Global_1978565 = true;
+			Global_1978566 = true;
 		else
 			GRAPHICS::CLEAR_TIMECYCLE_MODIFIER();
 
@@ -9251,7 +9251,7 @@ void func_139() // Position - 0xEADB (60123)
 		
 			if (iLocal_101 == 0)
 			{
-				Global_24017 = 0;
+				Global_24017 = false;
 				func_136(true, true);
 				iLocal_113 = 1;
 				func_140(true);
@@ -9276,7 +9276,7 @@ void func_139() // Position - 0xEADB (60123)
 	{
 		fLocal_76 = { fLocal_82 };
 		MOBILE::SET_MOBILE_PHONE_ROTATION(fLocal_76, 0);
-		Global_24017 = 0;
+		Global_24017 = false;
 	}
 
 	return;

@@ -2645,7 +2645,7 @@ BOOL func_76(var uParam0) // Position - 0x25CD (9677)
 
 BOOL func_77() // Position - 0x25DE (9694)
 {
-	if (Global_1982570 == 0 && func_78())
+	if (Global_1982571 == 0 && func_78())
 		return true;
 
 	return false;

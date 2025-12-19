@@ -1788,19 +1788,19 @@ BOOL func_58(int iParam0) // Position - 0x1D71 (7537)
 	switch (iParam0)
 	{
 		case 1:
-			return Global_1982570 == 3;
+			return Global_1982571 == 3;
 	
 		case 3:
-			return Global_1982570 == 3;
+			return Global_1982571 == 3;
 	
 		case 4:
-			return Global_1982570 == 1;
+			return Global_1982571 == 1;
 	
 		case 5:
-			return Global_1982570 != 2 && Global_1982570 != -1;
+			return Global_1982571 != 2 && Global_1982571 != -1;
 	
 		case 7:
-			return Global_1982570 == 2;
+			return Global_1982571 == 2;
 	
 		default:
 		

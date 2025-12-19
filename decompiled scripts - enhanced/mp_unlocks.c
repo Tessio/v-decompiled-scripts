@@ -1115,33 +1115,33 @@ Hash func_14(int iParam0, int iParam1) // Position - 0x1B63 (7011)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_15(iParam1));
 }
 
-int func_15(int iParam0) // Position - 0x1B78 (7032)
+Interior func_15(Interior inParam0) // Position - 0x1B78 (7032)
 {
-	int num;
-	int num2;
+	Interior interior;
+	Interior interior2;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
+	if (interior == -1)
 	{
-		num2 = func_16();
+		interior2 = func_16();
 	
-		if (num2 > -1)
+		if (interior2 > -1)
 		{
 			Global_2741524 = 0;
-			num = num2;
+			interior = interior2;
 		}
 		else
 		{
-			num = 0;
+			interior = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return num;
+	return interior;
 }
 
-int func_16() // Position - 0x1BAC (7084)
+Interior func_16() // Position - 0x1BAC (7084)
 {
 	return Global_1574927;
 }
@@ -1350,7 +1350,7 @@ BOOL func_29(Player plParam0, int iParam1) // Position - 0x1F67 (8039)
 	return func_30(&(Global_1845299[plParam0 /*883*/].f_822), func_31(iParam1));
 }
 
-BOOL func_30(var uParam0, int iParam1) // Position - 0x1FA7 (8103)
+BOOL func_30(BOOL bParam0, int iParam1) // Position - 0x1FA7 (8103)
 {
 	int num;
 	int num2;
@@ -1359,7 +1359,7 @@ BOOL func_30(var uParam0, int iParam1) // Position - 0x1FA7 (8103)
 	num = iParam1;
 	num2 = num / 32;
 	num3 = num % 32;
-	return IS_BIT_SET(uParam0->[num2], num3);
+	return IS_BIT_SET(bParam0->[num2], num3);
 }
 
 int func_31(int iParam0) // Position - 0x1FCA (8138)
@@ -1535,12 +1535,12 @@ BOOL func_34() // Position - 0x21EE (8686)
 	return func_35(120, -1);
 }
 
-BOOL func_35(int iParam0, int iParam1) // Position - 0x221E (8734)
+BOOL func_35(int iParam0, Interior inParam1) // Position - 0x221E (8734)
 {
 	Hash statHash;
 	BOOL outValue;
 
-	statHash = func_36(iParam0, iParam1);
+	statHash = func_36(iParam0, inParam1);
 
 	if (STATS::STAT_GET_BOOL(statHash, &outValue, -1))
 		return outValue;
@@ -1548,9 +1548,9 @@ BOOL func_35(int iParam0, int iParam1) // Position - 0x221E (8734)
 	return false;
 }
 
-Hash func_36(int iParam0, int iParam1) // Position - 0x2242 (8770)
+Hash func_36(int iParam0, Interior inParam1) // Position - 0x2242 (8770)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(2, iParam0, func_15(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(2, iParam0, func_15(inParam1));
 }
 
 BOOL func_37(BOOL bParam0) // Position - 0x2257 (8791)
@@ -1818,12 +1818,12 @@ int _MPPLY_STAT_GET_INT(Hash hParam0) // Position - 0x2737 (10039)
 	return 0;
 }
 
-int func_49(int iParam0, int iParam1) // Position - 0x2755 (10069)
+int func_49(int iParam0, Interior inParam1) // Position - 0x2755 (10069)
 {
 	Hash statHash;
 	int outValue;
 
-	statHash = func_50(iParam0, iParam1);
+	statHash = func_50(iParam0, inParam1);
 
 	if (STATS::STAT_GET_INT(statHash, &outValue, -1))
 		return outValue;
@@ -1831,9 +1831,9 @@ int func_49(int iParam0, int iParam1) // Position - 0x2755 (10069)
 	return 0;
 }
 
-Hash func_50(int iParam0, int iParam1) // Position - 0x2779 (10105)
+Hash func_50(int iParam0, Interior inParam1) // Position - 0x2779 (10105)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_15(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_15(inParam1));
 }
 
 BOOL func_51() // Position - 0x278F (10127)
@@ -1848,12 +1848,12 @@ BOOL func_51() // Position - 0x278F (10127)
 	return num;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0x27AA (10154)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, Interior inParam1) // Position - 0x27AA (10154)
 {
-	if (iParam1 == -1)
-		iParam1 = func_16();
+	if (inParam1 == -1)
+		inParam1 = func_16();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, inParam1);
 }
 
 void func_53(var uParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, BOOL bParam3) // Position - 0x27C6 (10182)
@@ -2145,7 +2145,7 @@ ePedComponentType func_61() // Position - 0x2D45 (11589)
 	return num;
 }
 
-int func_62(int iParam0) // Position - 0x2D62 (11618)
+int func_62(ePedComponentType epctParam0) // Position - 0x2D62 (11618)
 {
 	int num;
 	int i;
@@ -2155,7 +2155,7 @@ int func_62(int iParam0) // Position - 0x2D62 (11618)
 	for (i = 0; i < 1500; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_794954.f_4[i /*95*/].f_82, 14))
-			if (Global_794954.f_4[i /*95*/].f_71 < 13 && Global_794954.f_4[i /*95*/].f_76 <= 1000 && Global_794954.f_4[i /*95*/].f_74 == iParam0 && Global_794954.f_4[i /*95*/].f_71 == PV_COMP_HAIR)
+			if (Global_794954.f_4[i /*95*/].f_71 < 13 && Global_794954.f_4[i /*95*/].f_76 <= 1000 && Global_794954.f_4[i /*95*/].f_74 == epctParam0 && Global_794954.f_4[i /*95*/].f_71 == PV_COMP_HAIR)
 				num = num + 1;
 	}
 
@@ -2175,8 +2175,8 @@ ePedComponentType func_64() // Position - 0x2E06 (11782)
 {
 	int num;
 
-	num = func_62(6);
-	num = num + func_62(7);
+	num = func_62(PV_COMP_FEET);
+	num = num + func_62(PV_COMP_TEEF);
 	return num;
 }
 
@@ -2184,8 +2184,8 @@ ePedComponentType func_65() // Position - 0x2E21 (11809)
 {
 	int num;
 
-	num = func_62(2);
-	num = num + func_62(3);
+	num = func_62(PV_COMP_HAIR);
+	num = num + func_62(PV_COMP_UPPR);
 	return num;
 }
 
@@ -2193,8 +2193,8 @@ ePedComponentType func_66() // Position - 0x2E3C (11836)
 {
 	int num;
 
-	num = func_62(4);
-	num = num + func_62(5);
+	num = func_62(PV_COMP_LOWR);
+	num = num + func_62(PV_COMP_HAND);
 	return num;
 }
 
@@ -2202,7 +2202,7 @@ ePedComponentType func_67() // Position - 0x2E57 (11863)
 {
 	int num;
 
-	num = func_62(12);
+	num = func_62(PV_COMP_MAX);
 	num = num + func_62(13);
 	return num;
 }
@@ -2212,10 +2212,10 @@ ePedComponentType func_68() // Position - 0x2E74 (11892)
 	int num;
 
 	num = func_62(0);
-	num = num + func_62(1);
-	num = num + func_62(10);
-	num = num + func_62(11);
-	num = num + func_62(2);
+	num = num + func_62(PV_COMP_BERD);
+	num = num + func_62(PV_COMP_DECL);
+	num = num + func_62(PV_COMP_JBIB);
+	num = num + func_62(PV_COMP_HAIR);
 	return num;
 }
 
@@ -2739,7 +2739,7 @@ BOOL func_81() // Position - 0x36D7 (14039)
 
 	for (i = 0; i < 13; i = i + 1)
 	{
-		Global_794954.f_164009[i] = 0;
+		Global_794954.f_164009[i] = PV_COMP_HEAD;
 	}
 
 	for (i = 0; i < 1500; i = i + 1)

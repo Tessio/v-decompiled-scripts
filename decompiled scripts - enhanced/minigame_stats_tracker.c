@@ -485,7 +485,7 @@ void func_18(const char* sParam0) // Position - 0x724 (1828)
 void func_19() // Position - 0x736 (1846)
 {
 	GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&iLocal_44);
-	Global_33937 = false;
+	Global_33937 = 0;
 	func_1(0);
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;

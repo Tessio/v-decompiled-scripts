@@ -421,7 +421,7 @@ void func_2() // Position - 0xEC (236)
 	func_5();
 	func_4();
 	Global_1964546 = 0;
-	Global_1983833 = 0;
+	Global_1983834 = 0;
 	_STOPWATCH_DESTROY(&Global_1964547);
 	return;
 }
@@ -2543,8 +2543,8 @@ void func_34() // Position - 0x3952 (14674)
 	Global_2733138.f_303 = 0;
 	Global_2733138.f_301 = 0;
 	Global_2733138.f_307 = 0;
-	Global_2733138.f_309[0] = 0;
-	Global_2733138.f_309[1] = 0;
+	Global_2733138.f_309[0] = PV_COMP_HEAD;
+	Global_2733138.f_309[1] = PV_COMP_HEAD;
 	Global_2733138.f_313 = 0;
 	Global_2733138.f_340 = 0;
 	Global_2733138.f_3586 = 0;
@@ -3169,10 +3169,10 @@ void func_40() // Position - 0x49DA (18906)
 	return;
 }
 
-void func_41(int iParam0) // Position - 0x4AE1 (19169)
+void func_41(ePedComponentType epctParam0) // Position - 0x4AE1 (19169)
 {
-	*iParam0 = 0;
-	iParam0->f_1 = 0;
+	*epctParam0 = 0;
+	epctParam0->f_1 = 0;
 	return;
 }
 
@@ -6400,7 +6400,7 @@ void func_68(int iParam0) // Position - 0x9ADC (39644)
 
 void func_69(int iParam0) // Position - 0x9B0E (39694)
 {
-	Any* src;
+	ePedComponentType src;
 
 	if (Global_2673273)
 		MISC::COPY_SCRIPT_STRUCT(&Global_1689173[iParam0], &src, 1);

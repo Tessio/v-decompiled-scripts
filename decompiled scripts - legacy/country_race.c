@@ -10475,7 +10475,7 @@ void func_148() // Position - 0xB421 (46113)
 {
 	if (Global_21610.f_1 == 9 || Global_21610.f_1 == 10)
 	{
-		Global_23036 = 0;
+		Global_23036 = false;
 		Global_23032 = 1;
 	}
 
@@ -14078,7 +14078,7 @@ Vector3 func_199(int iParam0, BOOL bParam1) // Position - 0x1011E (65822)
 			return 2714.5466f, -354.2701f, -55.1867f;
 	
 		case 50:
-			return Global_1971528;
+			return Global_1971529;
 	
 		case 51:
 			return 1100f, 220f, -50f;
@@ -19647,7 +19647,7 @@ BOOL func_342() // Position - 0x19443 (103491)
 	return false;
 }
 
-void func_343(Hash hParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, BOOL bParam12, int iParam13, int iParam14, int iParam15) // Position - 0x19566 (103782)
+void func_343(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, BOOL bParam12, int iParam13, int iParam14, int iParam15) // Position - 0x19566 (103782)
 {
 	int num;
 	int i;
@@ -19665,7 +19665,7 @@ void func_343(Hash hParam0, int iParam1, char* sParam2, int iParam3, int iParam4
 	{
 		Global_1679103.f_1 = 1;
 		func_122(4, num);
-		Global_1679103.f_3391[num] = hParam0;
+		Global_1679103.f_3391[num] = iParam0;
 		Global_1679103.f_3391.f_172[num] = iParam1;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679103.f_3391.f_11[num /*16*/], sParam2, 64);
 		Global_1679103.f_3391.f_183[num] = iParam3;
@@ -19681,7 +19681,7 @@ void func_343(Hash hParam0, int iParam1, char* sParam2, int iParam3, int iParam4
 		Global_1679103.f_3391.f_336[num] = iParam14;
 		Global_1679103.f_3391.f_347[num] = iParam15;
 	
-		if (hParam0 > 9 && iParam1 > 9 && MISC::IS_PC_VERSION() && bParam12)
+		if (iParam0 > 9 && iParam1 > 9 && MISC::IS_PC_VERSION() && bParam12)
 			Global_1679103.f_1172 = 1;
 	}
 

@@ -3315,7 +3315,7 @@ BOOL func_55(float fParam0, var uParam1, var uParam2) // Position - 0x2FF5 (1227
 	return false;
 }
 
-var func_56() // Position - 0x301F (12319)
+BOOL func_56() // Position - 0x301F (12319)
 {
 	return Global_2685150.f_19;
 }
@@ -4085,14 +4085,14 @@ void func_84(int iParam0) // Position - 0x3F39 (16185)
 
 void func_85(var uParam0) // Position - 0x3F47 (16199)
 {
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	uParam0->f_692 = 0;
 	return;
 }
 
 BOOL func_86(var uParam0) // Position - 0x3F5A (16218)
 {
-	return Global_1988494 || uParam0->f_692;
+	return Global_1988495 || uParam0->f_692;
 }
 
 void func_87(int iParam0) // Position - 0x3F71 (16241)
@@ -4185,7 +4185,7 @@ void func_91(var uParam0) // Position - 0x404F (16463)
 	uParam0->f_697 = 0f;
 	uParam0->f_698 = 0f;
 	uParam0->f_699 = 1f;
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	return;
 }
 
@@ -5067,9 +5067,9 @@ void func_113() // Position - 0x5288 (21128)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;

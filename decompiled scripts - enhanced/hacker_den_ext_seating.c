@@ -380,10 +380,10 @@ void func_3(var uParam0) // Position - 0x14E (334)
 	return;
 }
 
-void func_4(int iParam0) // Position - 0x19D (413)
+void func_4(BOOL bParam0) // Position - 0x19D (413)
 {
-	Global_2697011 = iParam0;
-	Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_878 = iParam0;
+	Global_2697011 = bParam0;
+	Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_878 = bParam0;
 	return;
 }
 
@@ -1003,7 +1003,7 @@ BOOL func_22() // Position - 0xFB5 (4021)
 
 BOOL func_23() // Position - 0xFD7 (4055)
 {
-	if (Global_2673274.f_1023.f_5 == -1)
+	if (Global_2673274.f_1023.f_5 == PV_COMP_INVALID)
 		return false;
 
 	return true;
@@ -1992,19 +1992,19 @@ BOOL func_68(int iParam0) // Position - 0x2205 (8709)
 	switch (iParam0)
 	{
 		case 1:
-			return Global_1983864 == 3;
+			return Global_1983865 == 3;
 	
 		case 3:
-			return Global_1983864 == 3;
+			return Global_1983865 == 3;
 	
 		case 4:
-			return Global_1983864 == 1;
+			return Global_1983865 == 1;
 	
 		case 5:
-			return Global_1983864 != 2 && Global_1983864 != -1;
+			return Global_1983865 != 2 && Global_1983865 != -1;
 	
 		case 7:
-			return Global_1983864 == 2;
+			return Global_1983865 == 2;
 	
 		default:
 		
@@ -2707,7 +2707,7 @@ BOOL func_105(Player plParam0, int iParam1) // Position - 0x2DFC (11772)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_106(-1, false) == 8;
+		flag = func_106(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
 
@@ -2718,28 +2718,28 @@ BOOL func_105(Player plParam0, int iParam1) // Position - 0x2DFC (11772)
 	return flag;
 }
 
-int func_106(int iParam0, BOOL bParam1) // Position - 0x2E55 (11861)
+eCharacter func_106(int iParam0, BOOL bParam1) // Position - 0x2E55 (11861)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_107();
+	if (num == -1)
+		num = func_107();
 
-	if (Global_1575072[num2] == true)
+	if (Global_1575072[num] == true)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_107() // Position - 0x2E96 (11926)

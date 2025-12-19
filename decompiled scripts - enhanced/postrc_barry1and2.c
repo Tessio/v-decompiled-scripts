@@ -408,7 +408,7 @@ BOOL func_13(Ped* ppedParam0, int iParam1, Vector3 vParam2, var uParam3, var uPa
 	return false;
 }
 
-int func_14(Ped pedParam0, int iParam1) // Position - 0x6A2 (1698)
+int func_14(ePedComponentType epctParam0, int iParam1) // Position - 0x6A2 (1698)
 {
 	int num;
 
@@ -432,7 +432,7 @@ int func_14(Ped pedParam0, int iParam1) // Position - 0x6A2 (1698)
 		return 0;
 	}
 
-	Global_98263[num - 3] = pedParam0;
+	Global_98263[num - 3] = epctParam0;
 	return 1;
 }
 

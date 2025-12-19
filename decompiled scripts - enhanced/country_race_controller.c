@@ -305,10 +305,10 @@ void func_5(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x221 (545)
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == true)
-			Global_34170 = true;
+		if (Global_34169 == BLIP_LEVEL)
+			Global_34170 = BLIP_LEVEL;
 	
-		Global_34169 = true;
+		Global_34169 = BLIP_LEVEL;
 	}
 
 	if (bParam1)

@@ -5475,8 +5475,8 @@ BOOL func_71(Any* panParam0) // Position - 0x2C6A (11370)
 
 	for (i = 0; i < 31; i = i + 1)
 	{
-		if (IS_GAMER_HANDLE_VALID(Global_1988664[i /*13*/]))
-			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988664[i /*13*/], panParam0))
+		if (IS_GAMER_HANDLE_VALID(Global_1988665[i /*13*/]))
+			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988665[i /*13*/], panParam0))
 				return true;
 	}
 
@@ -9111,7 +9111,7 @@ void func_110(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4) /
 
 BOOL func_111() // Position - 0x915A (37210)
 {
-	if (func_119(PLAYER::PLAYER_ID()) == 229 || func_119(PLAYER::PLAYER_ID()) == 191 || func_118(*Global_4718592.f_192777) || func_117() || func_120() || func_116() || Global_2709274.f_227 == true || Global_2635562.f_2054 && func_112(PLAYER::PLAYER_ID()))
+	if (func_119(PLAYER::PLAYER_ID()) == 229 || func_119(PLAYER::PLAYER_ID()) == 191 || func_118(*Global_4718592.f_192777) || func_117() || func_120() || func_116() || Global_2709274.f_227 == 1 || Global_2635562.f_2054 && func_112(PLAYER::PLAYER_ID()))
 		return false;
 
 	return true;
@@ -17747,10 +17747,10 @@ BOOL func_499() // Position - 0x12E9E (77470)
 	if (Global_1965157.f_718.f_5 || Global_1967983.f_718.f_5 || Global_1964185.f_718.f_5)
 		return false;
 
-	if (Global_1971951.f_724.f_5 || Global_1971951.f_744.f_724.f_5 || Global_1971951.f_1497.f_724.f_5)
+	if (Global_1971952.f_724.f_5 || Global_1971952.f_744.f_724.f_5 || Global_1971952.f_1497.f_724.f_5)
 		return false;
 
-	if (Global_1978755.f_732.f_5)
+	if (Global_1978756.f_732.f_5)
 		return false;
 
 	if (func_500(PLAYER::PLAYER_ID()))
@@ -21822,7 +21822,7 @@ void func_661(int iParam0, int iParam1) // Position - 0x17B93 (97171)
 
 BOOL func_662() // Position - 0x17BE8 (97256)
 {
-	if (MISC::IS_PC_VERSION() && Global_1988062 == 0)
+	if (MISC::IS_PC_VERSION() && Global_1988063 == 0)
 		return false;
 
 	return false;

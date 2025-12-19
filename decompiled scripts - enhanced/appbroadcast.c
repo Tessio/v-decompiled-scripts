@@ -111,7 +111,7 @@ BOOL func_1() // Position - 0xDE (222)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -122,7 +122,7 @@ BOOL func_2() // Position - 0x121 (289)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -273,64 +273,64 @@ int func_11(BOOL bParam0, BOOL bParam1) // Position - 0x386 (902)
 {
 	int address;
 	int i;
-	Player player;
+	ePedComponentType type;
 
 	for (i = 0; i < 32; i = i + 1)
 	{
-		player = PLAYER::INT_TO_PLAYERINDEX(i);
+		type = PLAYER::INT_TO_PLAYERINDEX(i);
 	
-		if (_NETWORK_IS_PLAYER_VALID(player, false, false))
-			if (player != PLAYER::PLAYER_ID() || bParam0)
+		if (_NETWORK_IS_PLAYER_VALID(type, false, false))
+			if (type != PLAYER::PLAYER_ID() || bParam0)
 				if (bParam1)
 					MISC::SET_BIT(&address, i);
-				else if (!func_12(player, 0))
+				else if (!func_12(type, 0))
 					MISC::SET_BIT(&address, i);
 	}
 
 	return address;
 }
 
-BOOL func_12(Player plParam0, int iParam1) // Position - 0x3EB (1003)
+BOOL func_12(ePedComponentType epctParam0, int iParam1) // Position - 0x3EB (1003)
 {
 	BOOL flag;
 
-	if (!func_15(plParam0))
+	if (!func_15(epctParam0))
 		return false;
 
-	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_13(-1, false) == 8;
+	if (epctParam0 == PLAYER::PLAYER_ID())
+		flag = func_13(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
-		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
+		flag = Global_1845299[epctParam0 /*883*/].f_198 == 8;
 
 	if (iParam1 == 1)
-		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(plParam0))
-			flag = PLAYER::GET_PLAYER_TEAM(plParam0) == 8;
+		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(epctParam0))
+			flag = PLAYER::GET_PLAYER_TEAM(epctParam0) == 8;
 
 	return flag;
 }
 
-int func_13(int iParam0, BOOL bParam1) // Position - 0x444 (1092)
+eCharacter func_13(int iParam0, BOOL bParam1) // Position - 0x444 (1092)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_14();
+	if (num == -1)
+		num = func_14();
 
-	if (Global_1575072[num2] == 1)
+	if (Global_1575072[num] == 1)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_14() // Position - 0x485 (1157)
@@ -338,28 +338,28 @@ int func_14() // Position - 0x485 (1157)
 	return Global_1574927;
 }
 
-BOOL func_15(Player plParam0) // Position - 0x491 (1169)
+BOOL func_15(ePedComponentType epctParam0) // Position - 0x491 (1169)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = plParam0;
+	type = epctParam0;
 
-	if (player < 0)
+	if (type < PV_COMP_HEAD)
 		return false;
 
-	if (player >= 32)
+	if (type >= 32)
 		return false;
 
 	return true;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x4B3 (1203)
+BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x4B3 (1203)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = player;
+	type = player;
 
-	if (player != -1)
+	if (type != PV_COMP_INVALID)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -368,9 +368,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Posi
 					return false;
 		
 			if (bUnk)
-				if (player == Global_2673274.f_3)
+				if (type == Global_2673274.f_3)
 					return Global_2673274.f_2;
-				else if (Global_2658294[player /*468*/] != 4)
+				else if (Global_2658294[type /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -611,19 +611,19 @@ BOOL func_42() // Position - 0x812 (2066)
 {
 	eViewModeContext camActiveViewModeContext;
 	eViewMode camViewModeForContext;
-	int num;
+	BOOL flag;
 
 	if (Global_80305)
 		return false;
 
-	num = 0;
+	flag = 0;
 	camActiveViewModeContext = CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT();
 	camViewModeForContext = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(camActiveViewModeContext);
 
 	if (camViewModeForContext == FIRST_PERSON)
-		num = 1;
+		flag = 1;
 
-	if (Global_4525122 || num)
+	if (Global_4525122 || flag)
 		return true;
 
 	return true;

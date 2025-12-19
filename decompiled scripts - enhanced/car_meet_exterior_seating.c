@@ -430,10 +430,10 @@ void func_2(var uParam0, int iParam1) // Position - 0x138 (312)
 	return;
 }
 
-void func_3(int iParam0) // Position - 0x146 (326)
+void func_3(BOOL bParam0) // Position - 0x146 (326)
 {
-	Global_2697011 = iParam0;
-	Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_878 = iParam0;
+	Global_2697011 = bParam0;
+	Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_878 = bParam0;
 	return;
 }
 
@@ -1717,7 +1717,7 @@ BOOL func_50(var uParam0) // Position - 0x19BA (6586)
 BOOL func_51(var uParam0) // Position - 0x1A31 (6705)
 {
 	int i;
-	Player playerIndex;
+	ePedComponentType playerIndex;
 
 	for (i = 0; i < NETWORK::NETWORK_GET_MAX_NUM_PARTICIPANTS(); i = i + 1)
 	{
@@ -1734,10 +1734,10 @@ BOOL func_51(var uParam0) // Position - 0x1A31 (6705)
 	return 0;
 }
 
-int func_52(Player plParam0) // Position - 0x1AAB (6827)
+int func_52(ePedComponentType epctParam0) // Position - 0x1AAB (6827)
 {
-	if (plParam0 != _INVALID_PLAYER_INDEX())
-		return Global_1845299[plParam0 /*883*/].f_878;
+	if (epctParam0 != _INVALID_PLAYER_INDEX())
+		return Global_1845299[epctParam0 /*883*/].f_878;
 
 	return -1;
 }
@@ -1747,13 +1747,13 @@ Player _INVALID_PLAYER_INDEX() // Position - 0x1ACC (6860)
 	return -1;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x1AD5 (6869)
+BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x1AD5 (6869)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = player;
+	type = player;
 
-	if (player != -1)
+	if (type != PV_COMP_INVALID)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -1762,9 +1762,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Posi
 					return false;
 		
 			if (bUnk)
-				if (player == Global_2673274.f_3)
+				if (type == Global_2673274.f_3)
 					return Global_2673274.f_2;
-				else if (Global_2658294[player /*468*/] != 4)
+				else if (Global_2658294[type /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -1983,13 +1983,13 @@ Vector3 _GET_PLAYER_COORDS(Player plParam0) // Position - 0x1EAF (7855)
 	return ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(plParam0), false);
 }
 
-BOOL func_75(Player plParam0) // Position - 0x1EC2 (7874)
+BOOL func_75(ePedComponentType epctParam0) // Position - 0x1EC2 (7874)
 {
-	if (plParam0 != _INVALID_PLAYER_INDEX())
-		if (_NETWORK_IS_PLAYER_VALID(plParam0, true, true))
-			return Global_2658294[plParam0 /*468*/].f_325.f_8 != -1;
-		else if (Global_1575092 && plParam0 == PLAYER::PLAYER_ID() && _NETWORK_IS_PLAYER_VALID(plParam0, true, false))
-			return Global_2658294[plParam0 /*468*/].f_325.f_8 != -1;
+	if (epctParam0 != _INVALID_PLAYER_INDEX())
+		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
+			return Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID;
+		else if (Global_1575092 && epctParam0 == PLAYER::PLAYER_ID() && _NETWORK_IS_PLAYER_VALID(epctParam0, true, false))
+			return Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID;
 
 	return false;
 }

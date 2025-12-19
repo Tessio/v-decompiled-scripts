@@ -404,14 +404,14 @@ void main() // Position - 0x0 (0)
 	return;
 }
 
-void func_1(eCharacter echParam0, int iParam1) // Position - 0x321 (801)
+void func_1(BOOL bParam0, int iParam1) // Position - 0x321 (801)
 {
-	Global_80552 = echParam0;
+	Global_80552 = bParam0;
 	Global_80552.f_1 = iParam1;
 
 	if (iParam1 == 7)
-		if (echParam0 >= CHAR_MICHAEL && echParam0 < CHAR_MRS_THORNHILL)
-			Global_114018[echParam0 /*10*/].f_3 = 1;
+		if (bParam0 >= false && bParam0 < 63)
+			Global_114018[bParam0 /*10*/].f_3 = 1;
 
 	MISC::SET_BIT(&Global_80554, 0);
 	return;
@@ -628,33 +628,33 @@ Hash func_14(int iParam0, int iParam1) // Position - 0x6C3 (1731)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_15(iParam1));
 }
 
-int func_15(int iParam0) // Position - 0x6D8 (1752)
+Interior func_15(Interior inParam0) // Position - 0x6D8 (1752)
 {
-	int num;
-	int num2;
+	Interior interior;
+	Interior interior2;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
+	if (interior == -1)
 	{
-		num2 = func_16();
+		interior2 = func_16();
 	
-		if (num2 > -1)
+		if (interior2 > -1)
 		{
 			Global_2741524 = 0;
-			num = num2;
+			interior = interior2;
 		}
 		else
 		{
-			num = 0;
+			interior = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return num;
+	return interior;
 }
 
-int func_16() // Position - 0x70C (1804)
+Interior func_16() // Position - 0x70C (1804)
 {
 	return Global_1574927;
 }
@@ -899,9 +899,9 @@ BOOL func_23() // Position - 0xB47 (2887)
 	return false;
 }
 
-BOOL func_24(int iParam0, int iParam1) // Position - 0xCBC (3260)
+BOOL func_24(BOOL bParam0, BOOL bParam1) // Position - 0xCBC (3260)
 {
-	return iParam0 && iParam1 != false;
+	return bParam0 && bParam1 != false;
 }
 
 BOOL func_25(BOOL bParam0) // Position - 0xCCB (3275)

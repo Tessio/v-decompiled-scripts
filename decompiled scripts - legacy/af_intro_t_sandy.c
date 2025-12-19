@@ -496,7 +496,7 @@ void func_12(int iParam0) // Position - 0x995 (2453)
 
 int func_13(int iParam0) // Position - 0xA51 (2641)
 {
-	eCharacter num;
+	eCharacter character;
 
 	if (Global_118[iParam0 /*10*/].f_8 != 198)
 	{
@@ -506,8 +506,8 @@ int func_13(int iParam0) // Position - 0xA51 (2641)
 		
 			if (func_17(iParam0, Global_21610) == 0)
 			{
-				num = Global_21610;
-				func_14(iParam0, num);
+				character = Global_21610;
+				func_14(iParam0, character);
 			}
 		
 			return 1;
@@ -521,76 +521,76 @@ int func_13(int iParam0) // Position - 0xA51 (2641)
 	return 0;
 }
 
-void func_14(int iParam0, int iParam1) // Position - 0xAA7 (2727)
+void func_14(int iParam0, eCharacter echParam1) // Position - 0xAA7 (2727)
 {
-	int num;
+	eCharacter character;
 
 	if (Global_118[iParam0 /*10*/].f_8 != 198)
 	{
-		if (iParam1 > CHAR_MULTIPLAYER)
+		if (echParam1 > CHAR_MULTIPLAYER)
 		{
 		}
 		else
 		{
-			num = iParam1;
-			func_16(iParam0, num, 0);
-			func_15(iParam0, num, 0);
+			character = echParam1;
+			func_16(iParam0, character, 0);
+			func_15(iParam0, character, 0);
 		}
 	}
 
 	return;
 }
 
-void func_15(int iParam0, int iParam1, int iParam2) // Position - 0xADC (2780)
+void func_15(int iParam0, eCharacter echParam1, int iParam2) // Position - 0xADC (2780)
 {
-	if (iParam1 < 0 || iParam1 > 4)
+	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
 		return;
 
-	Global_2339[iParam0 /*29*/].f_24[iParam1] = iParam2;
+	Global_2339[iParam0 /*29*/].f_24[echParam1] = iParam2;
 
 	if (iParam0 < 162)
-		Global_114904.f_28058[iParam0 /*29*/].f_24[iParam1] = iParam2;
+		Global_114904.f_28058[iParam0 /*29*/].f_24[echParam1] = iParam2;
 
 	return;
 }
 
-void func_16(int iParam0, int iParam1, int iParam2) // Position - 0xB21 (2849)
+void func_16(int iParam0, eCharacter echParam1, int iParam2) // Position - 0xB21 (2849)
 {
-	if (iParam1 < 0 || iParam1 > 4)
+	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
 		return;
 
-	Global_2339[iParam0 /*29*/].f_12[iParam1] = iParam2;
+	Global_2339[iParam0 /*29*/].f_12[echParam1] = iParam2;
 
 	if (iParam0 < 162)
-		Global_114904.f_28058[iParam0 /*29*/].f_12[iParam1] = iParam2;
+		Global_114904.f_28058[iParam0 /*29*/].f_12[echParam1] = iParam2;
 
 	return;
 }
 
-int func_17(int iParam0, int iParam1) // Position - 0xB66 (2918)
+int func_17(int iParam0, eCharacter echParam1) // Position - 0xB66 (2918)
 {
-	if (iParam1 < 0 || iParam1 > 4)
+	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
 		return 0;
 
-	return Global_2339[iParam0 /*29*/].f_24[iParam1];
+	return Global_2339[iParam0 /*29*/].f_24[echParam1];
 }
 
-void func_18(int iParam0, int iParam1, int iParam2) // Position - 0xB90 (2960)
+void func_18(int iParam0, eCharacter echParam1, int iParam2) // Position - 0xB90 (2960)
 {
-	Global_2339[iParam0 /*29*/].f_19[iParam1] = iParam2;
+	Global_2339[iParam0 /*29*/].f_19[echParam1] = iParam2;
 
 	if (iParam0 < 162)
-		Global_114904.f_28058[iParam0 /*29*/].f_19[iParam1] = iParam2;
+		Global_114904.f_28058[iParam0 /*29*/].f_19[echParam1] = iParam2;
 
 	return;
 }
 
-int func_19(int iParam0, int iParam1) // Position - 0xBC1 (3009)
+int func_19(int iParam0, eCharacter echParam1) // Position - 0xBC1 (3009)
 {
-	if (iParam1 < 0 || iParam1 > 4)
+	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
 		return 0;
 
-	return Global_2339[iParam0 /*29*/].f_19[iParam1];
+	return Global_2339[iParam0 /*29*/].f_19[echParam1];
 }
 
 void func_20(eCharacter echParam0) // Position - 0xBEB (3051)

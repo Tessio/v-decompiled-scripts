@@ -4854,7 +4854,7 @@ Vector3 func_80(int iParam0, BOOL bParam1) // Position - 0x6A61 (27233)
 			return 2714.5466f, -354.2701f, -55.1867f;
 	
 		case 50:
-			return Global_1971528;
+			return Global_1971529;
 	
 		case 51:
 			return 1100f, 220f, -50f;

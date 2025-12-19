@@ -187,7 +187,7 @@ struct<5> func_3(Hash hParam0, Vector3 vParam1, var uParam2, var uParam3, int iP
 		Global_1912540[num2 /*319*/].f_102.f_21[num /*14*/].f_12 = SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME();
 		Global_1912540[num2 /*319*/].f_102.f_21[num /*14*/].f_13 = NETWORK::NETWORK_GET_POSITION_HASH_OF_THIS_SCRIPT();
 	
-		if (Global_1912540[num2 /*319*/].f_102.f_21[num /*14*/].f_13 == 0)
+		if (Global_1912540[num2 /*319*/].f_102.f_21[num /*14*/].f_13 == BLIP_HIGHER)
 		{
 			Global_1912540[num2 /*319*/].f_102.f_21[num /*14*/].f_13 = NETWORK::NETWORK_GET_INSTANCE_ID_OF_THIS_SCRIPT();
 			Global_1912540[num2 /*319*/].f_102.f_21[num /*14*/].f_11 = 1;
@@ -206,25 +206,25 @@ struct<5> func_3(Hash hParam0, Vector3 vParam1, var uParam2, var uParam3, int iP
 	return hash;
 }
 
-int func_4(Any* panParam0) // Position - 0x399 (921)
+int func_4(Hash hParam0) // Position - 0x399 (921)
 {
 	int i;
 
-	if (!func_7(panParam0))
+	if (!func_7(hParam0))
 		return -1;
 
 	for (i = 0; i < 10; i = i + 1)
 	{
-		if (func_5(panParam0, &Global_2652582.f_2452[i /*16*/]))
+		if (func_5(hParam0, &Global_2652582.f_2452[i /*16*/]))
 			return i;
 	}
 
 	return -1;
 }
 
-BOOL func_5(Any* panParam0, Any* panParam1) // Position - 0x3DC (988)
+BOOL func_5(Hash hParam0, Hash hParam1) // Position - 0x3DC (988)
 {
-	if (*panParam0 == *panParam1 && func_6(panParam0->f_1, panParam1->f_1, false) && panParam0->f_4 == panParam1->f_4)
+	if (*hParam0 == *hParam1 && func_6(hParam0->f_1, hParam1->f_1, false) && hParam0->f_4 == hParam1->f_4)
 		return true;
 
 	return false;
@@ -238,9 +238,9 @@ BOOL func_6(float fParam0, var uParam1, var uParam2, float fParam3, var uParam4,
 	return fParam0 == fParam3 && fParam0.f_1 == fParam3.f_1 && fParam0.f_2 == fParam3.f_2;
 }
 
-BOOL func_7(Any* panParam0) // Position - 0x45E (1118)
+BOOL func_7(Hash hParam0) // Position - 0x45E (1118)
 {
-	if (*panParam0 == 123 || func_8(panParam0->f_1) || panParam0->f_4 == 0)
+	if (*hParam0 == 123 || func_8(hParam0->f_1) || hParam0->f_4 == 0)
 		return false;
 
 	return true;
@@ -295,7 +295,7 @@ int func_10() // Position - 0x506 (1286)
 	return num;
 }
 
-BOOL func_11(int iParam0) // Position - 0x540 (1344)
+Hash func_11(int iParam0) // Position - 0x540 (1344)
 {
 	switch (iParam0)
 	{
@@ -318,7 +318,7 @@ BOOL func_11(int iParam0) // Position - 0x540 (1344)
 	return 0;
 }
 
-BOOL func_12() // Position - 0x590 (1424)
+Hash func_12() // Position - 0x590 (1424)
 {
 	return Global_262145.f_30377;
 }

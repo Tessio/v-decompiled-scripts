@@ -101,7 +101,7 @@ void main() // Position - 0x0 (0)
 							}
 							else
 							{
-								Global_98861 = 1;
+								Global_98861 = true;
 								iLocal_2 = 4;
 							}
 						}

@@ -921,9 +921,9 @@ int func_5() // Position - 0xFC7 (4039)
 	return func_6(Global_113638.f_20, Global_113638.f_29);
 }
 
-int func_6(int iParam0, int iParam1) // Position - 0xFDF (4063)
+int func_6(Object obParam0, int iParam1) // Position - 0xFDF (4063)
 {
-	switch (iParam0)
+	switch (obParam0)
 	{
 		case 6:
 		case 5:
@@ -958,7 +958,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = false;
+	Global_23014 = 0;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -982,9 +982,9 @@ BOOL func_8(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x1093 (4243
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = false;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_23053 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -1153,9 +1153,9 @@ void func_9() // Position - 0x1361 (4961)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -1523,9 +1523,9 @@ BOOL func_32() // Position - 0x19B8 (6584)
 	return true;
 }
 
-BOOL func_33(int iParam0, int iParam1) // Position - 0x19DE (6622)
+BOOL func_33(BOOL bParam0, BOOL bParam1) // Position - 0x19DE (6622)
 {
-	return iParam0 && iParam1 != false;
+	return bParam0 && bParam1 != false;
 }
 
 BOOL func_34(Ped pedParam0, eScriptTaskHash esthParam1, BOOL bParam2) // Position - 0x19ED (6637)
@@ -1676,7 +1676,7 @@ void func_41(int iParam0, var uParam1, char* sParam2, int iParam3, int iParam4, 
 	return;
 }
 
-void func_42(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0x1CC4 (7364)
+void func_42(ePedComponentType epctParam0, BOOL bParam1, char* sParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0x1CC4 (7364)
 {
 	int num;
 	int i;
@@ -1695,7 +1695,7 @@ void func_42(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedCompo
 		Global_1679155.f_1 = 1;
 		func_43(0, num);
 		Global_1679155.f_1177[num] = epctParam0;
-		Global_1679155.f_1177.f_11[num] = iParam1;
+		Global_1679155.f_1177.f_11[num] = bParam1;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679155.f_1177.f_22[num /*16*/], sParam2, 64);
 		Global_1679155.f_1177.f_194[num] = epctParam3;
 		Global_1679155.f_1177.f_183[num] = epctParam4;
@@ -1947,7 +1947,7 @@ BOOL func_50(var uParam0) // Position - 0x23EF (9199)
 	return false;
 }
 
-int func_51(BOOL bParam0) // Position - 0x241A (9242)
+BOOL func_51(BOOL bParam0) // Position - 0x241A (9242)
 {
 	switch (Global_44886)
 	{
@@ -1997,13 +1997,13 @@ BOOL func_52(const char* sParam0) // Position - 0x24C4 (9412)
 			break;
 	
 		case 4:
-			if (func_51(false) < 1)
+			if (func_51(false) < true)
 				return true;
 			break;
 	
 		case 5:
 		case 15:
-			if (func_51(false) < 1)
+			if (func_51(false) < true)
 				return true;
 			break;
 	
@@ -2929,9 +2929,9 @@ void func_89(var uParam0) // Position - 0x3511 (13585)
 	return;
 }
 
-BOOL func_90(int iParam0, var uParam1, var uParam2, var uParam3) // Position - 0x3871 (14449)
+BOOL func_90(Object obParam0, var uParam1, var uParam2, var uParam3) // Position - 0x3871 (14449)
 {
-	switch (iParam0)
+	switch (obParam0)
 	{
 		case 5:
 			if (func_91(func_92(uParam1 - { 0f, 174.58f, 335.5574f }), func_92({ 0f, 174.8707f, 334.8261f } - { 0f, 174.58f, 335.5574f })) < 0f)
@@ -3016,7 +3016,7 @@ Vector3 func_92(float fParam0, var uParam1, var uParam2) // Position - 0x3AB9 (1
 	return fParam0;
 }
 
-int func_93() // Position - 0x3AF8 (15096)
+Object func_93() // Position - 0x3AF8 (15096)
 {
 	return Global_113638.f_20;
 }

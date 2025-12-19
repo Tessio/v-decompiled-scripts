@@ -17909,10 +17909,10 @@ BOOL func_416() // Position - 0x13BB8 (80824)
 	if (Global_1965157.f_718.f_5 || Global_1967983.f_718.f_5 || Global_1964185.f_718.f_5)
 		return false;
 
-	if (Global_1971951.f_724.f_5 || Global_1971951.f_744.f_724.f_5 || Global_1971951.f_1497.f_724.f_5)
+	if (Global_1971952.f_724.f_5 || Global_1971952.f_744.f_724.f_5 || Global_1971952.f_1497.f_724.f_5)
 		return false;
 
-	if (Global_1978755.f_732.f_5)
+	if (Global_1978756.f_732.f_5)
 		return false;
 
 	if (func_417(PLAYER::PLAYER_ID()))
@@ -21751,7 +21751,7 @@ void func_538(int iParam0, int iParam1) // Position - 0x18A67 (100967)
 
 BOOL func_539() // Position - 0x18ABC (101052)
 {
-	if (MISC::IS_PC_VERSION() && Global_1988062 == 0)
+	if (MISC::IS_PC_VERSION() && Global_1988063 == 0)
 		return false;
 
 	return false;
@@ -24394,8 +24394,8 @@ BOOL func_626(Any* panParam0) // Position - 0x1C5E5 (116197)
 
 	for (i = 0; i < 31; i = i + 1)
 	{
-		if (IS_GAMER_HANDLE_VALID(Global_1988664[i /*13*/]))
-			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988664[i /*13*/], panParam0))
+		if (IS_GAMER_HANDLE_VALID(Global_1988665[i /*13*/]))
+			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988665[i /*13*/], panParam0))
 				return true;
 	}
 

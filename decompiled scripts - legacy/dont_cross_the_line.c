@@ -3150,20 +3150,20 @@ void func_92(int iParam0, BOOL bParam1) // Position - 0x2A71 (10865)
 	{
 		if (bParam1)
 		{
-			if (Global_1989133[i] == iParam0)
+			if (Global_1989134[i] == iParam0)
 				return;
-			else if (Global_1989133[i] == -1)
+			else if (Global_1989134[i] == -1)
 				num = i;
 		}
-		else if (Global_1989133[i] == iParam0)
+		else if (Global_1989134[i] == iParam0)
 		{
-			Global_1989133[i] = -1;
+			Global_1989134[i] = -1;
 			return;
 		}
 	}
 
 	if (bParam1 && num >= 0)
-		Global_1989133[num] = iParam0;
+		Global_1989134[num] = iParam0;
 
 	return;
 }

@@ -494,7 +494,7 @@ void main() // Position - 0x0 (0)
 	
 		if (Global_80280)
 			if (iLocal_92 == 0)
-				if (IS_BIT_SET(Global_1982734, 0))
+				if (IS_BIT_SET(Global_1982735, 0))
 					if (func_58(&uLocal_93, 10000, false))
 						if (func_55())
 							iLocal_92 = 1;
@@ -3315,7 +3315,7 @@ BOOL func_71(int iParam0, int iParam1) // Position - 0x3FD2 (16338)
 	return 0;
 }
 
-BOOL _SEND_TEXT_MESSAGE_FROM_CHARACTER_2(eCharacter echParam0, const char* sParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7, int iParam8, int iParam9) // Position - 0x41C4 (16836)
+BOOL _SEND_TEXT_MESSAGE_FROM_CHARACTER_2(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7, int iParam8, int iParam9) // Position - 0x41C4 (16836)
 {
 	int num;
 	char* str;
@@ -3358,7 +3358,7 @@ struct<4> _GET_CHARACTER_NAME(eCharacter character) // Position - 0x4253 (16979)
 	return Global_2339[character /*29*/].f_3;
 }
 
-int func_74(eCharacter echParam0, const char* sParam1, int iParam2, int iParam3, char* sParam4, char* sParam5, int iParam6, int iParam7, int iParam8, int iParam9, BOOL bParam10, int iParam11, int iParam12, int iParam13, char* sParam14, char* sParam15, int iParam16) // Position - 0x4266 (16998)
+int func_74(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char* sParam4, char* sParam5, int iParam6, int iParam7, int iParam8, int iParam9, BOOL bParam10, int iParam11, int iParam12, int iParam13, char* sParam14, char* sParam15, int iParam16) // Position - 0x4266 (16998)
 {
 	int num;
 	int num2;
@@ -3586,14 +3586,14 @@ int func_74(eCharacter echParam0, const char* sParam1, int iParam2, int iParam3,
 		}
 	}
 
-	if (Global_1978584 != -1 && echParam0 == Global_1978584)
+	if (Global_1978585 != -1 && echParam0 == Global_1978585)
 		num2 = 1;
 
 	func_75(echParam0, sParam1, num2, func_81(PLAYER::PLAYER_ID()));
 	return 1;
 }
 
-void func_75(eCharacter echParam0, const char* sParam1, BOOL bParam2, int iParam3) // Position - 0x474B (18251)
+void func_75(eCharacter echParam0, char* sParam1, BOOL bParam2, int iParam3) // Position - 0x474B (18251)
 {
 	eCharacter character;
 
@@ -3606,18 +3606,18 @@ void func_75(eCharacter echParam0, const char* sParam1, BOOL bParam2, int iParam
 	character.f_3 = 0;
 	character.f_4 = bParam2;
 	character.f_5 = iParam3;
-	character.f_6 = Global_1978567.f_7;
-	character.f_7 = Global_1978567.f_8;
-	character.f_8 = Global_1978567.f_9;
-	character.f_9 = Global_1978567.f_10;
-	character.f_10 = Global_1978567.f_11;
-	character.f_11 = Global_1978567.f_12;
-	character.f_12 = Global_1978567.f_13;
-	character.f_13 = Global_1978567.f_14;
+	character.f_6 = Global_1978568.f_7;
+	character.f_7 = Global_1978568.f_8;
+	character.f_8 = Global_1978568.f_9;
+	character.f_9 = Global_1978568.f_10;
+	character.f_10 = Global_1978568.f_11;
+	character.f_11 = Global_1978568.f_12;
+	character.f_12 = Global_1978568.f_13;
+	character.f_13 = Global_1978568.f_14;
 	STATS::PLAYSTATS_NPC_PHONE(&character);
 
 	if (bParam2)
-		Global_1978584 = -1;
+		Global_1978585 = -1;
 
 	return;
 }
@@ -6336,9 +6336,9 @@ BOOL func_113(float fParam0, var uParam1, var uParam2) // Position - 0x8EFB (366
 	return false;
 }
 
-char* func_114(char* sParam0) // Position - 0x8F25 (36645)
+var func_114(var uParam0) // Position - 0x8F25 (36645)
 {
-	return sParam0;
+	return uParam0;
 }
 
 struct<6> func_115(int iParam0, BOOL bParam1) // Position - 0x8F2F (36655)

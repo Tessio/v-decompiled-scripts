@@ -29188,7 +29188,7 @@ int func_100(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x1B91D 
 	return -99;
 }
 
-ePedComponentType func_101(ePedComponentType epctParam0) // Position - 0x1BA5B (113243)
+Hash func_101(ePedComponentType epctParam0) // Position - 0x1BA5B (113243)
 {
 	switch (epctParam0)
 	{
@@ -36023,7 +36023,7 @@ void func_163(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bPara
 		if (bParam2)
 			flag2 = false;
 	
-		if (!bParam4 || num != func_17() || Global_1989162 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
+		if (!bParam4 || num != func_17() || Global_1989163 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
 		{
 			characterType = func_207(pedParam0);
 		
@@ -36064,7 +36064,7 @@ void func_163(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bPara
 				}
 			}
 		
-			if (Global_1989161)
+			if (Global_1989162)
 				func_167();
 		}
 		else
@@ -36085,7 +36085,7 @@ void func_164(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPar
 	int num;
 	int decorationIndex;
 
-	if (!Global_1989161)
+	if (!Global_1989162)
 		func_165(&pedParam0);
 
 	i = 0;
@@ -36093,7 +36093,7 @@ void func_164(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPar
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		num = Global_1989133[i];
+		num = Global_1989134[i];
 	
 		if (num <= -1)
 		{
@@ -36147,7 +36147,7 @@ void func_165(var uParam0) // Position - 0x2AC0F (175119)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
 	i = 0;
@@ -36174,7 +36174,7 @@ void func_165(var uParam0) // Position - 0x2AC0F (175119)
 		}
 	}
 
-	Global_1989161 = true;
+	Global_1989162 = true;
 	return;
 }
 
@@ -36189,20 +36189,20 @@ void func_166(int iParam0, BOOL bParam1) // Position - 0x2ACB5 (175285)
 	{
 		if (bParam1)
 		{
-			if (Global_1989133[i] == iParam0)
+			if (Global_1989134[i] == iParam0)
 				return;
-			else if (Global_1989133[i] == -1)
+			else if (Global_1989134[i] == -1)
 				num = i;
 		}
-		else if (Global_1989133[i] == iParam0)
+		else if (Global_1989134[i] == iParam0)
 		{
-			Global_1989133[i] = -1;
+			Global_1989134[i] = -1;
 			return;
 		}
 	}
 
 	if (bParam1 && num >= 0)
-		Global_1989133[num] = iParam0;
+		Global_1989134[num] = iParam0;
 
 	return;
 }
@@ -36213,10 +36213,10 @@ void func_167() // Position - 0x2AD2F (175407)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
-	Global_1989161 = false;
+	Global_1989162 = false;
 	return;
 }
 
@@ -51753,48 +51753,48 @@ ePedComponentType func_231(Hash hParam0, int iParam1, ePedComponentType epctPara
 			switch (iParam1)
 			{
 				case 0:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 2:
 					return Global_114904.f_2370.f_539[0 /*65*/].f_59;
 			
 				case 3:
 					if (Global_114904.f_9092.f_99.f_58[120])
-						return PV_COMP_BERD;
+						return 1;
 					else
-						return PV_COMP_HEAD;
+						return 0;
 					break;
 			
 				case 4:
 					if (Global_114904.f_9092.f_99.f_58[120])
-						return PV_COMP_BERD;
+						return 1;
 					else
-						return PV_COMP_HEAD;
+						return 0;
 					break;
 			
 				case 6:
-					return PV_COMP_FEET;
+					return 6;
 			
 				case 5:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 8:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 9:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 10:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 1:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 7:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 11:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 12:
 					break;
@@ -51808,7 +51808,7 @@ ePedComponentType func_231(Hash hParam0, int iParam1, ePedComponentType epctPara
 			switch (iParam1)
 			{
 				case 0:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 2:
 					return Global_114904.f_2370.f_539[1 /*65*/].f_59;
@@ -51823,25 +51823,25 @@ ePedComponentType func_231(Hash hParam0, int iParam1, ePedComponentType epctPara
 					return 17;
 			
 				case 5:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 8:
 					return 26;
 			
 				case 9:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 10:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 1:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 7:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 11:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 12:
 					break;
@@ -51855,40 +51855,40 @@ ePedComponentType func_231(Hash hParam0, int iParam1, ePedComponentType epctPara
 			switch (iParam1)
 			{
 				case 0:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 2:
 					return Global_114904.f_2370.f_539[2 /*65*/].f_59;
 			
 				case 3:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 4:
 					return 91;
 			
 				case 6:
-					return PV_COMP_ACCS;
+					return 8;
 			
 				case 5:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 8:
 					return 15;
 			
 				case 9:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 10:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 1:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 7:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 11:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 12:
 					break;
@@ -51908,34 +51908,34 @@ ePedComponentType func_231(Hash hParam0, int iParam1, ePedComponentType epctPara
 					break;
 			
 				case 3:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 4:
 					return 80;
 			
 				case 6:
-					return PV_COMP_DECL;
+					return 10;
 			
 				case 5:
 					break;
 			
 				case 8:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 9:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 10:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 1:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 7:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 11:
-					return PV_COMP_HAIR;
+					return 2;
 			}
 			break;
 	
@@ -51949,7 +51949,7 @@ ePedComponentType func_231(Hash hParam0, int iParam1, ePedComponentType epctPara
 					break;
 			
 				case 3:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 4:
 					return 233;
@@ -51961,19 +51961,19 @@ ePedComponentType func_231(Hash hParam0, int iParam1, ePedComponentType epctPara
 					break;
 			
 				case 8:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 9:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 10:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 1:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 7:
-					return PV_COMP_HEAD;
+					return 0;
 			
 				case 11:
 					return 78;
@@ -89515,7 +89515,7 @@ Vector3 func_367(int iParam0, BOOL bParam1) // Position - 0x6A0E6 (434406)
 			return 2714.5466f, -354.2701f, -55.1867f;
 	
 		case 50:
-			return Global_1971528;
+			return Global_1971529;
 	
 		case 51:
 			return 1100f, 220f, -50f;
@@ -102463,11 +102463,11 @@ BOOL func_634(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, i
 	Global_22997 = false;
 	Global_22992 = false;
 	Global_23974 = 0;
-	Global_23976 = 0;
+	Global_23976 = false;
 	Global_23980 = 0;
 	Global_22988 = 0;
-	Global_23035 = 0;
-	Global_23037 = 0;
+	Global_23035 = false;
+	Global_23037 = false;
 
 	if (iParam5 == 1)
 		Global_22995 = true;
@@ -102494,7 +102494,7 @@ BOOL func_635(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x809E5 (5
 					Global_21610.f_1 = 3;
 					Global_22983 = 0;
 					Global_22984 = 1;
-					Global_23036 = 0;
+					Global_23036 = false;
 					Global_22979 = 0;
 					Global_22980 = 0;
 					Global_22994 = false;
@@ -102665,9 +102665,9 @@ void func_636() // Position - 0x80CB3 (527539)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -102972,7 +102972,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 	Global_22992 = false;
 	Global_22997 = false;
 	Global_23974 = 0;
-	Global_23976 = 0;
+	Global_23976 = false;
 	Global_23980 = 0;
 	Global_2883585 = 0;
 	return func_635(sParam2, iParam3, false);
@@ -104721,7 +104721,7 @@ BOOL func_691(var uParam0, char* sParam1, char* sParam2, char* sParam3, int iPar
 	Global_22997 = false;
 	Global_22992 = false;
 	Global_23974 = 1;
-	Global_23976 = 0;
+	Global_23976 = false;
 	Global_23980 = 0;
 	TEXT_LABEL_ASSIGN_STRING(&Global_23987, sParam3, 24);
 	Global_2883585 = 0;

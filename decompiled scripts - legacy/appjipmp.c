@@ -406,7 +406,7 @@ void main() // Position - 0x0 (0)
 		iLocal_244 = 1;
 
 	Global_2686090.f_1.f_2802 = 0;
-	func_301(&(Global_1982486.f_13));
+	func_301(&(Global_1982487.f_13));
 
 	while (true)
 	{
@@ -10091,7 +10091,7 @@ void func_309() // Position - 0xBD66 (48486)
 
 BOOL func_310() // Position - 0xBD73 (48499)
 {
-	if (Global_1988076)
+	if (Global_1988077)
 		return true;
 
 	switch (func_311())

@@ -95,15 +95,15 @@ void func_1() // Position - 0xAD (173)
 	return;
 }
 
-void func_2(var uParam0, int iParam1) // Position - 0xC5 (197)
+void func_2(int iParam0, int iParam1) // Position - 0xC5 (197)
 {
-	func_3(uParam0, iParam1);
+	func_3(iParam0, iParam1);
 	return;
 }
 
-void func_3(var uParam0, int iParam1) // Position - 0xD5 (213)
+void func_3(int iParam0, int iParam1) // Position - 0xD5 (213)
 {
-	*uParam0 = *uParam0 || iParam1;
+	*iParam0 = *iParam0 || iParam1;
 	return;
 }
 

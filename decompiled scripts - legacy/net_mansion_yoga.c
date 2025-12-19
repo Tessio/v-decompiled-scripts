@@ -1149,18 +1149,18 @@ void main() // Position - 0x0 (0)
 							bLocal_316 = true;
 						}
 					
-						if (!Global_1989189)
+						if (!Global_1989190)
 						{
 							if (_STAT_GET_PACKED_INT(59859, -1) < 3)
 							{
 								func_417(59859, _STAT_GET_PACKED_INT(59859, -1) + 1, -1);
 								_DISPLAY_HELP_TEXT("YOGA_MANS_HELP", -1);
-								Global_1989189 = true;
+								Global_1989190 = true;
 							}
 						}
 						else
 						{
-							Global_1989189 = true;
+							Global_1989190 = true;
 						}
 					}
 					else if (bLocal_316)
@@ -3020,10 +3020,10 @@ void func_52() // Position - 0x29F9 (10745)
 
 void func_53(var uParam0) // Position - 0x2A65 (10853)
 {
-	if (!Global_1989190)
+	if (!Global_1989191)
 	{
 		func_54(27, 0, -1);
-		Global_1989190 = true;
+		Global_1989191 = true;
 		uParam0->f_69 = -1;
 	}
 
@@ -12250,7 +12250,7 @@ void func_177(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bPara
 		if (bParam2)
 			flag2 = false;
 	
-		if (!bParam4 || num != func_5() || Global_1989162 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
+		if (!bParam4 || num != func_5() || Global_1989163 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
 		{
 			characterType = func_218(pedParam0);
 		
@@ -12291,7 +12291,7 @@ void func_177(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bPara
 				}
 			}
 		
-			if (Global_1989161)
+			if (Global_1989162)
 				func_181();
 		}
 		else
@@ -12312,7 +12312,7 @@ void func_178(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPar
 	eControlAction action;
 	int decorationIndex;
 
-	if (!Global_1989161)
+	if (!Global_1989162)
 		func_179(&pedParam0);
 
 	i = 0;
@@ -12320,7 +12320,7 @@ void func_178(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPar
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		action = Global_1989133[i];
+		action = Global_1989134[i];
 	
 		if (action <= -1)
 		{
@@ -12374,7 +12374,7 @@ void func_179(var uParam0) // Position - 0x14F10 (85776)
 
 	for (i = INPUT_NEXT_CAMERA; i < INPUT_PHONE; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
 	i = INPUT_NEXT_CAMERA;
@@ -12401,7 +12401,7 @@ void func_179(var uParam0) // Position - 0x14F10 (85776)
 		}
 	}
 
-	Global_1989161 = true;
+	Global_1989162 = true;
 	return;
 }
 
@@ -12416,20 +12416,20 @@ void func_180(eControlAction ecaParam0, BOOL bParam1) // Position - 0x14FB6 (859
 	{
 		if (bParam1)
 		{
-			if (Global_1989133[i] == ecaParam0)
+			if (Global_1989134[i] == ecaParam0)
 				return;
-			else if (Global_1989133[i] == -1)
+			else if (Global_1989134[i] == -1)
 				num = i;
 		}
-		else if (Global_1989133[i] == ecaParam0)
+		else if (Global_1989134[i] == ecaParam0)
 		{
-			Global_1989133[i] = -1;
+			Global_1989134[i] = -1;
 			return;
 		}
 	}
 
 	if (bParam1 && num >= 0)
-		Global_1989133[num] = ecaParam0;
+		Global_1989134[num] = ecaParam0;
 
 	return;
 }
@@ -12440,10 +12440,10 @@ void func_181() // Position - 0x15030 (86064)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
-	Global_1989161 = false;
+	Global_1989162 = false;
 	return;
 }
 
@@ -88208,14 +88208,14 @@ void func_457(int iParam0) // Position - 0x6A40C (435212)
 
 void func_458(var uParam0) // Position - 0x6A41A (435226)
 {
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	uParam0->f_692 = 0;
 	return;
 }
 
 BOOL func_459(var uParam0) // Position - 0x6A42D (435245)
 {
-	return Global_1988494 || uParam0->f_692;
+	return Global_1988495 || uParam0->f_692;
 }
 
 void func_460(const char* sParam0, char* sParam1, var uParam2, char* sParam3) // Position - 0x6A444 (435268)
@@ -88273,7 +88273,7 @@ void func_462(var uParam0) // Position - 0x6A4A8 (435368)
 	uParam0->f_697 = 0f;
 	uParam0->f_698 = 0f;
 	uParam0->f_699 = 1f;
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	return;
 }
 

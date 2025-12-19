@@ -280,14 +280,14 @@ int func_4(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var 
 	int num9;
 	BOOL flag3;
 	int num10;
-	Hash hash2;
+	int num11;
 	BOOL flag4;
 	BOOL flag5;
 	BOOL flag6;
 	BOOL flag7;
-	int num11;
-	int j;
 	int num12;
+	int j;
+	int num13;
 
 	flag = false;
 
@@ -424,7 +424,7 @@ int func_4(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var 
 		num5 = func_30(&unk17, false);
 		flag3 = func_29(&unk17);
 		num10 = func_27(&unk17);
-		hash2 = func_26(&unk17);
+		num11 = func_26(&unk17);
 		flag4 = func_21(&unk17);
 	
 		if (!flag4)
@@ -486,15 +486,15 @@ int func_4(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var 
 		num6 = 1;
 	}
 
-	num11 = Global_1689005;
+	num12 = Global_1689005;
 
-	if (num11 >= 12)
-		num11 = num11 - 1;
+	if (num12 >= 12)
+		num12 = num12 - 1;
 
-	for (j = num11 - 1; j >= 0; j = j - 1)
+	for (j = num12 - 1; j >= 0; j = j - 1)
 	{
-		Global_2623479[num11 /*99*/] = { Global_2623479[j /*99*/] };
-		num11 = num11 - 1;
+		Global_2623479[num12 /*99*/] = { Global_2623479[j /*99*/] };
+		num12 = num12 - 1;
 	}
 
 	Global_1689005 = Global_1689005 + 1;
@@ -502,48 +502,48 @@ int func_4(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var 
 	if (Global_1689005 > 12)
 		Global_1689005 = 12;
 
-	num12 = 0;
-	Global_2623479[num12 /*99*/] = false;
-	Global_2623479[num12 /*99*/].f_1 = 0;
-	Global_2623479[num12 /*99*/].f_5 = 0;
-	Global_2623479[num12 /*99*/].f_2 = num7;
-	Global_2623479[num12 /*99*/].f_3 = 0;
-	Global_2623479[num12 /*99*/].f_4 = num8;
-	Global_2623479[num12 /*99*/].f_6 = { uParam0 };
-	Global_2623479[num12 /*99*/].f_12 = num10;
-	Global_2623479[num12 /*99*/].f_13 = hash2;
-	Global_2623479[num12 /*99*/].f_15 = { uParam6 };
-	TEXT_LABEL_ASSIGN_STRING(&(Global_2623479[num12 /*99*/].f_31), "", 64);
-	Global_2623479[num12 /*99*/].f_49 = num3;
-	Global_2623479[num12 /*99*/].f_50 = hash;
-	Global_2623479[num12 /*99*/].f_51 = num2;
-	Global_2623479[num12 /*99*/].f_91 = iParam22;
-	Global_2623479[num12 /*99*/].f_57 = { unk27 };
-	Global_2623479[num12 /*99*/].f_73 = { unk43 };
-	Global_2623479[num12 /*99*/].f_52 = num5;
-	Global_2623479[num12 /*99*/].f_53 = 0;
-	Global_2623479[num12 /*99*/].f_53.f_1 = 0;
-	Global_2623479[num12 /*99*/].f_53.f_2 = 0;
-	Global_2623479[num12 /*99*/].f_56 = num6;
-	Global_2623479[num12 /*99*/].f_90 = uParam36;
-	Global_2623479[num12 /*99*/].f_92 = -1;
-	Global_2623479[num12 /*99*/].f_93 = num9;
-	Global_2623479[num12 /*99*/].f_94 = Global_2625809;
-	Global_2623479[num12 /*99*/].f_95 = flag3;
-	Global_2623479[num12 /*99*/].f_98 = NETWORK::NETWORK_IS_FRIEND(&uParam23);
+	num13 = 0;
+	Global_2623479[num13 /*99*/] = false;
+	Global_2623479[num13 /*99*/].f_1 = 0;
+	Global_2623479[num13 /*99*/].f_5 = 0;
+	Global_2623479[num13 /*99*/].f_2 = num7;
+	Global_2623479[num13 /*99*/].f_3 = 0;
+	Global_2623479[num13 /*99*/].f_4 = num8;
+	Global_2623479[num13 /*99*/].f_6 = { uParam0 };
+	Global_2623479[num13 /*99*/].f_12 = num10;
+	Global_2623479[num13 /*99*/].f_13 = num11;
+	Global_2623479[num13 /*99*/].f_15 = { uParam6 };
+	TEXT_LABEL_ASSIGN_STRING(&(Global_2623479[num13 /*99*/].f_31), "", 64);
+	Global_2623479[num13 /*99*/].f_49 = num3;
+	Global_2623479[num13 /*99*/].f_50 = hash;
+	Global_2623479[num13 /*99*/].f_51 = num2;
+	Global_2623479[num13 /*99*/].f_91 = iParam22;
+	Global_2623479[num13 /*99*/].f_57 = { unk27 };
+	Global_2623479[num13 /*99*/].f_73 = { unk43 };
+	Global_2623479[num13 /*99*/].f_52 = num5;
+	Global_2623479[num13 /*99*/].f_53 = 0;
+	Global_2623479[num13 /*99*/].f_53.f_1 = 0;
+	Global_2623479[num13 /*99*/].f_53.f_2 = 0;
+	Global_2623479[num13 /*99*/].f_56 = num6;
+	Global_2623479[num13 /*99*/].f_90 = uParam36;
+	Global_2623479[num13 /*99*/].f_92 = -1;
+	Global_2623479[num13 /*99*/].f_93 = num9;
+	Global_2623479[num13 /*99*/].f_94 = Global_2625809;
+	Global_2623479[num13 /*99*/].f_95 = flag3;
+	Global_2623479[num13 /*99*/].f_98 = NETWORK::NETWORK_IS_FRIEND(&uParam23);
 
-	if (Global_2623479[num12 /*99*/].f_50 == 0)
-		if (Global_2623479[num12 /*99*/].f_51 == 1)
-			Global_2623479[num12 /*99*/].f_56 = 0;
+	if (Global_2623479[num13 /*99*/].f_50 == 0)
+		if (Global_2623479[num13 /*99*/].f_51 == 1)
+			Global_2623479[num13 /*99*/].f_56 = 0;
 
-	Global_2623479[num12 /*99*/].f_96 = func_6(uParam23, num12);
-	Global_2623479[num12 /*99*/].f_97 = 0;
-	Global_2623479[num12 /*99*/].f_89 = iParam37;
+	Global_2623479[num13 /*99*/].f_96 = func_6(uParam23, num13);
+	Global_2623479[num13 /*99*/].f_97 = 0;
+	Global_2623479[num13 /*99*/].f_89 = iParam37;
 	Global_2625809 = Global_2625809 + 1;
-	Global_2623479[num12 /*99*/].f_47 = func_5(uParam23);
+	Global_2623479[num13 /*99*/].f_47 = func_5(uParam23);
 
-	if (Global_2623479[num12 /*99*/].f_47 != -1)
-		Global_2623479[num12 /*99*/].f_48 = MISC::GET_GAME_TIMER() + 15000;
+	if (Global_2623479[num13 /*99*/].f_47 != -1)
+		Global_2623479[num13 /*99*/].f_48 = MISC::GET_GAME_TIMER() + 15000;
 
 	return 1;
 }
@@ -969,30 +969,30 @@ BOOL func_25(var uParam0) // Position - 0xF85 (3973)
 	return true;
 }
 
-Hash func_26(var uParam0) // Position - 0xFE5 (4069)
+int func_26(var uParam0) // Position - 0xFE5 (4069)
 {
-	Hash hash;
 	int num;
+	int num2;
 
-	hash = 0;
-	num = func_22(uParam0);
+	num = 0;
+	num2 = func_22(uParam0);
 
-	if (num == -1)
-		return hash;
+	if (num2 == -1)
+		return num;
 
 	switch (uParam0->f_2)
 	{
 		case 63:
-			return Global_794954.f_4[num /*95*/].f_86;
+			return Global_794954.f_4[num2 /*95*/].f_86;
 	
 		case 62:
-			return hash;
+			return num;
 	
 		default:
 		
 	}
 
-	return hash;
+	return num;
 }
 
 int func_27(var uParam0) // Position - 0x102E (4142)

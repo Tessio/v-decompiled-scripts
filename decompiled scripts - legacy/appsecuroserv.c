@@ -12536,7 +12536,7 @@ void func_231() // Position - 0xAC67 (44135)
 
 void func_232() // Position - 0xAC8D (44173)
 {
-	Global_1982484 = 1;
+	Global_1982485 = 1;
 	return;
 }
 
@@ -31145,9 +31145,9 @@ void func_503(var uParam0, int iParam1, int iParam2, float fParam3, float fParam
 	{
 		if (IS_BIT_SET(iParam16, 6))
 		{
-			entityCoords = { Global_1978755.f_1081 };
-			finalRenderedCamRot = { Global_1978755.f_1081.f_3 };
-			finalRenderedCamFov = Global_1978755.f_1081.f_6;
+			entityCoords = { Global_1978756.f_1081 };
+			finalRenderedCamRot = { Global_1978756.f_1081.f_3 };
+			finalRenderedCamFov = Global_1978756.f_1081.f_6;
 		}
 		else
 		{
@@ -31173,8 +31173,8 @@ void func_503(var uParam0, int iParam1, int iParam2, float fParam3, float fParam
 		if (!func_541())
 			flag2 = false;
 	
-		if (IS_BIT_SET(Global_1982590.f_1, 19))
-			MISC::CLEAR_BIT(&(Global_1982590.f_1), 19);
+		if (IS_BIT_SET(Global_1982591.f_1, 19))
+			MISC::CLEAR_BIT(&(Global_1982591.f_1), 19);
 	}
 	else if (IS_BIT_SET(iParam16, 10))
 	{
@@ -35414,9 +35414,9 @@ void func_652() // Position - 0x28E79 (167545)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -36799,8 +36799,8 @@ BOOL func_722(Any* panParam0) // Position - 0x2A8B3 (174259)
 
 	for (i = 0; i < 31; i = i + 1)
 	{
-		if (IS_GAMER_HANDLE_VALID(Global_1988664[i /*13*/]))
-			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988664[i /*13*/], panParam0))
+		if (IS_GAMER_HANDLE_VALID(Global_1988665[i /*13*/]))
+			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988665[i /*13*/], panParam0))
 				return true;
 	}
 
@@ -38170,9 +38170,9 @@ BOOL func_771() // Position - 0x2C26A (180842)
 	return Global_2697488;
 }
 
-char* func_772(char* sParam0) // Position - 0x2C276 (180854)
+char* func_772(var uParam0) // Position - 0x2C276 (180854)
 {
-	return sParam0;
+	return uParam0;
 }
 
 char* func_773(int iParam0) // Position - 0x2C280 (180864)

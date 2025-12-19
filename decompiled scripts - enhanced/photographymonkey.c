@@ -3183,14 +3183,14 @@ int func_15(int iParam0, int iParam1) // Position - 0x30EE (12526)
 	return 936;
 }
 
-int func_16(int iParam0, int iParam1) // Position - 0x34E9 (13545)
+int func_16(int iParam0, Interior inParam1) // Position - 0x34E9 (13545)
 {
 	Hash statHash;
 	int outValue;
 
 	if (iParam0 != 18486)
 	{
-		statHash = func_17(iParam0, iParam1);
+		statHash = func_17(iParam0, inParam1);
 	
 		if (STATS::STAT_GET_INT(statHash, &outValue, -1))
 			return outValue;
@@ -3199,38 +3199,38 @@ int func_16(int iParam0, int iParam1) // Position - 0x34E9 (13545)
 	return 0;
 }
 
-Hash func_17(int iParam0, int iParam1) // Position - 0x3518 (13592)
+Hash func_17(int iParam0, Interior inParam1) // Position - 0x3518 (13592)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_18(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_18(inParam1));
 }
 
-int func_18(int iParam0) // Position - 0x352D (13613)
+Interior func_18(Interior inParam0) // Position - 0x352D (13613)
 {
-	int num;
-	int num2;
+	Interior interior;
+	Interior interior2;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
+	if (interior == -1)
 	{
-		num2 = func_19();
+		interior2 = func_19();
 	
-		if (num2 > -1)
+		if (interior2 > -1)
 		{
 			Global_2741524 = 0;
-			num = num2;
+			interior = interior2;
 		}
 		else
 		{
-			num = 0;
+			interior = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return num;
+	return interior;
 }
 
-int func_19() // Position - 0x3561 (13665)
+Interior func_19() // Position - 0x3561 (13665)
 {
 	return Global_1574927;
 }
@@ -3463,22 +3463,22 @@ int func_20(int iParam0, int iParam1) // Position - 0x356D (13677)
 	return 884;
 }
 
-BOOL func_21(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, int iParam4) // Position - 0x3968 (14696)
+BOOL func_21(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, Interior inParam4) // Position - 0x3968 (14696)
 {
+	Interior interior;
 	int num;
 	int num2;
 	int num3;
-	int num4;
 
-	num = Global_80085;
+	interior = Global_80085;
 
-	if (iParam4 != -1)
-		num = iParam4;
+	if (inParam4 != -1)
+		interior = inParam4;
 
-	if (func_22(epctParam0, iParam1, &num3, &num2, bParam2, bParam3))
+	if (func_22(epctParam0, iParam1, &num2, &num, bParam2, bParam3))
 	{
-		num4 = func_16(num3, num);
-		return IS_BIT_SET(num4, num2);
+		num3 = func_16(num2, interior);
+		return IS_BIT_SET(num3, num);
 	}
 
 	return false;

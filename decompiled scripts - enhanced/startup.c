@@ -129,7 +129,7 @@ void main() // Position - 0x0 (0)
 	}
 
 	BUILTIN::WAIT(0);
-	Global_80307 = true;
+	Global_80307 = 1;
 	Global_3 = flag;
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 
@@ -12547,13 +12547,13 @@ char* func_66(int iParam0) // Position - 0x21C4C (138316)
 	return str;
 }
 
-int func_67(int iParam0) // Position - 0x222C9 (139977)
+ePedComponentType func_67(int iParam0) // Position - 0x222C9 (139977)
 {
 	int num;
 	BOOL flag;
 	var unk;
 	Hash hashKey;
-	int price;
+	ePedComponentType price;
 	var unk17;
 	var unk21;
 
@@ -12931,7 +12931,7 @@ int func_67(int iParam0) // Position - 0x222C9 (139977)
 			return 3000000;
 	}
 
-	return 0;
+	return PV_COMP_HEAD;
 }
 
 void func_68(char* sParam0, int iParam1, int iParam2, BOOL bParam3) // Position - 0x22B64 (142180)

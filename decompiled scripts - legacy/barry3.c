@@ -34370,9 +34370,9 @@ void func_225() // Position - 0x27B5B (162651)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -40253,9 +40253,9 @@ BOOL func_368(Player plParam0) // Position - 0x2FCF6 (195830)
 	return false;
 }
 
-int func_369(Hash hParam0) // Position - 0x2FD3D (195901)
+int func_369(int iParam0) // Position - 0x2FD3D (195901)
 {
-	switch (hParam0)
+	switch (iParam0)
 	{
 		case 0:
 		case 1:
@@ -41390,7 +41390,7 @@ BOOL func_404() // Position - 0x316B5 (202421)
 	return func_405() != -1;
 }
 
-Hash func_405() // Position - 0x316C3 (202435)
+int func_405() // Position - 0x316C3 (202435)
 {
 	return Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_325.f_8;
 }

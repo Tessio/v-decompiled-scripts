@@ -5416,7 +5416,7 @@ int func_87(Player plParam0, Player plParam1, int iParam2, BOOL bParam3, BOOL bP
 		}
 		else if (Global_1836707 || Global_1836697 || Global_1845250[plParam0 /*880*/] == 0)
 		{
-			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == 0)
+			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == false)
 				return func_77(true);
 			else
 				return func_72(plParam1, true, playerTeam, bParam4);
@@ -10526,7 +10526,7 @@ void func_257(int iParam0, int iParam1) // Position - 0x8A6B (35435)
 
 BOOL func_258() // Position - 0x8AC0 (35520)
 {
-	if (MISC::IS_PC_VERSION() && Global_1988062 == 0)
+	if (MISC::IS_PC_VERSION() && Global_1988063 == 0)
 		return false;
 
 	return false;
@@ -21989,9 +21989,9 @@ struct<4> func_651(Player plParam0) // Position - 0x18E9F (102047)
 	return unk;
 }
 
-void func_652(Any* panParam0, char* sParam1) // Position - 0x18F20 (102176)
+void func_652(int iParam0, char* sParam1) // Position - 0x18F20 (102176)
 {
-	NETWORK::NETWORK_CLAN_GET_UI_FORMATTED_TAG(panParam0, 35, sParam1);
+	NETWORK::NETWORK_CLAN_GET_UI_FORMATTED_TAG(iParam0, 35, sParam1);
 	return;
 }
 
@@ -23526,10 +23526,10 @@ BOOL func_710() // Position - 0x1A812 (108562)
 	if (Global_1965157.f_718.f_5 || Global_1967983.f_718.f_5 || Global_1964185.f_718.f_5)
 		return false;
 
-	if (Global_1971951.f_724.f_5 || Global_1971951.f_744.f_724.f_5 || Global_1971951.f_1497.f_724.f_5)
+	if (Global_1971952.f_724.f_5 || Global_1971952.f_744.f_724.f_5 || Global_1971952.f_1497.f_724.f_5)
 		return false;
 
-	if (Global_1978755.f_732.f_5)
+	if (Global_1978756.f_732.f_5)
 		return false;
 
 	if (func_711(PLAYER::PLAYER_ID()))

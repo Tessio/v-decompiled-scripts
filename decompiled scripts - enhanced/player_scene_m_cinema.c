@@ -379,7 +379,7 @@ BOOL func_6() // Position - 0x3FC (1020)
 	return false;
 }
 
-int func_7(int iParam0, Ped pedParam1) // Position - 0x431 (1073)
+int func_7(int iParam0, ePedComponentType epctParam1) // Position - 0x431 (1073)
 {
 	Vector3 entityCoords;
 	float num;
@@ -400,30 +400,30 @@ int func_7(int iParam0, Ped pedParam1) // Position - 0x431 (1073)
 		if (!func_9(iParam0, func_10()))
 			return 0;
 	
-		if (ENTITY::DOES_ENTITY_EXIST(pedParam1))
+		if (ENTITY::DOES_ENTITY_EXIST(epctParam1))
 		{
-			entityCoords = { ENTITY::GET_ENTITY_COORDS(pedParam1, false) };
+			entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam1, false) };
 			num = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), entityCoords);
 		
 			if (num > 250f)
-				if (!ENTITY::IS_ENTITY_DEAD(pedParam1, false))
-					if (!ENTITY::IS_ENTITY_ON_SCREEN(pedParam1))
+				if (!ENTITY::IS_ENTITY_DEAD(epctParam1, false))
+					if (!ENTITY::IS_ENTITY_ON_SCREEN(epctParam1))
 						return 0;
 				else if (!CAM::IS_SPHERE_VISIBLE(entityCoords, 1.5f))
 					return 0;
 		}
-		else if (pedParam1 == func_8(Global_102175) && pedParam1 != 0)
+		else if (epctParam1 == func_8(Global_102175) && epctParam1 != PV_COMP_HEAD)
 		{
-			Global_102175 = 0;
+			Global_102175 = PV_COMP_HEAD;
 		}
 	}
 
 	return 1;
 }
 
-Ped func_8(Ped pedParam0) // Position - 0x515 (1301)
+ePedComponentType func_8(ePedComponentType epctParam0) // Position - 0x515 (1301)
 {
-	return pedParam0;
+	return epctParam0;
 }
 
 BOOL func_9(int iParam0, int iParam1) // Position - 0x51F (1311)

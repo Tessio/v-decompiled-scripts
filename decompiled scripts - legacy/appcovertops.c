@@ -624,7 +624,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_22990 = false;
 	Global_22992 = 0;
-	Global_22997 = false;
+	Global_22997 = 0;
 	Global_23974 = 0;
 	Global_23976 = 0;
 	Global_23980 = 0;
@@ -819,9 +819,9 @@ void func_13() // Position - 0x581 (1409)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -1792,9 +1792,9 @@ void func_63(var uParam0, int iParam1, int iParam2, float fParam3, float fParam4
 	{
 		if (IS_BIT_SET(iParam16, 6))
 		{
-			entityCoords = { Global_1978755.f_1081 };
-			finalRenderedCamRot = { Global_1978755.f_1081.f_3 };
-			finalRenderedCamFov = Global_1978755.f_1081.f_6;
+			entityCoords = { Global_1978756.f_1081 };
+			finalRenderedCamRot = { Global_1978756.f_1081.f_3 };
+			finalRenderedCamFov = Global_1978756.f_1081.f_6;
 		}
 		else
 		{
@@ -1820,8 +1820,8 @@ void func_63(var uParam0, int iParam1, int iParam2, float fParam3, float fParam4
 		if (!func_115())
 			flag2 = false;
 	
-		if (IS_BIT_SET(Global_1982590.f_1, 19))
-			MISC::CLEAR_BIT(&(Global_1982590.f_1), 19);
+		if (IS_BIT_SET(Global_1982591.f_1, 19))
+			MISC::CLEAR_BIT(&(Global_1982591.f_1), 19);
 	}
 	else if (IS_BIT_SET(iParam16, 10))
 	{

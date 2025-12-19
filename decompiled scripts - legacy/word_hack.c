@@ -862,7 +862,7 @@ void main() // Position - 0x0 (0)
 	while (true)
 	{
 		BUILTIN::WAIT(0);
-		func_1(&uScriptParam_0, &Global_1988417, &uLocal_49, &uLocal_106);
+		func_1(&uScriptParam_0, &Global_1988418, &uLocal_49, &uLocal_106);
 	}
 
 	return;
@@ -970,7 +970,7 @@ void func_6(var uParam0) // Position - 0x1A8 (424)
 	uParam0->f_697 = 0f;
 	uParam0->f_698 = 0f;
 	uParam0->f_699 = 1f;
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	return;
 }
 
@@ -2358,14 +2358,14 @@ void func_69(int iParam0) // Position - 0x1E13 (7699)
 
 void func_70(var uParam0) // Position - 0x1E21 (7713)
 {
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	uParam0->f_692 = 0;
 	return;
 }
 
 BOOL func_71(var uParam0) // Position - 0x1E34 (7732)
 {
-	return Global_1988494 || uParam0->f_692;
+	return Global_1988495 || uParam0->f_692;
 }
 
 struct<9> func_72() // Position - 0x1E4B (7755)

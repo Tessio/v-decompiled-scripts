@@ -1964,20 +1964,20 @@ void func_47() // Position - 0x1331 (4913)
 	{
 		if (Global_99337[i /*17*/] && !Global_99337[i /*17*/].f_1)
 			if (Global_99337[i /*17*/].f_3 == 0)
-				if (Global_99337[i /*17*/].f_5 != CHAR_DETONATEBOMB && Global_99337[i /*17*/].f_5 != CHAR_LS_CUSTOMS && Global_99337[i /*17*/].f_5 != CHAR_DOMESTIC_GIRL)
+				if (Global_99337[i /*17*/].f_5 != 88 && Global_99337[i /*17*/].f_5 != 89 && Global_99337[i /*17*/].f_5 != 92)
 					func_48(Global_99337[i /*17*/].f_5, true);
 	}
 
 	return;
 }
 
-void func_48(eCharacter echParam0, BOOL bParam1) // Position - 0x13B8 (5048)
+void func_48(int iParam0, BOOL bParam1) // Position - 0x13B8 (5048)
 {
 	if (bParam1)
-		if (echParam0 != CHAR_DETONATEBOMB && echParam0 != CHAR_LS_CUSTOMS && echParam0 != CHAR_DOMESTIC_GIRL)
-			Global_96389[echParam0 /*2*/] = true;
+		if (iParam0 != 88 && iParam0 != 89 && iParam0 != 92)
+			Global_96389[iParam0 /*2*/] = true;
 	else
-		Global_96389[echParam0 /*2*/] = false;
+		Global_96389[iParam0 /*2*/] = false;
 
 	return;
 }
@@ -4034,9 +4034,9 @@ void func_110() // Position - 0x3B8B (15243)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;

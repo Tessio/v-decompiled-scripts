@@ -4115,7 +4115,7 @@ BOOL func_68(int iParam0, BOOL bParam1) // Position - 0x411B (16667)
 
 	if (num > -1 && num < 6)
 	{
-		if (Global_45643[num /*32*/] == true && Global_45643[num /*32*/].f_4 == true)
+		if (Global_45643[num /*32*/] == true && Global_45643[num /*32*/].f_4 == 1)
 		{
 			if (bParam1)
 				if (Global_45643[num /*32*/].f_29)

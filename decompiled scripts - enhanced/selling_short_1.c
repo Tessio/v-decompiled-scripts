@@ -6391,7 +6391,7 @@ void func_8(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 		func_16(true, bParam3, bParam2, false);
 		Global_65033 = true;
 		Global_77362 = true;
-		Global_80303 = true;
+		Global_80303 = PV_COMP_BERD;
 	}
 	else
 	{
@@ -6412,7 +6412,7 @@ void func_8(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_14(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80303 = false;
+		Global_80303 = PV_COMP_HEAD;
 	}
 
 	return;
@@ -6442,31 +6442,31 @@ BOOL func_10(Player plParam0, int iParam1) // Position - 0x3DF (991)
 	return flag;
 }
 
-eCharacter func_11(int iParam0, BOOL bParam1) // Position - 0x438 (1080)
+eCharacter func_11(Interior inParam0, BOOL bParam1) // Position - 0x438 (1080)
 {
 	eCharacter character;
-	int num;
+	Interior interior;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
-		num = func_12();
+	if (interior == -1)
+		interior = func_12();
 
-	if (Global_1575072[num] == true)
+	if (Global_1575072[interior] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		character = Global_1574921[interior];
 		bParam1;
 	}
 
 	return character;
 }
 
-int func_12() // Position - 0x479 (1145)
+Interior func_12() // Position - 0x479 (1145)
 {
 	return Global_1574927;
 }
@@ -7388,7 +7388,7 @@ void func_42() // Position - 0x29E7 (10727)
 {
 	if (Global_21627.f_1 == 9 || Global_21627.f_1 == 10)
 	{
-		Global_23053 = false;
+		Global_23053 = 0;
 		Global_23049 = 1;
 	}
 

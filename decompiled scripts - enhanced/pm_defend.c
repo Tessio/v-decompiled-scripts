@@ -1720,9 +1720,9 @@ void func_30(var uParam0) // Position - 0x1604 (5636)
 	return;
 }
 
-void func_31(var uParam0, int iParam1) // Position - 0x16A9 (5801)
+void func_31(var uParam0, Object obParam1) // Position - 0x16A9 (5801)
 {
-	switch (iParam1)
+	switch (obParam1)
 	{
 		case 9:
 			uParam0->f_3 = 9;
@@ -1884,9 +1884,9 @@ int func_34() // Position - 0x1D11 (7441)
 	return func_35(Global_113638.f_20, Global_113638.f_29);
 }
 
-int func_35(int iParam0, int iParam1) // Position - 0x1D29 (7465)
+int func_35(Object obParam0, int iParam1) // Position - 0x1D29 (7465)
 {
-	switch (iParam0)
+	switch (obParam0)
 	{
 		case 9:
 			switch (iParam1)
@@ -1903,7 +1903,7 @@ int func_35(int iParam0, int iParam1) // Position - 0x1D29 (7465)
 	return 0;
 }
 
-int func_36() // Position - 0x1D63 (7523)
+Object func_36() // Position - 0x1D63 (7523)
 {
 	return Global_113638.f_20;
 }

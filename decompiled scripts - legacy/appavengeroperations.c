@@ -582,42 +582,42 @@ void func_18() // Position - 0x593 (1427)
 					break;
 			
 				case 205:
-					if (IS_BIT_SET(Global_1983166[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 0)
+					if (IS_BIT_SET(Global_1983167[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 0)
 						func_43(0);
 					else
 						func_17(2);
 					break;
 			
 				case 206:
-					if (IS_BIT_SET(Global_1983166[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 1)
+					if (IS_BIT_SET(Global_1983167[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 1)
 						func_43(1);
 					else
 						func_17(2);
 					break;
 			
 				case 207:
-					if (IS_BIT_SET(Global_1983166[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 2)
+					if (IS_BIT_SET(Global_1983167[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 2)
 						func_43(2);
 					else
 						func_17(2);
 					break;
 			
 				case 208:
-					if (IS_BIT_SET(Global_1983166[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 3)
+					if (IS_BIT_SET(Global_1983167[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 3)
 						func_43(3);
 					else
 						func_17(2);
 					break;
 			
 				case 209:
-					if (IS_BIT_SET(Global_1983166[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 4)
+					if (IS_BIT_SET(Global_1983167[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 4)
 						func_43(4);
 					else
 						func_17(2);
 					break;
 			
 				case 210:
-					if (IS_BIT_SET(Global_1983166[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 5)
+					if (IS_BIT_SET(Global_1983167[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12) || func_153(PLAYER::PLAYER_ID()) == 5)
 						func_43(5);
 					else
 						func_17(2);
@@ -4007,7 +4007,7 @@ Hash func_152(int iParam0) // Position - 0x4CC4 (19652)
 int func_153(Player plParam0) // Position - 0x4CE3 (19683)
 {
 	if (plParam0 != -1)
-		return Global_1983166[plParam0 /*149*/].f_62;
+		return Global_1983167[plParam0 /*149*/].f_62;
 
 	return -1;
 }
@@ -4093,7 +4093,7 @@ char* func_160(int iParam0) // Position - 0x4E34 (20020)
 int func_161(Player plParam0, int iParam1) // Position - 0x4E59 (20057)
 {
 	if (plParam0 != -1)
-		return Global_1983166[plParam0 /*149*/].f_62.f_2[iParam1];
+		return Global_1983167[plParam0 /*149*/].f_62.f_2[iParam1];
 
 	return 0;
 }
@@ -4109,7 +4109,7 @@ int func_162(int iParam0) // Position - 0x4E7B (20091)
 int func_163(Player plParam0, int iParam1) // Position - 0x4E91 (20113)
 {
 	if (plParam0 != -1)
-		return Global_1983166[plParam0 /*149*/].f_62.f_6[iParam1];
+		return Global_1983167[plParam0 /*149*/].f_62.f_6[iParam1];
 
 	return 0;
 }
@@ -4163,7 +4163,7 @@ void func_168(var uParam0) // Position - 0x4FB7 (20407)
 {
 	int num;
 
-	if (IS_BIT_SET(Global_1983166[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12))
+	if (IS_BIT_SET(Global_1983167[PLAYER::PLAYER_ID() /*149*/].f_62.f_1, 12))
 	{
 		uParam0->[0] = 1;
 		uParam0->[1] = 1;
@@ -4542,9 +4542,9 @@ void func_181() // Position - 0x55AC (21932)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -4992,7 +4992,7 @@ BOOL func_208(BOOL bParam0) // Position - 0x5DC6 (24006)
 BOOL func_209(Player plParam0) // Position - 0x5DE8 (24040)
 {
 	if (plParam0 != -1)
-		return IS_BIT_SET(Global_1980732[plParam0 /*53*/].f_1, 1);
+		return IS_BIT_SET(Global_1980733[plParam0 /*53*/].f_1, 1);
 
 	return false;
 }

@@ -396,7 +396,7 @@ void main() // Position - 0x0 (0)
 	func_155();
 	func_151();
 
-	while (bLocal_260 && func_147(1, 0))
+	while (bLocal_260 && func_147(1, PV_COMP_HEAD))
 	{
 		BUILTIN::WAIT(0);
 	
@@ -434,7 +434,7 @@ BOOL func_2() // Position - 0x11A (282)
 	return false;
 }
 
-int func_3(Ped pedParam0) // Position - 0x12C (300)
+int func_3(ePedComponentType epctParam0) // Position - 0x12C (300)
 {
 	float synchronizedScenePhase;
 	float num;
@@ -445,24 +445,24 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 	Vector3 vector2;
 	Vector3 vector3;
 
-	if (!PED::IS_PED_INJURED(*pedParam0))
+	if (!PED::IS_PED_INJURED(*epctParam0))
 	{
-		if (!func_147(1, *pedParam0))
+		if (!func_147(1, *epctParam0))
 		{
-			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*pedParam0, true, true);
-			PED::DELETE_PED(pedParam0);
+			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*epctParam0, true, true);
+			PED::DELETE_PED(epctParam0);
 			func_143(-2, "ped dead baby, ped dead");
 			return 0;
 		}
 	
 		if (iLocal_261 >= 0)
 		{
-			if (FIRE::IS_ENTITY_ON_FIRE(*pedParam0))
+			if (FIRE::IS_ENTITY_ON_FIRE(*epctParam0))
 			{
-				if (TASK::GET_SCRIPT_TASK_STATUS(*pedParam0, SCRIPT_TASK_SMART_FLEE_PED) != 1)
-					TASK::STOP_ANIM_PLAYBACK(*pedParam0, 0, false);
+				if (TASK::GET_SCRIPT_TASK_STATUS(*epctParam0, SCRIPT_TASK_SMART_FLEE_PED) != 1)
+					TASK::STOP_ANIM_PLAYBACK(*epctParam0, 0, false);
 			
-				TASK::CLEAR_PED_TASKS(*pedParam0);
+				TASK::CLEAR_PED_TASKS(*epctParam0);
 				func_143(-1, "ped on fire");
 				return 0;
 			}
@@ -486,14 +486,14 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 				{
 					PED::TAKE_OWNERSHIP_OF_SYNCHRONIZED_SCENE(Global_99759);
 				
-					if (!ENTITY::IS_ENTITY_PLAYING_ANIM(*pedParam0, &uLocal_279, &uLocal_311, 2))
+					if (!ENTITY::IS_ENTITY_PLAYING_ANIM(*epctParam0, &uLocal_279, &uLocal_311, 2))
 					{
-						TASK::CLEAR_PED_TASKS(*pedParam0);
-						ENTITY::STOP_SYNCHRONIZED_ENTITY_ANIM(*pedParam0, -16f, true);
-						PED::SET_PED_MOVE_ANIMS_BLEND_OUT(*pedParam0);
-						TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*pedParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
-						PED::FORCE_PED_MOTION_STATE(*pedParam0, joaat("MotionState_Walk"), false, 0, false);
-						PED::CLEAR_RAGDOLL_BLOCKING_FLAGS(*pedParam0, 2);
+						TASK::CLEAR_PED_TASKS(*epctParam0);
+						ENTITY::STOP_SYNCHRONIZED_ENTITY_ANIM(*epctParam0, -16f, true);
+						PED::SET_PED_MOVE_ANIMS_BLEND_OUT(*epctParam0);
+						TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*epctParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
+						PED::FORCE_PED_MOTION_STATE(*epctParam0, joaat("MotionState_Walk"), false, 0, false);
+						PED::CLEAR_RAGDOLL_BLOCKING_FLAGS(*epctParam0, 2);
 						func_143(3, "not playing exit synch anim");
 						return 1;
 					}
@@ -510,19 +510,19 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 							{
 								if (synchronizedScenePhase >= fLocal_347)
 								{
-									func_142(*pedParam0, "DISMISS_MICHAEL", "AMANDA_NORMAL", 24, false);
+									func_142(*epctParam0, "DISMISS_MICHAEL", "AMANDA_NORMAL", 24, false);
 									fLocal_347 = -1f;
 								}
 							}
 						
 							if (synchronizedScenePhase >= num)
 							{
-								TASK::CLEAR_PED_TASKS(*pedParam0);
-								ENTITY::STOP_SYNCHRONIZED_ENTITY_ANIM(*pedParam0, -16f, true);
-								PED::SET_PED_MOVE_ANIMS_BLEND_OUT(*pedParam0);
-								TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*pedParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
-								PED::FORCE_PED_MOTION_STATE(*pedParam0, joaat("MotionState_Walk"), false, 0, false);
-								PED::CLEAR_RAGDOLL_BLOCKING_FLAGS(*pedParam0, 2);
+								TASK::CLEAR_PED_TASKS(*epctParam0);
+								ENTITY::STOP_SYNCHRONIZED_ENTITY_ANIM(*epctParam0, -16f, true);
+								PED::SET_PED_MOVE_ANIMS_BLEND_OUT(*epctParam0);
+								TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*epctParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
+								PED::FORCE_PED_MOTION_STATE(*epctParam0, joaat("MotionState_Walk"), false, 0, false);
+								PED::CLEAR_RAGDOLL_BLOCKING_FLAGS(*epctParam0, 2);
 								func_143(3, "WalkInterruptible phase reached");
 								return 1;
 							}
@@ -531,19 +531,19 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 				}
 				else if (iLocal_70 != 151)
 				{
-					TASK::CLEAR_PED_TASKS(*pedParam0);
+					TASK::CLEAR_PED_TASKS(*epctParam0);
 				
 					if (MISC::IS_STRING_NULL_OR_EMPTY(&uLocal_327))
 					{
-						TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*pedParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
-						PED::FORCE_PED_MOTION_STATE(*pedParam0, joaat("MotionState_Walk"), false, 0, false);
-						PED::CLEAR_RAGDOLL_BLOCKING_FLAGS(*pedParam0, 2);
+						TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*epctParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
+						PED::FORCE_PED_MOTION_STATE(*epctParam0, joaat("MotionState_Walk"), false, 0, false);
+						PED::CLEAR_RAGDOLL_BLOCKING_FLAGS(*epctParam0, 2);
 						func_143(3, "not playing synch scene (navmesh)");
 						return 1;
 					}
 					else
 					{
-						TASK::TASK_START_SCENARIO_AT_POSITION(*pedParam0, &uLocal_327, uLocal_271 + uLocal_343, fLocal_274 + fLocal_346, 0, false, true);
+						TASK::TASK_START_SCENARIO_AT_POSITION(*epctParam0, &uLocal_327, uLocal_271 + uLocal_343, fLocal_274 + fLocal_346, 0, false, true);
 						func_143(6, "not playing synch scene (scenario)");
 						return 1;
 					}
@@ -556,7 +556,7 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 				break;
 		
 			case 2:
-				if (PED::IS_PED_IN_ANY_VEHICLE(*pedParam0, false))
+				if (PED::IS_PED_IN_ANY_VEHICLE(*epctParam0, false))
 				{
 					PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_ACCELERATE, true);
 					PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_BRAKE, true);
@@ -567,10 +567,10 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 				}
 				else
 				{
-					if (PED::IS_PED_RAGDOLL(*pedParam0) || TASK::IS_PED_GETTING_UP(*pedParam0))
+					if (PED::IS_PED_RAGDOLL(*epctParam0) || TASK::IS_PED_GETTING_UP(*epctParam0))
 						return 0;
 				
-					TASK::CLEAR_PED_TASKS(*pedParam0);
+					TASK::CLEAR_PED_TASKS(*epctParam0);
 				
 					if (func_141(uLocal_275, 0f, 0f, 0f, false))
 					{
@@ -578,36 +578,36 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 						uLocal_275 = { (offsetFromEntityInWorldCoords - uLocal_271) * { 4f, 4f, 4f } };
 					}
 				
-					TASK::CLEAR_PED_TASKS(*pedParam0);
-					TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*pedParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
+					TASK::CLEAR_PED_TASKS(*epctParam0);
+					TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*epctParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
 					func_143(3, "not in vehicle");
 					return 1;
 				}
 				break;
 		
 			case 3:
-				if (func_140(*pedParam0, true))
+				if (func_140(*epctParam0, true))
 				{
 					func_143(8, 0);
 					return 0;
 				}
 			
-				if (func_139(pedParam0))
+				if (func_139(epctParam0))
 					return 0;
 			
-				if (PED::IS_PED_RAGDOLL(*pedParam0) || TASK::IS_PED_GETTING_UP(*pedParam0))
+				if (PED::IS_PED_RAGDOLL(*epctParam0) || TASK::IS_PED_GETTING_UP(*epctParam0))
 					return 0;
 			
-				func_7(*pedParam0);
+				func_7(*epctParam0);
 			
-				if (TASK::GET_SCRIPT_TASK_STATUS(*pedParam0, SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD) != 1)
+				if (TASK::GET_SCRIPT_TASK_STATUS(*epctParam0, SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD) != 1)
 				{
-					if (BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(*pedParam0, true), uLocal_271 + uLocal_275) < fLocal_278 * fLocal_278)
+					if (BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(*epctParam0, true), uLocal_271 + uLocal_275) < fLocal_278 * fLocal_278)
 					{
 						if (fLocal_278 == 0f)
 							fLocal_278 = BUILTIN::VMAG(uLocal_275) * 0.75f;
 					
-						TASK::TASK_WANDER_IN_AREA(*pedParam0, uLocal_271 + uLocal_275, fLocal_278, 1077936128, 1086324736);
+						TASK::TASK_WANDER_IN_AREA(*epctParam0, uLocal_271 + uLocal_275, fLocal_278, 1077936128, 1086324736);
 						func_143(4, 0);
 						return 1;
 					}
@@ -615,25 +615,25 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 				break;
 		
 			case 4:
-				if (func_140(*pedParam0, true))
+				if (func_140(*epctParam0, true))
 				{
 					func_143(8, 0);
 					return 0;
 				}
 			
-				if (func_139(pedParam0))
+				if (func_139(epctParam0))
 					return 0;
 			
-				if (PED::IS_PED_RAGDOLL(*pedParam0) || TASK::IS_PED_GETTING_UP(*pedParam0))
+				if (PED::IS_PED_RAGDOLL(*epctParam0) || TASK::IS_PED_GETTING_UP(*epctParam0))
 					return 0;
 			
-				func_7(*pedParam0);
+				func_7(*epctParam0);
 			
-				if (BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(*pedParam0, true), uLocal_271 + uLocal_275) < fLocal_278 * fLocal_278)
+				if (BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(*epctParam0, true), uLocal_271 + uLocal_275) < fLocal_278 * fLocal_278)
 				{
 					if (TASK::DOES_SCENARIO_EXIST_IN_AREA(uLocal_271 + uLocal_275, fLocal_278, true))
 					{
-						TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD(*pedParam0, uLocal_271 + uLocal_275, fLocal_278, 0);
+						TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD(*epctParam0, uLocal_271 + uLocal_275, fLocal_278, 0);
 						PED::REMOVE_SCENARIO_BLOCKING_AREA(iLocal_348, false);
 						func_143(5, 0);
 						return 1;
@@ -642,34 +642,34 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 				break;
 		
 			case 5:
-				if (func_140(*pedParam0, true))
+				if (func_140(*epctParam0, true))
 				{
 					func_143(8, 0);
 					return 0;
 				}
 			
-				if (func_139(pedParam0))
+				if (func_139(epctParam0))
 					return 0;
 			
-				func_7(*pedParam0);
+				func_7(*epctParam0);
 			
-				if (TASK::PED_HAS_USE_SCENARIO_TASK(*pedParam0))
+				if (TASK::PED_HAS_USE_SCENARIO_TASK(*epctParam0))
 				{
 				}
 				else
 				{
-					if (PED::IS_PED_RAGDOLL(*pedParam0) || TASK::IS_PED_GETTING_UP(*pedParam0))
+					if (PED::IS_PED_RAGDOLL(*epctParam0) || TASK::IS_PED_GETTING_UP(*epctParam0))
 						return 0;
 				
 					vector = { func_4(uLocal_271 + uLocal_275, fLocal_278 * 0.9f, 0f) };
 				
 					if (PATHFIND::GET_SAFE_COORD_FOR_PED(vector, false, &outPosition, 14))
 					{
-						if (BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(*pedParam0, true), outPosition) > 100f)
+						if (BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(*epctParam0, true), outPosition) > 100f)
 						{
-							TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*pedParam0, outPosition, 1f, -1, 1048576000, 0, 1193033728);
-							vector2 = { ENTITY::GET_ENTITY_COORDS(*pedParam0, true) - { 2f, 2f, 2f } };
-							vector3 = { ENTITY::GET_ENTITY_COORDS(*pedParam0, true) + { 2f, 2f, 2f } };
+							TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*epctParam0, outPosition, 1f, -1, 1048576000, 0, 1193033728);
+							vector2 = { ENTITY::GET_ENTITY_COORDS(*epctParam0, true) - { 2f, 2f, 2f } };
+							vector3 = { ENTITY::GET_ENTITY_COORDS(*epctParam0, true) + { 2f, 2f, 2f } };
 							iLocal_348 = PED::ADD_SCENARIO_BLOCKING_AREA(vector2, vector3, false, false, true, true, 1);
 							func_143(3, "not using scenario");
 							return 1;
@@ -679,60 +679,60 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 				break;
 		
 			case 6:
-				if (func_140(*pedParam0, true))
+				if (func_140(*epctParam0, true))
 				{
 					func_143(8, 0);
 					return 0;
 				}
 			
-				if (func_139(pedParam0))
+				if (func_139(epctParam0))
 					return 0;
 			
-				func_7(*pedParam0);
+				func_7(*epctParam0);
 			
-				if (TASK::PED_HAS_USE_SCENARIO_TASK(*pedParam0))
+				if (TASK::PED_HAS_USE_SCENARIO_TASK(*epctParam0))
 				{
 				}
 				else
 				{
-					func_7(*pedParam0);
+					func_7(*epctParam0);
 				}
 				break;
 		
 			case 7:
-				if (func_140(*pedParam0, false))
+				if (func_140(*epctParam0, false))
 				{
 					func_143(8, 0);
 					return 0;
 				}
 			
-				if (func_139(pedParam0))
+				if (func_139(epctParam0))
 					return 0;
 			
-				func_7(*pedParam0);
+				func_7(*epctParam0);
 			
-				if (ENTITY::IS_ENTITY_PLAYING_ANIM(*pedParam0, &uLocal_279, &uLocal_295, 2))
+				if (ENTITY::IS_ENTITY_PLAYING_ANIM(*epctParam0, &uLocal_279, &uLocal_295, 2))
 				{
 				}
 				else
 				{
-					ENTITY::IS_ENTITY_PLAYING_ANIM(*pedParam0, &uLocal_279, &uLocal_311, 2);
+					ENTITY::IS_ENTITY_PLAYING_ANIM(*epctParam0, &uLocal_279, &uLocal_311, 2);
 				}
 				break;
 		
 			case 8:
-				if (func_139(pedParam0))
+				if (func_139(epctParam0))
 					return 0;
 			
-				if (TASK::GET_SCRIPT_TASK_STATUS(*pedParam0, SCRIPT_TASK_SMART_FLEE_PED) != 1)
+				if (TASK::GET_SCRIPT_TASK_STATUS(*epctParam0, SCRIPT_TASK_SMART_FLEE_PED) != 1)
 				{
-					TASK::TASK_SMART_FLEE_PED(*pedParam0, PLAYER::PLAYER_PED_ID(), 50f, 20000, true, false);
+					TASK::TASK_SMART_FLEE_PED(*epctParam0, PLAYER::PLAYER_PED_ID(), 50f, 20000, true, false);
 					return 1;
 				}
 			
-				if (BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(*pedParam0, true), ENTITY::GET_ENTITY_COORDS(*pedParam0, true)) > 50f * 1.25f)
+				if (BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(*epctParam0, true), ENTITY::GET_ENTITY_COORDS(*epctParam0, true)) > 50f * 1.25f)
 				{
-					TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*pedParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
+					TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(*epctParam0, uLocal_271 + uLocal_275, 1f, -1, fLocal_278 * 0.1f, 0, 1193033728);
 					func_143(3, "flee to navmesh");
 					return 1;
 				}
@@ -752,8 +752,8 @@ int func_3(Ped pedParam0) // Position - 0x12C (300)
 		if (iLocal_261 != -2)
 			func_143(-2, 0);
 	
-		if (ENTITY::DOES_ENTITY_EXIST(*pedParam0))
-			func_7(*pedParam0);
+		if (ENTITY::DOES_ENTITY_EXIST(*epctParam0))
+			func_7(*epctParam0);
 	}
 
 	return 0;
@@ -810,7 +810,7 @@ Vector3 func_6(Vector3 vParam0, var uParam1, var uParam2, float fParam3) // Posi
 	return 0f, 0f, 0f;
 }
 
-void func_7(Ped pedParam0) // Position - 0x96C (2412)
+void func_7(ePedComponentType epctParam0) // Position - 0x96C (2412)
 {
 	eCharacter character;
 	int num;
@@ -818,23 +818,23 @@ void func_7(Ped pedParam0) // Position - 0x96C (2412)
 	int num3;
 	float num4;
 
-	if (PED::IS_PED_INJURED(pedParam0))
+	if (PED::IS_PED_INJURED(epctParam0))
 	{
-		if (!bLocal_351 && ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ENTITY(pedParam0, PLAYER::PLAYER_PED_ID(), true))
+		if (!bLocal_351 && ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ENTITY(epctParam0, PLAYER::PLAYER_PED_ID(), true))
 		{
-			character = func_138(pedParam0);
+			character = func_138(epctParam0);
 			num = func_135(character);
 			num2 = func_134(num);
 		
 			if (num2 != -1)
 			{
-				num3 = func_132(pedParam0);
+				num3 = func_132(epctParam0);
 			
 				if (num3 != 0)
 				{
 					if (!func_131(num2) || func_123(num2) == 6)
 					{
-						func_122(75, ENTITY::GET_ENTITY_COORDS(pedParam0, false), 250f, -1);
+						func_122(75, ENTITY::GET_ENTITY_COORDS(epctParam0, false), 250f, -1);
 					
 						if (func_47(Global_98163, character, 2, 0, num3, num2, 75))
 							bLocal_351 = true;
@@ -846,14 +846,14 @@ void func_7(Ped pedParam0) // Position - 0x96C (2412)
 		return;
 	}
 
-	func_10(pedParam0, 138, &uLocal_71, "FMMAUD", &uLocal_236, &uLocal_257, 3);
-	num4 = BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(pedParam0, true), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true));
+	func_10(epctParam0, 138, &uLocal_71, "FMMAUD", &uLocal_236, &uLocal_257, 3);
+	num4 = BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(epctParam0, true), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true));
 
 	if (num4 > 8f * 8f)
 	{
 		iLocal_349 = -1;
 	}
-	else if (AUDIO::IS_ANY_SPEECH_PLAYING(pedParam0))
+	else if (AUDIO::IS_ANY_SPEECH_PLAYING(epctParam0))
 	{
 		iLocal_349 = -1;
 	}
@@ -868,14 +868,14 @@ void func_7(Ped pedParam0) // Position - 0x96C (2412)
 			{
 				if (iLocal_349 + 15000 < MISC::GET_GAME_TIMER())
 				{
-					func_8(pedParam0, "FRIEND_FOLLOWED_BY_PLAYER", 24);
+					func_8(epctParam0, "FRIEND_FOLLOWED_BY_PLAYER", 24);
 					iLocal_349 = -1;
 					iLocal_350 = iLocal_350 + 1;
 				}
 			}
 			else if (iLocal_349 + 10000 < MISC::GET_GAME_TIMER())
 			{
-				func_8(pedParam0, "HIT_BY_PLAYER", 24);
+				func_8(epctParam0, "HIT_BY_PLAYER", 24);
 				iLocal_349 = -1;
 				iLocal_350 = iLocal_350 + 1;
 			}
@@ -885,9 +885,9 @@ void func_7(Ped pedParam0) // Position - 0x96C (2412)
 	return;
 }
 
-void func_8(Ped pedParam0, char* sParam1, int iParam2) // Position - 0xAC3 (2755)
+void func_8(ePedComponentType epctParam0, char* sParam1, int iParam2) // Position - 0xAC3 (2755)
 {
-	AUDIO::PLAY_PED_AMBIENT_SPEECH_NATIVE(pedParam0, sParam1, func_9(iParam2), 1);
+	AUDIO::PLAY_PED_AMBIENT_SPEECH_NATIVE(epctParam0, sParam1, func_9(iParam2), 1);
 	return;
 }
 
@@ -1016,7 +1016,7 @@ char* func_9(int iParam0) // Position - 0xADA (2778)
 	return str;
 }
 
-int func_10(Ped pedParam0, int iParam1, var uParam2, char* sParam3, var uParam4, int* piParam5, int iParam6) // Position - 0xCCF (3279)
+int func_10(ePedComponentType epctParam0, int iParam1, var uParam2, char* sParam3, var uParam4, int* piParam5, int iParam6) // Position - 0xCCF (3279)
 {
 	Vector3 entityCoords;
 	Vector3 entityCoords2;
@@ -1028,10 +1028,10 @@ int func_10(Ped pedParam0, int iParam1, var uParam2, char* sParam3, var uParam4,
 	var gxt;
 	int num2;
 
-	entityCoords = { ENTITY::GET_ENTITY_COORDS(pedParam0, true) };
+	entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam0, true) };
 	entityCoords2 = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true) };
 	character = _GET_CURRENT_PLAYER_CHARACTER();
-	num = func_39(pedParam0);
+	num = func_39(epctParam0);
 	TEXT_LABEL_ASSIGN_STRING(&unk5, "", 16);
 
 	switch (num)
@@ -1134,7 +1134,7 @@ int func_10(Ped pedParam0, int iParam1, var uParam2, char* sParam3, var uParam4,
 	if (iParam1 == 6 || iParam1 == 31)
 		if (MISC::ABSF(entityCoords2.f_2 - entityCoords.f_2) > 2f)
 			return 0;
-	else if (!ENTITY::IS_ENTITY_ON_SCREEN(pedParam0) || !ENTITY::IS_ENTITY_VISIBLE(pedParam0))
+	else if (!ENTITY::IS_ENTITY_ON_SCREEN(epctParam0) || !ENTITY::IS_ENTITY_VISIBLE(epctParam0))
 		return 0;
 
 	flag = false;
@@ -1157,7 +1157,7 @@ int func_10(Ped pedParam0, int iParam1, var uParam2, char* sParam3, var uParam4,
 
 	if (!flag)
 	{
-		roomKeyFromEntity = INTERIOR::GET_ROOM_KEY_FROM_ENTITY(pedParam0);
+		roomKeyFromEntity = INTERIOR::GET_ROOM_KEY_FROM_ENTITY(epctParam0);
 	
 		if (Global_102506.f_416 != roomKeyFromEntity)
 			return 0;
@@ -1314,7 +1314,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, const char* sParam2, int
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = false;
+	Global_23014 = 0;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -1338,9 +1338,9 @@ BOOL func_17(const char* sParam0, int iParam1, BOOL bParam2) // Position - 0x127
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = false;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_23053 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -1509,9 +1509,9 @@ void func_18() // Position - 0x1547 (5447)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -1784,10 +1784,10 @@ BOOL func_35() // Position - 0x19FA (6650)
 	return false;
 }
 
-void _CONVERSATION_INITIALIZE_ACTOR(var uParam0, int iParam1, Ped pedParam2, char* sParam3, int iParam4, int iParam5) // Position - 0x1A1C (6684)
+void _CONVERSATION_INITIALIZE_ACTOR(var uParam0, int iParam1, ePedComponentType epctParam2, char* sParam3, int iParam4, int iParam5) // Position - 0x1A1C (6684)
 {
 	uParam0->[iParam1 /*10*/].f_7 == 1;
-	uParam0->[iParam1 /*10*/] = pedParam2;
+	uParam0->[iParam1 /*10*/] = epctParam2;
 	TEXT_LABEL_ASSIGN_STRING(&(uParam0->[iParam1 /*10*/].f_1), sParam3, 24);
 	uParam0->[iParam1 /*10*/].f_7 = 1;
 	uParam0->[iParam1 /*10*/].f_8 = iParam4;
@@ -1795,17 +1795,17 @@ void _CONVERSATION_INITIALIZE_ACTOR(var uParam0, int iParam1, Ped pedParam2, cha
 
 	if (!Global_80305)
 	{
-		if (!PED::IS_PED_INJURED(pedParam2))
+		if (!PED::IS_PED_INJURED(epctParam2))
 			if (uParam0->[iParam1 /*10*/].f_8 == 0)
-				PED::SET_PED_CAN_PLAY_AMBIENT_ANIMS(pedParam2, false);
+				PED::SET_PED_CAN_PLAY_AMBIENT_ANIMS(epctParam2, false);
 			else
-				PED::SET_PED_CAN_PLAY_AMBIENT_ANIMS(pedParam2, true);
+				PED::SET_PED_CAN_PLAY_AMBIENT_ANIMS(epctParam2, true);
 	
-		if (!PED::IS_PED_INJURED(pedParam2))
+		if (!PED::IS_PED_INJURED(epctParam2))
 			if (uParam0->[iParam1 /*10*/].f_9 == 0)
-				PED::SET_PED_CAN_USE_AUTO_CONVERSATION_LOOKAT(pedParam2, false);
+				PED::SET_PED_CAN_USE_AUTO_CONVERSATION_LOOKAT(epctParam2, false);
 			else
-				PED::SET_PED_CAN_USE_AUTO_CONVERSATION_LOOKAT(pedParam2, true);
+				PED::SET_PED_CAN_USE_AUTO_CONVERSATION_LOOKAT(epctParam2, true);
 	}
 
 	return;
@@ -2175,11 +2175,11 @@ BOOL func_38(int iParam0) // Position - 0x215B (8539)
 	return Global_114931.f_9092.f_99.f_58[iParam0];
 }
 
-int func_39(Ped pedParam0) // Position - 0x2188 (8584)
+int func_39(ePedComponentType epctParam0) // Position - 0x2188 (8584)
 {
 	Hash entityModel;
 
-	entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
+	entityModel = ENTITY::GET_ENTITY_MODEL(epctParam0);
 
 	if (entityModel == func_43(CHAR_JIMMY))
 		return 0;
@@ -3193,43 +3193,43 @@ Hash func_63(int iParam0, int iParam1) // Position - 0x34A0 (13472)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_64(iParam1));
 }
 
-int func_64(int iParam0) // Position - 0x34B5 (13493)
+Interior func_64(Interior inParam0) // Position - 0x34B5 (13493)
 {
-	int num;
-	int num2;
+	Interior interior;
+	Interior interior2;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
+	if (interior == -1)
 	{
-		num2 = func_65();
+		interior2 = func_65();
 	
-		if (num2 > -1)
+		if (interior2 > -1)
 		{
 			Global_2741524 = 0;
-			num = num2;
+			interior = interior2;
 		}
 		else
 		{
-			num = 0;
+			interior = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return num;
+	return interior;
 }
 
-int func_65() // Position - 0x34E9 (13545)
+Interior func_65() // Position - 0x34E9 (13545)
 {
 	return Global_1574927;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x34F5 (13557)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x34F5 (13557)
 {
-	if (iParam2 == -1)
-		iParam2 = func_65();
+	if (inParam2 == -1)
+		inParam2 = func_65();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
 	return;
 }
 
@@ -3383,12 +3383,12 @@ int func_69(int iParam0, int iParam1) // Position - 0x373E (14142)
 	return 0;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0x376D (14189)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, Interior inParam1) // Position - 0x376D (14189)
 {
-	if (iParam1 == -1)
-		iParam1 = func_65();
+	if (inParam1 == -1)
+		inParam1 = func_65();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, inParam1);
 }
 
 int func_71(BOOL bParam0) // Position - 0x3789 (14217)
@@ -4064,7 +4064,7 @@ int func_97(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char*
 		}
 	}
 
-	if (Global_1979863 != -1 && echParam0 == Global_1979863)
+	if (Global_1979864 != -1 && echParam0 == Global_1979864)
 		num2 = 1;
 
 	func_98(echParam0, sParam1, num2, func_99(PLAYER::PLAYER_ID()));
@@ -4084,18 +4084,18 @@ void func_98(eCharacter echParam0, char* sParam1, BOOL bParam2, ePedComponentTyp
 	character.f_3 = 0;
 	character.f_4 = bParam2;
 	character.f_5 = epctParam3;
-	character.f_6 = Global_1979846.f_7;
-	character.f_7 = Global_1979846.f_8;
-	character.f_8 = Global_1979846.f_9;
-	character.f_9 = Global_1979846.f_10;
-	character.f_10 = Global_1979846.f_11;
-	character.f_11 = Global_1979846.f_12;
-	character.f_12 = Global_1979846.f_13;
-	character.f_13 = Global_1979846.f_14;
+	character.f_6 = Global_1979847.f_7;
+	character.f_7 = Global_1979847.f_8;
+	character.f_8 = Global_1979847.f_9;
+	character.f_9 = Global_1979847.f_10;
+	character.f_10 = Global_1979847.f_11;
+	character.f_11 = Global_1979847.f_12;
+	character.f_12 = Global_1979847.f_13;
+	character.f_13 = Global_1979847.f_14;
 	STATS::PLAYSTATS_NPC_PHONE(&character);
 
 	if (bParam2)
-		Global_1979863 = -1;
+		Global_1979864 = -1;
 
 	return;
 }
@@ -4113,7 +4113,7 @@ void func_100(int iParam0) // Position - 0x4431 (17457)
 	int j;
 	int value2;
 	int k;
-	int value3;
+	BOOL value3;
 	int value4;
 	int value5;
 	int value6;
@@ -5229,15 +5229,15 @@ BOOL func_131(int iParam0) // Position - 0x5998 (22936)
 	return false;
 }
 
-int func_132(Ped pedParam0) // Position - 0x5A94 (23188)
+int func_132(ePedComponentType epctParam0) // Position - 0x5A94 (23188)
 {
 	var entityCoords;
 
-	if (ENTITY::DOES_ENTITY_EXIST(pedParam0))
+	if (ENTITY::DOES_ENTITY_EXIST(epctParam0))
 	{
-		entityCoords = { ENTITY::GET_ENTITY_COORDS(pedParam0, false) };
+		entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam0, false) };
 	
-		if (!ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) || ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ENTITY(pedParam0, PLAYER::PLAYER_PED_ID(), true))
+		if (!ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) || ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ENTITY(epctParam0, PLAYER::PLAYER_PED_ID(), true))
 		{
 			switch (func_133(entityCoords, true))
 			{
@@ -5345,15 +5345,15 @@ eCharacter func_137() // Position - 0x5C76 (23670)
 	return 161;
 }
 
-eCharacter func_138(Ped pedParam0) // Position - 0x5C98 (23704)
+eCharacter func_138(ePedComponentType epctParam0) // Position - 0x5C98 (23704)
 {
 	eCharacter i;
 	Hash entityModel;
 	eCharacter character;
 
-	if (ENTITY::DOES_ENTITY_EXIST(pedParam0))
+	if (ENTITY::DOES_ENTITY_EXIST(epctParam0))
 	{
-		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
+		entityModel = ENTITY::GET_ENTITY_MODEL(epctParam0);
 		character = func_137() - 1;
 	
 		for (i = CHAR_MULTIPLAYER; i <= character; i = i + 1)
@@ -5366,22 +5366,22 @@ eCharacter func_138(Ped pedParam0) // Position - 0x5C98 (23704)
 	return _CHAR_NULL;
 }
 
-BOOL func_139(Ped pedParam0) // Position - 0x5CDE (23774)
+BOOL func_139(ePedComponentType epctParam0) // Position - 0x5CDE (23774)
 {
 	Vector3 entityCoords;
 	Vector3 entityCoords2;
 
-	entityCoords = { ENTITY::GET_ENTITY_COORDS(*pedParam0, true) };
+	entityCoords = { ENTITY::GET_ENTITY_COORDS(*epctParam0, true) };
 	entityCoords2 = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true) };
 
 	if (BUILTIN::VDIST2(entityCoords, entityCoords2) < 75f * 75f)
 		return false;
 
-	if (ENTITY::IS_ENTITY_ON_SCREEN(*pedParam0))
+	if (ENTITY::IS_ENTITY_ON_SCREEN(*epctParam0))
 		return false;
 
-	ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*pedParam0, true, true);
-	PED::DELETE_PED(pedParam0);
+	ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*epctParam0, true, true);
+	PED::DELETE_PED(epctParam0);
 	return true;
 }
 
@@ -5546,7 +5546,7 @@ BOOL func_146() // Position - 0x5FFF (24575)
 	return true;
 }
 
-BOOL func_147(int iParam0, Ped pedParam1) // Position - 0x6054 (24660)
+BOOL func_147(int iParam0, ePedComponentType epctParam1) // Position - 0x6054 (24660)
 {
 	Vector3 entityCoords;
 	float num;
@@ -5567,30 +5567,30 @@ BOOL func_147(int iParam0, Ped pedParam1) // Position - 0x6054 (24660)
 		if (!func_149(iParam0, func_150()))
 			return 0;
 	
-		if (ENTITY::DOES_ENTITY_EXIST(pedParam1))
+		if (ENTITY::DOES_ENTITY_EXIST(epctParam1))
 		{
-			entityCoords = { ENTITY::GET_ENTITY_COORDS(pedParam1, false) };
+			entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam1, false) };
 			num = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), entityCoords);
 		
 			if (num > 250f)
-				if (!ENTITY::IS_ENTITY_DEAD(pedParam1, false))
-					if (!ENTITY::IS_ENTITY_ON_SCREEN(pedParam1))
+				if (!ENTITY::IS_ENTITY_DEAD(epctParam1, false))
+					if (!ENTITY::IS_ENTITY_ON_SCREEN(epctParam1))
 						return 0;
 				else if (!CAM::IS_SPHERE_VISIBLE(entityCoords, 1.5f))
 					return 0;
 		}
-		else if (pedParam1 == func_148(Global_102175) && pedParam1 != 0)
+		else if (epctParam1 == func_148(Global_102175) && epctParam1 != PV_COMP_HEAD)
 		{
-			Global_102175 = 0;
+			Global_102175 = PV_COMP_HEAD;
 		}
 	}
 
 	return 1;
 }
 
-Ped func_148(Ped pedParam0) // Position - 0x6138 (24888)
+ePedComponentType func_148(ePedComponentType epctParam0) // Position - 0x6138 (24888)
 {
-	return pedParam0;
+	return epctParam0;
 }
 
 BOOL func_149(int iParam0, int iParam1) // Position - 0x6142 (24898)
@@ -5695,14 +5695,14 @@ void func_155() // Position - 0x6204 (25092)
 	return;
 }
 
-void func_156(Ped pedParam0, Hash hParam1) // Position - 0x629A (25242)
+void func_156(ePedComponentType epctParam0, Hash hParam1) // Position - 0x629A (25242)
 {
-	PED::SET_PED_CAN_BE_TARGETTED(*pedParam0, false);
-	PED::SET_PED_CONFIG_FLAG(*pedParam0, 20, true);
-	PED::SET_RAGDOLL_BLOCKING_FLAGS(*pedParam0, 16);
+	PED::SET_PED_CAN_BE_TARGETTED(*epctParam0, false);
+	PED::SET_PED_CONFIG_FLAG(*epctParam0, 20, true);
+	PED::SET_RAGDOLL_BLOCKING_FLAGS(*epctParam0, 16);
 
 	if (hParam1 != joaat("NO_RELATIONSHIP"))
-		PED::SET_PED_RELATIONSHIP_GROUP_HASH(*pedParam0, hParam1);
+		PED::SET_PED_RELATIONSHIP_GROUP_HASH(*epctParam0, hParam1);
 
 	return;
 }

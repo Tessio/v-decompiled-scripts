@@ -2673,9 +2673,9 @@ void func_81() // Position - 0x2144 (8516)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -6380,7 +6380,7 @@ BOOL func_187(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, v
 	return false;
 }
 
-int func_188(Vector3 vParam0, var uParam1, var uParam2, eCharacter echParam3, int iParam4) // Position - 0x7470 (29808)
+int func_188(Vector3 vParam0, var uParam1, var uParam2, int iParam3, int iParam4) // Position - 0x7470 (29808)
 {
 	int i;
 	float distanceBetweenCoords;
@@ -6394,7 +6394,7 @@ int func_188(Vector3 vParam0, var uParam1, var uParam2, eCharacter echParam3, in
 	{
 		if (Global_97442[i /*10*/].f_7 != 263)
 		{
-			if (Global_97442[i /*10*/].f_9 == echParam3 || echParam3 == _CHAR_NULL)
+			if (Global_97442[i /*10*/].f_9 == iParam3 || iParam3 == 145)
 			{
 				if (func_189(i) || iParam4 == 0)
 				{

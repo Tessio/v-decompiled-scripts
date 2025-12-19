@@ -679,22 +679,22 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < 0)
-							Global_46122 = 0;
+						if (Global_46122 < false)
+							Global_46122 = false;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < 0)
-							Global_46123 = 0;
+						if (Global_46123 < false)
+							Global_46123 = false;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < 0)
-							Global_46124 = 0;
+						if (Global_46124 < false)
+							Global_46124 = false;
 						break;
 				}
 			}
@@ -725,22 +725,22 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < 0)
-							Global_46122 = 0;
+						if (Global_46122 < false)
+							Global_46122 = false;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < 0)
-							Global_46123 = 0;
+						if (Global_46123 < false)
+							Global_46123 = false;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < 0)
-							Global_46124 = 0;
+						if (Global_46124 < false)
+							Global_46124 = false;
 						break;
 				}
 			}
@@ -1504,7 +1504,7 @@ int func_26(int iParam0, BOOL bParam1) // Position - 0x1754 (5972)
 	return num2;
 }
 
-int func_27(int iParam0) // Position - 0x196C (6508)
+int func_27(const char* sParam0) // Position - 0x196C (6508)
 {
 	int i;
 	int num;
@@ -1516,7 +1516,7 @@ int func_27(int iParam0) // Position - 0x196C (6508)
 
 	for (i = 0; i < 7; i = i + 1)
 	{
-		if (Global_55430[i /*203*/].f_2 == iParam0)
+		if (Global_55430[i /*203*/].f_2 == sParam0)
 		{
 			if (Global_55430[i /*203*/].f_1 > num2)
 			{

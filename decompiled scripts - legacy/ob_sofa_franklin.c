@@ -913,9 +913,9 @@ void func_6() // Position - 0xA06 (2566)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -1910,7 +1910,7 @@ void func_24(int iParam0) // Position - 0x2279 (8825)
 	{
 		Global_33836[iParam0 /*11*/].f_5 = 0;
 	
-		if (Global_33836[iParam0 /*11*/].f_2 && Global_33836[iParam0 /*11*/].f_7 == 0)
+		if (Global_33836[iParam0 /*11*/].f_2 && Global_33836[iParam0 /*11*/].f_7 == false)
 			Global_33836[iParam0 /*11*/].f_7 = 1;
 	
 		Global_33836[iParam0 /*11*/].f_8 = 0;

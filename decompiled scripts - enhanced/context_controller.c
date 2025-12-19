@@ -505,7 +505,7 @@ BOOL func_5(Player plParam0, BOOL bParam1) // Position - 0x553 (1363)
 
 int func_6(Player plParam0, BOOL bParam1, int iParam2) // Position - 0x564 (1380)
 {
-	Player player;
+	ePedComponentType type;
 
 	if (!func_8(plParam0))
 		return 0;
@@ -514,29 +514,29 @@ int func_6(Player plParam0, BOOL bParam1, int iParam2) // Position - 0x564 (1380
 		if (func_7(plParam0, iParam2))
 			return 0;
 
-	player = Global_1892798[plParam0 /*615*/].f_10;
+	type = Global_1892798[plParam0 /*615*/].f_10;
 
-	if (func_8(player) && Global_1892798[player /*615*/].f_10.f_433 == iParam2)
+	if (func_8(type) && Global_1892798[type /*615*/].f_10.f_433 == iParam2)
 		return 1;
 
 	return 0;
 }
 
-BOOL func_7(Player plParam0, int iParam1) // Position - 0x5C0 (1472)
+BOOL func_7(ePedComponentType epctParam0, int iParam1) // Position - 0x5C0 (1472)
 {
-	if (func_8(plParam0))
-		if (func_8(Global_1892798[plParam0 /*615*/].f_10))
-			if (Global_1892798[plParam0 /*615*/].f_10 == plParam0 && Global_1892798[plParam0 /*615*/].f_10.f_433 == iParam1)
+	if (func_8(epctParam0))
+		if (func_8(Global_1892798[epctParam0 /*615*/].f_10))
+			if (Global_1892798[epctParam0 /*615*/].f_10 == epctParam0 && Global_1892798[epctParam0 /*615*/].f_10.f_433 == iParam1)
 				return true;
 
 	return false;
 }
 
-BOOL func_8(Player plParam0) // Position - 0x60F (1551)
+BOOL func_8(ePedComponentType epctParam0) // Position - 0x60F (1551)
 {
 	Player player;
 
-	player = plParam0;
+	player = epctParam0;
 
 	if (player < 0)
 		return false;

@@ -35623,9 +35623,9 @@ void func_251() // Position - 0x28D1E (167198)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -39466,7 +39466,7 @@ BOOL func_361(int iParam0, int iParam1) // Position - 0x2DE9E (188062)
 	return IS_BIT_SET(Global_1679103.f_7064[iParam0], iParam1);
 }
 
-void func_362(ePedComponentType epctParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, BOOL bParam12, int iParam13, int iParam14, int iParam15) // Position - 0x2DEB4 (188084)
+void func_362(BOOL bParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, BOOL bParam12, int iParam13, int iParam14, int iParam15) // Position - 0x2DEB4 (188084)
 {
 	int num;
 	int i;
@@ -39484,7 +39484,7 @@ void func_362(ePedComponentType epctParam0, int iParam1, char* sParam2, int iPar
 	{
 		Global_1679103.f_1 = 1;
 		func_360(4, num);
-		Global_1679103.f_3391[num] = epctParam0;
+		Global_1679103.f_3391[num] = bParam0;
 		Global_1679103.f_3391.f_172[num] = iParam1;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679103.f_3391.f_11[num /*16*/], sParam2, 64);
 		Global_1679103.f_3391.f_183[num] = iParam3;
@@ -39500,7 +39500,7 @@ void func_362(ePedComponentType epctParam0, int iParam1, char* sParam2, int iPar
 		Global_1679103.f_3391.f_336[num] = iParam14;
 		Global_1679103.f_3391.f_347[num] = iParam15;
 	
-		if (epctParam0 > PV_COMP_TASK && iParam1 > 9 && MISC::IS_PC_VERSION() && bParam12)
+		if (bParam0 > 9 && iParam1 > 9 && MISC::IS_PC_VERSION() && bParam12)
 			Global_1679103.f_1172 = 1;
 	}
 
@@ -44127,7 +44127,7 @@ Vector3 func_428(int iParam0, BOOL bParam1) // Position - 0x348ED (215277)
 			return 2714.5466f, -354.2701f, -55.1867f;
 	
 		case 50:
-			return Global_1971528;
+			return Global_1971529;
 	
 		case 51:
 			return 1100f, 220f, -50f;

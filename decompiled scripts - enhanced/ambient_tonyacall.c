@@ -520,8 +520,8 @@ BOOL func_6(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x638 (1592)
 					Global_23000 = 0;
 					Global_23001 = 1;
 					Global_23053 = 0;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = 0;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -690,9 +690,9 @@ void func_7() // Position - 0x906 (2310)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -781,7 +781,7 @@ void func_14() // Position - 0xA3C (2620)
 	Global_23013 = Global_23014;
 	Global_23015 = { Global_23031 };
 	Global_23004 = Global_23005;
-	Global_24016 = 0;
+	Global_24016 = false;
 	Global_23049 = 0;
 	Global_23050 = 0;
 	MISC::CLEAR_BIT(&Global_9464, 16);
@@ -992,10 +992,10 @@ void func_27() // Position - 0xE64 (3684)
 	return;
 }
 
-void func_28(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0xEBB (3771)
+void func_28(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0xEBB (3771)
 {
 	Global_22454 = { *uParam0 };
-	Global_8779 = iParam1;
+	Global_8779 = echParam1;
 	TEXT_LABEL_ASSIGN_STRING(&Global_23070, sParam2, 24);
 	Global_23989 = iParam5;
 

@@ -1362,13 +1362,13 @@ BOOL func_45() // Position - 0x14DD (5341)
 	return func_46(*Global_4718592.f_139000);
 }
 
-BOOL func_46(var uParam0) // Position - 0x14F3 (5363)
+BOOL func_46(BOOL bParam0) // Position - 0x14F3 (5363)
 {
 	int i;
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		if (Global_262145.f_31313[i] == uParam0)
+		if (Global_262145.f_31313[i] == bParam0)
 			return 1;
 	}
 

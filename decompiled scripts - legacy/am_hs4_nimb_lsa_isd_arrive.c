@@ -4519,7 +4519,7 @@ void func_72(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam
 		if (bParam2)
 			flag2 = false;
 	
-		if (!bParam4 || num != func_10() || Global_1989162 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
+		if (!bParam4 || num != func_10() || Global_1989163 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
 		{
 			characterType = func_70(pedParam0);
 		
@@ -4560,7 +4560,7 @@ void func_72(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam
 				}
 			}
 		
-			if (Global_1989161)
+			if (Global_1989162)
 				func_76();
 		}
 		else
@@ -4581,7 +4581,7 @@ void func_73(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 	int num;
 	int decorationIndex;
 
-	if (!Global_1989161)
+	if (!Global_1989162)
 		func_74(&pedParam0);
 
 	i = 0;
@@ -4589,7 +4589,7 @@ void func_73(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		num = Global_1989133[i];
+		num = Global_1989134[i];
 	
 		if (num <= -1)
 		{
@@ -4643,7 +4643,7 @@ void func_74(var uParam0) // Position - 0x75C6 (30150)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
 	i = 0;
@@ -4670,7 +4670,7 @@ void func_74(var uParam0) // Position - 0x75C6 (30150)
 		}
 	}
 
-	Global_1989161 = true;
+	Global_1989162 = true;
 	return;
 }
 
@@ -4685,20 +4685,20 @@ void func_75(int iParam0, BOOL bParam1) // Position - 0x766C (30316)
 	{
 		if (bParam1)
 		{
-			if (Global_1989133[i] == iParam0)
+			if (Global_1989134[i] == iParam0)
 				return;
-			else if (Global_1989133[i] == -1)
+			else if (Global_1989134[i] == -1)
 				num = i;
 		}
-		else if (Global_1989133[i] == iParam0)
+		else if (Global_1989134[i] == iParam0)
 		{
-			Global_1989133[i] = -1;
+			Global_1989134[i] = -1;
 			return;
 		}
 	}
 
 	if (bParam1 && num >= 0)
-		Global_1989133[num] = iParam0;
+		Global_1989134[num] = iParam0;
 
 	return;
 }
@@ -4709,10 +4709,10 @@ void func_76() // Position - 0x76E6 (30438)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
-	Global_1989161 = false;
+	Global_1989162 = false;
 	return;
 }
 
@@ -17918,9 +17918,9 @@ void func_131(var uParam0, Hash hParam1, int iParam2, int iParam3) // Position -
 	return;
 }
 
-int func_132(ePedComponentType epctParam0) // Position - 0x18040 (98368)
+int func_132(int iParam0) // Position - 0x18040 (98368)
 {
-	switch (epctParam0)
+	switch (iParam0)
 	{
 		case 0:
 			return 0;
@@ -32778,7 +32778,7 @@ void func_228(Hash hParam0, int iParam1, Hash hParam2, BOOL bParam3) // Position
 	int i;
 	Hash nameHash;
 	Hash enumValue;
-	ePedComponentType componentType;
+	int componentType;
 	int num;
 	int num2;
 	Hash address;
@@ -32820,7 +32820,7 @@ void func_228(Hash hParam0, int iParam1, Hash hParam2, BOOL bParam3) // Position
 					if (num < Global_4519747)
 					{
 						Global_4519747[num] = -1;
-						Global_4519758[num] = PV_COMP_INVALID;
+						Global_4519758[num] = -1;
 					}
 				
 					EXTRAMETADATA::GET_VARIANT_COMPONENT(Global_2883588, i, &nameHash, &enumValue, &componentType);

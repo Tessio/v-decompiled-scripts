@@ -1010,7 +1010,7 @@ void main() // Position - 0x0 (0)
 	return;
 }
 
-void func_1(int iParam0, int iParam1, BOOL bParam2) // Position - 0x790 (1936)
+void func_1(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x790 (1936)
 {
 	int num;
 
@@ -1018,7 +1018,7 @@ void func_1(int iParam0, int iParam1, BOOL bParam2) // Position - 0x790 (1936)
 	{
 		num = func_2();
 		Global_2696872[num] = iParam1;
-		Global_2696883[num] = iParam0;
+		Global_2696883[num] = bParam0;
 	}
 
 	return;
@@ -4252,19 +4252,19 @@ BOOL func_75(int iParam0) // Position - 0x43AC (17324)
 	return iParam0 == 13;
 }
 
-int func_76(Player plParam0) // Position - 0x43B9 (17337)
+ePedComponentType func_76(Player plParam0) // Position - 0x43B9 (17337)
 {
 	if (func_78(plParam0))
 		if (func_77(plParam0, false))
 			return Global_1892798[plParam0 /*615*/].f_10.f_34;
 
-	return -1;
+	return PV_COMP_INVALID;
 }
 
 BOOL func_77(Player plParam0, BOOL bParam1) // Position - 0x43E5 (17381)
 {
 	if (func_78(plParam0))
-		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != -1 || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != -1)
+		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID)
 			return true;
 
 	return false;

@@ -130,7 +130,7 @@ void main() // Position - 0x0 (0)
 
 	func_46(91, true);
 	func_46(92, true);
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 
 	while (Global_34171)
 	{
@@ -166,7 +166,7 @@ void main() // Position - 0x0 (0)
 		flag = func_35();
 	
 		if (flag)
-			Global_34169 = true;
+			Global_34169 = BLIP_LEVEL;
 	
 		num2 = 0;
 		num3 = 0;
@@ -438,7 +438,7 @@ void main() // Position - 0x0 (0)
 		}
 	
 		Global_34169 = Global_34170;
-		Global_34170 = false;
+		Global_34170 = BLIP_HIGHER;
 	
 		if (num2 == 0)
 		{
@@ -587,10 +587,10 @@ void func_8(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x985 (2437)
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == true)
+		if (Global_34169 == BLIP_LEVEL)
 			Global_34170 = 1;
 	
-		Global_34169 = true;
+		Global_34169 = BLIP_LEVEL;
 	}
 
 	if (bParam1)
@@ -717,10 +717,10 @@ void func_13(int iParam0, BOOL bParam1) // Position - 0xC10 (3088)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 4);
 
-	if (Global_34169 == true)
+	if (Global_34169 == BLIP_LEVEL)
 		Global_34170 = 1;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -742,10 +742,10 @@ void func_14(int iParam0, BOOL bParam1) // Position - 0xC93 (3219)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 5);
 
-	if (Global_34169 == true)
+	if (Global_34169 == BLIP_LEVEL)
 		Global_34170 = 1;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -772,10 +772,10 @@ void func_15(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0xD16 (3350)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 11);
 
-	if (Global_34169 == true)
+	if (Global_34169 == BLIP_LEVEL)
 		Global_34170 = 1;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -1656,10 +1656,10 @@ void func_46(int iParam0, BOOL bParam1) // Position - 0x1C02 (7170)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 2);
 
-	if (Global_34169 == true)
+	if (Global_34169 == BLIP_LEVEL)
 		Global_34170 = 1;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }

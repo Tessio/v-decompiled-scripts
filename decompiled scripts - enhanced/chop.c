@@ -3684,10 +3684,10 @@ void func_62(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x453E (1772
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == true)
-			Global_34170 = true;
+		if (Global_34169 == BLIP_LEVEL)
+			Global_34170 = BLIP_LEVEL;
 	
-		Global_34169 = true;
+		Global_34169 = BLIP_LEVEL;
 	}
 
 	if (bParam1)
@@ -7130,7 +7130,7 @@ BOOL func_138() // Position - 0x9F24 (40740)
 	return false;
 }
 
-void func_139(BOOL bParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0xA094 (41108)
+void func_139(ePedComponentType epctParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0xA094 (41108)
 {
 	int num;
 	int i;
@@ -7148,7 +7148,7 @@ void func_139(BOOL bParam0, int iParam1, char* sParam2, int iParam3, int iParam4
 	{
 		Global_1679155.f_1 = 1;
 		func_140(0, num);
-		Global_1679155.f_1177[num] = bParam0;
+		Global_1679155.f_1177[num] = epctParam0;
 		Global_1679155.f_1177.f_11[num] = iParam1;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679155.f_1177.f_22[num /*16*/], sParam2, 64);
 		Global_1679155.f_1177.f_194[num] = iParam3;
@@ -7883,7 +7883,7 @@ BOOL func_164() // Position - 0xB4C2 (46274)
 			if (Global_114921 == true)
 				return true;
 		
-			if (Global_80303 == true && Global_33798 == 0 && Global_9467 == 0 && Global_34048 == false && Global_34049 == 0 && Global_34050 == false && Global_62208 == false && !func_147() && !func_15() && Global_104649 == false && _DOES_ENTITY_EXIST_AND_IS_ALIVE(PLAYER::PLAYER_PED_ID()) && !func_166())
+			if (Global_80303 == true && Global_33798 == 0 && Global_9467 == false && Global_34048 == false && Global_34049 == false && Global_34050 == false && Global_62208 == false && !func_147() && !func_15() && Global_104649 == false && _DOES_ENTITY_EXIST_AND_IS_ALIVE(PLAYER::PLAYER_PED_ID()) && !func_166())
 				return true;
 		
 			if (Global_99349 == true)

@@ -86,7 +86,7 @@ BOOL func_1() // Position - 0xDC (220)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -97,7 +97,7 @@ BOOL func_2() // Position - 0x11F (287)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 

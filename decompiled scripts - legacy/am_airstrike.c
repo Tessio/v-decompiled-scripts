@@ -473,13 +473,13 @@ void func_1() // Position - 0x129 (297)
 	return;
 }
 
-int _IS_PLAYER_IN_ANIMAL_FORM(Player plParam0) // Position - 0x26A (618)
+BOOL _IS_PLAYER_IN_ANIMAL_FORM(Player plParam0) // Position - 0x26A (618)
 {
 	Ped playerPed;
 	Hash entityModel;
 
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-		return 0;
+		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
 	{
@@ -494,17 +494,17 @@ int _IS_PLAYER_IN_ANIMAL_FORM(Player plParam0) // Position - 0x26A (618)
 			entityModel = ENTITY::GET_ENTITY_MODEL(playerPed);
 		
 			if (entityModel == joaat("MP_M_Freemode_01") || entityModel == joaat("MP_F_Freemode_01"))
-				return 0;
+				return false;
 			else
-				return 1;
+				return true;
 		}
 		else
 		{
-			return 0;
+			return false;
 		}
 	}
 
-	return 0;
+	return false;
 }
 
 BOOL func_3() // Position - 0x2D6 (726)
@@ -1066,9 +1066,9 @@ void func_17() // Position - 0x114F (4431)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -2400,7 +2400,7 @@ BOOL func_82(BOOL bParam0) // Position - 0x2DE2 (11746)
 	return Global_1575062;
 }
 
-var func_83() // Position - 0x2DF3 (11763)
+BOOL func_83() // Position - 0x2DF3 (11763)
 {
 	return Global_2685150.f_19;
 }

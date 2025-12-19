@@ -3787,7 +3787,7 @@ void func_130(char* sParam0, int iParam1, var uParam2) // Position - 0x4913 (187
 	if (func_131(*uParam2))
 		sParam0->f_74 = 8;
 
-	func_96(sParam0->f_71, &(sParam0->f_75), &(sParam0->f_77));
+	func_96(sParam0->f_71, &(sParam0->f_77), &(sParam0->f_75));
 
 	if (func_95() != 2)
 	{
@@ -4160,7 +4160,7 @@ Vector3 func_149(BOOL bParam0) // Position - 0x516F (20847)
 
 Vector3 func_150() // Position - 0x519F (20895)
 {
-	if (IS_BIT_SET(Global_1988018, 9))
+	if (IS_BIT_SET(Global_1988019, 9))
 		return 1387.3915f, 3615.8123f, 37.926f;
 
 	return 612.673f, -403.2929f, 23.7075f;
@@ -6973,7 +6973,7 @@ BOOL func_242(int iParam0, BOOL bParam1, const char* sParam2, int iParam3) // Po
 	gamerHandle = { GET_GAMER_HANDLE_USER(sParam2) };
 	unk13 = { GET_GAMER_HANDLE_PLAYER(PLAYER::PLAYER_ID()) };
 
-	if (!Global_1988073)
+	if (!Global_1988074)
 		return func_244(&gamerHandle, &unk13, iParam0, bParam1);
 
 	if (!IS_GAMER_HANDLE_VALID(gamerHandle))
@@ -47416,11 +47416,11 @@ struct<16> func_585() // Position - 0x5D440 (382016)
 
 	TEXT_LABEL_ASSIGN_STRING(&unk, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("FMMC_CH_DN" /*The Diamond Casino Heist*/), 64);
 
-	if (Global_1971917 == PV_COMP_BERD)
+	if (Global_1971918 == PV_COMP_BERD)
 		TEXT_LABEL_ASSIGN_STRING(&unk, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("FMMC_CH_SS" /*The Diamond Casino Heist – Silent & Sneaky*/), 64);
-	else if (Global_1971917 == PV_COMP_HAIR)
+	else if (Global_1971918 == PV_COMP_HAIR)
 		TEXT_LABEL_ASSIGN_STRING(&unk, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("FMMC_CH_BC" /*The Diamond Casino Heist – The Big Con*/), 64);
-	else if (Global_1971917 == PV_COMP_UPPR)
+	else if (Global_1971918 == PV_COMP_UPPR)
 		TEXT_LABEL_ASSIGN_STRING(&unk, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("FMMC_CH_AG" /*The Diamond Casino Heist – Aggressive*/), 64);
 
 	return unk;

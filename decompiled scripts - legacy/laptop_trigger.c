@@ -1510,7 +1510,7 @@ int func_34(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char*
 		}
 	}
 
-	if (Global_1978584 != -1 && echParam0 == Global_1978584)
+	if (Global_1978585 != -1 && echParam0 == Global_1978585)
 		num2 = 1;
 
 	func_35(echParam0, sParam1, num2, func_40(PLAYER::PLAYER_ID()));
@@ -1530,18 +1530,18 @@ void func_35(eCharacter echParam0, char* sParam1, BOOL bParam2, ePedComponentTyp
 	character.f_3 = 0;
 	character.f_4 = bParam2;
 	character.f_5 = epctParam3;
-	character.f_6 = Global_1978567.f_7;
-	character.f_7 = Global_1978567.f_8;
-	character.f_8 = Global_1978567.f_9;
-	character.f_9 = Global_1978567.f_10;
-	character.f_10 = Global_1978567.f_11;
-	character.f_11 = Global_1978567.f_12;
-	character.f_12 = Global_1978567.f_13;
-	character.f_13 = Global_1978567.f_14;
+	character.f_6 = Global_1978568.f_7;
+	character.f_7 = Global_1978568.f_8;
+	character.f_8 = Global_1978568.f_9;
+	character.f_9 = Global_1978568.f_10;
+	character.f_10 = Global_1978568.f_11;
+	character.f_11 = Global_1978568.f_12;
+	character.f_12 = Global_1978568.f_13;
+	character.f_13 = Global_1978568.f_14;
 	STATS::PLAYSTATS_NPC_PHONE(&character);
 
 	if (bParam2)
-		Global_1978584 = -1;
+		Global_1978585 = -1;
 
 	return;
 }
@@ -2502,7 +2502,7 @@ int func_76(ePedComponentType epctParam0, ePedComponentType epctParam1, BOOL bPa
 	if (func_79(epctParam0))
 		return 0;
 
-	if (!Global_1988072)
+	if (!Global_1988073)
 	{
 		gamerHandle = { GET_GAMER_HANDLE_PLAYER(epctParam0) };
 	
@@ -3071,10 +3071,10 @@ void func_125(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 	int bossId2;
 	int textSource;
 
-	if (Global_1989166 == MISC::GET_FRAME_COUNT())
+	if (Global_1989167 == MISC::GET_FRAME_COUNT())
 		return;
 
-	Global_1989166 = MISC::GET_FRAME_COUNT();
+	Global_1989167 = MISC::GET_FRAME_COUNT();
 	isBoss = func_282();
 	bossType = 0;
 
@@ -3152,7 +3152,7 @@ void func_130(const char* sParam0, BOOL bParam1) // Position - 0x396E (14702)
 
 void func_131(int iParam0, const char* sParam1) // Position - 0x3A0A (14858)
 {
-	Global_1988495[iParam0] = MISC::GET_HASH_KEY(sParam1);
+	Global_1988496[iParam0] = MISC::GET_HASH_KEY(sParam1);
 	return;
 }
 

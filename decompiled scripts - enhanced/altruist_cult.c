@@ -862,30 +862,30 @@ void func_1(BOOL bParam0) // Position - 0x55E (1374)
 		MISC::SET_FADE_IN_AFTER_DEATH_ARREST(true);
 		MISC::PAUSE_DEATH_ARREST_RESTART(false);
 		MISC::SET_FADE_OUT_AFTER_DEATH(true);
-		func_2(false);
+		func_2(0);
 		Global_97687 = 0;
 	}
 
 	return;
 }
 
-void func_2(BOOL bParam0) // Position - 0x5A0 (1440)
+void func_2(Entity eParam0) // Position - 0x5A0 (1440)
 {
 	if (Global_44886 == 9 || Global_44886 == 10 || Global_44886 == 5)
 	{
-		Global_113577 = bParam0;
+		Global_113577 = eParam0;
 	
-		if (bParam0)
+		if (eParam0)
 		{
 		}
 	}
 	else
 	{
-		if (bParam0)
+		if (eParam0)
 		{
 		}
 	
-		Global_113577 = false;
+		Global_113577 = 0;
 	}
 
 	return;
@@ -1280,7 +1280,7 @@ BOOL func_25(Player plParam0, int iParam1) // Position - 0xC9C (3228)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_26(-1, false) == 8;
+		flag = func_26(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
 
@@ -1291,28 +1291,28 @@ BOOL func_25(Player plParam0, int iParam1) // Position - 0xC9C (3228)
 	return flag;
 }
 
-int func_26(int iParam0, BOOL bParam1) // Position - 0xCF5 (3317)
+eCharacter func_26(int iParam0, BOOL bParam1) // Position - 0xCF5 (3317)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_27();
+	if (num == -1)
+		num = func_27();
 
-	if (Global_1575072[num2] == 1)
+	if (Global_1575072[num] == 1)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_27() // Position - 0xD36 (3382)
@@ -1432,7 +1432,7 @@ BOOL func_33(var uParam0, var uParam1, var uParam2, char* sParam3, char* sParam4
 				if (*uParam5)
 					MISC::IGNORE_NEXT_RESTART(true);
 				else if (!uParam0->f_5)
-					func_2(false);
+					func_2(0);
 			
 				SCRIPT::SET_NO_LOADING_SCREEN(false);
 				MISC::PAUSE_DEATH_ARREST_RESTART(false);
@@ -3055,8 +3055,8 @@ Vector3 _GET_PLAYER_COORDS(Player plParam0) // Position - 0x2B68 (11112)
 
 void func_97() // Position - 0x2B7B (11131)
 {
-	Global_34031 = 0;
-	Global_34032 = 0;
+	Global_34031 = false;
+	Global_34032 = false;
 	Global_34034 = 0;
 	Global_34035 = 0;
 	Global_34036 = 0;
@@ -3137,8 +3137,8 @@ int func_102(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x2C9D (114
 					Global_23000 = 0;
 					Global_23001 = 1;
 					Global_23053 = 0;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = 0;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -3307,9 +3307,9 @@ void func_103() // Position - 0x2F6B (12139)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -3398,7 +3398,7 @@ void func_110() // Position - 0x30A1 (12449)
 	Global_23013 = Global_23014;
 	Global_23015 = { Global_23031 };
 	Global_23004 = Global_23005;
-	Global_24016 = 0;
+	Global_24016 = false;
 	Global_23049 = 0;
 	Global_23050 = 0;
 	MISC::CLEAR_BIT(&Global_9464, 16);
@@ -3518,10 +3518,10 @@ void func_115() // Position - 0x3301 (13057)
 	return;
 }
 
-void func_116(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0x3358 (13144)
+void func_116(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0x3358 (13144)
 {
 	Global_22454 = { *uParam0 };
-	Global_8779 = iParam1;
+	Global_8779 = echParam1;
 	TEXT_LABEL_ASSIGN_STRING(&Global_23070, sParam2, 24);
 	Global_23989 = iParam5;
 
@@ -4367,7 +4367,7 @@ float func_136(var uParam0, var uParam1, var uParam2, float fParam3, var uParam4
 
 void func_137() // Position - 0x4AF5 (19189)
 {
-	Global_34032 = 1;
+	Global_34032 = true;
 	return;
 }
 
@@ -7778,7 +7778,7 @@ void func_203() // Position - 0x9005 (36869)
 			Global_97688 = 0;
 			func_14(0, true);
 			func_12(0, true);
-			func_2(false);
+			func_2(0);
 			MISC::SET_FADE_OUT_AFTER_DEATH(true);
 			MISC::PAUSE_DEATH_ARREST_RESTART(false);
 			MISC::IGNORE_NEXT_RESTART(false);
@@ -7802,7 +7802,7 @@ void func_203() // Position - 0x9005 (36869)
 		Global_97688 = 0;
 		func_14(0, true);
 		func_12(0, true);
-		func_2(false);
+		func_2(0);
 		MISC::SET_FADE_OUT_AFTER_DEATH(true);
 		MISC::PAUSE_DEATH_ARREST_RESTART(false);
 		MISC::IGNORE_NEXT_RESTART(false);

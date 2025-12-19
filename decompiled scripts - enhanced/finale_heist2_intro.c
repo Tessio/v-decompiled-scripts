@@ -550,7 +550,7 @@ void func_16(Vehicle veParam0) // Position - 0xBFA (3066)
 
 void func_17() // Position - 0xC5F (3167)
 {
-	Global_113954 = 1;
+	Global_113954 = true;
 	return;
 }
 
@@ -608,7 +608,7 @@ void func_21(BOOL bParam0, BOOL bParam1) // Position - 0xCF5 (3317)
 
 	if (bParam0)
 	{
-		if (func_24(false) && Global_80552.f_1 == 1 && func_23(Global_80552))
+		if (func_24(false) && Global_80552.f_1 == true && func_23(Global_80552))
 		{
 		}
 		else
@@ -659,9 +659,9 @@ int func_22() // Position - 0xDC5 (3525)
 	return -1;
 }
 
-BOOL func_23(int iParam0) // Position - 0xDF7 (3575)
+BOOL func_23(BOOL bParam0) // Position - 0xDF7 (3575)
 {
-	switch (iParam0)
+	switch (bParam0)
 	{
 		case 71:
 			return true;

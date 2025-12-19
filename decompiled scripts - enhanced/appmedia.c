@@ -302,7 +302,7 @@ BOOL func_1() // Position - 0x114 (276)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -593,7 +593,7 @@ BOOL func_12() // Position - 0x747 (1863)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -623,9 +623,9 @@ void func_14() // Position - 0x79A (1946)
 	return;
 }
 
-BOOL func_15(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x7BB (1979)
+BOOL func_15(eControlType ectParam0, BOOL bParam1, int iParam2) // Position - 0x7BB (1979)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, bParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, bParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))

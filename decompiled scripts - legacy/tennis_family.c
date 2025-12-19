@@ -9841,7 +9841,7 @@ BOOL func_336(int iParam0) // Position - 0x1078A (67466)
 	return true;
 }
 
-void func_337(Any* panParam0, eCharacter echParam1) // Position - 0x1089A (67738)
+void func_337(var uParam0, eCharacter echParam1) // Position - 0x1089A (67738)
 {
 	int i;
 	eCharacter character;
@@ -9866,12 +9866,12 @@ void func_337(Any* panParam0, eCharacter echParam1) // Position - 0x1089A (67738
 			if (!func_339(Global_114904.f_18540[i], &unk, &num))
 			{
 				Global_114904.f_18540[i] = 318;
-				func_338(&panParam0->f_2296[i]);
-				panParam0->f_2300[i /*3*/] = { 0f, 0f, 0f };
-				panParam0->f_2310[i] = 0f;
-				panParam0->f_2314[i] = 0;
-				panParam0->f_2318[i /*3*/] = { 0f, 0f, 0f };
-				panParam0->f_2328[i] = 0;
+				func_338(&uParam0->f_2296[i]);
+				uParam0->f_2300[i /*3*/] = { 0f, 0f, 0f };
+				uParam0->f_2310[i] = 0f;
+				uParam0->f_2314[i] = 0;
+				uParam0->f_2318[i /*3*/] = { 0f, 0f, 0f };
+				uParam0->f_2328[i] = 0;
 				Global_99794[i /*29*/] = { 0f, 0f, 0f };
 				Global_99794[i /*29*/].f_9 = 0f;
 				Global_99794[i /*29*/].f_12 = 0f;

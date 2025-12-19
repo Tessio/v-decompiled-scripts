@@ -17,7 +17,7 @@ void main() // Position - 0x0 (0)
 	Global_1574480 = 0.276f;
 	Global_1574536 = true;
 	Global_1574632 = -1;
-	Global_1574633 = 1;
+	Global_1574633 = true;
 	Global_1574682 = PV_COMP_INVALID;
 	Global_1574683 = PV_COMP_INVALID;
 	Global_1574686 = PV_COMP_INVALID;
@@ -46,7 +46,7 @@ void main() // Position - 0x0 (0)
 	Global_1575046 = -1;
 	Global_1575048 = -1;
 	Global_1575050 = -1;
-	Global_1575096 = 1;
+	Global_1575096 = true;
 	Global_1575097 = 0.2f;
 	Global_1575100 = 8;
 	Global_1576295 = true;
@@ -56,7 +56,7 @@ void main() // Position - 0x0 (0)
 	Global_1576338 = 30;
 	Global_1576339 = 40;
 	Global_1576480 = 1;
-	Global_1576481 = true;
+	Global_1576481 = PV_COMP_BERD;
 	Global_1576844 = 72000;
 	Global_1576847 = -1;
 	Global_1576848 = -1;
@@ -78,12 +78,12 @@ void main() // Position - 0x0 (0)
 	Global_1576934 = 1f;
 	Global_1576961 = -1;
 	Global_1576965 = true;
-	Global_1576966 = 1;
+	Global_1576966 = true;
 	Global_1576967 = true;
 	Global_1576970 = 6;
 	Global_1576971 = 3;
 	Global_1576972 = -1;
-	Global_1579240 = -1;
+	Global_1579240 = PV_COMP_INVALID;
 	Global_1579249 = true;
 	Global_1579251 = 0.5f;
 	Global_1579252 = 0.85f;
@@ -113,7 +113,7 @@ void main() // Position - 0x0 (0)
 	Global_1689113 = 0.15f;
 	Global_1689114 = 0f;
 	Global_1689115 = 220;
-	Global_1689171 = -1;
+	Global_1689171 = PV_COMP_INVALID;
 	Global_1689206 = -1;
 	Global_1689207 = -1;
 	Global_1689213 = PV_COMP_INVALID;

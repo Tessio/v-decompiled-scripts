@@ -526,10 +526,10 @@ void func_20(int iParam0, BOOL bParam1) // Position - 0x9A0 (2464)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 20);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 20);
 	return;
 }
@@ -556,10 +556,10 @@ void func_22(int iParam0, int iParam1) // Position - 0xA4D (2637)
 
 	MISC::SET_BITS_IN_RANGE(&(Global_34172[num /*23*/].f_11), 21, 26, iParam1);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -581,10 +581,10 @@ void func_23(int iParam0, BOOL bParam1) // Position - 0xAAB (2731)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 7);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -669,10 +669,10 @@ void func_26(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0xC81 (3201)
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == true)
-			Global_34170 = true;
+		if (Global_34169 == BLIP_LEVEL)
+			Global_34170 = BLIP_LEVEL;
 	
-		Global_34169 = true;
+		Global_34169 = BLIP_LEVEL;
 	}
 
 	if (bParam1)
@@ -962,16 +962,16 @@ BOOL func_32(int iParam0, int iParam1) // Position - 0x13A3 (5027)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x13F4 (5108)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x13F4 (5108)
 {
-	if (iParam2 == -1)
-		iParam2 = func_34();
+	if (inParam2 == -1)
+		inParam2 = func_34();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
 	return;
 }
 
-int func_34() // Position - 0x1412 (5138)
+Interior func_34() // Position - 0x1412 (5138)
 {
 	return Global_1574927;
 }

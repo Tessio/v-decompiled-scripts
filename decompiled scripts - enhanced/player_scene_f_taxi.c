@@ -257,7 +257,7 @@ void main() // Position - 0x0 (0)
 	func_22();
 	func_18();
 
-	while (iLocal_70 && func_8(2, 0))
+	while (iLocal_70 && func_8(2, PV_COMP_HEAD))
 	{
 		BUILTIN::WAIT(0);
 	
@@ -400,11 +400,11 @@ BOOL func_4() // Position - 0x1B6 (438)
 	return false;
 }
 
-BOOL func_5(Ped pedParam0, Vehicle veParam1, int iParam2) // Position - 0x2C5 (709)
+BOOL func_5(ePedComponentType epctParam0, Vehicle veParam1, int iParam2) // Position - 0x2C5 (709)
 {
-	if (!ENTITY::IS_ENTITY_DEAD(pedParam0, false) && !ENTITY::IS_ENTITY_DEAD(veParam1, false))
-		if (PED::IS_PED_SITTING_IN_VEHICLE(pedParam0, veParam1))
-			if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(veParam1, iParam2, false) == pedParam0)
+	if (!ENTITY::IS_ENTITY_DEAD(epctParam0, false) && !ENTITY::IS_ENTITY_DEAD(veParam1, false))
+		if (PED::IS_PED_SITTING_IN_VEHICLE(epctParam0, veParam1))
+			if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(veParam1, iParam2, false) == epctParam0)
 				return true;
 
 	return false;
@@ -437,7 +437,7 @@ BOOL func_7() // Position - 0x318 (792)
 	return true;
 }
 
-int func_8(int iParam0, Ped pedParam1) // Position - 0x36D (877)
+int func_8(int iParam0, ePedComponentType epctParam1) // Position - 0x36D (877)
 {
 	Vector3 entityCoords;
 	float num;
@@ -458,30 +458,30 @@ int func_8(int iParam0, Ped pedParam1) // Position - 0x36D (877)
 		if (!func_10(iParam0, func_11()))
 			return 0;
 	
-		if (ENTITY::DOES_ENTITY_EXIST(pedParam1))
+		if (ENTITY::DOES_ENTITY_EXIST(epctParam1))
 		{
-			entityCoords = { ENTITY::GET_ENTITY_COORDS(pedParam1, false) };
+			entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam1, false) };
 			num = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), entityCoords);
 		
 			if (num > 250f)
-				if (!ENTITY::IS_ENTITY_DEAD(pedParam1, false))
-					if (!ENTITY::IS_ENTITY_ON_SCREEN(pedParam1))
+				if (!ENTITY::IS_ENTITY_DEAD(epctParam1, false))
+					if (!ENTITY::IS_ENTITY_ON_SCREEN(epctParam1))
 						return 0;
 				else if (!CAM::IS_SPHERE_VISIBLE(entityCoords, 1.5f))
 					return 0;
 		}
-		else if (pedParam1 == func_9(Global_102175) && pedParam1 != 0)
+		else if (epctParam1 == func_9(Global_102175) && epctParam1 != PV_COMP_HEAD)
 		{
-			Global_102175 = 0;
+			Global_102175 = PV_COMP_HEAD;
 		}
 	}
 
 	return 1;
 }
 
-Ped func_9(Ped pedParam0) // Position - 0x451 (1105)
+ePedComponentType func_9(ePedComponentType epctParam0) // Position - 0x451 (1105)
 {
-	return pedParam0;
+	return epctParam0;
 }
 
 BOOL func_10(int iParam0, int iParam1) // Position - 0x45B (1115)

@@ -125,7 +125,7 @@ BOOL func_1() // Position - 0x113 (275)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -310,7 +310,7 @@ BOOL func_8() // Position - 0x422 (1058)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -346,9 +346,9 @@ void func_10() // Position - 0x4AE (1198)
 	return;
 }
 
-BOOL func_11(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x4CF (1231)
+BOOL func_11(eControlType ectParam0, BOOL bParam1, int iParam2) // Position - 0x4CF (1231)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, bParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, bParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))

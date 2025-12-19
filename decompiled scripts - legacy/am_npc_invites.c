@@ -11251,9 +11251,9 @@ void func_340() // Position - 0xB1E4 (45540)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -11752,15 +11752,15 @@ int func_361(int iParam0, int iParam1, var uParam2, int* piParam3) // Position -
 
 BOOL func_362(int iParam0) // Position - 0xBA4E (47694)
 {
-	Hash hash;
+	int num;
 	int i;
 
-	hash = Global_2634773[iParam0 /*14*/].f_12;
+	num = Global_2634773[iParam0 /*14*/].f_12;
 	i = 0;
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		if (Global_2635515[i /*2*/] == hash)
+		if (Global_2635515[i /*2*/] == num)
 		{
 			if (MISC::GET_GAME_TIMER() > Global_2635515[i /*2*/].f_1)
 			{

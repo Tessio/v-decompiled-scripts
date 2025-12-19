@@ -17,7 +17,7 @@ void main() // Position - 0x0 (0)
 	Global_1574480 = 0.276f;
 	Global_1574536 = 1;
 	Global_1574632 = -1;
-	Global_1574633 = true;
+	Global_1574633 = 1;
 	Global_1574682 = PV_COMP_INVALID;
 	Global_1574683 = PV_COMP_INVALID;
 	Global_1574686 = PV_COMP_INVALID;
@@ -53,7 +53,7 @@ void main() // Position - 0x0 (0)
 	Global_1576309 = -1;
 	Global_1576336 = 30;
 	Global_1576337 = 40;
-	Global_1576478 = true;
+	Global_1576478 = 1;
 	Global_1576479 = true;
 	Global_1576842 = 72000;
 	Global_1576845 = -1;

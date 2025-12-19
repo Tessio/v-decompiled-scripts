@@ -450,7 +450,7 @@ int func_1(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, floa
 	func_9(unk, unk4);
 	func_8(unk, unk4, &(uParam1->f_4));
 
-	if (Global_97452 != 8)
+	if (Global_97452 != CHAR_MIKE_FRANK_CONF)
 	{
 		if (Global_97453 == -1)
 		{
@@ -482,45 +482,45 @@ int func_1(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, floa
 			
 				switch (Global_97452)
 				{
-					case 0:
+					case CHAR_MICHAEL:
 						num4 = 11;
 						endRange = 3;
 						break;
 				
-					case 1:
+					case CHAR_FRANKLIN:
 						num4 = 12;
 						endRange = 3;
 						break;
 				
-					case 4:
+					case CHAR_ALL_PLAYERS_CONF:
 						num4 = 13;
 						num3 = 10000;
 						endRange = 3;
 						break;
 				
-					case 6:
+					case CHAR_LEST_FRANK_CONF:
 						num4 = 14;
 						num3 = 10000;
 						endRange = 3;
 						break;
 				
-					case 7:
+					case CHAR_LEST_MIKE_CONF:
 						num4 = 15;
 						num3 = 10000;
 						endRange = 3;
 						break;
 				
-					case 2:
+					case CHAR_TREVOR:
 						num4 = 16;
 						endRange = 3;
 						break;
 				
-					case 3:
+					case CHAR_MULTIPLAYER:
 						num4 = 17;
 						endRange = 3;
 						break;
 				
-					case 5:
+					case CHAR_FRANK_TREV_CONF:
 						num4 = 18;
 						endRange = 3;
 						break;
@@ -570,7 +570,7 @@ int func_1(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, floa
 			{
 				switch (Global_97452)
 				{
-					case 0:
+					case CHAR_MICHAEL:
 						switch (character2)
 						{
 							case CHAR_MICHAEL:
@@ -590,7 +590,7 @@ int func_1(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, floa
 						}
 						break;
 				
-					case 4:
+					case CHAR_ALL_PLAYERS_CONF:
 						switch (character2)
 						{
 							case CHAR_MICHAEL:
@@ -612,7 +612,7 @@ int func_1(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, floa
 						num3 = 10000;
 						break;
 				
-					case 6:
+					case CHAR_LEST_FRANK_CONF:
 						switch (character2)
 						{
 							case CHAR_FRANKLIN:
@@ -624,7 +624,7 @@ int func_1(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, floa
 						}
 						break;
 				
-					case 3:
+					case CHAR_MULTIPLAYER:
 						switch (character2)
 						{
 							case CHAR_MICHAEL:
@@ -644,10 +644,10 @@ int func_1(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, floa
 						}
 						break;
 				
-					case 1:
-					case 2:
-					case 5:
-					case 7:
+					case CHAR_FRANKLIN:
+					case CHAR_TREVOR:
+					case CHAR_FRANK_TREV_CONF:
+					case CHAR_LEST_MIKE_CONF:
 						return 0;
 				
 					default:
@@ -880,11 +880,11 @@ void func_8(Vector3 vParam0, var uParam1, var uParam2, Vector3 vParam3, var uPar
 			*uParam6 = *uParam6 + 1;
 		
 			if (*uParam6 > 6)
-				Global_97452 = 3;
+				Global_97452 = CHAR_MULTIPLAYER;
 		}
 		else if (FIRE::IS_EXPLOSION_IN_AREA(0, vParam0, vParam3) || FIRE::IS_EXPLOSION_IN_AREA(2, vParam0, vParam3) || MISC::IS_PROJECTILE_TYPE_IN_AREA(vParam0, vParam3, joaat("WEAPON_GRENADELAUNCHER"), true))
 		{
-			Global_97452 = 5;
+			Global_97452 = CHAR_FRANK_TREV_CONF;
 		}
 	}
 
@@ -898,7 +898,7 @@ void func_9(Vector3 vParam0, var uParam1, var uParam2, Vector3 vParam3, var uPar
 	if (WEAPON::GET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), &weaponHash, true))
 		if (weaponHash == joaat("WEAPON_MOLOTOV") || weaponHash == joaat("WEAPON_PETROLCAN"))
 			if (FIRE::IS_EXPLOSION_IN_AREA(3, vParam0, vParam3))
-				Global_97452 = 2;
+				Global_97452 = CHAR_TREVOR;
 
 	return;
 }
@@ -926,14 +926,14 @@ void func_10(int iParam0, var uParam1) // Position - 0xAA8 (2728)
 		}
 		else if (ENTITY::GET_ENTITY_MODEL(vehiclePedIsIn) == joaat("bagger"))
 		{
-			Global_97452 = 6;
+			Global_97452 = CHAR_LEST_FRANK_CONF;
 		}
 		else
 		{
-			Global_97452 = 4;
+			Global_97452 = CHAR_ALL_PLAYERS_CONF;
 		}
 	
-		if (Global_97452 != 4)
+		if (Global_97452 != CHAR_ALL_PLAYERS_CONF)
 		{
 			for (i = 0; i < *uParam1; i = i + 1)
 			{
@@ -942,10 +942,10 @@ void func_10(int iParam0, var uParam1) // Position - 0xAA8 (2728)
 					entityModel = ENTITY::GET_ENTITY_MODEL(vehiclePedIsIn);
 				
 					if (entityModel == joaat("issi2"))
-						Global_97452 = 7;
+						Global_97452 = CHAR_LEST_MIKE_CONF;
 				
 					if (entityModel == joaat("sentinel2"))
-						Global_97452 = 6;
+						Global_97452 = CHAR_LEST_FRANK_CONF;
 				}
 			}
 		}
@@ -981,7 +981,7 @@ void func_12(Vector3 vParam0, var uParam1, var uParam2, Vector3 vParam3, var uPa
 			if (*uParam6 < 0)
 				*uParam6 = MISC::GET_GAME_TIMER();
 			else if (MISC::GET_GAME_TIMER() > *uParam6 + 10000)
-				Global_97452 = 1;
+				Global_97452 = CHAR_FRANKLIN;
 		else
 			*uParam6 = -1;
 	else
@@ -997,7 +997,7 @@ void func_13(Vector3 vParam0, var uParam1, var uParam2, Vector3 vParam3, var uPa
 	if (WEAPON::GET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), &weaponHash, true))
 		if (weaponHash == joaat("WEAPON_RPG"))
 			if (MISC::IS_PROJECTILE_TYPE_IN_AREA(vParam0, vParam3, weaponHash, true))
-				Global_97452 = 0;
+				Global_97452 = CHAR_MICHAEL;
 
 	return;
 }
@@ -1999,7 +1999,7 @@ void func_60(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	func_61(1127548000);
 	func_61(-1291788156);
 	func_61(1993031175);
-	Global_97452 = 8;
+	Global_97452 = CHAR_MIKE_FRANK_CONF;
 	Global_97453 = -1;
 	return;
 }
@@ -3024,13 +3024,13 @@ void func_83(Ped* ppedParam0) // Position - 0x33A0 (13216)
 	return;
 }
 
-void func_84(int iParam0, Ped pedParam1, BOOL bParam2) // Position - 0x33EF (13295)
+void func_84(int iParam0, ePedComponentType epctParam1, BOOL bParam2) // Position - 0x33EF (13295)
 {
 	int i;
 	BOOL flag;
 
 	if (!bParam2)
-		if (!ENTITY::DOES_ENTITY_EXIST(pedParam1))
+		if (!ENTITY::DOES_ENTITY_EXIST(epctParam1))
 			return;
 
 	if (Global_43582[iParam0 /*31*/].f_24 == 0)
@@ -3043,11 +3043,11 @@ void func_84(int iParam0, Ped pedParam1, BOOL bParam2) // Position - 0x33EF (132
 		if (flag)
 		{
 			Global_43582[iParam0 /*31*/].f_25[i - 1] = Global_43582[iParam0 /*31*/].f_25[i];
-			Global_43582[iParam0 /*31*/].f_25[i] = 0;
+			Global_43582[iParam0 /*31*/].f_25[i] = PV_COMP_HEAD;
 		}
-		else if (pedParam1 == Global_43582[iParam0 /*31*/].f_25[i])
+		else if (epctParam1 == Global_43582[iParam0 /*31*/].f_25[i])
 		{
-			Global_43582[iParam0 /*31*/].f_25[i] = 0;
+			Global_43582[iParam0 /*31*/].f_25[i] = PV_COMP_HEAD;
 			flag = true;
 		}
 	}
@@ -3058,13 +3058,13 @@ void func_84(int iParam0, Ped pedParam1, BOOL bParam2) // Position - 0x33EF (132
 	return;
 }
 
-BOOL func_85(int iParam0, Ped pedParam1) // Position - 0x34AB (13483)
+BOOL func_85(int iParam0, ePedComponentType epctParam1) // Position - 0x34AB (13483)
 {
 	int i;
 
 	for (i = 0; i < Global_43582[iParam0 /*31*/].f_24; i = i + 1)
 	{
-		if (pedParam1 == Global_43582[iParam0 /*31*/].f_25[i])
+		if (epctParam1 == Global_43582[iParam0 /*31*/].f_25[i])
 			return true;
 	}
 

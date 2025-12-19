@@ -5002,7 +5002,7 @@ BOOL func_122(BOOL bParam0) // Position - 0x6EB9 (28345)
 	return Global_1575062;
 }
 
-var func_123() // Position - 0x6ECA (28362)
+BOOL func_123() // Position - 0x6ECA (28362)
 {
 	return Global_2685150.f_19;
 }
@@ -6361,10 +6361,10 @@ BOOL func_160(var uParam0, var uParam1, var uParam2, int iParam3, Hash hParam4, 
 	if (func_34(uParam0, uParam5, fParam8, hParam9, 1036831949))
 		return true;
 
-	func_35(uParam0, iParam3, hParam4, &Global_1982441, &(Global_1982441.f_3), &(Global_1982441.f_6), 1036831949);
-	func_35(uParam5, fParam8, hParam9, &(Global_1982441.f_7), &(Global_1982441.f_10), &(Global_1982441.f_13), 1036831949);
+	func_35(uParam0, iParam3, hParam4, &Global_1982442, &(Global_1982442.f_3), &(Global_1982442.f_6), 1036831949);
+	func_35(uParam5, fParam8, hParam9, &(Global_1982442.f_7), &(Global_1982442.f_10), &(Global_1982442.f_13), 1036831949);
 
-	if (MISC::GET_POINT_AREA_OVERLAP(Global_1982441, Global_1982441.f_3, Global_1982441.f_6, Global_1982441.f_7, Global_1982441.f_10, Global_1982441.f_13))
+	if (MISC::GET_POINT_AREA_OVERLAP(Global_1982442, Global_1982442.f_3, Global_1982442.f_6, Global_1982442.f_7, Global_1982442.f_10, Global_1982442.f_13))
 		return true;
 
 	return false;

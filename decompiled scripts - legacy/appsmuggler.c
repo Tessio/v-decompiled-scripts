@@ -12773,9 +12773,9 @@ void func_231(int iParam0, BOOL bParam1) // Position - 0x9C3E (39998)
 	Global_1947966.f_53 = 0;
 
 	if (func_251(PLAYER::PLAYER_ID()))
-		MISC::SET_BIT(&Global_1988147, 16);
+		MISC::SET_BIT(&Global_1988148, 16);
 	else
-		MISC::SET_BIT(&Global_1988147, 18);
+		MISC::SET_BIT(&Global_1988148, 18);
 
 	if (func_250(iParam0))
 	{
@@ -14418,8 +14418,8 @@ BOOL func_309(Any* panParam0) // Position - 0xBB74 (47988)
 
 	for (i = 0; i < 31; i = i + 1)
 	{
-		if (IS_GAMER_HANDLE_VALID(Global_1988664[i /*13*/]))
-			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988664[i /*13*/], panParam0))
+		if (IS_GAMER_HANDLE_VALID(Global_1988665[i /*13*/]))
+			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988665[i /*13*/], panParam0))
 				return true;
 	}
 
@@ -16909,14 +16909,14 @@ void func_396(const char* sParam0) // Position - 0xE663 (58979)
 
 void func_397(var uParam0) // Position - 0xE671 (58993)
 {
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	uParam0->f_692 = 0;
 	return;
 }
 
 BOOL func_398(var uParam0) // Position - 0xE684 (59012)
 {
-	return Global_1988494 || uParam0->f_692;
+	return Global_1988495 || uParam0->f_692;
 }
 
 void func_399(int iParam0) // Position - 0xE69B (59035)
@@ -17642,9 +17642,9 @@ void func_425() // Position - 0xF32E (62254)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;

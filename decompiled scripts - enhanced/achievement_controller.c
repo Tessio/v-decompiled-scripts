@@ -4762,9 +4762,9 @@ BOOL func_28(var uParam0, Hash hParam1, int iParam2, BOOL bParam3) // Position -
 	return uParam0->f_4 != 989182658;
 }
 
-int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
+BOOL func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 {
-	int price;
+	BOOL price;
 	float num;
 	int dlcWeaponIndex;
 	int i;
@@ -4778,7 +4778,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 	var unk136;
 	float num2;
 
-	price = 0;
+	price = false;
 	num = 2.5f;
 
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
@@ -5212,7 +5212,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				}
 			
 				if (func_56())
-					price = 0;
+					price = false;
 				break;
 		
 			case joaat("WEAPON_BULLPUPSHOTGUN"):
@@ -5232,14 +5232,14 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				}
 			
 				if (func_56())
-					price = 0;
+					price = false;
 				break;
 		
 			case joaat("WEAPON_PISTOL50"):
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_PISTOL50_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_PISTOL50_CLIP_02"):
@@ -5260,7 +5260,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				}
 			
 				if (func_56())
-					price = 0;
+					price = false;
 				break;
 		
 			case joaat("WEAPON_SAWNOFFSHOTGUN"):
@@ -5276,7 +5276,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_MARKSMANRIFLE_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_MARKSMANRIFLE_CLIP_02"):
@@ -5284,7 +5284,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_SCOPE_LARGE_FIXED_ZOOM"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_AR_FLSH"):
@@ -5309,7 +5309,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_HEAVYPISTOL_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_HEAVYPISTOL_CLIP_02"):
@@ -5458,7 +5458,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_MACHINEPISTOL_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_MACHINEPISTOL_CLIP_02"):
@@ -5500,7 +5500,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 								
 									if (hParam0 == joaat("WEAPON_HAMMER"))
 										if (func_56())
-											price = 0;
+											price = false;
 								}
 							}
 						}
@@ -5576,7 +5576,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_COMBATPISTOL_VARMOD_XMAS23"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -5651,11 +5651,11 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_MICROSMG_VARMOD_XM3"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_MICROSMG_VARMOD_FRN"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -5795,7 +5795,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_CARBINERIFLE_VARMOD_MICH"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -5918,7 +5918,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_PUMPSHOTGUN_VARMOD_XM3"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -6003,7 +6003,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_HEAVYSNIPER_VARMOD_XMAS23"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -6075,7 +6075,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_GUSENBERG_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_GUSENBERG_CLIP_02"):
@@ -6088,7 +6088,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_SNSPISTOL_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_SNSPISTOL_CLIP_02"):
@@ -6109,7 +6109,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_SPECIALCARBINE_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_SPECIALCARBINE_CLIP_02"):
@@ -6145,7 +6145,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_SPECIALCARBINE_VARMOD_XMAS23"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -6154,7 +6154,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_HEAVYPISTOL_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_HEAVYPISTOL_CLIP_02"):
@@ -6179,7 +6179,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_BULLPUPRIFLE_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_BULLPUPRIFLE_CLIP_02"):
@@ -6216,7 +6216,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_VINTAGEPISTOL_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_VINTAGEPISTOL_CLIP_02"):
@@ -6233,7 +6233,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_HEAVYSHOTGUN_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_HEAVYSHOTGUN_CLIP_02"):
@@ -6262,7 +6262,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_MARKSMANRIFLE_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_MARKSMANRIFLE_CLIP_02"):
@@ -6311,14 +6311,14 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				}
 			
 				if (func_56())
-					price = 0;
+					price = false;
 				break;
 		
 			case joaat("WEAPON_PISTOL50"):
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_PISTOL50_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_PISTOL50_CLIP_02"):
@@ -6343,7 +6343,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				}
 			
 				if (func_56())
-					price = 0;
+					price = false;
 				break;
 		
 			case joaat("WEAPON_SAWNOFFSHOTGUN"):
@@ -6410,7 +6410,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_MACHINEPISTOL_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_MACHINEPISTOL_CLIP_02"):
@@ -6433,7 +6433,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_SWITCHBLADE_VARMOD_BASE"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_SWITCHBLADE_VARMOD_VAR1"):
@@ -6450,7 +6450,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_REVOLVER_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_REVOLVER_VARMOD_BOSS"):
@@ -6471,7 +6471,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_COMPACTRIFLE_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_COMPACTRIFLE_CLIP_02"):
@@ -6488,7 +6488,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_DBSHOTGUN_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -6497,7 +6497,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_MINISMG_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_MINISMG_CLIP_02"):
@@ -6510,7 +6510,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_COMBATPDW_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_COMBATPDW_CLIP_02"):
@@ -6539,7 +6539,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_ASSAULTRIFLE_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_ASSAULTRIFLE_MK2_CLIP_02"):
@@ -6619,7 +6619,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_AR_BARREL_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_AR_BARREL_02"):
@@ -6676,7 +6676,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_CARBINERIFLE_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_CARBINERIFLE_MK2_CLIP_02"):
@@ -6756,7 +6756,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_CR_BARREL_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_CR_BARREL_02"):
@@ -6813,7 +6813,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_COMBATMG_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_COMBATMG_MK2_CLIP_02"):
@@ -6885,7 +6885,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_MG_BARREL_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_MG_BARREL_02"):
@@ -6942,7 +6942,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_HEAVYSNIPER_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_HEAVYSNIPER_MK2_CLIP_02"):
@@ -6970,7 +6970,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_SCOPE_MAX"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_SCOPE_NV"):
@@ -6994,7 +6994,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_SR_BARREL_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_SR_BARREL_02"):
@@ -7051,7 +7051,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_PISTOL_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_PISTOL_MK2_CLIP_02"):
@@ -7135,7 +7135,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_PISTOL_MK2_VARMOD_XM3"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -7144,7 +7144,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_SMG_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_SMG_MK2_CLIP_02"):
@@ -7216,7 +7216,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_SB_BARREL_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_SB_BARREL_02"):
@@ -7273,7 +7273,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_PUMPSHOTGUN_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_PUMPSHOTGUN_MK2_CLIP_ARMORPIERCING"):
@@ -7366,7 +7366,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_SPECIALCARBINE_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_SPECIALCARBINE_MK2_CLIP_02"):
@@ -7442,7 +7442,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_SC_BARREL_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_SC_BARREL_02"):
@@ -7499,7 +7499,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_SNSPISTOL_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_SNSPISTOL_MK2_CLIP_02"):
@@ -7588,7 +7588,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_MARKSMANRIFLE_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_MARKSMANRIFLE_MK2_CLIP_02"):
@@ -7624,7 +7624,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_SCOPE_LARGE_FIXED_ZOOM_MK2"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_AR_SUPP"):
@@ -7664,7 +7664,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_MRFL_BARREL_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_MRFL_BARREL_02"):
@@ -7721,7 +7721,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_REVOLVER_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_REVOLVER_MK2_CLIP_TRACER"):
@@ -7806,7 +7806,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_BULLPUPRIFLE_MK2_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_BULLPUPRIFLE_MK2_CLIP_02"):
@@ -7846,7 +7846,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 						break;
 				
 					case joaat("COMPONENT_AT_BP_BARREL_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_BP_BARREL_02"):
@@ -7939,7 +7939,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_RAYPISTOL_VARMOD_XMAS18"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -7948,7 +7948,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_CERAMICPISTOL_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_CERAMICPISTOL_CLIP_02"):
@@ -7965,7 +7965,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_COMBATSHOTGUN_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_AT_AR_FLSH"):
@@ -7982,7 +7982,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_GADGETPISTOL_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -8057,7 +8057,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_TACTICALRIFLE_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_TACTICALRIFLE_CLIP_02"):
@@ -8172,7 +8172,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case 375646046:
-						price = 0;
+						price = false;
 						break;
 				
 					case 503494624:
@@ -8206,7 +8206,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_RPG_VARMOD_TVR"):
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -8215,7 +8215,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case joaat("COMPONENT_BATTLERIFLE_CLIP_01"):
-						price = 0;
+						price = false;
 						break;
 				
 					case joaat("COMPONENT_BATTLERIFLE_CLIP_02"):
@@ -8232,7 +8232,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case -1675905033:
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -8241,15 +8241,15 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 				switch (iParam1)
 				{
 					case -584965981:
-						price = 0;
+						price = false;
 						break;
 				
 					case 291145905:
-						price = 0;
+						price = false;
 						break;
 				
 					case 1978284360:
-						price = 0;
+						price = false;
 						break;
 				}
 				break;
@@ -8291,7 +8291,7 @@ int func_29(Hash hParam0, int iParam1) // Position - 0x6C94 (27796)
 			price = NETSHOPPING::NET_GAMESERVER_GET_PRICE(MISC::GET_HASH_KEY(&name), joaat("CATEGORY_WEAPON_MOD"), true);
 	}
 
-	if (price > 0)
+	if (price > false)
 	{
 		num2 = func_30(hParam0, &price, num);
 		num2 != 1f;
@@ -8686,7 +8686,7 @@ Hash func_39(eCharacter echParam0) // Position - 0xAEAC (44716)
 	return Global_2339[echParam0 /*29*/];
 }
 
-var func_40() // Position - 0xAEBB (44731)
+int func_40() // Position - 0xAEBB (44731)
 {
 	return Global_102506.f_2131;
 }
@@ -10013,7 +10013,7 @@ BOOL _NETSHOPPING_SHOULD_USE_TRANSACTION_SYSTEM() // Position - 0xC874 (51316)
 }
 
 // Unhandled jump detected. Output should be considered invalid
-BOOL func_54(int iParam0) // Position - 0xC88B (51339)
+ePedComponentType func_54(int iParam0) // Position - 0xC88B (51339)
 {
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
@@ -10027,7 +10027,7 @@ BOOL func_54(int iParam0) // Position - 0xC88B (51339)
 			case joaat("COMPONENT_MACHINEPISTOL_CLIP_03"):
 			case joaat("COMPONENT_SMG_CLIP_03"):
 			case joaat("COMPONENT_SPECIALCARBINE_CLIP_03"):
-				return false;
+				return PV_COMP_HEAD;
 		
 			default:
 				goto 0x5E;
@@ -10038,7 +10038,7 @@ BOOL func_54(int iParam0) // Position - 0xC88B (51339)
 		return Global_262145.f_21004;
 	}
 
-	return true;
+	return PV_COMP_BERD;
 }
 
 BOOL func_55(int iParam0) // Position - 0xC8ED (51437)
@@ -14665,12 +14665,12 @@ BOOL func_97() // Position - 0x11892 (71826)
 	return false;
 }
 
-var func_98(int iParam0) // Position - 0x118B0 (71856)
+BOOL func_98(int iParam0) // Position - 0x118B0 (71856)
 {
 	return Global_1574538[iParam0];
 }
 
-var func_99() // Position - 0x118C0 (71872)
+BOOL func_99() // Position - 0x118C0 (71872)
 {
 	return func_98(func_7() + 1);
 }

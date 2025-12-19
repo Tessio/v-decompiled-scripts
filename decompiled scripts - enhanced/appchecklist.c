@@ -259,7 +259,7 @@ BOOL func_1() // Position - 0x16A (362)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -276,7 +276,7 @@ BOOL func_3() // Position - 0x1B9 (441)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = 1;
+		Global_21614 = true;
 		return true;
 	}
 
@@ -436,9 +436,9 @@ void func_8() // Position - 0x520 (1312)
 	return;
 }
 
-BOOL func_9(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x541 (1345)
+BOOL func_9(eControlType ectParam0, BOOL bParam1, int iParam2) // Position - 0x541 (1345)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, bParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, bParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
@@ -575,19 +575,19 @@ BOOL func_14() // Position - 0x811 (2065)
 {
 	eViewModeContext camActiveViewModeContext;
 	eViewMode camViewModeForContext;
-	int num;
+	BOOL flag;
 
 	if (Global_80305)
 		return false;
 
-	num = 0;
+	flag = 0;
 	camActiveViewModeContext = CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT();
 	camViewModeForContext = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(camActiveViewModeContext);
 
 	if (camViewModeForContext == FIRST_PERSON)
-		num = 1;
+		flag = 1;
 
-	if (Global_4525122 || num)
+	if (Global_4525122 || flag)
 		return true;
 
 	return true;

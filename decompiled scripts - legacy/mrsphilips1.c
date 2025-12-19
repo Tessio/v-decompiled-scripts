@@ -31249,7 +31249,7 @@ void func_188(int iParam0, BOOL bParam1) // Position - 0x22764 (141156)
 	else
 		MISC::CLEAR_BIT(&Global_113539, iParam0);
 
-	Global_113538 = true;
+	Global_113538 = 1;
 	return;
 }
 

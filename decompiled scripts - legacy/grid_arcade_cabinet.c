@@ -12909,7 +12909,7 @@ BOOL func_396() // Position - 0x105EE (67054)
 
 BOOL func_397() // Position - 0x10655 (67157)
 {
-	return IS_BIT_SET(Global_1978496, 14);
+	return IS_BIT_SET(Global_1978497, 14);
 }
 
 BOOL func_398(Player plParam0) // Position - 0x10664 (67172)

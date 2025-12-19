@@ -944,7 +944,7 @@ BOOL func_15(Player plParam0, BOOL bParam1) // Position - 0x5C1 (1473)
 	return false;
 }
 
-Vehicle func_16() // Position - 0x66B (1643)
+Ped func_16() // Position - 0x66B (1643)
 {
 	if (Global_1845090 != _INVALID_PLAYER_INDEX())
 	{
@@ -1024,16 +1024,16 @@ BOOL func_23(var uParam0, int iParam1) // Position - 0x7A2 (1954)
 	return IS_BIT_SET(uParam0->[num2], num3);
 }
 
-BOOL _DOES_ENTITY_EXIST_AND_IS_ALIVE(Vehicle veParam0) // Position - 0x7C5 (1989)
+BOOL _DOES_ENTITY_EXIST_AND_IS_ALIVE(Ped pedParam0) // Position - 0x7C5 (1989)
 {
-	if (ENTITY::DOES_ENTITY_EXIST(veParam0))
-		if (!ENTITY::IS_ENTITY_DEAD(veParam0, false))
+	if (ENTITY::DOES_ENTITY_EXIST(pedParam0))
+		if (!ENTITY::IS_ENTITY_DEAD(pedParam0, false))
 			return true;
 
 	return false;
 }
 
-Vehicle func_25() // Position - 0x7E6 (2022)
+Ped func_25() // Position - 0x7E6 (2022)
 {
 	if (PLAYER::PLAYER_ID() != -1)
 		return Global_1964145.f_23;
@@ -1898,9 +1898,9 @@ BOOL func_71(Player plParam0) // Position - 0x1B39 (6969)
 	return false;
 }
 
-BOOL func_72(Hash hParam0) // Position - 0x1B5C (7004)
+BOOL func_72(int iParam0) // Position - 0x1B5C (7004)
 {
-	return Global_262145.f_4699[4] == hParam0;
+	return Global_262145.f_4699[4] == iParam0;
 }
 
 BOOL func_73(Vehicle veParam0) // Position - 0x1B71 (7025)
@@ -2935,7 +2935,7 @@ void func_120(int iParam0) // Position - 0x2F15 (12053)
 
 void func_121() // Position - 0x2F26 (12070)
 {
-	Vehicle vehicle;
+	Ped ped;
 
 	if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(uLocal_208.f_173))
 	{
@@ -2947,9 +2947,9 @@ void func_121() // Position - 0x2F26 (12070)
 		return;
 	}
 
-	vehicle = func_25();
+	ped = func_25();
 
-	if (vehicle < 0 || !_DOES_ENTITY_EXIST_AND_IS_ALIVE(vehicle))
+	if (ped < 0 || !_DOES_ENTITY_EXIST_AND_IS_ALIVE(ped))
 		return;
 
 	if (func_17())
@@ -2957,7 +2957,7 @@ void func_121() // Position - 0x2F26 (12070)
 
 	func_124(uLocal_208.f_173, false);
 	func_123(uLocal_208.f_173, 3, 3, 3);
-	func_122(uLocal_208.f_173, 0f, 0f, 0f, 0f, ENTITY::GET_ENTITY_HEADING(vehicle) + 180f);
+	func_122(uLocal_208.f_173, 0f, 0f, 0f, 0f, ENTITY::GET_ENTITY_HEADING(ped) + 180f);
 	GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(1);
 	GRAPHICS::DRAW_SCALEFORM_MOVIE_FULLSCREEN(uLocal_208.f_173, 255, 255, 255, 0, 0);
 	return;
@@ -10250,7 +10250,7 @@ int func_378(Player plParam0) // Position - 0xCC6A (52330)
 	return 0;
 }
 
-Vehicle func_379() // Position - 0xCC8E (52366)
+Ped func_379() // Position - 0xCC8E (52366)
 {
 	if (Global_1845089 != _INVALID_PLAYER_INDEX())
 	{
@@ -12061,7 +12061,7 @@ BOOL func_444() // Position - 0xF4BB (62651)
 
 void func_445(Vector3 vParam0, var uParam1, var uParam2) // Position - 0xF69F (63135)
 {
-	Vehicle vehicle;
+	Ped ped;
 	float radius;
 	int hit;
 	var surfaceNormal;
@@ -12074,14 +12074,14 @@ void func_445(Vector3 vParam0, var uParam1, var uParam2) // Position - 0xF69F (6
 		case 0:
 			if (func_157())
 				if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(func_379()))
-					vehicle = func_379();
+					ped = func_379();
 		
 			if (func_33() || func_52())
 				radius = func_244(uLocal_208.f_243);
 			else
 				radius = func_244(uLocal_208.f_243) * 11f;
 		
-			uLocal_208.f_171 = SHAPETEST::START_SHAPE_TEST_CAPSULE(vParam0, vParam0, radius, 511, vehicle, 4);
+			uLocal_208.f_171 = SHAPETEST::START_SHAPE_TEST_CAPSULE(vParam0, vParam0, radius, 511, ped, 4);
 		
 			if (uLocal_208.f_171 != 0)
 				uLocal_208.f_15 = 1;
@@ -13275,7 +13275,7 @@ BOOL func_507() // Position - 0x111E0 (70112)
 void func_508() // Position - 0x111F1 (70129)
 {
 	Player player;
-	Vehicle vehicle;
+	Ped ped;
 	char* fxName;
 	char* boneName;
 	int entityBoneIndexByName;
@@ -13293,9 +13293,9 @@ void func_508() // Position - 0x111F1 (70129)
 
 	if (IS_BIT_SET(uLocal_208.f_119, uLocal_208.f_47))
 	{
-		vehicle = func_509(Global_2658291[uLocal_208.f_47 /*468*/].f_325.f_11);
+		ped = func_509(Global_2658291[uLocal_208.f_47 /*468*/].f_325.f_11);
 	
-		if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(vehicle))
+		if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(ped))
 			return;
 	
 		fxName = "scr_ih_sub";
@@ -13307,8 +13307,8 @@ void func_508() // Position - 0x111F1 (70129)
 			{
 				GRAPHICS::USE_PARTICLE_FX_ASSET(fxName);
 				boneName = func_411(player);
-				entityBoneIndexByName = ENTITY::GET_ENTITY_BONE_INDEX_BY_NAME(vehicle, boneName);
-				uLocal_208.f_210[player] = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY_BONE("scr_ih_sub_missile_launch", vehicle, func_410(player), 0f, 0f, 0f, entityBoneIndexByName, 5f, false, false, false);
+				entityBoneIndexByName = ENTITY::GET_ENTITY_BONE_INDEX_BY_NAME(ped, boneName);
+				uLocal_208.f_210[player] = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY_BONE("scr_ih_sub_missile_launch", ped, func_410(player), 0f, 0f, 0f, entityBoneIndexByName, 5f, false, false, false);
 			}
 			else if (!_STOPWATCH_IS_INITIALIZED(&uLocal_208.f_286[player /*2*/]))
 			{
@@ -13337,7 +13337,7 @@ void func_508() // Position - 0x111F1 (70129)
 	return;
 }
 
-Vehicle func_509(Player plParam0) // Position - 0x11377 (70519)
+Ped func_509(Player plParam0) // Position - 0x11377 (70519)
 {
 	if (plParam0 != _INVALID_PLAYER_INDEX())
 		if (ENTITY::DOES_ENTITY_EXIST(Global_1969330[plParam0]))

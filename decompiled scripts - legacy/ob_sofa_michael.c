@@ -1107,7 +1107,7 @@ void func_2(int iParam0) // Position - 0x12E0 (4832)
 	{
 		Global_33836[iParam0 /*11*/].f_5 = 0;
 	
-		if (Global_33836[iParam0 /*11*/].f_2 && Global_33836[iParam0 /*11*/].f_7 == 0)
+		if (Global_33836[iParam0 /*11*/].f_2 && Global_33836[iParam0 /*11*/].f_7 == false)
 			Global_33836[iParam0 /*11*/].f_7 = 1;
 	
 		Global_33836[iParam0 /*11*/].f_8 = 0;

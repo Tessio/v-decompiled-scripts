@@ -29,7 +29,7 @@ void main() // Position - 0x0 (0)
 	iLocal_10 = 12;
 	iLocal_11 = 12;
 	Global_4196255 = PV_COMP_BERD;
-	Global_4196256 = 1;
+	Global_4196256 = PV_COMP_BERD;
 	Global_4282954 = PV_COMP_INVALID;
 	Global_4282955 = PV_COMP_INVALID;
 	MISC::NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();

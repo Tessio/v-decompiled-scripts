@@ -882,11 +882,11 @@ void func_14(BOOL bParam0, int iParam1) // Position - 0x7D1 (2001)
 	if (bParam0)
 	{
 		func_15(&Global_24546.f_6263[num /*10*/]);
-		Global_24546.f_6324[num] = 0;
+		Global_24546.f_6324[num] = PV_COMP_HEAD;
 	}
 	else
 	{
-		Global_24546.f_6324[num] = 0;
+		Global_24546.f_6324[num] = PV_COMP_HEAD;
 	}
 
 	GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("Shared");
@@ -910,7 +910,7 @@ void func_15(int iParam0) // Position - 0x894 (2196)
 BOOL func_16(var uParam0, BOOL bParam1, int iParam2) // Position - 0x8C0 (2240)
 {
 	var unk;
-	Hash hashKey;
+	ePedComponentType hashKey;
 	int i;
 	int num;
 
@@ -930,7 +930,7 @@ BOOL func_16(var uParam0, BOOL bParam1, int iParam2) // Position - 0x8C0 (2240)
 			*uParam0 = i;
 			return true;
 		}
-		else if (Global_24546.f_6324[i] == 0)
+		else if (Global_24546.f_6324[i] == PV_COMP_HEAD)
 		{
 			num = i;
 		}
@@ -1475,7 +1475,7 @@ BOOL func_42(Player plParam0, int iParam1) // Position - 0x12F9 (4857)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_43(-1, false) == 8;
+		flag = func_43(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
 
@@ -1486,28 +1486,28 @@ BOOL func_42(Player plParam0, int iParam1) // Position - 0x12F9 (4857)
 	return flag;
 }
 
-int func_43(int iParam0, BOOL bParam1) // Position - 0x1352 (4946)
+eCharacter func_43(int iParam0, BOOL bParam1) // Position - 0x1352 (4946)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_34();
+	if (num == -1)
+		num = func_34();
 
-	if (Global_1575072[num2] == 1)
+	if (Global_1575072[num] == 1)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 BOOL func_44(Player plParam0) // Position - 0x1393 (5011)
@@ -3604,7 +3604,7 @@ void func_122(BOOL bParam0, BOOL bParam1) // Position - 0x4172 (16754)
 
 	for (i = 0; i < 256; i = i + 1)
 	{
-		Global_24546.f_4469[i] = 0;
+		Global_24546.f_4469[i] = PV_COMP_HEAD;
 	}
 
 	for (i = 0; i < 128; i = i + 1)

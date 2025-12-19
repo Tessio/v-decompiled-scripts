@@ -3789,7 +3789,7 @@ int func_143(int iParam0, BOOL bParam1) // Position - 0x46E9 (18153)
 int func_144(Player plParam0, int iParam1) // Position - 0x474E (18254)
 {
 	if (func_36(plParam0) && iParam1 >= 0 && iParam1 < 3)
-		return Global_1983166[plParam0 /*149*/].f_110.f_1[iParam1 /*3*/];
+		return Global_1983167[plParam0 /*149*/].f_110.f_1[iParam1 /*3*/];
 
 	return -1;
 }
@@ -4322,7 +4322,7 @@ int func_164(int iParam0, BOOL bParam1) // Position - 0x4E8B (20107)
 int func_165(Player plParam0, int iParam1) // Position - 0x4EF0 (20208)
 {
 	if (func_36(plParam0) && iParam1 >= 0 && iParam1 < 3)
-		return Global_1983166[plParam0 /*149*/].f_110.f_1[iParam1 /*3*/].f_2;
+		return Global_1983167[plParam0 /*149*/].f_110.f_1[iParam1 /*3*/].f_2;
 
 	return 0;
 }
@@ -4502,7 +4502,7 @@ int func_169(int iParam0, BOOL bParam1) // Position - 0x50DD (20701)
 int func_170(Player plParam0, int iParam1) // Position - 0x5142 (20802)
 {
 	if (func_36(plParam0) && iParam1 >= 0 && iParam1 < 3)
-		return Global_1983166[plParam0 /*149*/].f_110.f_1[iParam1 /*3*/].f_1;
+		return Global_1983167[plParam0 /*149*/].f_110.f_1[iParam1 /*3*/].f_1;
 
 	return -1;
 }
@@ -15916,9 +15916,9 @@ void func_367() // Position - 0xEE8B (61067)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;

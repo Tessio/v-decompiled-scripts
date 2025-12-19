@@ -2003,18 +2003,18 @@ Hash func_58(int iParam0, int iParam1) // Position - 0x1E4D (7757)
 	return joaat("PROP_BOUGHT_TOWI") /* TUNEABLE: PROP_BOUGHT_TOWI, PROP_BOUGHT_TOWI */;
 }
 
-void func_59(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) // Position - 0x222B (8747)
+void func_59(eCharacter echParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) // Position - 0x222B (8747)
 {
 	int outValue;
 	Hash statHash;
 
-	if (func_76(iParam0) == 3)
+	if (func_76(echParam0) == 3)
 		return;
 
-	if (func_76(iParam0) == 4)
+	if (func_76(echParam0) == 4)
 		return;
 
-	func_60(func_76(iParam0), 1, iParam1, iParam2, false);
+	func_60(func_76(echParam0), 1, iParam1, iParam2, false);
 
 	if (bParam3)
 	{
@@ -2022,17 +2022,17 @@ void func_59(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) 
 	
 		if (bParam4)
 		{
-			switch (iParam0)
+			switch (echParam0)
 			{
-				case 0:
+				case CHAR_MICHAEL:
 					statHash = joaat("SP0_MONEY_MADE_FROM_RANDOM_PEDS") /* TUNEABLE: SP0_MONEY_MADE_FROM_RANDOM_PEDS */;
 					break;
 			
-				case 1:
+				case CHAR_FRANKLIN:
 					statHash = joaat("SP1_MONEY_MADE_FROM_RANDOM_PEDS") /* TUNEABLE: SP1_MONEY_MADE_FROM_RANDOM_PEDS */;
 					break;
 			
-				case 2:
+				case CHAR_TREVOR:
 					statHash = joaat("SP2_MONEY_MADE_FROM_RANDOM_PEDS") /* TUNEABLE: SP2_MONEY_MADE_FROM_RANDOM_PEDS */;
 					break;
 			
@@ -2042,17 +2042,17 @@ void func_59(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) 
 		}
 		else
 		{
-			switch (iParam0)
+			switch (echParam0)
 			{
-				case 0:
+				case CHAR_MICHAEL:
 					statHash = joaat("SP0_MONEY_MADE_FROM_MISSIONS") /* TUNEABLE: SP0_MONEY_MADE_FROM_MISSIONS */;
 					break;
 			
-				case 1:
+				case CHAR_FRANKLIN:
 					statHash = joaat("SP1_MONEY_MADE_FROM_MISSIONS") /* TUNEABLE: SP1_MONEY_MADE_FROM_MISSIONS */;
 					break;
 			
-				case 2:
+				case CHAR_TREVOR:
 					statHash = joaat("SP2_MONEY_MADE_FROM_MISSIONS") /* TUNEABLE: SP2_MONEY_MADE_FROM_MISSIONS */;
 					break;
 			
@@ -2895,9 +2895,9 @@ void func_75() // Position - 0x31FF (12799)
 	return;
 }
 
-int func_76(int iParam0) // Position - 0x3274 (12916)
+int func_76(eCharacter echParam0) // Position - 0x3274 (12916)
 {
-	return Global_2339[iParam0 /*29*/].f_17;
+	return Global_2339[echParam0 /*29*/].f_17;
 }
 
 int func_77(int iParam0) // Position - 0x3285 (12933)

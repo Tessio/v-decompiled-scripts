@@ -1346,9 +1346,9 @@ char* func_29() // Position - 0x12DB (4827)
 	{
 		return "ARENA_BOX";
 	}
-	else if (Global_2733002.f_4759.f_1 && Global_1987938 != -1)
+	else if (Global_2733002.f_4759.f_1 && Global_1987939 != -1)
 	{
-		return func_37(Global_1987938);
+		return func_37(Global_1987939);
 	}
 	else if (Global_102481.f_417 > 0)
 	{
@@ -9509,7 +9509,7 @@ BOOL func_226(ePedComponentType epctParam0) // Position - 0xC00A (49162)
 		return IS_BIT_SET(func_20(8726, -1), 4);
 
 	if (epctParam0 != PV_COMP_INVALID)
-		return IS_BIT_SET(Global_1976314[epctParam0 /*68*/].f_40, 4);
+		return IS_BIT_SET(Global_1976315[epctParam0 /*68*/].f_40, 4);
 
 	return false;
 }

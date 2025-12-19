@@ -1546,7 +1546,7 @@ void func_7(BOOL bParam0, BOOL bParam1) // Position - 0x946 (2374)
 
 	if (bParam0)
 	{
-		if (func_10(false) && Global_80552.f_1 == 1 && func_9(Global_80552))
+		if (func_10(false) && Global_80552.f_1 == true && func_9(Global_80552))
 		{
 		}
 		else
@@ -1597,9 +1597,9 @@ int func_8() // Position - 0xA16 (2582)
 	return -1;
 }
 
-BOOL func_9(int iParam0) // Position - 0xA48 (2632)
+BOOL func_9(BOOL bParam0) // Position - 0xA48 (2632)
 {
-	switch (iParam0)
+	switch (bParam0)
 	{
 		case 71:
 			return true;
@@ -1753,12 +1753,12 @@ void func_15(char* sParam0) // Position - 0xC9B (3227)
 	return;
 }
 
-void func_16(float fParam0, float fParam1, float fParam2, float fParam3) // Position - 0xD92 (3474)
+void func_16(float fParam0, float fParam1, float fParam2, BOOL bParam3) // Position - 0xD92 (3474)
 {
 	if (func_17(Global_80546, 0f, 0f, 0f, false))
 	{
 		Global_80546 = { fParam0 };
-		Global_80549 = fParam3;
+		Global_80549 = bParam3;
 	}
 
 	return;
@@ -2282,7 +2282,7 @@ void func_27(int iParam0, BOOL bParam1) // Position - 0x1B47 (6983)
 
 void func_28() // Position - 0x1B85 (7045)
 {
-	Global_102489 = 1;
+	Global_102489 = true;
 
 	if (PLAYER::IS_PLAYER_BEING_ARRESTED(PLAYER::PLAYER_ID(), true))
 	{
@@ -2306,7 +2306,7 @@ void func_28() // Position - 0x1B85 (7045)
 			TEXT_LABEL_ASSIGN_STRING(&Global_80542, "", 16);
 		}
 	
-		Global_102489 = 0;
+		Global_102489 = false;
 	}
 	else if (!PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 	{
@@ -2330,7 +2330,7 @@ void func_28() // Position - 0x1B85 (7045)
 			TEXT_LABEL_ASSIGN_STRING(&Global_80542, "", 16);
 		}
 	
-		Global_102489 = 0;
+		Global_102489 = false;
 		MISC::SET_BIT(&(Global_102454.f_20), 25);
 	}
 
@@ -2834,7 +2834,7 @@ BOOL func_50() // Position - 0x26B2 (9906)
 
 BOOL func_51(var uParam0, char* sParam1, char* sParam2, char* sParam3, int iParam4, int iParam5, int iParam6) // Position - 0x26D4 (9940)
 {
-	func_67(uParam0, 145, sParam1, iParam5, iParam6, 0);
+	func_67(uParam0, _CHAR_NULL, sParam1, iParam5, iParam6, 0);
 
 	if (iParam4 > 7)
 		if (iParam4 < 12)
@@ -2868,8 +2868,8 @@ BOOL func_52(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x2728 (100
 					Global_23000 = 0;
 					Global_23001 = 1;
 					Global_23053 = 0;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = 0;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -3038,9 +3038,9 @@ void func_53() // Position - 0x29F6 (10742)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -3129,7 +3129,7 @@ void func_60() // Position - 0x2B2B (11051)
 	Global_23013 = Global_23014;
 	Global_23015 = { Global_23031 };
 	Global_23004 = Global_23005;
-	Global_24016 = 0;
+	Global_24016 = false;
 	Global_23049 = 0;
 	Global_23050 = 0;
 	MISC::CLEAR_BIT(&Global_9464, 16);
@@ -3257,10 +3257,10 @@ void func_66() // Position - 0x2DB1 (11697)
 	return;
 }
 
-void func_67(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0x2E08 (11784)
+void func_67(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0x2E08 (11784)
 {
 	Global_22454 = { *uParam0 };
-	Global_8779 = iParam1;
+	Global_8779 = echParam1;
 	TEXT_LABEL_ASSIGN_STRING(&Global_23070, sParam2, 24);
 	Global_23989 = iParam5;
 

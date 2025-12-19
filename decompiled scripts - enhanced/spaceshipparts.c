@@ -1167,15 +1167,15 @@ int func_19(int iParam0) // Position - 0xBE4 (3044)
 	return outValue;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0xCA8 (3240)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, Interior inParam1) // Position - 0xCA8 (3240)
 {
-	if (iParam1 == -1)
-		iParam1 = func_21();
+	if (inParam1 == -1)
+		inParam1 = func_21();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, inParam1);
 }
 
-int func_21() // Position - 0xCC4 (3268)
+Interior func_21() // Position - 0xCC4 (3268)
 {
 	return Global_1574927;
 }
@@ -1436,12 +1436,12 @@ void func_35(int iParam0, int iParam1) // Position - 0x1147 (4423)
 	return;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x1184 (4484)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x1184 (4484)
 {
-	if (iParam2 == -1)
-		iParam2 = func_21();
+	if (inParam2 == -1)
+		inParam2 = func_21();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
 	return;
 }
 

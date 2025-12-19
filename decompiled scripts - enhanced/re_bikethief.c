@@ -538,7 +538,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = false;
+	Global_23014 = 0;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -562,9 +562,9 @@ BOOL func_3(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x3A7 (935)
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = false;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_23053 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -733,9 +733,9 @@ void func_4() // Position - 0x675 (1653)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -1634,16 +1634,16 @@ BOOL func_44(int iParam0, int iParam1) // Position - 0x18AE (6318)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x18FF (6399)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x18FF (6399)
 {
-	if (iParam2 == -1)
-		iParam2 = func_46();
+	if (inParam2 == -1)
+		inParam2 = func_46();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
 	return;
 }
 
-int func_46() // Position - 0x191D (6429)
+Interior func_46() // Position - 0x191D (6429)
 {
 	return Global_1574927;
 }
@@ -2287,30 +2287,30 @@ Hash func_61(int iParam0, int iParam1) // Position - 0x247E (9342)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_62(iParam1));
 }
 
-int func_62(int iParam0) // Position - 0x2493 (9363)
+Interior func_62(Interior inParam0) // Position - 0x2493 (9363)
 {
-	int num;
-	int num2;
+	Interior interior;
+	Interior interior2;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
+	if (interior == -1)
 	{
-		num2 = func_46();
+		interior2 = func_46();
 	
-		if (num2 > -1)
+		if (interior2 > -1)
 		{
 			Global_2741524 = 0;
-			num = num2;
+			interior = interior2;
 		}
 		else
 		{
-			num = 0;
+			interior = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return num;
+	return interior;
 }
 
 int func_63(int iParam0, int iParam1) // Position - 0x24C7 (9415)
@@ -3707,7 +3707,7 @@ BOOL func_119(var uParam0) // Position - 0x44AB (17579)
 	return false;
 }
 
-int func_120(BOOL bParam0) // Position - 0x44D6 (17622)
+BOOL func_120(BOOL bParam0) // Position - 0x44D6 (17622)
 {
 	switch (Global_44886)
 	{
@@ -3764,13 +3764,13 @@ BOOL func_122(const char* sParam0) // Position - 0x4597 (17815)
 			break;
 	
 		case 4:
-			if (func_120(false) < 1)
+			if (func_120(false) < true)
 				return true;
 			break;
 	
 		case 5:
 		case 15:
-			if (func_120(false) < 1)
+			if (func_120(false) < true)
 				return true;
 			break;
 	

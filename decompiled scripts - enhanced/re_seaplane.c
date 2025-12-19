@@ -793,16 +793,16 @@ BOOL func_11(int iParam0, int iParam1) // Position - 0x935 (2357)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x986 (2438)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x986 (2438)
 {
-	if (iParam2 == -1)
-		iParam2 = func_13();
+	if (inParam2 == -1)
+		inParam2 = func_13();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
 	return;
 }
 
-int func_13() // Position - 0x9A4 (2468)
+Interior func_13() // Position - 0x9A4 (2468)
 {
 	return Global_1574927;
 }
@@ -3003,30 +3003,30 @@ Hash func_74(int iParam0, int iParam1) // Position - 0x33D7 (13271)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_75(iParam1));
 }
 
-int func_75(int iParam0) // Position - 0x33EC (13292)
+Interior func_75(Interior inParam0) // Position - 0x33EC (13292)
 {
-	int num;
-	int num2;
+	Interior interior;
+	Interior interior2;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
+	if (interior == -1)
 	{
-		num2 = func_13();
+		interior2 = func_13();
 	
-		if (num2 > -1)
+		if (interior2 > -1)
 		{
 			Global_2741524 = 0;
-			num = num2;
+			interior = interior2;
 		}
 		else
 		{
-			num = 0;
+			interior = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return num;
+	return interior;
 }
 
 int func_76(int iParam0, int iParam1) // Position - 0x3420 (13344)

@@ -112400,7 +112400,7 @@ void func_322(int iParam0, int iParam1) // Position - 0x951E2 (610786)
 
 BOOL func_323() // Position - 0x95237 (610871)
 {
-	if (MISC::IS_PC_VERSION() && Global_1988062 == 0)
+	if (MISC::IS_PC_VERSION() && Global_1988063 == 0)
 		return false;
 
 	return false;
@@ -113080,8 +113080,8 @@ BOOL func_369(Any* panParam0) // Position - 0x95F19 (614169)
 
 	for (i = 0; i < 31; i = i + 1)
 	{
-		if (IS_GAMER_HANDLE_VALID(Global_1988664[i /*13*/]))
-			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988664[i /*13*/], panParam0))
+		if (IS_GAMER_HANDLE_VALID(Global_1988665[i /*13*/]))
+			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988665[i /*13*/], panParam0))
 				return true;
 	}
 
@@ -126639,7 +126639,7 @@ BOOL func_605(int* piParam0, int iParam1, var uParam2, int iParam3, BOOL bParam4
 			if (IS_BIT_SET(uParam2->f_33, 0))
 			{
 				Global_1836464 = iParam3;
-				Global_1836463 = 1;
+				Global_1836463 = true;
 				HUD::THEFEED_SET_SCRIPTED_MENU_HEIGHT(pos);
 			
 				if (flag)
@@ -127603,7 +127603,7 @@ void func_635(int* piParam0, var uParam1, BOOL bParam2) // Position - 0xA760D (6
 	MISC::CLEAR_BIT(&(uParam1->f_33), 7);
 	Global_1836464 = 0;
 	func_542();
-	Global_1836463 = 0;
+	Global_1836463 = false;
 	uParam1->f_27 = 0;
 
 	if (bParam2)
@@ -127683,10 +127683,10 @@ BOOL func_636() // Position - 0xA767C (685692)
 	if (Global_1965157.f_718.f_5 || Global_1967983.f_718.f_5 || Global_1964185.f_718.f_5)
 		return false;
 
-	if (Global_1971951.f_724.f_5 || Global_1971951.f_744.f_724.f_5 || Global_1971951.f_1497.f_724.f_5)
+	if (Global_1971952.f_724.f_5 || Global_1971952.f_744.f_724.f_5 || Global_1971952.f_1497.f_724.f_5)
 		return false;
 
-	if (Global_1978755.f_732.f_5)
+	if (Global_1978756.f_732.f_5)
 		return false;
 
 	if (func_637(PLAYER::PLAYER_ID()))
@@ -129172,7 +129172,7 @@ void func_721(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4) /
 
 BOOL func_722() // Position - 0xA9723 (694051)
 {
-	if (func_304(PLAYER::PLAYER_ID()) == 229 || func_304(PLAYER::PLAYER_ID()) == 191 || func_725(*Global_4718592.f_192777) || func_724() || func_733() || func_500() || Global_2709274.f_227 == 1 || Global_2635562.f_2054 && func_723(PLAYER::PLAYER_ID()))
+	if (func_304(PLAYER::PLAYER_ID()) == 229 || func_304(PLAYER::PLAYER_ID()) == 191 || func_725(*Global_4718592.f_192777) || func_724() || func_733() || func_500() || Global_2709274.f_227 == true || Global_2635562.f_2054 && func_723(PLAYER::PLAYER_ID()))
 		return false;
 
 	return true;

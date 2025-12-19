@@ -1478,7 +1478,7 @@ void func_12(var uParam0) // Position - 0x839 (2105)
 	uParam0->f_697 = 0f;
 	uParam0->f_698 = 0f;
 	uParam0->f_699 = 1f;
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	return;
 }
 
@@ -1879,14 +1879,14 @@ void func_29(int iParam0) // Position - 0x1050 (4176)
 
 void func_30(var uParam0) // Position - 0x105E (4190)
 {
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	uParam0->f_692 = 0;
 	return;
 }
 
 BOOL func_31(var uParam0) // Position - 0x1071 (4209)
 {
-	return Global_1988494 || uParam0->f_692;
+	return Global_1988495 || uParam0->f_692;
 }
 
 void func_32(int iParam0) // Position - 0x1088 (4232)

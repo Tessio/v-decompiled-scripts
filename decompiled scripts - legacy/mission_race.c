@@ -2989,7 +2989,7 @@ BOOL func_15(Player plParam0, int iParam1) // Position - 0xB7C (2940)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_16(-1, false) == CHAR_MIKE_FRANK_CONF;
+		flag = func_16(-1, false) == 8;
 	else
 		flag = Global_1845250[plParam0 /*880*/].f_198 == 8;
 
@@ -3000,28 +3000,28 @@ BOOL func_15(Player plParam0, int iParam1) // Position - 0xB7C (2940)
 	return flag;
 }
 
-eCharacter func_16(int iParam0, BOOL bParam1) // Position - 0xBD5 (3029)
+int func_16(int iParam0, BOOL bParam1) // Position - 0xBD5 (3029)
 {
-	eCharacter character;
 	int num;
+	int num2;
 
-	num = iParam0;
+	num2 = iParam0;
 
-	if (num == -1)
-		num = func_17();
+	if (num2 == -1)
+		num2 = func_17();
 
-	if (Global_1575070[num] == true)
+	if (Global_1575070[num2] == true)
 	{
 		bParam1;
-		character = CHAR_MIKE_FRANK_CONF;
+		num = 8;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		num = Global_1574921[num2];
 		bParam1;
 	}
 
-	return character;
+	return num;
 }
 
 int func_17() // Position - 0xC16 (3094)
@@ -28318,9 +28318,9 @@ void func_550() // Position - 0x27A79 (162425)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;

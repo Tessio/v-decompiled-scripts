@@ -295,7 +295,7 @@ BOOL func_13() // Position - 0x320 (800)
 	return Global_2696981;
 }
 
-BOOL func_14() // Position - 0x32C (812)
+ePedComponentType func_14() // Position - 0x32C (812)
 {
 	return Global_2685153.f_695;
 }

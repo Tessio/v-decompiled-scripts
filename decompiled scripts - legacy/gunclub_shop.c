@@ -4473,7 +4473,7 @@ Vector3 func_12(int iParam0, BOOL bParam1) // Position - 0x4775 (18293)
 			return 2714.5466f, -354.2701f, -55.1867f;
 	
 		case 50:
-			return Global_1971528;
+			return Global_1971529;
 	
 		case 51:
 			return 1100f, 220f, -50f;
@@ -9948,16 +9948,16 @@ BOOL func_88(Player plParam0, int iParam1) // Position - 0xBB00 (47872)
 		switch (iParam1)
 		{
 			case 0:
-				return IS_BIT_SET(Global_1976314[plParam0 /*68*/].f_40, 10);
+				return IS_BIT_SET(Global_1976315[plParam0 /*68*/].f_40, 10);
 		
 			case 1:
-				return IS_BIT_SET(Global_1976314[plParam0 /*68*/].f_40, 11);
+				return IS_BIT_SET(Global_1976315[plParam0 /*68*/].f_40, 11);
 		
 			case 2:
-				return IS_BIT_SET(Global_1976314[plParam0 /*68*/].f_40, 12);
+				return IS_BIT_SET(Global_1976315[plParam0 /*68*/].f_40, 12);
 		
 			case 3:
-				return IS_BIT_SET(Global_1976314[plParam0 /*68*/].f_40, 13);
+				return IS_BIT_SET(Global_1976315[plParam0 /*68*/].f_40, 13);
 		
 			default:
 			
@@ -32071,8 +32071,8 @@ int func_204(int iParam0, var uParam1, var uParam2, ePedComponentType epctParam3
 			break;
 	
 		case 50:
-			*uParam1 = { Global_1971528 };
-			*uParam2 = { Global_1971531 };
+			*uParam1 = { Global_1971529 };
+			*uParam2 = { Global_1971532 };
 			break;
 	
 		case 51:
@@ -39345,13 +39345,13 @@ void func_273() // Position - 0x39D55 (236885)
 
 	num = _STAT_GET_PACKED_INT(30513, -1);
 
-	if (!Global_1971571 && num < 3)
+	if (!Global_1971572 && num < 3)
 	{
 		if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !func_276(PLAYER::PLAYER_ID()))
 		{
 			MISC::CLEAR_BIT(&(Global_1950198.f_9), 1);
 			func_275(30513, num + 1, -1);
-			Global_1971571 = true;
+			Global_1971572 = true;
 			_DISPLAY_HELP_TEXT("CCR_INC_HT" /*Increasing your reputation with the LS Car Meet unlocks vehicle trade prices, exclusive items for purchase at the Merch Shop and Mod Shop, and additional bonus rewards.*/, -1);
 		}
 		else if (!IS_BIT_SET(Global_1950198.f_9, 1))
@@ -40646,7 +40646,7 @@ BOOL func_302(Player plParam0) // Position - 0x3B841 (243777)
 		return IS_BIT_SET(func_39(9618, -1), 0);
 
 	if (plParam0 != -1)
-		return IS_BIT_SET(Global_1983166[plParam0 /*149*/].f_1, 0);
+		return IS_BIT_SET(Global_1983167[plParam0 /*149*/].f_1, 0);
 
 	return false;
 }
@@ -74634,30 +74634,30 @@ BOOL func_556(eCharacter echParam0, int iParam1) // Position - 0x684BE (427198)
 	return false;
 }
 
-ePedComponentType func_557(Hash hParam0) // Position - 0x684F2 (427250)
+Hash func_557(Hash hParam0) // Position - 0x684F2 (427250)
 {
 	switch (hParam0)
 	{
 		case joaat("WEAPON_PISTOL"):
-			return PV_COMP_HEAD;
+			return 0;
 	
 		case joaat("WEAPON_KNIFE"):
-			return PV_COMP_HEAD;
+			return 0;
 	
 		case joaat("WEAPON_MICROSMG"):
-			return PV_COMP_HAND;
+			return 5;
 	
 		case joaat("WEAPON_ASSAULTSMG"):
 			return 29;
 	
 		case joaat("WEAPON_NIGHTSTICK"):
-			return PV_COMP_UPPR;
+			return 3;
 	
 		case joaat("WEAPON_COMBATPISTOL"):
-			return PV_COMP_TASK;
+			return 9;
 	
 		case joaat("WEAPON_SMG"):
-			return PV_COMP_JBIB;
+			return 11;
 	
 		case joaat("WEAPON_ASSAULTRIFLE"):
 			return 24;
@@ -74666,7 +74666,7 @@ ePedComponentType func_557(Hash hParam0) // Position - 0x684F2 (427250)
 			return 21;
 	
 		case joaat("WEAPON_STICKYBOMB"):
-			return PV_COMP_HEAD;
+			return 0;
 	
 		case joaat("WEAPON_PETROLCAN"):
 			return 20;
@@ -74678,14 +74678,14 @@ ePedComponentType func_557(Hash hParam0) // Position - 0x684F2 (427250)
 			return 33;
 	
 		case joaat("WEAPON_SMOKEGRENADE"):
-			return PV_COMP_HEAD;
+			return 0;
 	
 		case joaat("WEAPON_GRENADE"):
-			return PV_COMP_HEAD;
+			return 0;
 	
 		case joaat("WEAPON_CARBINERIFLE"):
 			if (_STAT_GET_PACKED_BOOL(3741, -1))
-				return PV_COMP_HEAD;
+				return 0;
 			else
 				return 42;
 			break;
@@ -74695,7 +74695,7 @@ ePedComponentType func_557(Hash hParam0) // Position - 0x684F2 (427250)
 	
 		case joaat("WEAPON_MOLOTOV"):
 			if (_STAT_GET_PACKED_BOOL(3741, -1))
-				return PV_COMP_HEAD;
+				return 0;
 			else
 				return 31;
 			break;
@@ -74722,19 +74722,19 @@ ePedComponentType func_557(Hash hParam0) // Position - 0x684F2 (427250)
 			return 120;
 	
 		case joaat("WEAPON_SAWNOFFSHOTGUN"):
-			return PV_COMP_HEAD;
+			return 0;
 	
 		case joaat("WEAPON_GOLFCLUB"):
-			return PV_COMP_HEAD;
+			return 0;
 	
 		case joaat("WEAPON_CROWBAR"):
-			return PV_COMP_HEAD;
+			return 0;
 	
 		case joaat("WEAPON_BAT"):
-			return PV_COMP_HEAD;
+			return 0;
 	}
 
-	return PV_COMP_HEAD;
+	return 0;
 }
 
 BOOL func_558() // Position - 0x686B1 (427697)
@@ -83211,7 +83211,7 @@ void func_601(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 	if (bParam2)
 		flag2 = true;
 
-	if (!bParam3 || iParam1 != func_42() || Global_1989162 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
+	if (!bParam3 || iParam1 != func_42() || Global_1989163 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
 	{
 		characterType = func_632(*uParam0);
 	
@@ -83249,7 +83249,7 @@ void func_601(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 			}
 		}
 	
-		if (Global_1989161)
+		if (Global_1989162)
 			func_620();
 	}
 	else
@@ -83269,7 +83269,7 @@ void func_602(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPar
 	int num;
 	int decorationIndex;
 
-	if (!Global_1989161)
+	if (!Global_1989162)
 		func_618(&pedParam0);
 
 	i = 0;
@@ -83277,7 +83277,7 @@ void func_602(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPar
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		num = Global_1989133[i];
+		num = Global_1989134[i];
 	
 		if (num <= -1)
 		{
@@ -91642,7 +91642,7 @@ void func_618(var uParam0) // Position - 0x7EB0A (518922)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
 	i = 0;
@@ -91669,7 +91669,7 @@ void func_618(var uParam0) // Position - 0x7EB0A (518922)
 		}
 	}
 
-	Global_1989161 = true;
+	Global_1989162 = true;
 	return;
 }
 
@@ -91684,20 +91684,20 @@ void func_619(int iParam0, BOOL bParam1) // Position - 0x7EBB0 (519088)
 	{
 		if (bParam1)
 		{
-			if (Global_1989133[i] == iParam0)
+			if (Global_1989134[i] == iParam0)
 				return;
-			else if (Global_1989133[i] == -1)
+			else if (Global_1989134[i] == -1)
 				num = i;
 		}
-		else if (Global_1989133[i] == iParam0)
+		else if (Global_1989134[i] == iParam0)
 		{
-			Global_1989133[i] = -1;
+			Global_1989134[i] = -1;
 			return;
 		}
 	}
 
 	if (bParam1 && num >= 0)
-		Global_1989133[num] = iParam0;
+		Global_1989134[num] = iParam0;
 
 	return;
 }
@@ -91708,10 +91708,10 @@ void func_620() // Position - 0x7EC2A (519210)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
-	Global_1989161 = false;
+	Global_1989162 = false;
 	return;
 }
 
@@ -142660,9 +142660,9 @@ char* func_928() // Position - 0xB95F2 (759282)
 	{
 		return "ARENA_BOX";
 	}
-	else if (Global_2733002.f_4759.f_1 && Global_1987938 != -1)
+	else if (Global_2733002.f_4759.f_1 && Global_1987939 != -1)
 	{
-		return func_935(Global_1987938);
+		return func_935(Global_1987939);
 	}
 	else if (Global_102481.f_417 > 0)
 	{
@@ -170759,9 +170759,9 @@ void func_1388() // Position - 0xE107D (921725)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -172883,7 +172883,7 @@ BOOL func_1457(int iParam0) // Position - 0xE3D24 (933156)
 	
 		return false;
 	}
-	else if (iParam0 == 28 && func_1459() && !Global_1989163)
+	else if (iParam0 == 28 && func_1459() && !Global_1989164)
 	{
 		return false;
 	}
@@ -174624,7 +174624,7 @@ BOOL func_1486(var uParam0, int iParam1) // Position - 0xE634B (942923)
 				if (func_534(PLAYER::PLAYER_ID()))
 					return true;
 		}
-		else if (iParam1 == 28 && func_1459() && !Global_1989163)
+		else if (iParam1 == 28 && func_1459() && !Global_1989164)
 		{
 			return true;
 		}

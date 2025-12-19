@@ -1107,7 +1107,7 @@ void func_2(int iParam0) // Position - 0x12E0 (4832)
 	{
 		Global_33853[iParam0 /*11*/].f_5 = 0;
 	
-		if (Global_33853[iParam0 /*11*/].f_2 && Global_33853[iParam0 /*11*/].f_7 == false)
+		if (Global_33853[iParam0 /*11*/].f_2 && Global_33853[iParam0 /*11*/].f_7 == 0)
 			Global_33853[iParam0 /*11*/].f_7 = 1;
 	
 		Global_33853[iParam0 /*11*/].f_8 = 0;
@@ -1969,7 +1969,7 @@ void func_30(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		func_38(true, bParam3, bParam2, false);
 		Global_65033 = true;
 		Global_77362 = true;
-		Global_80303 = true;
+		Global_80303 = PV_COMP_BERD;
 	}
 	else
 	{
@@ -1990,7 +1990,7 @@ void func_30(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_36(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80303 = false;
+		Global_80303 = PV_COMP_HEAD;
 	}
 
 	return;
@@ -2020,31 +2020,31 @@ BOOL func_32(Player plParam0, int iParam1) // Position - 0x2549 (9545)
 	return flag;
 }
 
-eCharacter func_33(int iParam0, BOOL bParam1) // Position - 0x25A2 (9634)
+eCharacter func_33(Interior inParam0, BOOL bParam1) // Position - 0x25A2 (9634)
 {
 	eCharacter character;
-	int num;
+	Interior interior;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
-		num = func_34();
+	if (interior == -1)
+		interior = func_34();
 
-	if (Global_1575072[num] == true)
+	if (Global_1575072[interior] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		character = Global_1574921[interior];
 		bParam1;
 	}
 
 	return character;
 }
 
-int func_34() // Position - 0x25E3 (9699)
+Interior func_34() // Position - 0x25E3 (9699)
 {
 	return Global_1574927;
 }
@@ -3042,7 +3042,7 @@ ePedComponentType func_72(int iParam0) // Position - 0x3BC0 (15296)
 	return 0;
 }
 
-BOOL func_73(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x3C70 (15472)
+BOOL func_73(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, BOOL bParam3) // Position - 0x3C70 (15472)
 {
 	if (epctParam0 == joaat("Player_Zero"))
 	{
@@ -3094,10 +3094,10 @@ BOOL func_73(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 			{
 				if (epctParam2 >= 26)
 				{
-					if (hParam3 == -1)
-						hParam3 = func_74(epctParam0, epctParam2, 1, 3);
+					if (bParam3 == -1)
+						bParam3 = func_74(epctParam0, epctParam2, 1, 3);
 				
-					if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(hParam3, joaat("HAT"), 0) || EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(hParam3, joaat("HAIR_SHRINK"), 0))
+					if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(bParam3, joaat("HAT"), 0) || EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(bParam3, joaat("HAIR_SHRINK"), 0))
 						return false;
 				}
 			
@@ -3113,10 +3113,10 @@ BOOL func_73(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 			{
 				if (epctParam2 >= 26)
 				{
-					if (hParam3 == -1)
-						hParam3 = func_74(epctParam0, epctParam2, 1, 4);
+					if (bParam3 == -1)
+						bParam3 = func_74(epctParam0, epctParam2, 1, 4);
 				
-					if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(hParam3, joaat("HAT"), 0) || EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(hParam3, joaat("HAIR_SHRINK"), 0))
+					if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(bParam3, joaat("HAT"), 0) || EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(bParam3, joaat("HAIR_SHRINK"), 0))
 						return false;
 				}
 			
@@ -3128,7 +3128,7 @@ BOOL func_73(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return false;
 }
 
-Hash func_74(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, int iParam3) // Position - 0x4097 (16535)
+BOOL func_74(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, int iParam3) // Position - 0x4097 (16535)
 {
 	var outProp;
 	int componentId;
@@ -3167,7 +3167,7 @@ Hash func_74(ePedComponentType epctParam0, ePedComponentType epctParam1, int iPa
 		if (componentId2 < 0)
 			return -1;
 	
-		if (epctParam0 == Global_80238.f_26[iParam2] && epctParam1 == Global_80238[iParam2] && Global_80238.f_13[iParam2] != 0)
+		if (epctParam0 == Global_80238.f_26[iParam2] && epctParam1 == Global_80238[iParam2] && Global_80238.f_13[iParam2] != false)
 			return Global_80238.f_13[iParam2];
 	
 		num2 = EXTRAMETADATA::SETUP_SHOP_PED_APPAREL_QUERY_TU(iParam3, 11, -1, false, -1, func_72(iParam2));

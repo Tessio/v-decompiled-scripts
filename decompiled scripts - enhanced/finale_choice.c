@@ -527,7 +527,7 @@ BOOL func_14(int iParam0, int iParam1, int iParam2, BOOL bParam3) // Position - 
 
 void func_15() // Position - 0x9DE (2526)
 {
-	if (Global_80305 == false)
+	if (Global_80305 == PV_COMP_HEAD)
 	{
 		Global_9470[14 /*15*/].f_4 = -99;
 		Global_9470[4 /*15*/].f_4 = -99;
@@ -636,7 +636,7 @@ void func_20() // Position - 0xBE8 (3048)
 		Global_9470[i /*15*/].f_4 = -99;
 	}
 
-	if (Global_80305 == false)
+	if (Global_80305 == PV_COMP_HEAD)
 	{
 		num = 0;
 	
@@ -896,13 +896,13 @@ BOOL func_38() // Position - 0x133F (4927)
 	return func_39(*Global_4718592.f_139000);
 }
 
-BOOL func_39(Hash hParam0) // Position - 0x1355 (4949)
+BOOL func_39(ePedComponentType epctParam0) // Position - 0x1355 (4949)
 {
 	int i;
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		if (Global_262145.f_31313[i] == hParam0)
+		if (Global_262145.f_31313[i] == epctParam0)
 			return 1;
 	}
 

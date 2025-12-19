@@ -96,7 +96,7 @@
 	BOOL bLocal_94 = 0;
 	int iLocal_95 = 0;
 	int iLocal_96 = 0;
-	int iLocal_97 = 0;
+	BOOL bLocal_97 = 0;
 	int iLocal_98 = 0;
 	int iLocal_99 = 0;
 	BOOL bLocal_100 = 0;
@@ -325,7 +325,7 @@ void main() // Position - 0x0 (0)
 		SCRIPT::TERMINATE_THIS_THREAD();
 	}
 
-	iLocal_97 = Global_114931.f_10056.f_103;
+	bLocal_97 = Global_114931.f_10056.f_103;
 	func_94();
 
 	if (func_93())
@@ -410,7 +410,7 @@ void main() // Position - 0x0 (0)
 				}
 			
 				MISC::CLEAR_AREA_OF_VEHICLES(uLocal_41.f_14, 8.5f, false, false, false, false, false, false, 0);
-				Global_114931.f_10056.f_103 = iLocal_97;
+				Global_114931.f_10056.f_103 = bLocal_97;
 				func_41();
 				_CONVERSATION_INITIALIZE_ACTOR(&uLocal_117, 0, PLAYER::PLAYER_PED_ID(), "MICHAEL", 0, 1);
 				_CONVERSATION_ADD_LINE(&uLocal_117, "EPS3AUD", "EP3_MCS1", 6, 0, 0, 0);
@@ -533,7 +533,7 @@ int func_3() // Position - 0x566 (1382)
 
 	for (i = 0; i < 5; i = i + 1)
 	{
-		if (IS_BIT_SET(iLocal_97, i))
+		if (IS_BIT_SET(bLocal_97, i))
 			num = num + 1;
 	}
 
@@ -572,7 +572,7 @@ void func_4(int iParam0) // Position - 0x596 (1430)
 	return;
 }
 
-void func_5(int iParam0) // Position - 0x632 (1586)
+void func_5(const char* sParam0) // Position - 0x632 (1586)
 {
 	int num;
 	int num2;
@@ -581,7 +581,7 @@ void func_5(int iParam0) // Position - 0x632 (1586)
 	int num4;
 	char* str;
 
-	num = func_11(iParam0);
+	num = func_11(sParam0);
 
 	if (num == -1)
 		return;
@@ -602,7 +602,7 @@ void func_5(int iParam0) // Position - 0x632 (1586)
 		unk = { Global_55430[num /*203*/].f_10[num3 /*48*/].f_2 };
 	}
 
-	if (iParam0 == 28)
+	if (sParam0 == 28)
 	{
 		switch (num2)
 		{
@@ -1147,7 +1147,7 @@ struct<16> func_10(int iParam0) // Position - 0x12E9 (4841)
 	return unk17;
 }
 
-int func_11(int iParam0) // Position - 0x131A (4890)
+int func_11(const char* sParam0) // Position - 0x131A (4890)
 {
 	int i;
 	int num;
@@ -1159,7 +1159,7 @@ int func_11(int iParam0) // Position - 0x131A (4890)
 
 	for (i = 0; i < 7; i = i + 1)
 	{
-		if (Global_55430[i /*203*/].f_2 == iParam0)
+		if (Global_55430[i /*203*/].f_2 == sParam0)
 		{
 			if (Global_55430[i /*203*/].f_1 > num2)
 			{
@@ -1175,12 +1175,12 @@ int func_11(int iParam0) // Position - 0x131A (4890)
 	return -1;
 }
 
-void func_12(int iParam0, char* sParam1) // Position - 0x137E (4990)
+void func_12(const char* sParam0, char* sParam1) // Position - 0x137E (4990)
 {
 	int num;
 	int num2;
 
-	num = func_11(iParam0);
+	num = func_11(sParam0);
 
 	if (num == -1)
 		return;
@@ -1219,7 +1219,7 @@ char* func_13(var uParam0) // Position - 0x1433 (5171)
 
 BOOL func_14(int iParam0) // Position - 0x1494 (5268)
 {
-	return IS_BIT_SET(iLocal_97, iParam0);
+	return IS_BIT_SET(bLocal_97, iParam0);
 }
 
 BOOL func_15(int iParam0) // Position - 0x14A1 (5281)
@@ -1227,7 +1227,7 @@ BOOL func_15(int iParam0) // Position - 0x14A1 (5281)
 	if (iParam0 < 0)
 		return true;
 
-	return IS_BIT_SET(iLocal_97, iParam0 + 5);
+	return IS_BIT_SET(bLocal_97, iParam0 + 5);
 }
 
 int func_16() // Position - 0x14BA (5306)
@@ -1343,7 +1343,7 @@ int _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iParam
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = false;
+	Global_23014 = 0;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -1367,9 +1367,9 @@ int func_23(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x16B5 (5813
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = false;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_23053 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -1538,9 +1538,9 @@ void func_24() // Position - 0x1983 (6531)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -1905,12 +1905,12 @@ void func_45(int iParam0, BOOL bParam1) // Position - 0x2010 (8208)
 {
 	if (bParam1)
 	{
-		MISC::SET_BIT(&iLocal_97, iParam0);
+		MISC::SET_BIT(&bLocal_97, iParam0);
 		iLocal_98 = iParam0;
 	}
 	else
 	{
-		MISC::CLEAR_BIT(&iLocal_97, iParam0);
+		MISC::CLEAR_BIT(&bLocal_97, iParam0);
 	}
 
 	return;
@@ -1919,9 +1919,9 @@ void func_45(int iParam0, BOOL bParam1) // Position - 0x2010 (8208)
 void func_46(int iParam0, BOOL bParam1) // Position - 0x2034 (8244)
 {
 	if (bParam1)
-		MISC::SET_BIT(&iLocal_97, iParam0 + 5);
+		MISC::SET_BIT(&bLocal_97, iParam0 + 5);
 	else
-		MISC::CLEAR_BIT(&iLocal_97, iParam0 + 5);
+		MISC::CLEAR_BIT(&bLocal_97, iParam0 + 5);
 
 	return;
 }
@@ -2051,15 +2051,15 @@ float func_52(float fParam0, float fParam1, float fParam2) // Position - 0x2305 
 	return fParam0;
 }
 
-void func_53(int iParam0) // Position - 0x232C (9004)
+void func_53(const char* sParam0) // Position - 0x232C (9004)
 {
 	int num;
 
-	if (iParam0 == 26)
+	if (sParam0 == 26)
 		if (!IS_BIT_SET(Global_114931.f_24993, 4 - 1))
 			return;
 
-	num = func_11(iParam0);
+	num = func_11(sParam0);
 
 	if (num == -1)
 		return;
@@ -2068,11 +2068,11 @@ void func_53(int iParam0) // Position - 0x232C (9004)
 	return;
 }
 
-void func_54(int iParam0, char* sParam1, BOOL bParam2) // Position - 0x2366 (9062)
+void func_54(const char* sParam0, char* sParam1, BOOL bParam2) // Position - 0x2366 (9062)
 {
 	int num;
 
-	num = func_11(iParam0);
+	num = func_11(sParam0);
 
 	if (num == -1)
 		return;
@@ -2090,19 +2090,19 @@ void func_54(int iParam0, char* sParam1, BOOL bParam2) // Position - 0x2366 (906
 	TEXT_LABEL_ASSIGN_STRING(&Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 - 1 /*48*/].f_7[4 /*4*/], "", 16);
 
 	if (bParam2)
-		func_5(iParam0);
+		func_5(sParam0);
 
 	return;
 }
 
-int func_55(int iParam0, int iParam1, BOOL bParam2) // Position - 0x248D (9357)
+int func_55(const char* sParam0, int iParam1, BOOL bParam2) // Position - 0x248D (9357)
 {
 	int num;
 	int i;
 	int num2;
 	int num3;
 
-	num = func_57(iParam0, true);
+	num = func_57(sParam0, true);
 
 	if (num == -1)
 		return 0;
@@ -2110,7 +2110,7 @@ int func_55(int iParam0, int iParam1, BOOL bParam2) // Position - 0x248D (9357)
 	if (Global_55430[num /*203*/].f_9 == 4)
 		return 0;
 
-	Global_55430[num /*203*/].f_2 = iParam0;
+	Global_55430[num /*203*/].f_2 = sParam0;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/] = iParam1;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/].f_1 = 0;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/].f_6 = 0;
@@ -2226,22 +2226,22 @@ void func_56(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < 0)
-							Global_46122 = 0;
+						if (Global_46122 < false)
+							Global_46122 = false;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < 0)
-							Global_46123 = 0;
+						if (Global_46123 < false)
+							Global_46123 = false;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < 0)
-							Global_46124 = 0;
+						if (Global_46124 < false)
+							Global_46124 = false;
 						break;
 				}
 			}
@@ -2272,22 +2272,22 @@ void func_56(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < 0)
-							Global_46122 = 0;
+						if (Global_46122 < false)
+							Global_46122 = false;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < 0)
-							Global_46123 = 0;
+						if (Global_46123 < false)
+							Global_46123 = false;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < 0)
-							Global_46124 = 0;
+						if (Global_46124 < false)
+							Global_46124 = false;
 						break;
 				}
 			}
@@ -2349,7 +2349,7 @@ void func_56(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 	return;
 }
 
-int func_57(int iParam0, BOOL bParam1) // Position - 0x2A5D (10845)
+int func_57(const char* sParam0, BOOL bParam1) // Position - 0x2A5D (10845)
 {
 	int num;
 	int i;
@@ -2361,7 +2361,7 @@ int func_57(int iParam0, BOOL bParam1) // Position - 0x2A5D (10845)
 	int num4;
 	int k;
 
-	num = func_11(iParam0);
+	num = func_11(sParam0);
 
 	if (num > -1)
 		if (Global_55430[num /*203*/].f_9 < 4)
@@ -2452,7 +2452,7 @@ int func_57(int iParam0, BOOL bParam1) // Position - 0x2A5D (10845)
 		}
 	}
 
-	Global_55430[num2 /*203*/].f_2 = iParam0;
+	Global_55430[num2 /*203*/].f_2 = sParam0;
 	Global_55430[num2 /*203*/].f_3 = 0;
 
 	if (!bParam1)
@@ -2913,7 +2913,7 @@ void func_72() // Position - 0x3383 (13187)
 	PATHFIND::SET_ROADS_IN_ANGLED_AREA(-683.4503f, 492.99225f, 108.873665f, -688.8357f, 506.99966f, 112.19278f, 11.25f, false, false, true);
 	func_88(-688.5f, 503.7f, 110.2f, 30f, &vector, &vector2);
 	iLocal_116 = PED::ADD_SCENARIO_BLOCKING_AREA(vector, vector2, false, true, true, true, 1);
-	iLocal_97 = Global_114931.f_10056.f_103;
+	bLocal_97 = Global_114931.f_10056.f_103;
 	func_94();
 
 	if (func_93())
@@ -2936,7 +2936,7 @@ void func_73() // Position - 0x3428 (13352)
 		blLocal_90 = 0;
 	}
 
-	Global_114931.f_10056.f_103 = iLocal_97;
+	Global_114931.f_10056.f_103 = bLocal_97;
 	func_61(&blLocal_90);
 	func_84(false);
 	func_75();
@@ -3214,11 +3214,11 @@ void func_95() // Position - 0x3993 (14739)
 {
 	int i;
 
-	iLocal_97 = 0;
+	bLocal_97 = false;
 
 	for (i = 0; i < 5; i = i + 1)
 	{
-		MISC::SET_BIT(&iLocal_97, i);
+		MISC::SET_BIT(&bLocal_97, i);
 	}
 
 	return;
@@ -3240,7 +3240,7 @@ void func_97() // Position - 0x39E5 (14821)
 	func_84(false);
 	func_75();
 	func_74(&uLocal_41);
-	Global_114931.f_10056.f_103 = iLocal_97;
+	Global_114931.f_10056.f_103 = bLocal_97;
 
 	if (func_93() || func_96(90) == true)
 	{

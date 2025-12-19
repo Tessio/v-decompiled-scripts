@@ -1015,7 +1015,7 @@ BOOL func_33(Vehicle veParam0) // Position - 0x1156 (4438)
 	return false;
 }
 
-int func_34() // Position - 0x1199 (4505)
+BOOL func_34() // Position - 0x1199 (4505)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 		return func_42(PLAYER::PLAYER_ID());
@@ -1035,10 +1035,10 @@ int func_34() // Position - 0x1199 (4505)
 		
 	}
 
-	return 0;
+	return false;
 }
 
-int func_35(int iParam0) // Position - 0x11E7 (4583)
+BOOL func_35(int iParam0) // Position - 0x11E7 (4583)
 {
 	return Global_62201[iParam0];
 }
@@ -1121,15 +1121,15 @@ Hash func_41(eCharacter echParam0) // Position - 0x137A (4986)
 	return Global_2339[echParam0 /*29*/];
 }
 
-int func_42(Player plParam0) // Position - 0x1389 (5001)
+BOOL func_42(Player plParam0) // Position - 0x1389 (5001)
 {
-	int num;
+	BOOL flag;
 
-	num = func_43(plParam0);
-	return num;
+	flag = func_43(plParam0);
+	return flag;
 }
 
-int func_43(Player plParam0) // Position - 0x139B (5019)
+BOOL func_43(Player plParam0) // Position - 0x139B (5019)
 {
 	if (plParam0 > -1)
 		if (plParam0 == PLAYER::PLAYER_ID())
@@ -1137,9 +1137,9 @@ int func_43(Player plParam0) // Position - 0x139B (5019)
 		else if (func_44(plParam0))
 			return Global_1845299[plParam0 /*883*/].f_198.f_3;
 		else
-			return 0;
+			return false;
 
-	return 0;
+	return false;
 }
 
 BOOL func_44(Player plParam0) // Position - 0x13DE (5086)

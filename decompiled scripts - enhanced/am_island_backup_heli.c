@@ -66,7 +66,7 @@
 	int iLocal_64 = 0;
 	int iLocal_65 = 0;
 	int iLocal_66 = 0;
-	float fLocal_67 = 0f;
+	BOOL bLocal_67 = 0;
 	var uLocal_68 = 0;
 	var uLocal_69 = 0;
 	var uLocal_70 = 2;
@@ -75,8 +75,8 @@
 	int iLocal_73 = 0;
 	var uLocal_74 = 0;
 	var uLocal_75 = 0;
-	Player plLocal_76 = 0;
-	Player plLocal_77 = 0;
+	ePedComponentType epctLocal_76 = PV_COMP_HEAD;
+	ePedComponentType epctLocal_77 = PV_COMP_HEAD;
 	int iLocal_78 = 0;
 	var uLocal_79 = 0;
 	var uLocal_80 = 745926877;
@@ -180,7 +180,7 @@ void main() // Position - 0x0 (0)
 	iLocal_39 = 65;
 	iLocal_40 = 49;
 	iLocal_41 = 64;
-	fLocal_67 = -1f;
+	bLocal_67 = -1f;
 	iLocal_73 = 23;
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
@@ -289,17 +289,17 @@ BOOL func_3() // Position - 0x1D6 (470)
 	return Global_1574582;
 }
 
-BOOL func_4(var uParam0, int iParam1, BOOL bParam2) // Position - 0x1E2 (482)
+BOOL func_4(var uParam0, BOOL bParam1, BOOL bParam2) // Position - 0x1E2 (482)
 {
-	if (iParam1 == -1)
+	if (bParam1 == -1)
 		return true;
 
 	func_5(uParam0, bParam2, false);
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam2)
-		if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), *uParam0)) >= iParam1)
+		if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), *uParam0)) >= bParam1)
 			return true;
-	else if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *uParam0)) >= iParam1)
+	else if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *uParam0)) >= bParam1)
 		return true;
 
 	return false;
@@ -614,7 +614,7 @@ int func_21(int iParam0) // Position - 0x763 (1891)
 	return 0;
 }
 
-int func_22(int iParam0) // Position - 0x79D (1949)
+BOOL func_22(int iParam0) // Position - 0x79D (1949)
 {
 	switch (iParam0)
 	{
@@ -628,7 +628,7 @@ int func_22(int iParam0) // Position - 0x79D (1949)
 			return Global_1690446.f_3;
 	}
 
-	return 0;
+	return false;
 }
 
 int func_23(int iParam0, BOOL bParam1) // Position - 0x7E3 (2019)
@@ -664,7 +664,7 @@ int func_23(int iParam0, BOOL bParam1) // Position - 0x7E3 (2019)
 	return 0;
 }
 
-int func_24(int iParam0) // Position - 0x880 (2176)
+BOOL func_24(int iParam0) // Position - 0x880 (2176)
 {
 	switch (iParam0)
 	{
@@ -678,7 +678,7 @@ int func_24(int iParam0) // Position - 0x880 (2176)
 			return Global_1690456;
 	}
 
-	return 0;
+	return false;
 }
 
 BOOL func_25(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x8C0 (2240)
@@ -943,13 +943,13 @@ BOOL func_36(var uParam0, Hash hParam1, Vector3 vParam2, var uParam3, var uParam
 	return false;
 }
 
-void func_37(Vector3 vParam0, var uParam1, var uParam2, float fParam3, Hash hParam4, Vehicle veParam5) // Position - 0xE4A (3658)
+void func_37(Vector3 vParam0, var uParam1, var uParam2, float fParam3, ePedComponentType epctParam4, Vehicle veParam5) // Position - 0xE4A (3658)
 {
 	int i;
 
-	if (func_38(PLAYER::PLAYER_ID(), vParam0, hParam4) > -1)
+	if (func_38(PLAYER::PLAYER_ID(), vParam0, epctParam4) > -1)
 	{
-		if (Global_2635562.f_3231[1 /*6*/].f_5 == veParam5 && Global_2635562.f_3231[1 /*6*/].f_4 == hParam4 && BUILTIN::VDIST(Global_2635562.f_3231[1 /*6*/], vParam0) < 0.5f)
+		if (Global_2635562.f_3231[1 /*6*/].f_5 == veParam5 && Global_2635562.f_3231[1 /*6*/].f_4 == epctParam4 && BUILTIN::VDIST(Global_2635562.f_3231[1 /*6*/], vParam0) < 0.5f)
 			return;
 	
 		for (i = 0; i < 2; i = i + 1)
@@ -960,14 +960,14 @@ void func_37(Vector3 vParam0, var uParam1, var uParam2, float fParam3, Hash hPar
 	
 		Global_2635562.f_3231[1 /*6*/] = { vParam0 };
 		Global_2635562.f_3231[1 /*6*/].f_3 = fParam3;
-		Global_2635562.f_3231[1 /*6*/].f_4 = hParam4;
+		Global_2635562.f_3231[1 /*6*/].f_4 = epctParam4;
 		Global_2635562.f_3231[1 /*6*/].f_5 = veParam5;
 	}
 
 	return;
 }
 
-int func_38(Player plParam0, var uParam1, var uParam2, var uParam3, Hash hParam4) // Position - 0xF1D (3869)
+int func_38(Player plParam0, var uParam1, var uParam2, var uParam3, ePedComponentType epctParam4) // Position - 0xF1D (3869)
 {
 	Player player;
 	int i;
@@ -979,7 +979,7 @@ int func_38(Player plParam0, var uParam1, var uParam2, var uParam3, Hash hParam4
 	{
 		for (i = 0; i < 2; i = i + 1)
 		{
-			if (Global_2649162.f_461[player /*11*/][i /*5*/].f_4 == hParam4)
+			if (Global_2649162.f_461[player /*11*/][i /*5*/].f_4 == epctParam4)
 			{
 				vector = { uParam1 };
 			
@@ -1082,8 +1082,8 @@ BOOL func_41(float fParam0, var uParam1, var uParam2, float fParam3, float fPara
 
 BOOL func_42(Vector3 vParam0, var uParam1, var uParam2, float fParam3, BOOL bParam4, BOOL bParam5, float fParam6, BOOL bParam7, int iParam8, float fParam9, BOOL bParam10) // Position - 0x11DE (4574)
 {
-	Player i;
-	Player player;
+	ePedComponentType i;
+	ePedComponentType type;
 	float num;
 
 	if (bParam4 && !bParam7)
@@ -1106,31 +1106,31 @@ BOOL func_42(Vector3 vParam0, var uParam1, var uParam2, float fParam3, BOOL bPar
 
 	for (i = 0; i < 32; i = i + 1)
 	{
-		player = i;
+		type = i;
 	
-		if (_NETWORK_IS_PLAYER_VALID(player, true, true))
+		if (_NETWORK_IS_PLAYER_VALID(type, true, true))
 		{
-			if (!func_44(player, 0) && NETWORK::NETWORK_ARE_PLAYERS_IN_SAME_TUTORIAL_SESSION(PLAYER::PLAYER_ID(), player))
+			if (!func_44(type, 0) && NETWORK::NETWORK_ARE_PLAYERS_IN_SAME_TUTORIAL_SESSION(PLAYER::PLAYER_ID(), type))
 			{
-				if (bParam4 == true || bParam4 == false && player != PLAYER::PLAYER_ID())
+				if (bParam4 == true || bParam4 == false && type != PLAYER::PLAYER_ID())
 				{
-					if (func_43(player) || !bParam10 && !Global_2658294[player /*468*/].f_274)
+					if (func_43(type) || !bParam10 && !Global_2658294[type /*468*/].f_274)
 					{
 						num = fParam6;
 					
 						if (fParam9 > 0f)
-							if (!(PLAYER::GET_PLAYER_TEAM(player) == -1))
-								if (PLAYER::GET_PLAYER_TEAM(player) == PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()))
+							if (!(PLAYER::GET_PLAYER_TEAM(type) == -1))
+								if (PLAYER::GET_PLAYER_TEAM(type) == PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()))
 									num = fParam9;
 					
 						if (!bParam7)
-							if (bParam5 || bParam5 == false && PLAYER::GET_PLAYER_TEAM(player) != PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()) || PLAYER::GET_PLAYER_TEAM(player) == -1)
-								if (MISC::GET_DISTANCE_BETWEEN_COORDS(func_48(player), vParam0, true) <= num + fParam3)
-									if (NETWORK::IS_SPHERE_VISIBLE_TO_PLAYER(player, vParam0, fParam3))
+							if (bParam5 || bParam5 == false && PLAYER::GET_PLAYER_TEAM(type) != PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()) || PLAYER::GET_PLAYER_TEAM(type) == -1)
+								if (MISC::GET_DISTANCE_BETWEEN_COORDS(func_48(type), vParam0, true) <= num + fParam3)
+									if (NETWORK::IS_SPHERE_VISIBLE_TO_PLAYER(type, vParam0, fParam3))
 										return true;
-						else if (PLAYER::GET_PLAYER_TEAM(player) != iParam8 || PLAYER::GET_PLAYER_TEAM(player) == -1)
-							if (MISC::GET_DISTANCE_BETWEEN_COORDS(func_48(player), vParam0, true) <= num + fParam3)
-								if (NETWORK::IS_SPHERE_VISIBLE_TO_PLAYER(player, vParam0, fParam3))
+						else if (PLAYER::GET_PLAYER_TEAM(type) != iParam8 || PLAYER::GET_PLAYER_TEAM(type) == -1)
+							if (MISC::GET_DISTANCE_BETWEEN_COORDS(func_48(type), vParam0, true) <= num + fParam3)
+								if (NETWORK::IS_SPHERE_VISIBLE_TO_PLAYER(type, vParam0, fParam3))
 									return true;
 					}
 				}
@@ -1141,55 +1141,55 @@ BOOL func_42(Vector3 vParam0, var uParam1, var uParam2, float fParam3, BOOL bPar
 	return false;
 }
 
-BOOL func_43(Player plParam0) // Position - 0x1396 (5014)
+BOOL func_43(ePedComponentType epctParam0) // Position - 0x1396 (5014)
 {
-	if (ENTITY::IS_ENTITY_VISIBLE_TO_SCRIPT(PLAYER::GET_PLAYER_PED(plParam0)) || Global_2658294[plParam0 /*468*/].f_259)
+	if (ENTITY::IS_ENTITY_VISIBLE_TO_SCRIPT(PLAYER::GET_PLAYER_PED(epctParam0)) || Global_2658294[epctParam0 /*468*/].f_259)
 		return true;
 
 	return false;
 }
 
-BOOL func_44(Player plParam0, int iParam1) // Position - 0x13C2 (5058)
+BOOL func_44(ePedComponentType epctParam0, int iParam1) // Position - 0x13C2 (5058)
 {
 	BOOL flag;
 
-	if (!func_47(plParam0))
+	if (!func_47(epctParam0))
 		return false;
 
-	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_45(-1, false) == 8;
+	if (epctParam0 == PLAYER::PLAYER_ID())
+		flag = func_45(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
-		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
+		flag = Global_1845299[epctParam0 /*883*/].f_198 == 8;
 
 	if (iParam1 == 1)
-		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(plParam0))
-			flag = PLAYER::GET_PLAYER_TEAM(plParam0) == 8;
+		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(epctParam0))
+			flag = PLAYER::GET_PLAYER_TEAM(epctParam0) == 8;
 
 	return flag;
 }
 
-int func_45(int iParam0, BOOL bParam1) // Position - 0x141B (5147)
+eCharacter func_45(int iParam0, BOOL bParam1) // Position - 0x141B (5147)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_46();
+	if (num == -1)
+		num = func_46();
 
-	if (Global_1575072[num2] == 1)
+	if (Global_1575072[num] == 1)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_46() // Position - 0x145C (5212)
@@ -1197,11 +1197,11 @@ int func_46() // Position - 0x145C (5212)
 	return Global_1574927;
 }
 
-BOOL func_47(Player plParam0) // Position - 0x1468 (5224)
+BOOL func_47(ePedComponentType epctParam0) // Position - 0x1468 (5224)
 {
 	Player player;
 
-	player = plParam0;
+	player = epctParam0;
 
 	if (player < 0)
 		return false;
@@ -1212,19 +1212,19 @@ BOOL func_47(Player plParam0) // Position - 0x1468 (5224)
 	return true;
 }
 
-Vector3 func_48(Player plParam0) // Position - 0x148A (5258)
+Vector3 func_48(ePedComponentType epctParam0) // Position - 0x148A (5258)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = plParam0;
+	type = epctParam0;
 
-	if (func_51() && Global_1845299[player /*883*/].f_863 && !func_62(Global_1845299[player /*883*/].f_864))
-		return Global_1845299[player /*883*/].f_864;
+	if (func_51() && Global_1845299[type /*883*/].f_863 && !func_62(Global_1845299[type /*883*/].f_864))
+		return Global_1845299[type /*883*/].f_864;
 
 	if (NETWORK::NETWORK_IS_ACTIVITY_SESSION() || func_50(false) && func_49())
 		return CAM::GET_FINAL_RENDERED_CAM_COORD();
 
-	return _GET_PLAYER_COORDS(plParam0);
+	return _GET_PLAYER_COORDS(epctParam0);
 }
 
 BOOL func_49() // Position - 0x14FF (5375)
@@ -1243,13 +1243,13 @@ BOOL func_51() // Position - 0x151E (5406)
 	return Global_2685153.f_19;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x152C (5420)
+BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x152C (5420)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = player;
+	type = player;
 
-	if (player != -1)
+	if (type != PV_COMP_INVALID)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -1258,9 +1258,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Posi
 					return false;
 		
 			if (bUnk)
-				if (player == Global_2673274.f_3)
+				if (type == Global_2673274.f_3)
 					return Global_2673274.f_2;
-				else if (Global_2658294[player /*468*/] != 4)
+				else if (Global_2658294[type /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -1272,29 +1272,29 @@ BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Posi
 
 BOOL func_53(Vector3 vParam0, var uParam1, var uParam2, int iParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6, BOOL bParam7, BOOL bParam8, BOOL bParam9, BOOL bParam10) // Position - 0x158C (5516)
 {
-	Player i;
-	Player player;
+	ePedComponentType i;
+	ePedComponentType type;
 
 	for (i = 0; i < 32; i = i + 1)
 	{
-		player = i;
+		type = i;
 	
-		if (bParam8 == true && PLAYER::PLAYER_ID() != player || bParam8 == false)
+		if (bParam8 == true && PLAYER::PLAYER_ID() != type || bParam8 == false)
 		{
-			if (_NETWORK_IS_PLAYER_VALID(player, bParam4, bParam5))
+			if (_NETWORK_IS_PLAYER_VALID(type, bParam4, bParam5))
 			{
-				if (bParam10 || NETWORK::NETWORK_ARE_PLAYERS_IN_SAME_TUTORIAL_SESSION(PLAYER::PLAYER_ID(), player))
+				if (bParam10 || NETWORK::NETWORK_ARE_PLAYERS_IN_SAME_TUTORIAL_SESSION(PLAYER::PLAYER_ID(), type))
 				{
-					if (!bParam7 || !PED::IS_PED_INJURED(PLAYER::GET_PLAYER_PED(player)) && func_43(player))
+					if (!bParam7 || !PED::IS_PED_INJURED(PLAYER::GET_PLAYER_PED(type)) && func_43(type))
 					{
-						if (!bParam6 || bParam6 == true && PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()) != PLAYER::GET_PLAYER_TEAM(player) || PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()) == -1)
+						if (!bParam6 || bParam6 == true && PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()) != PLAYER::GET_PLAYER_TEAM(type) || PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()) == -1)
 						{
-							if (PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()) == -1 && bParam9 && bParam6 && func_54(player))
+							if (PLAYER::GET_PLAYER_TEAM(PLAYER::PLAYER_ID()) == -1 && bParam9 && bParam6 && func_54(type))
 							{
 							}
-							else if (ENTITY::DOES_ENTITY_EXIST(PLAYER::GET_PLAYER_PED(player)))
+							else if (ENTITY::DOES_ENTITY_EXIST(PLAYER::GET_PLAYER_PED(type)))
 							{
-								if (MISC::GET_DISTANCE_BETWEEN_COORDS(_GET_PLAYER_COORDS(player), vParam0, true) < iParam3)
+								if (MISC::GET_DISTANCE_BETWEEN_COORDS(_GET_PLAYER_COORDS(type), vParam0, true) < iParam3)
 									return true;
 							}
 						}
@@ -1307,39 +1307,39 @@ BOOL func_53(Vector3 vParam0, var uParam1, var uParam2, int iParam3, BOOL bParam
 	return false;
 }
 
-BOOL func_54(Player plParam0) // Position - 0x1690 (5776)
+BOOL func_54(ePedComponentType epctParam0) // Position - 0x1690 (5776)
 {
-	if (func_59(PLAYER::PLAYER_ID(), plParam0))
+	if (func_59(PLAYER::PLAYER_ID(), epctParam0))
 		return true;
 
-	Global_2708618 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
+	Global_2708618 = { GET_GAMER_HANDLE_PLAYER(epctParam0) };
 
 	if (NETWORK::NETWORK_IS_FRIEND(&Global_2708618))
 		return true;
 
-	if (func_55(PLAYER::PLAYER_ID(), plParam0))
+	if (func_55(PLAYER::PLAYER_ID(), epctParam0))
 		return true;
 
 	return false;
 }
 
-BOOL func_55(Player plParam0, Player plParam1) // Position - 0x16D7 (5847)
+BOOL func_55(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x16D7 (5847)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = func_56(plParam0);
+	type = func_56(epctParam0);
 
-	if (func_47(player))
-		if (player == func_56(plParam1))
+	if (func_47(type))
+		if (type == func_56(epctParam1))
 			return true;
 
 	return false;
 }
 
-Player func_56(Player plParam0) // Position - 0x1700 (5888)
+ePedComponentType func_56(ePedComponentType epctParam0) // Position - 0x1700 (5888)
 {
-	if (func_47(plParam0))
-		return Global_1892798[plParam0 /*615*/].f_10;
+	if (func_47(epctParam0))
+		return Global_1892798[epctParam0 /*615*/].f_10;
 
 	return _INVALID_PLAYER_INDEX();
 }
@@ -1349,20 +1349,20 @@ Player _INVALID_PLAYER_INDEX() // Position - 0x1723 (5923)
 	return -1;
 }
 
-struct<13> GET_GAMER_HANDLE_PLAYER(Player plParam0) // Position - 0x172C (5932)
+struct<13> GET_GAMER_HANDLE_PLAYER(ePedComponentType epctParam0) // Position - 0x172C (5932)
 {
 	var gamerHandle;
 
-	NETWORK::NETWORK_HANDLE_FROM_PLAYER(plParam0, &gamerHandle, 13);
+	NETWORK::NETWORK_HANDLE_FROM_PLAYER(epctParam0, &gamerHandle, 13);
 	return gamerHandle;
 }
 
-BOOL func_59(Player plParam0, Player plParam1) // Position - 0x1743 (5955)
+BOOL func_59(Player plParam0, ePedComponentType epctParam1) // Position - 0x1743 (5955)
 {
 	if (NETWORK::NETWORK_CLAN_SERVICE_IS_VALID())
 	{
 		Global_2708618 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
-		Global_2708631 = { GET_GAMER_HANDLE_PLAYER(plParam1) };
+		Global_2708631 = { GET_GAMER_HANDLE_PLAYER(epctParam1) };
 	
 		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2708618))
 		{
@@ -1397,9 +1397,9 @@ Vector3 func_60(var uParam0, var uParam1, var uParam2, float fParam3, float fPar
 	return unk3;
 }
 
-Vector3 _GET_PLAYER_COORDS(Player plParam0) // Position - 0x17FD (6141)
+Vector3 _GET_PLAYER_COORDS(ePedComponentType epctParam0) // Position - 0x17FD (6141)
 {
-	return ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(plParam0), false);
+	return ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(epctParam0), false);
 }
 
 BOOL func_62(float fParam0, var uParam1, var uParam2) // Position - 0x1810 (6160)
@@ -1683,13 +1683,13 @@ void func_70() // Position - 0x1B6B (7019)
 					{
 						activeVehicleMissionType = TASK::GET_ACTIVE_VEHICLE_MISSION_TYPE(heli);
 					
-						if (activeVehicleMissionType != iLocal_73 || uLocal_70[0] != fLocal_67)
+						if (activeVehicleMissionType != iLocal_73 || uLocal_70[0] != bLocal_67)
 						{
 							if (func_83(iLocal_78.f_1))
 							{
 								if (NETWORK::NETWORK_HAS_CONTROL_OF_NETWORK_ID(iLocal_78.f_1.f_3[0 /*2*/]))
 								{
-									uLocal_70[0] = fLocal_67;
+									uLocal_70[0] = bLocal_67;
 									PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(pilot, true);
 									func_28(pilot, 0, false, false);
 									VEHICLE::SET_HELI_BLADES_FULL_SPEED(heli);
@@ -1710,13 +1710,13 @@ void func_70() // Position - 0x1B6B (7019)
 				
 					if (!PED::IS_PED_INJURED(pilot))
 					{
-						if (!PED::IS_PED_IN_COMBAT(pilot, 0) || uLocal_70[1] != fLocal_67)
+						if (!PED::IS_PED_IN_COMBAT(pilot, 0) || uLocal_70[1] != bLocal_67)
 						{
 							if (func_83(iLocal_78.f_1))
 							{
 								if (NETWORK::NETWORK_HAS_CONTROL_OF_NETWORK_ID(iLocal_78.f_1.f_3[1 /*2*/]))
 								{
-									uLocal_70[1] = fLocal_67;
+									uLocal_70[1] = bLocal_67;
 									PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(pilot, false);
 									func_28(pilot, 1, false, false);
 								}
@@ -1854,16 +1854,16 @@ void func_72() // Position - 0x1F79 (8057)
 	if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(vehicle))
 		return;
 
-	if (plLocal_76 == _INVALID_PLAYER_INDEX())
+	if (epctLocal_76 == _INVALID_PLAYER_INDEX())
 	{
 		func_74();
 		return;
 	}
 
-	playerPed = PLAYER::GET_PLAYER_PED(plLocal_76);
+	playerPed = PLAYER::GET_PLAYER_PED(epctLocal_76);
 
 	if (!_STOPWATCH_IS_INITIALIZED(&uLocal_74))
-		if (plLocal_76 != _INVALID_PLAYER_INDEX() && _DOES_ENTITY_EXIST_AND_IS_ALIVE(playerPed))
+		if (epctLocal_76 != _INVALID_PLAYER_INDEX() && _DOES_ENTITY_EXIST_AND_IS_ALIVE(playerPed))
 			if (MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(playerPed, true), ENTITY::GET_ENTITY_COORDS(vehicle, true), false) > 50f)
 				return;
 
@@ -1886,7 +1886,7 @@ void func_72() // Position - 0x1F79 (8057)
 	}
 
 	if (!flag)
-		plLocal_76 = _INVALID_PLAYER_INDEX();
+		epctLocal_76 = _INVALID_PLAYER_INDEX();
 
 	return;
 }
@@ -1899,34 +1899,34 @@ void _STOPWATCH_DESTROY(var uParam0) // Position - 0x207C (8316)
 
 void func_74() // Position - 0x2089 (8329)
 {
-	Player player;
-	Player player2;
+	ePedComponentType type;
+	ePedComponentType type2;
 	Ped playerPed;
 	Ped pilot;
 	Vehicle aircraft;
-	Player player3;
+	Player player;
 	Ped playerPed2;
 
-	player2 = PLAYER::PLAYER_ID();
+	type2 = PLAYER::PLAYER_ID();
 	pilot = NETWORK::NET_TO_PED(iLocal_78.f_1.f_3[0 /*2*/]);
 	aircraft = NETWORK::NET_TO_VEH(iLocal_78.f_1);
-	player3 = func_77(PLAYER::PLAYER_ID());
-	playerPed2 = PLAYER::GET_PLAYER_PED(player3);
-	plLocal_76 = _INVALID_PLAYER_INDEX();
-	plLocal_77 = plLocal_77 + 1;
-	plLocal_77 = func_76(plLocal_77, 32);
-	player = plLocal_77;
+	player = func_77(PLAYER::PLAYER_ID());
+	playerPed2 = PLAYER::GET_PLAYER_PED(player);
+	epctLocal_76 = _INVALID_PLAYER_INDEX();
+	epctLocal_77 = epctLocal_77 + 1;
+	epctLocal_77 = func_76(epctLocal_77, 32);
+	type = epctLocal_77;
 
-	if (player == _INVALID_PLAYER_INDEX())
+	if (type == _INVALID_PLAYER_INDEX())
 		return;
 
-	if (player == plLocal_76)
+	if (type == epctLocal_76)
 		return;
 
-	if (!_NETWORK_IS_PLAYER_VALID(player, true, true))
+	if (!_NETWORK_IS_PLAYER_VALID(type, true, true))
 		return;
 
-	playerPed = PLAYER::GET_PLAYER_PED(player);
+	playerPed = PLAYER::GET_PLAYER_PED(type);
 
 	if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(playerPed))
 		return;
@@ -1935,35 +1935,35 @@ void func_74() // Position - 0x2089 (8329)
 		if (MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(playerPed2, true), ENTITY::GET_ENTITY_COORDS(playerPed, true), false) > Global_1964693)
 			return;
 
-	if (func_55(player2, player) || func_75(player2, player, -2, 0))
+	if (func_55(type2, type) || func_75(type2, type, -2, 0))
 	{
 		TASK::TASK_HELI_MISSION(pilot, aircraft, 0, playerPed, 0f, 0f, 0f, iLocal_73, 20f, 40f, -1f, BUILTIN::CEIL(uLocal_70[0]), 10, -1082130432, 0);
-		plLocal_76 = player;
+		epctLocal_76 = type;
 	}
 
 	return;
 }
 
-BOOL func_75(Player plParam0, Player plParam1, int iParam2, int iParam3) // Position - 0x218A (8586)
+BOOL func_75(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, int iParam3) // Position - 0x218A (8586)
 {
 	if (iParam2 == -2)
 	{
 		if (iParam3 == 0)
-			if (PLAYER::GET_PLAYER_TEAM(plParam0) == -1 && PLAYER::GET_PLAYER_TEAM(plParam1) == -1)
+			if (PLAYER::GET_PLAYER_TEAM(epctParam0) == -1 && PLAYER::GET_PLAYER_TEAM(epctParam1) == -1)
 				return false;
 	
-		return PLAYER::GET_PLAYER_TEAM(plParam0) == PLAYER::GET_PLAYER_TEAM(plParam1);
+		return PLAYER::GET_PLAYER_TEAM(epctParam0) == PLAYER::GET_PLAYER_TEAM(epctParam1);
 	}
 	else
 	{
 		if (iParam3 == 0)
-			if (PLAYER::GET_PLAYER_TEAM(plParam0) == -1 && iParam2 == -1)
+			if (PLAYER::GET_PLAYER_TEAM(epctParam0) == -1 && iParam2 == -1)
 				return false;
 	
-		return PLAYER::GET_PLAYER_TEAM(plParam0) == iParam2;
+		return PLAYER::GET_PLAYER_TEAM(epctParam0) == iParam2;
 	}
 
-	return PLAYER::GET_PLAYER_TEAM(plParam0) == iParam2;
+	return PLAYER::GET_PLAYER_TEAM(epctParam0) == iParam2;
 }
 
 int func_76(int iParam0, int iParam1) // Position - 0x2202 (8706)
@@ -1971,31 +1971,31 @@ int func_76(int iParam0, int iParam1) // Position - 0x2202 (8706)
 	return ((iParam0 % iParam1) + iParam1) % iParam1;
 }
 
-Player func_77(Player plParam0) // Position - 0x2215 (8725)
+Player func_77(ePedComponentType epctParam0) // Position - 0x2215 (8725)
 {
-	if (func_78(plParam0, true))
-		return Global_1892798[func_56(plParam0) /*615*/].f_10.f_467;
+	if (func_78(epctParam0, true))
+		return Global_1892798[func_56(epctParam0) /*615*/].f_10.f_467;
 
 	return _INVALID_PLAYER_INDEX();
 }
 
-BOOL func_78(Player plParam0, BOOL bParam1) // Position - 0x2240 (8768)
+BOOL func_78(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x2240 (8768)
 {
-	if (!func_47(plParam0))
+	if (!func_47(epctParam0))
 		return false;
 
 	if (!bParam1)
-		if (func_79(plParam0))
+		if (func_79(epctParam0))
 			return false;
 
-	return func_47(Global_1892798[plParam0 /*615*/].f_10);
+	return func_47(Global_1892798[epctParam0 /*615*/].f_10);
 }
 
-BOOL func_79(Player plParam0) // Position - 0x2278 (8824)
+BOOL func_79(ePedComponentType epctParam0) // Position - 0x2278 (8824)
 {
-	if (func_47(plParam0))
-		if (func_47(Global_1892798[plParam0 /*615*/].f_10))
-			return Global_1892798[plParam0 /*615*/].f_10 == plParam0;
+	if (func_47(epctParam0))
+		if (func_47(Global_1892798[epctParam0 /*615*/].f_10))
+			return Global_1892798[epctParam0 /*615*/].f_10 == epctParam0;
 
 	return false;
 }
@@ -2060,7 +2060,7 @@ void func_86() // Position - 0x237B (9083)
 	BOOL flag;
 	float x;
 
-	if (fLocal_67 == -1f)
+	if (bLocal_67 == -1f)
 		flag = true;
 	else if (!_STOPWATCH_IS_INITIALIZED(&uLocal_68))
 		func_5(&uLocal_68, false, false);
@@ -2070,10 +2070,10 @@ void func_86() // Position - 0x237B (9083)
 	if (flag)
 	{
 		x = { _GET_PLAYER_COORDS(PLAYER::PLAYER_ID()) };
-		fLocal_67 = PATHFIND::GET_APPROX_HEIGHT_FOR_POINT(x, x.f_1);
+		bLocal_67 = PATHFIND::GET_APPROX_HEIGHT_FOR_POINT(x, x.f_1);
 	
-		if (fLocal_67 < Global_262145.f_11206)
-			fLocal_67 = Global_262145.f_11206;
+		if (bLocal_67 < Global_262145.f_11206)
+			bLocal_67 = Global_262145.f_11206;
 	
 		_STOPWATCH_DESTROY(&uLocal_68);
 	}
@@ -2223,7 +2223,7 @@ void func_99(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	if (NETWORK::NETWORK_IS_IN_TUTORIAL_SESSION())
 		bLocal_61 = true;
 
-	plLocal_76 = PLAYER::PLAYER_ID();
+	epctLocal_76 = PLAYER::PLAYER_ID();
 	uLocal_99[NETWORK::PARTICIPANT_ID_TO_INT()] = 0;
 	return;
 }

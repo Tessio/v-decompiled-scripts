@@ -428,29 +428,29 @@ void func_26(int* piParam0, int iParam1) // Position - 0x62F (1583)
 	return;
 }
 
-void func_27(int iParam0, int iParam1, int iParam2) // Position - 0x69C (1692)
+void func_27(int iParam0, int iParam1, Interior inParam2) // Position - 0x69C (1692)
 {
-	if (iParam2 == -1)
-		iParam2 = func_28();
+	if (inParam2 == -1)
+		inParam2 = func_28();
 
 	if (iParam1 < 0)
 		iParam1 = 255;
 
-	STATS::SET_PACKED_STAT_INT_CODE(iParam0, iParam1, iParam2);
+	STATS::SET_PACKED_STAT_INT_CODE(iParam0, iParam1, inParam2);
 	return;
 }
 
-int func_28() // Position - 0x6C4 (1732)
+Interior func_28() // Position - 0x6C4 (1732)
 {
 	return Global_1574927;
 }
 
-int _STAT_GET_PACKED_INT(int iParam0, int iParam1) // Position - 0x6D0 (1744)
+int _STAT_GET_PACKED_INT(int iParam0, Interior inParam1) // Position - 0x6D0 (1744)
 {
-	if (iParam1 == -1)
-		iParam1 = func_28();
+	if (inParam1 == -1)
+		inParam1 = func_28();
 
-	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, inParam1);
 }
 
 BOOL func_30() // Position - 0x6EC (1772)
@@ -867,17 +867,17 @@ BOOL func_62(Player plParam0) // Position - 0xE60 (3680)
 	return false;
 }
 
-int func_63(int iParam0) // Position - 0xEA9 (3753)
+int func_63(BOOL bParam0) // Position - 0xEA9 (3753)
 {
-	switch (iParam0)
+	switch (bParam0)
 	{
 		case -1:
 			return 6;
 	
-		case 0:
+		case false:
 			return 0;
 	
-		case 1:
+		case true:
 			return 0;
 	
 		case 2:
@@ -1463,7 +1463,7 @@ BOOL func_90() // Position - 0x1811 (6161)
 	return Global_2696981;
 }
 
-BOOL func_91() // Position - 0x181D (6173)
+ePedComponentType func_91() // Position - 0x181D (6173)
 {
 	return Global_2685153.f_695;
 }

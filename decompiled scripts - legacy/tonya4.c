@@ -37924,9 +37924,9 @@ void func_228() // Position - 0x287A2 (165794)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -47971,7 +47971,7 @@ Vector3 func_434(int iParam0, BOOL bParam1) // Position - 0x3731A (226074)
 			return 2714.5466f, -354.2701f, -55.1867f;
 	
 		case 50:
-			return Global_1971528;
+			return Global_1971529;
 	
 		case 51:
 			return 1100f, 220f, -50f;
@@ -53608,15 +53608,15 @@ BOOL func_569(int iParam0, eCharacter echParam1) // Position - 0x410E4 (266468)
 
 	switch (echParam1)
 	{
-		case CHAR_MICHAEL:
+		case 0:
 			num = 0;
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1:
 			num = 1;
 			break;
 	
-		case CHAR_TREVOR:
+		case 2:
 			num = 2;
 			break;
 	}
@@ -56400,20 +56400,20 @@ void func_665() // Position - 0x444BD (279741)
 	{
 		if (Global_99337[i /*17*/] && !Global_99337[i /*17*/].f_1)
 			if (Global_99337[i /*17*/].f_3 == 0)
-				if (Global_99337[i /*17*/].f_5 != CHAR_DETONATEBOMB && Global_99337[i /*17*/].f_5 != CHAR_LS_CUSTOMS && Global_99337[i /*17*/].f_5 != CHAR_DOMESTIC_GIRL)
+				if (Global_99337[i /*17*/].f_5 != 88 && Global_99337[i /*17*/].f_5 != 89 && Global_99337[i /*17*/].f_5 != 92)
 					func_666(Global_99337[i /*17*/].f_5, true);
 	}
 
 	return;
 }
 
-void func_666(eCharacter echParam0, BOOL bParam1) // Position - 0x44544 (279876)
+void func_666(int iParam0, BOOL bParam1) // Position - 0x44544 (279876)
 {
 	if (bParam1)
-		if (echParam0 != CHAR_DETONATEBOMB && echParam0 != CHAR_LS_CUSTOMS && echParam0 != CHAR_DOMESTIC_GIRL)
-			Global_96389[echParam0 /*2*/] = true;
+		if (iParam0 != 88 && iParam0 != 89 && iParam0 != 92)
+			Global_96389[iParam0 /*2*/] = true;
 	else
-		Global_96389[echParam0 /*2*/] = false;
+		Global_96389[iParam0 /*2*/] = false;
 
 	return;
 }

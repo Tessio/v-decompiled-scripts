@@ -3558,7 +3558,7 @@ eHudColour func_107(Player plParam0, Player plParam1, int iParam2, BOOL bParam3,
 		}
 		else if (Global_1836707 || Global_1836697 || Global_1845250[plParam0 /*880*/] == 0)
 		{
-			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == 0)
+			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == false)
 				return func_97(true);
 			else
 				return func_92(plParam1, true, playerTeam, bParam4);

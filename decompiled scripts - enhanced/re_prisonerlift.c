@@ -1758,16 +1758,16 @@ BOOL func_25(int iParam0, int iParam1) // Position - 0x200B (8203)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x205C (8284)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x205C (8284)
 {
-	if (iParam2 == -1)
-		iParam2 = func_27();
+	if (inParam2 == -1)
+		inParam2 = func_27();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
 	return;
 }
 
-int func_27() // Position - 0x207A (8314)
+Interior func_27() // Position - 0x207A (8314)
 {
 	return Global_1574927;
 }
@@ -2488,30 +2488,30 @@ Hash func_48(int iParam0, int iParam1) // Position - 0x2D63 (11619)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_49(iParam1));
 }
 
-int func_49(int iParam0) // Position - 0x2D78 (11640)
+Interior func_49(Interior inParam0) // Position - 0x2D78 (11640)
 {
-	int num;
-	int num2;
+	Interior interior;
+	Interior interior2;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
+	if (interior == -1)
 	{
-		num2 = func_27();
+		interior2 = func_27();
 	
-		if (num2 > -1)
+		if (interior2 > -1)
 		{
 			Global_2741524 = 0;
-			num = num2;
+			interior = interior2;
 		}
 		else
 		{
-			num = 0;
+			interior = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return num;
+	return interior;
 }
 
 int func_50(int iParam0, int iParam1) // Position - 0x2DAC (11692)
@@ -3177,7 +3177,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = false;
+	Global_23014 = 0;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -3201,9 +3201,9 @@ BOOL func_75(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x407A (165
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = false;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_23053 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -3372,9 +3372,9 @@ void func_76() // Position - 0x4348 (17224)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;

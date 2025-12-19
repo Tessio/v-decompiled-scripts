@@ -5638,7 +5638,7 @@ int func_80(Player plParam0, Player plParam1, int iParam2, BOOL bParam3, BOOL bP
 		}
 		else if (Global_1836707 || Global_1836697 || Global_1845250[plParam0 /*880*/] == 0)
 		{
-			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == 0)
+			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == false)
 				return func_68(true);
 			else
 				return func_63(plParam1, true, playerTeam, bParam4);
@@ -12297,8 +12297,8 @@ BOOL func_204(Any* panParam0) // Position - 0xC322 (49954)
 
 	for (i = 0; i < 31; i = i + 1)
 	{
-		if (IS_GAMER_HANDLE_VALID(Global_1988664[i /*13*/]))
-			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988664[i /*13*/], panParam0))
+		if (IS_GAMER_HANDLE_VALID(Global_1988665[i /*13*/]))
+			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988665[i /*13*/], panParam0))
 				return true;
 	}
 
@@ -13767,7 +13767,7 @@ void func_269(int iParam0, int iParam1) // Position - 0xDD64 (56676)
 
 BOOL func_270() // Position - 0xDDB9 (56761)
 {
-	if (MISC::IS_PC_VERSION() && Global_1988062 == 0)
+	if (MISC::IS_PC_VERSION() && Global_1988063 == 0)
 		return false;
 
 	return false;
@@ -21073,9 +21073,9 @@ struct<4> func_606(Player plParam0) // Position - 0x16F4D (94029)
 	return unk;
 }
 
-void func_607(Any* panParam0, char* sParam1) // Position - 0x16FCE (94158)
+void func_607(int iParam0, char* sParam1) // Position - 0x16FCE (94158)
 {
-	NETWORK::NETWORK_CLAN_GET_UI_FORMATTED_TAG(panParam0, 35, sParam1);
+	NETWORK::NETWORK_CLAN_GET_UI_FORMATTED_TAG(iParam0, 35, sParam1);
 	return;
 }
 
@@ -22605,10 +22605,10 @@ BOOL func_664() // Position - 0x188AB (100523)
 	if (Global_1965157.f_718.f_5 || Global_1967983.f_718.f_5 || Global_1964185.f_718.f_5)
 		return false;
 
-	if (Global_1971951.f_724.f_5 || Global_1971951.f_744.f_724.f_5 || Global_1971951.f_1497.f_724.f_5)
+	if (Global_1971952.f_724.f_5 || Global_1971952.f_744.f_724.f_5 || Global_1971952.f_1497.f_724.f_5)
 		return false;
 
-	if (Global_1978755.f_732.f_5)
+	if (Global_1978756.f_732.f_5)
 		return false;
 
 	if (func_665(PLAYER::PLAYER_ID()))
@@ -24413,9 +24413,9 @@ void func_769(int iParam0) // Position - 0x1AE55 (110165)
 
 void func_770() // Position - 0x1AF0B (110347)
 {
-	int* p_num;
+	int* unk;
 
-	Global_1837015 = p_num;
+	Global_1837015 = unk;
 	return;
 }
 

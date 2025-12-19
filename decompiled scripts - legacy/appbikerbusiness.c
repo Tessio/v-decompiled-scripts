@@ -11744,7 +11744,7 @@ BOOL func_217(Player plParam0, Hash hParam1) // Position - 0xA484 (42116)
 	return func_219(plParam0, hParam1) >= func_218(hParam1);
 }
 
-Hash func_218(Hash hParam0) // Position - 0xA49B (42139)
+int func_218(Hash hParam0) // Position - 0xA49B (42139)
 {
 	switch (hParam0)
 	{
@@ -11768,7 +11768,7 @@ Hash func_218(Hash hParam0) // Position - 0xA49B (42139)
 	return 0;
 }
 
-Hash func_219(Player plParam0, Hash hParam1) // Position - 0xA4F7 (42231)
+int func_219(Player plParam0, Hash hParam1) // Position - 0xA4F7 (42231)
 {
 	int i;
 
@@ -16637,7 +16637,7 @@ void func_367(Hash hParam0) // Position - 0xFA74 (64116)
 
 void func_368() // Position - 0xFB2E (64302)
 {
-	Global_1982484 = 1;
+	Global_1982485 = 1;
 	return;
 }
 
@@ -19503,9 +19503,9 @@ void func_460() // Position - 0x12EC6 (77510)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -20579,8 +20579,8 @@ BOOL func_509(Any* panParam0) // Position - 0x141F0 (82416)
 
 	for (i = 0; i < 31; i = i + 1)
 	{
-		if (IS_GAMER_HANDLE_VALID(Global_1988664[i /*13*/]))
-			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988664[i /*13*/], panParam0))
+		if (IS_GAMER_HANDLE_VALID(Global_1988665[i /*13*/]))
+			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988665[i /*13*/], panParam0))
 				return true;
 	}
 

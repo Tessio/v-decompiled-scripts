@@ -1919,7 +1919,7 @@ BOOL func_77(Player plParam0, Hash hParam1) // Position - 0x1C15 (7189)
 	return func_79(plParam0, hParam1) >= func_78(hParam1);
 }
 
-Hash func_78(Hash hParam0) // Position - 0x1C2C (7212)
+int func_78(Hash hParam0) // Position - 0x1C2C (7212)
 {
 	switch (hParam0)
 	{
@@ -1943,7 +1943,7 @@ Hash func_78(Hash hParam0) // Position - 0x1C2C (7212)
 	return 0;
 }
 
-Hash func_79(Player plParam0, Hash hParam1) // Position - 0x1C88 (7304)
+int func_79(Player plParam0, Hash hParam1) // Position - 0x1C88 (7304)
 {
 	int i;
 
@@ -2928,9 +2928,9 @@ void func_117() // Position - 0x2F99 (12185)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -4033,8 +4033,8 @@ BOOL func_183(Any* panParam0) // Position - 0x44BB (17595)
 
 	for (i = 0; i < 31; i = i + 1)
 	{
-		if (IS_GAMER_HANDLE_VALID(Global_1988664[i /*13*/]))
-			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988664[i /*13*/], panParam0))
+		if (IS_GAMER_HANDLE_VALID(Global_1988665[i /*13*/]))
+			if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&Global_1988665[i /*13*/], panParam0))
 				return true;
 	}
 
@@ -5373,7 +5373,7 @@ int func_236(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 		}
 	}
 
-	if (Global_1978584 != -1 && echParam0 == Global_1978584)
+	if (Global_1978585 != -1 && echParam0 == Global_1978585)
 		num2 = 1;
 
 	func_237(echParam0, sParam1, num2, func_238(PLAYER::PLAYER_ID()));
@@ -5393,18 +5393,18 @@ void func_237(eCharacter echParam0, char* sParam1, BOOL bParam2, int iParam3) //
 	character.f_3 = 0;
 	character.f_4 = bParam2;
 	character.f_5 = iParam3;
-	character.f_6 = Global_1978567.f_7;
-	character.f_7 = Global_1978567.f_8;
-	character.f_8 = Global_1978567.f_9;
-	character.f_9 = Global_1978567.f_10;
-	character.f_10 = Global_1978567.f_11;
-	character.f_11 = Global_1978567.f_12;
-	character.f_12 = Global_1978567.f_13;
-	character.f_13 = Global_1978567.f_14;
+	character.f_6 = Global_1978568.f_7;
+	character.f_7 = Global_1978568.f_8;
+	character.f_8 = Global_1978568.f_9;
+	character.f_9 = Global_1978568.f_10;
+	character.f_10 = Global_1978568.f_11;
+	character.f_11 = Global_1978568.f_12;
+	character.f_12 = Global_1978568.f_13;
+	character.f_13 = Global_1978568.f_14;
 	STATS::PLAYSTATS_NPC_PHONE(&character);
 
 	if (bParam2)
-		Global_1978584 = -1;
+		Global_1978585 = -1;
 
 	return;
 }
@@ -6119,7 +6119,7 @@ int func_259(Player plParam0, Player plParam1, BOOL bParam2) // Position - 0x6D6
 	if (func_260(plParam0))
 		return 0;
 
-	if (!Global_1988072)
+	if (!Global_1988073)
 	{
 		gamerHandle = { GET_GAMER_HANDLE_PLAYER(plParam0) };
 	
@@ -6675,10 +6675,10 @@ void func_302(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 	int bossId2;
 	int textSource;
 
-	if (Global_1989166 == MISC::GET_FRAME_COUNT())
+	if (Global_1989167 == MISC::GET_FRAME_COUNT())
 		return;
 
-	Global_1989166 = MISC::GET_FRAME_COUNT();
+	Global_1989167 = MISC::GET_FRAME_COUNT();
 	isBoss = func_61();
 	bossType = 0;
 
@@ -7461,7 +7461,7 @@ void func_357(const char* sParam0, BOOL bParam1) // Position - 0x85F9 (34297)
 
 void func_358(int iParam0, const char* sParam1) // Position - 0x8695 (34453)
 {
-	Global_1988495[iParam0] = MISC::GET_HASH_KEY(sParam1);
+	Global_1988496[iParam0] = MISC::GET_HASH_KEY(sParam1);
 	return;
 }
 

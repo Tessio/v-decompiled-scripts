@@ -1481,9 +1481,9 @@ void func_23() // Position - 0x10BD (4285)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -39016,7 +39016,7 @@ Vector3 func_299(int iParam0, BOOL bParam1) // Position - 0x2DBD0 (187344)
 			return 2714.5466f, -354.2701f, -55.1867f;
 	
 		case 50:
-			return Global_1971528;
+			return Global_1971529;
 	
 		case 51:
 			return 1100f, 220f, -50f;
@@ -39213,7 +39213,7 @@ BOOL func_302(float fParam0, var uParam1, var uParam2) // Position - 0x2E740 (19
 	return false;
 }
 
-Hash func_303() // Position - 0x2E76A (190314)
+int func_303() // Position - 0x2E76A (190314)
 {
 	return Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_325.f_8;
 }

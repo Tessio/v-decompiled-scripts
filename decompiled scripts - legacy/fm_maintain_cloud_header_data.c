@@ -1680,7 +1680,7 @@ BOOL func_59(int iParam0, BOOL bParam1, const char* sParam2, int iParam3) // Pos
 	gamerHandle = { GET_GAMER_HANDLE_USER(sParam2) };
 	unk13 = { GET_GAMER_HANDLE_PLAYER(PLAYER::PLAYER_ID()) };
 
-	if (!Global_1988073)
+	if (!Global_1988074)
 		return func_61(&gamerHandle, &unk13, iParam0, bParam1);
 
 	if (!IS_GAMER_HANDLE_VALID(gamerHandle))
@@ -32576,20 +32576,20 @@ void func_213(int iParam0, BOOL bParam1) // Position - 0x1FD0F (130319)
 	{
 		if (bParam1)
 		{
-			if (Global_1989133[i] == iParam0)
+			if (Global_1989134[i] == iParam0)
 				return;
-			else if (Global_1989133[i] == -1)
+			else if (Global_1989134[i] == -1)
 				num = i;
 		}
-		else if (Global_1989133[i] == iParam0)
+		else if (Global_1989134[i] == iParam0)
 		{
-			Global_1989133[i] = -1;
+			Global_1989134[i] = -1;
 			return;
 		}
 	}
 
 	if (bParam1 && num >= 0)
-		Global_1989133[num] = iParam0;
+		Global_1989134[num] = iParam0;
 
 	return;
 }

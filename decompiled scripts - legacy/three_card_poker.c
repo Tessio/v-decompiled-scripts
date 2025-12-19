@@ -9978,10 +9978,10 @@ int func_119() // Position - 0x110D7 (69847)
 
 void func_120() // Position - 0x110E8 (69864)
 {
-	if (IS_BIT_SET(Global_1971595, 6))
+	if (IS_BIT_SET(Global_1971596, 6))
 	{
-		MISC::SET_BIT(&Global_1971595, 9);
-		func_395(&Global_1971598, false, false);
+		MISC::SET_BIT(&Global_1971596, 9);
+		func_395(&Global_1971599, false, false);
 	}
 
 	return;
@@ -9990,14 +9990,14 @@ void func_120() // Position - 0x110E8 (69864)
 void func_121() // Position - 0x11110 (69904)
 {
 	if (func_122())
-		MISC::SET_BIT(&Global_1971595, 1);
+		MISC::SET_BIT(&Global_1971596, 1);
 
 	return;
 }
 
 BOOL func_122() // Position - 0x1112B (69931)
 {
-	return IS_BIT_SET(Global_1971595, 6) || IS_BIT_SET(Global_1971595, 5);
+	return IS_BIT_SET(Global_1971596, 6) || IS_BIT_SET(Global_1971596, 5);
 }
 
 void func_123(int iParam0, int iParam1) // Position - 0x11145 (69957)
@@ -10005,9 +10005,9 @@ void func_123(int iParam0, int iParam1) // Position - 0x11145 (69957)
 	if (iParam0 < 0)
 		return;
 
-	MISC::SET_BIT(&Global_1971595, 6);
-	Global_1971596 = iParam0;
-	Global_1971597 = iParam1;
+	MISC::SET_BIT(&Global_1971596, 6);
+	Global_1971597 = iParam0;
+	Global_1971598 = iParam1;
 	return;
 }
 
@@ -13239,14 +13239,14 @@ void func_206(int iParam0) // Position - 0x1514D (86349)
 
 void func_207(var uParam0) // Position - 0x1515B (86363)
 {
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	uParam0->f_692 = 0;
 	return;
 }
 
 BOOL func_208(var uParam0) // Position - 0x1516E (86382)
 {
-	return Global_1988494 || uParam0->f_692;
+	return Global_1988495 || uParam0->f_692;
 }
 
 void func_209(var uParam0, float fParam1) // Position - 0x15185 (86405)
@@ -13378,7 +13378,7 @@ void func_215(var uParam0) // Position - 0x15324 (86820)
 	uParam0->f_697 = 0f;
 	uParam0->f_698 = 0f;
 	uParam0->f_699 = 1f;
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	return;
 }
 
@@ -14369,8 +14369,8 @@ BOOL func_260(int iParam0) // Position - 0x16A2A (92714)
 
 void func_261(int iParam0) // Position - 0x16A52 (92754)
 {
-	Global_1971534 = NETWORK::GET_CLOUD_TIME_AS_INT();
-	Global_1971552 = iParam0;
+	Global_1971535 = NETWORK::GET_CLOUD_TIME_AS_INT();
+	Global_1971553 = iParam0;
 
 	if (!func_269())
 		func_266();
@@ -14386,8 +14386,8 @@ void func_262() // Position - 0x16A80 (92800)
 	_MPPLY_STAT_SET_INT(joaat("MPPLY_CAS_GMBLNG_L24_PX") /* TUNEABLE: MPPLY_CAS_GMBLNG_L24_PX */, NETWORK::GET_CLOUD_TIME_AS_INT());
 	func_264();
 	func_263();
-	Global_1971548 = true;
-	Global_1971543 = 0;
+	Global_1971549 = true;
+	Global_1971544 = 0;
 	return;
 }
 
@@ -14415,7 +14415,7 @@ void func_264() // Position - 0x16ABC (92860)
 
 BOOL func_265() // Position - 0x16B32 (92978)
 {
-	return Global_1971548;
+	return Global_1971549;
 }
 
 void func_266() // Position - 0x16B3E (92990)
@@ -14423,13 +14423,13 @@ void func_266() // Position - 0x16B3E (92990)
 	_MPPLY_STAT_SET_INT(joaat("MPPLY_CASINO_GMBLNG_GD") /* TUNEABLE: MPPLY_CASINO_GMBLNG_GD */, NETWORK::GET_CLOUD_TIME_AS_INT());
 	func_268();
 	func_267(NETWORK::GET_CLOUD_TIME_AS_INT() + 86400);
-	Global_1971547 = true;
+	Global_1971548 = true;
 	return;
 }
 
 void func_267(int iParam0) // Position - 0x16B69 (93033)
 {
-	Global_1971542 = iParam0;
+	Global_1971543 = iParam0;
 	return;
 }
 
@@ -14466,21 +14466,21 @@ void func_272() // Position - 0x16BF8 (93176)
 	int num;
 	int num2;
 
-	if (Global_1971552 != -1)
+	if (Global_1971553 != -1)
 	{
-		num = NETWORK::GET_CLOUD_TIME_AS_INT() - Global_1971534;
-		num2 = NETWORK::GET_CLOUD_TIME_AS_INT() - Global_1971535;
+		num = NETWORK::GET_CLOUD_TIME_AS_INT() - Global_1971535;
+		num2 = NETWORK::GET_CLOUD_TIME_AS_INT() - Global_1971536;
 	
-		if (Global_1971535 == -1)
+		if (Global_1971536 == -1)
 			func_273(num);
 		else
 			func_273(num2);
 	
 		func_268();
 		func_263();
-		Global_1971534 = -1;
 		Global_1971535 = -1;
-		Global_1971552 = -1;
+		Global_1971536 = -1;
+		Global_1971553 = -1;
 	}
 
 	return;
@@ -14491,7 +14491,7 @@ void func_273(int iParam0) // Position - 0x16C4F (93263)
 	int num;
 
 	num = func_278();
-	Global_1971543 = Global_1971543 + iParam0;
+	Global_1971544 = Global_1971544 + iParam0;
 	func_274(num, iParam0);
 	func_263();
 	return;
@@ -18168,7 +18168,7 @@ int func_355() // Position - 0x1C63B (116283)
 
 BOOL func_356() // Position - 0x1C667 (116327)
 {
-	return Global_1971541 != 0;
+	return Global_1971542 != 0;
 }
 
 int func_357() // Position - 0x1C675 (116341)

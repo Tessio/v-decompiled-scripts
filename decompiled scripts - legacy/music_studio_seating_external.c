@@ -2120,7 +2120,7 @@ BOOL func_55(var uParam0) // Position - 0x1D1A (7450)
 
 BOOL func_56() // Position - 0x1D2B (7467)
 {
-	if (Global_1982570 == 0 && func_57())
+	if (Global_1982571 == 0 && func_57())
 		return true;
 
 	return false;
@@ -2478,7 +2478,7 @@ void func_70(Ped pedParam0, BOOL bParam1, BOOL bParam2, ePedComponentType epctPa
 		if (bParam2)
 			flag2 = false;
 	
-		if (!bParam4 || num != func_115() || Global_1989162 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
+		if (!bParam4 || num != func_115() || Global_1989163 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
 		{
 			characterType = func_114(pedParam0);
 		
@@ -2519,7 +2519,7 @@ void func_70(Ped pedParam0, BOOL bParam1, BOOL bParam2, ePedComponentType epctPa
 				}
 			}
 		
-			if (Global_1989161)
+			if (Global_1989162)
 				func_74();
 		}
 		else
@@ -2540,7 +2540,7 @@ void func_71(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 	eControlAction action;
 	int decorationIndex;
 
-	if (!Global_1989161)
+	if (!Global_1989162)
 		func_72(&pedParam0);
 
 	i = 0;
@@ -2548,7 +2548,7 @@ void func_71(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		action = Global_1989133[i];
+		action = Global_1989134[i];
 	
 		if (action <= -1)
 		{
@@ -2602,7 +2602,7 @@ void func_72(var uParam0) // Position - 0x2935 (10549)
 
 	for (i = INPUT_NEXT_CAMERA; i < INPUT_PHONE; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
 	i = INPUT_NEXT_CAMERA;
@@ -2629,7 +2629,7 @@ void func_72(var uParam0) // Position - 0x2935 (10549)
 		}
 	}
 
-	Global_1989161 = true;
+	Global_1989162 = true;
 	return;
 }
 
@@ -2644,20 +2644,20 @@ void func_73(eControlAction ecaParam0, BOOL bParam1) // Position - 0x29DB (10715
 	{
 		if (bParam1)
 		{
-			if (Global_1989133[i] == ecaParam0)
+			if (Global_1989134[i] == ecaParam0)
 				return;
-			else if (Global_1989133[i] == -1)
+			else if (Global_1989134[i] == -1)
 				num = i;
 		}
-		else if (Global_1989133[i] == ecaParam0)
+		else if (Global_1989134[i] == ecaParam0)
 		{
-			Global_1989133[i] = -1;
+			Global_1989134[i] = -1;
 			return;
 		}
 	}
 
 	if (bParam1 && num >= 0)
-		Global_1989133[num] = ecaParam0;
+		Global_1989134[num] = ecaParam0;
 
 	return;
 }
@@ -2668,10 +2668,10 @@ void func_74() // Position - 0x2A55 (10837)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
-	Global_1989161 = false;
+	Global_1989162 = false;
 	return;
 }
 

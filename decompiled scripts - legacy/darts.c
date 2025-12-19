@@ -18324,8 +18324,8 @@ void func_355(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	int b;
 	int a;
 	int i;
-	ePedComponentType numberOfLinesForString;
-	ePedComponentType j;
+	BOOL numberOfLinesForString;
+	BOOL j;
 	int k;
 	int num2;
 	int num3;
@@ -18384,7 +18384,7 @@ void func_355(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	float num42;
 	float size;
 	float size2;
-	ePedComponentType type;
+	BOOL flag8;
 	float num43;
 	float num44;
 	int m;
@@ -18433,7 +18433,7 @@ void func_355(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 
 	if (bParam3)
 	{
-		if (Global_24529.f_5821 <= PV_COMP_BERD)
+		if (Global_24529.f_5821 <= true)
 		{
 			func_384(Global_24529.f_5821 + 1, "DFLT_MNU_OPT" /*Exit*/, 0, true, false, false, false);
 			Global_24529.f_6617 = 1;
@@ -18573,7 +18573,7 @@ void func_355(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		
 			while (num2 < Global_24529.f_5828 && numberOfLinesForString <= Global_24529.f_5821)
 			{
-				if (numberOfLinesForString >= PV_COMP_HEAD)
+				if (numberOfLinesForString >= false)
 				{
 					if (Global_24529.f_6088[numberOfLinesForString])
 					{
@@ -19055,15 +19055,15 @@ void func_355(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 			num4 = 0;
 			num5 = 0;
 			num6 = 0;
-			type = Global_24529.f_5821;
+			flag8 = Global_24529.f_5821;
 		
 			if (Global_24529.f_6332)
-				type = Global_24529.f_6335 - 1;
+				flag8 = Global_24529.f_6335 - 1;
 		
 			num43 = 0f;
 			num44 = 0f;
 		
-			for (j = PV_COMP_HEAD; j <= type; j = j + 1)
+			for (j = false; j <= flag8; j = j + 1)
 			{
 				num37 = 0.034722f;
 			
@@ -20746,7 +20746,7 @@ void func_383(float fParam0, float fParam1, int iParam2, float fParam3, int iPar
 	return;
 }
 
-void func_384(ePedComponentType epctParam0, char* sParam1, int iParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x1F799 (128921)
+void func_384(BOOL bParam0, char* sParam1, int iParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x1F799 (128921)
 {
 	int num;
 	float num2;
@@ -20754,7 +20754,7 @@ void func_384(ePedComponentType epctParam0, char* sParam1, int iParam2, BOOL bPa
 	var unk;
 	float num4;
 
-	if (Global_24529.f_5821 > epctParam0)
+	if (Global_24529.f_5821 > bParam0)
 		return;
 
 	if (Global_24529.f_5821 >= 128)
@@ -20766,9 +20766,9 @@ void func_384(ePedComponentType epctParam0, char* sParam1, int iParam2, BOOL bPa
 	if (Global_24529.f_6346 < Global_24529.f_6344)
 		return;
 
-	if (Global_24529.f_5821 != epctParam0)
+	if (Global_24529.f_5821 != bParam0)
 	{
-		Global_24529.f_5821 = epctParam0;
+		Global_24529.f_5821 = bParam0;
 		Global_24529.f_5822 = 0;
 	}
 
@@ -20818,12 +20818,12 @@ void func_384(ePedComponentType epctParam0, char* sParam1, int iParam2, BOOL bPa
 		{
 			num4 = func_385(&Global_24529.f_79[Global_24529.f_5823 /*6*/]);
 		
-			if (num4 > Global_24529.f_6348[epctParam0])
-				Global_24529.f_6348[epctParam0] = num4;
+			if (num4 > Global_24529.f_6348[bParam0])
+				Global_24529.f_6348[bParam0] = num4;
 		}
 	}
 
-	MISC::SET_BIT(&Global_24529.f_5692[epctParam0], Global_24529.f_5822);
+	MISC::SET_BIT(&Global_24529.f_5692[bParam0], Global_24529.f_5822);
 	Global_24529.f_5822 = Global_24529.f_5822 + 1;
 	Global_24529.f_6347 = 1;
 	Global_24529.f_6345 = Global_24529.f_5823 - 1;
@@ -20851,16 +20851,16 @@ float func_386(char* sParam0) // Position - 0x1F9D1 (129489)
 	return func_364(true);
 }
 
-void func_387(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x1FA0E (129550)
+void func_387(BOOL bParam0, BOOL bParam1) // Position - 0x1FA0E (129550)
 {
 	int num;
 
-	num = BUILTIN::FLOOR(BUILTIN::TO_FLOAT(epctParam0) / 32f);
+	num = BUILTIN::FLOOR(BUILTIN::TO_FLOAT(bParam0) / 32f);
 
 	if (bParam1)
-		MISC::SET_BIT(&Global_24529.f_6618[num], epctParam0 - (num * 32));
+		MISC::SET_BIT(&Global_24529.f_6618[num], bParam0 - (num * 32));
 	else
-		MISC::CLEAR_BIT(&Global_24529.f_6618[num], epctParam0 - (num * 32));
+		MISC::CLEAR_BIT(&Global_24529.f_6618[num], bParam0 - (num * 32));
 
 	return;
 }
@@ -20947,7 +20947,7 @@ Hash func_391(int iParam0, BOOL bParam1) // Position - 0x1FB3B (129851)
 	return 0;
 }
 
-int func_392(int* piParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x1FBC2 (129986)
+int func_392(int* piParam0, BOOL bParam1, int iParam2) // Position - 0x1FBC2 (129986)
 {
 	if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 		return 0;
@@ -20955,7 +20955,7 @@ int func_392(int* piParam0, ePedComponentType epctParam1, int iParam2) // Positi
 	if (iParam2 == 0)
 		return 0;
 
-	if (func_413(0) == 1 && Global_4521271 == epctParam1)
+	if (func_413(0) == 1 && Global_4521271 == bParam1)
 	{
 		if (!func_438(piParam0))
 		{
@@ -21029,12 +21029,12 @@ void func_395(var uParam0) // Position - 0x1FCD7 (130263)
 	func_405(false, true, false, false, false);
 	func_404("DARTS_TITLE");
 	func_402(true, "ShopUI_Title_Darts", "ShopUI_Title_Darts");
-	func_384(PV_COMP_HEAD, "DARTS_LEGS", 0, true, false, false, false);
-	func_399(PV_COMP_HEAD, func_391(uParam0->f_662 + 1, true), false);
-	func_384(PV_COMP_BERD, "DARTS_SETS", 0, true, false, false, false);
-	func_399(PV_COMP_BERD, func_391(uParam0->f_664 + 1, false), false);
+	func_384(false, "DARTS_LEGS", 0, true, false, false, false);
+	func_399(false, func_391(uParam0->f_662 + 1, true), false);
+	func_384(true, "DARTS_SETS", 0, true, false, false, false);
+	func_399(true, func_391(uParam0->f_664 + 1, false), false);
 	func_398(2, HUD_COLOUR_DARTS, HUD_COLOUR_DARTS, 1);
-	func_384(PV_COMP_HAIR, "DARTS_START", 0, true, false, false, false);
+	func_384(2, "DARTS_START", 0, true, false, false, false);
 	func_397(0);
 	func_416(uParam0->f_660, true, 1);
 
@@ -21088,7 +21088,7 @@ void func_398(int iParam0, eHudColour ehcParam1, eHudColour ehcParam2, int iPara
 	return;
 }
 
-void func_399(ePedComponentType epctParam0, Hash hParam1, BOOL bParam2) // Position - 0x1FEC4 (130756)
+void func_399(BOOL bParam0, Hash hParam1, BOOL bParam2) // Position - 0x1FEC4 (130756)
 {
 	int num;
 	float num2;
@@ -21096,7 +21096,7 @@ void func_399(ePedComponentType epctParam0, Hash hParam1, BOOL bParam2) // Posit
 	var unk;
 	float num4;
 
-	if (Global_24529.f_5821 > epctParam0)
+	if (Global_24529.f_5821 > bParam0)
 		return;
 
 	if (Global_24529.f_5821 >= 128)
@@ -21108,9 +21108,9 @@ void func_399(ePedComponentType epctParam0, Hash hParam1, BOOL bParam2) // Posit
 	if (Global_24529.f_6346 < Global_24529.f_6344)
 		return;
 
-	if (Global_24529.f_5821 != epctParam0)
+	if (Global_24529.f_5821 != bParam0)
 	{
-		Global_24529.f_5821 = epctParam0;
+		Global_24529.f_5821 = bParam0;
 		Global_24529.f_5822 = 0;
 	}
 
@@ -21145,11 +21145,11 @@ void func_399(ePedComponentType epctParam0, Hash hParam1, BOOL bParam2) // Posit
 	{
 		num4 = func_400("NUMBER" /*~1~*/, hParam1);
 	
-		if (num4 > Global_24529.f_6348[epctParam0])
-			Global_24529.f_6348[epctParam0] = num4;
+		if (num4 > Global_24529.f_6348[bParam0])
+			Global_24529.f_6348[bParam0] = num4;
 	}
 
-	MISC::SET_BIT(&Global_24529.f_5692[epctParam0], Global_24529.f_5822);
+	MISC::SET_BIT(&Global_24529.f_5692[bParam0], Global_24529.f_5822);
 	Global_24529.f_5822 = Global_24529.f_5822 + 1;
 	Global_24529.f_6347 = 2;
 	return;
@@ -21263,7 +21263,7 @@ void func_408(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4) /
 	return;
 }
 
-int func_409(int* piParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x20276 (131702)
+int func_409(int* piParam0, BOOL bParam1, int iParam2) // Position - 0x20276 (131702)
 {
 	if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 		return 0;
@@ -21271,7 +21271,7 @@ int func_409(int* piParam0, ePedComponentType epctParam1, int iParam2) // Positi
 	if (iParam2 == 0)
 		return 0;
 
-	if (func_413(0) == -1 && Global_4521271 == epctParam1)
+	if (func_413(0) == -1 && Global_4521271 == bParam1)
 	{
 		if (!func_438(piParam0))
 		{
@@ -21448,7 +21448,7 @@ void func_415(char* sParam0, int iParam1, int iParam2) // Position - 0x2053E (13
 
 void func_416(int iParam0, BOOL bParam1, int iParam2) // Position - 0x205A3 (132515)
 {
-	ePedComponentType i;
+	BOOL i;
 	int num;
 
 	Global_24529.f_6342 = iParam0;
@@ -21462,7 +21462,7 @@ void func_416(int iParam0, BOOL bParam1, int iParam2) // Position - 0x205A3 (132
 	{
 		for (i = Global_24529.f_6341; i <= Global_24529.f_6342; i = i + 1)
 		{
-			if (i >= PV_COMP_HEAD && i < 127)
+			if (i >= false && i < 127)
 				if (Global_24529.f_5692[i] != 0)
 					num = num + 1;
 		}
@@ -21474,7 +21474,7 @@ void func_416(int iParam0, BOOL bParam1, int iParam2) // Position - 0x205A3 (132
 		
 			for (i = Global_24529.f_6341; i <= Global_24529.f_6342; i = i + 1)
 			{
-				if (i >= PV_COMP_HEAD && i < 127)
+				if (i >= false && i < 127)
 					if (Global_24529.f_5692[i] != 0)
 						num = num + 1;
 			}
@@ -21496,7 +21496,7 @@ void func_416(int iParam0, BOOL bParam1, int iParam2) // Position - 0x205A3 (132
 BOOL func_417() // Position - 0x206F5 (132853)
 {
 	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		if (Global_4521271 > PV_COMP_INVALID)
+		if (Global_4521271 > -1)
 			if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
 				return true;
 
@@ -21524,18 +21524,18 @@ int func_418(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x2071C (132
 		}
 		else
 		{
-			Global_4521271 = PV_COMP_INVALID;
+			Global_4521271 = -1;
 			return 0;
 		}
 	}
 
-	if (Global_4521271 > PV_COMP_INVALID || Global_4521271 == -3 || Global_4521271 == -2 || HUD::IS_MOUSE_ROLLED_OVER_INSTRUCTIONAL_BUTTONS())
+	if (Global_4521271 > -1 || Global_4521271 == -3 || Global_4521271 == -2 || HUD::IS_MOUSE_ROLLED_OVER_INSTRUCTIONAL_BUTTONS())
 	{
 		HUD::SET_MOUSE_CURSOR_STYLE(1);
 		return 0;
 	}
 
-	if (Global_4521271 == PV_COMP_INVALID && bParam0)
+	if (Global_4521271 == -1 && bParam0)
 	{
 		if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
 		{
@@ -21576,7 +21576,7 @@ void func_419(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 	{
-		Global_4521271 = PV_COMP_INVALID;
+		Global_4521271 = -1;
 		return;
 	}
 
@@ -21607,7 +21607,7 @@ void func_419(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	if (Global_4521271 == -6)
 		return;
 
-	Global_4521271 = PV_COMP_INVALID;
+	Global_4521271 = -1;
 	num4 = Global_4521265;
 	num5 = Global_4521266;
 
@@ -21641,7 +21641,7 @@ void func_419(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		if (Global_24529.f_6336 == -1)
 		{
-			Global_4521271 = PV_COMP_HEAD;
+			Global_4521271 = false;
 			num10 = 0;
 			return;
 		}
@@ -21685,7 +21685,7 @@ void func_419(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		return;
 	}
 
-	Global_4521271 = PV_COMP_INVALID;
+	Global_4521271 = -1;
 	return;
 }
 
@@ -21761,9 +21761,9 @@ void func_423(var uParam0) // Position - 0x20BAF (134063)
 	func_402(1, "ShopUI_Title_Darts", "ShopUI_Title_Darts");
 	func_384(0, "DARTS_LEGS", 0, 1, 0, false, 0);
 	func_399(0, 1, false);
-	func_384(PV_COMP_BERD, "DARTS_SETS", 0, true, false, false, false);
-	func_399(PV_COMP_BERD, 1, false);
-	func_384(PV_COMP_HAIR, "DARTS_START", 0, true, false, false, false);
+	func_384(true, "DARTS_SETS", 0, true, false, false, false);
+	func_399(true, 1, false);
+	func_384(2, "DARTS_START", 0, true, false, false, false);
 	func_398(2, 141, 141, 1);
 	func_397(0);
 	func_416(0, true, 1);

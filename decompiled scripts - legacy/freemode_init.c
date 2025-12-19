@@ -386,7 +386,7 @@ void main() // Position - 0x0 (0)
 
 	func_42();
 	Global_1836491 = true;
-	Global_1989167 = NETWORK::GET_CLOUD_TIME_AS_INT();
+	Global_1989168 = NETWORK::GET_CLOUD_TIME_AS_INT();
 	func_8();
 	type = _GET_ACTIVE_PV_SLOT();
 
@@ -746,7 +746,7 @@ void func_13(const char* sParam0) // Position - 0xB55 (2901)
 
 void func_14(int iParam0, const char* sParam1) // Position - 0xB97 (2967)
 {
-	Global_1988495[iParam0] = MISC::GET_HASH_KEY(sParam1);
+	Global_1988496[iParam0] = MISC::GET_HASH_KEY(sParam1);
 	return;
 }
 
@@ -4182,7 +4182,7 @@ void func_136() // Position - 0x4725 (18213)
 
 	if (!func_137() && !func_325())
 	{
-		Global_1688981 = PV_COMP_INVALID;
+		Global_1688981 = -1;
 		func_128(&(Global_1688981.f_1));
 	}
 
@@ -8490,7 +8490,7 @@ void func_327() // Position - 0x9A25 (39461)
 	Global_1836730 = 0;
 	Global_1935014 = false;
 	func_350();
-	Global_1836459 = PV_COMP_INVALID;
+	Global_1836459 = -1;
 	Global_1881695 = -1;
 	Global_1881686 = -1;
 	Global_1881689 = -1;

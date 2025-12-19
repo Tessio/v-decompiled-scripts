@@ -558,9 +558,9 @@ float func_6(Entity eParam0, Vector3 vParam1, var uParam2, var uParam3, BOOL bPa
 	return MISC::GET_DISTANCE_BETWEEN_COORDS(entityCoords, vParam1, bParam4);
 }
 
-Vector3 func_7(int iParam0) // Position - 0x50A (1290)
+Vector3 func_7(Object obParam0) // Position - 0x50A (1290)
 {
-	switch (iParam0)
+	switch (obParam0)
 	{
 		case 2:
 			return 2147.3167f, 4795.2075f, 40.08961f;
@@ -611,7 +611,7 @@ Vector3 func_7(int iParam0) // Position - 0x50A (1290)
 	return 10f, 10f, 10f;
 }
 
-int func_8() // Position - 0x6BD (1725)
+Object func_8() // Position - 0x6BD (1725)
 {
 	return Global_113638.f_20;
 }
@@ -775,7 +775,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = false;
+	Global_23014 = 0;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -799,9 +799,9 @@ BOOL func_11(char* sParam0, int iParam1, BOOL bParam2) // Position - 0xA85 (2693
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = false;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_23053 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -970,9 +970,9 @@ void func_12() // Position - 0xD53 (3411)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -1615,9 +1615,9 @@ BOOL func_44(int iParam0) // Position - 0x1904 (6404)
 	return false;
 }
 
-BOOL func_45(int iParam0, int iParam1) // Position - 0x1A71 (6769)
+BOOL func_45(BOOL bParam0, BOOL bParam1) // Position - 0x1A71 (6769)
 {
-	return iParam0 && iParam1 != false;
+	return bParam0 && bParam1 != false;
 }
 
 void func_46() // Position - 0x1A80 (6784)
@@ -2162,9 +2162,9 @@ char* func_57(int iParam0) // Position - 0x283D (10301)
 	return "";
 }
 
-void func_58(var uParam0, int iParam1, int iParam2) // Position - 0x2888 (10376)
+void func_58(var uParam0, Object obParam1, int iParam2) // Position - 0x2888 (10376)
 {
-	switch (iParam1)
+	switch (obParam1)
 	{
 		case 11:
 			switch (iParam2)
@@ -2411,9 +2411,9 @@ int func_59() // Position - 0x2FEF (12271)
 	return func_60(Global_113638.f_20, Global_113638.f_29);
 }
 
-int func_60(int iParam0, int iParam1) // Position - 0x3007 (12295)
+int func_60(Object obParam0, int iParam1) // Position - 0x3007 (12295)
 {
-	iParam0 = iParam0;
+	obParam0 = obParam0;
 
 	switch (iParam1)
 	{

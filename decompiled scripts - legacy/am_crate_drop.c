@@ -44904,7 +44904,7 @@ void func_303(int iParam0, int iParam1) // Position - 0x330FC (209148)
 
 BOOL func_304() // Position - 0x33151 (209233)
 {
-	if (MISC::IS_PC_VERSION() && Global_1988062 == 0)
+	if (MISC::IS_PC_VERSION() && Global_1988063 == 0)
 		return false;
 
 	return false;
@@ -46114,7 +46114,7 @@ eHudColour func_340(Player plParam0, Player plParam1, int iParam2, BOOL bParam3,
 		}
 		else if (Global_1836707 || Global_1836697 || Global_1845250[plParam0 /*880*/] == 0)
 		{
-			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == 0)
+			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == false)
 				return func_333(true);
 			else
 				return func_329(plParam1, true, playerTeam, bParam4);

@@ -215,9 +215,9 @@ void main() // Position - 0x0 (0)
 		}
 	
 		BUILTIN::WAIT(ms);
-		Global_46122 = 0;
-		Global_46123 = 0;
-		Global_46124 = 0;
+		Global_46122 = false;
+		Global_46123 = false;
+		Global_46124 = false;
 		num8 = Global_55068[0 /*120*/];
 	
 		if (num8 > 16)
@@ -257,7 +257,7 @@ void main() // Position - 0x0 (0)
 	return;
 }
 
-void func_1(int iParam0) // Position - 0x439 (1081)
+void func_1(const char* sParam0) // Position - 0x439 (1081)
 {
 	int num;
 	int num2;
@@ -266,7 +266,7 @@ void func_1(int iParam0) // Position - 0x439 (1081)
 	int num4;
 	char* str;
 
-	num = func_14(iParam0);
+	num = func_14(sParam0);
 
 	if (num == -1)
 		return;
@@ -287,7 +287,7 @@ void func_1(int iParam0) // Position - 0x439 (1081)
 		unk = { Global_55430[num /*203*/].f_10[num3 /*48*/].f_2 };
 	}
 
-	if (iParam0 == 28)
+	if (sParam0 == 28)
 	{
 		switch (num2)
 		{
@@ -915,7 +915,7 @@ struct<16> func_13(int iParam0) // Position - 0x1283 (4739)
 	return unk17;
 }
 
-int func_14(int iParam0) // Position - 0x12B4 (4788)
+int func_14(const char* sParam0) // Position - 0x12B4 (4788)
 {
 	int i;
 	int num;
@@ -927,7 +927,7 @@ int func_14(int iParam0) // Position - 0x12B4 (4788)
 
 	for (i = 0; i < 7; i = i + 1)
 	{
-		if (Global_55430[i /*203*/].f_2 == iParam0)
+		if (Global_55430[i /*203*/].f_2 == sParam0)
 		{
 			if (Global_55430[i /*203*/].f_1 > num2)
 			{
@@ -943,12 +943,12 @@ int func_14(int iParam0) // Position - 0x12B4 (4788)
 	return -1;
 }
 
-void func_15(int iParam0, char* sParam1) // Position - 0x1318 (4888)
+void func_15(const char* sParam0, char* sParam1) // Position - 0x1318 (4888)
 {
 	int num;
 	int num2;
 
-	num = func_14(iParam0);
+	num = func_14(sParam0);
 
 	if (num == -1)
 		return;
@@ -965,11 +965,11 @@ void func_15(int iParam0, char* sParam1) // Position - 0x1318 (4888)
 	return;
 }
 
-void func_16(int iParam0, char* sParam1, BOOL bParam2) // Position - 0x13CD (5069)
+void func_16(const char* sParam0, char* sParam1, BOOL bParam2) // Position - 0x13CD (5069)
 {
 	int num;
 
-	num = func_14(iParam0);
+	num = func_14(sParam0);
 
 	if (num == -1)
 		return;
@@ -987,19 +987,19 @@ void func_16(int iParam0, char* sParam1, BOOL bParam2) // Position - 0x13CD (506
 	TEXT_LABEL_ASSIGN_STRING(&Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 - 1 /*48*/].f_7[4 /*4*/], "", 16);
 
 	if (bParam2)
-		func_1(iParam0);
+		func_1(sParam0);
 
 	return;
 }
 
-BOOL func_17(int iParam0, int iParam1, BOOL bParam2) // Position - 0x14F4 (5364)
+BOOL func_17(const char* sParam0, int iParam1, BOOL bParam2) // Position - 0x14F4 (5364)
 {
 	int num;
 	int i;
 	int num2;
 	int num3;
 
-	num = func_19(iParam0, true);
+	num = func_19(sParam0, true);
 
 	if (num == -1)
 		return false;
@@ -1007,7 +1007,7 @@ BOOL func_17(int iParam0, int iParam1, BOOL bParam2) // Position - 0x14F4 (5364)
 	if (Global_55430[num /*203*/].f_9 == 4)
 		return false;
 
-	Global_55430[num /*203*/].f_2 = iParam0;
+	Global_55430[num /*203*/].f_2 = sParam0;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/] = iParam1;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/].f_1 = 0;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/].f_6 = 0;
@@ -1123,22 +1123,22 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < 0)
-							Global_46122 = 0;
+						if (Global_46122 < false)
+							Global_46122 = false;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < 0)
-							Global_46123 = 0;
+						if (Global_46123 < false)
+							Global_46123 = false;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < 0)
-							Global_46124 = 0;
+						if (Global_46124 < false)
+							Global_46124 = false;
 						break;
 				}
 			}
@@ -1169,22 +1169,22 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < 0)
-							Global_46122 = 0;
+						if (Global_46122 < false)
+							Global_46122 = false;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < 0)
-							Global_46123 = 0;
+						if (Global_46123 < false)
+							Global_46123 = false;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < 0)
-							Global_46124 = 0;
+						if (Global_46124 < false)
+							Global_46124 = false;
 						break;
 				}
 			}
@@ -1246,7 +1246,7 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 	return;
 }
 
-int func_19(int iParam0, BOOL bParam1) // Position - 0x1AC3 (6851)
+int func_19(const char* sParam0, BOOL bParam1) // Position - 0x1AC3 (6851)
 {
 	int num;
 	int i;
@@ -1258,7 +1258,7 @@ int func_19(int iParam0, BOOL bParam1) // Position - 0x1AC3 (6851)
 	int num4;
 	int k;
 
-	num = func_14(iParam0);
+	num = func_14(sParam0);
 
 	if (num > -1)
 		if (Global_55430[num /*203*/].f_9 < 4)
@@ -1349,7 +1349,7 @@ int func_19(int iParam0, BOOL bParam1) // Position - 0x1AC3 (6851)
 		}
 	}
 
-	Global_55430[num2 /*203*/].f_2 = iParam0;
+	Global_55430[num2 /*203*/].f_2 = sParam0;
 	Global_55430[num2 /*203*/].f_3 = 0;
 
 	if (!bParam1)
@@ -1677,7 +1677,7 @@ void func_32(int iParam0, BOOL bParam1) // Position - 0x2239 (8761)
 		if (num < 0)
 			return;
 	
-		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[num] /*12*/].f_4 == 0)
+		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[num] /*12*/].f_4 == false)
 			Global_49455[iParam0 /*46*/].f_1 = 1;
 	
 		return;
@@ -1702,7 +1702,7 @@ void func_32(int iParam0, BOOL bParam1) // Position - 0x2239 (8761)
 
 	if (Global_49455[iParam0 /*46*/].f_31 == Global_49455[iParam0 /*46*/].f_30)
 	{
-		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[Global_49455[iParam0 /*46*/].f_42 - 1] /*12*/].f_4 == 0)
+		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[Global_49455[iParam0 /*46*/].f_42 - 1] /*12*/].f_4 == false)
 		{
 			Global_49455[iParam0 /*46*/].f_1 = 1;
 			return;
@@ -3073,22 +3073,22 @@ eCharacter _GET_CURRENT_PLAYER_CHARACTER_0() // Position - 0x4946 (18758)
 	return Global_114931.f_2370.f_539.f_4321;
 }
 
-BOOL func_56(Ped pedParam0) // Position - 0x495F (18783)
+BOOL func_56(ePedComponentType epctParam0) // Position - 0x495F (18783)
 {
-	if (pedParam0 == 0)
+	if (epctParam0 == PV_COMP_HEAD)
 		return false;
 
-	if (func_57(pedParam0) == -1)
+	if (func_57(epctParam0) == -1)
 		return false;
 
 	return true;
 }
 
-int func_57(Ped pedParam0) // Position - 0x4980 (18816)
+int func_57(ePedComponentType epctParam0) // Position - 0x4980 (18816)
 {
 	int i;
 
-	if (pedParam0 == 0)
+	if (epctParam0 == PV_COMP_HEAD)
 		return -1;
 
 	i = 0;
@@ -3096,7 +3096,7 @@ int func_57(Ped pedParam0) // Position - 0x4980 (18816)
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!(Global_45897[i /*5*/] == -1))
-			if (pedParam0 == Global_45897[i /*5*/].f_1)
+			if (epctParam0 == Global_45897[i /*5*/].f_1)
 				return i;
 	}
 
@@ -3119,15 +3119,15 @@ BOOL func_59() // Position - 0x49DE (18910)
 	return false;
 }
 
-void func_60(int iParam0) // Position - 0x49F7 (18935)
+void func_60(const char* sParam0) // Position - 0x49F7 (18935)
 {
 	int num;
 
-	if (iParam0 == 26)
+	if (sParam0 == 26)
 		if (!IS_BIT_SET(Global_114931.f_24993, 4 - 1))
 			return;
 
-	num = func_14(iParam0);
+	num = func_14(sParam0);
 
 	if (num == -1)
 		return;

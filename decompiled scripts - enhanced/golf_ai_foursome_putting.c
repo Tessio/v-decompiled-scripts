@@ -5395,7 +5395,7 @@ int func_211(float fParam0, var uParam1, var uParam2, float fParam3, BOOL bParam
 	{
 		if (func_219(PLAYER::PLAYER_ID(), true, false) && !(func_218() || func_217()))
 		{
-			if (bParam9 && _NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, false) && STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && Global_2658294[PLAYER::PLAYER_ID() /*468*/].f_236 == 1)
+			if (bParam9 && _NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, false) && STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && Global_2658294[PLAYER::PLAYER_ID() /*468*/].f_236 == true)
 			{
 			}
 			else if (func_215() == TRANSITION_STATE_POST_BINK_VIDEO_WARP)
@@ -7059,9 +7059,9 @@ void func_296(var uParam0, int iParam1) // Position - 0x9F6C (40812)
 	return;
 }
 
-BOOL func_297(int iParam0) // Position - 0x9F7A (40826)
+BOOL func_297(char* sParam0) // Position - 0x9F7A (40826)
 {
-	return Global_113959.f_1 && iParam0 != false;
+	return Global_113959.f_1 && sParam0 != false;
 }
 
 Vector3 func_298(var uParam0, int iParam1) // Position - 0x9F8D (40845)

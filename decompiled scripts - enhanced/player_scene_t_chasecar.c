@@ -618,7 +618,7 @@ void main() // Position - 0x0 (0)
 	func_90();
 	func_86();
 
-	while (iLocal_449 && func_82(4, 0))
+	while (iLocal_449 && func_82(4, PV_COMP_HEAD))
 	{
 		BUILTIN::WAIT(0);
 	
@@ -850,7 +850,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = false;
+	Global_23014 = 0;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -874,9 +874,9 @@ BOOL func_8(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x534 (1332)
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = false;
-					Global_22996 = 0;
-					Global_22997 = 0;
+					Global_23053 = 0;
+					Global_22996 = false;
+					Global_22997 = false;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -1045,9 +1045,9 @@ void func_9() // Position - 0x802 (2050)
 
 	if (Global_23006)
 	{
-		TEXT_LABEL_COPY(&(Global_1979846.f_1), { Global_22619 }, 4);
-		Global_1979846 = Global_8778;
-		Global_1979846.f_6 = Global_23010;
+		TEXT_LABEL_COPY(&(Global_1979847.f_1), { Global_22619 }, 4);
+		Global_1979847 = Global_8778;
+		Global_1979847.f_6 = Global_23010;
 	}
 
 	return;
@@ -1657,7 +1657,7 @@ BOOL func_43(var uParam0) // Position - 0x13CF (5071)
 	return false;
 }
 
-int func_44(BOOL bParam0) // Position - 0x13FA (5114)
+BOOL func_44(BOOL bParam0) // Position - 0x13FA (5114)
 {
 	switch (Global_44886)
 	{
@@ -1714,13 +1714,13 @@ BOOL func_46(const char* sParam0) // Position - 0x14BB (5307)
 			break;
 	
 		case 4:
-			if (func_44(false) < 1)
+			if (func_44(false) < true)
 				return true;
 			break;
 	
 		case 5:
 		case 15:
-			if (func_44(false) < 1)
+			if (func_44(false) < true)
 				return true;
 			break;
 	
@@ -3019,7 +3019,7 @@ BOOL func_81() // Position - 0x2DC1 (11713)
 	return false;
 }
 
-int func_82(int iParam0, Ped pedParam1) // Position - 0x2E9E (11934)
+int func_82(int iParam0, ePedComponentType epctParam1) // Position - 0x2E9E (11934)
 {
 	Vector3 entityCoords;
 	float num;
@@ -3040,30 +3040,30 @@ int func_82(int iParam0, Ped pedParam1) // Position - 0x2E9E (11934)
 		if (!func_84(iParam0, func_85()))
 			return 0;
 	
-		if (ENTITY::DOES_ENTITY_EXIST(pedParam1))
+		if (ENTITY::DOES_ENTITY_EXIST(epctParam1))
 		{
-			entityCoords = { ENTITY::GET_ENTITY_COORDS(pedParam1, false) };
+			entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam1, false) };
 			num = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), entityCoords);
 		
 			if (num > 250f)
-				if (!ENTITY::IS_ENTITY_DEAD(pedParam1, false))
-					if (!ENTITY::IS_ENTITY_ON_SCREEN(pedParam1))
+				if (!ENTITY::IS_ENTITY_DEAD(epctParam1, false))
+					if (!ENTITY::IS_ENTITY_ON_SCREEN(epctParam1))
 						return 0;
 				else if (!CAM::IS_SPHERE_VISIBLE(entityCoords, 1.5f))
 					return 0;
 		}
-		else if (pedParam1 == func_83(Global_102175) && pedParam1 != 0)
+		else if (epctParam1 == func_83(Global_102175) && epctParam1 != PV_COMP_HEAD)
 		{
-			Global_102175 = 0;
+			Global_102175 = PV_COMP_HEAD;
 		}
 	}
 
 	return 1;
 }
 
-Ped func_83(Ped pedParam0) // Position - 0x2F82 (12162)
+ePedComponentType func_83(ePedComponentType epctParam0) // Position - 0x2F82 (12162)
 {
-	return pedParam0;
+	return epctParam0;
 }
 
 BOOL func_84(int iParam0, int iParam1) // Position - 0x2F8C (12172)

@@ -5444,9 +5444,9 @@ void func_80() // Position - 0x46D9 (18137)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -6560,7 +6560,7 @@ void func_121(int iParam0, char* sParam1, int iParam2, char* sParam3, int iParam
 	return;
 }
 
-void func_122(ePedComponentType epctParam0, char* sParam1, ePedComponentType epctParam2, int iParam3, int iParam4, int iParam5, char* sParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15) // Position - 0x5DCF (24015)
+void func_122(ePedComponentType epctParam0, char* sParam1, int iParam2, int iParam3, int iParam4, int iParam5, char* sParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15) // Position - 0x5DCF (24015)
 {
 	int num;
 	int i;
@@ -6584,7 +6584,7 @@ void func_122(ePedComponentType epctParam0, char* sParam1, ePedComponentType epc
 		Global_1679103.f_2872[num] = epctParam0;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679103.f_2872.f_11[num /*16*/], sParam1, 64);
 		Global_1679103.f_2872.f_183[num] = iParam3;
-		Global_1679103.f_2872.f_172[num] = epctParam2;
+		Global_1679103.f_2872.f_172[num] = iParam2;
 		Global_1679103.f_2872.f_205[num] = iParam4;
 		Global_1679103.f_2872.f_216[num] = iParam5;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679103.f_2872.f_259[num /*16*/], sParam6, 64);
@@ -51413,10 +51413,10 @@ void func_665() // Position - 0x3C686 (247430)
 	return;
 }
 
-void func_666(BOOL bParam0, BOOL bParam1) // Position - 0x3C6D3 (247507)
+void func_666(int iParam0, int iParam1) // Position - 0x3C6D3 (247507)
 {
-	Global_99711 = bParam0;
-	Global_99712 = bParam1;
+	Global_99711 = iParam0;
+	Global_99712 = iParam1;
 	return;
 }
 

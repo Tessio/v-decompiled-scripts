@@ -42055,7 +42055,7 @@ float func_385() // Position - 0x2BE03 (179715)
 
 Vector3 func_386() // Position - 0x2BE34 (179764)
 {
-	if (IS_BIT_SET(Global_1988018, 9))
+	if (IS_BIT_SET(Global_1988019, 9))
 		return 1387.3915f, 3615.8123f, 37.926f;
 
 	return 612.673f, -403.2929f, 23.7075f;
@@ -42997,29 +42997,29 @@ BOOL func_447() // Position - 0x2D086 (184454)
 	char* iplName;
 	int randomIntInRange;
 
-	if (Global_1978632 == 0)
+	if (Global_1978633 == 0)
 	{
 		if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 		{
 			if (Global_2649159.f_1263 == 0)
 				return false;
 			else
-				Global_1978632 = Global_2649159.f_1263;
+				Global_1978633 = Global_2649159.f_1263;
 		}
 		else
 		{
 			randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 1000);
 		
 			if (randomIntInRange < 500)
-				Global_1978632 = 1;
+				Global_1978633 = 1;
 			else
-				Global_1978632 = 2;
+				Global_1978633 = 2;
 		}
 	}
 
-	if (Global_1978632 == 1)
+	if (Global_1978633 == 1)
 		iplName = "h4_islandx_disc_StrandedWhale";
-	else if (Global_1978632 == 2)
+	else if (Global_1978633 == 2)
 		iplName = "h4_islandx_disc_StrandedShark";
 
 	MISC::IS_STRING_NULL_OR_EMPTY(iplName);
@@ -49756,7 +49756,7 @@ BOOL func_682(BOOL bParam0) // Position - 0x35B0E (219918)
 		if (func_683(func_685()))
 			return true;
 
-	if (Global_1982623 && !bParam0)
+	if (Global_1982624 && !bParam0)
 		return true;
 
 	return false;
@@ -49836,11 +49836,11 @@ BOOL func_688(BOOL bParam0) // Position - 0x35C69 (220265)
 	}
 	else if (!func_671() && func_308(250))
 	{
-		Global_1982622 = false;
+		Global_1982623 = false;
 		func_115(250);
 	}
 
-	if (Global_1982622 && !bParam0)
+	if (Global_1982623 && !bParam0)
 		return true;
 
 	return false;
@@ -50213,9 +50213,9 @@ void func_714(Cam caParam0, int iParam1, var uParam2, var uParam3, var uParam4, 
 	{
 		if (IS_BIT_SET(iParam16, 6))
 		{
-			entityCoords = { Global_1978755.f_1081 };
-			finalRenderedCamRot = { Global_1978755.f_1081.f_3 };
-			finalRenderedCamFov = Global_1978755.f_1081.f_6;
+			entityCoords = { Global_1978756.f_1081 };
+			finalRenderedCamRot = { Global_1978756.f_1081.f_3 };
+			finalRenderedCamFov = Global_1978756.f_1081.f_6;
 		}
 		else
 		{
@@ -50241,8 +50241,8 @@ void func_714(Cam caParam0, int iParam1, var uParam2, var uParam3, var uParam4, 
 		if (!func_671())
 			flag2 = false;
 	
-		if (IS_BIT_SET(Global_1982590.f_1, 19))
-			MISC::CLEAR_BIT(&(Global_1982590.f_1), 19);
+		if (IS_BIT_SET(Global_1982591.f_1, 19))
+			MISC::CLEAR_BIT(&(Global_1982591.f_1), 19);
 	}
 	else if (IS_BIT_SET(iParam16, 10))
 	{

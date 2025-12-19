@@ -2889,7 +2889,7 @@ float func_84(int iParam0) // Position - 0x2A52 (10834)
 
 int func_85() // Position - 0x2AAA (10922)
 {
-	return Global_1978496.f_1;
+	return Global_1978497.f_1;
 }
 
 void func_86() // Position - 0x2AB8 (10936)
@@ -3402,7 +3402,7 @@ BOOL func_102() // Position - 0x330C (13068)
 
 BOOL func_103(int iParam0) // Position - 0x3357 (13143)
 {
-	return IS_BIT_SET(Global_1978496, func_104(iParam0));
+	return IS_BIT_SET(Global_1978497, func_104(iParam0));
 }
 
 int func_104(int iParam0) // Position - 0x336A (13162)
@@ -3467,7 +3467,7 @@ BOOL func_108(Player plParam0) // Position - 0x344F (13391)
 
 BOOL func_109() // Position - 0x3480 (13440)
 {
-	return IS_BIT_SET(Global_1978496, 0);
+	return IS_BIT_SET(Global_1978497, 0);
 }
 
 BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x348E (13454)
@@ -3581,9 +3581,9 @@ void func_121(int iParam0, BOOL bParam1) // Position - 0x35E1 (13793)
 {
 	if (bParam1)
 		if (!func_103(iParam0))
-			MISC::SET_BIT(&Global_1978496, func_104(iParam0));
+			MISC::SET_BIT(&Global_1978497, func_104(iParam0));
 	else if (func_103(iParam0))
-		MISC::CLEAR_BIT(&Global_1978496, func_104(iParam0));
+		MISC::CLEAR_BIT(&Global_1978497, func_104(iParam0));
 
 	return;
 }

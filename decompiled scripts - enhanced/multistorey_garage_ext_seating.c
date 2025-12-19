@@ -360,10 +360,10 @@ void func_2(var uParam0, int iParam1) // Position - 0x17C (380)
 	return;
 }
 
-void func_3(int iParam0) // Position - 0x18A (394)
+void func_3(BOOL bParam0) // Position - 0x18A (394)
 {
-	Global_2697011 = iParam0;
-	Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_878 = iParam0;
+	Global_2697011 = bParam0;
+	Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_878 = bParam0;
 	return;
 }
 
@@ -887,7 +887,7 @@ BOOL func_17() // Position - 0xD82 (3458)
 
 BOOL func_18() // Position - 0xDA4 (3492)
 {
-	if (Global_2673274.f_1023.f_5 == -1)
+	if (Global_2673274.f_1023.f_5 == PV_COMP_INVALID)
 		return false;
 
 	return true;
@@ -1798,19 +1798,19 @@ BOOL func_59(int iParam0) // Position - 0x1D9D (7581)
 	switch (iParam0)
 	{
 		case 1:
-			return Global_1983864 == 3;
+			return Global_1983865 == 3;
 	
 		case 3:
-			return Global_1983864 == 3;
+			return Global_1983865 == 3;
 	
 		case 4:
-			return Global_1983864 == 1;
+			return Global_1983865 == 1;
 	
 		case 5:
-			return Global_1983864 != 2 && Global_1983864 != -1;
+			return Global_1983865 != 2 && Global_1983865 != -1;
 	
 		case 7:
-			return Global_1983864 == 2;
+			return Global_1983865 == 2;
 	
 		default:
 		
@@ -2560,31 +2560,31 @@ BOOL func_100(Player plParam0, int iParam1) // Position - 0x2A04 (10756)
 	return flag;
 }
 
-eCharacter func_101(int iParam0, BOOL bParam1) // Position - 0x2A5D (10845)
+eCharacter func_101(Interior inParam0, BOOL bParam1) // Position - 0x2A5D (10845)
 {
 	eCharacter character;
-	int num;
+	Interior interior;
 
-	num = iParam0;
+	interior = inParam0;
 
-	if (num == -1)
-		num = func_102();
+	if (interior == -1)
+		interior = func_102();
 
-	if (Global_1575072[num] == true)
+	if (Global_1575072[interior] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		character = Global_1574921[interior];
 		bParam1;
 	}
 
 	return character;
 }
 
-int func_102() // Position - 0x2A9E (10910)
+Interior func_102() // Position - 0x2A9E (10910)
 {
 	return Global_1574927;
 }

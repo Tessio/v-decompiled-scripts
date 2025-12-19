@@ -3672,14 +3672,14 @@ void func_70(const char* sParam0) // Position - 0x357E (13694)
 
 void func_71(var uParam0) // Position - 0x358C (13708)
 {
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	uParam0->f_692 = 0;
 	return;
 }
 
 BOOL func_72(var uParam0) // Position - 0x359F (13727)
 {
-	return Global_1988494 || uParam0->f_692;
+	return Global_1988495 || uParam0->f_692;
 }
 
 void func_73(int iParam0) // Position - 0x35B6 (13750)
@@ -3776,7 +3776,7 @@ void func_78(var uParam0) // Position - 0x36B1 (14001)
 	uParam0->f_697 = 0f;
 	uParam0->f_698 = 0f;
 	uParam0->f_699 = 1f;
-	Global_1988494 = 0;
+	Global_1988495 = 0;
 	return;
 }
 
@@ -10527,7 +10527,7 @@ void func_197(eBlipSprite ebsParam0, BOOL bParam1) // Position - 0xE880 (59520)
 	Blip firstBlipInfoId;
 	int num;
 	int blipInfoIdType;
-	eCharacter character;
+	int num2;
 
 	firstBlipInfoId = HUD::GET_FIRST_BLIP_INFO_ID(ebsParam0);
 	num = 20;
@@ -10687,9 +10687,9 @@ void func_197(eBlipSprite ebsParam0, BOOL bParam1) // Position - 0xE880 (59520)
 								break;
 						
 							case BLIP_HEIST_PREP:
-								character = func_206(&firstBlipInfoId);
+								num2 = func_206(&firstBlipInfoId);
 							
-								if (character == CHAR_GAYMILITARY || character == CHAR_DOMESTIC_GIRL || character == CHAR_LS_CUSTOMS || character == CHAR_DETONATEBOMB)
+								if (num2 == 33 || num2 == 92 || num2 == 89 || num2 == 88)
 									flag = false;
 								else
 									flag = true;
@@ -10920,7 +10920,7 @@ BOOL func_205(var uParam0) // Position - 0xEF60 (61280)
 	return false;
 }
 
-eCharacter func_206(var uParam0) // Position - 0xEFCE (61390)
+int func_206(var uParam0) // Position - 0xEFCE (61390)
 {
 	int i;
 

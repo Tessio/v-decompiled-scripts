@@ -227,10 +227,10 @@ void func_3(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x1CB (459)
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == true)
-			Global_34170 = true;
+		if (Global_34169 == BLIP_LEVEL)
+			Global_34170 = BLIP_LEVEL;
 	
-		Global_34169 = true;
+		Global_34169 = BLIP_LEVEL;
 	}
 
 	if (bParam1)
@@ -2432,10 +2432,10 @@ void func_78(int iParam0, BOOL bParam1) // Position - 0x3AFE (15102)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 4);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -2457,10 +2457,10 @@ void func_79(int iParam0, BOOL bParam1) // Position - 0x3B81 (15233)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 5);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -2487,10 +2487,10 @@ void func_80(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x3C04 (1536
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 11);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -2942,10 +2942,10 @@ void func_90(int iParam0, int iParam1) // Position - 0x468F (18063)
 
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	return;
 }
 
@@ -3185,10 +3185,10 @@ void func_98(int iParam0, int iParam1) // Position - 0x4CEE (19694)
 
 	MISC::SET_BITS_IN_RANGE(&(Global_34172[num /*23*/].f_11), 21, 26, iParam1);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -3207,10 +3207,10 @@ void func_99(int iParam0, eBlipSprite ebsParam1) // Position - 0x4D4C (19788)
 
 	Global_34172[num /*23*/].f_12[0] = ebsParam1;
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -3224,7 +3224,7 @@ void func_100(int iParam0, float fParam1) // Position - 0x4DBA (19898)
 	if (num < 0 || num >= 263 || iParam0 == 263)
 		return;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	Global_34172[num /*23*/].f_10 = fParam1;
 	Global_40222 = 1;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
@@ -3243,7 +3243,7 @@ void func_101(int iParam0, float fParam1, var uParam2, var uParam3) // Position 
 	if (fParam1 == Global_34172[num /*23*/][0 /*3*/] && fParam1.f_1 == Global_34172[num /*23*/][0 /*3*/].f_1 && fParam1.f_2 == Global_34172[num /*23*/][0 /*3*/].f_2)
 		return;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	Global_34172[num /*23*/][0 /*3*/] = { fParam1 };
 	Global_40222 = 1;
@@ -3264,10 +3264,10 @@ void func_102(int iParam0, BOOL bParam1) // Position - 0x4E9E (20126)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 28);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -3297,10 +3297,10 @@ void func_104(int iParam0, BOOL bParam1) // Position - 0x4F70 (20336)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 20);
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 20);
 	return;
 }
@@ -5824,30 +5824,30 @@ BOOL func_127(int iParam0) // Position - 0x92EA (37610)
 BOOL func_128(int iParam0) // Position - 0x9329 (37673)
 {
 	if (iParam0 == 58 || iParam0 == 59 || iParam0 == 62)
-		if (func_129(40) || func_129(CHAR_PEGASUS_DELIVERY) || func_129(CHAR_TANISHA) || func_129(CHAR_CHEF))
+		if (func_129(40) || func_129(41) || func_129(43) || func_129(47))
 			return true;
 
 	if (iParam0 == 24)
-		if (func_129(CHAR_PEGASUS_DELIVERY))
+		if (func_129(41))
 			return true;
 
 	return false;
 }
 
-BOOL func_129(eCharacter echParam0) // Position - 0x9395 (37781)
+BOOL func_129(BOOL bParam0) // Position - 0x9395 (37781)
 {
 	int i;
 
-	if (echParam0 == 94 || echParam0 == -1)
+	if (bParam0 == 94 || bParam0 == -1)
 		return false;
 
-	if (Global_96414[echParam0 /*2*/])
+	if (Global_96414[bParam0 /*2*/])
 		return true;
 
 	for (i = 0; i < Global_93181; i = i + 1)
 	{
 		if (Global_93181[i /*5*/] != -1)
-			if (Global_80576.f_109[Global_93181[i /*5*/] /*4*/] == echParam0)
+			if (Global_80576.f_109[Global_93181[i /*5*/] /*4*/] == bParam0)
 				return true;
 	}
 
@@ -6051,10 +6051,10 @@ void func_135(int iParam0, int iParam1) // Position - 0x9724 (38692)
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 16);
 	Global_34172[num /*23*/].f_22 = iParam1;
 
-	if (Global_34169 == true)
-		Global_34170 = true;
+	if (Global_34169 == BLIP_LEVEL)
+		Global_34170 = BLIP_LEVEL;
 
-	Global_34169 = true;
+	Global_34169 = BLIP_LEVEL;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }

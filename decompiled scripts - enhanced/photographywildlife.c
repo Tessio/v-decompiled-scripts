@@ -246,7 +246,7 @@
 	var uLocal_244 = 0;
 	var uLocal_245 = 0;
 	int iLocal_246 = 0;
-	int iLocal_247 = 0;
+	BOOL bLocal_247 = 0;
 	int iLocal_248 = 0;
 	int iLocal_249 = 0;
 	int iLocal_250 = 0;
@@ -423,7 +423,7 @@ void func_6(int iParam0, int iParam1, BOOL bParam2) // Position - 0x29C (668)
 	return;
 }
 
-void func_7(int iParam0) // Position - 0x2D7 (727)
+void func_7(const char* sParam0) // Position - 0x2D7 (727)
 {
 	int num;
 	int num2;
@@ -432,7 +432,7 @@ void func_7(int iParam0) // Position - 0x2D7 (727)
 	int num4;
 	char* str;
 
-	num = func_13(iParam0);
+	num = func_13(sParam0);
 
 	if (num == -1)
 		return;
@@ -453,7 +453,7 @@ void func_7(int iParam0) // Position - 0x2D7 (727)
 		unk = { Global_55430[num /*203*/].f_10[num3 /*48*/].f_2 };
 	}
 
-	if (iParam0 == 28)
+	if (sParam0 == 28)
 	{
 		switch (num2)
 		{
@@ -998,7 +998,7 @@ struct<16> func_12(int iParam0) // Position - 0xF7F (3967)
 	return unk17;
 }
 
-int func_13(int iParam0) // Position - 0xFB0 (4016)
+int func_13(const char* sParam0) // Position - 0xFB0 (4016)
 {
 	int i;
 	int num;
@@ -1010,7 +1010,7 @@ int func_13(int iParam0) // Position - 0xFB0 (4016)
 
 	for (i = 0; i < 7; i = i + 1)
 	{
-		if (Global_55430[i /*203*/].f_2 == iParam0)
+		if (Global_55430[i /*203*/].f_2 == sParam0)
 		{
 			if (Global_55430[i /*203*/].f_1 > num2)
 			{
@@ -1157,22 +1157,22 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < 0)
-							Global_46122 = 0;
+						if (Global_46122 < false)
+							Global_46122 = false;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < 0)
-							Global_46123 = 0;
+						if (Global_46123 < false)
+							Global_46123 = false;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < 0)
-							Global_46124 = 0;
+						if (Global_46124 < false)
+							Global_46124 = false;
 						break;
 				}
 			}
@@ -1203,22 +1203,22 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < 0)
-							Global_46122 = 0;
+						if (Global_46122 < false)
+							Global_46122 = false;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < 0)
-							Global_46123 = 0;
+						if (Global_46123 < false)
+							Global_46123 = false;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < 0)
-							Global_46124 = 0;
+						if (Global_46124 < false)
+							Global_46124 = false;
 						break;
 				}
 			}
@@ -1469,8 +1469,8 @@ void func_21() // Position - 0x18A6 (6310)
 					func_28("PW_CHALLENGE" /*Wildlife photographs taken*/);
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(func_26());
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
-					iLocal_247 = func_26();
-					Global_34029 = iLocal_247;
+					bLocal_247 = func_26();
+					Global_34029 = bLocal_247;
 					BUILTIN::SETTIMERB(0);
 					AUDIO::PLAY_SOUND_FRONTEND(-1, "UNDER_THE_BRIDGE", "HUD_AWARDS", true);
 				}
@@ -1493,7 +1493,7 @@ void func_21() // Position - 0x18A6 (6310)
 			{
 				func_23();
 			
-				if (Global_34029 > iLocal_247)
+				if (Global_34029 > bLocal_247)
 					iLocal_79 = 3;
 			}
 			break;
@@ -1507,7 +1507,7 @@ void func_21() // Position - 0x18A6 (6310)
 			{
 				func_23();
 			
-				if (Global_34029 > iLocal_247)
+				if (Global_34029 > bLocal_247)
 					iLocal_79 = 3;
 			}
 			break;
@@ -1820,12 +1820,12 @@ void func_42() // Position - 0x1E95 (7829)
 	return;
 }
 
-void func_43(int iParam0, char* sParam1) // Position - 0x1F55 (8021)
+void func_43(const char* sParam0, char* sParam1) // Position - 0x1F55 (8021)
 {
 	int num;
 	int num2;
 
-	num = func_13(iParam0);
+	num = func_13(sParam0);
 
 	if (num == -1)
 		return;

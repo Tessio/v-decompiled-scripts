@@ -565,9 +565,9 @@ BOOL func_10(Player plParam0) // Position - 0x10B0 (4272)
 	return func_11(func_12(plParam0));
 }
 
-BOOL func_11(int iParam0) // Position - 0x10C2 (4290)
+BOOL func_11(ePedComponentType epctParam0) // Position - 0x10C2 (4290)
 {
-	switch (iParam0)
+	switch (epctParam0)
 	{
 		case 167:
 		case 169:
@@ -581,19 +581,19 @@ BOOL func_11(int iParam0) // Position - 0x10C2 (4290)
 	return 0;
 }
 
-int func_12(Player plParam0) // Position - 0x10E8 (4328)
+ePedComponentType func_12(Player plParam0) // Position - 0x10E8 (4328)
 {
 	if (func_14(plParam0))
 		if (func_13(plParam0, false))
 			return Global_1892798[plParam0 /*615*/].f_10.f_34;
 
-	return -1;
+	return PV_COMP_INVALID;
 }
 
 BOOL func_13(Player plParam0, BOOL bParam1) // Position - 0x1114 (4372)
 {
 	if (func_14(plParam0))
-		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != -1 || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != -1)
+		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID)
 			return true;
 
 	return false;
@@ -692,7 +692,7 @@ BOOL func_21(Player plParam0, int iParam1) // Position - 0x1267 (4711)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_22(-1, false) == 8;
+		flag = func_22(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
 
@@ -703,28 +703,28 @@ BOOL func_21(Player plParam0, int iParam1) // Position - 0x1267 (4711)
 	return flag;
 }
 
-int func_22(int iParam0, BOOL bParam1) // Position - 0x12C0 (4800)
+eCharacter func_22(int iParam0, BOOL bParam1) // Position - 0x12C0 (4800)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_23();
+	if (num == -1)
+		num = func_23();
 
-	if (Global_1575072[num2] == 1)
+	if (Global_1575072[num] == 1)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_23() // Position - 0x1301 (4865)

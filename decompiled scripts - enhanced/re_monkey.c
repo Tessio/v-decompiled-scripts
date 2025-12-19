@@ -518,16 +518,16 @@ BOOL func_10(int iParam0, int iParam1) // Position - 0x8EE (2286)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x93F (2367)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x93F (2367)
 {
-	if (iParam2 == -1)
-		iParam2 = func_12();
+	if (inParam2 == -1)
+		inParam2 = func_12();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
 	return;
 }
 
-int func_12() // Position - 0x95D (2397)
+Interior func_12() // Position - 0x95D (2397)
 {
 	return Global_1574927;
 }

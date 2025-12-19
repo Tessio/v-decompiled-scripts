@@ -2379,7 +2379,7 @@ void func_78() // Position - 0x27E0 (10208)
 	var unk;
 	float num;
 
-	if (Global_102429.f_12[0] == true)
+	if (Global_102429.f_12[0] == 1)
 	{
 		func_218(&unk, &num);
 	
@@ -8857,7 +8857,7 @@ BOOL func_221() // Position - 0xC4DB (50395)
 		
 			if (func_4(veLocal_174))
 			{
-				Global_102429.f_12[0] = true;
+				Global_102429.f_12[0] = 1;
 				return true;
 			}
 		}
@@ -8914,7 +8914,7 @@ BOOL func_223(int iParam0, var uParam1, var uParam2, var uParam3, int iParam4) /
 					return true;
 				}
 			}
-			else if (Global_102429.f_12[0] != true || func_483(false))
+			else if (Global_102429.f_12[0] != 1 || func_483(false))
 			{
 				if (func_224(&veLocal_176, veLocal_176.f_6, veLocal_176.f_1, veLocal_176.f_4, true))
 				{
@@ -41055,7 +41055,7 @@ void func_484() // Position - 0x2F5D6 (194006)
 			break;
 	}
 
-	if (Global_102429.f_12[0] != true)
+	if (Global_102429.f_12[0] != 1)
 	{
 		if (!func_77() && !func_487() && !func_483(false))
 			func_486(PLAYER::PLAYER_PED_ID(), unk, num);

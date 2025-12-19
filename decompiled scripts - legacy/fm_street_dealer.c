@@ -1215,8 +1215,8 @@ void func_30(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 	int b;
 	int a;
 	int i;
-	ePedComponentType numberOfLinesForString;
-	ePedComponentType j;
+	BOOL numberOfLinesForString;
+	BOOL j;
 	int k;
 	int num2;
 	int num3;
@@ -1275,7 +1275,7 @@ void func_30(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 	float num42;
 	float size;
 	float size2;
-	ePedComponentType type;
+	BOOL flag8;
 	float num43;
 	float num44;
 	int m;
@@ -1324,7 +1324,7 @@ void func_30(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 
 	if (bParam3)
 	{
-		if (Global_24529.f_5821 <= PV_COMP_BERD)
+		if (Global_24529.f_5821 <= true)
 		{
 			func_67(Global_24529.f_5821 + 1, "DFLT_MNU_OPT" /*Exit*/, 0, true, false, false, false);
 			Global_24529.f_6617 = 1;
@@ -1464,7 +1464,7 @@ void func_30(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 		
 			while (num2 < Global_24529.f_5828 && numberOfLinesForString <= Global_24529.f_5821)
 			{
-				if (numberOfLinesForString >= PV_COMP_HEAD)
+				if (numberOfLinesForString >= false)
 				{
 					if (Global_24529.f_6088[numberOfLinesForString])
 					{
@@ -1946,15 +1946,15 @@ void func_30(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 			num4 = 0;
 			num5 = 0;
 			num6 = 0;
-			type = Global_24529.f_5821;
+			flag8 = Global_24529.f_5821;
 		
 			if (Global_24529.f_6332)
-				type = Global_24529.f_6335 - 1;
+				flag8 = Global_24529.f_6335 - 1;
 		
 			num43 = 0f;
 			num44 = 0f;
 		
-			for (j = PV_COMP_HEAD; j <= type; j = j + 1)
+			for (j = false; j <= flag8; j = j + 1)
 			{
 				num37 = 0.034722f;
 			
@@ -3962,7 +3962,7 @@ char* func_66(int iParam0) // Position - 0x56D4 (22228)
 	return "CommonMenu";
 }
 
-void func_67(ePedComponentType epctParam0, char* sParam1, int iParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x5749 (22345)
+void func_67(BOOL bParam0, char* sParam1, int iParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x5749 (22345)
 {
 	int num;
 	float num2;
@@ -3970,7 +3970,7 @@ void func_67(ePedComponentType epctParam0, char* sParam1, int iParam2, BOOL bPar
 	var unk;
 	float num4;
 
-	if (Global_24529.f_5821 > epctParam0)
+	if (Global_24529.f_5821 > bParam0)
 		return;
 
 	if (Global_24529.f_5821 >= 128)
@@ -3982,9 +3982,9 @@ void func_67(ePedComponentType epctParam0, char* sParam1, int iParam2, BOOL bPar
 	if (Global_24529.f_6346 < Global_24529.f_6344)
 		return;
 
-	if (Global_24529.f_5821 != epctParam0)
+	if (Global_24529.f_5821 != bParam0)
 	{
-		Global_24529.f_5821 = epctParam0;
+		Global_24529.f_5821 = bParam0;
 		Global_24529.f_5822 = 0;
 	}
 
@@ -4034,12 +4034,12 @@ void func_67(ePedComponentType epctParam0, char* sParam1, int iParam2, BOOL bPar
 		{
 			num4 = func_68(&Global_24529.f_79[Global_24529.f_5823 /*6*/]);
 		
-			if (num4 > Global_24529.f_6348[epctParam0])
-				Global_24529.f_6348[epctParam0] = num4;
+			if (num4 > Global_24529.f_6348[bParam0])
+				Global_24529.f_6348[bParam0] = num4;
 		}
 	}
 
-	MISC::SET_BIT(&Global_24529.f_5692[epctParam0], Global_24529.f_5822);
+	MISC::SET_BIT(&Global_24529.f_5692[bParam0], Global_24529.f_5822);
 	Global_24529.f_5822 = Global_24529.f_5822 + 1;
 	Global_24529.f_6347 = 1;
 	Global_24529.f_6345 = Global_24529.f_5823 - 1;
@@ -4067,16 +4067,16 @@ float func_69(char* sParam0) // Position - 0x5981 (22913)
 	return func_40(true);
 }
 
-void func_70(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x59BE (22974)
+void func_70(BOOL bParam0, BOOL bParam1) // Position - 0x59BE (22974)
 {
 	int num;
 
-	num = BUILTIN::FLOOR(BUILTIN::TO_FLOAT(epctParam0) / 32f);
+	num = BUILTIN::FLOOR(BUILTIN::TO_FLOAT(bParam0) / 32f);
 
 	if (bParam1)
-		MISC::SET_BIT(&Global_24529.f_6618[num], epctParam0 - (num * 32));
+		MISC::SET_BIT(&Global_24529.f_6618[num], bParam0 - (num * 32));
 	else
-		MISC::CLEAR_BIT(&Global_24529.f_6618[num], epctParam0 - (num * 32));
+		MISC::CLEAR_BIT(&Global_24529.f_6618[num], bParam0 - (num * 32));
 
 	return;
 }
@@ -4298,16 +4298,16 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 	var unk;
 	int num;
 	char* str;
-	ePedComponentType type;
-	ePedComponentType type2;
-	ePedComponentType type3;
+	Hash hash;
+	Hash hash2;
+	Hash hash3;
 	var unk5;
 
 	num = func_117(uParam0);
 	str = "";
-	type = PV_COMP_INVALID;
-	type2 = PV_COMP_INVALID;
-	type3 = PV_COMP_INVALID;
+	hash = -1;
+	hash2 = -1;
+	hash3 = -1;
 
 	if (IS_BIT_SET(uParam0->f_5, 6))
 	{
@@ -4333,8 +4333,8 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				if (IS_BIT_SET(uParam0->f_5, 5))
 				{
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 16);
-					type2 = func_109(uParam0, num);
-					type3 = type2 * uParam0->f_13;
+					hash2 = func_109(uParam0, num);
+					hash3 = hash2 * uParam0->f_13;
 				}
 				else
 				{
@@ -4344,15 +4344,15 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				str = "SDM_COKE" /*Cocaine*/;
 			
 				if (IS_BIT_SET(uParam0->f_5, 4))
-					type = uParam0->f_13;
+					hash = uParam0->f_13;
 				break;
 		
 			case 3:
 				if (IS_BIT_SET(uParam0->f_5, 5))
 				{
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 16);
-					type2 = func_109(uParam0, num);
-					type3 = type2 * uParam0->f_14;
+					hash2 = func_109(uParam0, num);
+					hash3 = hash2 * uParam0->f_14;
 				}
 				else
 				{
@@ -4362,15 +4362,15 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				str = "SDM_METH" /*Meth*/;
 			
 				if (IS_BIT_SET(uParam0->f_5, 4))
-					type = uParam0->f_14;
+					hash = uParam0->f_14;
 				break;
 		
 			case 4:
 				if (IS_BIT_SET(uParam0->f_5, 5))
 				{
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 16);
-					type2 = func_109(uParam0, num);
-					type3 = type2 * uParam0->f_15;
+					hash2 = func_109(uParam0, num);
+					hash3 = hash2 * uParam0->f_15;
 				}
 				else
 				{
@@ -4380,15 +4380,15 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				str = "SDM_WEED" /*Weed*/;
 			
 				if (IS_BIT_SET(uParam0->f_5, 4))
-					type = uParam0->f_15;
+					hash = uParam0->f_15;
 				break;
 		
 			case 7:
 				if (IS_BIT_SET(uParam0->f_5, 5))
 				{
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 16);
-					type2 = func_109(uParam0, num);
-					type3 = type2 * uParam0->f_16;
+					hash2 = func_109(uParam0, num);
+					hash3 = hash2 * uParam0->f_16;
 				}
 				else
 				{
@@ -4398,7 +4398,7 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				str = "SDM_ACID" /*Acid*/;
 			
 				if (IS_BIT_SET(uParam0->f_5, 4))
-					type = uParam0->f_16;
+					hash = uParam0->f_16;
 				break;
 		}
 	}
@@ -4415,8 +4415,8 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				if (func_108(uParam0))
 				{
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 16);
-					type2 = func_109(uParam0, num);
-					type3 = type2 * uParam0->f_13;
+					hash2 = func_109(uParam0, num);
+					hash3 = hash2 * uParam0->f_13;
 				}
 				else
 				{
@@ -4424,15 +4424,15 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				}
 			
 				str = "SDM_COKE" /*Cocaine*/;
-				type = uParam0->f_13;
+				hash = uParam0->f_13;
 				break;
 		
 			case 3:
 				if (func_107(uParam0))
 				{
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 16);
-					type2 = func_109(uParam0, num);
-					type3 = type2 * uParam0->f_14;
+					hash2 = func_109(uParam0, num);
+					hash3 = hash2 * uParam0->f_14;
 				}
 				else
 				{
@@ -4440,15 +4440,15 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				}
 			
 				str = "SDM_METH" /*Meth*/;
-				type = uParam0->f_14;
+				hash = uParam0->f_14;
 				break;
 		
 			case 4:
 				if (func_106(uParam0))
 				{
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 16);
-					type2 = func_109(uParam0, num);
-					type3 = type2 * uParam0->f_15;
+					hash2 = func_109(uParam0, num);
+					hash3 = hash2 * uParam0->f_15;
 				}
 				else
 				{
@@ -4456,15 +4456,15 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				}
 			
 				str = "SDM_WEED" /*Weed*/;
-				type = uParam0->f_15;
+				hash = uParam0->f_15;
 				break;
 		
 			case 7:
 				if (func_83(uParam0))
 				{
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 16);
-					type2 = func_109(uParam0, num);
-					type3 = type2 * uParam0->f_16;
+					hash2 = func_109(uParam0, num);
+					hash3 = hash2 * uParam0->f_16;
 				}
 				else
 				{
@@ -4472,7 +4472,7 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 				}
 			
 				str = "SDM_ACID" /*Acid*/;
-				type = uParam0->f_16;
+				hash = uParam0->f_16;
 				break;
 		}
 	}
@@ -4484,38 +4484,38 @@ void func_79(var uParam0) // Position - 0x5E3D (24125)
 		if (!MISC::IS_STRING_NULL_OR_EMPTY(str))
 			func_81(str);
 	
-		if (type > PV_COMP_INVALID)
-			func_80(type);
+		if (hash > -1)
+			func_80(hash);
 	
-		if (type2 > PV_COMP_INVALID)
-			func_80(type2);
+		if (hash2 > -1)
+			func_80(hash2);
 	
-		if (type3 > PV_COMP_INVALID)
-			func_80(type3);
+		if (hash3 > -1)
+			func_80(hash3);
 	}
 	else if (IS_BIT_SET(uParam0->f_5, 5))
 	{
-		func_80(type2);
+		func_80(hash2);
 		func_81(str);
-		func_80(type3);
+		func_80(hash3);
 	}
 	else if (IS_BIT_SET(uParam0->f_5, 4))
 	{
 		func_81(str);
-		func_80(type);
+		func_80(hash);
 	}
 
 	return;
 }
 
-void func_80(ePedComponentType epctParam0) // Position - 0x61D6 (25046)
+void func_80(Hash hParam0) // Position - 0x61D6 (25046)
 {
 	if (Global_24529.f_5320 >= 3 || Global_24529.f_5319 >= 4)
 		return;
 
 	Global_24529.f_5253[Global_24529.f_5319] = 2;
 	Global_24529.f_5319 = Global_24529.f_5319 + 1;
-	Global_24529.f_5258[Global_24529.f_5320] = epctParam0;
+	Global_24529.f_5258[Global_24529.f_5320] = hParam0;
 	Global_24529.f_5320 = Global_24529.f_5320 + 1;
 	return;
 }
@@ -5048,7 +5048,7 @@ BOOL func_108(var uParam0) // Position - 0x6B19 (27417)
 	return 0;
 }
 
-ePedComponentType func_109(var uParam0, int iParam1) // Position - 0x6B3B (27451)
+Hash func_109(var uParam0, int iParam1) // Position - 0x6B3B (27451)
 {
 	int num;
 	int num2;
@@ -5234,7 +5234,7 @@ int func_117(var uParam0) // Position - 0x6D9E (28062)
 
 void func_118(var uParam0, BOOL bParam1, int iParam2) // Position - 0x6DCC (28108)
 {
-	ePedComponentType i;
+	BOOL i;
 	int num;
 
 	Global_24529.f_6342 = uParam0;
@@ -5248,7 +5248,7 @@ void func_118(var uParam0, BOOL bParam1, int iParam2) // Position - 0x6DCC (2810
 	{
 		for (i = Global_24529.f_6341; i <= Global_24529.f_6342; i = i + 1)
 		{
-			if (i >= PV_COMP_HEAD && i < 127)
+			if (i >= false && i < 127)
 				if (Global_24529.f_5692[i] != 0)
 					num = num + 1;
 		}
@@ -5260,7 +5260,7 @@ void func_118(var uParam0, BOOL bParam1, int iParam2) // Position - 0x6DCC (2810
 		
 			for (i = Global_24529.f_6341; i <= Global_24529.f_6342; i = i + 1)
 			{
-				if (i >= PV_COMP_HEAD && i < 127)
+				if (i >= false && i < 127)
 					if (Global_24529.f_5692[i] != 0)
 						num = num + 1;
 			}
@@ -5281,7 +5281,7 @@ void func_118(var uParam0, BOOL bParam1, int iParam2) // Position - 0x6DCC (2810
 
 void func_119(var uParam0) // Position - 0x6F1E (28446)
 {
-	ePedComponentType i;
+	BOOL i;
 	int num;
 	var unk;
 	BOOL flag;
@@ -5290,12 +5290,12 @@ void func_119(var uParam0) // Position - 0x6F1E (28446)
 	Hash hash;
 
 	func_126(uParam0);
-	i = PV_COMP_HEAD;
+	i = false;
 
-	for (i = PV_COMP_HEAD; i < uParam0->f_8; i = i + 1)
+	for (i = false; i < uParam0->f_8; i = i + 1)
 	{
 		num = uParam0->f_8[i];
-		flag = i == PV_COMP_HEAD;
+		flag = i == false;
 		num2 = flag ? 3 : 2;
 		flag2 = func_111(uParam0, num, &unk);
 	
@@ -6145,17 +6145,17 @@ void func_138(var uParam0) // Position - 0x8310 (33552)
 	return;
 }
 
-void func_139(var uParam0, ePedComponentType epctParam1, BOOL bParam2, BOOL bParam3) // Position - 0x838C (33676)
+void func_139(var uParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0x838C (33676)
 {
 	if (bParam2)
 	{
 		*uParam0 = *uParam0 + 1;
 	
-		if (*uParam0 > epctParam1)
+		if (*uParam0 > bParam1)
 			if (bParam3)
 				*uParam0 = 0;
 			else
-				*uParam0 = epctParam1;
+				*uParam0 = bParam1;
 	}
 	else
 	{
@@ -6163,7 +6163,7 @@ void func_139(var uParam0, ePedComponentType epctParam1, BOOL bParam2, BOOL bPar
 	
 		if (*uParam0 < 0)
 			if (bParam3)
-				*uParam0 = epctParam1;
+				*uParam0 = bParam1;
 			else
 				*uParam0 = 0;
 	}
@@ -8794,7 +8794,7 @@ void func_218(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 			PAD::ENABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_CURSOR_SCROLL_UP, true);
 			PAD::ENABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_CURSOR_SCROLL_DOWN, true);
 		
-			if (Global_4521271 == PV_COMP_INVALID || Global_4521271 == -4 || Global_4521271 == -6)
+			if (Global_4521271 == -1 || Global_4521271 == -4 || Global_4521271 == -6)
 			{
 				PAD::ENABLE_CONTROL_ACTION(CAMERA_CONTROL, INPUT_LOOK_LR, true);
 				PAD::ENABLE_CONTROL_ACTION(CAMERA_CONTROL, INPUT_LOOK_UD, true);
@@ -8880,7 +8880,7 @@ BOOL func_221() // Position - 0xB58D (46477)
 BOOL func_222() // Position - 0xB5AC (46508)
 {
 	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		if (Global_4521271 > PV_COMP_INVALID)
+		if (Global_4521271 > -1)
 			if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
 				return true;
 
@@ -8908,18 +8908,18 @@ int func_223(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0xB5D3 (4654
 		}
 		else
 		{
-			Global_4521271 = PV_COMP_INVALID;
+			Global_4521271 = -1;
 			return 0;
 		}
 	}
 
-	if (Global_4521271 > PV_COMP_INVALID || Global_4521271 == -3 || Global_4521271 == -2 || HUD::IS_MOUSE_ROLLED_OVER_INSTRUCTIONAL_BUTTONS())
+	if (Global_4521271 > -1 || Global_4521271 == -3 || Global_4521271 == -2 || HUD::IS_MOUSE_ROLLED_OVER_INSTRUCTIONAL_BUTTONS())
 	{
 		HUD::SET_MOUSE_CURSOR_STYLE(1);
 		return 0;
 	}
 
-	if (Global_4521271 == PV_COMP_INVALID && bParam0)
+	if (Global_4521271 == -1 && bParam0)
 	{
 		if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
 		{
@@ -8960,7 +8960,7 @@ void func_224(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 	{
-		Global_4521271 = PV_COMP_INVALID;
+		Global_4521271 = -1;
 		return;
 	}
 
@@ -8991,7 +8991,7 @@ void func_224(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	if (Global_4521271 == -6)
 		return;
 
-	Global_4521271 = PV_COMP_INVALID;
+	Global_4521271 = -1;
 	num4 = Global_4521265;
 	num5 = Global_4521266;
 
@@ -9025,7 +9025,7 @@ void func_224(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		if (Global_24529.f_6336 == -1)
 		{
-			Global_4521271 = PV_COMP_HEAD;
+			Global_4521271 = false;
 			num10 = 0;
 			return;
 		}
@@ -9069,7 +9069,7 @@ void func_224(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		return;
 	}
 
-	Global_4521271 = PV_COMP_INVALID;
+	Global_4521271 = -1;
 	return;
 }
 

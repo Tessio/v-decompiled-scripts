@@ -8314,10 +8314,10 @@ BOOL func_225(var uParam0, var uParam1, var uParam2, int iParam3, Hash hParam4, 
 	if (func_103(uParam0, uParam5, fParam8, hParam9, 1036831949))
 		return true;
 
-	func_104(uParam0, iParam3, hParam4, &Global_1982441, &(Global_1982441.f_3), &(Global_1982441.f_6), 1036831949);
-	func_104(uParam5, fParam8, hParam9, &(Global_1982441.f_7), &(Global_1982441.f_10), &(Global_1982441.f_13), 1036831949);
+	func_104(uParam0, iParam3, hParam4, &Global_1982442, &(Global_1982442.f_3), &(Global_1982442.f_6), 1036831949);
+	func_104(uParam5, fParam8, hParam9, &(Global_1982442.f_7), &(Global_1982442.f_10), &(Global_1982442.f_13), 1036831949);
 
-	if (MISC::GET_POINT_AREA_OVERLAP(Global_1982441, Global_1982441.f_3, Global_1982441.f_6, Global_1982441.f_7, Global_1982441.f_10, Global_1982441.f_13))
+	if (MISC::GET_POINT_AREA_OVERLAP(Global_1982442, Global_1982442.f_3, Global_1982442.f_6, Global_1982442.f_7, Global_1982442.f_10, Global_1982442.f_13))
 		return true;
 
 	return false;
@@ -13065,7 +13065,7 @@ eHudColour func_376(Player plParam0, Player plParam1, int iParam2, BOOL bParam3,
 		}
 		else if (Global_1836707 || Global_1836697 || Global_1845250[plParam0 /*880*/] == 0)
 		{
-			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == 0)
+			if (plParam0 == plParam1 || Global_1836707 == true && Global_1836717 == false)
 				return func_369(true);
 			else
 				return func_364(plParam1, true, playerTeam, bParam4);
@@ -14018,7 +14018,7 @@ int func_419(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 		}
 	}
 
-	if (Global_1978584 != -1 && echParam0 == Global_1978584)
+	if (Global_1978585 != -1 && echParam0 == Global_1978585)
 		num2 = 1;
 
 	func_420(echParam0, sParam1, num2, func_424(PLAYER::PLAYER_ID()));
@@ -14038,18 +14038,18 @@ void func_420(eCharacter echParam0, char* sParam1, BOOL bParam2, int iParam3) //
 	character.f_3 = 0;
 	character.f_4 = bParam2;
 	character.f_5 = iParam3;
-	character.f_6 = Global_1978567.f_7;
-	character.f_7 = Global_1978567.f_8;
-	character.f_8 = Global_1978567.f_9;
-	character.f_9 = Global_1978567.f_10;
-	character.f_10 = Global_1978567.f_11;
-	character.f_11 = Global_1978567.f_12;
-	character.f_12 = Global_1978567.f_13;
-	character.f_13 = Global_1978567.f_14;
+	character.f_6 = Global_1978568.f_7;
+	character.f_7 = Global_1978568.f_8;
+	character.f_8 = Global_1978568.f_9;
+	character.f_9 = Global_1978568.f_10;
+	character.f_10 = Global_1978568.f_11;
+	character.f_11 = Global_1978568.f_12;
+	character.f_12 = Global_1978568.f_13;
+	character.f_13 = Global_1978568.f_14;
 	STATS::PLAYSTATS_NPC_PHONE(&character);
 
 	if (bParam2)
-		Global_1978584 = -1;
+		Global_1978585 = -1;
 
 	return;
 }
@@ -15331,7 +15331,7 @@ int func_460(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 		}
 	}
 
-	if (Global_1978584 != -1 && echParam0 == Global_1978584)
+	if (Global_1978585 != -1 && echParam0 == Global_1978585)
 		num2 = 1;
 
 	func_461(echParam0, sParam1, num2, func_424(PLAYER::PLAYER_ID()));
@@ -15351,18 +15351,18 @@ void func_461(int iParam0, char* sParam1, BOOL bParam2, int iParam3) // Position
 	num.f_3 = 0;
 	num.f_4 = bParam2;
 	num.f_5 = iParam3;
-	num.f_6 = Global_1978567.f_7;
-	num.f_7 = Global_1978567.f_8;
-	num.f_8 = Global_1978567.f_9;
-	num.f_9 = Global_1978567.f_10;
-	num.f_10 = Global_1978567.f_11;
-	num.f_11 = Global_1978567.f_12;
-	num.f_12 = Global_1978567.f_13;
-	num.f_13 = Global_1978567.f_14;
+	num.f_6 = Global_1978568.f_7;
+	num.f_7 = Global_1978568.f_8;
+	num.f_8 = Global_1978568.f_9;
+	num.f_9 = Global_1978568.f_10;
+	num.f_10 = Global_1978568.f_11;
+	num.f_11 = Global_1978568.f_12;
+	num.f_12 = Global_1978568.f_13;
+	num.f_13 = Global_1978568.f_14;
 	STATS::PLAYSTATS_NPC_PHONE(&num);
 
 	if (bParam2)
-		Global_1978584 = -1;
+		Global_1978585 = -1;
 
 	return;
 }
@@ -15870,9 +15870,9 @@ void func_476() // Position - 0x14250 (82512)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;
@@ -15909,9 +15909,9 @@ void func_478() // Position - 0x142B8 (82616)
 	Global_22996 = Global_22997;
 	Global_22998 = { Global_23014 };
 	Global_22987 = Global_22988;
-	Global_23999 = false;
+	Global_23999 = 0;
 	Global_23032 = 0;
-	Global_23033 = false;
+	Global_23033 = 0;
 	MISC::CLEAR_BIT(&Global_9464, 16);
 	return;
 }

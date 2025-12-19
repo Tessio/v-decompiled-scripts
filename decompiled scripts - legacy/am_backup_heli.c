@@ -1324,7 +1324,7 @@ BOOL func_48(BOOL bParam0) // Position - 0x1555 (5461)
 	return Global_1575062;
 }
 
-var func_49() // Position - 0x1566 (5478)
+BOOL func_49() // Position - 0x1566 (5478)
 {
 	return Global_2685150.f_19;
 }
@@ -1978,9 +1978,9 @@ void func_67() // Position - 0x2182 (8578)
 
 	if (Global_22989)
 	{
-		TEXT_LABEL_COPY(&(Global_1978567.f_1), { Global_22602 }, 4);
-		Global_1978567 = Global_8778;
-		Global_1978567.f_6 = Global_22993;
+		TEXT_LABEL_COPY(&(Global_1978568.f_1), { Global_22602 }, 4);
+		Global_1978568 = Global_8778;
+		Global_1978568.f_6 = Global_22993;
 	}
 
 	return;

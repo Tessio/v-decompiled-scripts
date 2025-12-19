@@ -258,7 +258,7 @@ BOOL func_1() // Position - 0x122 (290)
 						VEHICLE::SET_VEHICLE_ENGINE_ON(vehiclePedIsIn, true, true, false);
 						ENTITY::APPLY_FORCE_TO_ENTITY(vehiclePedIsIn, 1, 0f, 0f, -1f, 0f, 0f, 0f, 0, true, true, true, false, true);
 					
-						if (!IS_BIT_SET(Global_1987967, 29))
+						if (!IS_BIT_SET(Global_1987968, 29))
 							TASK::TASK_VEHICLE_DRIVE_WANDER(PLAYER::PLAYER_PED_ID(), vehiclePedIsIn, 20f, 786603);
 					
 						bLocal_149 = true;
@@ -6375,7 +6375,7 @@ void func_180(int iParam0, int iParam1) // Position - 0x8254 (33364)
 	return;
 }
 
-void func_181(int iParam0, int iParam1, int iParam2, int iParam3, var uParam4, int iParam5) // Position - 0x82BC (33468)
+void func_181(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, int iParam5) // Position - 0x82BC (33468)
 {
 	Hash eventData;
 
@@ -6384,7 +6384,7 @@ void func_181(int iParam0, int iParam1, int iParam2, int iParam3, var uParam4, i
 	eventData.f_3 = iParam0;
 	eventData.f_4 = iParam2;
 	eventData.f_5 = iParam3;
-	eventData.f_6 = uParam4;
+	eventData.f_6 = iParam4;
 	eventData.f_7 = iParam5;
 
 	if (!(iParam1 == 0))
@@ -6393,7 +6393,7 @@ void func_181(int iParam0, int iParam1, int iParam2, int iParam3, var uParam4, i
 	return;
 }
 
-var func_182() // Position - 0x8309 (33545)
+int func_182() // Position - 0x8309 (33545)
 {
 	return Global_2733002.f_3988.f_350;
 }
@@ -15814,7 +15814,7 @@ BOOL func_367() // Position - 0x108A1 (67745)
 
 int func_368() // Position - 0x108BD (67773)
 {
-	return Global_1978614;
+	return Global_1978615;
 }
 
 int func_369(int iParam0) // Position - 0x108C9 (67785)
@@ -15853,8 +15853,8 @@ int func_369(int iParam0) // Position - 0x108C9 (67785)
 	src.f_8 = -1;
 	src.f_9 = -1;
 	src = iParam0;
-	MISC::COPY_SCRIPT_STRUCT(&(Global_1978614.f_2), &src, 11);
-	Global_1978614.f_1 = 0;
+	MISC::COPY_SCRIPT_STRUCT(&(Global_1978615.f_2), &src, 11);
+	Global_1978615.f_1 = 0;
 	func_370(1);
 	Global_1935015 = true;
 	return 1;
@@ -15862,7 +15862,7 @@ int func_369(int iParam0) // Position - 0x108C9 (67785)
 
 void func_370(int iParam0) // Position - 0x109A5 (68005)
 {
-	Global_1978614 = iParam0;
+	Global_1978615 = iParam0;
 	return;
 }
 
@@ -16325,7 +16325,7 @@ void func_385(var uParam0, int iParam1) // Position - 0x112BF (70335)
 
 BOOL func_386() // Position - 0x112CD (70349)
 {
-	if (func_171(PLAYER::PLAYER_ID(), true) && !Global_1978588)
+	if (func_171(PLAYER::PLAYER_ID(), true) && !Global_1978589)
 		return true;
 
 	return Global_262145.f_28915 || !func_387();
@@ -16449,7 +16449,7 @@ void func_401() // Position - 0x1143E (70718)
 void func_402() // Position - 0x1146D (70765)
 {
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(MISC::GET_HASH_KEY("AM_MP_ISLAND")) != 0 || NETWORK::NETWORK_IS_SCRIPT_ACTIVE("AM_MP_ISLAND", -1, true, 0))
-		Global_1978627 = true;
+		Global_1978628 = true;
 
 	return;
 }
@@ -16596,7 +16596,7 @@ void func_407(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bPara
 		if (bParam2)
 			flag2 = false;
 	
-		if (!bParam4 || num != func_30() || Global_1989162 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
+		if (!bParam4 || num != func_30() || Global_1989163 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
 		{
 			characterType = func_451(pedParam0);
 		
@@ -16637,7 +16637,7 @@ void func_407(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bPara
 				}
 			}
 		
-			if (Global_1989161)
+			if (Global_1989162)
 				func_411();
 		}
 		else
@@ -16658,7 +16658,7 @@ void func_408(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPar
 	eControlAction action;
 	int decorationIndex;
 
-	if (!Global_1989161)
+	if (!Global_1989162)
 		func_409(&pedParam0);
 
 	i = 0;
@@ -16666,7 +16666,7 @@ void func_408(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPar
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		action = Global_1989133[i];
+		action = Global_1989134[i];
 	
 		if (action <= -1)
 		{
@@ -16720,7 +16720,7 @@ void func_409(var uParam0) // Position - 0x119F4 (72180)
 
 	for (i = INPUT_NEXT_CAMERA; i < INPUT_PHONE; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
 	i = INPUT_NEXT_CAMERA;
@@ -16747,7 +16747,7 @@ void func_409(var uParam0) // Position - 0x119F4 (72180)
 		}
 	}
 
-	Global_1989161 = true;
+	Global_1989162 = true;
 	return;
 }
 
@@ -16762,20 +16762,20 @@ void func_410(eControlAction ecaParam0, BOOL bParam1) // Position - 0x11A9A (723
 	{
 		if (bParam1)
 		{
-			if (Global_1989133[i] == ecaParam0)
+			if (Global_1989134[i] == ecaParam0)
 				return;
-			else if (Global_1989133[i] == -1)
+			else if (Global_1989134[i] == -1)
 				num = i;
 		}
-		else if (Global_1989133[i] == ecaParam0)
+		else if (Global_1989134[i] == ecaParam0)
 		{
-			Global_1989133[i] = -1;
+			Global_1989134[i] = -1;
 			return;
 		}
 	}
 
 	if (bParam1 && num >= 0)
-		Global_1989133[num] = ecaParam0;
+		Global_1989134[num] = ecaParam0;
 
 	return;
 }
@@ -16786,10 +16786,10 @@ void func_411() // Position - 0x11B14 (72468)
 
 	for (i = 0; i < 27; i = i + 1)
 	{
-		Global_1989133[i] = -1;
+		Global_1989134[i] = -1;
 	}
 
-	Global_1989161 = false;
+	Global_1989162 = false;
 	return;
 }
 
@@ -98559,12 +98559,12 @@ void func_713() // Position - 0x74B4E (478030)
 	char* iplName;
 	int i;
 
-	if (!Global_1978631)
+	if (!Global_1978632)
 		return;
 
 	if (STREAMING::IS_NEW_LOAD_SCENE_ACTIVE() || STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 	{
-		Global_1978631 = true;
+		Global_1978632 = true;
 		return;
 	}
 
@@ -98579,8 +98579,8 @@ void func_713() // Position - 0x74B4E (478030)
 			STREAMING::REMOVE_IPL(iplName);
 	}
 
-	Global_1978632 = 0;
-	Global_1978631 = false;
+	Global_1978633 = 0;
+	Global_1978632 = false;
 	return;
 }
 
@@ -99008,7 +99008,7 @@ BOOL func_738() // Position - 0x755B5 (480693)
 
 BOOL func_739() // Position - 0x75845 (481349)
 {
-	if (!Global_1982483)
+	if (!Global_1982484)
 		if (func_388(PLAYER::PLAYER_ID()))
 			if (ENTITY::DOES_ENTITY_EXIST(func_740()) && VEHICLE::IS_VEHICLE_DRIVEABLE(func_740(), false))
 				if (MISC::GET_DISTANCE_BETWEEN_COORDS(5017.4224f, -5130.4478f, 2.19928f, ENTITY::GET_ENTITY_COORDS(Global_2733002.f_301, true), true) < 1500f)

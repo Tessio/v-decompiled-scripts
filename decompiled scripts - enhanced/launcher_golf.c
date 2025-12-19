@@ -826,7 +826,7 @@ void func_4() // Position - 0xC0F (3087)
 	return;
 }
 
-void func_5(char* sParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) // Position - 0xC17 (3095)
+void func_5(char* sParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4) // Position - 0xC17 (3095)
 {
 	if (MISC::IS_STRING_NULL_OR_EMPTY(&Global_99499))
 		return;
@@ -834,7 +834,7 @@ void func_5(char* sParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4)
 	if (MISC::COMPARE_STRINGS(sParam0, &Global_99499, false, -1) != 0)
 		return;
 
-	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, bParam3, bParam4, Global_96606);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, bParam2, bParam3, bParam4, Global_96606);
 	TEXT_LABEL_ASSIGN_STRING(&Global_99499, "", 64);
 	return;
 }
@@ -1127,19 +1127,19 @@ void func_25() // Position - 0x1060 (4192)
 	return;
 }
 
-void func_26(Ped pedParam0) // Position - 0x10E5 (4325)
+void func_26(ePedComponentType epctParam0) // Position - 0x10E5 (4325)
 {
 	int num;
 	int num2;
 	int num3;
 
-	if (pedParam0 == 0)
+	if (epctParam0 == PV_COMP_HEAD)
 		return;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
 		return;
 
-	num = func_34(pedParam0);
+	num = func_34(epctParam0);
 
 	if (!(num == -1))
 	{
@@ -1148,7 +1148,7 @@ void func_26(Ped pedParam0) // Position - 0x10E5 (4325)
 		return;
 	}
 
-	num3 = func_28(pedParam0);
+	num3 = func_28(epctParam0);
 
 	if (num3 == -1)
 		return;
@@ -1162,7 +1162,7 @@ void func_27(int iParam0) // Position - 0x113E (4414)
 	if (iParam0 < 0 || iParam0 >= 5)
 		return;
 
-	if (!(Global_45866[iParam0 /*6*/].f_1 == 0))
+	if (!(Global_45866[iParam0 /*6*/].f_1 == PV_COMP_HEAD))
 		if (Global_45866[iParam0 /*6*/].f_1 == PLAYER::PLAYER_PED_ID())
 			Global_46109 = 0;
 
@@ -1179,7 +1179,7 @@ void func_27(int iParam0) // Position - 0x113E (4414)
 	return;
 }
 
-int func_28(Ped pedParam0) // Position - 0x11C1 (4545)
+int func_28(ePedComponentType epctParam0) // Position - 0x11C1 (4545)
 {
 	int i;
 
@@ -1187,7 +1187,7 @@ int func_28(Ped pedParam0) // Position - 0x11C1 (4545)
 
 	for (i = 0; i < 5; i = i + 1)
 	{
-		if (Global_45866[i /*6*/].f_1 == pedParam0)
+		if (Global_45866[i /*6*/].f_1 == epctParam0)
 			return i;
 	}
 
@@ -1270,11 +1270,11 @@ int func_33(int iParam0, int iParam1, int iParam2) // Position - 0x12D5 (4821)
 	return -1;
 }
 
-int func_34(Ped pedParam0) // Position - 0x1321 (4897)
+int func_34(ePedComponentType epctParam0) // Position - 0x1321 (4897)
 {
 	int i;
 
-	if (pedParam0 == 0)
+	if (epctParam0 == PV_COMP_HEAD)
 		return -1;
 
 	i = 0;
@@ -1282,7 +1282,7 @@ int func_34(Ped pedParam0) // Position - 0x1321 (4897)
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!(Global_45897[i /*5*/] == -1))
-			if (pedParam0 == Global_45897[i /*5*/].f_1)
+			if (epctParam0 == Global_45897[i /*5*/].f_1)
 				return i;
 	}
 
@@ -2058,10 +2058,10 @@ void func_84(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x25F7 (9719
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == true)
-			Global_34170 = true;
+		if (Global_34169 == BLIP_LEVEL)
+			Global_34170 = BLIP_LEVEL;
 	
-		Global_34169 = true;
+		Global_34169 = BLIP_LEVEL;
 	}
 
 	if (bParam1)
@@ -2343,9 +2343,9 @@ int func_93(BOOL bParam0) // Position - 0x2B0F (11023)
 	return 100;
 }
 
-void func_94(int iParam0, int iParam1) // Position - 0x2B26 (11046)
+void func_94(float fParam0, int iParam1) // Position - 0x2B26 (11046)
 {
-	func_95(iParam0, iParam1);
+	func_95(fParam0, iParam1);
 	return;
 }
 
