@@ -1,6 +1,6 @@
 # v-decompiled-scripts
 
-Decompiled scripts from GTAV build 1013.17 - 3717, for educational purposes only.
+Decompiled scripts from GTAV build 1013.20 - 3725, for educational purposes only.
 
 # Older scripts
 
