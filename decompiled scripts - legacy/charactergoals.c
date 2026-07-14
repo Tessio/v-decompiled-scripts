@@ -57,18 +57,18 @@ void main() // Position - 0x0 (0)
 						func_50(2, 32, Global_24103[3 /*42*/].f_27[0]);
 					}
 				
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[3 /*42*/], "PA_TREV1" /*Earn one million dollars.*/, 16);
-					TEXT_LABEL_ASSIGN_STRING(&(Global_24103[3 /*42*/].f_4), "PA_TREV1" /*Earn one million dollars.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[3 /*42*/], "PA_TREV1" /*Gana un millón de dólares.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&(Global_24103[3 /*42*/].f_4), "PA_TREV1" /*Gana un millón de dólares.*/, 16);
 					Global_24103[3 /*42*/].f_8 = 0;
 					Global_24103[3 /*42*/].f_9 = 1;
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[3 /*42*/].f_10[1 /*4*/], "PA_TREV1A" /*Current wealth $~1~.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[3 /*42*/].f_10[1 /*4*/], "PA_TREV1A" /*Riqueza actual: ~1~ $.*/, 16);
 					Global_24103[3 /*42*/].f_37[1] = 0;
 				
 					if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 						Global_24103[3 /*42*/].f_27[1] = _GET_PLAYER_CASH(CHAR_TREVOR);
 				
 					func_43(2, 3, true, 1);
-					func_40("PA_TREV1A" /*Current wealth $~1~.*/, Global_24103[3 /*42*/].f_27[1]);
+					func_40("PA_TREV1A" /*Riqueza actual: ~1~ $.*/, Global_24103[3 /*42*/].f_27[1]);
 					iLocal_16 = 1;
 				}
 				break;
@@ -80,7 +80,7 @@ void main() // Position - 0x0 (0)
 				
 					if (func_39(CHAR_TREVOR, 999999))
 					{
-						func_38("PA_COMPLETE" /*Goal achieved ~a~*/, "PA_TREV1" /*Earn one million dollars.*/, 2000, 1);
+						func_38("PA_COMPLETE" /*Meta conseguida: ~a~*/, "PA_TREV1" /*Gana un millón de dólares.*/, 2000, 1);
 						Global_24103[3 /*42*/].f_37[1] = 1;
 						Global_24103[3 /*42*/].f_8 = 1;
 						iLocal_22 = MISC::GET_GAME_TIMER();
@@ -90,7 +90,7 @@ void main() // Position - 0x0 (0)
 					{
 						if (!bLocal_20)
 						{
-							_SHOW_SUBTITLE("PA_TREV1" /*Earn one million dollars.*/, 2000, 1);
+							_SHOW_SUBTITLE("PA_TREV1" /*Gana un millón de dólares.*/, 2000, 1);
 							bLocal_20 = true;
 						}
 					}
@@ -107,7 +107,7 @@ void main() // Position - 0x0 (0)
 				iLocal_21 = MISC::GET_GAME_TIMER();
 			
 				if (iLocal_21 - iLocal_22 < 5000)
-					func_40("PA_TREV1A" /*Current wealth $~1~.*/, Global_24103[3 /*42*/].f_27[1]);
+					func_40("PA_TREV1A" /*Riqueza actual: ~1~ $.*/, Global_24103[3 /*42*/].f_27[1]);
 				break;
 		}
 	}
@@ -115,7 +115,7 @@ void main() // Position - 0x0 (0)
 	return;
 }
 
-void func_1(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) // Position - 0x1D5 (469)
+void func_1(int iParam0, int iParam1, const char* sParam2, BOOL bParam3, BOOL bParam4) // Position - 0x1D5 (469)
 {
 	int outValue;
 	Hash statHash;
@@ -126,7 +126,7 @@ void func_1(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) /
 	if (func_36(iParam0) == 4)
 		return;
 
-	func_2(func_36(iParam0), 1, iParam1, iParam2, false);
+	func_2(func_36(iParam0), 1, iParam1, sParam2, false);
 
 	if (bParam3)
 	{
@@ -174,25 +174,25 @@ void func_1(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) /
 		}
 	
 		STATS::STAT_GET_INT(statHash, &outValue, -1);
-		outValue = outValue + iParam2;
+		outValue = outValue + sParam2;
 		STATS::STAT_SET_INT(statHash, outValue, true);
 	}
 
 	return;
 }
 
-int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // Position - 0x2A7 (679)
+int func_2(int iParam0, int iParam1, int iParam2, const char* sParam3, BOOL bParam4) // Position - 0x2A7 (679)
 {
 	float num;
 	int num2;
 	int num3;
+	const char* str;
+	const char* str2;
 	int num4;
-	int num5;
-	int num6;
 
 	func_35();
 
-	if (iParam3 < 1)
+	if (sParam3 < 1)
 		return 0;
 
 	num = 1f;
@@ -204,15 +204,15 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 			{
 				case 0:
 					func_34(99, 1);
-					func_33(joaat("SP0_MONEY_TOTAL_SPENT") /* TUNEABLE: SP0_MONEY_TOTAL_SPENT */, iParam3);
+					func_33(joaat("SP0_MONEY_TOTAL_SPENT") /* TUNEABLE: SP0_MONEY_TOTAL_SPENT */, sParam3);
 					break;
 			
 				case 1:
-					func_33(joaat("SP1_MONEY_TOTAL_SPENT") /* TUNEABLE: SP1_MONEY_TOTAL_SPENT */, iParam3);
+					func_33(joaat("SP1_MONEY_TOTAL_SPENT") /* TUNEABLE: SP1_MONEY_TOTAL_SPENT */, sParam3);
 					break;
 			
 				case 2:
-					func_33(joaat("SP2_MONEY_TOTAL_SPENT") /* TUNEABLE: SP2_MONEY_TOTAL_SPENT */, iParam3);
+					func_33(joaat("SP2_MONEY_TOTAL_SPENT") /* TUNEABLE: SP2_MONEY_TOTAL_SPENT */, sParam3);
 					break;
 			}
 		
@@ -241,15 +241,15 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 					switch (iParam0)
 					{
 						case 0:
-							func_33(joaat("SP0_MONEY_SPENT_ON_TATTOOS") /* TUNEABLE: SP0_MONEY_SPENT_ON_TATTOOS */, iParam3);
+							func_33(joaat("SP0_MONEY_SPENT_ON_TATTOOS") /* TUNEABLE: SP0_MONEY_SPENT_ON_TATTOOS */, sParam3);
 							break;
 					
 						case 1:
-							func_33(joaat("SP1_MONEY_SPENT_ON_TATTOOS") /* TUNEABLE: SP1_MONEY_SPENT_ON_TATTOOS */, iParam3);
+							func_33(joaat("SP1_MONEY_SPENT_ON_TATTOOS") /* TUNEABLE: SP1_MONEY_SPENT_ON_TATTOOS */, sParam3);
 							break;
 					
 						case 2:
-							func_33(joaat("SP2_MONEY_SPENT_ON_TATTOOS") /* TUNEABLE: SP2_MONEY_SPENT_ON_TATTOOS */, iParam3);
+							func_33(joaat("SP2_MONEY_SPENT_ON_TATTOOS") /* TUNEABLE: SP2_MONEY_SPENT_ON_TATTOOS */, sParam3);
 							break;
 					}
 				
@@ -264,15 +264,15 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 					switch (iParam0)
 					{
 						case 0:
-							func_33(joaat("SP0_MONEY_SPENT_ON_TAXIS") /* TUNEABLE: SP0_MONEY_SPENT_ON_TAXIS */, iParam3);
+							func_33(joaat("SP0_MONEY_SPENT_ON_TAXIS") /* TUNEABLE: SP0_MONEY_SPENT_ON_TAXIS */, sParam3);
 							break;
 					
 						case 1:
-							func_33(joaat("SP1_MONEY_SPENT_ON_TAXIS") /* TUNEABLE: SP1_MONEY_SPENT_ON_TAXIS */, iParam3);
+							func_33(joaat("SP1_MONEY_SPENT_ON_TAXIS") /* TUNEABLE: SP1_MONEY_SPENT_ON_TAXIS */, sParam3);
 							break;
 					
 						case 2:
-							func_33(joaat("SP2_MONEY_SPENT_ON_TAXIS") /* TUNEABLE: SP2_MONEY_SPENT_ON_TAXIS */, iParam3);
+							func_33(joaat("SP2_MONEY_SPENT_ON_TAXIS") /* TUNEABLE: SP2_MONEY_SPENT_ON_TAXIS */, sParam3);
 							break;
 					}
 					break;
@@ -281,15 +281,15 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 					switch (iParam0)
 					{
 						case 0:
-							func_33(joaat("SP0_MONEY_SPENT_IN_STRIP_CLUBS") /* TUNEABLE: SP0_MONEY_SPENT_IN_STRIP_CLUBS */, iParam3);
+							func_33(joaat("SP0_MONEY_SPENT_IN_STRIP_CLUBS") /* TUNEABLE: SP0_MONEY_SPENT_IN_STRIP_CLUBS */, sParam3);
 							break;
 					
 						case 1:
-							func_33(joaat("SP1_MONEY_SPENT_IN_STRIP_CLUBS") /* TUNEABLE: SP1_MONEY_SPENT_IN_STRIP_CLUBS */, iParam3);
+							func_33(joaat("SP1_MONEY_SPENT_IN_STRIP_CLUBS") /* TUNEABLE: SP1_MONEY_SPENT_IN_STRIP_CLUBS */, sParam3);
 							break;
 					
 						case 2:
-							func_33(joaat("SP2_MONEY_SPENT_IN_STRIP_CLUBS") /* TUNEABLE: SP2_MONEY_SPENT_IN_STRIP_CLUBS */, iParam3);
+							func_33(joaat("SP2_MONEY_SPENT_IN_STRIP_CLUBS") /* TUNEABLE: SP2_MONEY_SPENT_IN_STRIP_CLUBS */, sParam3);
 							break;
 					}
 					break;
@@ -311,15 +311,15 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 					switch (iParam0)
 					{
 						case 0:
-							func_33(joaat("SP0_MONEY_SPENT_PROPERTY") /* TUNEABLE: SP0_MONEY_SPENT_PROPERTY */, iParam3);
+							func_33(joaat("SP0_MONEY_SPENT_PROPERTY") /* TUNEABLE: SP0_MONEY_SPENT_PROPERTY */, sParam3);
 							break;
 					
 						case 1:
-							func_33(joaat("SP1_MONEY_SPENT_PROPERTY") /* TUNEABLE: SP1_MONEY_SPENT_PROPERTY */, iParam3);
+							func_33(joaat("SP1_MONEY_SPENT_PROPERTY") /* TUNEABLE: SP1_MONEY_SPENT_PROPERTY */, sParam3);
 							break;
 					
 						case 2:
-							func_33(joaat("SP2_MONEY_SPENT_PROPERTY") /* TUNEABLE: SP2_MONEY_SPENT_PROPERTY */, iParam3);
+							func_33(joaat("SP2_MONEY_SPENT_PROPERTY") /* TUNEABLE: SP2_MONEY_SPENT_PROPERTY */, sParam3);
 							break;
 					}
 					break;
@@ -331,15 +331,15 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 							switch (iParam0)
 							{
 								case 0:
-									func_33(joaat("SP0_MONEY_SPENT_IN_CLOTHES") /* TUNEABLE: SP0_MONEY_SPENT_IN_CLOTHES */, iParam3);
+									func_33(joaat("SP0_MONEY_SPENT_IN_CLOTHES") /* TUNEABLE: SP0_MONEY_SPENT_IN_CLOTHES */, sParam3);
 									break;
 							
 								case 1:
-									func_33(joaat("SP1_MONEY_SPENT_IN_CLOTHES") /* TUNEABLE: SP1_MONEY_SPENT_IN_CLOTHES */, iParam3);
+									func_33(joaat("SP1_MONEY_SPENT_IN_CLOTHES") /* TUNEABLE: SP1_MONEY_SPENT_IN_CLOTHES */, sParam3);
 									break;
 							
 								case 2:
-									func_33(joaat("SP2_MONEY_SPENT_IN_CLOTHES") /* TUNEABLE: SP2_MONEY_SPENT_IN_CLOTHES */, iParam3);
+									func_33(joaat("SP2_MONEY_SPENT_IN_CLOTHES") /* TUNEABLE: SP2_MONEY_SPENT_IN_CLOTHES */, sParam3);
 									break;
 							}
 							break;
@@ -348,15 +348,15 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 							switch (iParam0)
 							{
 								case 0:
-									func_33(joaat("SP0_MONEY_SPENT_ON_HAIRDOS") /* TUNEABLE: SP0_MONEY_SPENT_ON_HAIRDOS */, iParam3);
+									func_33(joaat("SP0_MONEY_SPENT_ON_HAIRDOS") /* TUNEABLE: SP0_MONEY_SPENT_ON_HAIRDOS */, sParam3);
 									break;
 							
 								case 1:
-									func_33(joaat("SP1_MONEY_SPENT_ON_HAIRDOS") /* TUNEABLE: SP1_MONEY_SPENT_ON_HAIRDOS */, iParam3);
+									func_33(joaat("SP1_MONEY_SPENT_ON_HAIRDOS") /* TUNEABLE: SP1_MONEY_SPENT_ON_HAIRDOS */, sParam3);
 									break;
 							
 								case 2:
-									func_33(joaat("SP2_MONEY_SPENT_ON_HAIRDOS") /* TUNEABLE: SP2_MONEY_SPENT_ON_HAIRDOS */, iParam3);
+									func_33(joaat("SP2_MONEY_SPENT_ON_HAIRDOS") /* TUNEABLE: SP2_MONEY_SPENT_ON_HAIRDOS */, sParam3);
 									break;
 							}
 						
@@ -371,15 +371,15 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 							switch (iParam0)
 							{
 								case 0:
-									func_33(joaat("SP0_MONEY_SPENT_IN_BUYING_GUNS") /* TUNEABLE: SP0_MONEY_SPENT_IN_BUYING_GUNS */, iParam3);
+									func_33(joaat("SP0_MONEY_SPENT_IN_BUYING_GUNS") /* TUNEABLE: SP0_MONEY_SPENT_IN_BUYING_GUNS */, sParam3);
 									break;
 							
 								case 1:
-									func_33(joaat("SP1_MONEY_SPENT_IN_BUYING_GUNS") /* TUNEABLE: SP1_MONEY_SPENT_IN_BUYING_GUNS */, iParam3);
+									func_33(joaat("SP1_MONEY_SPENT_IN_BUYING_GUNS") /* TUNEABLE: SP1_MONEY_SPENT_IN_BUYING_GUNS */, sParam3);
 									break;
 							
 								case 2:
-									func_33(joaat("SP2_MONEY_SPENT_IN_BUYING_GUNS") /* TUNEABLE: SP2_MONEY_SPENT_IN_BUYING_GUNS */, iParam3);
+									func_33(joaat("SP2_MONEY_SPENT_IN_BUYING_GUNS") /* TUNEABLE: SP2_MONEY_SPENT_IN_BUYING_GUNS */, sParam3);
 									break;
 							}
 							break;
@@ -388,19 +388,19 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 							switch (iParam0)
 							{
 								case 0:
-									func_33(joaat("SP0_MONEY_SPENT_CAR_MODS") /* TUNEABLE: SP0_MONEY_SPENT_CAR_MODS */, iParam3);
+									func_33(joaat("SP0_MONEY_SPENT_CAR_MODS") /* TUNEABLE: SP0_MONEY_SPENT_CAR_MODS */, sParam3);
 									break;
 							
 								case 1:
-									func_33(joaat("SP1_MONEY_SPENT_CAR_MODS") /* TUNEABLE: SP1_MONEY_SPENT_CAR_MODS */, iParam3);
+									func_33(joaat("SP1_MONEY_SPENT_CAR_MODS") /* TUNEABLE: SP1_MONEY_SPENT_CAR_MODS */, sParam3);
 									break;
 							
 								case 2:
-									func_33(joaat("SP2_MONEY_SPENT_CAR_MODS") /* TUNEABLE: SP2_MONEY_SPENT_CAR_MODS */, iParam3);
+									func_33(joaat("SP2_MONEY_SPENT_CAR_MODS") /* TUNEABLE: SP2_MONEY_SPENT_CAR_MODS */, sParam3);
 									break;
 							}
 						
-							func_13(iParam3);
+							func_13(sParam3);
 							break;
 					}
 					break;
@@ -411,26 +411,26 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 			switch (iParam0)
 			{
 				case 0:
-					func_34(95, iParam3);
+					func_34(95, sParam3);
 					break;
 			
 				case 1:
-					func_34(97, iParam3);
+					func_34(97, sParam3);
 					break;
 			
 				case 2:
-					func_34(96, iParam3);
+					func_34(96, sParam3);
 					break;
 			}
 		
-			func_34(98, iParam3);
+			func_34(98, sParam3);
 			break;
 	}
 
 	num3 = iParam0;
-	iParam3 = BUILTIN::FLOOR(num * BUILTIN::TO_FLOAT(iParam3));
-	num4 = 0;
-	num5 = iParam3;
+	sParam3 = BUILTIN::FLOOR(num * BUILTIN::TO_FLOAT(sParam3));
+	str = 0;
+	str2 = sParam3;
 
 	if (num == 0f)
 	{
@@ -442,55 +442,55 @@ int func_2(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) // 
 		func_5(num2);
 	}
 
-	num6 = Global_62184[num3] + iParam3;
+	num4 = Global_62184[num3] + sParam3;
 
 	switch (iParam1)
 	{
 		case 1:
-			if (Global_62184[num3] >= 0 && iParam3 > 0)
-				if (num6 <= 0)
+			if (Global_62184[num3] >= 0 && sParam3 > 0)
+				if (num4 <= 0)
 					Global_62184[num3] = 2147483647;
 				else
-					Global_62184[num3] = Global_62184[num3] + iParam3;
+					Global_62184[num3] = Global_62184[num3] + sParam3;
 		
 			switch (iParam0)
 			{
 				case 0:
-					func_33(joaat("SP0_TOTAL_CASH_EARNED") /* TUNEABLE: SP0_TOTAL_CASH_EARNED */, iParam3);
+					func_33(joaat("SP0_TOTAL_CASH_EARNED") /* TUNEABLE: SP0_TOTAL_CASH_EARNED */, sParam3);
 					break;
 			
 				case 1:
-					func_33(joaat("SP1_TOTAL_CASH_EARNED") /* TUNEABLE: SP1_TOTAL_CASH_EARNED */, iParam3);
+					func_33(joaat("SP1_TOTAL_CASH_EARNED") /* TUNEABLE: SP1_TOTAL_CASH_EARNED */, sParam3);
 					break;
 			
 				case 2:
-					func_33(joaat("SP2_TOTAL_CASH_EARNED") /* TUNEABLE: SP2_TOTAL_CASH_EARNED */, iParam3);
+					func_33(joaat("SP2_TOTAL_CASH_EARNED") /* TUNEABLE: SP2_TOTAL_CASH_EARNED */, sParam3);
 					break;
 			}
 			break;
 	
 		case 0:
 			if (!bParam4)
-				if (Global_62184[num3] - iParam3 < 0)
+				if (Global_62184[num3] - sParam3 < 0)
 					return 0;
 		
-			num4 = Global_62184[num3];
-			Global_62184[num3] = Global_62184[num3] - iParam3;
+			str = Global_62184[num3];
+			Global_62184[num3] = Global_62184[num3] - sParam3;
 		
 			if (bParam4)
-				num5 = num4;
+				str2 = str;
 			break;
 	}
 
 	if (iParam2 == 1)
 	{
-		num5 > 20;
+		str2 > 20;
 	}
 	else
 	{
 		Global_114904.f_20571.f_233[num3 /*69*/].f_2[Global_114904.f_20571.f_233[num3 /*69*/].f_1 /*6*/] = iParam1;
 		Global_114904.f_20571.f_233[num3 /*69*/].f_2[Global_114904.f_20571.f_233[num3 /*69*/].f_1 /*6*/].f_1 = iParam2;
-		Global_114904.f_20571.f_233[num3 /*69*/].f_2[Global_114904.f_20571.f_233[num3 /*69*/].f_1 /*6*/].f_2 = iParam3;
+		Global_114904.f_20571.f_233[num3 /*69*/].f_2[Global_114904.f_20571.f_233[num3 /*69*/].f_1 /*6*/].f_2 = sParam3;
 		Global_114904.f_20571.f_233[num3 /*69*/] = Global_114904.f_20571.f_233[num3 /*69*/] + 1;
 		Global_114904.f_20571.f_233[num3 /*69*/].f_1 = Global_114904.f_20571.f_233[num3 /*69*/].f_1 + 1;
 	
@@ -662,7 +662,7 @@ void func_5(int iParam0) // Position - 0xB82 (2946)
 	if (flag)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&txdName, "CHAR_LIFEINVADER", 64);
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*You have redeemed your promotion for ~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*Has canjeado tu promoción de ~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(func_6(iParam0));
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, true, 0, "", 0);
 	}
@@ -675,28 +675,28 @@ char* func_6(int iParam0) // Position - 0xCF9 (3321)
 	switch (iParam0)
 	{
 		case 0:
-			return "COUP_HAIRC" /*one free haircut.*/;
+			return "COUP_HAIRC" /*un corte de pelo gratis.*/;
 	
 		case 1:
-			return "COUP_TATTOO" /*one free tattoo.*/;
+			return "COUP_TATTOO" /*un tatuaje gratis.*/;
 	
 		case 2:
-			return "COUP_WARSTOCK" /*10% off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 3:
-			return "COUP_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 4:
-			return "COUP_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 5:
-			return "COUP_MEDSPENS" /*10 percent off your next medical expenses.*/;
+			return "COUP_MEDSPENS" /*10% de descuento en tus próximos gastos médicos.*/;
 	
 		case 6:
-			return "COUP_SPRUNK" /*one free can of Sprunk.*/;
+			return "COUP_SPRUNK" /*una lata gratis de Sprunk.*/;
 	
 		case 7:
-			return "COUP_RESPRAY" /*one free respray.*/;
+			return "COUP_RESPRAY" /*una pintura de vehículo gratis.*/;
 	
 		case 8:
 			return "COUP_XMAS2017";
@@ -711,22 +711,22 @@ char* func_6(int iParam0) // Position - 0xCF9 (3321)
 			return "COUP_CAR2_XMAS2018";
 	
 		case 12:
-			return "COUP_CAS_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_CAS_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 13:
-			return "COUP_CAS_DOCKTEASE" /*10 percent off your next purchase at DockTease.com.*/;
+			return "COUP_CAS_DOCKTEASE" /*10% de descuento en tu próxima compra en DockTease.com.*/;
 	
 		case 14:
-			return "COUP_CAS_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_CAS_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 15:
-			return "COUP_CAS_SSASA" /*10 percent off your next purchase at southernsanandreassuperautos.com.*/;
+			return "COUP_CAS_SSASA" /*10% de descuento en tu próxima compra en southernsanandreassuperautos.com.*/;
 	
 		case 16:
-			return "COUP_CAS_WARSTOCK" /*10 percent off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_CAS_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 17:
-			return "COUP_CAS_PANDM" /*10 percent off your next purchase at pandmcycles.com.*/;
+			return "COUP_CAS_PANDM" /*10% de descuento en tu próxima compra en pandmcycles.com.*/;
 	
 		default:
 			break;
@@ -803,11 +803,11 @@ void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position -
 	return;
 }
 
-void func_13(int iParam0) // Position - 0xE9B (3739)
+void func_13(const char* sParam0) // Position - 0xE9B (3739)
 {
-	func_34(93, iParam0);
-	func_34(29, iParam0);
-	func_34(30, iParam0);
+	func_34(93, sParam0);
+	func_34(29, sParam0);
+	func_34(30, sParam0);
 	return;
 }
 
@@ -1189,21 +1189,21 @@ BOOL func_32(int iParam0, int iParam1) // Position - 0x146A (5226)
 	return false;
 }
 
-void func_33(Hash hParam0, int iParam1) // Position - 0x14BB (5307)
+void func_33(Hash hParam0, const char* sParam1) // Position - 0x14BB (5307)
 {
 	int outValue;
 
 	STATS::STAT_GET_INT(hParam0, &outValue, -1);
-	outValue = outValue + iParam1;
+	outValue = outValue + sParam1;
 	STATS::STAT_SET_INT(hParam0, outValue, true);
 	return;
 }
 
-void func_34(int iParam0, int iParam1) // Position - 0x14DE (5342)
+void func_34(int iParam0, const char* sParam1) // Position - 0x14DE (5342)
 {
 	int outValue;
 
-	if (iParam1 < 1)
+	if (sParam1 < 1)
 		return;
 
 	if (Global_60752[iParam0 /*7*/].f_2)
@@ -1215,7 +1215,7 @@ void func_34(int iParam0, int iParam1) // Position - 0x14DE (5342)
 	if (Global_60752[iParam0 /*7*/])
 	{
 		STATS::STAT_GET_INT(Global_60752[iParam0 /*7*/].f_1, &outValue, -1);
-		outValue = outValue + iParam1;
+		outValue = outValue + sParam1;
 		STATS::STAT_SET_INT(Global_60752[iParam0 /*7*/].f_1, outValue, true);
 	}
 
@@ -1269,26 +1269,26 @@ void func_38(char* sParam0, char* sParam1, int iParam2, int iParam3) // Position
 	return;
 }
 
-BOOL func_39(eCharacter echParam0, int iParam1) // Position - 0x15F9 (5625)
+BOOL func_39(eCharacter echParam0, const char* sParam1) // Position - 0x15F9 (5625)
 {
-	if (_GET_PLAYER_CASH(echParam0) > iParam1)
+	if (_GET_PLAYER_CASH(echParam0) > sParam1)
 		return true;
 
 	return false;
 }
 
-void func_40(char* sParam0, int iParam1) // Position - 0x1614 (5652)
+void func_40(char* sParam0, const char* sParam1) // Position - 0x1614 (5652)
 {
 	GRAPHICS::DRAW_RECT(0.852f, 0.81f, 0.141f, 0.025f, 0, 0, 0, 175, false);
 	func_42(255, 255, 255, 255);
-	func_41(0.81f, 0.8f, sParam0, iParam1, 0);
+	func_41(0.81f, 0.8f, sParam0, sParam1, 0);
 	return;
 }
 
-void func_41(float fParam0, float fParam1, char* sParam2, int iParam3, int iParam4) // Position - 0x1657 (5719)
+void func_41(float fParam0, float fParam1, char* sParam2, const char* sParam3, int iParam4) // Position - 0x1657 (5719)
 {
 	HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(sParam2);
-	HUD::ADD_TEXT_COMPONENT_INTEGER(iParam3);
+	HUD::ADD_TEXT_COMPONENT_INTEGER(sParam3);
 	HUD::END_TEXT_COMMAND_DISPLAY_TEXT(fParam0, fParam1, iParam4);
 	return;
 }
@@ -1459,7 +1459,7 @@ BOOL func_49() // Position - 0x198A (6538)
 	return false;
 }
 
-int func_50(int iParam0, int iParam1, int iParam2) // Position - 0x19B1 (6577)
+int func_50(int iParam0, int iParam1, const char* sParam2) // Position - 0x19B1 (6577)
 {
 	if (func_36(iParam0) == 3)
 		return 0;
@@ -1467,10 +1467,10 @@ int func_50(int iParam0, int iParam1, int iParam2) // Position - 0x19B1 (6577)
 	if (func_36(iParam0) == 4)
 		return 0;
 
-	return func_2(func_36(iParam0), 0, iParam1, iParam2, false);
+	return func_2(func_36(iParam0), 0, iParam1, sParam2, false);
 }
 
-int _GET_PLAYER_CASH(eCharacter echParam0) // Position - 0x19E5 (6629)
+const char* _GET_PLAYER_CASH(eCharacter echParam0) // Position - 0x19E5 (6629)
 {
 	int outValue;
 

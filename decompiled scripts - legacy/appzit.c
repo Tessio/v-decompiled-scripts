@@ -178,7 +178,7 @@ BOOL func_1() // Position - 0x1C6 (454)
 {
 	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 3 || Global_21610.f_1 == 0 || Global_21554 == 1)
 	{
-		Global_21597 = 1;
+		Global_21597 = INPUT_LOOK_LR;
 		return true;
 	}
 
@@ -196,7 +196,7 @@ BOOL func_3() // Position - 0x218 (536)
 {
 	if (Global_10086 == 1 || Global_21610.f_1 < 7)
 	{
-		Global_21597 = 1;
+		Global_21597 = INPUT_LOOK_LR;
 		return true;
 	}
 
@@ -233,7 +233,7 @@ void func_6() // Position - 0x2D4 (724)
 	if (BUILTIN::TIMERA() > 2200)
 	{
 		if (Global_21598)
-			func_7(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+			func_7(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 		else
 			func_7(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, 0, 0, 0, 0, 0);
 	
@@ -299,7 +299,7 @@ void func_8() // Position - 0x3D7 (983)
 			
 				if (Global_21598)
 				{
-					func_7(Global_21591, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+					func_7(Global_21591, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 					func_7(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 14f, -1f, -1f, "CELL_213" /*NO*/, 0, 0, 0, 0);
 				}
 				else
@@ -447,9 +447,9 @@ void func_14() // Position - 0x695 (1685)
 	if (Global_21598)
 	{
 		if (bLocal_58)
-			func_7(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+			func_7(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 		else
-			func_7(Global_21591, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+			func_7(Global_21591, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 	
 		func_7(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 14f, -1f, -1f, "CELL_213" /*NO*/, 0, 0, 0, 0);
 	}
@@ -480,12 +480,12 @@ void func_15() // Position - 0x7E5 (2021)
 	TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_25), AUDIO::GET_PLAYER_RADIO_STATION_NAME(), 24);
 
 	if (!HUD::DOES_TEXT_LABEL_EXIST(&uLocal_18))
-		TEXT_LABEL_ASSIGN_STRING(&uLocal_18, "CELL_195" /*Unknown*/, 64);
+		TEXT_LABEL_ASSIGN_STRING(&uLocal_18, "CELL_195" /*Desconocido*/, 64);
 
 	if (!HUD::DOES_TEXT_LABEL_EXIST(&(uLocal_18.f_16)))
 	{
-		TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_16), "CELL_195" /*Unknown*/, 32);
-		TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_25), "CELL_195" /*Unknown*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_16), "CELL_195" /*Desconocido*/, 32);
+		TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_25), "CELL_195" /*Desconocido*/, 24);
 	}
 
 	return;

@@ -1933,7 +1933,7 @@ BOOL func_1() // Position - 0x29F (671)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -1948,9 +1948,9 @@ void func_2() // Position - 0x2E2 (738)
 	return;
 }
 
-BOOL func_3(eControlType ectParam0, BOOL bParam1, int iParam2) // Position - 0x303 (771)
+BOOL func_3(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x303 (771)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, bParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, bParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
@@ -1969,7 +1969,7 @@ BOOL func_4() // Position - 0x375 (885)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -2091,13 +2091,13 @@ void func_12() // Position - 0x522 (1314)
 			
 				if (Global_4521275[iLocal_34 /*296*/].f_27 == 1)
 				{
-					Global_4521275[iLocal_34 /*296*/].f_291[0] = false;
-					Global_4521275[iLocal_34 /*296*/].f_291[1] = false;
-					Global_4521275[iLocal_34 /*296*/].f_291[2] = false;
+					Global_4521275[iLocal_34 /*296*/].f_291[0] = 0;
+					Global_4521275[iLocal_34 /*296*/].f_291[1] = 0;
+					Global_4521275[iLocal_34 /*296*/].f_291[2] = 0;
 				}
 				else
 				{
-					Global_4521275[iLocal_34 /*296*/].f_291[Global_21627] = false;
+					Global_4521275[iLocal_34 /*296*/].f_291[Global_21627] = 0;
 				}
 			
 				if (func_52(iLocal_34))
@@ -2215,9 +2215,9 @@ void func_12() // Position - 0x522 (1314)
 				Global_8778 = Global_4521275[iLocal_34 /*296*/].f_17;
 			
 				if (func_46(Global_8778, Global_21627) == 0)
-					func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_211" /*DIALING...*/, "CELL_195" /*Unknown*/, 0);
+					func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_211" /*MARCANDO...*/, "CELL_195" /*Desconocido*/, 0);
 				else
-					func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_211" /*DIALING...*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
+					func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_211" /*MARCANDO...*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
 			
 				func_13();
 				func_83();
@@ -2232,7 +2232,7 @@ void func_13() // Position - 0x886 (2182)
 {
 	var unk;
 
-	if (Global_21610 == CHAR_FRANKLIN)
+	if (Global_21610 == 1)
 		return;
 
 	if (Global_21627.f_1 < 4)
@@ -2265,8 +2265,8 @@ void func_13() // Position - 0x886 (2182)
 		
 			if (Global_21615)
 			{
-				func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+				func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 			}
 			else
 			{
@@ -2288,11 +2288,11 @@ void func_13() // Position - 0x886 (2182)
 			{
 				if (Global_21860 == true)
 					if (Global_21615)
-						func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, "CELL_225" /*NEXT*/, 0, 0, 0, 0);
+						func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, "CELL_225" /*SIGUIENTE*/, 0, 0, 0, 0);
 					else
 						func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, 0, 0, 0, 0, 0);
 				else if (Global_21615)
-					func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, "CELL_225" /*NEXT*/, 0, 0, 0, 0);
+					func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, "CELL_225" /*SIGUIENTE*/, 0, 0, 0, 0);
 				else
 					func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, 0, 0, 0, 0, 0);
 			
@@ -2326,7 +2326,7 @@ void func_13() // Position - 0x886 (2182)
 			}
 			else if (Global_21615)
 			{
-				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*END CALL*/, 0, 0, 0, 0);
+				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*COLGAR*/, 0, 0, 0, 0);
 			
 				if (Global_21570)
 					func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
@@ -2353,17 +2353,17 @@ void func_13() // Position - 0x886 (2182)
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&Global_23015);
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					func_16("CELL_300" /*CHAR_DEFAULT*/);
-					func_16("CELL_217" /*INCOMING CALL*/);
-					func_16("CELL_217" /*INCOMING CALL*/);
+					func_16("CELL_217" /*LLAMADA ENTRANTE*/);
+					func_16("CELL_217" /*LLAMADA ENTRANTE*/);
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 				}
 				else if (func_46(Global_8778, Global_21627) == 0)
 				{
-					func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_217" /*INCOMING CALL*/, "CELL_195" /*Unknown*/, 0);
+					func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_217" /*LLAMADA ENTRANTE*/, "CELL_195" /*Desconocido*/, 0);
 				}
 				else
 				{
-					func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_217" /*INCOMING CALL*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
+					func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_217" /*LLAMADA ENTRANTE*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
 				}
 			
 				func_80(Global_21608, "DISPLAY_VIEW", 4f, -1082130432, -1082130432, -1082130432, -1082130432);
@@ -2383,21 +2383,21 @@ void func_13() // Position - 0x886 (2182)
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&Global_23015);
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					func_16("CELL_300" /*CHAR_DEFAULT*/);
-					func_16("CELL_219" /*CONNECTED*/);
-					func_16("CELL_219" /*CONNECTED*/);
+					func_16("CELL_219" /*CONECTADO*/);
+					func_16("CELL_219" /*CONECTADO*/);
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 				}
 				else
 				{
 					if (Global_23258)
-						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_219" /*CONNECTED*/, 24);
+						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_219" /*CONECTADO*/, 24);
 					else
-						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_211" /*DIALING...*/, 24);
+						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_211" /*MARCANDO...*/, 24);
 				
 					if (func_46(Global_8778, Global_21627) == 0)
 					{
 						func_80(Global_21608, "SET_DATA_SLOT_EMPTY", 4f, -1082130432, -1082130432, -1082130432, -1082130432);
-						func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, &unk, "CELL_195" /*Unknown*/, 0);
+						func_45(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, &unk, "CELL_195" /*Desconocido*/, 0);
 					}
 					else
 					{
@@ -2428,7 +2428,7 @@ void func_14() // Position - 0xE6F (3695)
 		if (Global_21626 == 1)
 		{
 			if (Global_21615)
-				func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_203" /*ANSWER*/, 0, 0, 0, 0);
+				func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_203" /*RESPONDER*/, 0, 0, 0, 0);
 			else
 				func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -2437,7 +2437,7 @@ void func_14() // Position - 0xE6F (3695)
 			else if (IS_BIT_SET(Global_9463, 20))
 				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 0f, 1f, -1f, -1f, 0, 0, 0, 0, 0);
 			else if (Global_21615)
-				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_204" /*REJECT*/, 0, 0, 0, 0);
+				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_204" /*RECHAZAR*/, 0, 0, 0, 0);
 			else
 				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -2456,7 +2456,7 @@ void func_14() // Position - 0xE6F (3695)
 			}
 			else if (Global_21615)
 			{
-				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*END CALL*/, 0, 0, 0, 0);
+				func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*COLGAR*/, 0, 0, 0, 0);
 			
 				if (Global_21570)
 					func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
@@ -2665,16 +2665,16 @@ void func_18(BOOL bParam0) // Position - 0x12A6 (4774)
 
 	if (func_37() && func_21())
 	{
-		func_19(21, "CELL_37" /*Quick Join*/, 0, "AppJIPMP", 14);
-		func_19(10, "CELL_16" /*Settings*/, 1, "appSettings", 24);
+		func_19(21, "CELL_37" /*Unirse rápidamente*/, 0, "AppJIPMP", 14);
+		func_19(10, "CELL_16" /*Ajustes*/, 1, "appSettings", 24);
 	}
 	else if (func_37() && !func_21())
 	{
-		func_19(21, "CELL_37" /*Quick Join*/, 0, "AppJIPMP", 14);
+		func_19(21, "CELL_37" /*Unirse rápidamente*/, 0, "AppJIPMP", 14);
 	}
 	else if (!func_37() && func_21())
 	{
-		func_19(10, "CELL_16" /*Settings*/, 0, "appSettings", 24);
+		func_19(10, "CELL_16" /*Ajustes*/, 0, "appSettings", 24);
 	}
 
 	if (bParam0)
@@ -2842,13 +2842,13 @@ BOOL func_34() // Position - 0x1670 (5744)
 	return func_35(*Global_4718592.f_139000);
 }
 
-BOOL func_35(ePedComponentType epctParam0) // Position - 0x1686 (5766)
+BOOL func_35(Hash hParam0) // Position - 0x1686 (5766)
 {
 	int i;
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		if (Global_262145.f_31313[i] == epctParam0)
+		if (Global_262145.f_31313[i] == hParam0)
 			return 1;
 	}
 
@@ -2930,7 +2930,7 @@ void func_43(int iParam0) // Position - 0x17D6 (6102)
 	int j;
 	int value2;
 	int k;
-	BOOL value3;
+	int value3;
 	int value4;
 	int value5;
 	int value6;
@@ -3025,7 +3025,7 @@ void func_43(int iParam0) // Position - 0x17D6 (6102)
 									{
 										if (Global_4521275[k /*296*/].f_24 != 0)
 											if (Global_4521275[k /*296*/].f_28 == 0)
-												if (Global_4521275[k /*296*/].f_291[Global_21627] == true)
+												if (Global_4521275[k /*296*/].f_291[Global_21627] == 1)
 													value2 = value2 + 1;
 									}
 								
@@ -3466,11 +3466,11 @@ void func_60() // Position - 0x2267 (8807)
 				GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(Global_21608, "SET_DATA_SLOT");
 				GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(9);
 				GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
-				func_16("CELL_1" /*Texts*/);
-				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_TO_FIELD" /*To: ~a~*/);
+				func_16("CELL_1" /*Mensajes*/);
+				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_TO_FIELD" /*Para: ~a~*/);
 				HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(PLAYER::GET_PLAYER_NAME(PLAYER::PLAYER_ID()));
 				GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
-				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_FROM_FIELD" /*From: ~a~*/);
+				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_FROM_FIELD" /*De: ~a~*/);
 				HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&(uLocal_1394.f_2));
 				GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_EMAIL_BCON" /*~a~~a~~a~~a~~a~~a~~a~~a~~a~~a~*/);
@@ -3643,7 +3643,7 @@ void func_60() // Position - 0x2267 (8807)
 					iLocal_36 = 1;
 				
 					if (Global_21615)
-						func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 16f, -1f, -1f, "CELL_267" /*LINK*/, 0, 0, 0, 0);
+						func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 16f, -1f, -1f, "CELL_267" /*ENLACE*/, 0, 0, 0, 0);
 					else
 						func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 16f, -1f, -1f, 0, 0, 0, 0, 0);
 				
@@ -3659,20 +3659,20 @@ void func_60() // Position - 0x2267 (8807)
 				GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(Global_21608, "SET_DATA_SLOT");
 				GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(9);
 				GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
-				func_16("CELL_1" /*Texts*/);
-				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_TO_FIELD" /*To: ~a~*/);
+				func_16("CELL_1" /*Mensajes*/);
+				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_TO_FIELD" /*Para: ~a~*/);
 				HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(PLAYER::GET_PLAYER_NAME(PLAYER::PLAYER_ID()));
 				GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == _CHAR_NULL)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 145)
 				{
-					GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_FROM_FIELD" /*From: ~a~*/);
+					GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_FROM_FIELD" /*De: ~a~*/);
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&(Global_4521275[iLocal_34 /*296*/].f_50));
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 				}
 				else
 				{
-					GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_FROM_FIELD" /*From: ~a~*/);
+					GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_FROM_FIELD" /*De: ~a~*/);
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&(Global_2339[Global_4521275[iLocal_34 /*296*/].f_17 /*29*/].f_3));
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 				}
@@ -3773,7 +3773,7 @@ void func_60() // Position - 0x2267 (8807)
 						break;
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == _CHAR_NULL)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 145)
 				{
 					GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_2000" /*~a~*/);
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&(Global_4521275[iLocal_34 /*296*/].f_50));
@@ -3784,49 +3784,49 @@ void func_60() // Position - 0x2267 (8807)
 					func_16(&(Global_2339[Global_4521275[iLocal_34 /*296*/].f_17 /*29*/].f_3));
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == CHAR_BANK_MAZE)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 149)
 				{
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING("emailads_maze_bank");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == CHAR_MILSITE)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 140)
 				{
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING("EmailAds_Warstock");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == CHAR_CARSITE4)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 155)
 				{
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING("emailads_arena");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == CHAR_CASINO)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 160)
 				{
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING("emailads_diamond");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == CHAR_LS_CAR_MEET)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 174)
 				{
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING("emailads_ls_car_meet");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == CHAR_SUM2_FEED_LUXURY_AUTOS)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 185)
 				{
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING("SUM2_EMAIL_LUXURY_AUTOS");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == CHAR_SUM2_FEED_PREMIUM_DELUXE)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 186)
 				{
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING("SUM2_EMAIL_PREMIUM_DELUXE");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 				}
 			
-				if (Global_4521275[iLocal_34 /*296*/].f_17 == CHAR_GHOSTS_EXPOSED_PARANORMAL_INVESTIGATORS)
+				if (Global_4521275[iLocal_34 /*296*/].f_17 == 191)
 				{
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_TEXTURE_NAME_STRING("emailads_ghost_exposed");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
@@ -3857,12 +3857,12 @@ void func_60() // Position - 0x2267 (8807)
 			
 				if (Global_4521275[iLocal_34 /*296*/].f_29 > 0)
 					if (Global_21615)
-						func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_212" /*YES*/, 0, 0, 0, 0);
+						func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_212" /*SÍ*/, 0, 0, 0, 0);
 					else
 						func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, 0, 0, 0, 0, 0);
 				else if (Global_4521275[iLocal_34 /*296*/].f_30 == 1)
 					if (Global_21615)
-						func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+						func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 					else
 						func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, 0, 0, 0, 0, 0);
 				else
@@ -3875,11 +3875,11 @@ void func_60() // Position - 0x2267 (8807)
 						else
 							func_45(Global_21608, "SET_SOFT_KEYS", 3f, 0f, 14f, -1f, -1f, 0, 0, 0, 0, 0);
 					else if (Global_21615)
-						func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+						func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 					else
 						func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, 0, 0, 0, 0, 0);
 				else if (Global_21615)
-					func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+					func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 				else
 					func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, 0, 0, 0, 0, 0);
 			
@@ -3890,7 +3890,7 @@ void func_60() // Position - 0x2267 (8807)
 						iLocal_36 = 0;
 					
 						if (Global_21615)
-							func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 11f, -1f, -1f, "CELL_264" /*BARTER*/, 0, 0, 0, 0);
+							func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 11f, -1f, -1f, "CELL_264" /*TRUEQUE*/, 0, 0, 0, 0);
 						else
 							func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 11f, -1f, -1f, 0, 0, 0, 0, 0);
 					
@@ -3904,7 +3904,7 @@ void func_60() // Position - 0x2267 (8807)
 				}
 				else if (Global_21615)
 				{
-					func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 12f, -1f, -1f, "CELL_216" /*DELETE*/, 0, 0, 0, 0);
+					func_45(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 12f, -1f, -1f, "CELL_216" /*BORRAR*/, 0, 0, 0, 0);
 					MISC::SET_BIT(&Global_9463, 17);
 				}
 				else
@@ -3972,39 +3972,39 @@ void func_62(int iParam0, char* sParam1) // Position - 0x3003 (12291)
 	switch (iParam0)
 	{
 		case 1:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL01" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL01" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~*/, 16);
 			break;
 	
 		case 2:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL02" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL02" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~~n~~a~*/, 16);
 			break;
 	
 		case 3:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL03" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~~n~~a~~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL03" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~~n~~a~~n~~a~*/, 16);
 			break;
 	
 		case 4:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL04" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL04" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
 			break;
 	
 		case 5:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL05" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL05" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
 			break;
 	
 		case 6:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL06" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL06" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
 			break;
 	
 		case 7:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL07" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL07" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
 			break;
 	
 		case 8:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL08" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL08" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
 			break;
 	
 		case 9:
-			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL09" /*For a limited time only, the following vehicles are available for members to borrow or purchase at an exclusive discount at The Vinewood Car Club:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(sParam1, "SCL_EMAIL_CL09" /*Solo por tiempo limitado, los miembros podrán pedir prestados o comprar con un descuento exclusivo en el club de coches de Vinewood los siguientes vehículos:~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~~n~~a~*/, 16);
 			break;
 	
 		case 10:
@@ -4429,17 +4429,17 @@ void func_74() // Position - 0x38A0 (14496)
 		if (iLocal_33 < 0)
 			iLocal_33 = 0;
 	
-		func_75(Global_21608, "SET_HEADER", "CELL_INBOX" /*Inbox*/, 0, 0, 0, 0);
+		func_75(Global_21608, "SET_HEADER", "CELL_INBOX" /*Bandeja de entrada*/, 0, 0, 0, 0);
 		func_80(Global_21608, "DISPLAY_VIEW", 8f, BUILTIN::TO_FLOAT(iLocal_33), -1082130432, -1082130432, -1082130432);
 	
 		if (Global_21615)
 		{
 			if (iLocal_30 > 0)
-				func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_214" /*OPTIONS*/, 0, 0, 0, 0);
+				func_45(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_214" /*OPCIONES*/, 0, 0, 0, 0);
 			else
 				func_45(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 2f, -1f, -1f, 0, 0, 0, 0, 0);
 		
-			func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+			func_45(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 		}
 		else
 		{
@@ -4532,7 +4532,7 @@ void func_76() // Position - 0x3A2D (14893)
 			{
 				if (Global_4521275[num2 /*296*/].f_24 != 0)
 				{
-					if (Global_4521275[num2 /*296*/].f_291[Global_21627] == true)
+					if (Global_4521275[num2 /*296*/].f_291[Global_21627] == 1)
 					{
 						if (func_79(Global_4521275[num2 /*296*/].f_18, Global_4521275[num3 /*296*/].f_18))
 						{
@@ -4555,7 +4555,7 @@ void func_76() // Position - 0x3A2D (14893)
 	
 		if (Global_4521275[num3 /*296*/].f_24 != 0)
 		{
-			if (Global_4521275[num3 /*296*/].f_291[Global_21627] == true)
+			if (Global_4521275[num3 /*296*/].f_291[Global_21627] == 1)
 			{
 				GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(Global_21608, "SET_DATA_SLOT");
 				GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(8);
@@ -4563,7 +4563,7 @@ void func_76() // Position - 0x3A2D (14893)
 				GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(iLocal_35);
 				GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(false);
 			
-				if (Global_4521275[num3 /*296*/].f_17 == _CHAR_NULL)
+				if (Global_4521275[num3 /*296*/].f_17 == 145)
 				{
 					GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_2000" /*~a~*/);
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&(Global_4521275[num3 /*296*/].f_50));
@@ -4583,23 +4583,23 @@ void func_76() // Position - 0x3A2D (14893)
 					switch (num4)
 					{
 						case 0:
-							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL_TXT_SUB" /*First Bounty Target*/, 64);
+							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL_TXT_SUB" /*Primer objetivo*/, 64);
 							break;
 					
 						case 1:
-							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL2_TXT_SUB" /*Second Bounty Target*/, 64);
+							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL2_TXT_SUB" /*Segundo objetivo*/, 64);
 							break;
 					
 						case 2:
-							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL3_TXT_SUB" /*Third Bounty Target*/, 64);
+							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL3_TXT_SUB" /*Tercer objetivo*/, 64);
 							break;
 					
 						case 3:
-							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL4_TXT_SUB" /*Fourth Bounty Target*/, 64);
+							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL4_TXT_SUB" /*Cuarto objetivo*/, 64);
 							break;
 					
 						case 4:
-							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL5_TXT_SUB" /*Final Bounty Target*/, 64);
+							TEXT_LABEL_ASSIGN_STRING(&unk14, "BONEMAIL5_TXT_SUB" /*Último objetivo*/, 64);
 							break;
 					}
 				}
@@ -4883,125 +4883,125 @@ void func_81() // Position - 0x3F3B (16187)
 
 void func_82() // Position - 0x40FD (16637)
 {
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[0 /*6*/], "SXT_JUL_1ST" /*I can't wait until you cum again! ~nrt~ <img src='img://05_a_sext_stripperJuliet/05_a_sext_stripperJuliet' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[0 /*6*/], "SXT_JUL_1ST" /*¡Quiero que vuelvas a meterme de todo menos miedo! ~nrt~ <img src='img://05_a_sext_stripperJuliet/05_a_sext_stripperJuliet' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[0 /*16*/], "05_a_sext_stripperJuliet", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[1 /*6*/], "SXT_JUL_2ND" /*Just when I thought that it couldn't get any better! ~nrt~ <img src='img://05_b_sext_stripperJuliet/05_b_sext_stripperJuliet' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[1 /*6*/], "SXT_JUL_2ND" /*¡Y yo que pensaba que esto no podía mejorar! ~nrt~ <img src='img://05_b_sext_stripperJuliet/05_b_sext_stripperJuliet' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[1 /*16*/], "05_b_sext_stripperJuliet", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[2 /*6*/], "SXT_JUL_NEED" /*Missing you badly! I want you inside me. ~nrt~ <img src='img://05_c_sext_stripperJuliet/05_c_sext_stripperJuliet' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[2 /*6*/], "SXT_JUL_NEED" /*¡Te echo tanto de menos! Te quiero dentro de mí. ~nrt~ <img src='img://05_c_sext_stripperJuliet/05_c_sext_stripperJuliet' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[2 /*16*/], "05_c_sext_stripperJuliet", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[3 /*6*/], "MAPEMAIL_TXT" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_19/NHP_PHOTO_19' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[3 /*6*/], "MAPEMAIL_TXT" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_19/NHP_PHOTO_19' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[3 /*16*/], "NHP_PHOTO_19", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[4 /*6*/], "SXT_NIK_2ND" /*You're the man that I've been looking for my entire life! ~nrt~ <img src='img://06_b_sext_stripperNikki/06_b_sext_stripperNikki' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[4 /*6*/], "SXT_NIK_2ND" /*¡Eres el hombre al que he estado esperando toda mi vida! ~nrt~ <img src='img://06_b_sext_stripperNikki/06_b_sext_stripperNikki' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[4 /*16*/], "06_b_sext_stripperNikki", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[5 /*6*/], "SXT_NIK_NEED" /*Maybe this will get your attention! ~nrt~ <img src='img://06_c_sext_stripperNikki/06_c_sext_stripperNikki' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[5 /*6*/], "SXT_NIK_NEED" /*¡Igual te interesa esto! ~nrt~ <img src='img://06_c_sext_stripperNikki/06_c_sext_stripperNikki' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[5 /*16*/], "06_c_sext_stripperNikki", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[6 /*6*/], "SXT_SAP_1ST" /*That was deliciously yummy. Next time, I want to be on top. What do you think of this position? ~nrt~ <img src='img://08_a_sext_stripperSapphire/08_a_sext_stripperSapphire' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[6 /*6*/], "SXT_SAP_1ST" /*Ha estado genial. La próxima vez, quiero estar encima. ¿Qué te parece esta postura? ~nrt~ <img src='img://08_a_sext_stripperSapphire/08_a_sext_stripperSapphire' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[6 /*16*/], "08_a_sext_stripperSapphire", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[7 /*6*/], "SXT_SAP_2ND" /*Here don't show this to anyone else. ~nrt~ <img src='img://08_b_sext_stripperSapphire/08_b_sext_stripperSapphire' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[7 /*6*/], "SXT_SAP_2ND" /*Ten, no se lo enseñes a nadie. ~nrt~ <img src='img://08_b_sext_stripperSapphire/08_b_sext_stripperSapphire' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[7 /*16*/], "08_b_sext_stripperSapphire", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[8 /*6*/], "SXT_SAP_NEED" /*My body aches for you! ~nrt~ <img src='img://08_c_sext_stripperSapphire/08_c_sext_stripperSapphire' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[8 /*6*/], "SXT_SAP_NEED" /*¡Mi cuerpo te necesita! ~nrt~ <img src='img://08_c_sext_stripperSapphire/08_c_sext_stripperSapphire' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[8 /*16*/], "08_c_sext_stripperSapphire", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[9 /*6*/], "SXT_INF_1ST" /*This body is all yours and only yours baby! ~nrt~ <img src='img://04_a_sext_stripperInfernus/04_a_sext_stripperInfernus' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[9 /*6*/], "SXT_INF_1ST" /*¡Este cuerpo es tuyo y solo tuyo! ~nrt~ <img src='img://04_a_sext_stripperInfernus/04_a_sext_stripperInfernus' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[9 /*16*/], "04_a_sext_stripperInfernus", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[10 /*6*/], "SXT_INF_2ND" /*I can hardly walk, that was amazing! ~nrt~ <img src='img://04_b_sext_stripperInfernus/04_b_sext_stripperInfernus' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[10 /*6*/], "SXT_INF_2ND" /*Apenas puedo andar, ¡ha sido increíble! ~nrt~ <img src='img://04_b_sext_stripperInfernus/04_b_sext_stripperInfernus' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[10 /*16*/], "04_b_sext_stripperInfernus", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[11 /*6*/], "SXT_INF_NEED" /*My loins quiver with the thought of you! ~nrt~ <img src='img://04_c_sext_stripperInfernus/04_c_sext_stripperInfernus' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[11 /*6*/], "SXT_INF_NEED" /*Cuando pienso en ti, ¡mojo la silla! ~nrt~ <img src='img://04_c_sext_stripperInfernus/04_c_sext_stripperInfernus' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[11 /*16*/], "04_c_sext_stripperInfernus", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[12 /*6*/], "SXT_TXI_1ST" /*I can't stop thinking about the last time. ~nrt~ <img src='img://11_a_sext_taxiLiz/11_a_sext_taxiLiz' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[12 /*6*/], "SXT_TXI_1ST" /*No puedo dejar de pensar en la última vez. ~nrt~ <img src='img://11_a_sext_taxiLiz/11_a_sext_taxiLiz' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[12 /*16*/], "11_a_sext_taxiLiz", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[13 /*6*/], "SXT_TXI_2ND" /*You're so amazing! I've been missing out. ~nrt~ <img src='img://11_b_sext_taxiLiz/11_b_sext_taxiLiz' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[13 /*6*/], "SXT_TXI_2ND" /*¡Eres increíble! Qué ganas tenía. ~nrt~ <img src='img://11_b_sext_taxiLiz/11_b_sext_taxiLiz' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[13 /*16*/], "11_b_sext_taxiLiz", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[14 /*6*/], "SXT_TXI_NEED" /*Hey babe, I need a study break... ~nrt~ <img src='img://11_c_sext_taxiLiz/11_c_sext_taxiLiz' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[14 /*6*/], "SXT_TXI_NEED" /*Eh, cariño, tanto estudiar me agota... ~nrt~ <img src='img://11_c_sext_taxiLiz/11_c_sext_taxiLiz' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[14 /*16*/], "11_c_sext_taxiLiz", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[15 /*6*/], "SXT_HCH_1ST" /*You always know how to give a good ride ;) ~nrt~ <img src='img://10_a_sext_hitcherGirl/10_a_sext_hitcherGirl' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[15 /*6*/], "SXT_HCH_1ST" /*Me gusta cuando me llevas a montar ;) ~nrt~ <img src='img://10_a_sext_hitcherGirl/10_a_sext_hitcherGirl' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[15 /*16*/], "10_a_sext_hitcherGirl", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[16 /*6*/], "SXT_HCH_2ND" /*Can't wait to meet again honey. ~nrt~ <img src='img://10_b_sext_hitcherGirl/10_b_sext_hitcherGirl' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[16 /*6*/], "SXT_HCH_2ND" /*Tengo muchas ganas de volver a verte, cielo. ~nrt~ <img src='img://10_b_sext_hitcherGirl/10_b_sext_hitcherGirl' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[16 /*16*/], "10_b_sext_hitcherGirl", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[17 /*6*/], "SXT_HCH_NEED" /*I've been thinking... you should let me ride you. ~nrt~ <img src='img://10_c_sext_hitcherGirl/10_c_sext_hitcherGirl' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[17 /*6*/], "SXT_HCH_NEED" /*Estaba pensando... deberías dejarme que te cabalgue un rato. ~nrt~ <img src='img://10_c_sext_hitcherGirl/10_c_sext_hitcherGirl' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[17 /*16*/], "10_c_sext_hitcherGirl", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[18 /*6*/], "SOL2_PASS" /*Michael I have put your name in the credits for the film. ~nrt~ <img src='img://ExecutiveProducer/executiveproducer' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[18 /*6*/], "SOL2_PASS" /*Michael, te he incluido en los créditos de la película. ~nrt~ <img src='img://ExecutiveProducer/executiveproducer' vspace='0' width='252' height='150'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[18 /*16*/], "executiveproducer", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[19 /*6*/], "MAPEMAIL_TXT1" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_18/NHP_PHOTO_18' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[19 /*6*/], "MAPEMAIL_TXT1" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_18/NHP_PHOTO_18' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[19 /*16*/], "NHP_PHOTO_18", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[20 /*6*/], "MAPEMAIL_TXT2" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_11/NHP_PHOTO_11' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[20 /*6*/], "MAPEMAIL_TXT2" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_11/NHP_PHOTO_11' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[20 /*16*/], "NHP_PHOTO_11", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[21 /*6*/], "MAPEMAIL_TXT3" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_13/NHP_PHOTO_13' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[21 /*6*/], "MAPEMAIL_TXT3" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_13/NHP_PHOTO_13' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[21 /*16*/], "NHP_PHOTO_13", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[22 /*6*/], "MAPEMAIL_TXT4" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_5/NHP_PHOTO_5' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[22 /*6*/], "MAPEMAIL_TXT4" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_5/NHP_PHOTO_5' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[22 /*16*/], "NHP_PHOTO_5", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[23 /*6*/], "MAPEMAIL_TXT5" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_12/NHP_PHOTO_12' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[23 /*6*/], "MAPEMAIL_TXT5" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_12/NHP_PHOTO_12' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[23 /*16*/], "NHP_PHOTO_12", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[24 /*6*/], "MAPEMAIL_TXT6" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_3/NHP_PHOTO_3' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[24 /*6*/], "MAPEMAIL_TXT6" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_3/NHP_PHOTO_3' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[24 /*16*/], "NHP_PHOTO_3", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[25 /*6*/], "MAPEMAIL_TXT7" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_1/NHP_PHOTO_1' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[25 /*6*/], "MAPEMAIL_TXT7" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_1/NHP_PHOTO_1' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[25 /*16*/], "NHP_PHOTO_1", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[26 /*6*/], "MAPEMAIL_TXT8" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_10/NHP_PHOTO_10' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[26 /*6*/], "MAPEMAIL_TXT8" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_10/NHP_PHOTO_10' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[26 /*16*/], "NHP_PHOTO_10", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[27 /*6*/], "MAPEMAIL_TXT9" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_6/NHP_PHOTO_6' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[27 /*6*/], "MAPEMAIL_TXT9" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_6/NHP_PHOTO_6' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[27 /*16*/], "NHP_PHOTO_6", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[28 /*6*/], "MAPEMAIL_TXT10" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_20/NHP_PHOTO_20' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[28 /*6*/], "MAPEMAIL_TXT10" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_20/NHP_PHOTO_20' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[28 /*16*/], "NHP_PHOTO_20", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[29 /*6*/], "MAPEMAIL_TXT11" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_7/NHP_PHOTO_7' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[29 /*6*/], "MAPEMAIL_TXT11" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_7/NHP_PHOTO_7' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[29 /*16*/], "NHP_PHOTO_7", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[30 /*6*/], "MAPEMAIL_TXT12" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_14/NHP_PHOTO_14' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[30 /*6*/], "MAPEMAIL_TXT12" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_14/NHP_PHOTO_14' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[30 /*16*/], "NHP_PHOTO_14", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[31 /*6*/], "MAPEMAIL_TXT13" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_4/NHP_PHOTO_4' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[31 /*6*/], "MAPEMAIL_TXT13" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_4/NHP_PHOTO_4' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[31 /*16*/], "NHP_PHOTO_4", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[32 /*6*/], "MAPEMAIL_TXT14" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_17/NHP_PHOTO_17' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[32 /*6*/], "MAPEMAIL_TXT14" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_17/NHP_PHOTO_17' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[32 /*16*/], "NHP_PHOTO_17", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[33 /*6*/], "MAPEMAIL_TXT15" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_2/NHP_PHOTO_2' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[33 /*6*/], "MAPEMAIL_TXT15" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_2/NHP_PHOTO_2' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[33 /*16*/], "NHP_PHOTO_2", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[34 /*6*/], "MAPEMAIL_TXT16" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_15/NHP_PHOTO_15' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[34 /*6*/], "MAPEMAIL_TXT16" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_15/NHP_PHOTO_15' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[34 /*16*/], "NHP_PHOTO_15", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[35 /*6*/], "MAPEMAIL_TXT17" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_8/NHP_PHOTO_8' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[35 /*6*/], "MAPEMAIL_TXT17" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_8/NHP_PHOTO_8' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[35 /*16*/], "NHP_PHOTO_8", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[36 /*6*/], "MAPEMAIL_TXT18" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_9/NHP_PHOTO_9' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[36 /*6*/], "MAPEMAIL_TXT18" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_9/NHP_PHOTO_9' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[36 /*16*/], "NHP_PHOTO_9", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[37 /*6*/], "MAPEMAIL_TXT19" /*Use the photograph in this email to identify the location of the treasure. ~nrt~ <img src='img://NHP_PHOTO_16/NHP_PHOTO_16' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[37 /*6*/], "MAPEMAIL_TXT19" /*Usa la foto de este correo electrónico para identificar la ubicación del tesoro. ~nrt~ <img src='img://NHP_PHOTO_16/NHP_PHOTO_16' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[37 /*16*/], "NHP_PHOTO_16", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[38 /*6*/], "MC_EMAIL_0" /*IMAGE ATTACHMENT ~nrt~ <img src='img://NHP_prep_mines/NHP_prep_mines' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[38 /*6*/], "MC_EMAIL_0" /*FOTO ADJUNTA ~nrt~ <img src='img://NHP_prep_mines/NHP_prep_mines' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[38 /*16*/], "NHP_prep_mines", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[39 /*6*/], "BONEPIC1_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_0/BAT_CASE_0'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[39 /*6*/], "BONEPIC1_TXT" /*~a~ ~a~ ~a~~nrt~ <img src='img://BAT_CASE_0/BAT_CASE_0'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[39 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[40 /*6*/], "BONEPIC2_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_1/BAT_CASE_1'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[40 /*6*/], "BONEPIC2_TXT" /*~a~ ~a~ ~a~~nrt~ <img src='img://BAT_CASE_1/BAT_CASE_1'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[40 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[41 /*6*/], "BONEPIC3_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_2/BAT_CASE_2'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[41 /*6*/], "BONEPIC3_TXT" /*~a~ ~a~ ~a~~nrt~ <img src='img://BAT_CASE_2/BAT_CASE_2'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[41 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[42 /*6*/], "BONEPIC4_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_3/BAT_CASE_3'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[42 /*6*/], "BONEPIC4_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_3/BAT_CASE_3'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[42 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[43 /*6*/], "BONEPIC5_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_4/BAT_CASE_4'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[43 /*6*/], "BONEPIC5_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_4/BAT_CASE_4'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[43 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[44 /*6*/], "BONEPIC6_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_5/BAT_CASE_5'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[44 /*6*/], "BONEPIC6_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_5/BAT_CASE_5'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[44 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[45 /*6*/], "BONEPIC7_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_6/BAT_CASE_6'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[45 /*6*/], "BONEPIC7_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_6/BAT_CASE_6'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[45 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[46 /*6*/], "BONEPIC8_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_7/BAT_CASE_7'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[46 /*6*/], "BONEPIC8_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_7/BAT_CASE_7'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[46 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[47 /*6*/], "BONEPIC9_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_8/BAT_CASE_8'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[47 /*6*/], "BONEPIC9_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_8/BAT_CASE_8'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[47 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[48 /*6*/], "BONEPIC10_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_9/BAT_CASE_9'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[48 /*6*/], "BONEPIC10_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_9/BAT_CASE_9'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[48 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[49 /*6*/], "BONEPIC11_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_10/BAT_CASE_10'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[49 /*6*/], "BONEPIC11_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_10/BAT_CASE_10'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[49 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[50 /*6*/], "BONEPIC12_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_11/BAT_CASE_11'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[50 /*6*/], "BONEPIC12_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_11/BAT_CASE_11'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[50 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[51 /*6*/], "BONEPIC13_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_12/BAT_CASE_12'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[51 /*6*/], "BONEPIC13_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_12/BAT_CASE_12'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[51 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[52 /*6*/], "BONEPIC14_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_13/BAT_CASE_13'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[52 /*6*/], "BONEPIC14_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_13/BAT_CASE_13'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[52 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[53 /*6*/], "BONEPIC15_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_14/BAT_CASE_14'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[53 /*6*/], "BONEPIC15_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_14/BAT_CASE_14'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[53 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[54 /*6*/], "BONEPIC16_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_15/BAT_CASE_15'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[54 /*6*/], "BONEPIC16_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_15/BAT_CASE_15'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[54 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[55 /*6*/], "BONEPIC17_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_16/BAT_CASE_16'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[55 /*6*/], "BONEPIC17_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_16/BAT_CASE_16'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[55 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[56 /*6*/], "BONEPIC18_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_17/BAT_CASE_17'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[56 /*6*/], "BONEPIC18_TXT" /*~a~~a~~a~ ~nrt~ <img src='img://BAT_CASE_17/BAT_CASE_17'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[56 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[57 /*6*/], "BONEPIC19_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_18/BAT_CASE_18'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[57 /*6*/], "BONEPIC19_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_18/BAT_CASE_18'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[57 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[58 /*6*/], "BONEPIC20_TXT" /*~a~~a~~a~~nrt~ <img src='img://BAT_CASE_19/BAT_CASE_19'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[58 /*6*/], "BONEPIC20_TXT" /*~a~ ~a~ ~a~ ~nrt~ <img src='img://BAT_CASE_19/BAT_CASE_19'  vspace='0' width='252' height='300'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[58 /*16*/], "", 64);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[58 /*6*/], "HK24_FLW_T2" /*I have a bottomless margarita in one hand and a receipt of sale for the old factory in the other. I should have guessed it would end up in your hands - just about everything else in the city has. Nothing beats retirement though. ~n~P.S. Georgina says hi. ~nrt~ <img src='img://UPDT2_24_TEXT_LESTER/UPDT2_24_TEXT_LESTER' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_60[58 /*6*/], "HK24_FLW_T2" /*Tengo en una mano un margarita que me rellenan gratis y en la otra el recibo de compra de la antigua fábrica. Debería haberme imaginado que acabaría en tus manos, como casi todo en la ciudad, aunque yo no cambiaría la jubilación por nada. ~n~P.µD.: Georgina te manda saludos. ~nrt~ <img src='img://UPDT2_24_TEXT_LESTER/UPDT2_24_TEXT_LESTER' vspace='0' width='320' height='200'/> ~nrt~*/, 24);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_421[58 /*16*/], "UPDT2_24_TEXT_LESTER", 64);
 	return;
 }

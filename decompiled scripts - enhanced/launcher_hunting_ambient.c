@@ -450,7 +450,7 @@ void main() // Position - 0x0 (0)
 									{
 										if (!func_89(iLocal_92, 134217728))
 										{
-											func_47("MG_NA_TIME" /*This activity is not available at this time of day. Come back between ~1~:00 and ~1~:00 to participate in this activity.*/, iLocal_118, iLocal_119);
+											func_47("MG_NA_TIME" /*La actividad no está disponible en este momento. Vuelve de ~1~:00 a ~1~:00 para participar en ella.*/, iLocal_118, iLocal_119);
 											func_61(&iLocal_92, 134217728);
 										}
 									}
@@ -469,7 +469,7 @@ void main() // Position - 0x0 (0)
 								{
 									if (!func_89(iLocal_92, 134217728))
 									{
-										func_47("MG_NA_TIME" /*This activity is not available at this time of day. Come back between ~1~:00 and ~1~:00 to participate in this activity.*/, iLocal_118, iLocal_119);
+										func_47("MG_NA_TIME" /*La actividad no está disponible en este momento. Vuelve de ~1~:00 a ~1~:00 para participar en ella.*/, iLocal_118, iLocal_119);
 										func_61(&iLocal_92, 134217728);
 									}
 								}
@@ -804,7 +804,7 @@ void func_4() // Position - 0xB52 (2898)
 	return;
 }
 
-void func_5(char* sParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4) // Position - 0xB63 (2915)
+void func_5(char* sParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) // Position - 0xB63 (2915)
 {
 	if (MISC::IS_STRING_NULL_OR_EMPTY(&Global_99499))
 		return;
@@ -812,7 +812,7 @@ void func_5(char* sParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 	if (MISC::COMPARE_STRINGS(sParam0, &Global_99499, false, -1) != 0)
 		return;
 
-	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, bParam2, bParam3, bParam4, Global_96606);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, bParam3, bParam4, Global_96606);
 	TEXT_LABEL_ASSIGN_STRING(&Global_99499, "", 64);
 	return;
 }
@@ -847,7 +847,7 @@ void func_7() // Position - 0xBE4 (3044)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_8() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1102,19 +1102,19 @@ int func_26() // Position - 0xFDC (4060)
 	return num;
 }
 
-void func_27(ePedComponentType epctParam0) // Position - 0x100C (4108)
+void func_27(Ped pedParam0) // Position - 0x100C (4108)
 {
 	int num;
 	int num2;
 	int num3;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return;
 
-	num = func_35(epctParam0);
+	num = func_35(pedParam0);
 
 	if (!(num == -1))
 	{
@@ -1123,7 +1123,7 @@ void func_27(ePedComponentType epctParam0) // Position - 0x100C (4108)
 		return;
 	}
 
-	num3 = func_29(epctParam0);
+	num3 = func_29(pedParam0);
 
 	if (num3 == -1)
 		return;
@@ -1137,7 +1137,7 @@ void func_28(int iParam0) // Position - 0x1065 (4197)
 	if (iParam0 < 0 || iParam0 >= 5)
 		return;
 
-	if (!(Global_45866[iParam0 /*6*/].f_1 == PV_COMP_HEAD))
+	if (!(Global_45866[iParam0 /*6*/].f_1 == 0))
 		if (Global_45866[iParam0 /*6*/].f_1 == PLAYER::PLAYER_PED_ID())
 			Global_46109 = 0;
 
@@ -1154,7 +1154,7 @@ void func_28(int iParam0) // Position - 0x1065 (4197)
 	return;
 }
 
-int func_29(ePedComponentType epctParam0) // Position - 0x10E8 (4328)
+int func_29(Ped pedParam0) // Position - 0x10E8 (4328)
 {
 	int i;
 
@@ -1162,7 +1162,7 @@ int func_29(ePedComponentType epctParam0) // Position - 0x10E8 (4328)
 
 	for (i = 0; i < 5; i = i + 1)
 	{
-		if (Global_45866[i /*6*/].f_1 == epctParam0)
+		if (Global_45866[i /*6*/].f_1 == pedParam0)
 			return i;
 	}
 
@@ -1245,11 +1245,11 @@ int func_34(int iParam0, int iParam1, int iParam2) // Position - 0x11FC (4604)
 	return -1;
 }
 
-int func_35(ePedComponentType epctParam0) // Position - 0x1248 (4680)
+int func_35(Ped pedParam0) // Position - 0x1248 (4680)
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return -1;
 
 	i = 0;
@@ -1257,7 +1257,7 @@ int func_35(ePedComponentType epctParam0) // Position - 0x1248 (4680)
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!(Global_45897[i /*5*/] == -1))
-			if (epctParam0 == Global_45897[i /*5*/].f_1)
+			if (pedParam0 == Global_45897[i /*5*/].f_1)
 				return i;
 	}
 
@@ -2082,10 +2082,10 @@ void func_83(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x269F (9887
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == BLIP_LEVEL)
-			Global_34170 = BLIP_LEVEL;
+		if (Global_34169 == true)
+			Global_34170 = true;
 	
-		Global_34169 = BLIP_LEVEL;
+		Global_34169 = true;
 	}
 
 	if (bParam1)
@@ -2283,7 +2283,7 @@ void func_90() // Position - 0x2A2A (10794)
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "hunting_ambient", 64);
 	iLocal_97 = 3;
 	echLocal_117 = CHAR_TREVOR;
-	sLocal_99 = "PLAY_HUNT" /*Press ~INPUT_CONTEXT~ to start hunting.*/;
+	sLocal_99 = "PLAY_HUNT" /*Pulsa ~INPUT_CONTEXT~ para iniciar la caza.*/;
 	iLocal_118 = 5;
 	iLocal_119 = 19;
 	fLocal_115 = 2f;
@@ -2372,9 +2372,9 @@ int func_92(int iParam0) // Position - 0x2ABC (10940)
 	return -1;
 }
 
-void func_93(float fParam0, int iParam1) // Position - 0x2BD4 (11220)
+void func_93(int iParam0, int iParam1) // Position - 0x2BD4 (11220)
 {
-	func_94(fParam0, iParam1);
+	func_94(iParam0, iParam1);
 	return;
 }
 

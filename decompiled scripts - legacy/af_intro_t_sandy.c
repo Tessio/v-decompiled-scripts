@@ -203,9 +203,9 @@ int func_1(int iParam0) // Position - 0x1D9 (473)
 void func_2() // Position - 0x230 (560)
 {
 	func_6(-815326385);
-	func_3("SHI_T_SANDY_2" /*Planes you purchase from websites or that you land inside will be stored at ~HUD_COLOUR_TREVOR~~BLIP_HANGAR~~s~~n~Ground vehicles too large for a garage will also be stored here.*/, 0, 0, -1, 10000, 7, 0, 0, 0);
+	func_3("SHI_T_SANDY_2" /*Los aviones que compres en sitios web o que guardes dentro se almacenarán en ~HUD_COLOUR_TREVOR~~BLIP_HANGAR~~s~~n~También se almacenarán aquí los vehículos demasiado grandes para caber en un garaje.*/, 0, 0, -1, 10000, 7, 0, 0, 0);
 	BUILTIN::WAIT(0);
-	func_3("SHI_T_SANDY_3" /*Helicopters purchased from websites or that you land on the helipad will be stored at ~HUD_COLOUR_TREVOR~~BLIP_HELIPAD~*/, 0, 0, -1, 10000, 7, 0, 0, 0);
+	func_3("SHI_T_SANDY_3" /*Los helicópteros que compres en sitios web o que aterrices en el helipuerto se almacenarán en ~HUD_COLOUR_TREVOR~~BLIP_HELIPAD~~s~.*/, 0, 0, -1, 10000, 7, 0, 0, 0);
 	iLocal_35 = 2;
 	return;
 }
@@ -277,7 +277,7 @@ void func_5() // Position - 0x45F (1119)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)

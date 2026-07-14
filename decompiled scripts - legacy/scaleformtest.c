@@ -254,9 +254,9 @@ void func_6(BOOL bParam0) // Position - 0x499 (1177)
 		if (func_12(0))
 			func_7(0);
 	}
-	else if (Global_21610.f_1 == 1)
+	else if (Global_21610.f_1 == true)
 	{
-		if (!(Global_21610.f_1 == 0))
+		if (!(Global_21610.f_1 == false))
 			Global_21610.f_1 = 3;
 	}
 
@@ -295,7 +295,7 @@ void func_7(int iParam0) // Position - 0x4FC (1276)
 
 BOOL func_8() // Position - 0x586 (1414)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;

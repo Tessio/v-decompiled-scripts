@@ -547,7 +547,7 @@ void main() // Position - 0x0 (0)
 	func_57();
 	func_53();
 
-	while (iLocal_278 && func_49(5, PV_COMP_HEAD))
+	while (iLocal_278 && func_49(5, 0))
 	{
 		if (func_47())
 			func_69();
@@ -639,7 +639,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -663,9 +663,9 @@ BOOL func_4(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x265 (613)
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_23053 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -1999,7 +1999,7 @@ BOOL func_48() // Position - 0x1ED7 (7895)
 	return false;
 }
 
-int func_49(int iParam0, ePedComponentType epctParam1) // Position - 0x1EF1 (7921)
+int func_49(int iParam0, Ped pedParam1) // Position - 0x1EF1 (7921)
 {
 	Vector3 entityCoords;
 	float num;
@@ -2020,30 +2020,30 @@ int func_49(int iParam0, ePedComponentType epctParam1) // Position - 0x1EF1 (792
 		if (!func_51(iParam0, func_52()))
 			return 0;
 	
-		if (ENTITY::DOES_ENTITY_EXIST(epctParam1))
+		if (ENTITY::DOES_ENTITY_EXIST(pedParam1))
 		{
-			entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam1, false) };
+			entityCoords = { ENTITY::GET_ENTITY_COORDS(pedParam1, false) };
 			num = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), entityCoords);
 		
 			if (num > 250f)
-				if (!ENTITY::IS_ENTITY_DEAD(epctParam1, false))
-					if (!ENTITY::IS_ENTITY_ON_SCREEN(epctParam1))
+				if (!ENTITY::IS_ENTITY_DEAD(pedParam1, false))
+					if (!ENTITY::IS_ENTITY_ON_SCREEN(pedParam1))
 						return 0;
 				else if (!CAM::IS_SPHERE_VISIBLE(entityCoords, 1.5f))
 					return 0;
 		}
-		else if (epctParam1 == func_50(Global_102175) && epctParam1 != PV_COMP_HEAD)
+		else if (pedParam1 == func_50(Global_102175) && pedParam1 != 0)
 		{
-			Global_102175 = PV_COMP_HEAD;
+			Global_102175 = 0;
 		}
 	}
 
 	return 1;
 }
 
-ePedComponentType func_50(ePedComponentType epctParam0) // Position - 0x1FD5 (8149)
+Ped func_50(Ped pedParam0) // Position - 0x1FD5 (8149)
 {
-	return epctParam0;
+	return pedParam0;
 }
 
 BOOL func_51(int iParam0, int iParam1) // Position - 0x1FDF (8159)

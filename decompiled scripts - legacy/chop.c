@@ -609,7 +609,7 @@ void main() // Position - 0x0 (0)
 		iLocal_391 = 0;
 		iLocal_392 = 0;
 	
-		if (Global_80278 == true)
+		if (Global_80278 == PV_COMP_BERD)
 			func_181();
 	}
 
@@ -1732,7 +1732,7 @@ void func_6(int iParam0, int iParam1, int iParam2) // Position - 0x1D85 (7557)
 
 	flag = true;
 
-	if (Global_114904.f_10201[iParam0 /*12*/].f_5 == 1)
+	if (Global_114904.f_10201[iParam0 /*12*/].f_5 == true)
 	{
 		if (Global_114904.f_10201[iParam0 /*12*/].f_6 == 11 || Global_114904.f_10201[iParam0 /*12*/].f_6 == 12)
 			flag = false;
@@ -1792,7 +1792,7 @@ void func_7() // Position - 0x1E6B (7787)
 
 	while (num < 321)
 	{
-		if (Global_114904.f_10201[num /*12*/].f_5 == 1)
+		if (Global_114904.f_10201[num /*12*/].f_5 == true)
 		{
 			switch (Global_114904.f_10201[num /*12*/].f_6)
 			{
@@ -1952,7 +1952,7 @@ BOOL func_9(BOOL bParam0) // Position - 0x2374 (9076)
 	return IS_BIT_SET(Global_80529, 0);
 }
 
-int func_10() // Position - 0x239C (9116)
+BOOL func_10() // Position - 0x239C (9116)
 {
 	return Global_33775;
 }
@@ -2039,7 +2039,7 @@ void func_17() // Position - 0x2470 (9328)
 		if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !IS_BIT_SET(Global_114904.f_10056.f_94, 1) && !func_19() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 		{
 			MISC::SET_BIT(&(Global_114904.f_10056.f_94), 1);
-			_DISPLAY_HELP_TEXT("CHOP_H_HUNT" /*Chop will bark more often when he nears pickups.*/, -1);
+			_DISPLAY_HELP_TEXT("CHOP_H_HUNT" /*Chop ladrará más cuando se acerque a los paquetes.*/, -1);
 		}
 	}
 
@@ -2524,7 +2524,7 @@ void func_44() // Position - 0x2E78 (11896)
 	if (!IS_BIT_SET(Global_114904.f_10056.f_94, 7) && !HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !func_19() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 	{
 		MISC::SET_BIT(&(Global_114904.f_10056.f_94), 7);
-		_DISPLAY_HELP_TEXT("CHOP_H_BALL" /*When taking Chop for a walk, Franklin can play fetch using the ball in the weapon wheel.*/, -1);
+		_DISPLAY_HELP_TEXT("CHOP_H_BALL" /*Al sacar a Chop de paseo, Franklin puede lanzar la pelota en el dial de armas para que se la traiga.*/, -1);
 	}
 
 	if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(PLAYER::PLAYER_PED_ID()) && !PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), true) && _DOES_ENTITY_EXIST_AND_IS_ALIVE(pedLocal_67) && !PED::IS_PED_IN_ANY_VEHICLE(pedLocal_67, true))
@@ -2606,7 +2606,7 @@ BOOL func_48(int iParam0, int iParam1, BOOL bParam2) // Position - 0x30E7 (12519
 	if (bParam2)
 		return IS_BIT_SET(Global_102481.f_1442[iParam0], iParam1);
 	else if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-		if (func_10() == 0)
+		if (func_10() == false)
 			return IS_BIT_SET(func_49(func_52(iParam0), -1), iParam1);
 	else
 		return IS_BIT_SET(Global_114904.f_668[iParam0], iParam1);
@@ -3199,7 +3199,7 @@ void func_55() // Position - 0x3950 (14672)
 					if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !IS_BIT_SET(Global_114904.f_10056.f_94, 3) && !func_19() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 					{
 						MISC::SET_BIT(&(Global_114904.f_10056.f_94), 3);
-						_DISPLAY_HELP_TEXT("CHOP_H_NOVEH" /*Chop can only get into suitable cars with an empty front passenger seat.*/, -1);
+						_DISPLAY_HELP_TEXT("CHOP_H_NOVEH" /*Chop solo puede subirse a un coche con el asiento de copiloto desocupado.*/, -1);
 					}
 				
 					func_122(3, 1);
@@ -3444,7 +3444,7 @@ void func_55() // Position - 0x3950 (14672)
 					if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !IS_BIT_SET(Global_114904.f_10056.f_94, 2) && !func_19() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 					{
 						MISC::SET_BIT(&(Global_114904.f_10056.f_94), 2);
-						_DISPLAY_HELP_TEXT("CHOP_H_CAR" /*Chop will follow Franklin into suitable cars with an empty front passenger seat.*/, -1);
+						_DISPLAY_HELP_TEXT("CHOP_H_CAR" /*Chop solo subirá con Franklin a un coche con el asiento de copiloto desocupado.*/, -1);
 					}
 				}
 			}
@@ -3539,7 +3539,7 @@ void func_55() // Position - 0x3950 (14672)
 				if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !IS_BIT_SET(Global_114904.f_10056.f_94, 5) && !func_19() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 				{
 					MISC::SET_BIT(&(Global_114904.f_10056.f_94), 5);
-					_DISPLAY_HELP_TEXT("CHOP_H_BIKE" /*Chop will follow bikes and other vehicles he cannot get inside.*/, -1);
+					_DISPLAY_HELP_TEXT("CHOP_H_BIKE" /*Chop seguirá a las motos y otros vehículos en los que no se pueda subir.*/, -1);
 				}
 			}
 			break;
@@ -6183,14 +6183,14 @@ void func_103() // Position - 0x8CAF (36015)
 {
 	if (!PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false) && !ENTITY::IS_ENTITY_IN_WATER(PLAYER::PLAYER_PED_ID()))
 	{
-		if (func_107(PLAYER::PLAYER_PED_ID(), pedLocal_67) > 10f || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WHIS" /*Press ~INPUT_DETONATE~ to whistle to make Chop return to Franklin.*/))
+		if (func_107(PLAYER::PLAYER_PED_ID(), pedLocal_67) > 10f || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WHIS" /*Pulsa ~INPUT_DETONATE~ para silbar a Chop y que vuelva con Franklin.*/))
 		{
 			if (MISC::GET_GAME_TIMER() - iLocal_410 > 4000 && PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_DETONATE))
 			{
 				iLocal_410 = MISC::GET_GAME_TIMER();
 				func_104(PLAYER::PLAYER_PED_ID(), "CALL_CHOP", 3);
 			
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WHIS" /*Press ~INPUT_DETONATE~ to whistle to make Chop return to Franklin.*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WHIS" /*Pulsa ~INPUT_DETONATE~ para silbar a Chop y que vuelva con Franklin.*/))
 					HUD::CLEAR_HELP(true);
 			
 				if (iLocal_49 == 15 && iLocal_50 > 1)
@@ -6210,7 +6210,7 @@ void func_103() // Position - 0x8CAF (36015)
 			if (!IS_BIT_SET(Global_114904.f_10056.f_94, 8) && !HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !func_19() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 			{
 				MISC::SET_BIT(&(Global_114904.f_10056.f_94), 8);
-				_DISPLAY_HELP_TEXT("CHOP_H_WHIS" /*Press ~INPUT_DETONATE~ to whistle to make Chop return to Franklin.*/, -1);
+				_DISPLAY_HELP_TEXT("CHOP_H_WHIS" /*Pulsa ~INPUT_DETONATE~ para silbar a Chop y que vuelva con Franklin.*/, -1);
 			}
 		}
 	}
@@ -6791,9 +6791,9 @@ void func_130() // Position - 0x97AF (38831)
 		PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_SELECT_WEAPON, true);
 	
 		if (iLocal_394 == 0)
-			func_139(BUILTIN::FLOOR(Global_114904.f_20125.f_254), 100, "CHOP_H_HAPPY" /*Happiness*/, 1, -1, 2, -1f, -1f, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, -1, 0, -1, -1082130432, -1082130432, 0, 1, 0, 0, 1, -1, 0, -1, 1, 255, 0, -1082130432);
+			func_139(BUILTIN::FLOOR(Global_114904.f_20125.f_254), 100, "CHOP_H_HAPPY" /*Felicidad*/, 1, -1, 2, -1f, -1f, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, -1, 0, -1, -1082130432, -1082130432, 0, 1, 0, 0, 1, -1, 0, -1, 1, 255, 0, -1082130432);
 		else
-			func_139(100, 100, "CHOP_H_HAPPY" /*Happiness*/, 1, -1, 2, -1f, -1f, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, -1, 0, -1, -1082130432, -1082130432, 0, 1, 0, 0, 1, -1, 0, -1, 1, 255, 0, -1082130432);
+			func_139(100, 100, "CHOP_H_HAPPY" /*Felicidad*/, 1, -1, 2, -1f, -1f, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, -1, 0, -1, -1082130432, -1082130432, 0, 1, 0, 0, 1, -1, 0, -1, 1, 255, 0, -1082130432);
 	
 		if (func_138())
 		{
@@ -6988,17 +6988,17 @@ void func_130() // Position - 0x97AF (38831)
 			else if (iLocal_49 == 2 || iLocal_49 == 15)
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-					func_131("CHOP_H_HOME_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.*/);
+					func_131("CHOP_H_HOME_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.*/);
 				else
-					func_131("CHOP_H_HOME" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.*/);
+					func_131("CHOP_H_HOME" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.*/);
 			}
 			else if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
 			{
-				func_131("CHOP_H_NO_AD_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.*/);
+				func_131("CHOP_H_NO_AD_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear.*/);
 			}
 			else
 			{
-				func_131("CHOP_H_NO_AD" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.*/);
+				func_131("CHOP_H_NO_AD" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.*/);
 			}
 		}
 	}
@@ -7119,18 +7119,18 @@ eControlType func_137() // Position - 0x9F0C (40716)
 BOOL func_138() // Position - 0x9F24 (40740)
 {
 	if (HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_0" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_1" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_2" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_3" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~Press ~INPUT_SCRIPT_RDOWN~ to make Chop beg.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_4" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~Press ~INPUT_SCRIPT_RDOWN~ to make Chop beg.~n~Press ~INPUT_SCRIPT_RUP~ to pet Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HOME" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_0" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_1" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_2" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_3" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~Press ~INPUT_SCRIPT_RDOWN~ to make Chop beg.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_4" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~Press ~INPUT_SCRIPT_RDOWN~ to make Chop beg.~n~Press ~INPUT_SCRIPT_RUP~ to pet Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NO_AD" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_0" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_1" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_2" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_3" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~Pulsa ~INPUT_SCRIPT_RDOWN~ para hacer que pida.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_4" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~Pulsa ~INPUT_SCRIPT_RDOWN~ para hacer que pida.~n~Pulsa ~INPUT_SCRIPT_RUP~ para acariciar a Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HOME" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_0" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_1" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_2" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_3" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~Pulsar ~INPUT_SCRIPT_RDOWN~ para hacer que pida.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_4" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~Pulsa ~INPUT_SCRIPT_RDOWN~ para hacer que pida.~n~Pulsa ~INPUT_SCRIPT_RUP~ para acariciar a Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NO_AD" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.*/))
 			return true;
 
 	if (MISC::IS_PC_VERSION())
 		if (HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_0_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_1_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_2_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_3_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~Press ~INPUT_CONTEXT~ to make Chop beg.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_4_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~Press ~INPUT_CONTEXT~ to make Chop beg.~n~Press ~INPUT_ENTER~ to pet Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HOME_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_0_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_1_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_2_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_3_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~Press ~INPUT_CONTEXT~ to make Chop beg.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_4_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~Press ~INPUT_CONTEXT~ to make Chop beg.~n~Press ~INPUT_ENTER~ to pet Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NO_AD_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.*/))
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_0_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_1_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear. ~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_2_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear. ~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_3_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear. ~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~Pulsa ~INPUT_CONTEXT~ para hacer que pida.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_4_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear. ~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~Pulsa ~INPUT_CONTEXT~ para hacer que pida.~n~Pulsa ~INPUT_ENTER~ para acariciar a Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HOME_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_0_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_1_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa  ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_2_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa  ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_3_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa  ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~Pulsa ~INPUT_CONTEXT~ para hacer que pida.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_4_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa  ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~Pulsa ~INPUT_CONTEXT~ para hacer que pida.~n~Pulsa ~INPUT_ENTER~ para acariciar a Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NO_AD_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear.*/))
 				return true;
 
 	return false;
 }
 
-void func_139(Hash hParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0xA094 (41108)
+void func_139(ePedComponentType epctParam0, BOOL bParam1, char* sParam2, int iParam3, int iParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0xA094 (41108)
 {
 	int num;
 	int i;
@@ -7148,8 +7148,8 @@ void func_139(Hash hParam0, int iParam1, char* sParam2, int iParam3, int iParam4
 	{
 		Global_1679103.f_1 = 1;
 		func_140(0, num);
-		Global_1679103.f_1177[num] = hParam0;
-		Global_1679103.f_1177.f_11[num] = iParam1;
+		Global_1679103.f_1177[num] = epctParam0;
+		Global_1679103.f_1177.f_11[num] = bParam1;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679103.f_1177.f_22[num /*16*/], sParam2, 64);
 		Global_1679103.f_1177.f_194[num] = iParam3;
 		Global_1679103.f_1177.f_183[num] = iParam4;
@@ -7205,7 +7205,7 @@ BOOL func_141(int iParam0, int iParam1) // Position - 0xA374 (41844)
 	return IS_BIT_SET(Global_1679103.f_7064[iParam0], iParam1);
 }
 
-BOOL func_142() // Position - 0xA38A (41866)
+char* func_142() // Position - 0xA38A (41866)
 {
 	return Global_77342;
 }
@@ -7259,7 +7259,7 @@ int func_145() // Position - 0xA407 (41991)
 	func_149(0);
 	func_148(0);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/) || MISC::IS_PC_VERSION() && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO_KM" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/) || MISC::IS_PC_VERSION() && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO_KM" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/))
 		HUD::CLEAR_HELP(true);
 
 	return 0;
@@ -7267,7 +7267,7 @@ int func_145() // Position - 0xA407 (41991)
 
 void func_146() // Position - 0xA497 (42135)
 {
-	if (!IS_BIT_SET(Global_114904.f_10056.f_94, 0) && !(_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/) || MISC::IS_PC_VERSION() && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO_KM" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/)) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_1" /*Use ~INPUT_CELLPHONE_EXTRA_OPTION~ to email the photograph to the LS Tourist Board.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_2" /*Use ~INPUT_CELLPHONE_SELECT~ to send the email to the LS Tourist Board.*/) && !func_147() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && !func_3(0) && !func_143() && !func_142())
+	if (!IS_BIT_SET(Global_114904.f_10056.f_94, 0) && !(_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/) || MISC::IS_PC_VERSION() && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO_KM" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/)) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_1" /*Usa ~INPUT_CELLPHONE_EXTRA_OPTION~ para enviar la foto a la oficina de turismo de Los Santos.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_2" /*Usa ~INPUT_CELLPHONE_SELECT~ para enviar la foto a la oficina de turismo de Los Santos.*/) && !func_147() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && !func_3(0) && !func_143() && !func_142())
 	{
 		if (iLocal_49 == 1 || iLocal_49 == 17 || iLocal_49 == 18)
 		{
@@ -7276,14 +7276,14 @@ void func_146() // Position - 0xA497 (42135)
 				HUD::CLEAR_HELP(true);
 			
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-					func_131("CHOP_H_INTRO_KM" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/);
+					func_131("CHOP_H_INTRO_KM" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/);
 				else
-					func_131("CHOP_H_INTRO" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/);
+					func_131("CHOP_H_INTRO" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/);
 			}
 		}
 	}
 
-	if (MISC::IS_PC_VERSION() && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO_KM" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/))
+	if (MISC::IS_PC_VERSION() && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO_KM" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/))
 		if (func_147() || STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() || func_3(0) || func_143() || func_142())
 			HUD::CLEAR_HELP(true);
 
@@ -7380,7 +7380,7 @@ void func_150() // Position - 0xA6AD (42669)
 					if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !IS_BIT_SET(Global_114904.f_10056.f_94, 6) && !func_19() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 					{
 						MISC::SET_BIT(&(Global_114904.f_10056.f_94), 6);
-						_DISPLAY_HELP_TEXT("CHOP_H_ATTACK" /*Chop will attack anyone who attacks Franklin.*/, -1);
+						_DISPLAY_HELP_TEXT("CHOP_H_ATTACK" /*Chop atacará a cualquiera que ataque a Franklin.*/, -1);
 					}
 				
 					func_40(0);
@@ -7415,7 +7415,7 @@ void func_150() // Position - 0xA6AD (42669)
 								if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && !IS_BIT_SET(Global_114904.f_10056.f_94, 11) && !func_19() && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 								{
 									MISC::SET_BIT(&(Global_114904.f_10056.f_94), 11);
-									_DISPLAY_HELP_TEXT("CHOP_H_AIM" /*Chop will attack anyone who Franklin targets.*/, -1);
+									_DISPLAY_HELP_TEXT("CHOP_H_AIM" /*Chop atacará a todo el que Franklin apunte.*/, -1);
 								}
 							
 								func_40(0);
@@ -7441,7 +7441,7 @@ void func_150() // Position - 0xA6AD (42669)
 
 void func_151() // Position - 0xA97A (43386)
 {
-	if (iLocal_49 != 16 && Global_33781 == 1 && ENTITY::IS_ENTITY_ATTACHED_TO_ANY_OBJECT(PLAYER::PLAYER_PED_ID()))
+	if (iLocal_49 != 16 && Global_33781 == HUD_COLOUR_WHITE && ENTITY::IS_ENTITY_ATTACHED_TO_ANY_OBJECT(PLAYER::PLAYER_PED_ID()))
 		func_122(16, 1);
 
 	return;
@@ -7874,7 +7874,7 @@ BOOL func_164() // Position - 0xB4C2 (46274)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(pedLocal_67))
 		{
-			if (func_168(0) && Global_33781 == 0)
+			if (func_168(0) && Global_33781 == HUD_COLOUR_PURE_WHITE)
 				return true;
 		
 			if (!func_171(CHAR_FRANKLIN))
@@ -7883,7 +7883,7 @@ BOOL func_164() // Position - 0xB4C2 (46274)
 			if (Global_114894 == true)
 				return true;
 		
-			if (Global_80278 == true && Global_33781 == 0 && Global_9467 == 0 && Global_34031 == false && Global_34032 == 0 && Global_34033 == false && Global_62191 == false && !func_147() && !func_15() && Global_104624 == false && _DOES_ENTITY_EXIST_AND_IS_ALIVE(PLAYER::PLAYER_PED_ID()) && !func_166())
+			if (Global_80278 == PV_COMP_BERD && Global_33781 == HUD_COLOUR_PURE_WHITE && Global_9467 == false && Global_34031 == false && Global_34032 == false && Global_34033 == false && Global_62191 == false && !func_147() && !func_15() && Global_104624 == false && _DOES_ENTITY_EXIST_AND_IS_ALIVE(PLAYER::PLAYER_PED_ID()) && !func_166())
 				return true;
 		
 			if (Global_99324 == true)
@@ -7898,13 +7898,13 @@ BOOL func_164() // Position - 0xB4C2 (46274)
 					if (!IS_BIT_SET(Global_114904.f_10056.f_94, 9) && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 					{
 						MISC::SET_BIT(&(Global_114904.f_10056.f_94), 9);
-						_DISPLAY_HELP_TEXT("CHOP_H_DEAD" /*Franklin killed Chop. Chop will soon return to Franklin's safehouse, but he's not happy.*/, -1);
+						_DISPLAY_HELP_TEXT("CHOP_H_DEAD" /*Franklin ha matado a Chop. Chop volverá pronto al piso franco de Franklin, pero no está contento.*/, -1);
 					}
 				}
 				else if (!IS_BIT_SET(Global_114904.f_10056.f_94, 12) && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 				{
 					MISC::SET_BIT(&(Global_114904.f_10056.f_94), 12);
-					_DISPLAY_HELP_TEXT("CHOP_H_DEAD2" /*Chop was killed. Chop will soon return to Franklin's safehouse.*/, -1);
+					_DISPLAY_HELP_TEXT("CHOP_H_DEAD2" /*Chop ha muerto. Chop volverá pronto al piso franco de Franklin.*/, -1);
 				}
 			
 				return true;
@@ -7932,7 +7932,7 @@ BOOL func_164() // Position - 0xB4C2 (46274)
 							else
 							{
 								MISC::SET_BIT(&(Global_114904.f_10056.f_94), 4);
-								_DISPLAY_HELP_TEXT("CHOP_H_RANGE" /*Chop will stop following if left too far behind.*/, -1);
+								_DISPLAY_HELP_TEXT("CHOP_H_RANGE" /*Chop dejará de seguirte si lo dejas demasiado atrás.*/, -1);
 							}
 						}
 					
@@ -7968,12 +7968,12 @@ BOOL func_164() // Position - 0xB4C2 (46274)
 void func_165() // Position - 0xB762 (46946)
 {
 	if (HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_0" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_1" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_2" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_3" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~Press ~INPUT_SCRIPT_RDOWN~ to make Chop beg.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_4" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~Press ~INPUT_SCRIPT_RDOWN~ to make Chop beg.~n~Press ~INPUT_SCRIPT_RUP~ to pet Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HOME" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_0" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_1" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_2" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_3" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~Press ~INPUT_SCRIPT_RDOWN~ to make Chop beg.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_4" /*Press ~INPUT_SCRIPT_RB~ to dismiss Chop.~n~Press ~INPUT_SCRIPT_RT~ to make Chop hunt for pickups.~n~Press ~INPUT_SCRIPT_RLEFT~ to make Chop sit.~n~Press ~INPUT_SCRIPT_RRIGHT~ to make Chop give paw.~n~Press ~INPUT_SCRIPT_RDOWN~ to make Chop beg.~n~Press ~INPUT_SCRIPT_RUP~ to pet Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HUNT" /*Chop will bark more often when he nears pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NOVEH" /*Chop can only get into suitable cars with an empty front passenger seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_CAR" /*Chop will follow Franklin into suitable cars with an empty front passenger seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_BIKE" /*Chop will follow bikes and other vehicles he cannot get inside.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_ATTACK" /*Chop will attack anyone who attacks Franklin.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_BALL" /*When taking Chop for a walk, Franklin can play fetch using the ball in the weapon wheel.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WHIS" /*Press ~INPUT_DETONATE~ to whistle to make Chop return to Franklin.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_AIM" /*Chop will attack anyone who Franklin targets.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NO_AD" /*Press ~INPUT_SCRIPT_RB~ to take Chop for a walk.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_0" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_1" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_2" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_3" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~Pulsa ~INPUT_SCRIPT_RDOWN~ para hacer que pida.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_4" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~Pulsa ~INPUT_SCRIPT_RDOWN~ para hacer que pida.~n~Pulsa ~INPUT_SCRIPT_RUP~ para acariciar a Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HOME" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_0" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_1" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_2" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_3" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~Pulsar ~INPUT_SCRIPT_RDOWN~ para hacer que pida.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_4" /*Pulsa ~INPUT_SCRIPT_RB~ para dejar a Chop.~n~Pulsa ~INPUT_SCRIPT_RT~ para que busque paquetes.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para hacer que se siente.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para hacer que dé la pata.~n~Pulsa ~INPUT_SCRIPT_RDOWN~ para hacer que pida.~n~Pulsa ~INPUT_SCRIPT_RUP~ para acariciar a Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HUNT" /*Chop ladrará más cuando se acerque a los paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NOVEH" /*Chop solo puede subirse a un coche con el asiento de copiloto desocupado.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_CAR" /*Chop solo subirá con Franklin a un coche con el asiento de copiloto desocupado.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_BIKE" /*Chop seguirá a las motos y otros vehículos en los que no se pueda subir.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_ATTACK" /*Chop atacará a cualquiera que ataque a Franklin.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_BALL" /*Al sacar a Chop de paseo, Franklin puede lanzar la pelota en el dial de armas para que se la traiga.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WHIS" /*Pulsa ~INPUT_DETONATE~ para silbar a Chop y que vuelva con Franklin.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_AIM" /*Chop atacará a todo el que Franklin apunte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NO_AD" /*Pulsa ~INPUT_SCRIPT_RB~ para sacar a Chop a pasear.*/))
 			HUD::CLEAR_HELP(true);
 
 	if (MISC::IS_PC_VERSION())
 		if (HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO_KM" /*Hold ~INPUT_AIM~ when unarmed to interact with Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_0_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_1_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_2_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_3_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~Press ~INPUT_CONTEXT~ to make Chop beg.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_4_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~Press ~INPUT_CONTEXT~ to make Chop beg.~n~Press ~INPUT_ENTER~ to pet Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HOME_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_0_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_1_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_2_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_3_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~Press ~INPUT_CONTEXT~ to make Chop beg.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_4_KM" /*Press ~INPUT_ATTACK~ to dismiss Chop.~n~Press ~INPUT_JUMP~ to make Chop hunt for pickups.~n~Press ~INPUT_COVER~ to make Chop sit.~n~Press ~INPUT_RELOAD~ to make Chop give paw.~n~Press ~INPUT_CONTEXT~ to make Chop beg.~n~Press ~INPUT_ENTER~ to pet Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NO_AD_KM" /*Press ~INPUT_ATTACK~ to take Chop for a walk.*/))
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_INTRO_KM" /*Mantén pulsado ~INPUT_AIM~ cuando estés desarmado para interactuar con Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_0_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear.~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_1_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear. ~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_2_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear. ~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_3_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear. ~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~Pulsa ~INPUT_CONTEXT~ para hacer que pida.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WAIT_4_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear. ~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~Pulsa ~INPUT_CONTEXT~ para hacer que pida.~n~Pulsa ~INPUT_ENTER~ para acariciar a Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_HOME_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_0_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa ~INPUT_JUMP~ para que busque paquetes.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_1_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa  ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_2_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa  ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_3_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa  ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~Pulsa ~INPUT_CONTEXT~ para hacer que pida.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_WALK_4_KM" /*Pulsa ~INPUT_ATTACK~ para dejar a Chop.~n~Pulsa  ~INPUT_JUMP~ para que busque paquetes.~n~Pulsa ~INPUT_COVER~ para hacer que se siente.~n~Pulsa ~INPUT_RELOAD~ para hacer que dé la pata.~n~Pulsa ~INPUT_CONTEXT~ para hacer que pida.~n~Pulsa ~INPUT_ENTER~ para acariciar a Chop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CHOP_H_NO_AD_KM" /*Pulsa ~INPUT_ATTACK~ para sacar a Chop a pasear.*/))
 				HUD::CLEAR_HELP(true);
 
 	return;

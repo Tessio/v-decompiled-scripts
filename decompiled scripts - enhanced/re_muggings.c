@@ -1344,9 +1344,9 @@ void func_8(var uParam0, Ped pedParam1, var uParam2, var uParam3, var uParam4, c
 
 	if (MISC::IS_STRING_NULL(string2))
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			string2 = "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/;
+			string2 = "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/;
 		else
-			string2 = "FM_IHELP_HNT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus.*/;
+			string2 = "FM_IHELP_HNT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para alternar la cámara.*/;
 
 	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(string2))
 		func_35();
@@ -1400,7 +1400,7 @@ void func_8(var uParam0, Ped pedParam1, var uParam2, var uParam3, var uParam4, c
 								_DISPLAY_HELP_TEXT(string2, -1);
 								uParam0->f_3 = string2;
 							
-								if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, string2))
+								if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, string2))
 									func_11(true);
 							}
 						}
@@ -1418,7 +1418,7 @@ void func_8(var uParam0, Ped pedParam1, var uParam2, var uParam3, var uParam4, c
 							_DISPLAY_HELP_TEXT(string2, -1);
 							uParam0->f_3 = string2;
 						
-							if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, string2))
+							if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, string2))
 								func_11(true);
 						}
 					}
@@ -1503,7 +1503,7 @@ BOOL func_10(var uParam0) // Position - 0x10A8 (4264)
 	return false;
 }
 
-BOOL func_11(BOOL bParam0) // Position - 0x10D3 (4307)
+int func_11(BOOL bParam0) // Position - 0x10D3 (4307)
 {
 	switch (Global_44886)
 	{
@@ -1545,7 +1545,7 @@ BOOL func_13(const char* sParam0) // Position - 0x1194 (4500)
 {
 	if (!func_14(true, true, false))
 	{
-		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam0) && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/))
+		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam0) && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/))
 			HUD::CLEAR_HELP(true);
 	
 		return false;
@@ -1560,13 +1560,13 @@ BOOL func_13(const char* sParam0) // Position - 0x1194 (4500)
 			break;
 	
 		case 4:
-			if (func_11(false) < true)
+			if (func_11(false) < 1)
 				return true;
 			break;
 	
 		case 5:
 		case 15:
-			if (func_11(false) < true)
+			if (func_11(false) < 1)
 				return true;
 			break;
 	
@@ -2186,9 +2186,9 @@ void func_37(var uParam0, const char* sParam1, BOOL bParam2, BOOL bParam3) // Po
 
 	if (MISC::IS_STRING_NULL(str))
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			str = "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/;
+			str = "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/;
 		else
-			str = "FM_IHELP_HNT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus.*/;
+			str = "FM_IHELP_HNT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para alternar la cámara.*/;
 
 	if (!MISC::IS_STRING_NULL(uParam0->f_3))
 		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(uParam0->f_3))
@@ -2286,7 +2286,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -2310,9 +2310,9 @@ BOOL func_43(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x207A (831
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_23053 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -3923,7 +3923,7 @@ void func_69(int iParam0) // Position - 0x4096 (16534)
 	if (flag)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&txdName, "CHAR_LIFEINVADER", 64);
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*You have redeemed your promotion for ~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*Has canjeado tu promoción de ~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(func_70(iParam0));
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, true, 0, "", 0);
 	}
@@ -3936,28 +3936,28 @@ char* func_70(int iParam0) // Position - 0x4260 (16992)
 	switch (iParam0)
 	{
 		case 0:
-			return "COUP_HAIRC" /*one free haircut.*/;
+			return "COUP_HAIRC" /*un corte de pelo gratis.*/;
 	
 		case 1:
-			return "COUP_TATTOO" /*one free tattoo.*/;
+			return "COUP_TATTOO" /*un tatuaje gratis.*/;
 	
 		case 2:
-			return "COUP_WARSTOCK" /*10% off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 3:
-			return "COUP_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 4:
-			return "COUP_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 5:
-			return "COUP_MEDSPENS" /*10 percent off your next medical expenses.*/;
+			return "COUP_MEDSPENS" /*10% de descuento en tus próximos gastos médicos.*/;
 	
 		case 6:
-			return "COUP_SPRUNK" /*one free can of Sprunk.*/;
+			return "COUP_SPRUNK" /*una lata gratis de Sprunk.*/;
 	
 		case 7:
-			return "COUP_RESPRAY" /*one free respray.*/;
+			return "COUP_RESPRAY" /*una pintura de vehículo gratis.*/;
 	
 		case 8:
 			return "COUP_XMAS2017";
@@ -3972,32 +3972,32 @@ char* func_70(int iParam0) // Position - 0x4260 (16992)
 			return "COUP_CAR2_XMAS2018";
 	
 		case 12:
-			return "COUP_CAS_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_CAS_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 13:
-			return "COUP_CAS_DOCKTEASE" /*10 percent off your next purchase at DockTease.com.*/;
+			return "COUP_CAS_DOCKTEASE" /*10% de descuento en tu próxima compra en DockTease.com.*/;
 	
 		case 14:
-			return "COUP_CAS_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_CAS_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 15:
-			return "COUP_CAS_SSASA" /*10 percent off your next purchase at southernsanandreassuperautos.com.*/;
+			return "COUP_CAS_SSASA" /*10% de descuento en tu próxima compra en southernsanandreassuperautos.com.*/;
 	
 		case 16:
-			return "COUP_CAS_WARSTOCK" /*10 percent off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_CAS_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 17:
-			return "COUP_CAS_PANDM" /*10 percent off your next purchase at pandmcycles.com.*/;
+			return "COUP_CAS_PANDM" /*10% de descuento en tu próxima compra en pandmcycles.com.*/;
 	
 		case 39:
 			return "COUPON_CAR_GEN9_MIGRATION";
 	
 		default:
 			if (func_77(iParam0))
-				return "HSW_COUP" /*One free respray, livery or spoiler.*/;
+				return "HSW_COUP" /*Una pintura, cubierta o alerón de vehículo gratis.*/;
 		
 			if (func_75(iParam0))
-				return "HSWU_COUP" /*One free Hao's Special Works upgrade.*/;
+				return "HSWU_COUP" /*Una mejora de Hao's Special Works gratis.*/;
 			break;
 	}
 
@@ -4180,43 +4180,43 @@ Hash func_79(int iParam0, int iParam1) // Position - 0x45D9 (17881)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_80(iParam1));
 }
 
-Interior func_80(Interior inParam0) // Position - 0x45EE (17902)
+int func_80(int iParam0) // Position - 0x45EE (17902)
 {
-	Interior interior;
-	Interior interior2;
+	int num;
+	int num2;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
+	if (num == -1)
 	{
-		interior2 = func_81();
+		num2 = func_81();
 	
-		if (interior2 > -1)
+		if (num2 > -1)
 		{
 			Global_2741524 = 0;
-			interior = interior2;
+			num = num2;
 		}
 		else
 		{
-			interior = 0;
+			num = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return interior;
+	return num;
 }
 
-Interior func_81() // Position - 0x4622 (17954)
+int func_81() // Position - 0x4622 (17954)
 {
 	return Global_1574927;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x462E (17966)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x462E (17966)
 {
-	if (inParam2 == -1)
-		inParam2 = func_81();
+	if (iParam2 == -1)
+		iParam2 = func_81();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
 	return;
 }
 
@@ -4370,12 +4370,12 @@ int func_85(int iParam0, int iParam1) // Position - 0x4877 (18551)
 	return 0;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, Interior inParam1) // Position - 0x48A6 (18598)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0x48A6 (18598)
 {
-	if (inParam1 == -1)
-		inParam1 = func_81();
+	if (iParam1 == -1)
+		iParam1 = func_81();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, inParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
 }
 
 int func_87(BOOL bParam0) // Position - 0x48C2 (18626)
@@ -5394,7 +5394,7 @@ void func_121(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 		func_128(true, bParam3, bParam2, false);
 		Global_65033 = true;
 		Global_77362 = true;
-		Global_80303 = PV_COMP_BERD;
+		Global_80303 = true;
 	}
 	else
 	{
@@ -5415,7 +5415,7 @@ void func_121(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_126(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80303 = PV_COMP_HEAD;
+		Global_80303 = false;
 	}
 
 	return;
@@ -5445,24 +5445,24 @@ BOOL func_123(Player plParam0, int iParam1) // Position - 0x5C68 (23656)
 	return flag;
 }
 
-eCharacter func_124(Interior inParam0, BOOL bParam1) // Position - 0x5CC1 (23745)
+eCharacter func_124(int iParam0, BOOL bParam1) // Position - 0x5CC1 (23745)
 {
 	eCharacter character;
-	Interior interior;
+	int num;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
-		interior = func_81();
+	if (num == -1)
+		num = func_81();
 
-	if (Global_1575072[interior] == true)
+	if (Global_1575072[num] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[interior];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
@@ -5602,15 +5602,15 @@ char* func_133(int iParam0) // Position - 0x5EDF (24287)
 	switch (iParam0)
 	{
 		case 0:
-			str = "AM_H_REFS" /*Various events unfold across San Andreas daily. These events will become blipped on the Radar when nearby.*/;
+			str = "AM_H_REFS" /*Ocurren varios eventos en San Andreas cada día. Aparecerá un icono en tu radar cuando estés cerca de uno de ellos.*/;
 			break;
 	
 		case 1:
-			str = "RE_FLASHBLIP" /*Flashing blue and red blips indicate situations around San Andreas that you can choose to help with.*/;
+			str = "RE_FLASHBLIP" /*Los iconos intermitentes azules y rojos indican situaciones en San Andreas en las que puedes participar.*/;
 			break;
 	
 		case 2:
-			str = "RE_HANDOVER" /*If you retrieve a stolen item, you can choose to keep it or return it for a reward.*/;
+			str = "RE_HANDOVER" /*Si recuperas un artículo robado, puedes quedártelo o devolverlo a cambio de una recompensa.*/;
 			break;
 	}
 
@@ -7073,7 +7073,7 @@ int func_182(BOOL bParam0) // Position - 0x7F50 (32592)
 		if (func_183(Global_114920))
 			func_148(0);
 	
-		HUD::SET_MISSION_NAME(true, "RE_TITLE" /*Random Event*/);
+		HUD::SET_MISSION_NAME(true, "RE_TITLE" /*Evento aleatorio*/);
 	
 		if (bParam0 && func_183(Global_114920))
 			HUD::FLASH_MINIMAP_DISPLAY();
@@ -7462,7 +7462,7 @@ void func_193(int iParam0, var uParam1) // Position - 0x856D (34157)
 			break;
 	
 		case 5:
-			func_194(uParam1, "Barry3A", func_196(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Areas where you can find vehicles with a hidden stash have been marked on the map. Collect these vehicles for Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_195(iParam0), 0, 1);
+			func_194(uParam1, "Barry3A", func_196(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Las zonas en las que puedes encontrar vehículos con un alijo oculto aparecerán indicadas en el mapa. Recoge estos vehículos para Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_195(iParam0), 0, 1);
 			break;
 	
 		case 6:
@@ -7474,7 +7474,7 @@ void func_193(int iParam0, var uParam1) // Position - 0x856D (34157)
 			break;
 	
 		case 8:
-			func_194(uParam1, "Dreyfuss1", func_196(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*The killer's identity and location have been revealed.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_195(iParam0), 0, 0);
+			func_194(uParam1, "Dreyfuss1", func_196(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*Se ha revelado la identidad y el paradero del asesino.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_195(iParam0), 0, 0);
 			break;
 	
 		case 9:
@@ -7594,7 +7594,7 @@ void func_193(int iParam0, var uParam1) // Position - 0x856D (34157)
 			break;
 	
 		case 38:
-			func_194(uParam1, "Nigel1A", func_196(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Areas where you can find celebrity items have been marked on the map. Steal these items for Nigel and Mrs. Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_195(iParam0), 1, 1);
+			func_194(uParam1, "Nigel1A", func_196(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Se han marcado en el mapa las zonas en las que puedes encontrar objetos de famosos. Róbalos para Nigel y para la señora Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_195(iParam0), 1, 1);
 			break;
 	
 		case 39:
@@ -7638,7 +7638,7 @@ void func_193(int iParam0, var uParam1) // Position - 0x856D (34157)
 			break;
 	
 		case 49:
-			func_194(uParam1, "Paparazzo3A", func_196(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Areas where you can find celebrity photo opportunities have been marked on the map. Track down and photograph these celebrities for Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_195(iParam0), 0, 1);
+			func_194(uParam1, "Paparazzo3A", func_196(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Las zonas en las que puedes encontrar oportunidades para sacar fotos a famosos se han marcado en el mapa. Localiza y fotografía a estos famosos para Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_195(iParam0), 0, 1);
 			break;
 	
 		case 50:
@@ -7674,7 +7674,7 @@ void func_193(int iParam0, var uParam1) // Position - 0x856D (34157)
 			break;
 	
 		case 58:
-			func_194(uParam1, "Tonya1", func_196(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_195(iParam0), 0, 1);
+			func_194(uParam1, "Tonya1", func_196(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_195(iParam0), 0, 1);
 			break;
 	
 		case 59:
@@ -11522,7 +11522,7 @@ void func_306(int iParam0, int iParam1) // Position - 0xE35B (58203)
 	
 		if (!func_315(51))
 		{
-			func_312("RE_REWARD" /*Some Random Events will reward the player with stat boosts or money.*/, 1, 0, 4000, 10000, func_198(), 0, 138, 0);
+			func_312("RE_REWARD" /*Algunos eventos aleatorios recompensarán al jugador con mejoras de estadísticas o con dinero.*/, 1, 0, 4000, 10000, func_198(), 0, 138, 0);
 			func_311(51);
 		}
 	

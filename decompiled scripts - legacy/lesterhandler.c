@@ -461,7 +461,7 @@ BOOL func_5(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x567 (1383)
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -727,7 +727,7 @@ void func_13() // Position - 0x96A (2410)
 
 BOOL func_14() // Position - 0x9FF (2559)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -833,7 +833,7 @@ void func_20() // Position - 0xBFE (3070)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;

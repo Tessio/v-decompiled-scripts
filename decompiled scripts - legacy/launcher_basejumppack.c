@@ -961,7 +961,7 @@ void func_8() // Position - 0xAE1 (2785)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_9() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1870,15 +1870,15 @@ void func_53(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		}
 	
 		func_61(true, bParam3, bParam2, false);
-		Global_65016 = 1;
-		Global_77345 = true;
-		Global_80278 = true;
+		Global_65016 = true;
+		Global_77345 = PV_COMP_BERD;
+		Global_80278 = PV_COMP_BERD;
 	}
 	else
 	{
 		func_63(0);
 		HUD::THEFEED_RESUME();
-		Global_65016 = 0;
+		Global_65016 = false;
 	
 		if (bParam1)
 			GRAPHICS::CASCADE_SHADOWS_INIT_SESSION();
@@ -1893,7 +1893,7 @@ void func_53(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_59(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80278 = false;
+		Global_80278 = PV_COMP_HEAD;
 	}
 
 	return;
@@ -1912,7 +1912,7 @@ BOOL func_55(Player plParam0, int iParam1) // Position - 0x1E7D (7805)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_56(-1, false) == 8;
+		flag = func_56(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845250[plParam0 /*880*/].f_198 == 8;
 
@@ -1923,28 +1923,28 @@ BOOL func_55(Player plParam0, int iParam1) // Position - 0x1E7D (7805)
 	return flag;
 }
 
-int func_56(int iParam0, BOOL bParam1) // Position - 0x1ED6 (7894)
+eCharacter func_56(int iParam0, BOOL bParam1) // Position - 0x1ED6 (7894)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_57();
+	if (num == -1)
+		num = func_57();
 
-	if (Global_1575070[num2] == true)
+	if (Global_1575070[num] == true)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_57() // Position - 0x1F17 (7959)
@@ -2007,7 +2007,7 @@ int func_61(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position 
 
 BOOL func_62() // Position - 0x1FC5 (8133)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -2111,9 +2111,9 @@ void func_69(BOOL bParam0) // Position - 0x2144 (8516)
 		if (func_96(0))
 			func_64(0);
 	}
-	else if (Global_21610.f_1 == 1)
+	else if (Global_21610.f_1 == true)
 	{
-		if (!(Global_21610.f_1 == 0))
+		if (!(Global_21610.f_1 == false))
 			Global_21610.f_1 = 3;
 	}
 
@@ -2742,29 +2742,29 @@ BOOL func_94(var uParam0) // Position - 0x2C47 (11335)
 	return true;
 }
 
-BOOL func_95() // Position - 0x2C50 (11344)
+ePedComponentType func_95() // Position - 0x2C50 (11344)
 {
 	return Global_77342;
 }
 
-BOOL func_96(int iParam0) // Position - 0x2C5C (11356)
+ePedComponentType func_96(int iParam0) // Position - 0x2C5C (11356)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_97(int iParam0, int iParam1) // Position - 0x2CB3 (11443)
@@ -2960,7 +2960,7 @@ BOOL func_110() // Position - 0x3600 (13824)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_111() // Position - 0x3611 (13841)
+ePedComponentType func_111() // Position - 0x3611 (13841)
 {
 	return Global_1575090;
 }
@@ -3491,7 +3491,7 @@ void func_136() // Position - 0x3E09 (15881)
 	iLocal_97 = 0;
 	fLocal_100 = BUILTIN::TO_FLOAT(func_137(iLocal_103)) + 5f;
 	fLocal_115 = 1.1f;
-	sLocal_99 = "PLAY_BASEJUMP_G" /*Press ~INPUT_CONTEXT~ to start parachuting.*/;
+	sLocal_99 = "PLAY_BASEJUMP_G" /*Pulsa ~INPUT_CONTEXT~ para saltar en paracaídas.*/;
 
 	if (iLocal_103 != 263)
 	{
@@ -3594,7 +3594,7 @@ void func_138(int iParam0) // Position - 0x4111 (16657)
 	return;
 }
 
-BOOL func_139(int iParam0) // Position - 0x4154 (16724)
+char* func_139(int iParam0) // Position - 0x4154 (16724)
 {
 	return Global_113991[iParam0 /*10*/].f_1;
 }

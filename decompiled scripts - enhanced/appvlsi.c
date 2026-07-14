@@ -77,7 +77,7 @@ void main() // Position - 0x0 (0)
 					}
 				
 					if (iLocal_19 == 3)
-						Global_1836237 = true;
+						Global_1836237 = 1;
 					break;
 			
 				case 8:
@@ -115,7 +115,7 @@ BOOL func_1() // Position - 0x126 (294)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -133,7 +133,7 @@ BOOL func_3() // Position - 0x17C (380)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -152,7 +152,7 @@ void func_5() // Position - 0x1C6 (454)
 {
 	if (Global_21615)
 	{
-		func_6(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+		func_6(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 		func_6(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 14f, -1f, -1f, "CELL_213" /*NO*/, 0, 0, 0, 0);
 	}
 	else
@@ -209,9 +209,9 @@ void func_7(const char* sParam0) // Position - 0x30B (779)
 	return;
 }
 
-BOOL func_8(eControlType ectParam0, BOOL bParam1, int iParam2) // Position - 0x31D (797)
+BOOL func_8(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x31D (797)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, bParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, bParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
@@ -230,7 +230,7 @@ void func_9() // Position - 0x38F (911)
 {
 	if (Global_21615)
 	{
-		func_6(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+		func_6(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 		func_6(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 14f, -1f, -1f, "CELL_213" /*NO*/, 0, 0, 0, 0);
 	}
 	else

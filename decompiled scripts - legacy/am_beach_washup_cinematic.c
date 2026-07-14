@@ -138,15 +138,15 @@ void func_4(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 		}
 	
 		func_12(true, bParam3, bParam2, false);
-		Global_65016 = 1;
+		Global_65016 = true;
 		Global_77345 = 1;
-		Global_80278 = 1;
+		Global_80278 = PV_COMP_BERD;
 	}
 	else
 	{
 		func_14(0);
 		HUD::THEFEED_RESUME();
-		Global_65016 = 0;
+		Global_65016 = false;
 	
 		if (bParam1)
 			GRAPHICS::CASCADE_SHADOWS_INIT_SESSION();
@@ -161,7 +161,7 @@ void func_4(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_10(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80278 = 0;
+		Global_80278 = PV_COMP_HEAD;
 	}
 
 	return;
@@ -180,7 +180,7 @@ BOOL func_6(Player plParam0, int iParam1) // Position - 0x243 (579)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_7(-1, false) == 8;
+		flag = func_7(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845250[plParam0 /*880*/].f_198 == 8;
 
@@ -191,28 +191,28 @@ BOOL func_6(Player plParam0, int iParam1) // Position - 0x243 (579)
 	return flag;
 }
 
-int func_7(int iParam0, BOOL bParam1) // Position - 0x29C (668)
+eCharacter func_7(int iParam0, BOOL bParam1) // Position - 0x29C (668)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_8();
+	if (num == -1)
+		num = func_8();
 
-	if (Global_1575070[num2] == 1)
+	if (Global_1575070[num] == true)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_8() // Position - 0x2DD (733)
@@ -597,7 +597,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x8A8 (2216)
 {
 	switch (func_38())
 	{
-		case 0:
+		case false:
 			return func_37();
 	
 		case 2:
@@ -621,7 +621,7 @@ Hash func_37() // Position - 0x8DB (2267)
 	return joaat("freemode");
 }
 
-int func_38() // Position - 0x8FF (2303)
+BOOL func_38() // Position - 0x8FF (2303)
 {
 	return Global_33775;
 }

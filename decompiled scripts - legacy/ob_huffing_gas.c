@@ -992,7 +992,7 @@ int func_7(char* sParam0, int iParam1, BOOL bParam2) // Position - 0xD53 (3411)
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -1258,7 +1258,7 @@ void func_15() // Position - 0x1157 (4439)
 
 BOOL func_16() // Position - 0x11EC (4588)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -1364,7 +1364,7 @@ void func_22() // Position - 0x13EC (5100)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -2065,8 +2065,8 @@ void func_50(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	
 		func_58(true, bParam3, bParam2, false);
 		Global_65016 = true;
-		Global_77345 = true;
-		Global_80278 = true;
+		Global_77345 = PV_COMP_BERD;
+		Global_80278 = PV_COMP_BERD;
 	}
 	else
 	{
@@ -2087,7 +2087,7 @@ void func_50(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_56(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80278 = false;
+		Global_80278 = PV_COMP_HEAD;
 	}
 
 	return;
@@ -2117,31 +2117,31 @@ BOOL func_52(Player plParam0, int iParam1) // Position - 0x2110 (8464)
 	return flag;
 }
 
-eCharacter func_53(int iParam0, BOOL bParam1) // Position - 0x2169 (8553)
+eCharacter func_53(BOOL bParam0, BOOL bParam1) // Position - 0x2169 (8553)
 {
 	eCharacter character;
-	int num;
+	BOOL flag;
 
-	num = iParam0;
+	flag = bParam0;
 
-	if (num == -1)
-		num = func_54();
+	if (flag == -1)
+		flag = func_54();
 
-	if (Global_1575070[num] == true)
+	if (Global_1575070[flag] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		character = Global_1574921[flag];
 		bParam1;
 	}
 
 	return character;
 }
 
-int func_54() // Position - 0x21AA (8618)
+BOOL func_54() // Position - 0x21AA (8618)
 {
 	return Global_1574927;
 }
@@ -2277,53 +2277,53 @@ char* func_63() // Position - 0x2389 (9097)
 	{
 		case joaat("prop_bong_01"):
 			if (bLocal_32)
-				str = "SA_BONG2" /*Press ~INPUT_CONTEXT~ to take a hit from the bong.*/;
+				str = "SA_BONG2" /*Pulsa ~INPUT_CONTEXT~ para fumar de la pipa de vidrio.*/;
 			else
-				str = "SA_BONG" /*Press ~INPUT_CONTEXT~ to take a hit from Jimmy's bong.*/;
+				str = "SA_BONG" /*Pulsa ~INPUT_CONTEXT~ para fumar de la pipa de vidrio de Jimmy.*/;
 			break;
 	
 		case joaat("prop_cigar_03"):
-			str = "SA_CIGAR" /*Press ~INPUT_CONTEXT~ to smoke a cigar.*/;
+			str = "SA_CIGAR" /*Pulsa ~INPUT_CONTEXT~ para fumar un puro.*/;
 			break;
 	
 		case joaat("prop_cs_beer_bot_01"):
-			str = "SA_BEER" /*Press ~INPUT_CONTEXT~ to drink a beer.*/;
+			str = "SA_BEER" /*Pulsa ~INPUT_CONTEXT~ para beber una cerveza.*/;
 			break;
 	
 		case joaat("p_cs_joint_01"):
-			str = "SA_SPLFF" /*Press ~INPUT_CONTEXT~ to smoke a joint.*/;
+			str = "SA_SPLFF" /*Pulsa ~INPUT_CONTEXT~ para fumar un porro.*/;
 			break;
 	
 		case joaat("p_tumbler_02_s1"):
-			str = "SA_WHSKY" /*Press ~INPUT_CONTEXT~ to drink whiskey.*/;
+			str = "SA_WHSKY" /*Pulsa ~INPUT_CONTEXT~ para beber whisky.*/;
 			break;
 	
 		case joaat("p_tumbler_cs2_s"):
-			str = "SA_WHSKY" /*Press ~INPUT_CONTEXT~ to drink whiskey.*/;
+			str = "SA_WHSKY" /*Pulsa ~INPUT_CONTEXT~ para beber whisky.*/;
 			break;
 	
 		case joaat("p_tumbler_cs2_s_trev"):
-			str = "SA_WHSKY" /*Press ~INPUT_CONTEXT~ to drink whiskey.*/;
+			str = "SA_WHSKY" /*Pulsa ~INPUT_CONTEXT~ para beber whisky.*/;
 			break;
 	
 		case joaat("prop_rolled_sock_02"):
-			str = "SA_GAS" /*Press ~INPUT_CONTEXT~ to huff gas.*/;
+			str = "SA_GAS" /*Pulsa ~INPUT_CONTEXT~ para inhalar gasolina.*/;
 			break;
 	
 		case joaat("prop_mr_raspberry_01"):
-			str = "SA_MRJAM" /*Press ~INPUT_CONTEXT~ to play with Mr. Raspberry Jam.*/;
+			str = "SA_MRJAM" /*Pulsa ~INPUT_CONTEXT~ para jugar con el Sr.µMermelada.*/;
 			break;
 	
 		case joaat("prop_radio_01"):
-			str = "SA_BEER" /*Press ~INPUT_CONTEXT~ to drink a beer.*/;
+			str = "SA_BEER" /*Pulsa ~INPUT_CONTEXT~ para beber una cerveza.*/;
 			break;
 	
 		case joaat("p_w_grass_gls_s"):
-			str = "SA_WHEAT" /*Press ~INPUT_CONTEXT~ to drink green juice.*/;
+			str = "SA_WHEAT" /*Pulsa ~INPUT_CONTEXT~ para beber zumo verde.*/;
 			break;
 	
 		case joaat("p_wine_glass_s"):
-			str = "SA_WINE" /*Press ~INPUT_CONTEXT~ to drink some wine.*/;
+			str = "SA_WINE" /*Pulsa ~INPUT_CONTEXT~ para beber vino.*/;
 			break;
 	
 		default:

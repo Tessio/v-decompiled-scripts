@@ -41,7 +41,7 @@
 	Object obLocal_39 = 0;
 	int iLocal_40 = 0;
 	int iLocal_41 = 0;
-	int iLocal_42 = 0;
+	BOOL bLocal_42 = 0;
 	int iLocal_43 = 0;
 	var uLocal_44 = 0;
 	var uLocal_45 = 0;
@@ -111,7 +111,7 @@ void main() // Position - 0x0 (0)
 	iLocal_33 = -1;
 	iLocal_40 = -1;
 	iLocal_41 = -1;
-	iLocal_42 = -1;
+	bLocal_42 = -1;
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_44, "NULL", 64);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_60, "NULL", 64);
 
@@ -213,7 +213,7 @@ void main() // Position - 0x0 (0)
 							{
 								func_44(&iLocal_40);
 							
-								if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Press ~INPUT_CONTEXT~ to turn on the TV.*/))
+								if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Pulsa ~INPUT_CONTEXT~ para encender la televisión.*/))
 									HUD::CLEAR_HELP(true);
 							}
 						
@@ -248,10 +248,10 @@ void main() // Position - 0x0 (0)
 							}
 							else
 							{
-								iLocal_42 = Global_33836[iLocal_41 /*11*/];
+								bLocal_42 = Global_33836[iLocal_41 /*11*/];
 								iLocal_43 = Global_33836[iLocal_41 /*11*/].f_1;
-								GRAPHICS::SET_TV_CHANNEL_PLAYLIST(iLocal_42, func_42(iLocal_43), Global_33836[iLocal_41 /*11*/].f_9);
-								GRAPHICS::SET_TV_CHANNEL(iLocal_42);
+								GRAPHICS::SET_TV_CHANNEL_PLAYLIST(bLocal_42, func_42(iLocal_43), Global_33836[iLocal_41 /*11*/].f_9);
+								GRAPHICS::SET_TV_CHANNEL(bLocal_42);
 							
 								if (Global_33836[iLocal_41 /*11*/].f_7)
 								{
@@ -346,7 +346,7 @@ void func_1() // Position - 0x4E6 (1254)
 		if (!MISC::ARE_STRINGS_EQUAL(&uLocal_44, "NULL"))
 			AUDIO::SET_STATIC_EMITTER_ENABLED(&uLocal_44, true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Press ~INPUT_CONTEXT~ to turn on the TV.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP2" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_NEXT_CAMERA~ to change view.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP5" /*Press ~INPUT_SCRIPT_RUP~ to use the TV controls.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP6" /*Press ~INPUT_SCRIPT_RUP~ to stop using the TV controls.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Pulsa ~INPUT_CONTEXT~ para encender la televisión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP2" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_NEXT_CAMERA~ para cambiar la vista.~n~Pulsa ~INPUT_CONTEXT~ para dejar de verla.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP5" /*Pulsa ~INPUT_SCRIPT_RUP~ para usar los controles de la televisión.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP6" /*Pulsa ~INPUT_SCRIPT_RUP~ para dejar de usar los controles de la televisión.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/))
 		HUD::CLEAR_HELP(true);
 
 	func_3();
@@ -472,8 +472,8 @@ void func_5(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 	
 		func_13(true, bParam3, bParam2, false);
 		Global_65016 = true;
-		Global_77345 = true;
-		Global_80278 = true;
+		Global_77345 = PV_COMP_BERD;
+		Global_80278 = PV_COMP_BERD;
 	}
 	else
 	{
@@ -494,7 +494,7 @@ void func_5(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_11(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80278 = false;
+		Global_80278 = PV_COMP_HEAD;
 	}
 
 	return;
@@ -524,31 +524,31 @@ BOOL func_7(Player plParam0, int iParam1) // Position - 0x878 (2168)
 	return flag;
 }
 
-eCharacter func_8(int iParam0, BOOL bParam1) // Position - 0x8D1 (2257)
+eCharacter func_8(BOOL bParam0, BOOL bParam1) // Position - 0x8D1 (2257)
 {
 	eCharacter character;
-	int num;
+	BOOL flag;
 
-	num = iParam0;
+	flag = bParam0;
 
-	if (num == -1)
-		num = func_9();
+	if (flag == -1)
+		flag = func_9();
 
-	if (Global_1575070[num] == true)
+	if (Global_1575070[flag] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		character = Global_1574921[flag];
 		bParam1;
 	}
 
 	return character;
 }
 
-int func_9() // Position - 0x912 (2322)
+BOOL func_9() // Position - 0x912 (2322)
 {
 	return Global_1574927;
 }
@@ -608,7 +608,7 @@ int func_13(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position 
 
 BOOL func_14() // Position - 0x9C0 (2496)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -633,7 +633,7 @@ BOOL func_16() // Position - 0xA0A (2570)
 			if (iLocal_40 == -1)
 			{
 				func_30();
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_40, 3, "TV_HLP5" /*Press ~INPUT_SCRIPT_RUP~ to use the TV controls.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_40, 3, "TV_HLP5" /*Pulsa ~INPUT_SCRIPT_RUP~ para usar los controles de la televisión.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/, 0, 0, 0, 0);
 			}
 			else if (func_27(iLocal_40, true))
 			{
@@ -651,7 +651,7 @@ BOOL func_16() // Position - 0xA0A (2570)
 		}
 		else
 		{
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP5" /*Press ~INPUT_SCRIPT_RUP~ to use the TV controls.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/))
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP5" /*Pulsa ~INPUT_SCRIPT_RUP~ para usar los controles de la televisión.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/))
 				HUD::CLEAR_HELP(true);
 		
 			func_2();
@@ -671,7 +671,7 @@ void func_17() // Position - 0xB16 (2838)
 		if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_SCRIPT_RUP))
 		{
 			func_44(&iLocal_40);
-			_CONTEXT_ADD_HELP_TEXT(&iLocal_40, 3, "TV_HLP6" /*Press ~INPUT_SCRIPT_RUP~ to stop using the TV controls.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/, 0, 0, 0, 0);
+			_CONTEXT_ADD_HELP_TEXT(&iLocal_40, 3, "TV_HLP6" /*Pulsa ~INPUT_SCRIPT_RUP~ para dejar de usar los controles de la televisión.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/, 0, 0, 0, 0);
 			func_26();
 		}
 	}
@@ -707,7 +707,7 @@ void func_18(int iParam0) // Position - 0xBD0 (3024)
 	if (func_23())
 		return;
 
-	if (!(Global_21610.f_1 == 1))
+	if (!(Global_21610.f_1 == true))
 	{
 		if (func_22(0))
 			func_19(iParam0);
@@ -1186,7 +1186,7 @@ void func_38() // Position - 0x1381 (4993)
 	if (AUDIO::IS_AUDIO_SCENE_ACTIVE(&uLocal_60))
 		AUDIO::STOP_AUDIO_SCENE(&uLocal_60);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Press ~INPUT_CONTEXT~ to turn on the TV.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP2" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_NEXT_CAMERA~ to change view.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP5" /*Press ~INPUT_SCRIPT_RUP~ to use the TV controls.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP6" /*Press ~INPUT_SCRIPT_RUP~ to stop using the TV controls.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Pulsa ~INPUT_CONTEXT~ para encender la televisión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP2" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_NEXT_CAMERA~ para cambiar la vista.~n~Pulsa ~INPUT_CONTEXT~ para dejar de verla.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP5" /*Pulsa ~INPUT_SCRIPT_RUP~ para usar los controles de la televisión.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP6" /*Pulsa ~INPUT_SCRIPT_RUP~ para dejar de usar los controles de la televisión.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/))
 		HUD::CLEAR_HELP(true);
 
 	func_44(&iLocal_40);
@@ -1401,7 +1401,7 @@ BOOL func_45() // Position - 0x162F (5679)
 
 	if (iLocal_40 == -1)
 	{
-		_CONTEXT_ADD_HELP_TEXT(&iLocal_40, 3, "TV_HLP1" /*Press ~INPUT_CONTEXT~ to turn on the TV.*/, 0, 0, 0, 0);
+		_CONTEXT_ADD_HELP_TEXT(&iLocal_40, 3, "TV_HLP1" /*Pulsa ~INPUT_CONTEXT~ para encender la televisión.*/, 0, 0, 0, 0);
 		return false;
 	}
 
@@ -1620,7 +1620,7 @@ void func_47() // Position - 0x1844 (6212)
 	{
 		if (!Global_80280)
 		{
-			if (func_50() == 2 == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
+			if (func_50() == HUD_COLOUR_BLACK == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			{
 				if (NETWORK::NETWORK_IS_CLOUD_AVAILABLE())
 					Global_114638 = false;
@@ -1657,7 +1657,7 @@ BOOL func_49(BOOL bParam0) // Position - 0x1D4D (7501)
 	return IS_BIT_SET(Global_80529, 0);
 }
 
-int func_50() // Position - 0x1D75 (7541)
+eHudColour func_50() // Position - 0x1D75 (7541)
 {
 	return Global_33775;
 }
@@ -1683,12 +1683,12 @@ BOOL func_51(int iParam0, int iParam1) // Position - 0x1D80 (7552)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x1DD1 (7633)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x1DD1 (7633)
 {
-	if (iParam2 == -1)
-		iParam2 = func_9();
+	if (bParam2 == -1)
+		bParam2 = func_9();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, bParam2);
 	return;
 }
 
@@ -2003,7 +2003,7 @@ void func_69() // Position - 0x244D (9293)
 		Global_33836[iLocal_41 /*11*/].f_10 = 0;
 	}
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Press ~INPUT_CONTEXT~ to turn on the TV.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP5" /*Press ~INPUT_SCRIPT_RUP~ to use the TV controls.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP6" /*Press ~INPUT_SCRIPT_RUP~ to stop using the TV controls.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to turn off the TV.~n~*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Pulsa ~INPUT_CONTEXT~ para encender la televisión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP5" /*Pulsa ~INPUT_SCRIPT_RUP~ para usar los controles de la televisión.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP6" /*Pulsa ~INPUT_SCRIPT_RUP~ para dejar de usar los controles de la televisión.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para apagarla.~n~*/))
 		HUD::CLEAR_HELP(true);
 
 	BUILTIN::WAIT(0);

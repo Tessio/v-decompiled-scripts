@@ -136,7 +136,7 @@ void main() // Position - 0x0 (0)
 	func_142();
 	func_141();
 	Global_21610.f_1 = 3;
-	Global_21598 = false;
+	Global_21598 = INPUT_NEXT_CAMERA;
 	Global_21844 = 0;
 	Global_24018 = 0;
 	unk.f_23 = 2;
@@ -461,7 +461,7 @@ void main() // Position - 0x0 (0)
 	
 		if (IS_BIT_SET(Global_9464, 11))
 		{
-			Global_10184 = 0;
+			Global_10184 = CHAR_MICHAEL;
 		
 			if (IS_BIT_SET(Global_9463, 25))
 				Global_10184 = Global_10184 + 1;
@@ -481,7 +481,7 @@ void main() // Position - 0x0 (0)
 			if (IS_BIT_SET(Global_4524844, 19))
 				Global_10184 = Global_10184 + 1;
 		
-			if (Global_10184 == 0)
+			if (Global_10184 == CHAR_MICHAEL)
 			{
 				MISC::CLEAR_BIT(&Global_9464, 11);
 				bLocal_39 = false;
@@ -527,7 +527,7 @@ void main() // Position - 0x0 (0)
 			case 0:
 				func_15();
 			
-				if (Global_24020 == 1)
+				if (Global_24020 == true)
 					func_14();
 				break;
 		
@@ -556,7 +556,7 @@ void main() // Position - 0x0 (0)
 				break;
 		
 			case 6:
-				if (Global_24020 == 1)
+				if (Global_24020 == true)
 					func_14();
 			
 				if (Global_24021 == 1)
@@ -693,7 +693,7 @@ void func_5() // Position - 0x975 (2421)
 	if (GRAPHICS::SAVE_HIGH_QUALITY_PHOTO(Global_24023))
 	{
 		Global_24018 = 10;
-		HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("CELL_278" /*Saving Photo to Gallery*/);
+		HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("CELL_278" /*Guardando foto en la galería*/);
 		HUD::END_TEXT_COMMAND_BUSYSPINNER_ON(1);
 	}
 	else
@@ -704,9 +704,9 @@ void func_5() // Position - 0x975 (2421)
 	return;
 }
 
-BOOL func_6(int* piParam0, int iParam1) // Position - 0x9ED (2541)
+BOOL func_6(int iParam0, int iParam1) // Position - 0x9ED (2541)
 {
-	return IS_BIT_SET(*piParam0, iParam1);
+	return IS_BIT_SET(*iParam0, iParam1);
 }
 
 BOOL func_7() // Position - 0x9FB (2555)
@@ -858,7 +858,7 @@ void func_14() // Position - 0xB8B (2955)
 	GRAPHICS::FREE_MEMORY_FOR_LOW_QUALITY_PHOTO();
 	HUD::BUSYSPINNER_OFF();
 	Global_24019 = false;
-	Global_24020 = 0;
+	Global_24020 = false;
 	Global_24021 = 0;
 	Global_24018 = 0;
 	return;
@@ -886,8 +886,8 @@ BOOL func_16() // Position - 0xBD5 (3029)
 		{
 			if (DECORATOR::DECOR_EXIST_ON(PLAYER::PLAYER_PED_ID(), "Synched"))
 			{
-				filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_ANTIH_A" /*ALERT!*/);
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_ANTIH" /*You haven't paid your phone bill. Phone use may be impeded.*/);
+				filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_ANTIH_A" /*¡AVISO!*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_ANTIH" /*No has pagado tu factura telefónica. Puede que el uso del teléfono esté restringido.*/);
 				HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT("CHAR_SOCIAL_CLUB", "CHAR_SOCIAL_CLUB", false, 0, filenameForAudioConversation, 0);
 			}
 		}
@@ -909,14 +909,14 @@ BOOL func_16() // Position - 0xBD5 (3029)
 		
 			while (func_20(FRONTEND_CONTROL, Global_21577) && iLocal_74 < 250 && Global_21850 == 0 && !HUD::IS_HUD_COMPONENT_ACTIVE(HUD_WEAPON_WHEEL))
 			{
-				if (Global_10184 > 0)
+				if (Global_10184 > CHAR_MICHAEL)
 					func_17();
 			
 				BUILTIN::WAIT(0);
 				iLocal_73 = MISC::GET_GAME_TIMER();
 				iLocal_74 = iLocal_73 - iLocal_72;
 			
-				if (Global_10184 > 0)
+				if (Global_10184 > CHAR_MICHAEL)
 					func_17();
 			}
 		
@@ -1185,7 +1185,7 @@ void func_23() // Position - 0x1127 (4391)
 							{
 								BUILTIN::WAIT(0);
 							
-								if (Global_10184 > 0)
+								if (Global_10184 > CHAR_MICHAEL)
 									func_17();
 							}
 						
@@ -1211,7 +1211,7 @@ void func_23() // Position - 0x1127 (4391)
 							{
 								BUILTIN::WAIT(0);
 							
-								if (Global_10184 > 0)
+								if (Global_10184 > CHAR_MICHAEL)
 									func_17();
 							}
 						
@@ -1226,7 +1226,7 @@ void func_23() // Position - 0x1127 (4391)
 					{
 						BUILTIN::WAIT(0);
 					
-						if (Global_10184 > 0)
+						if (Global_10184 > CHAR_MICHAEL)
 							func_17();
 					}
 				
@@ -1249,7 +1249,7 @@ void func_23() // Position - 0x1127 (4391)
 						{
 							BUILTIN::WAIT(0);
 						
-							if (Global_10184 > 0)
+							if (Global_10184 > CHAR_MICHAEL)
 								func_17();
 						}
 					
@@ -1286,7 +1286,7 @@ void func_23() // Position - 0x1127 (4391)
 						{
 							BUILTIN::WAIT(0);
 						
-							if (Global_10184 > 0)
+							if (Global_10184 > CHAR_MICHAEL)
 								func_17();
 						}
 					
@@ -1342,8 +1342,8 @@ void func_24() // Position - 0x13B0 (5040)
 		
 			if (Global_21598)
 			{
-				func_40(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+				func_40(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 			}
 			else
 			{
@@ -1365,11 +1365,11 @@ void func_24() // Position - 0x13B0 (5040)
 			{
 				if (Global_21843 == true)
 					if (Global_21598)
-						func_40(Global_21591, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, "CELL_225" /*NEXT*/, 0, 0, 0, 0);
+						func_40(Global_21591, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, "CELL_225" /*SIGUIENTE*/, 0, 0, 0, 0);
 					else
 						func_40(Global_21591, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, 0, 0, 0, 0, 0);
 				else if (Global_21598)
-					func_40(Global_21591, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, "CELL_225" /*NEXT*/, 0, 0, 0, 0);
+					func_40(Global_21591, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, "CELL_225" /*SIGUIENTE*/, 0, 0, 0, 0);
 				else
 					func_40(Global_21591, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, 0, 0, 0, 0, 0);
 			
@@ -1403,7 +1403,7 @@ void func_24() // Position - 0x13B0 (5040)
 			}
 			else if (Global_21598)
 			{
-				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*END CALL*/, 0, 0, 0, 0);
+				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*COLGAR*/, 0, 0, 0, 0);
 			
 				if (Global_21553)
 					func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
@@ -1415,7 +1415,7 @@ void func_24() // Position - 0x13B0 (5040)
 			break;
 	
 		case 9:
-			if (Global_21609 == 1)
+			if (Global_21609 == true)
 			{
 				func_29();
 				func_43(Global_21591, "SET_THEME", BUILTIN::TO_FLOAT(Global_114904.f_14058[Global_21610 /*20*/].f_6), -1082130432, -1082130432, -1082130432, -1082130432);
@@ -1430,17 +1430,17 @@ void func_24() // Position - 0x13B0 (5040)
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&Global_22998);
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					func_28("CELL_300" /*CHAR_DEFAULT*/);
-					func_28("CELL_217" /*INCOMING CALL*/);
-					func_28("CELL_217" /*INCOMING CALL*/);
+					func_28("CELL_217" /*LLAMADA ENTRANTE*/);
+					func_28("CELL_217" /*LLAMADA ENTRANTE*/);
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 				}
 				else if (func_27(Global_8778, Global_21610) == 0)
 				{
-					func_40(Global_21591, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_217" /*INCOMING CALL*/, "CELL_195" /*Unknown*/, 0);
+					func_40(Global_21591, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_217" /*LLAMADA ENTRANTE*/, "CELL_195" /*Desconocido*/, 0);
 				}
 				else
 				{
-					func_40(Global_21591, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_217" /*INCOMING CALL*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
+					func_40(Global_21591, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_217" /*LLAMADA ENTRANTE*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
 				}
 			
 				func_43(Global_21591, "DISPLAY_VIEW", 4f, -1082130432, -1082130432, -1082130432, -1082130432);
@@ -1460,21 +1460,21 @@ void func_24() // Position - 0x13B0 (5040)
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&Global_22998);
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					func_28("CELL_300" /*CHAR_DEFAULT*/);
-					func_28("CELL_219" /*CONNECTED*/);
-					func_28("CELL_219" /*CONNECTED*/);
+					func_28("CELL_219" /*CONECTADO*/);
+					func_28("CELL_219" /*CONECTADO*/);
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 				}
 				else
 				{
 					if (Global_23241)
-						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_219" /*CONNECTED*/, 24);
+						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_219" /*CONECTADO*/, 24);
 					else
-						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_211" /*DIALING...*/, 24);
+						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_211" /*MARCANDO...*/, 24);
 				
 					if (func_27(Global_8778, Global_21610) == 0)
 					{
 						func_43(Global_21591, "SET_DATA_SLOT_EMPTY", 4f, -1082130432, -1082130432, -1082130432, -1082130432);
-						func_40(Global_21591, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, &unk, "CELL_195" /*Unknown*/, 0);
+						func_40(Global_21591, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, &unk, "CELL_195" /*Desconocido*/, 0);
 					}
 					else
 					{
@@ -1502,10 +1502,10 @@ void func_25() // Position - 0x19C9 (6601)
 	{
 		func_26();
 	
-		if (Global_21609 == 1)
+		if (Global_21609 == true)
 		{
 			if (Global_21598)
-				func_40(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_203" /*ANSWER*/, 0, 0, 0, 0);
+				func_40(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_203" /*RESPONDER*/, 0, 0, 0, 0);
 			else
 				func_40(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -1514,7 +1514,7 @@ void func_25() // Position - 0x19C9 (6601)
 			else if (IS_BIT_SET(Global_9463, 20))
 				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 0f, 1f, -1f, -1f, 0, 0, 0, 0, 0);
 			else if (Global_21598)
-				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_204" /*REJECT*/, 0, 0, 0, 0);
+				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_204" /*RECHAZAR*/, 0, 0, 0, 0);
 			else
 				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -1533,7 +1533,7 @@ void func_25() // Position - 0x19C9 (6601)
 			}
 			else if (Global_21598)
 			{
-				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*END CALL*/, 0, 0, 0, 0);
+				func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*COLGAR*/, 0, 0, 0, 0);
 			
 				if (Global_21553)
 					func_40(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
@@ -1748,7 +1748,7 @@ void func_30(BOOL bParam0) // Position - 0x1E3B (7739)
 		Global_10048[i] = 0;
 	}
 
-	func_31(10, "CELL_16" /*Settings*/, 0, "appSettings", 24);
+	func_31(10, "CELL_16" /*Ajustes*/, 0, "appSettings", 24);
 
 	if (bParam0)
 	{
@@ -1907,7 +1907,7 @@ void func_41(int iParam0) // Position - 0x21E1 (8673)
 	int j;
 	int value2;
 	int k;
-	int value3;
+	char* value3;
 	int value4;
 	int value5;
 	int value6;
@@ -2002,7 +2002,7 @@ void func_41(int iParam0) // Position - 0x21E1 (8673)
 									{
 										if (Global_4521275[k /*296*/].f_24 != 0)
 											if (Global_4521275[k /*296*/].f_28 == 0)
-												if (Global_4521275[k /*296*/].f_291[Global_21610] == 1)
+												if (Global_4521275[k /*296*/].f_291[Global_21610] == true)
 													value2 = value2 + 1;
 									}
 								
@@ -2359,60 +2359,60 @@ void func_56(int iParam0, BOOL bParam1) // Position - 0x2B90 (11152)
 	switch (iParam0)
 	{
 		case 35132310:
-			str = "RSG_MAIL_NOT1" /*You have received a conduct warning regarding your voice/text chat. Remember to follow our Community Guidelines. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT1" /*Has recibido un aviso sobre la charla de voz y el chat de texto. Recuerda seguir nuestras directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 595818427:
-			str = "RSG_MAIL_NOT2" /*Your access to voice/text chat has been suspended due to a Community Guidelines violation. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT2" /*Se ha prohibido el acceso a la charla de voz y al chat de texto debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 2061960091:
-			str = "RSG_MAIL_NOT3" /*You've been suspended from GTA Online and text/voice chat for violating Community Guidelines. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT3" /*Se te ha suspendido el acceso a GTA Online y a la charla de voz y el chat de texto debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 1321488310:
-			str = "RSG_MAIL_NOT4" /*You've been banned from accessing voice/text chat for violating our Community Guidelines. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT4" /*Se te ha prohibido el acceso a la charla de voz y el chat de texto debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case -1601690383:
-			str = "RSG_MAIL_NOT5" /*Your access to certain features has been suspended due to a Community Guidelines violation. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT5" /*Se te ha suspendido el acceso a ciertas funciones debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 951709659:
-			str = "RSG_MAIL_NOT6" /*You've been banned from certain features for violating our Community Guidelines. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT6" /*Se te ha prohibido el acceso a ciertas funciones debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 1085859112:
-			str = "RSG_MAIL_NOT7" /*Your content was removed due to a Community Guidelines violation. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT7" /*Se ha eliminado tu contenido debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 1614079778:
-			str = "RSG_MAIL_NOT8" /*Your content was removed and your content creation features have been suspended due to a Community Guidelines violation. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT8" /*Se ha eliminado tu contenido y se han suspendido tus funciones de creación de contenido debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 1682565288:
-			str = "RSG_MAIL_NOT9" /*You've been banned from accessing content creation features due to a Community Guidelines violation. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT9" /*Se te ha prohibido el acceso a las funciones de creación de contenido debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 905049745:
-			str = "RSG_MAIL_NOT10" /*Your access to GTA Online has been suspended due to a Community Guidelines violation. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT10" /*Se te ha suspendido el acceso a GTA Online debido a una infracción de las directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 1061715359:
-			str = "RSG_MAIL_NOT11" /*You've been banned from accessing GTA Online for violating our Community Guidelines. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT11" /*Se te ha suspendido el acceso a GTA Online debido a una infracción de nuestras directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case -756531422:
-			str = "RSG_MAIL_NOT12" /*There's an update regarding a report you filed. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT12" /*Hay una actualización sobre una denuncia que has presentado. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 471439883:
-			str = "RSG_MAIL_NOT13" /*There's an update regarding an appeal you filed. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT13" /*Hay una actualización sobre una decisión que has recurrido. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	
 		case 1225343603:
 		default:
-			str = "RSG_MAIL_NOT" /*You have a notification regarding our Community Guidelines. Check Safety and Alerts for details.*/;
+			str = "RSG_MAIL_NOT" /*Has recibido una notificación sobre nuestras directrices de la comunidad. Para obtener más información, consulta Seguridad y alertas.*/;
 			break;
 	}
 
@@ -2711,12 +2711,12 @@ void func_61() // Position - 0x33FA (13306)
 	{
 		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
 		TEXT_LABEL_ASSIGN_STRING(&subject, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(&Global_10090[1 /*6*/]), 64);
-		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*New Contact*/);
+		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*Nuevo contacto*/);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, filenameForAudioConversation, &subject);
 	}
 	else
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*New Contact: ~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*Nuevo contacto: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Global_10090[1 /*6*/]);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, "", 0);
 	}
@@ -3315,7 +3315,7 @@ BOOL func_71(int iParam0, int iParam1) // Position - 0x3FD2 (16338)
 	return 0;
 }
 
-BOOL _SEND_TEXT_MESSAGE_FROM_CHARACTER_2(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7, int iParam8, int iParam9) // Position - 0x41C4 (16836)
+BOOL _SEND_TEXT_MESSAGE_FROM_CHARACTER_2(eCharacter echParam0, char* sParam1, int iParam2, BOOL bParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7, int iParam8, int iParam9) // Position - 0x41C4 (16836)
 {
 	int num;
 	char* str;
@@ -3336,7 +3336,7 @@ BOOL _SEND_TEXT_MESSAGE_FROM_CHARACTER_2(eCharacter echParam0, char* sParam1, in
 	str4 = "NULL";
 	num4 = 3;
 
-	if (func_74(echParam0, sParam1, iParam2, num, str, str2, num2, iParam3, iParam4, iParam5, bParam7, iParam8, iParam9, num3, str3, str4, num4) == 1)
+	if (func_74(echParam0, sParam1, iParam2, num, str, str2, num2, bParam3, iParam4, iParam5, bParam7, iParam8, iParam9, num3, str3, str4, num4) == 1)
 	{
 		if (bParam7 == true)
 		{
@@ -3358,7 +3358,7 @@ struct<4> _GET_CHARACTER_NAME(eCharacter character) // Position - 0x4253 (16979)
 	return Global_2339[character /*29*/].f_3;
 }
 
-int func_74(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char* sParam4, char* sParam5, int iParam6, int iParam7, int iParam8, int iParam9, BOOL bParam10, int iParam11, int iParam12, int iParam13, char* sParam14, char* sParam15, int iParam16) // Position - 0x4266 (16998)
+int func_74(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char* sParam4, char* sParam5, int iParam6, BOOL bParam7, int iParam8, int iParam9, BOOL bParam10, int iParam11, int iParam12, int iParam13, char* sParam14, char* sParam15, int iParam16) // Position - 0x4266 (16998)
 {
 	int num;
 	int num2;
@@ -3430,7 +3430,7 @@ int func_74(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char*
 		Global_114904.f_14148[Global_24051 /*104*/].f_24 = iParam2;
 	}
 
-	Global_114904.f_14148[Global_24051 /*104*/].f_25 = iParam7;
+	Global_114904.f_14148[Global_24051 /*104*/].f_25 = bParam7;
 	Global_114904.f_14148[Global_24051 /*104*/].f_26 = iParam8;
 	Global_114904.f_14148[Global_24051 /*104*/].f_29 = iParam9;
 	Global_114904.f_14148[Global_24051 /*104*/].f_30 = iParam12;
@@ -3508,7 +3508,7 @@ int func_74(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char*
 		}
 	}
 
-	if (iParam7 == 1)
+	if (bParam7 == true)
 	{
 		if (IS_BIT_SET(Global_9463, 10))
 		{
@@ -3593,7 +3593,7 @@ int func_74(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char*
 	return 1;
 }
 
-void func_75(eCharacter echParam0, char* sParam1, BOOL bParam2, int iParam3) // Position - 0x474B (18251)
+void func_75(eCharacter echParam0, char* sParam1, BOOL bParam2, BOOL bParam3) // Position - 0x474B (18251)
 {
 	eCharacter character;
 
@@ -3605,7 +3605,7 @@ void func_75(eCharacter echParam0, char* sParam1, BOOL bParam2, int iParam3) // 
 	character.f_2 = MISC::GET_HASH_KEY(sParam1);
 	character.f_3 = 0;
 	character.f_4 = bParam2;
-	character.f_5 = iParam3;
+	character.f_5 = bParam3;
 	character.f_6 = Global_1978568.f_7;
 	character.f_7 = Global_1978568.f_8;
 	character.f_8 = Global_1978568.f_9;
@@ -3674,7 +3674,7 @@ Player _INVALID_PLAYER_INDEX() // Position - 0x48AA (18602)
 	return -1;
 }
 
-int func_81(Player plParam0) // Position - 0x48B3 (18611)
+BOOL func_81(Player plParam0) // Position - 0x48B3 (18611)
 {
 	return Global_1845250[plParam0 /*880*/].f_198.f_6;
 }
@@ -3857,7 +3857,7 @@ void func_88() // Position - 0x4CA3 (19619)
 {
 	if (IS_BIT_SET(Global_9463, 6))
 	{
-		if (Global_10184 > 0)
+		if (Global_10184 > CHAR_MICHAEL)
 		{
 			if (IS_BIT_SET(Global_9464, 11))
 			{
@@ -3924,7 +3924,7 @@ void func_88() // Position - 0x4CA3 (19619)
 			}
 		}
 	
-		if (Global_10184 < 1)
+		if (Global_10184 < CHAR_FRANKLIN)
 		{
 			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&iLocal_35);
 			MISC::CLEAR_BIT(&Global_9463, 6);
@@ -3934,7 +3934,7 @@ void func_88() // Position - 0x4CA3 (19619)
 			func_17();
 		}
 	}
-	else if (Global_10184 > 0)
+	else if (Global_10184 > CHAR_MICHAEL)
 	{
 		iLocal_35 = GRAPHICS::REQUEST_SCALEFORM_MOVIE("cellphone_alert_popup");
 	
@@ -4251,7 +4251,7 @@ void func_100() // Position - 0x5414 (21524)
 
 	for (i = 0f; !PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT) && !PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL) || i < 1f; i = i + MISC::GET_FRAME_TIME())
 	{
-		HUD::SET_WARNING_MESSAGE_WITH_HEADER("VEUI_HDR_ALERT" /*ALERT*/, "VE_DIR_MODE_SURE" /*Are you sure you want to launch Director Mode?*/, 18, 0, false, -1, 0, 0, true, 0);
+		HUD::SET_WARNING_MESSAGE_WITH_HEADER("VEUI_HDR_ALERT" /*ALERTA*/, "VE_DIR_MODE_SURE" /*¿Seguro que quieres iniciar el modo director?*/, 18, 0, false, -1, 0, 0, true, 0);
 		BUILTIN::WAIT(0);
 	}
 
@@ -4277,7 +4277,7 @@ void func_101(int iParam0) // Position - 0x5493 (21651)
 	for (i = 0f; !PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT) || i < 1f; i = i + MISC::GET_FRAME_TIME())
 	{
 		str = func_102(iParam0, 119);
-		HUD::SET_WARNING_MESSAGE("FBR_GENERIC" /*~a~ is not available while ~a~.*/, 16384, 0, false, -1, "FBR_DIR_MODE" /*Director Mode*/, str, true, 0);
+		HUD::SET_WARNING_MESSAGE("FBR_GENERIC" /*~a~ no está disponible mientras ~a~.*/, 16384, 0, false, -1, "FBR_DIR_MODE" /*Modo director*/, str, true, 0);
 		BUILTIN::WAIT(0);
 	}
 
@@ -4295,40 +4295,40 @@ char* func_102(int iParam0, int iParam1) // Position - 0x54F5 (21749)
 			return "FBR_BLK_CLEAN";
 	
 		case 2:
-			return "FBR_BLK_RNNNG" /*feature is already running*/;
+			return "FBR_BLK_RNNNG" /*esta característica ya está en ejecución*/;
 	
 		case 13:
-			return "FBR_BLK_DEAD" /*dead*/;
+			return "FBR_BLK_DEAD" /*estás muerto*/;
 	
 		case 3:
-			return "FBR_BLK_MISS" /*playing a mission*/;
+			return "FBR_BLK_MISS" /*juegas una misión*/;
 	
 		case 5:
-			return "FBR_BLK_SHOP" /*browsing a shop*/;
+			return "FBR_BLK_SHOP" /*miras artículos en una tienda*/;
 	
 		case 4:
-			return "FBR_BLK_CUTS" /*watching a cutscene*/;
+			return "FBR_BLK_CUTS" /*se reproduce una secuencia*/;
 	
 		case 6:
-			return "FBR_BLK_WANT" /*wanted*/;
+			return "FBR_BLK_WANT" /*te persigue la policía*/;
 	
 		case 7:
-			return "FBR_BLK_ONLI" /*playing GTA Online*/;
+			return "FBR_BLK_ONLI" /*juegas a GTA Online*/;
 	
 		case 8:
-			return "FBR_BLK_ACT" /*performing this action*/;
+			return "FBR_BLK_ACT" /*realizas esta acción*/;
 	
 		case 9:
-			return "FBR_BLK_LOC" /*in this location*/;
+			return "FBR_BLK_LOC" /*estés en esta ubicación*/;
 	
 		case 10:
-			return "FBR_BLK_VEH" /*in a vehicle*/;
+			return "FBR_BLK_VEH" /*se conduce un vehículo*/;
 	
 		case 11:
-			return "FBR_BLK_PARA" /*skydiving*/;
+			return "FBR_BLK_PARA" /*se hace paracaidismo*/;
 	
 		case 12:
-			return "FBR_BLK_FALL" /*falling*/;
+			return "FBR_BLK_FALL" /*estás en caída libre*/;
 	
 		default:
 			return "ERROR";
@@ -4523,7 +4523,7 @@ BOOL func_106() // Position - 0x5A4E (23118)
 int func_107(int iParam0) // Position - 0x5A59 (23129)
 {
 	Vector3 vector;
-	Interior interiorFromEntity;
+	Vehicle interiorFromEntity;
 	int i;
 
 	if (ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), 207.43358f, -1019.7954f, -100.47276f, 189.93378f, -1019.6235f, -95.56883f, 17.1875f, false, true, 0) && PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), true))
@@ -4723,12 +4723,12 @@ BOOL func_110(int iParam0) // Position - 0x61F7 (25079)
 	return true;
 }
 
-var func_111(int iParam0, Interior inParam1) // Position - 0x6218 (25112)
+var func_111(int iParam0, Vehicle veParam1) // Position - 0x6218 (25112)
 {
 	Vector3 vector;
 
 	vector = { func_112(iParam0) };
-	*inParam1 = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(vector, vector.f_3);
+	*veParam1 = INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(vector, vector.f_3);
 	return vector.f_4;
 }
 
@@ -6336,9 +6336,9 @@ BOOL func_113(float fParam0, var uParam1, var uParam2) // Position - 0x8EFB (366
 	return false;
 }
 
-var func_114(var uParam0) // Position - 0x8F25 (36645)
+char* func_114(char* sParam0) // Position - 0x8F25 (36645)
 {
-	return uParam0;
+	return sParam0;
 }
 
 struct<6> func_115(int iParam0, BOOL bParam1) // Position - 0x8F2F (36655)
@@ -6857,7 +6857,7 @@ BOOL func_126(int iParam0, int iParam1, BOOL bParam2) // Position - 0x9DAF (4036
 	if (bParam2)
 		return IS_BIT_SET(Global_102481.f_1442[iParam0], iParam1);
 	else if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-		if (func_128() == 0)
+		if (func_128() == false)
 			return IS_BIT_SET(func_138(func_127(iParam0), -1), iParam1);
 	else
 		return IS_BIT_SET(Global_114904.f_668[iParam0], iParam1);
@@ -7071,7 +7071,7 @@ int func_127(int iParam0) // Position - 0x9E0F (40463)
 	return 16715;
 }
 
-int func_128() // Position - 0xA1F3 (41459)
+BOOL func_128() // Position - 0xA1F3 (41459)
 {
 	return Global_33775;
 }
@@ -7211,16 +7211,16 @@ void func_141() // Position - 0xA38C (41868)
 			if (func_42(14))
 			{
 				func_32(2, "CELL_2" /*Internet*/, 2, "appInternet", 6, 1, 1, 0, 0);
-				func_32(14, "CELL_29" /*Job List*/, 7, "appMPJobListNEW", 12, 1, 1, 0, 0);
+				func_32(14, "CELL_29" /*Lista de actividades*/, 7, "appMPJobListNEW", 12, 1, 1, 0, 0);
 			}
 			else
 			{
-				func_32(14, "CELL_29" /*Job List*/, 2, "appMPJobListNEW", 12, 1, 1, 0, 0);
+				func_32(14, "CELL_29" /*Lista de actividades*/, 2, "appMPJobListNEW", 12, 1, 1, 0, 0);
 			}
 		}
 		else
 		{
-			func_32(4, "CELL_23" /*Check List*/, 2, "appChecklist", 39, 1, 1, 0, 0);
+			func_32(4, "CELL_23" /*Lista de control*/, 2, "appChecklist", 39, 1, 1, 0, 0);
 		}
 	}
 
@@ -7250,29 +7250,29 @@ void func_142() // Position - 0xA41A (42010)
 			num2 = num2 + 1;
 		}
 	
-		func_32(7, "CELL_5" /*Email*/, 0, "appEmail", 4, 1, 1, 0, 0);
-		func_32(1, "CELL_1" /*Texts*/, 1, "appTextMessage", 2, 1, 1, 0, 0);
-		func_32(4, "CELL_23" /*Check List*/, 2, "appChecklist", 39, 1, 1, 0, 0);
+		func_32(7, "CELL_5" /*Correo electrónico*/, 0, "appEmail", 4, 1, 1, 0, 0);
+		func_32(1, "CELL_1" /*Mensajes*/, 1, "appTextMessage", 2, 1, 1, 0, 0);
+		func_32(4, "CELL_23" /*Lista de control*/, 2, "appChecklist", 39, 1, 1, 0, 0);
 	
 		if (Global_44869 == 15 && func_132(false) == false && Global_9468 == 0)
 		{
-			func_32(20, "CELL_32" /*Quick Save*/, 3, "appSettings", 43, 1, 1, 0, 0);
+			func_32(20, "CELL_32" /*Guardado rápido*/, 3, "appSettings", 43, 1, 1, 0, 0);
 			Global_21845 = 0;
 			Global_9469 = 255;
 		}
 		else
 		{
-			func_32(20, "CELL_32" /*Quick Save*/, 3, "appSettings", 43, 1, 1, 0, 0);
+			func_32(20, "CELL_32" /*Guardado rápido*/, 3, "appSettings", 43, 1, 1, 0, 0);
 			Global_21845 = 1;
 			Global_9469 = 42;
 		}
 	
 		if (num == 1)
-			func_32(0, "CELL_0" /*Contacts*/, 4, "appContacts", 27, 1, 1, 0, 0);
+			func_32(0, "CELL_0" /*Contactos*/, 4, "appContacts", 27, 1, 1, 0, 0);
 		else
-			func_32(0, "CELL_0" /*Contacts*/, 4, "appContacts", 5, 1, 1, 0, 0);
+			func_32(0, "CELL_0" /*Contactos*/, 4, "appContacts", 5, 1, 1, 0, 0);
 	
-		func_32(10, "CELL_16" /*Settings*/, 5, "appSettings", 24, 1, 1, 0, 0);
+		func_32(10, "CELL_16" /*Ajustes*/, 5, "appSettings", 24, 1, 1, 0, 0);
 		func_32(3, "CELL_7" /*Snapmatic*/, 6, "appCamera", 1, 1, 1, 0, 0);
 		func_32(2, "CELL_2" /*Internet*/, 7, "appInternet", 6, 1, 1, 0, 0);
 	
@@ -7280,70 +7280,70 @@ void func_142() // Position - 0xA41A (42010)
 			func_32(17, "CELL_28" /*Trackify*/, 8, "appTrackify", 42, 1, 1, 0, 0);
 	
 		if (Global_114904.f_14058.f_88 == 1)
-			func_32(16, "CELL_25" /*Sniper*/, 0, "appContacts", 40, 2, 1, 0, 0);
+			func_32(16, "CELL_25" /*Francotirador*/, 0, "appContacts", 40, 2, 1, 0, 0);
 	
-		func_32(26, "CELL_14" /*More Apps*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_32(26, "CELL_14" /*Más aplicaciones*/, -99, "appContacts", 17, 2, 1, 0, 0);
 		func_32(9, "CELL_13" /*BAWSAQ*/, -99, "appContacts", 13, 2, 1, 0, 0);
-		func_32(11, "CELL_14" /*More Apps*/, -99, "appContacts", 8, 2, 1, 0, 0);
-		func_32(28, "CELL_15" /*Spare*/, -99, "appContacts", 17, 2, 1, 0, 0);
-		func_32(29, "CELL_15" /*Spare*/, -99, "appContacts", 17, 2, 1, 0, 0);
-		func_32(30, "CELL_15" /*Spare*/, -99, "appSettings", 17, 2, 1, 0, 0);
-		func_32(31, "CELL_15" /*Spare*/, -99, "appContacts", 17, 2, 1, 0, 0);
-		func_32(32, "CELL_15" /*Spare*/, -99, "appContacts", 17, 2, 1, 0, 0);
-		func_32(33, "CELL_15" /*Spare*/, -99, "appSettings", 17, 2, 1, 0, 0);
+		func_32(11, "CELL_14" /*Más aplicaciones*/, -99, "appContacts", 8, 2, 1, 0, 0);
+		func_32(28, "CELL_15" /*Libre*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_32(29, "CELL_15" /*Libre*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_32(30, "CELL_15" /*Libre*/, -99, "appSettings", 17, 2, 1, 0, 0);
+		func_32(31, "CELL_15" /*Libre*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_32(32, "CELL_15" /*Libre*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_32(33, "CELL_15" /*Libre*/, -99, "appSettings", 17, 2, 1, 0, 0);
 	}
 	else
 	{
-		func_32(7, "CELL_5" /*Email*/, 0, "appMPEmail", 4, 1, 1, 0, 0);
-		func_32(21, "CELL_37" /*Quick Join*/, 3, "AppJIPMP", 14, 1, 1, 0, 0);
+		func_32(7, "CELL_5" /*Correo electrónico*/, 0, "appMPEmail", 4, 1, 1, 0, 0);
+		func_32(21, "CELL_37" /*Unirse rápidamente*/, 3, "AppJIPMP", 14, 1, 1, 0, 0);
 	
 		if (func_36())
 			func_32(23, "CELL_HACKER_ROB" /*Darnell Inc.*/, 5, "appHackerDen", 62, 1, 1, 0, 0);
 		else
-			func_32(10, "CELL_16" /*Settings*/, 5, "appSettings", 24, 1, 1, 0, 0);
+			func_32(10, "CELL_16" /*Ajustes*/, 5, "appSettings", 24, 1, 1, 0, 0);
 	
-		func_32(1, "CELL_1" /*Texts*/, 1, "appTextMessage", 2, 1, 1, 0, 0);
+		func_32(1, "CELL_1" /*Mensajes*/, 1, "appTextMessage", 2, 1, 1, 0, 0);
 		func_32(3, "CELL_7" /*Snapmatic*/, 6, "appCamera", 1, 1, 1, 0, 0);
 		func_32(2, "CELL_2" /*Internet*/, 7, "appInternet", 6, 1, 1, 0, 0);
-		func_32(14, "CELL_29" /*Job List*/, 4, "appMPJobListNEW", 12, 1, 1, 0, 0);
-		func_32(0, "CELL_0" /*Contacts*/, 2, "appContacts", 5, 1, 1, 0, 0);
+		func_32(14, "CELL_29" /*Lista de actividades*/, 4, "appMPJobListNEW", 12, 1, 1, 0, 0);
+		func_32(0, "CELL_0" /*Contactos*/, 2, "appContacts", 5, 1, 1, 0, 0);
 	
 		if (IS_BIT_SET(Global_4524844, 4))
 			func_32(17, "CELL_28" /*Trackify*/, 8, "appTrackify", 42, 1, 1, 0, 0);
 	
-		func_32(13, "CELL_35" /*Player List*/, -99, "appMPCopBackup", 39, 1, 1, 0, 0);
+		func_32(13, "CELL_35" /*Lista de jugadores*/, -99, "appMPCopBackup", 39, 1, 1, 0, 0);
 		func_32(13, "CELL_20", -99, "appMPCopBackup", 16, 1, 1, 0, 0);
-		func_32(15, "CELL_18" /*Map*/, -99, "appContacts", 8, 1, 1, 0, 0);
+		func_32(15, "CELL_18" /*Mapa*/, -99, "appContacts", 8, 1, 1, 0, 0);
 		func_32(9, "CELL_13" /*BAWSAQ*/, -99, "appContacts", 13, 2, 1, 0, 0);
-		func_32(5, "CELL_4" /*Sidetasks*/, -99, "appContacts", 12, 2, 1, 0, 0);
-		func_32(24, "CELL_15" /*Spare*/, 0, "appContacts", 17, 2, 1, 0, 0);
-		func_32(25, "CELL_15" /*Spare*/, 1, "appContacts", 17, 2, 1, 0, 0);
-		func_32(26, "CELL_15" /*Spare*/, 2, "appContacts", 17, 2, 1, 0, 0);
-		func_32(27, "CELL_15" /*Spare*/, 3, "appContacts", 17, 2, 1, 0, 0);
-		func_32(28, "CELL_15" /*Spare*/, 4, "appContacts", 17, 2, 1, 0, 0);
-		func_32(29, "CELL_15" /*Spare*/, 5, "appContacts", 17, 2, 1, 0, 0);
-		func_32(30, "CELL_15" /*Spare*/, 6, "appContacts", 17, 2, 1, 0, 0);
-		func_32(31, "CELL_15" /*Spare*/, 7, "appContacts", 17, 2, 1, 0, 0);
-		func_32(32, "CELL_15" /*Spare*/, 8, "appContacts", 17, 2, 1, 0, 0);
-		func_32(33, "CELL_15" /*Spare*/, 9, "appContacts", 17, 2, 1, 0, 0);
-		func_32(34, "CELL_15" /*Spare*/, 10, "appContacts", 17, 2, 1, 0, 0);
+		func_32(5, "CELL_4" /*Misiones secundarias*/, -99, "appContacts", 12, 2, 1, 0, 0);
+		func_32(24, "CELL_15" /*Libre*/, 0, "appContacts", 17, 2, 1, 0, 0);
+		func_32(25, "CELL_15" /*Libre*/, 1, "appContacts", 17, 2, 1, 0, 0);
+		func_32(26, "CELL_15" /*Libre*/, 2, "appContacts", 17, 2, 1, 0, 0);
+		func_32(27, "CELL_15" /*Libre*/, 3, "appContacts", 17, 2, 1, 0, 0);
+		func_32(28, "CELL_15" /*Libre*/, 4, "appContacts", 17, 2, 1, 0, 0);
+		func_32(29, "CELL_15" /*Libre*/, 5, "appContacts", 17, 2, 1, 0, 0);
+		func_32(30, "CELL_15" /*Libre*/, 6, "appContacts", 17, 2, 1, 0, 0);
+		func_32(31, "CELL_15" /*Libre*/, 7, "appContacts", 17, 2, 1, 0, 0);
+		func_32(32, "CELL_15" /*Libre*/, 8, "appContacts", 17, 2, 1, 0, 0);
+		func_32(33, "CELL_15" /*Libre*/, 9, "appContacts", 17, 2, 1, 0, 0);
+		func_32(34, "CELL_15" /*Libre*/, 10, "appContacts", 17, 2, 1, 0, 0);
 	
 		if (!IS_BIT_SET(Global_4524844, 4))
 			if (Global_1836187)
-				func_32(24, "CELL_CIRCBREAK" /*VLSI Unlock*/, 8, "AppVLSI", 54, 1, 1, 0, 0);
+				func_32(24, "CELL_CIRCBREAK" /*Desbloqueo VLSI*/, 8, "AppVLSI", 54, 1, 1, 0, 0);
 			else if (IS_BIT_SET(Global_4524844, 20))
-				func_32(24, "CELL_SIGHTS" /*Sightseer*/, 8, "AppSettings", 59, 1, 1, 0, 0);
+				func_32(24, "CELL_SIGHTS" /*Excursionista*/, 8, "AppSettings", 59, 1, 1, 0, 0);
 			else if (IS_BIT_SET(Global_4524844, 22))
-				func_32(24, "CELL_EXTRACT" /*Extraction*/, 8, "AppExtraction", 58, 1, 1, 0, 0);
+				func_32(24, "CELL_EXTRACT" /*Extracción*/, 8, "AppExtraction", 58, 1, 1, 0, 0);
 			else if (IS_BIT_SET(Global_4524844, 26))
 				if (func_143())
-					func_32(24, "CELL_0" /*Contacts*/, -99, "appContacts", 5, 1, 1, 0, 0);
+					func_32(24, "CELL_0" /*Contactos*/, -99, "appContacts", 5, 1, 1, 0, 0);
 				else
-					func_32(24, "CELL_SECHACK" /*SecuroServ Hack*/, 8, "AppSecuroHack", 57, 1, 1, 0, 0);
+					func_32(24, "CELL_SECHACK" /*Hackeo de SecuroServ*/, 8, "AppSecuroHack", 57, 1, 1, 0, 0);
 	
 		if (IS_BIT_SET(Global_4524844, 4) == false && Global_1836187 == false && IS_BIT_SET(Global_4524844, 20) == false && IS_BIT_SET(Global_4524844, 22) == false && IS_BIT_SET(Global_4524844, 26) == false)
 			if (func_143())
-				func_32(24, "CELL_0" /*Contacts*/, -99, "appContacts", 5, 1, 1, 0, 0);
+				func_32(24, "CELL_0" /*Contactos*/, -99, "appContacts", 5, 1, 1, 0, 0);
 			else
 				func_32(24, "CELL_BOSSAGE" /*SecuroServ*/, 8, "appMPBossAgency", 57, 1, 1, 0, 0);
 	}

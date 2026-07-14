@@ -46,7 +46,7 @@ void main() // Position - 0x0 (0)
 		if (_SHOULD_NETWORK_SCRIPT_TERMINATE() || Global_1963151 == 1)
 			func_6();
 	
-		if (func_1(&uLocal_19, &Global_299578))
+		if (func_1(&uLocal_19, &Global_299580))
 			func_6();
 	
 		BUILTIN::WAIT(0);
@@ -21550,10 +21550,10 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x1D3CF (119759)
 {
 	switch (func_10())
 	{
-		case 0:
+		case HUD_COLOUR_PURE_WHITE:
 			return func_9();
 	
-		case 2:
+		case HUD_COLOUR_BLACK:
 			return joaat("creator");
 	}
 
@@ -21574,7 +21574,7 @@ Hash func_9() // Position - 0x1D402 (119810)
 	return joaat("freemode");
 }
 
-int func_10() // Position - 0x1D426 (119846)
+eHudColour func_10() // Position - 0x1D426 (119846)
 {
 	return Global_33775;
 }

@@ -1225,10 +1225,10 @@ void func_42() // Position - 0x14AF (5295)
 					{
 						if (Global_114931.f_7695[Global_45433 /*15*/] == 1611093726 || Global_114931.f_7695[Global_45433 /*15*/] == 742578279)
 						{
-							switch (func_52("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/))
+							switch (func_52("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/))
 							{
 								case 2:
-									func_50("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/, 2, 0, 1000, 7500, 7, 0, 0, 0);
+									func_50("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/, 2, 0, 1000, 7500, 7, 0, 0, 0);
 									break;
 							
 								case 1:
@@ -1258,14 +1258,14 @@ void func_42() // Position - 0x14AF (5295)
 							{
 								if (func_145())
 								{
-									if (func_48("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/))
-										func_44("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/, 1);
+									if (func_48("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/))
+										func_44("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/, 1);
 								
-									if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/))
+									if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/))
 										HUD::CLEAR_HELP(false);
 								
 									func_49(2);
-									func_50("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/, 2, 0, 1000, 7500, 7, 0, 0, 0);
+									func_50("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/, 2, 0, 1000, 7500, 7, 0, 0, 0);
 									bLocal_45 = true;
 								}
 							}
@@ -1276,16 +1276,16 @@ void func_42() // Position - 0x14AF (5295)
 		}
 		else
 		{
-			if (func_52("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/) == 2)
+			if (func_52("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/) == 2)
 				bLocal_45 = false;
-			else if (func_52("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/) == 1)
+			else if (func_52("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/) == 1)
 				func_49(3);
 		
 			if (!func_145())
 			{
-				func_44("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/, true);
+				func_44("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/, true);
 			
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/))
 					HUD::CLEAR_HELP(false);
 			
 				func_49(3);
@@ -1297,16 +1297,16 @@ void func_42() // Position - 0x14AF (5295)
 			func_49(3);
 			func_49(2);
 		
-			if (func_48("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/))
-				func_44("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/, true);
+			if (func_48("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/))
+				func_44("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/, true);
 		
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/))
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/))
 				HUD::CLEAR_HELP(false);
 		
-			if (func_48("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/))
-				func_44("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/, true);
+			if (func_48("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/))
+				func_44("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/, true);
 		
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/))
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/))
 				HUD::CLEAR_HELP(false);
 		}
 	}
@@ -1735,12 +1735,12 @@ void func_62() // Position - 0x20C3 (8387)
 	{
 		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
 		TEXT_LABEL_ASSIGN_STRING(&subject, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(&Global_10107[1 /*6*/]), 64);
-		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*New Contact*/);
+		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*Nuevo contacto*/);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, filenameForAudioConversation, &subject);
 	}
 	else
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*New Contact: ~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*Nuevo contacto: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Global_10107[1 /*6*/]);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, "", 0);
 	}
@@ -1898,287 +1898,287 @@ void func_72(int iParam0, char* sParam1) // Position - 0x23FD (9213)
 		switch (iParam0)
 		{
 			case 1834414893:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH_1_U" /*Michael, your Bureau friends want to discuss something with us. I told them to meet at the garment factory. Get over there as soon as you can.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH_1_U" /*Michael, tus amigos del FIB quieren hablar con nosotros. Les he dicho que nos vemos en la fábrica textil. Ven en cuanto puedas.*/, 16);
 				break;
 		
 			case 2114893093:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH_2_U" /*I been looking into that Chip Peterson thing, I might have something.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH_2_U" /*He estado mirando el asunto de Chip Peterson, creo que tengo algo.*/, 16);
 				break;
 		
 			case 230961098:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH_P_U" /*We need an LSFD fire engine. Fake an emergency call or find one at a station. Whatever works.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH_P_U" /*Necesitamos un camión de bomberos. Haz una llamada de emergencia falsa o localiza uno en el parque de bomberos. Lo que te venga mejor.*/, 16);
 				break;
 		
 			case 639116137:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH_GETA_R" /*Don't forget to set up a getaway vehicle. Get hold of something inconspicuous, park it someowhere secluded, then call with the location.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH_GETA_R" /*No te olvides de preparar un vehículo de huida. Consigue algo que no llame la atención, apárcalo en algún sitio apartado, y llámanos para comunicarnos el lugar.*/, 16);
 				break;
 		
 			case 1943637475:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH3B_UNLK" /*We're on - L*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "AH3B_UNLK" /*A por ello. L*/, 16);
 				break;
 		
 			case 1635608802:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ASS1_MIS" /*I've got an opportunity for you. Meet me at Del Perro pier.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ASS1_MIS" /*Tengo que ofrecerte una oportunidad. Nos vemos en el embarcadero de Del Perro.*/, 16);
 				break;
 		
 			case -799417230:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ASS_FINA" /*You did what you had to do.  I understand that.  So let's move on, business as usual.  We never mention this again.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ASS_FINA" /*Hiciste lo que tenías que hacer. Lo entiendo. Olvidemos el tema. Seguiremos con nuestros negocios. No volveremos a mencionarlo.*/, 16);
 				break;
 		
 			case -2135245515:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ASS_FINB" /*I know what you did.  I can't say I'm happy but it's done.  So let's move on, business as usual.  We never mention this again.  Lester.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ASS_FINB" /*Sé lo que hiciste. No puedo decir que esté contento, pero lo hecho, hecho está. Olvidemos el tema. Seguiremos con nuestros negocios. No volveremos a mencionarlo. Lester*/, 16);
 				break;
 		
 			case -1982006572:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ARM2_END" /*Stretch is getting out homie! Strizzzzzzetch! His bid's almost done. We goin holla at u dawg.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ARM2_END" /*Stretch va a salir, colega! Streeeeetch! Su condena ha terminado. Ya ns vmos, tío.*/, 16);
 				break;
 		
 			case 866793964:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ARM3_END2" /*Eh, u moody motherfuka. Im givin u tht bagger we boosted. left it at yr auntz crib ;P*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ARM3_END2" /*Eh, cabrnzo d mierda. T voy a dar la Bagger q mangmos. T la he dejdo en la keli de tu tía ;P*/, 16);
 				break;
 		
 			case 410510653:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ARM3_END1" /*You were like a son to me. Employee of the month! Does that mean nothing to you? You're fucked my boy!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ARM3_END1" /*Eras como un hijo para mí. ¡El empleado del mes! ¿Acaso eso no significa nada para ti? ¡Estás jodido, chaval!*/, 16);
 				break;
 		
 			case 341684477:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "CAR1_ALL" /*Confirming your appointment with Devin Weston at his new development on Power St in Alta.  Please be prompt, and arrive ready to work.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "CAR1_ALL" /*Confirmada tu cita con Devin Weston en su nueva urbanización de Power Street, en Alta. Por favor, sé puntual y llega dispuesto a trabajar.*/, 16);
 				break;
 		
 			case 1328556918:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "CAR2_DONE" /*I did you a solid, kid. Martin Madrazo needs help w sumthin, he wanted you, I got Trevor on board.  Don't mention it. we gotta go up to his ranch off Senora Rd.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "CAR2_DONE" /*Te he hecho un gran favor, muchacho. Martín Madrazo necesita ayuda con una cosa. Te quería a ti, pero también he metido a Trevor. No me des las gracias. Tenemos que ir a un rancho junto a Señora Road.*/, 16);
 				break;
 		
 			case 1023767:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "CAR3_F_REM" /*Mr Westin would like to remind you that the JB700 at Richard's Majestic is still outstanding.  He would be grateful if you could secure it as soon as possible.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "CAR3_F_REM" /*El Sr. Weston quiere recordarte que el JB 700 de Richards Majestic sigue pendiente. Te estaría muy agradecido si pudieras hacerte con él lo antes posible.*/, 16);
 				break;
 		
 			case 190444893:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "CAR3_MT_REM" /*Mr Westin is concerned that Mr Clinton still has not secured the JB700 from Richards Majestic.   You will receive payment as soon as we have all the cars.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "CAR3_MT_REM" /*Al Sr. Weston le preocupa que el Sr. Clinton todavía no se haya hecho con el JB 700 de Richards Majestic. Recibirás el pago en cuento tengamos todos los coches.*/, 16);
 				break;
 		
 			case 1761525528:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MIC2_MIS" /*Franklin needs to speak to Michael. I don't know why, but I thought you might have some information on his whereabouts. Meet him at his old place on Forum Dr.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MIC2_MIS" /*Franklin tiene que hablar con Michael. No sé por qué, pero pensé que podrías tener información sobre su paradero. Ve a verlo a su casa de Forum Drive.*/, 16);
 				break;
 		
 			case 1674644829:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "CHOP_UNLOCK" /*Chop got to stay round ur crib 4 a time. Trill?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "CHOP_UNLOCK" /*Chop tiene que quedarse en tu casa un tiempo. ¿Te parece bien?*/, 16);
 				break;
 		
 			case 152157591:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "CITY_RON" /*Some Chinese folks stopped by the trailer today. They seemed a little angry. Did you do something to upset them? Ron*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "CITY_RON" /*Unos chinos se pasaron hoy por la caravana. Parecían un poco cabreados. ¿Les has hecho algo para que estén cabreados? Ron*/, 16);
 				break;
 		
 			case 736324744:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "CHEF_U" /*Boss, I know we ain't cooking, but since I helped when the Aztecas attacked the lab, I thought you might think of me if u need a xtra gun on a job or sumthing?  - Chef*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "CHEF_U" /*Jefe, ya sé q no cocinamos nda, pero cmo aydé cuando los Aztecas asltaron el lboratorio quzá pdría vnirt bien si ncsitas otro pstolero en algn trbjito. - Chef*/, 16);
 				break;
 		
 			case 839361606:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "DOCKS1_F_SHT" /*I don't know what Michael's been teaching u but this job I got planned u gotta no how 2 shoot. get ur ass to an Ammunation shooting range*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "DOCKS1_F_SHT" /*Chaval, tengo planeado un trabajito y será mejor que afines la puntería. Procura ir a la galería de tiro de Ammu-Nation.*/, 16);
 				break;
 		
 			case 411396589:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "DCKP1_U" /*I seen a sub, Trevor. Down at the docks on a ship called Daisy-Lee. U cld like snap the ropes somehow or maybe they is some switch to drop it. W4de \m/*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "DCKP1_U" /*He visto un minisubmarino, Trevor. En los muelles en un barco llamado Daisy-Lee. Podrías cortar ls cabos o ver si ay algún interruptor para bajarlo. W4de \m/*/, 16);
 				break;
 		
 			case -631719301:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "DCKP2B_U" /*Only place to get the kind of chopper you need is Fort Zancudo, boss. Watch out for other helis in the area. Might be easier if you take em out first. W4de*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "DCKP2B_U" /*Solo podrás conseguir el helicóptero que necesitas en Fort Zancudo, jefe. Cuidado con los helicópteros de la zona. Podría ser más fácil si te los cargas primero. W4de.*/, 16);
 				break;
 		
 			case -549935988:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "DCKP2B_R" /*Boss, you asked me to remind you about getting that chopper from Fort Zancudo. I know you haven't forgotten have you?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "DCKP2B_R" /*Jefe, me pediste que te recordase que tenías que hacerte con ese helicóptero de Fort Zancudo. No se te ha olvidado, ¿verdad?*/, 16);
 				break;
 		
 			case 1759805585:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "DOCKS1_M_FLY" /*Mike. We both no ur flying aint so gud, so get some air time at the flight scool before we mov on this or ill b angree.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "DOCKS1_M_FLY" /*Mike, ambos sabemos que ser piloto no es tu mayor virtud, pero vas a tener que hacerlo para lo del puerto. Suma unas cuantas horas de vuelo en la escuela de vuelo, para que no la cagues.*/, 16);
 				break;
 		
 			case 1269300253:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "DCK2_U" /*Lets do this ladeez. The sub is in position. We have everything we need. Meet at my Vespucci Beech holeyday homm*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "DCK2_U" /*Manos a la obra, señoritas. El submarino está en posición. Ya lo tenemos todo. Nos vemos en mi casa de veraneo de Vespucci Beach.*/, 16);
 				break;
 		
 			case 610159002:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXIL2_U" /*Eh T, theres some hick type dudes round here asking questions about you. I'm looking into it.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXIL2_U" /*Eh, T. Tío, unos paletos andan preguntando por ti. Me estoy informando.*/, 16);
 				break;
 		
 			case -1281173598:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXIL2_OSC" /*What's this about you beefing with Martin Madrazo, If he connects us we're finished. Watch out, Okay?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXIL2_OSC" /*¿Qué es eso de que tienes problemas con Martín Madrazo? Si nos descubre, estamos acabados. Ten cuidado, ¿vale?*/, 16);
 				break;
 		
 			case -1293573249:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "RBH_PAT" /*I spose u shld know I hv feelings 4 Patricha.  we will deal w Mdrazzo 1 way or n thr!  r luv is the butiful flowr that grws out th shit!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "RBH_PAT" /*Spongo k dbrias saber k siento algo x Patricia. ya nos ocuparems d Madrazo cmo sea! nuestro amor es cmo 1 bella flor k nace n la mierda!*/, 16);
 				break;
 		
 			case 1328243545:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXIL_WAD" /*Trevor, some of Mr. Cheng's people came by your place. They seemed a whole lot tougher than the guys you met at the inn, and they're eager to talk to you...*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXIL_WAD" /*Trev, algunos hombres del Sr. Cheng han venido por tu casa. Parecían mucho más duros que los tipos a los que viste en la taberna, y se les ve ansiosos por hablar contigo...*/, 16);
 				break;
 		
 			case 1400447159:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXL_HUNT_PIE" /*I left a pie at your trailer with Patricia. Good to see you've settled down with a lovely woman.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXL_HUNT_PIE" /*Le he dejado a Patricia un pastel en tu caravana. Me alegro de que hayas sentado cabeza con una mujer encantadora.*/, 16);
 				break;
 		
 			case 981904836:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXL_JIM_MCAR" /*I dropped ur car back at the house. even with my improvements, it's still a old man ride :(  Jizz don't get down like dat, but thank me later, and why r there some beast hispanic dudes outside tha crib?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXL_JIM_MCAR" /*Pa que lo sepas, he dejado tu coche en casa. Incluso con mis mejoras sigue siendo un coche de viejo :( No es el rollo de Jizzle, pero ya me darás las gracias luego. Y xq hay unos hispanos cachas fuera de la keli?*/, 16);
 				break;
 		
 			case -1428654185:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FAM1_END" /*Yo F-dog! Ive added you on Lifeinvader accept my request and we can hang! hit me up anytime bro... ANYTIME and we goin chop it. Peace - Jizzle*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FAM1_END" /*F, colega! te he agregad en Lifeinvader. Acepta la solicitud para quedar! Dame un toque cuando quieras hrmano... CUANDO SEA y la vams a partir. Paz - Jizzle*/, 16);
 				break;
 		
 			case -1608680660:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FAM3_INIT" /*I'm trying to locate that equipment, it's gonna take some time before we're ready to go jewelry shopping, so  spend your last few moments of retirement with your family.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FAM3_INIT" /*Estoy viendo cómo conseguirte ese equipo. Aún falta un tiempo para que estemos listos para ir a la joyería. ¿Por qué no dedicas el resto de tu retiro a tu familia?*/, 16);
 				break;
 		
 			case 25048086:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FAM5_END" /*I got no wheels, pop. Itz 2 much to deal with as well as moving out so I took urz until im on my feet. ill bring it bck when im all set up - J dog*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FAM5_END" /*No tengo buga, papá. ¿Cómo se supone que voy a hacer NADA? ¡Me llevo el tuyo y te lo devuelvo en cuanto consiga otro!*/, 16);
 				break;
 		
 			case 6861963:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4I_U" /*I need you all at the lot in El Burro Heights for a face to face. Don't be late.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4I_U" /*Chicos, os quiero ver a todos en El Burro Heights para un cara a cara. No lleguéis tarde.*/, 16);
 				break;
 		
 			case -655205392:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FB4_RM_M" /*Mike, remember we still need to set up a getaway car. Find one, take it somewhere secluded, then call to say where it is.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FB4_RM_M" /*Mike, recuerda que todavía tenemos que preparar el coche de huida. Encuentra uno, apárcalo en algún lugar apartado, y luego llámanos para decir dónde lo has dejado.*/, 16);
 				break;
 		
 			case 1266526796:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FB4_RM_FT" /*Guys, remember we still need to set up a getaway car. Find one, leave it somewhere secluded, then call the others to say where it is.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FB4_RM_FT" /*Chicos, recordad que todavía tenemos que preparar el coche de huida. Encontrad uno, aparcadlo en algún lugar apartado, y luego llamad al resto para decir dónde lo habéis dejado.*/, 16);
 				break;
 		
 			case -1652588035:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4_UM" /*Meet us at Ladera Heights. The job is ready to go. - Agent Haines*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4_UM" /*Nos vemos en Ladera Heights. El trabajo está listo. - Agente Haines*/, 16);
 				break;
 		
 			case -125167689:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4_UFT" /*T, F we're fully prepped. Get tooled up and meet at the depot.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4_UFT" /*T&F, estamos listos. Preparaos y nos vemos en el depósito.*/, 16);
 				break;
 		
 			case 1323596299:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4_ASS" /*Franklin, I need your help with something asap! Come meet me before you move on that job for the FIB.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4_ASS" /*¡Franklin, necesito que me ayudes con algo cuanto antes! Ven a verme antes de que vayas a hacer ese trabajo para el FIB.*/, 16);
 				break;
 		
 			case -1205448796:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4_MTASS" /*M,T we gotta stall on this FIB job. Don't tell him I told you, but I got something to do for Lester before we can move.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FBI4_MTASS" /*M, T, tenemos que retrasar el asunto del FIB. No le digáis que os lo he dicho, pero tengo algo que Lester debe resolver antes de hacer nada.*/, 16);
 				break;
 		
 			case -1942568571:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_PA_U" /*There's an LSPD van holding spike strips in the rear carpark at the South LS police station. I've got the hacker looking for some Gauntlet muscle cars that we can modify - expect an email about that soon.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_PA_U" /*Hay una furgoneta de la policía con barreras de pinchos en el aparcamiento trasero de la comisaría de Los Santos Sur. El hacker está buscando bólidos Gauntlet que podamos modificar. Te llegará un email pronto sobre eso.*/, 16);
 				break;
 		
 			case -408163515:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_PB_U" /*Ok, there's a tunnel bore machine at a depot in East LS. It's out in the yard, there are guys working there around the clock, and guards as well. Try and get in and out without drawing attention to yourself. lol*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_PB_U" /*La tuneladora ha llegado a un depósito de Los Santos Este. Está en el patio, así que han puesto varios hombres para vigilarla. Intenta entrar y salir sin llamar su atención.*/, 16);
 				break;
 		
 			case 2073240496:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_PD_U" /*This train... any locomotive and flatbed car will do. I've sourced a sky crane to do the pickup, just divert a train at Davis Quartz, and call one of the others to fly in. Deal with any station workers as you see fit.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_PD_U" /*Este tren... cualquier locomotora y cualquier vagón portacontenedores servirá. He conseguido una grúa aérea para hacer la recogida, solo desvía un tren en Davis Quartz, y llama a uno de los otros para que vaya volando. Ocúpate de los trabajadores de la estación como te parezca más oportuno.*/, 16);
 				break;
 		
 			case -1216150262:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_GETA_R" /*You haven't forgotten the getaway vehicle have you? Give me a call when you've found something that might work.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_GETA_R" /*No te habrás olvidado del vehículo de huida, ¿no? Llámame cuando tengas alguno listo.*/, 16);
 				break;
 		
 			case 704657460:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_KILLM" /*Michael is dead. For real this time. I hope you two weren't involved. I've transfered his cut of the job to his family... it felt like the right thing to do - L*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_KILLM" /*Michael ha muerto. Esta vez, de verdad. Espero que vosotros dos no tuvierais nada que ver. En cualquier caso, no vais a tocar su parte. Se la transferiré a su familia. L.*/, 16);
 				break;
 		
 			case -1198893762:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_KILLT" /*Trevor's fallen off the grid. I don't know what's going on, and I don't want to. I split his take from that last job between you two, hold onto it for him.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FIH_KILLT" /*Trevor ha desaparecido de la faz de la Tierra. No sé qué pasa, ni quiero saberlo. He dividido su parte del último trabajo entre vosotros dos, guardádsela.*/, 16);
 				break;
 		
 			case 497850717:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FORSALE_TXT" /*I'm seeing so few Lenny Avery signs around town that anyone might think he's got out of the realty business! come see me at the billingsgate motel in east LS*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FORSALE_TXT" /*Avery tiene tan pocos carteles que cabría pensar que está fuera de juego. Ven a verme al motel Billingsgate en Los Santos Este.*/, 16);
 				break;
 		
 			case -1501908698:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FRAN0_END" /*Franklin, got a new phone after u thru last 1 away! eh listen, Stretch is comin out soon! holla!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FRAN0_END" /*¡Franklin, como me tiraste el teléfono me he tenido comprar otro! ¡Oye, Stretch está a punto de salir!*/, 16);
 				break;
 		
 			case 943848816:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "FRA1_END" /*eh loco, u scare me but u kinda cool. we should chop it up sum time. wit Franklin or witout him, whatever dawg*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "FRA1_END" /*Eh, loco, ers la hstia. m has acojonado, per molas. Dbríamos qdar, tío, cn Franklin o sin él, cmo quieras tronc*/, 16);
 				break;
 		
 			case 689367973:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "JP1A_U" /*Bugstars Pest Control have some vans at their warehouse in the Port of Los Santos. There's security in the port, so go in quiet around the back, or hit em hard and fast.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "JP1A_U" /*Fumigaciones Bugstars tiene furgonetas en su almacén del puerto de Los Santos. Cuentan con personal de seguridad, así que atacad o colaos por la parte de atrás.*/, 16);
 				break;
 		
 			case -666454256:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "JH1A_FRNK" /*Hey kid, the prep work is underway for this job, just one loose end to tie up. Be ready to move.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "JH1A_FRNK" /*La preparación del golpe ya está en marcha. Solo queda un cabo suelto. Prepárate para entrar en acción.*/, 16);
 				break;
 		
 			case -270587643:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "JP2A_U" /*Knockout gas shipments being transported to LSX every 2 hrs. Intercept and steal the van, or blow it up and grab the gas.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "JP2A_U" /*Cada 2 horas salen cargamentos de gas adormecedor hacia el aeropuerto. Interceptad y robad la furgoneta, o reventadla y haceos con el gas.*/, 16);
 				break;
 		
 			case -1641645609:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "JP1B_U" /*I'm on the LSPD's secure communication channel. They've got a tactical team going toward Palomino Ave. Intercept it, steal the truck, and bring it back to my factory.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "JP1B_U" /*Me he colado en los canales seguros de la policía de Los Santos. Un pelotón táctico se dirige a Palomino Avenue. Intercepta y atraca el furgón y tráelo de vuelta mi fábrica.*/, 16);
 				break;
 		
 			case 1471029448:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "JP1B_HOST" /*You missed your chance to intercept the tactical team. I'll let you know when there's another opportunity. Try not to miss this one.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "JP1B_HOST" /*Se acabó. La policía de Los Santos ha ganado. Me mantendré atento por si surge otra oportunidad. Intenta no perdértela.*/, 16);
 				break;
 		
 			case -1879623490:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "JH2_P" /*Meet me at my place. Your cut will be in your account as soon as Lester's done some creative accounting.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "JH2_P" /*Reúnete conmigo en mi casa. El dinero pronto estará en tu cuenta, pero Lester tiene que blanquearlo.*/, 16);
 				break;
 		
 			case -1816533207:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "JOSH1_TXT" /*BTW buddy, Avery has a website with all his real estate listings around the city, you might find it useful - ~b~<u>www.lennyavery-realty.com</u>~w~*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "JOSH1_TXT" /*Por cierto, colega, Avery tiene todas las propiedades que maneja reflejadas en un sitio web. Podría resultarte útil: - ~b~<u>www.lennyavery-realty.com</u>~w~*/, 16);
 				break;
 		
 			case -474700046:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MAR1_U" /*Michael, my old friend, we have business to discuss. Come to La Fuente Blanca ranch. MM*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MAR1_U" /*Michael, viejo amigo. Tenemos que hablar de negocios. Ven al rancho La Fuente Blanca. MM*/, 16);
 				break;
 		
 			case -1577577773:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MAR_CASH1" /*Michael. My money - where is it? You do not want me to visit you again... next time will be so much worse. MM*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MAR_CASH1" /*Michael. Mi dinero, ¿dónde está? No querrás que te visite de nuevo. La próxima vez será mucho peor. MM*/, 16);
 				break;
 		
 			case -1235391473:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MAR_CASH2" /*Finally, I have received your payment. The house will soon be restored to its former condition. I am pleased you are a man of your word. MM*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MAR_CASH2" /*Por fin he recibido tu pago. La casa volverá a estar como antes muy pronto. Me alegro de que seas un hombre de palabra. MM*/, 16);
 				break;
 		
 			case 251204761:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MAR_TREV" /*Michael De Santa has recommended you for a job. It would be prudent to come to Rancho La Fuente Blanca off Senora Road. MM*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MAR_TREV" /*Michael De Santa te ha recomendado para un trabajito. Sería prudente que vinieras al rancho La Fuente Blanca, pasando Señora Road. MM*/, 16);
 				break;
 		
 			case -1207693656:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ME_A_FAIL" /*I was in trouble with the cops, and I needed help. THANKS FOR BEING SO AVAILABLE. Lawyer's fee coming out your account.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ME_A_FAIL" /*Estaba metida en un buen lío con la poli y necesitaba ayuda. GRACIAS POR ESTAR AHÍ. Te toca pagar al abogado.*/, 16);
 				break;
 		
 			case 809731919:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ME_A_FAIL2" /*There wasn't enough in your account to pay a lawyer. You're lucky I'm a resourceful woman! THANKS FOR NOTHING!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ME_A_FAIL2" /*No había suficiente pasta en tu cuenta. Me hizo pagar de otro modo... ¡GRACIAS POR NADA!*/, 16);
 				break;
 		
 			case -149728591:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ME_J_FAIL" /*Thanks a lot dad. My ass hurts and ur accounts four figures lighter. FU!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ME_J_FAIL" /*Mchas grcias, ppá. Me duele l culo y tú t hs quedado sin uns mils de pvos. ¡Q t den!*/, 16);
 				break;
 		
 			case 1245740196:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ME_T_FAIL" /*I had to pay sum dudes to beat that dude. Thank god I still have your Maze deets. Bad dad!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ME_T_FAIL" /*Tuve que pagar a unos tipos para que le dieran una paliza. Menos mal que aún tengo tus datos de Maze. ¡Muy mal, papá!*/, 16);
 				break;
 		
 			case -1589024007:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MIC4_M" /*A messenger brought the invites to the premier around? Tha girlz are freakin! Pretty cool old man. go pick up a tux and Ill meet u on Portola Drive. We goin get our swag on!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MIC4_M" /*Ha dejado un mensajero las invitaciones ya? Las chicas están flipando. Va a molar, viejo. Pilla un esmoquin y nos vemos en Portola Drive. Vams a darte un poco de clase.*/, 16);
 				break;
 		
 			case -658009473:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MIC4_F" /*F-Dog – so my dad's not a like complete asshole. I'm going to the premiere of his movie!! Church, bro! Gotta meet him at Ponsonbys so he can get a tux, then next stop's the red carpet! #swag*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MIC4_F" /*Colega, mi padre no es un gilipollas integral. ¡Voy al estreno de su película! Estaré en la alfombra roja. Voy a encontrarme con él en Ponsonbys para que se compre un traje guapo, ¡¡vamos a ir en esmoquin, tío!! ¡De puta madre!*/, 16);
 				break;
 		
 			case 772720529:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "PLTSC_U" /*I just heard a radio advert about the flying school its in Los Santos not saying you need to learn new things just saying you might like it*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "PLTSC_U" /*Acabo de oír un anuncio de la escuela de pilotaje de Los Santos. No es que insinúe que tienes que aprender cosas nuevas, pero a lo mejor te gusta.*/, 16);
 				break;
 		
 			case 902928934:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "RBH_U" /*We might be ready to move on this thing. Meet me up in the lab.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "RBH_U" /*Puede que ya estemos listos para seguir adelante. Reúnete conmigo en el laboratorio.*/, 16);
 				break;
 		
 			case -831144864:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "RBH_P_U" /*I've made most the arrangements for the Paleto Score, all we need is that military hardware, so move on the convoy when u can.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "RBH_P_U" /*Ya tengo casi todo preparado para el golpe de Paleto. Lo único que necesitamos es el equipo militar, así que ve a por el convoy en cuanto puedas.*/, 16);
 				break;
 		
 			case 486824538:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "SHOOT_U" /*Franklin. You gotta sharpen up on your shooting. Put some time in at the range if you can.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "SHOOT_U" /*Franklin. Tienes que afinar la puntería. Si puedes, pásate un rato por la galería de tiro.*/, 16);
 				break;
 		
 			case -384575792:
@@ -2238,111 +2238,111 @@ void func_72(int iParam0, char* sParam1) // Position - 0x23FD (9213)
 				break;
 		
 			case 483349085:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "BARR3_U" /*Thanks for joining the fight! Here are the deets for the pick-ups. Move fast and keep an eye out for cops...henchmen of the totalitarian regime!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "BARR3_U" /*¡Gracias por unirte a la lucha! Aquí están los detalles de las recogidas. Muévete rápido y estate atento a los polis... ¡esbirros del régimen totalitario!*/, 16);
 				break;
 		
 			case 1800466587:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "BARR4_U" /*Smoke-in! The people are amassing soon at City Hall. Fight the power!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "BARR4_U" /*¡Fumada! La gente pronto se reunirá en el ayuntamiento. ¡A luchar contra el poder!*/, 16);
 				break;
 		
 			case 2106164812:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "EPSI6_U" /*Hey Zondar, we need your help retrieving one of our sacred vessels - head out towards the coast near the Military Base. A fellow acolyte will meet you there.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "EPSI6_U" /*Zondar, necesitamos tu ayuda para recuperar uno de nuestros recipientes sagrados. Ve hacia la costa, cerca de la base militar. Allí te espera un hermano.*/, 16);
 				break;
 		
 			case -1783809705:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXTR2_U" /*hey Bro meet me at the airport got some more crazy shit to do!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXTR2_U" /*Colega, ns vmos n l aeroprto. stoy mtido n otra mvida!*/, 16);
 				break;
 		
 			case -1159983966:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXTR3_U" /*Free climbed the Maze Bank, waiting on the roof. Spiritual. You should hitch a flight up and join me, I need someone to tag in the post.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "EXTR3_U" /*He escalado el Maze Bank y estoy esperando en la azotea. Espiritual. Deberías venir volando. Necesito a alguien a quien etiquetar.*/, 16);
 				break;
 		
 			case -1134717682:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "HUNT1_U" /*Hey Trevor, meet me down at the lodge and we'll go hunt some real game.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "HUNT1_U" /*Eh, Trevor, ven a verme a la cabaña y nos iremos de caza.*/, 16);
 				break;
 		
 			case -1444331296:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "PAP3_U" /*Hey homie, heard a few rumors on the celebrity grapevine. Opportunity to get some real money shots! Sent over the locations, call me when you get there.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "PAP3_U" /*Oye, he oído unos cuantos rumores sobre famosos. ¡Una buena oportunidad para hacer fotos lucrativas! Te paso los lugares. Llámame cuando llegues.*/, 16);
 				break;
 		
 			case 969002696:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "TON3_U" /*JB missing PLZ help a sista out with another job. call me and ill explain. tonya xoxoxoxo*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "TON3_U" /*JB ha dsaparecido. Echme 1 mano cn otro trbjo, va. Llmame cuando kieras. Tonya. Bss.*/, 16);
 				break;
 		
 			case 1794975438:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "TON4_U" /*me and JB getting clean but JB fiending bad sick as a dog can u do one more job for us? gimme a call. Tonya xoxox*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "TON4_U" /*JB y yo ns stmos dsenganchndo, xo JB sta ftal. ¿Puedes hcer 1 curro mas xa nstrs? Llmame. Tonya. Bss.*/, 16);
 				break;
 		
 			case 1988415324:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "RE_BUR_MIS" /*It's Antonia Bottino, you saved my life out at Paleto Bay. My father wanted to thank you – he's wiring some cash to your account now.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "RE_BUR_MIS" /*Soy Antonia Bottino. Me salvaste la vida en Paleto Bay. Mi padre quería agradecértelo. Te va a hacer una transferencia a tu cuenta ya mismo.*/, 16);
 				break;
 		
 			case 1234461962:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "SOL2_PASS" /*Michael I have put your name in the credits for the film. ~nrt~ <img src='img://ExecutiveProducer/executiveproducer' vspace='0' width='252' height='150'/> ~nrt~*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "SOL2_PASS" /*Michael, te he incluido en los créditos de la película. ~nrt~ <img src='img://ExecutiveProducer/executiveproducer' vspace='0' width='252' height='150'/> ~nrt~*/, 16);
 				break;
 		
 			case 1516526930:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "DRF3_U" /*Michael, I haven't heard from you. I trust you're keeping in fine mental health, but I worry.  Phone session?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "DRF3_U" /*Michael, llevo tiempo sin saber de ti. Confío en que conserves tu salud mental, pero me tienes preocupado. ¿Una sesión telefónica?*/, 16);
 				break;
 		
 			case -685399607:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "DRF4_U" /*Michael, your last session was... concerning. I think we should have another chat. Call me.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "DRF4_U" /*Michael, me dejaste... preocupado en la última consulta. Creo que deberíamos volver a charlar. Llámame.*/, 16);
 				break;
 		
 			case -527573502:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "SR_AIRPORT" /*I heard about you racing. Check out the airport this evening for a real challenge.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "SR_AIRPORT" /*He oído que te van las carreras. Si quieres un buen reto, ve al aeropuerto esta noche.*/, 16);
 				break;
 		
 			case 277048894:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "SR_FREEWAY" /*Think you're man enough for a faster race? There's one going down on the freeway tonight.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "SR_FREEWAY" /*¿Tienes narices para participar en una carrera más rápida? Se va a celebrar una en la autopista esta noche.*/, 16);
 				break;
 		
 			case 477030223:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "SR_CANALS" /*Cars are for pussies, bike race this evening at Vespucci Canals.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "SR_CANALS" /*Los coches son para los maricas. Carrera de motos en los canales de Vespucci esta noche.*/, 16);
 				break;
 		
 			case -1900821691:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MGTNS_U" /*Michael you bought that court but never use it. My grip and ball control has def improved. Coach is V hard on me. xx*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MGTNS_U" /*Michael, t compraste la pista xo no la usas. Cada vez controlo más la bola y agarro mejor la raqueta. El entrenador m da mucha caña. Bss.*/, 16);
 				break;
 		
 			case -1845612607:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MGTNS_U2" /*Too soon to bring up tennis? Assume I'm not getting another coach any time soon so need someone to play with. Worried my grip is getting loose. xx*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MGTNS_U2" /*¿Demasiado pronto para hablar de tenis? Supongo que no tendré otro entrenador así que necesito a alguien para entrenar. Estoy perdiendo mi técnica de empuñadura. Bss*/, 16);
 				break;
 		
 			case -815326385:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "T_LOST_HANGER" /*You shoulda received payment from Oscar Guzman already, right. You know, I'm thinking that runway we took off from, Sandy Shores Airfield, the Lost're all cleared out from there, so we can have exclusive usage - go over and check it out.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "T_LOST_HANGER" /*Oye, Trevor, ya deberías haber recibido el pago de las armas. Por cierto, el aeródromo de los Lost está vacío. Los has borrado del mapa. Supongo que eso lo convierte oficialmente en propiedad de Industrias Trevor Philips. Pásate por allí a echar un vistazo.*/, 16);
 				break;
 		
 			case 367701416:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "OMEGA_TXT1" /*CBL, as soon as you've located the final piece make haste for my control center (trailer) at the Wind Farm.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "OMEGA_TXT1" /*FVBC, tan pronto como encuentres la última pieza, dirígete a mi centro de control (caravana) en la granja eólica.*/, 16);
 				break;
 		
 			case 65881433:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "BLAZER3_U" /*Hey Trevor, just dropped off something cool by the trailer. Check it out when you get the chance. Forever, Ron.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "BLAZER3_U" /*Hola, Trevor. He dejado algo muy chulo junto a la caravana. Échale un vistazo en cuanto puedas. Nos vemos, Ron.*/, 16);
 				break;
 		
 			case 1256519626:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "ABI1_MISS" /*Hello Michael, I heard that you found my late husband's wrecked submarine - come see me down at the docks.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "ABI1_MISS" /*Hola, Michael. He oído que encontraste el submarino de mi difunto marido. Ven a verme al puerto.*/, 16);
 				break;
 		
 			case 1324777792:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "HAO1_ENDT" /*You got lucky there. There are always races going down in LS. If you're interested, head to a meet. Hao*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "HAO1_ENDT" /*Has tenido suerte. Siempre hay carreras en curso en Los Santos. Si te interesan, acude a un encuentro. Hao*/, 16);
 				break;
 		
 			case 552744224:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "PHT_WLD_BEV1" /*Not everyone's cut out for snapping the stars, homie. So I signed you up to a wildlife photography competition!! :-P  lol Enjoy the little leagues!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "PHT_WLD_BEV1" /*No todos están hechos para tocar el cielo, colega. ¡Así que te he apuntado a una competición de fotografía de animales! :-P xDDD ¡Disfruta de las ligas menores!*/, 16);
 				break;
 		
 			case 1751306471:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MNKY_CAR_UNLK" /*"Holla!" You found all Space Monkey's tags in "da hood" and made them go viral! And you even met our marketing intern!! There's a limited edition Dinka Go Go Monkey Blista, Sports for you in your garage. Strap in, and get ready for the transmedia release of the decade when Monkey hits screens of all sizes this holiday!*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MNKY_CAR_UNLK" /*"¡Vaya!" ¡Has encontrado todas las imágenes de Space Monkey en el barrio y las has hecho virales! ¡Y hasta has conocido a nuestro becario de marketing! Hay una edición deportiva limitada del Go Go Monkey Blista en tu garaje. Ponte al volante y prepárate, ¡porque este verano el mono llegará a todas las pantallas!*/, 16);
 				break;
 		
 			case -899711929:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "MNKY_LAMAR" /*Dawg, you seen this monkey dude doin his street art shit round the city? Dude is real, man. Them some authentic ass lines.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "MNKY_LAMAR" /*¿Tron, has visto a ese tío de los monos con su rollo del arte urbano por la ciudad? Ese tío es la caña, colega. Es la hostia.*/, 16);
 				break;
 		
 			case 1139718847:
-				TEXT_LABEL_ASSIGN_STRING(sParam1, "CRACE_UNLK" /*Boss, there's some guys stock car racing round the way. You should try it. Unless you don't wanna. It could be fun, or not... you'll win a car, if you're good, but of course you'll be good. Please don't hurt me for this.*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(sParam1, "CRACE_UNLK" /*Jefe, por ahí hay unos tíos haciendo carreras de stock cars. Deberías probar. Salvo que no quieras. Sería divertido, o no... Ganarás un coche, si eres bueno, pero claro que serás bueno. Por favor, no me hagas daño por esto.*/, 16);
 				break;
 		
 			default:
@@ -2906,7 +2906,7 @@ void func_76() // Position - 0x3757 (14167)
 					case 1635046052:
 					case -464957327:
 					case 178720519:
-						_DISPLAY_HELP_TEXT("AM_H_FDEC" /*You can now make a choice whether to help Michael's family member or not. Press ~INPUT_CELLPHONE_SELECT~ to help, press ~INPUT_CELLPHONE_CANCEL~ to refuse.*/, -1);
+						_DISPLAY_HELP_TEXT("AM_H_FDEC" /*Ahora puedes elegir si ayudas al familiar de Michael o no. Pulsa ~INPUT_CELLPHONE_SELECT~ para ayudar o pulsa ~INPUT_CELLPHONE_CANCEL~ para negarte.*/, -1);
 						func_49(26);
 						break;
 				}
@@ -2915,12 +2915,12 @@ void func_76() // Position - 0x3757 (14167)
 	
 		if (!Global_114931.f_7695.f_913)
 		{
-			if (func_82() != false)
+			if (func_82() != 0)
 			{
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FDEC" /*You can now make a choice whether to help Michael's family member or not. Press ~INPUT_CELLPHONE_SELECT~ to help, press ~INPUT_CELLPHONE_CANCEL~ to refuse.*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FDEC" /*Ahora puedes elegir si ayudas al familiar de Michael o no. Pulsa ~INPUT_CELLPHONE_SELECT~ para ayudar o pulsa ~INPUT_CELLPHONE_CANCEL~ para negarte.*/))
 					HUD::CLEAR_HELP(false);
 			
-				if (func_82() == true)
+				if (func_82() == 1)
 				{
 					Global_114931.f_7695.f_914 = 1;
 					Global_114931.f_7695.f_913 = 1;
@@ -3030,7 +3030,7 @@ void func_81(int iParam0) // Position - 0x39AD (14765)
 	return;
 }
 
-BOOL func_82() // Position - 0x39EA (14826)
+int func_82() // Position - 0x39EA (14826)
 {
 	return Global_24017;
 }
@@ -5048,7 +5048,7 @@ void func_128(var uParam0) // Position - 0x5E6B (24171)
 		
 			if (func_54(3))
 				if (!func_53(1))
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL2" /*Press ~INPUT_CELLPHONE_DOWN~ to skip lines in the phone call. Press ~INPUT_CELLPHONE_CANCEL~ to end the call early.*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL2" /*Pulsa ~INPUT_CELLPHONE_DOWN~ para omitir líneas en la llamada. Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar antes de que termine.*/))
 						HUD::CLEAR_HELP(false);
 		}
 	}
@@ -5398,7 +5398,7 @@ void func_150(var uParam0, BOOL bParam1) // Position - 0x64BB (25787)
 
 	func_133(0);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL1" /*Press ~INPUT_CELLPHONE_SELECT~ to answer Simeon's call.~n~Press ~INPUT_CELLPHONE_CANCEL~ to hang up.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_FCAL1" /*Pulsa ~INPUT_CELLPHONE_SELECT~ para responder a la llamada deµSimeon.~n~Pulsa ~INPUT_CELLPHONE_CANCEL~ para colgar.*/))
 		HUD::CLEAR_HELP(false);
 
 	if (IS_BIT_SET(Global_114931.f_7695[Global_45433 /*15*/].f_1, 15))
@@ -6047,7 +6047,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
 	Global_23997 = 0;
@@ -6072,8 +6072,8 @@ BOOL func_164(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x714D (29
 					Global_23000 = 0;
 					Global_23001 = 1;
 					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -6765,7 +6765,7 @@ void func_193(int iParam0, BOOL bParam1) // Position - 0x7D63 (32099)
 		if (num < 0)
 			return;
 	
-		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[num] /*12*/].f_4 == false)
+		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[num] /*12*/].f_4 == 0)
 			Global_49455[iParam0 /*46*/].f_1 = 1;
 	
 		return;
@@ -6790,7 +6790,7 @@ void func_193(int iParam0, BOOL bParam1) // Position - 0x7D63 (32099)
 
 	if (Global_49455[iParam0 /*46*/].f_31 == Global_49455[iParam0 /*46*/].f_30)
 	{
-		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[Global_49455[iParam0 /*46*/].f_42 - 1] /*12*/].f_4 == false)
+		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[Global_49455[iParam0 /*46*/].f_42 - 1] /*12*/].f_4 == 0)
 		{
 			Global_49455[iParam0 /*46*/].f_1 = 1;
 			return;
@@ -6852,22 +6852,22 @@ void func_194(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < false)
-							Global_46122 = false;
+						if (Global_46122 < 0)
+							Global_46122 = 0;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < false)
-							Global_46123 = false;
+						if (Global_46123 < 0)
+							Global_46123 = 0;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < false)
-							Global_46124 = false;
+						if (Global_46124 < 0)
+							Global_46124 = 0;
 						break;
 				}
 			}
@@ -6898,22 +6898,22 @@ void func_194(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < false)
-							Global_46122 = false;
+						if (Global_46122 < 0)
+							Global_46122 = 0;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < false)
-							Global_46123 = false;
+						if (Global_46123 < 0)
+							Global_46123 = 0;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < false)
-							Global_46124 = false;
+						if (Global_46124 < 0)
+							Global_46124 = 0;
 						break;
 				}
 			}
@@ -6960,7 +6960,7 @@ void func_194(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 			
 				case 1:
 					if (num3 == 249)
-						func_195(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_195(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
 						func_195(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
@@ -6993,15 +6993,15 @@ void func_195(eCharacter echParam0, int iParam1, int iParam2, const char* sParam
 		switch (iParam2)
 		{
 			case 72:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 73:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 74:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			default:
@@ -7114,7 +7114,7 @@ char* func_197(int iParam0) // Position - 0x84EB (34027)
 			return "EMSTR_12" /*Marnie*/;
 	
 		case 5:
-			return "EMSTR_29" /*Epsilon Store*/;
+			return "EMSTR_29" /*Tienda de Epsilon*/;
 	
 		case 6:
 			return "EMSTR_36" /*Maude*/;
@@ -7132,10 +7132,10 @@ char* func_197(int iParam0) // Position - 0x84EB (34027)
 			return "EMSTR_58" /*Bank of Liberty*/;
 	
 		case 11:
-			return "EMSTR_78" /*Legendary Motorsport Sales*/;
+			return "EMSTR_78" /*Legendary Motorsport*/;
 	
 		case 12:
-			return "EMSTR_81" /*Elitas Sales*/;
+			return "EMSTR_81" /*Ventas de Elitas*/;
 	
 		case 13:
 			return "EMSTR_84" /*Cache & Carry*/;
@@ -7156,13 +7156,13 @@ char* func_197(int iParam0) // Position - 0x84EB (34027)
 			return "EMSTR_145" /*Paige Harris*/;
 	
 		case 19:
-			return "EMSTR_152" /*Los Santos Tourist Info*/;
+			return "EMSTR_152" /*Turismo de Los Santos*/;
 	
 		case 20:
 			return "EMSTR_157" /*Rickie Luckens*/;
 	
 		case 21:
-			return "EMSTR_163" /*Minotaur Property Management*/;
+			return "EMSTR_163" /*Minotaur*/;
 	
 		case 22:
 			return "EMSTR_182" /*Saeeda Kadam*/;
@@ -7171,10 +7171,10 @@ char* func_197(int iParam0) // Position - 0x84EB (34027)
 			return "EMSTR_187" /*Vanilla Unicorn*/;
 	
 		case 24:
-			return "EMSTR_190" /*Dr Isiah Friedlander*/;
+			return "EMSTR_190" /*Dr. Isiah Friedlander*/;
 	
 		case 25:
-			return "EMSTR_206" /*TRACEYHEARTSTEALER*/;
+			return "EMSTR_206" /*TRACIROBACORAZONES*/;
 	
 		case 26:
 			return "EMSTR_219" /*Dave Norton*/;
@@ -7219,34 +7219,34 @@ char* func_197(int iParam0) // Position - 0x84EB (34027)
 			return "EMSTR_369" /*Hookies*/;
 	
 		case 40:
-			return "EMSTR_376" /*Towing Impound*/;
+			return "EMSTR_376" /*Depósito de coches*/;
 	
 		case 41:
-			return "EMSTR_379" /*Downtown Cab Co,*/;
+			return "EMSTR_379" /*Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_384" /*Sonar Collections Dock*/;
+			return "EMSTR_384" /*Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_387" /*Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_390" /*Cinema Doppler*/;
+			return "EMSTR_390" /*Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_393" /*Ten Cent Theater*/;
+			return "EMSTR_393" /*Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_396" /*Tivoli Cinema*/;
+			return "EMSTR_396" /*Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_399" /*Los Santos Golf Club*/;
+			return "EMSTR_399" /*Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_402" /*Car Scrap Yard*/;
+			return "EMSTR_402" /*Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_405" /*Smoke on the Water*/;
@@ -7261,10 +7261,10 @@ char* func_197(int iParam0) // Position - 0x84EB (34027)
 			return "EMSTR_414" /*The Hen House*/;
 	
 		case 54:
-			return "EMSTR_465" /*Pedal & Metal Sales*/;
+			return "EMSTR_465" /*Ventas de P&M*/;
 	
 		case 55:
-			return "EMSTR_468" /*SSA Super Autos Sales*/;
+			return "EMSTR_468" /*SSA Super Autos*/;
 	
 		case 56:
 			return "EMSTR_489" /*Hush Smush*/;
@@ -7288,13 +7288,13 @@ char* func_197(int iParam0) // Position - 0x84EB (34027)
 			return "EMSTR_507" /*Misscuddles*/;
 	
 		case 63:
-			return "EMSTR_640" /*Off-Road Events*/;
+			return "EMSTR_640" /*Eventos todoterreno*/;
 	
 		case 64:
 			return "EMSTR_643" /*DockTease*/;
 	
 		case 65:
-			return "EMSTR_652" /*Brother Adrian*/;
+			return "EMSTR_652" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -8243,7 +8243,7 @@ void func_209(int iParam0, var uParam1) // Position - 0x98BF (39103)
 			break;
 	
 		case 5:
-			func_210(uParam1, "Barry3A", func_212(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Areas where you can find vehicles with a hidden stash have been marked on the map. Collect these vehicles for Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_211(iParam0), 0, 1);
+			func_210(uParam1, "Barry3A", func_212(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Las zonas en las que puedes encontrar vehículos con un alijo oculto aparecerán indicadas en el mapa. Recoge estos vehículos para Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_211(iParam0), 0, 1);
 			break;
 	
 		case 6:
@@ -8255,7 +8255,7 @@ void func_209(int iParam0, var uParam1) // Position - 0x98BF (39103)
 			break;
 	
 		case 8:
-			func_210(uParam1, "Dreyfuss1", func_212(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*The killer's identity and location have been revealed.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_211(iParam0), 0, 0);
+			func_210(uParam1, "Dreyfuss1", func_212(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*Se ha revelado la identidad y el paradero del asesino.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_211(iParam0), 0, 0);
 			break;
 	
 		case 9:
@@ -8375,7 +8375,7 @@ void func_209(int iParam0, var uParam1) // Position - 0x98BF (39103)
 			break;
 	
 		case 38:
-			func_210(uParam1, "Nigel1A", func_212(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Areas where you can find celebrity items have been marked on the map. Steal these items for Nigel and Mrs. Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_211(iParam0), 1, 1);
+			func_210(uParam1, "Nigel1A", func_212(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Se han marcado en el mapa las zonas en las que puedes encontrar objetos de famosos. Róbalos para Nigel y para la señora Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_211(iParam0), 1, 1);
 			break;
 	
 		case 39:
@@ -8419,7 +8419,7 @@ void func_209(int iParam0, var uParam1) // Position - 0x98BF (39103)
 			break;
 	
 		case 49:
-			func_210(uParam1, "Paparazzo3A", func_212(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Areas where you can find celebrity photo opportunities have been marked on the map. Track down and photograph these celebrities for Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_211(iParam0), 0, 1);
+			func_210(uParam1, "Paparazzo3A", func_212(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Las zonas en las que puedes encontrar oportunidades para sacar fotos a famosos se han marcado en el mapa. Localiza y fotografía a estos famosos para Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_211(iParam0), 0, 1);
 			break;
 	
 		case 50:
@@ -8455,7 +8455,7 @@ void func_209(int iParam0, var uParam1) // Position - 0x98BF (39103)
 			break;
 	
 		case 58:
-			func_210(uParam1, "Tonya1", func_212(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_211(iParam0), 0, 1);
+			func_210(uParam1, "Tonya1", func_212(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_211(iParam0), 0, 1);
 			break;
 	
 		case 59:
@@ -9029,22 +9029,22 @@ BOOL func_216() // Position - 0xB32E (45870)
 	return false;
 }
 
-BOOL func_217(ePedComponentType epctParam0) // Position - 0xB34A (45898)
+BOOL func_217(Ped pedParam0) // Position - 0xB34A (45898)
 {
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return false;
 
-	if (func_218(epctParam0) == -1)
+	if (func_218(pedParam0) == -1)
 		return false;
 
 	return true;
 }
 
-int func_218(ePedComponentType epctParam0) // Position - 0xB36B (45931)
+int func_218(Ped pedParam0) // Position - 0xB36B (45931)
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return -1;
 
 	i = 0;
@@ -9052,7 +9052,7 @@ int func_218(ePedComponentType epctParam0) // Position - 0xB36B (45931)
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!(Global_45897[i /*5*/] == -1))
-			if (epctParam0 == Global_45897[i /*5*/].f_1)
+			if (pedParam0 == Global_45897[i /*5*/].f_1)
 				return i;
 	}
 
@@ -9318,343 +9318,343 @@ void func_229(int iParam0) // Position - 0xB87C (47228)
 	return;
 }
 
-BOOL func_230(Vehicle veParam0, int iParam1) // Position - 0xB8F3 (47347)
+BOOL func_230(var uParam0, int iParam1) // Position - 0xB8F3 (47347)
 {
 	BOOL num;
 	int num2;
 
-	*veParam0 = { 0f, 0f, 0f };
-	veParam0->f_3 = 0f;
-	veParam0->f_4 = 0;
-	TEXT_LABEL_ASSIGN_STRING(&(veParam0->f_5), "", 16);
-	veParam0->f_9 = 0;
-	veParam0->f_10 = 0;
-	veParam0->f_11 = 0;
-	veParam0->f_12 = 145;
-	veParam0->f_13 = -1;
-	veParam0->f_14 = 0;
-	veParam0->f_15 = { 0f, 0f, 0f };
-	veParam0->f_18 = { 0f, 0f, 0f };
+	*uParam0 = { 0f, 0f, 0f };
+	uParam0->f_3 = 0f;
+	uParam0->f_4 = 0;
+	TEXT_LABEL_ASSIGN_STRING(&(uParam0->f_5), "", 16);
+	uParam0->f_9 = 0;
+	uParam0->f_10 = 0;
+	uParam0->f_11 = 0;
+	uParam0->f_12 = 145;
+	uParam0->f_13 = -1;
+	uParam0->f_14 = 0;
+	uParam0->f_15 = { 0f, 0f, 0f };
+	uParam0->f_18 = { 0f, 0f, 0f };
 
 	switch (iParam1)
 	{
 		case 0:
-			*veParam0 = { -831.8538f, 172.1154f, 69.9058f };
-			veParam0->f_3 = 157.5705f;
-			veParam0->f_4 = func_232(CHAR_MICHAEL, 1);
-			veParam0->f_12 = 0;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { -831.8538f, 172.1154f, 69.9058f };
+			uParam0->f_3 = 157.5705f;
+			uParam0->f_4 = func_232(CHAR_MICHAEL, 1);
+			uParam0->f_12 = 0;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 1:
-			*veParam0 = { 1970.9434f, 3801.6838f, 31.1396f };
-			veParam0->f_3 = 301.3964f;
-			veParam0->f_4 = func_232(CHAR_MICHAEL, 1);
-			veParam0->f_12 = 0;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 1970.9434f, 3801.6838f, 31.1396f };
+			uParam0->f_3 = 301.3964f;
+			uParam0->f_4 = func_232(CHAR_MICHAEL, 1);
+			uParam0->f_12 = 0;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 2:
-			*veParam0 = { -22.6297f, -1439.1368f, 29.6549f };
-			veParam0->f_3 = 180.0808f;
-			veParam0->f_4 = func_232(CHAR_FRANKLIN, 1);
-			veParam0->f_12 = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { -22.6297f, -1439.1368f, 29.6549f };
+			uParam0->f_3 = 180.0808f;
+			uParam0->f_4 = func_232(CHAR_FRANKLIN, 1);
+			uParam0->f_12 = 1;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 3:
-			*veParam0 = { -22.5229f, -1434.6986f, 29.6552f };
-			veParam0->f_3 = 141.6114f;
-			veParam0->f_4 = func_232(CHAR_FRANKLIN, 2);
-			veParam0->f_12 = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 19);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { -22.5229f, -1434.6986f, 29.6552f };
+			uParam0->f_3 = 141.6114f;
+			uParam0->f_4 = func_232(CHAR_FRANKLIN, 2);
+			uParam0->f_12 = 1;
+			MISC::SET_BIT(&(uParam0->f_9), 19);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 4:
-			*veParam0 = { 10.9281f, 545.669f, 174.7951f };
-			veParam0->f_3 = 61.392f;
-			veParam0->f_4 = func_232(CHAR_FRANKLIN, 1);
-			veParam0->f_12 = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 10.9281f, 545.669f, 174.7951f };
+			uParam0->f_3 = 61.392f;
+			uParam0->f_4 = func_232(CHAR_FRANKLIN, 1);
+			uParam0->f_12 = 1;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 5:
-			*veParam0 = { 6.1093f, 544.9742f, 174.2835f };
-			veParam0->f_3 = 92.1548f;
-			veParam0->f_4 = func_232(CHAR_FRANKLIN, 2);
-			veParam0->f_12 = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 19);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 6.1093f, 544.9742f, 174.2835f };
+			uParam0->f_3 = 92.1548f;
+			uParam0->f_4 = func_232(CHAR_FRANKLIN, 2);
+			uParam0->f_12 = 1;
+			MISC::SET_BIT(&(uParam0->f_9), 19);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 6:
-			*veParam0 = { 1981.4163f, 3808.1313f, 31.1384f };
-			veParam0->f_3 = 117.2557f;
-			veParam0->f_4 = func_232(CHAR_TREVOR, 1);
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 1981.4163f, 3808.1313f, 31.1384f };
+			uParam0->f_3 = 117.2557f;
+			uParam0->f_4 = func_232(CHAR_TREVOR, 1);
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 7:
-			*veParam0 = { -1158.4875f, -1529.3673f, 3.8995f };
-			veParam0->f_3 = 35.7505f;
-			veParam0->f_4 = func_232(CHAR_TREVOR, 1);
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { -1158.4875f, -1529.3673f, 3.8995f };
+			uParam0->f_3 = 35.7505f;
+			uParam0->f_4 = func_232(CHAR_TREVOR, 1);
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 8:
-			*veParam0 = { 148.2868f, -1270.5695f, 28.2252f };
-			veParam0->f_3 = 208.4685f;
-			veParam0->f_4 = func_232(CHAR_TREVOR, 1);
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 148.2868f, -1270.5695f, 28.2252f };
+			uParam0->f_3 = 208.4685f;
+			uParam0->f_4 = func_232(CHAR_TREVOR, 1);
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 9:
-			*veParam0 = { 1459.5085f, -1380.45f, 78.3259f };
-			veParam0->f_3 = 99.6211f;
-			veParam0->f_4 = joaat("scorcher");
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 1459.5085f, -1380.45f, 78.3259f };
+			uParam0->f_3 = 99.6211f;
+			uParam0->f_4 = joaat("scorcher");
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 10:
-			*veParam0 = { -1518.947f, -1387.8655f, -0.5134f };
-			veParam0->f_3 = 98.3867f;
-			veParam0->f_4 = joaat("seashark");
+			*uParam0 = { -1518.947f, -1387.8655f, -0.5134f };
+			uParam0->f_3 = 98.3867f;
+			uParam0->f_4 = joaat("seashark");
 			num = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			break;
 	
 		case 11:
-			*veParam0 = { 353.0926f, 3577.5925f, 32.351f };
-			veParam0->f_3 = 16.6205f;
-			veParam0->f_4 = joaat("duster");
+			*uParam0 = { 353.0926f, 3577.5925f, 32.351f };
+			uParam0->f_3 = 16.6205f;
+			uParam0->f_4 = joaat("duster");
 			num = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			break;
 	
 		case 12:
-			veParam0->f_14 = 0;
-			*veParam0 = { -1652.0043f, -3142.3484f, 12.9921f };
-			veParam0->f_3 = 329.1082f;
-			veParam0->f_12 = 0;
-			veParam0->f_13 = 359;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 0;
+			*uParam0 = { -1652.0043f, -3142.3484f, 12.9921f };
+			uParam0->f_3 = 329.1082f;
+			uParam0->f_12 = 0;
+			uParam0->f_13 = 359;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 13:
-			veParam0->f_14 = 1;
-			*veParam0 = { -1271.6487f, -3380.6853f, 12.9451f };
-			veParam0->f_3 = 329.5137f;
-			veParam0->f_12 = 1;
-			veParam0->f_13 = 359;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 1;
+			*uParam0 = { -1271.6487f, -3380.6853f, 12.9451f };
+			uParam0->f_3 = 329.5137f;
+			uParam0->f_12 = 1;
+			uParam0->f_13 = 359;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 14:
-			veParam0->f_14 = 2;
-			*veParam0 = { 1735.5863f, 3294.5305f, 40.1651f };
-			veParam0->f_3 = 194.9525f;
-			veParam0->f_12 = 2;
-			veParam0->f_13 = 359;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 2;
+			*uParam0 = { 1735.5863f, 3294.5305f, 40.1651f };
+			uParam0->f_3 = 194.9525f;
+			uParam0->f_12 = 2;
+			uParam0->f_13 = 359;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 15:
-			veParam0->f_14 = 3;
-			*veParam0 = { -846.27f, -1363.19f, 0.22f };
-			veParam0->f_3 = 108.78f;
-			veParam0->f_12 = 0;
-			veParam0->f_13 = 356;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 22);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 3;
+			*uParam0 = { -846.27f, -1363.19f, 0.22f };
+			uParam0->f_3 = 108.78f;
+			uParam0->f_12 = 0;
+			uParam0->f_13 = 356;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 22);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 16:
-			veParam0->f_14 = 4;
-			*veParam0 = { -849.47f, -1354.99f, 0.24f };
-			veParam0->f_3 = 109.84f;
-			veParam0->f_12 = 1;
-			veParam0->f_13 = 356;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 22);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 4;
+			*uParam0 = { -849.47f, -1354.99f, 0.24f };
+			uParam0->f_3 = 109.84f;
+			uParam0->f_12 = 1;
+			uParam0->f_13 = 356;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 22);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 17:
-			veParam0->f_14 = 5;
-			*veParam0 = { -852.47f, -1346.2f, 0.21f };
-			veParam0->f_3 = 108.76f;
-			veParam0->f_12 = 2;
-			veParam0->f_13 = 356;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 22);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 5;
+			*uParam0 = { -852.47f, -1346.2f, 0.21f };
+			uParam0->f_3 = 108.76f;
+			uParam0->f_12 = 2;
+			uParam0->f_13 = 356;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 22);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 18:
-			veParam0->f_14 = 6;
-			*veParam0 = { -745.857f, -1433.9036f, 4.0005f };
-			veParam0->f_12 = 0;
-			veParam0->f_13 = 360;
-			veParam0->f_15 = { -756.2952f, -1441.6093f, 2.9184f };
-			veParam0->f_18 = { -738.0606f, -1423.0676f, 8.2835f };
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 6;
+			*uParam0 = { -745.857f, -1433.9036f, 4.0005f };
+			uParam0->f_12 = 0;
+			uParam0->f_13 = 360;
+			uParam0->f_15 = { -756.2952f, -1441.6093f, 2.9184f };
+			uParam0->f_18 = { -738.0606f, -1423.0676f, 8.2835f };
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 19:
-			veParam0->f_14 = 7;
-			*veParam0 = { -761.8486f, -1453.8293f, 4.0005f };
-			veParam0->f_12 = 1;
-			veParam0->f_13 = 360;
-			veParam0->f_15 = { -772.8158f, -1459.9572f, 3.2894f };
-			veParam0->f_18 = { -754.3353f, -1440.836f, 8.3334f };
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 7;
+			*uParam0 = { -761.8486f, -1453.8293f, 4.0005f };
+			uParam0->f_12 = 1;
+			uParam0->f_13 = 360;
+			uParam0->f_15 = { -772.8158f, -1459.9572f, 3.2894f };
+			uParam0->f_18 = { -754.3353f, -1440.836f, 8.3334f };
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 20:
-			veParam0->f_14 = 8;
-			*veParam0 = { 1769.3f, 3244f, 41.1f };
-			veParam0->f_12 = 2;
-			veParam0->f_13 = 360;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 8;
+			*uParam0 = { 1769.3f, 3244f, 41.1f };
+			uParam0->f_12 = 2;
+			uParam0->f_13 = 360;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 21:
-			veParam0->f_14 = 9;
-			*veParam0 = { 192.7897f, -1020.5385f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 0;
-			veParam0->f_13 = 357;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 9;
+			*uParam0 = { 192.7897f, -1020.5385f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 0;
+			uParam0->f_13 = 357;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
 		case 22:
-			veParam0->f_14 = 10;
-			*veParam0 = { 192.7897f, -1020.5385f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 1;
-			veParam0->f_13 = 357;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 10;
+			*uParam0 = { 192.7897f, -1020.5385f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 1;
+			uParam0->f_13 = 357;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
 		case 23:
-			veParam0->f_14 = 11;
-			*veParam0 = { 192.7897f, -1020.5385f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 2;
-			veParam0->f_13 = 357;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 11;
+			*uParam0 = { 192.7897f, -1020.5385f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 2;
+			uParam0->f_13 = 357;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
@@ -9662,17 +9662,17 @@ BOOL func_230(Vehicle veParam0, int iParam1) // Position - 0xB8F3 (47347)
 		case 27:
 		case 28:
 			num2 = iParam1 - 26;
-			veParam0->f_14 = 12 + num2;
-			*veParam0 = { 196.2794f, -1020.4791f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 0 + num2;
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 27);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 12 + num2;
+			*uParam0 = { 196.2794f, -1020.4791f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 0 + num2;
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 27);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
@@ -9680,17 +9680,17 @@ BOOL func_230(Vehicle veParam0, int iParam1) // Position - 0xB8F3 (47347)
 		case 30:
 		case 31:
 			num2 = iParam1 - 29;
-			veParam0->f_14 = 15 + num2;
-			*veParam0 = { 199.8872f, -1020.048f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 0 + num2;
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 27);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 15 + num2;
+			*uParam0 = { 199.8872f, -1020.048f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 0 + num2;
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 27);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
@@ -9698,385 +9698,385 @@ BOOL func_230(Vehicle veParam0, int iParam1) // Position - 0xB8F3 (47347)
 		case 33:
 		case 34:
 			num2 = iParam1 - 32;
-			veParam0->f_14 = 18 + num2;
-			*veParam0 = { 203.6006f, -1019.7762f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 0 + num2;
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 27);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 18 + num2;
+			*uParam0 = { 203.6006f, -1019.7762f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 0 + num2;
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 27);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
 		case 24:
-			veParam0->f_14 = 21;
-			*veParam0 = { 0f, 0f, 0f };
-			veParam0->f_3 = 0f;
-			veParam0->f_4 = 0;
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 11);
-			MISC::SET_BIT(&(veParam0->f_9), 13);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
+			uParam0->f_14 = 21;
+			*uParam0 = { 0f, 0f, 0f };
+			uParam0->f_3 = 0f;
+			uParam0->f_4 = 0;
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 11);
+			MISC::SET_BIT(&(uParam0->f_9), 13);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
 			num = 1;
 			break;
 	
 		case 25:
-			veParam0->f_14 = 22;
-			*veParam0 = { 723.2515f, -632.0496f, 27.1484f };
-			veParam0->f_3 = 12.9316f;
-			veParam0->f_4 = joaat("tailgater");
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 11);
-			MISC::SET_BIT(&(veParam0->f_9), 13);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
+			uParam0->f_14 = 22;
+			*uParam0 = { 723.2515f, -632.0496f, 27.1484f };
+			uParam0->f_3 = 12.9316f;
+			uParam0->f_4 = joaat("tailgater");
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 11);
+			MISC::SET_BIT(&(uParam0->f_9), 13);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
 			num = 1;
 			break;
 	
 		case 35:
-			*veParam0 = { -51.23f, 3111.9f, 24.95f };
-			veParam0->f_3 = 46.78f;
-			veParam0->f_4 = joaat("proptrailer");
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { -51.23f, 3111.9f, 24.95f };
+			uParam0->f_3 = 46.78f;
+			uParam0->f_4 = joaat("proptrailer");
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 36:
-			*veParam0 = { -55.7984f, -1096.5856f, 25.4223f };
-			veParam0->f_3 = 308.0596f;
-			veParam0->f_4 = joaat("bjxl");
-			veParam0->f_10 = 126;
-			veParam0->f_11 = 126;
-			MISC::SET_BIT(&(veParam0->f_9), 9);
-			MISC::SET_BIT(&(veParam0->f_9), 13);
+			*uParam0 = { -55.7984f, -1096.5856f, 25.4223f };
+			uParam0->f_3 = 308.0596f;
+			uParam0->f_4 = joaat("bjxl");
+			uParam0->f_10 = 126;
+			uParam0->f_11 = 126;
+			MISC::SET_BIT(&(uParam0->f_9), 9);
+			MISC::SET_BIT(&(uParam0->f_9), 13);
 			num = 1;
 			break;
 	
 		case 37:
-			*veParam0 = { -2892.93f, 3192.37f, 11.66f };
-			veParam0->f_3 = -132.35f;
-			veParam0->f_4 = joaat("velum");
-			veParam0->f_10 = 157;
-			veParam0->f_11 = 157;
-			MISC::SET_BIT(&(veParam0->f_9), 9);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 13);
+			*uParam0 = { -2892.93f, 3192.37f, 11.66f };
+			uParam0->f_3 = -132.35f;
+			uParam0->f_4 = joaat("velum");
+			uParam0->f_10 = 157;
+			uParam0->f_11 = 157;
+			MISC::SET_BIT(&(uParam0->f_9), 9);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 13);
 			num = 1;
 			break;
 	
 		case 38:
-			*veParam0 = { 1744.3083f, 3270.673f, 40.2076f };
-			veParam0->f_3 = 125f;
-			veParam0->f_4 = joaat("cargobob3");
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 1744.3083f, 3270.673f, 40.2076f };
+			uParam0->f_3 = 125f;
+			uParam0->f_4 = joaat("cargobob3");
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 39:
-			*veParam0 = { 1751.4397f, 3322.643f, 42.1855f };
-			veParam0->f_3 = 268.134f;
-			veParam0->f_4 = joaat("submersible");
-			MISC::SET_BIT(&(veParam0->f_9), 23);
+			*uParam0 = { 1751.4397f, 3322.643f, 42.1855f };
+			uParam0->f_3 = 268.134f;
+			uParam0->f_4 = joaat("submersible");
+			MISC::SET_BIT(&(uParam0->f_9), 23);
 			num = 1;
 			break;
 	
 		case 41:
-			*veParam0 = { 1377.1045f, -2076.2f, 52f };
-			veParam0->f_3 = 37.5f;
-			veParam0->f_4 = joaat("towtruck");
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 1377.1045f, -2076.2f, 52f };
+			uParam0->f_3 = 37.5f;
+			uParam0->f_4 = joaat("towtruck");
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 40:
-			*veParam0 = { 1380.42f, -2072.7695f, 51.7607f };
-			veParam0->f_3 = 37.5f;
-			veParam0->f_4 = joaat("trash");
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 1380.42f, -2072.7695f, 51.7607f };
+			uParam0->f_3 = 37.5f;
+			uParam0->f_4 = joaat("trash");
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 42:
-			*veParam0 = { 1359.3892f, 3618.4407f, 33.8907f };
-			veParam0->f_3 = 108.2337f;
-			veParam0->f_4 = joaat("barracks");
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 1359.3892f, 3618.4407f, 33.8907f };
+			uParam0->f_3 = 108.2337f;
+			uParam0->f_4 = joaat("barracks");
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 43:
-			*veParam0 = { 693.1154f, -1018.1551f, 21.6387f };
-			veParam0->f_3 = 177.6454f;
-			veParam0->f_4 = joaat("firetruk");
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 693.1154f, -1018.1551f, 21.6387f };
+			uParam0->f_3 = 177.6454f;
+			uParam0->f_4 = joaat("firetruk");
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 44:
-			*veParam0 = { -73.6963f, 495.124f, 143.5226f };
-			veParam0->f_3 = 155.5994f;
-			veParam0->f_4 = joaat("vacca");
+			*uParam0 = { -73.6963f, 495.124f, 143.5226f };
+			uParam0->f_3 = 155.5994f;
+			uParam0->f_4 = joaat("vacca");
 			num = 1;
 			break;
 	
 		case 45:
-			*veParam0 = { -67.6314f, 891.8266f, 234.5348f };
-			veParam0->f_3 = 294.993f;
-			veParam0->f_4 = joaat("surano");
+			*uParam0 = { -67.6314f, 891.8266f, 234.5348f };
+			uParam0->f_3 = 294.993f;
+			uParam0->f_4 = joaat("surano");
 			num = 1;
 			break;
 	
 		case 46:
-			*veParam0 = { 533.9048f, -169.2469f, 53.7005f };
-			veParam0->f_3 = 1.2998f;
-			veParam0->f_4 = joaat("tornado2");
+			*uParam0 = { 533.9048f, -169.2469f, 53.7005f };
+			uParam0->f_3 = 1.2998f;
+			uParam0->f_4 = joaat("tornado2");
 			num = 1;
 			break;
 	
 		case 47:
-			*veParam0 = { -726.8914f, -408.6952f, 34.0416f };
-			veParam0->f_3 = 267.7392f;
-			veParam0->f_4 = joaat("superd");
+			*uParam0 = { -726.8914f, -408.6952f, 34.0416f };
+			uParam0->f_3 = 267.7392f;
+			uParam0->f_4 = joaat("superd");
 			num = 1;
 			break;
 	
 		case 48:
-			*veParam0 = { -1321.5186f, 261.3993f, 61.5709f };
-			veParam0->f_3 = 350.7697f;
-			veParam0->f_4 = joaat("double");
+			*uParam0 = { -1321.5186f, 261.3993f, 61.5709f };
+			uParam0->f_3 = 350.7697f;
+			uParam0->f_4 = joaat("double");
 			num = 1;
 			break;
 	
 		case 49:
-			*veParam0 = { -1267.9991f, 451.6463f, 93.7071f };
-			veParam0->f_3 = 48.9311f;
-			veParam0->f_4 = joaat("double");
+			*uParam0 = { -1267.9991f, 451.6463f, 93.7071f };
+			uParam0->f_3 = 48.9311f;
+			uParam0->f_4 = joaat("double");
 			num = 1;
 			break;
 	
 		case 50:
-			*veParam0 = { -1062.0762f, -226.7637f, 37.157f };
-			veParam0->f_3 = 234.2767f;
-			veParam0->f_4 = joaat("double");
+			*uParam0 = { -1062.0762f, -226.7637f, 37.157f };
+			uParam0->f_3 = 234.2767f;
+			uParam0->f_4 = joaat("double");
 			num = 1;
 			break;
 	
 		case 51:
-			*veParam0 = { 68.16914f, -1558.9581f, 29.469042f };
-			veParam0->f_3 = 49.905754f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 68.16914f, -1558.9581f, 29.469042f };
+			uParam0->f_3 = 49.905754f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 52:
-			*veParam0 = { 589.4399f, 2736.7078f, 42.033165f };
-			veParam0->f_3 = -175.7105f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 589.4399f, 2736.7078f, 42.033165f };
+			uParam0->f_3 = -175.7105f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 53:
-			*veParam0 = { -488.77396f, -344.57205f, 34.363564f };
-			veParam0->f_3 = 82.4042f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { -488.77396f, -344.57205f, 34.363564f };
+			uParam0->f_3 = 82.4042f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 54:
-			*veParam0 = { 288.88083f, -585.47284f, 43.15428f };
-			veParam0->f_3 = -20.807068f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 288.88083f, -585.47284f, 43.15428f };
+			uParam0->f_3 = -20.807068f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 55:
-			*veParam0 = { 304.82938f, -1383.6742f, 31.677443f };
-			veParam0->f_3 = -41.116028f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 304.82938f, -1383.6742f, 31.677443f };
+			uParam0->f_3 = -41.116028f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 56:
-			*veParam0 = { 1126.1943f, -1481.486f, 34.701603f };
-			veParam0->f_3 = -91.43369f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 1126.1943f, -1481.486f, 34.701603f };
+			uParam0->f_3 = -91.43369f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 57:
-			*veParam0 = { -1598.36f, 5252.84f, 0f };
-			veParam0->f_3 = 28.14f;
-			veParam0->f_4 = joaat("submersible");
-			veParam0->f_13 = 308;
-			MISC::SET_BIT(&(veParam0->f_9), 2);
-			MISC::SET_BIT(&(veParam0->f_9), 30);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { -1598.36f, 5252.84f, 0f };
+			uParam0->f_3 = 28.14f;
+			uParam0->f_4 = joaat("submersible");
+			uParam0->f_13 = 308;
+			MISC::SET_BIT(&(uParam0->f_9), 2);
+			MISC::SET_BIT(&(uParam0->f_9), 30);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 58:
-			*veParam0 = { -1602.62f, 5260.37f, 0.86f };
-			veParam0->f_3 = 25.32f;
-			veParam0->f_4 = joaat("dinghy");
-			veParam0->f_13 = 404;
-			MISC::SET_BIT(&(veParam0->f_9), 2);
-			MISC::SET_BIT(&(veParam0->f_9), 22);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { -1602.62f, 5260.37f, 0.86f };
+			uParam0->f_3 = 25.32f;
+			uParam0->f_4 = joaat("dinghy");
+			uParam0->f_13 = 404;
+			MISC::SET_BIT(&(uParam0->f_9), 2);
+			MISC::SET_BIT(&(uParam0->f_9), 22);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 59:
-			*veParam0 = { 2116.571f, 4763.2793f, 40.1596f };
-			veParam0->f_3 = 198.723f;
-			veParam0->f_4 = joaat("bfinjection");
+			*uParam0 = { 2116.571f, 4763.2793f, 40.1596f };
+			uParam0->f_3 = 198.723f;
+			uParam0->f_4 = joaat("bfinjection");
 			num = 1;
 			break;
 	
 		case 60:
-			*veParam0 = { 1133.21f, 120.2f, 80.9f };
-			veParam0->f_3 = 134.4f;
+			*uParam0 = { 1133.21f, 120.2f, 80.9f };
+			uParam0->f_3 = 134.4f;
 		
 			if (_IS_EXCLUSIVE_CONTENT_UNLOCKED())
-				veParam0->f_4 = joaat("blimp2");
+				uParam0->f_4 = joaat("blimp2");
 			else
-				veParam0->f_4 = joaat("blimp");
+				uParam0->f_4 = joaat("blimp");
 		
-			veParam0->f_13 = 401;
-			MISC::SET_BIT(&(veParam0->f_9), 13);
-			MISC::SET_BIT(&(veParam0->f_9), 2);
-			MISC::SET_BIT(&(veParam0->f_9), 1);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
+			uParam0->f_13 = 401;
+			MISC::SET_BIT(&(uParam0->f_9), 13);
+			MISC::SET_BIT(&(uParam0->f_9), 2);
+			MISC::SET_BIT(&(uParam0->f_9), 1);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
 			num = 1;
 			break;
 	
 		case 61:
-			*veParam0 = { -806.31f, -2679.65f, 13.9f };
-			veParam0->f_3 = 150.54f;
+			*uParam0 = { -806.31f, -2679.65f, 13.9f };
+			uParam0->f_3 = 150.54f;
 		
 			if (_IS_EXCLUSIVE_CONTENT_UNLOCKED())
-				veParam0->f_4 = joaat("blimp2");
+				uParam0->f_4 = joaat("blimp2");
 			else
-				veParam0->f_4 = joaat("blimp");
+				uParam0->f_4 = joaat("blimp");
 		
-			veParam0->f_13 = 401;
-			MISC::SET_BIT(&(veParam0->f_9), 13);
-			MISC::SET_BIT(&(veParam0->f_9), 2);
-			MISC::SET_BIT(&(veParam0->f_9), 1);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
+			uParam0->f_13 = 401;
+			MISC::SET_BIT(&(uParam0->f_9), 13);
+			MISC::SET_BIT(&(uParam0->f_9), 2);
+			MISC::SET_BIT(&(uParam0->f_9), 1);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
 			num = 1;
 			break;
 	
 		case 62:
-			*veParam0 = { 1985.85f, 3828.96f, 31.98f };
-			veParam0->f_3 = -16.58f;
-			veParam0->f_4 = joaat("blazer3");
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 1985.85f, 3828.96f, 31.98f };
+			uParam0->f_3 = -16.58f;
+			uParam0->f_4 = joaat("blazer3");
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 63:
-			*veParam0 = { 3870.75f, 4464.67f, 0f };
-			veParam0->f_3 = 0f;
-			veParam0->f_4 = joaat("submersible2");
-			veParam0->f_13 = 308;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
-			MISC::SET_BIT(&(veParam0->f_9), 30);
+			*uParam0 = { 3870.75f, 4464.67f, 0f };
+			uParam0->f_3 = 0f;
+			uParam0->f_4 = joaat("submersible2");
+			uParam0->f_13 = 308;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
+			MISC::SET_BIT(&(uParam0->f_9), 30);
 			num = 1;
 			break;
 	
 		case 64:
-			*veParam0 = { 1257.7295f, -2564.474f, 41.717f };
-			veParam0->f_3 = 284.5561f;
-			veParam0->f_4 = joaat("dukes2");
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 1257.7295f, -2564.474f, 41.717f };
+			uParam0->f_3 = 284.5561f;
+			uParam0->f_4 = joaat("dukes2");
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 65:
-			*veParam0 = { 643.2823f, 3014.152f, 42.2733f };
-			veParam0->f_3 = 128.0554f;
-			veParam0->f_4 = joaat("dukes2");
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 643.2823f, 3014.152f, 42.2733f };
+			uParam0->f_3 = 128.0554f;
+			uParam0->f_4 = joaat("dukes2");
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 66:
-			*veParam0 = { 38.9368f, 850.8677f, 196.3f };
-			veParam0->f_3 = 311.6813f;
-			veParam0->f_4 = joaat("dodo");
-			MISC::SET_BIT(&(veParam0->f_9), 30);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 38.9368f, 850.8677f, 196.3f };
+			uParam0->f_3 = 311.6813f;
+			uParam0->f_4 = joaat("dodo");
+			MISC::SET_BIT(&(uParam0->f_9), 30);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 67:
-			*veParam0 = { 1333.8752f, 4262.2256f, 30.78f };
-			veParam0->f_3 = 262.5293f;
-			veParam0->f_4 = joaat("dodo");
-			MISC::SET_BIT(&(veParam0->f_9), 30);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 1333.8752f, 4262.2256f, 30.78f };
+			uParam0->f_3 = 262.5293f;
+			uParam0->f_4 = joaat("dodo");
+			MISC::SET_BIT(&(uParam0->f_9), 30);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	}
 
-	if (IS_BIT_SET(veParam0->f_9, 10))
+	if (IS_BIT_SET(uParam0->f_9, 10))
 	{
-		veParam0->f_4 = Global_114931.f_32757.f_69[veParam0->f_14 /*78*/].f_66;
+		uParam0->f_4 = Global_114931.f_32757.f_69[uParam0->f_14 /*78*/].f_66;
 	
 		if (iParam1 == 14)
 		{
-			if (veParam0->f_4 == joaat("miljet") || veParam0->f_4 == joaat("besra") || veParam0->f_4 == joaat("luxor") || veParam0->f_4 == joaat("shamal") || veParam0->f_4 == joaat("titan") || veParam0->f_4 == joaat("luxor2"))
+			if (uParam0->f_4 == joaat("miljet") || uParam0->f_4 == joaat("besra") || uParam0->f_4 == joaat("luxor") || uParam0->f_4 == joaat("shamal") || uParam0->f_4 == joaat("titan") || uParam0->f_4 == joaat("luxor2"))
 			{
-				*veParam0 = { 1678.8f, 3229.6f, 41.8f };
-				veParam0->f_3 = 106.0906f;
+				*uParam0 = { 1678.8f, 3229.6f, 41.8f };
+				uParam0->f_3 = 106.0906f;
 			}
 		}
 	
-		if (!func_231(Global_114931.f_32757.f_1864[veParam0->f_14 /*3*/], 0f, 0f, 0f, false))
-			*veParam0 = { Global_114931.f_32757.f_1864[veParam0->f_14 /*3*/] };
+		if (!func_231(Global_114931.f_32757.f_1864[uParam0->f_14 /*3*/], 0f, 0f, 0f, false))
+			*uParam0 = { Global_114931.f_32757.f_1864[uParam0->f_14 /*3*/] };
 	
-		if (Global_114931.f_32757.f_1934[veParam0->f_14] != -1f)
-			veParam0->f_3 = Global_114931.f_32757.f_1934[veParam0->f_14];
+		if (Global_114931.f_32757.f_1934[uParam0->f_14] != -1f)
+			uParam0->f_3 = Global_114931.f_32757.f_1934[uParam0->f_14];
 	}
 
-	if (IS_BIT_SET(veParam0->f_9, 19))
+	if (IS_BIT_SET(uParam0->f_9, 19))
 	{
-		if (!func_231(Global_114931.f_2370.f_539.f_3588[1 /*10*/][veParam0->f_12 /*3*/], 0f, 0f, 0f, false))
+		if (!func_231(Global_114931.f_2370.f_539.f_3588[1 /*10*/][uParam0->f_12 /*3*/], 0f, 0f, 0f, false))
 		{
-			*veParam0 = { Global_114931.f_2370.f_539.f_3588[1 /*10*/][veParam0->f_12 /*3*/] };
-			veParam0->f_3 = Global_114931.f_2370.f_539.f_3609[1 /*4*/][veParam0->f_12];
+			*uParam0 = { Global_114931.f_2370.f_539.f_3588[1 /*10*/][uParam0->f_12 /*3*/] };
+			uParam0->f_3 = Global_114931.f_2370.f_539.f_3609[1 /*4*/][uParam0->f_12];
 		}
 	}
-	else if (IS_BIT_SET(veParam0->f_9, 20))
+	else if (IS_BIT_SET(uParam0->f_9, 20))
 	{
-		if (!func_231(Global_114931.f_2370.f_539.f_3588[0 /*10*/][veParam0->f_12 /*3*/], 0f, 0f, 0f, false))
+		if (!func_231(Global_114931.f_2370.f_539.f_3588[0 /*10*/][uParam0->f_12 /*3*/], 0f, 0f, 0f, false))
 		{
-			*veParam0 = { Global_114931.f_2370.f_539.f_3588[0 /*10*/][veParam0->f_12 /*3*/] };
-			veParam0->f_3 = Global_114931.f_2370.f_539.f_3609[0 /*4*/][veParam0->f_12];
+			*uParam0 = { Global_114931.f_2370.f_539.f_3588[0 /*10*/][uParam0->f_12 /*3*/] };
+			uParam0->f_3 = Global_114931.f_2370.f_539.f_3609[0 /*4*/][uParam0->f_12];
 		}
 	}
 
@@ -10242,7 +10242,7 @@ BOOL func_234(int iParam0, var uParam1, eCharacter echParam2, char* sParam3, var
 
 BOOL func_235(var uParam0, var uParam1, int iParam2, BOOL bParam3) // Position - 0xD306 (54022)
 {
-	BOOL i;
+	int i;
 
 	Global_23001 = 0;
 
@@ -10259,8 +10259,8 @@ BOOL func_235(var uParam0, var uParam1, int iParam2, BOOL bParam3) // Position -
 					Global_23000 = 0;
 					Global_23001 = 1;
 					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 				}
 				else
 				{
@@ -10406,9 +10406,9 @@ BOOL func_235(var uParam0, var uParam1, int iParam2, BOOL bParam3) // Position -
 	
 		Global_23002 = iParam2;
 	
-		if (Global_22996 > false)
+		if (Global_22996 > 0)
 		{
-			for (i = false; i < Global_22996; i = i + 1)
+			for (i = 0; i < Global_22996; i = i + 1)
 			{
 				TEXT_LABEL_ASSIGN_STRING(&Global_22619.f_6[i /*6*/], uParam0->[i], 24);
 				TEXT_LABEL_ASSIGN_STRING(&Global_22619.f_187[i /*6*/], uParam1->[i], 24);
@@ -10437,11 +10437,11 @@ BOOL func_235(var uParam0, var uParam1, int iParam2, BOOL bParam3) // Position -
 	return 0;
 }
 
-void func_236(BOOL bParam0) // Position - 0xD671 (54897)
+void func_236(int iParam0) // Position - 0xD671 (54897)
 {
-	Global_22997 = bParam0;
+	Global_22997 = iParam0;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23997 = 0;
@@ -10451,13 +10451,13 @@ void func_236(BOOL bParam0) // Position - 0xD671 (54897)
 
 void func_237() // Position - 0xD697 (54935)
 {
-	Global_23048 = 0;
+	Global_23048 = false;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23997 = 0;
 	Global_23005 = 0;
 	Global_23052 = 0;
@@ -10694,9 +10694,9 @@ BOOL func_248(int iParam0) // Position - 0xDA43 (55875)
 BOOL func_249(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, int iParam4, int iParam5, int iParam6, int iParam7, BOOL bParam8) // Position - 0xDAE6 (56038)
 {
 	func_177(uParam0, echParam1, sParam2, iParam6, iParam7, 0);
-	Global_23048 = 0;
+	Global_23048 = false;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
@@ -11145,9 +11145,9 @@ BOOL func_257(int iParam0, var uParam1) // Position - 0xE27B (57979)
 BOOL func_258(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, int iParam4, char* sParam5, char* sParam6, char* sParam7, int iParam8, int iParam9, int iParam10, BOOL bParam11) // Position - 0xE3D4 (58324)
 {
 	func_177(uParam0, echParam1, sParam2, iParam9, iParam10, 0);
-	Global_23048 = 0;
+	Global_23048 = false;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
@@ -11272,73 +11272,73 @@ void func_260(int iParam0, char* sParam1) // Position - 0xE5BF (58815)
 			case 1635046052:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "MEFLAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "MEFL_CALL1", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "MEFL_C1Q" /*Help Amanda?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "MEFL_C1Q" /*¿Ayudar a Amanda?*/, 16);
 				break;
 		
 			case -464957327:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "MEFLAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "MEFL_CALL2", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "MEFL_C2Q" /*Help Jimmy?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "MEFL_C2Q" /*¿Ayudar a Jimmy?*/, 16);
 				break;
 		
 			case 178720519:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "MEFLAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "MEFL_CALL3", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "MEFL_C3Q" /*Help Tracey?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "MEFL_C3Q" /*¿Ayudar a Tracey?*/, 16);
 				break;
 		
 			case 738411510:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_TIE_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			case -100973682:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_EXC_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			case 1752783247:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_DL_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			case 1016954269:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_FC_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			case -456311088:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_GB_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			case 2129099422:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_TB_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			case 1357642229:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_CI_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			case -767033321:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_GN_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			case -1240893790:
 				TEXT_LABEL_ASSIGN_STRING(sParam1, "OJTXAUD", 16);
 				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_4), "OJTX_CC_OFF", 16);
-				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*Accept the mission?*/, 16);
+				TEXT_LABEL_ASSIGN_STRING(&(sParam1->f_8), "PROPR_PHONEQ" /*¿Aceptar la misión?*/, 16);
 				break;
 		
 			default:
@@ -11579,15 +11579,15 @@ BOOL func_266(int iParam0) // Position - 0xEA38 (59960)
 					switch (_GET_CURRENT_PLAYER_CHARACTER())
 					{
 						case CHAR_MICHAEL:
-							func_50("AM_H_FTXT" /*A new text message has been received. Bring up the phone with ~INPUT_PHONE~ to read it. New text messages and emails also show on the Feed.*/, 2, 3000, -1, 7500, 1, 0, 0, 1);
+							func_50("AM_H_FTXT" /*Has recibido un nuevo mensaje de texto. Muestra el móvil con ~INPUT_PHONE~ para leerlo. Los mensajes de texto y los correos electrónicos nuevos también aparecen en las notificaciones.*/, 2, 3000, -1, 7500, 1, 0, 0, 1);
 							break;
 					
 						case CHAR_FRANKLIN:
-							func_50("AM_H_FTXT" /*A new text message has been received. Bring up the phone with ~INPUT_PHONE~ to read it. New text messages and emails also show on the Feed.*/, 2, 3000, -1, 7500, 2, 0, 0, 1);
+							func_50("AM_H_FTXT" /*Has recibido un nuevo mensaje de texto. Muestra el móvil con ~INPUT_PHONE~ para leerlo. Los mensajes de texto y los correos electrónicos nuevos también aparecen en las notificaciones.*/, 2, 3000, -1, 7500, 2, 0, 0, 1);
 							break;
 					
 						case CHAR_TREVOR:
-							func_50("AM_H_FTXT" /*A new text message has been received. Bring up the phone with ~INPUT_PHONE~ to read it. New text messages and emails also show on the Feed.*/, 2, 3000, -1, 7500, 4, 0, 0, 1);
+							func_50("AM_H_FTXT" /*Has recibido un nuevo mensaje de texto. Muestra el móvil con ~INPUT_PHONE~ para leerlo. Los mensajes de texto y los correos electrónicos nuevos también aparecen en las notificaciones.*/, 2, 3000, -1, 7500, 4, 0, 0, 1);
 							break;
 					}
 				
@@ -11916,7 +11916,7 @@ int func_268(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 	return 1;
 }
 
-void func_269(eCharacter echParam0, char* sParam1, BOOL bParam2, ePedComponentType epctParam3) // Position - 0xF2A5 (62117)
+void func_269(eCharacter echParam0, char* sParam1, BOOL bParam2, int iParam3) // Position - 0xF2A5 (62117)
 {
 	eCharacter character;
 
@@ -11928,7 +11928,7 @@ void func_269(eCharacter echParam0, char* sParam1, BOOL bParam2, ePedComponentTy
 	character.f_2 = MISC::GET_HASH_KEY(sParam1);
 	character.f_3 = 0;
 	character.f_4 = bParam2;
-	character.f_5 = epctParam3;
+	character.f_5 = iParam3;
 	character.f_6 = Global_1979847.f_7;
 	character.f_7 = Global_1979847.f_8;
 	character.f_8 = Global_1979847.f_9;
@@ -11945,7 +11945,7 @@ void func_269(eCharacter echParam0, char* sParam1, BOOL bParam2, ePedComponentTy
 	return;
 }
 
-ePedComponentType func_270(Player plParam0) // Position - 0xF340 (62272)
+int func_270(Player plParam0) // Position - 0xF340 (62272)
 {
 	return Global_1845299[plParam0 /*883*/].f_198.f_6;
 }
@@ -11958,7 +11958,7 @@ void func_271(int iParam0) // Position - 0xF355 (62293)
 	int j;
 	int value2;
 	int k;
-	BOOL value3;
+	int value3;
 	int value4;
 	int value5;
 	int value6;
@@ -12053,7 +12053,7 @@ void func_271(int iParam0) // Position - 0xF355 (62293)
 									{
 										if (Global_4521275[k /*296*/].f_24 != 0)
 											if (Global_4521275[k /*296*/].f_28 == 0)
-												if (Global_4521275[k /*296*/].f_291[Global_21627] == true)
+												if (Global_4521275[k /*296*/].f_291[Global_21627] == 1)
 													value2 = value2 + 1;
 									}
 								
@@ -13062,9 +13062,9 @@ BOOL func_288(int iParam0, var uParam1) // Position - 0x107BA (67514)
 BOOL func_289(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7) // Position - 0x10AB7 (68279)
 {
 	func_177(uParam0, echParam1, sParam2, iParam5, iParam6, 0);
-	Global_23048 = 1;
+	Global_23048 = true;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
@@ -13079,9 +13079,9 @@ BOOL func_289(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, i
 BOOL func_290(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7) // Position - 0x10B05 (68357)
 {
 	func_177(uParam0, echParam1, sParam2, iParam5, iParam6, 0);
-	Global_23048 = 0;
+	Global_23048 = false;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
@@ -13096,9 +13096,9 @@ BOOL func_290(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, i
 BOOL func_291(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, int iParam4, char* sParam5, char* sParam6, char* sParam7, int iParam8, int iParam9, BOOL bParam10) // Position - 0x10B53 (68435)
 {
 	func_177(uParam0, echParam1, sParam2, iParam8, iParam9, 0);
-	Global_23048 = 0;
+	Global_23048 = false;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
@@ -13116,9 +13116,9 @@ BOOL func_291(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, i
 BOOL func_292(var uParam0, var uParam1, char* sParam2, char* sParam3, int iParam4, char* sParam5, char* sParam6, char* sParam7, int iParam8, int iParam9, BOOL bParam10) // Position - 0x10BB6 (68534)
 {
 	func_177(uParam0, uParam1, sParam2, iParam8, iParam9, 0);
-	Global_23048 = 1;
+	Global_23048 = true;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;

@@ -643,7 +643,7 @@ void main() // Position - 0x0 (0)
 
 	func_52(14);
 	func_50();
-	func_49(&uLocal_40, 0, joaat("prop_power_cell"), "SSHIP_COLLECT" /*~1~/50 spaceship parts collected.*/);
+	func_49(&uLocal_40, 0, joaat("prop_power_cell"), "SSHIP_COLLECT" /*~1~ de 50 partes de la nave espacial recogidas.*/);
 	func_47(&uLocal_40, joaat("NUM_HIDDEN_PACKAGES_1") /* TUNEABLE: NUM_HIDDEN_PACKAGES_1, NUM_HIDDEN_PACKAGES_1 */, 755, 50);
 
 	while (true)
@@ -659,7 +659,7 @@ void main() // Position - 0x0 (0)
 			if (bLocal_606)
 			{
 				if (!(_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN))
-					func_1("SSHIP_SWITCH" /*Switch to Franklin to deliver the spaceship parts to Omega.*/, 1, 0, 20000, 10000, 3, 0, 0, 0);
+					func_1("SSHIP_SWITCH" /*Cambia a Franklin para entregar las piezas de la nave espacial a Omega.*/, 1, 0, 20000, 10000, 3, 0, 0, 0);
 			
 				func_53();
 			}
@@ -1014,7 +1014,7 @@ BOOL func_16(var uParam0, var uParam1) // Position - 0x86E (2158)
 		}
 	
 		if (!Global_80566)
-			func_17(&(uParam0->f_11), &(uParam0->f_12), &(uParam0->f_9), 0, &iLocal_605, &uLocal_607, "SSHIP_TITLE" /*Part Collected~s~*/, "SSHIP_COLLECT" /*~1~/50 spaceship parts collected.*/);
+			func_17(&(uParam0->f_11), &(uParam0->f_12), &(uParam0->f_9), 0, &iLocal_605, &uLocal_607, "SSHIP_TITLE" /*Pieza recogida~s~*/, "SSHIP_COLLECT" /*~1~ de 50 partes de la nave espacial recogidas.*/);
 	
 		if (!bLocal_606)
 			if (uParam0->f_1.f_4 >= uParam0->f_1.f_3)
@@ -1167,15 +1167,15 @@ int func_19(int iParam0) // Position - 0xBE4 (3044)
 	return outValue;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, Interior inParam1) // Position - 0xCA8 (3240)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0xCA8 (3240)
 {
-	if (inParam1 == -1)
-		inParam1 = func_21();
+	if (iParam1 == -1)
+		iParam1 = func_21();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, inParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
 }
 
-Interior func_21() // Position - 0xCC4 (3268)
+int func_21() // Position - 0xCC4 (3268)
 {
 	return Global_1574927;
 }
@@ -1436,12 +1436,12 @@ void func_35(int iParam0, int iParam1) // Position - 0x1147 (4423)
 	return;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x1184 (4484)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x1184 (4484)
 {
-	if (inParam2 == -1)
-		inParam2 = func_21();
+	if (iParam2 == -1)
+		iParam2 = func_21();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
 	return;
 }
 

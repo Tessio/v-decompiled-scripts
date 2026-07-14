@@ -295,7 +295,7 @@ BOOL func_13() // Position - 0x320 (800)
 	return Global_2696981;
 }
 
-ePedComponentType func_14() // Position - 0x32C (812)
+BOOL func_14() // Position - 0x32C (812)
 {
 	return Global_2685153.f_695;
 }
@@ -452,7 +452,29 @@ int func_20(int iParam0, int iParam1, BOOL bParam2) // Position - 0x48D (1165)
 
 BOOL func_21(BOOL bParam0) // Position - 0x5A3 (1443)
 {
-	bParam0;
+	if (bParam0 && Global_1575064)
+		if (func_22())
+			return false;
+		else
+			return true;
+
 	return Global_1575064;
+}
+
+BOOL func_22() // Position - 0x5CF (1487)
+{
+	if (func_23())
+		return true;
+
+	return Global_1575067;
+}
+
+BOOL func_23() // Position - 0x5EA (1514)
+{
+	if (Global_1575064 || Global_1575070)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
 }
 

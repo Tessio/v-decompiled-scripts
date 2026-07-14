@@ -561,7 +561,7 @@ void func_1() // Position - 0xBA (186)
 				{
 					if (!bLocal_69)
 					{
-						_SHOW_SUBTITLE_CLEAR_EXISTING("LOSE_WANTED" /*Lose the Cops.*/, 7500, 1);
+						_SHOW_SUBTITLE_CLEAR_EXISTING("LOSE_WANTED" /*Líbrate de la poli.*/, 7500, 1);
 						bLocal_69 = true;
 					}
 				}
@@ -987,7 +987,7 @@ BOOL func_8(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x1093 (4243
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -1253,7 +1253,7 @@ void func_16() // Position - 0x1496 (5270)
 
 BOOL func_17() // Position - 0x152B (5419)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -1437,7 +1437,7 @@ void func_29() // Position - 0x18BD (6333)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -1676,7 +1676,7 @@ void func_41(int iParam0, var uParam1, char* sParam2, int iParam3, int iParam4, 
 	return;
 }
 
-void func_42(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0x1CC4 (7364)
+void func_42(ePedComponentType epctParam0, BOOL bParam1, char* sParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0x1CC4 (7364)
 {
 	int num;
 	int i;
@@ -1695,7 +1695,7 @@ void func_42(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedCompo
 		Global_1679103.f_1 = 1;
 		func_43(0, num);
 		Global_1679103.f_1177[num] = epctParam0;
-		Global_1679103.f_1177.f_11[num] = iParam1;
+		Global_1679103.f_1177.f_11[num] = bParam1;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679103.f_1177.f_22[num /*16*/], sParam2, 64);
 		Global_1679103.f_1177.f_194[num] = epctParam3;
 		Global_1679103.f_1177.f_183[num] = epctParam4;
@@ -1788,9 +1788,9 @@ void func_48(var uParam0, Ped pedParam1, float fParam2, float fParam3, float fPa
 
 	if (MISC::IS_STRING_NULL(string2))
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			string2 = "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/;
+			string2 = "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/;
 		else
-			string2 = "FM_IHELP_HNT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus.*/;
+			string2 = "FM_IHELP_HNT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para alternar la cámara.*/;
 
 	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(string2))
 		func_73();
@@ -1844,7 +1844,7 @@ void func_48(var uParam0, Ped pedParam1, float fParam2, float fParam3, float fPa
 								_DISPLAY_HELP_TEXT(string2, -1);
 								uParam0->f_3 = string2;
 							
-								if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, string2))
+								if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, string2))
 									func_51(true);
 							}
 						}
@@ -1862,7 +1862,7 @@ void func_48(var uParam0, Ped pedParam1, float fParam2, float fParam3, float fPa
 							_DISPLAY_HELP_TEXT(string2, -1);
 							uParam0->f_3 = string2;
 						
-							if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, string2))
+							if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, string2))
 								func_51(true);
 						}
 					}
@@ -1982,7 +1982,7 @@ BOOL func_52(const char* sParam0) // Position - 0x24C4 (9412)
 {
 	if (!func_53(true, true, false))
 	{
-		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam0) && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/))
+		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam0) && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/))
 			HUD::CLEAR_HELP(true);
 	
 		return false;
@@ -2106,7 +2106,7 @@ BOOL func_54(ePedComponentType epctParam0) // Position - 0x27B6 (10166)
 	return false;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x281C (10268)
+ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x281C (10268)
 {
 	ePedComponentType type;
 
@@ -2118,19 +2118,19 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 		{
 			if (bIsPlaying)
 				if (!PLAYER::IS_PLAYER_PLAYING(player))
-					return false;
+					return PV_COMP_HEAD;
 		
 			if (bUnk)
 				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
 				else if (Global_2658291[type /*468*/] != 4)
-					return false;
+					return PV_COMP_HEAD;
 		
-			return true;
+			return PV_COMP_BERD;
 		}
 	}
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_56(Vehicle veParam0, int iParam1) // Position - 0x287C (10364)
@@ -2198,17 +2198,17 @@ int _GET_VEHICLE_SEAT_PED_IS_IN(Ped ped, BOOL includeLastVehicle) // Position - 
 	return seatIndex;
 }
 
-BOOL func_58() // Position - 0x2963 (10595)
+ePedComponentType func_58() // Position - 0x2963 (10595)
 {
 	return Global_2685150.f_19;
 }
 
-BOOL func_59(int iParam0) // Position - 0x2971 (10609)
+ePedComponentType func_59(int iParam0) // Position - 0x2971 (10609)
 {
 	return iParam0 == 51;
 }
 
-BOOL func_60() // Position - 0x297E (10622)
+ePedComponentType func_60() // Position - 0x297E (10622)
 {
 	return Global_2685150.f_18;
 }
@@ -2669,9 +2669,9 @@ void func_78(var uParam0, const char* sParam1, BOOL bParam2, BOOL bParam3) // Po
 
 	if (MISC::IS_STRING_NULL(str))
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			str = "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/;
+			str = "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/;
 		else
-			str = "FM_IHELP_HNT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus.*/;
+			str = "FM_IHELP_HNT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para alternar la cámara.*/;
 
 	if (!MISC::IS_STRING_NULL(uParam0->f_3))
 		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(uParam0->f_3))

@@ -3162,10 +3162,10 @@ void func_40() // Position - 0x49BA (18874)
 	return;
 }
 
-void func_41(int iParam0) // Position - 0x4AC1 (19137)
+void func_41(ePedComponentType epctParam0) // Position - 0x4AC1 (19137)
 {
-	*iParam0 = 0;
-	iParam0->f_1 = 0;
+	*epctParam0 = 0;
+	epctParam0->f_1 = 0;
 	return;
 }
 

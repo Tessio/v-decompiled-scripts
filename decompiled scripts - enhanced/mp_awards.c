@@ -1823,31 +1823,31 @@ void func_5(var uParam0, BOOL bParam1, BOOL bParam2) // Position - 0xBD8 (3032)
 	return;
 }
 
-eCharacter func_6(Interior inParam0, BOOL bParam1) // Position - 0xC15 (3093)
+eCharacter func_6(int iParam0, BOOL bParam1) // Position - 0xC15 (3093)
 {
 	eCharacter character;
-	Interior interior;
+	int num;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
-		interior = func_7();
+	if (num == -1)
+		num = func_7();
 
-	if (Global_1575072[interior] == true)
+	if (Global_1575072[num] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[interior];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
 	return character;
 }
 
-Interior func_7() // Position - 0xC56 (3158)
+int func_7() // Position - 0xC56 (3158)
 {
 	return Global_1574927;
 }
@@ -2119,16 +2119,16 @@ void func_15(var uParam0) // Position - 0xE97 (3735)
 					if (!*Global_262145.f_37479)
 						num = num + 3;
 				
-					if (!*Global_262145.f_37820)
+					if (!*Global_262145.f_37822)
 						num = num + 2;
 				
-					if (!*Global_262145.f_37821)
-						num = num + 1;
-				
-					if (!*Global_262145.f_37822)
-						num = num + 1;
-				
 					if (!*Global_262145.f_37823)
+						num = num + 1;
+				
+					if (!*Global_262145.f_37824)
+						num = num + 1;
+				
+					if (!*Global_262145.f_37825)
 						num = num + 2;
 				
 					iLocal_110 = iLocal_110 - num;
@@ -2402,16 +2402,16 @@ void func_15(var uParam0) // Position - 0xE97 (3735)
 					iLocal_109 = 1;
 					iLocal_110 = 12;
 				
-					if (!*Global_262145.f_37820)
+					if (!*Global_262145.f_37822)
 						iLocal_110 = iLocal_110 - 2;
 				
-					if (!*Global_262145.f_37821)
-						iLocal_110 = iLocal_110 - 1;
-				
-					if (!*Global_262145.f_37822)
-						iLocal_110 = iLocal_110 - 1;
-				
 					if (!*Global_262145.f_37823)
+						iLocal_110 = iLocal_110 - 1;
+				
+					if (!*Global_262145.f_37824)
+						iLocal_110 = iLocal_110 - 1;
+				
+					if (!*Global_262145.f_37825)
 						iLocal_110 = iLocal_110 - 2;
 					break;
 			
@@ -3125,19 +3125,19 @@ void func_15(var uParam0) // Position - 0xE97 (3735)
 							func_181(159, 8, num2, &uLocal_111);
 							func_181(160, 8, num2, &uLocal_111);
 						
-							if (*Global_262145.f_37820)
+							if (*Global_262145.f_37822)
 							{
 								func_181(161, 8, num2, &uLocal_111);
 								func_169(224, 8, num2, &uLocal_111);
 							}
 						
-							if (*Global_262145.f_37821)
+							if (*Global_262145.f_37823)
 								func_181(162, 8, num2, &uLocal_111);
 						
-							if (*Global_262145.f_37822)
+							if (*Global_262145.f_37824)
 								func_181(163, 8, num2, &uLocal_111);
 						
-							if (*Global_262145.f_37823)
+							if (*Global_262145.f_37825)
 							{
 								func_181(164, 8, num2, &uLocal_111);
 								func_169(225, 8, num2, &uLocal_111);
@@ -3335,7 +3335,7 @@ void func_15(var uParam0) // Position - 0xE97 (3735)
 							func_130("CHR_HST_A_6", "CHR_HST_AD_6", "SUVMod", "MPAwardMods", func_118(180, 5, 0), func_116(180, -1), -1, 1, &uLocal_111, 235, 189);
 							func_130("CHR_HST_A_7", "CHR_HST_AD_7", "MuscleMod", "MPAwardMods", func_118(181, 5, 0), func_116(181, -1), -1, 1, &uLocal_111, 235, 189);
 							func_127(34, &uLocal_111);
-							func_130("CLO_S1M_DEC_25", "CLO_S1M_D_24_25" /*Complete all the Lowriders Lamar missions.*/, "BennyTshirt01", "MPTShirtAwards4", PV_COMP_ACCS, type, -1, 1, &uLocal_111, 235, 189);
+							func_130("CLO_S1M_DEC_25", "CLO_S1M_D_24_25" /*Completa todas las misiones Lowrider de Lamar.*/, "BennyTshirt01", "MPTShirtAwards4", PV_COMP_ACCS, type, -1, 1, &uLocal_111, 235, 189);
 							break;
 					}
 					break;
@@ -3373,7 +3373,7 @@ void func_15(var uParam0) // Position - 0xE97 (3735)
 										type = type - 1;
 								}
 							
-								func_130("CLO_S1M_DEC_24", "CLO_S1M_D_24_25" /*Complete all the Lowriders Lamar missions.*/, "BennyTshirt02", "MPTShirtAwards4", PV_COMP_ACCS, type, -1, 1, &uLocal_111, 235, 189);
+								func_130("CLO_S1M_DEC_24", "CLO_S1M_D_24_25" /*Completa todas las misiones Lowrider de Lamar.*/, "BennyTshirt02", "MPTShirtAwards4", PV_COMP_ACCS, type, -1, 1, &uLocal_111, 235, 189);
 							}
 							break;
 					}
@@ -4144,19 +4144,19 @@ void func_15(var uParam0) // Position - 0xE97 (3735)
 					func_181(159, 8, num2, &uLocal_111);
 					func_181(160, 8, num2, &uLocal_111);
 				
-					if (*Global_262145.f_37820)
+					if (*Global_262145.f_37822)
 					{
 						func_181(161, 8, num2, &uLocal_111);
 						func_169(224, 8, num2, &uLocal_111);
 					}
 				
-					if (*Global_262145.f_37821)
+					if (*Global_262145.f_37823)
 						func_181(162, 8, num2, &uLocal_111);
 				
-					if (*Global_262145.f_37822)
+					if (*Global_262145.f_37824)
 						func_181(163, 8, num2, &uLocal_111);
 				
-					if (*Global_262145.f_37823)
+					if (*Global_262145.f_37825)
 					{
 						func_181(164, 8, num2, &uLocal_111);
 						func_169(225, 8, num2, &uLocal_111);
@@ -4168,23 +4168,23 @@ void func_15(var uParam0) // Position - 0xE97 (3735)
 			func_28(1, &uLocal_612);
 			func_27(1, &uLocal_612);
 			func_26(1, &uLocal_612);
-			func_25(0, "HUD_AWDLIST1" /*All Awards*/, &uLocal_612);
-			func_25(1, "HUD_AWDLIST12" /*Victory*/, &uLocal_612);
+			func_25(0, "HUD_AWDLIST1" /*Todos los premios*/, &uLocal_612);
+			func_25(1, "HUD_AWDLIST12" /*Victorias*/, &uLocal_612);
 			func_25(2, "HUD_AWDLIST3b" /*General*/, &uLocal_612);
-			func_25(3, "HUD_AWDLIST6" /*Crimes*/, &uLocal_612);
-			func_25(4, "HUD_AWDLIST9" /*Vehicle*/, &uLocal_612);
-			func_25(5, "HUD_AWDLIST10" /*Combat*/, &uLocal_612);
+			func_25(3, "HUD_AWDLIST6" /*Delitos*/, &uLocal_612);
+			func_25(4, "HUD_AWDLIST9" /*Vehículos*/, &uLocal_612);
+			func_25(5, "HUD_AWDLIST10" /*Combate*/, &uLocal_612);
 			func_25(6, "HUD_AWDLIST13", &uLocal_612);
-			func_25(7, "HUD_AWD_GANGOP" /*The Doomsday Heist*/, &uLocal_612);
+			func_25(7, "HUD_AWD_GANGOP" /*Golpe del Juicio Final*/, &uLocal_612);
 			func_25(8, "HUD_AWD_NIGHTCLUB" /*After Hours*/, &uLocal_612);
 			func_25(9, "PM_ARENA" /*Arena War*/, &uLocal_612);
 			func_25(10, "AWDGBC_VC" /*The Diamond Casino & Resort*/, &uLocal_612);
-			func_25(11, "FMMC_CH_DN" /*The Diamond Casino Heist*/, &uLocal_612);
+			func_25(11, "FMMC_CH_DN" /*Golpe a The Diamond Casino*/, &uLocal_612);
 		
 			if (Global_262145.f_28903)
 				func_25(12, "SUM20AWARDPAGE" /*Los Santos Summer Special*/, &uLocal_612);
 		
-			func_25(13, "HEISTISLAWDPAGE" /*The Cayo Perico Heist*/, &uLocal_612);
+			func_25(13, "HEISTISLAWDPAGE" /*Golpe a Cayo Perico*/, &uLocal_612);
 			func_25(14, "TUNEAWDPAGE" /*Los Santos Tuners*/, &uLocal_612);
 			func_25(15, "FIXAWDPAGE" /*The Contract*/, &uLocal_612);
 			func_25(16, "DLC222AWDPAGE" /*Los Santos Drug Wars*/, &uLocal_612);
@@ -4192,8 +4192,8 @@ void func_15(var uParam0) // Position - 0xE97 (3735)
 			func_25(18, "DLC124AWDPAGE" /*Bottom Dollar Bounties*/, &uLocal_612);
 			func_25(19, "DLC224AWDPAGE" /*Agents of Sabotage*/, &uLocal_612);
 			func_25(20, "DLC125AWDPAGE" /*Money Fronts*/, &uLocal_612);
-			func_25(21, "DLC225AWDPAGE", &uLocal_612);
-			func_25(22, "HUD_AWDLIST6b" /*Rewards*/, &uLocal_612);
+			func_25(21, "DLC225AWDPAGE" /*A Safehouse in the Hills*/, &uLocal_612);
+			func_25(22, "HUD_AWDLIST6b" /*Recompensas*/, &uLocal_612);
 			func_16(&uLocal_612, func_24(&uLocal_612));
 		}
 	}
@@ -4422,18 +4422,18 @@ void func_29(var uParam0, int iParam1) // Position - 0x4F88 (20360)
 				
 					if (func_37(&labelName))
 					{
-						func_22("HUD_AWDPROG_S" /*Progress*/);
+						func_22("HUD_AWDPROG_S" /*Progreso*/);
 					}
 					else
 					{
-						GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("HUD_AWDPROG" /*~a~ Progress*/);
+						GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("HUD_AWDPROG" /*Progreso ~a~*/);
 						HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&labelName);
 						GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					}
 				
 					if (uParam0->f_221[i] >= uParam0->f_208[i])
 					{
-						func_22("TR_COMPLETE" /*Completed*/);
+						func_22("TR_COMPLETE" /*Completado*/);
 					}
 					else
 					{
@@ -4445,7 +4445,7 @@ void func_29(var uParam0, int iParam1) // Position - 0x4F88 (20360)
 				
 					if (value2 >= 0)
 					{
-						func_22("HUD_AWDAWARD" /*Award*/);
+						func_22("HUD_AWDAWARD" /*Premio*/);
 						GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(value2);
 					}
 				
@@ -4564,16 +4564,16 @@ char* func_38(int iParam0) // Position - 0x52EF (21231)
 	switch (iParam0)
 	{
 		case 107:
-			return "HUD_MED_BRON" /*Bronze*/;
+			return "HUD_MED_BRON" /*Bronce*/;
 	
 		case 108:
-			return "HUD_MED_SILV" /*Silver*/;
+			return "HUD_MED_SILV" /*Plata*/;
 	
 		case 109:
-			return "HUD_MED_GOLD" /*Gold*/;
+			return "HUD_MED_GOLD" /*Oro*/;
 	
 		case 110:
-			return "HUD_MED_PLAT" /*Platinum*/;
+			return "HUD_MED_PLAT" /*Platino*/;
 	}
 
 	return "";
@@ -4638,14 +4638,14 @@ void func_43(int iParam0, ePedComponentType epctParam1) // Position - 0x53FC (21
 	return;
 }
 
-void func_44(int iParam0, ePedComponentType epctParam1, Interior inParam2) // Position - 0x541B (21531)
+void func_44(int iParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x541B (21531)
 {
 	BOOL flag;
 	int num;
 
 	if (*Global_262145.f_35238)
 	{
-		func_112(iParam0, epctParam1, inParam2, true);
+		func_112(iParam0, epctParam1, iParam2, true);
 		return;
 	}
 
@@ -4668,7 +4668,7 @@ void func_44(int iParam0, ePedComponentType epctParam1, Interior inParam2) // Po
 			flag = false;
 	}
 
-	func_112(iParam0, epctParam1, inParam2, true);
+	func_112(iParam0, epctParam1, iParam2, true);
 
 	if (flag)
 		func_45(&num);
@@ -6007,12 +6007,12 @@ void func_52() // Position - 0x6AE7 (27367)
 	return;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x6C79 (27769)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x6C79 (27769)
 {
-	if (inParam2 == -1)
-		inParam2 = func_7();
+	if (iParam2 == -1)
+		iParam2 = func_7();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
 	return;
 }
 
@@ -6258,21 +6258,21 @@ int func_59(int iParam0) // Position - 0x6E82 (28290)
 void func_60(int iParam0, int iParam1) // Position - 0x700B (28683)
 {
 	var entityCoords;
-	BOOL flag;
+	int num;
 	Hash hash;
 	Hash hash2;
 	Hash hash3;
-	int num;
+	int num2;
 
 	if (_NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, false))
 		entityCoords = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true) };
 
-	flag = func_65();
+	num = func_65();
 	hash = func_64();
 	hash2 = func_63(iParam1);
 	hash3 = func_61(iParam0);
-	num = -1;
-	STATS::_PLAYSTATS_PH_ACTIVITY(entityCoords, flag, hash, hash2, hash3, num);
+	num2 = -1;
+	STATS::_PLAYSTATS_PH_ACTIVITY(entityCoords, num, hash, hash2, hash3, num2);
 	return;
 }
 
@@ -6432,9 +6432,9 @@ Hash func_64() // Position - 0x72C4 (29380)
 	return MISC::GET_HASH_KEY("PROGRESS_HUB_TIER_COMPLETED");
 }
 
-BOOL func_65() // Position - 0x72D4 (29396)
+int func_65() // Position - 0x72D4 (29396)
 {
-	if (Global_1674225 == false)
+	if (Global_1674225 == 0)
 		func_66();
 
 	return Global_1674225;
@@ -9539,7 +9539,7 @@ int func_84(int iParam0) // Position - 0x99E3 (39395)
 void func_85(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7) // Position - 0xA598 (42392)
 {
 	var entityCoords;
-	BOOL flag;
+	int num;
 	Hash hash;
 	Hash hash2;
 	Any any;
@@ -9548,12 +9548,12 @@ void func_85(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	if (_NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, false))
 		entityCoords = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true) };
 
-	flag = func_65();
+	num = func_65();
 	hash = func_90(uParam0.f_6 >= uParam0.f_2.f_2);
 	hash2 = func_86(uParam0, uParam0.f_1, uParam0.f_2);
 	any = uParam0.f_6;
 	any2 = uParam0.f_2.f_2;
-	STATS::_PLAYSTATS_PH_ACTIVITY(entityCoords, flag, hash, hash2, any, any2);
+	STATS::_PLAYSTATS_PH_ACTIVITY(entityCoords, num, hash, hash2, any, any2);
 	return;
 }
 
@@ -13570,30 +13570,30 @@ Hash func_93(int iParam0, int iParam1) // Position - 0x103FF (66559)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(10, iParam0, func_94(iParam1));
 }
 
-Interior func_94(Interior inParam0) // Position - 0x10415 (66581)
+int func_94(int iParam0) // Position - 0x10415 (66581)
 {
-	Interior interior;
-	Interior interior2;
+	int num;
+	int num2;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
+	if (num == -1)
 	{
-		interior2 = func_7();
+		num2 = func_7();
 	
-		if (interior2 > -1)
+		if (num2 > -1)
 		{
 			Global_2741524 = 0;
-			interior = interior2;
+			num = num2;
 		}
 		else
 		{
-			interior = 0;
+			num = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return interior;
+	return num;
 }
 
 ePedComponentType func_95() // Position - 0x10449 (66633)
@@ -13617,15 +13617,15 @@ ePedComponentType func_95() // Position - 0x10449 (66633)
 	return num;
 }
 
-void func_96(int iParam0, ePedComponentType epctParam1, Interior inParam2) // Position - 0x10490 (66704)
+void func_96(int iParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x10490 (66704)
 {
-	if (inParam2 == -1)
-		inParam2 = func_7();
+	if (iParam2 == -1)
+		iParam2 = func_7();
 
 	if (epctParam1 < 0)
 		epctParam1 = 255;
 
-	STATS::SET_PACKED_STAT_INT_CODE(iParam0, epctParam1, inParam2);
+	STATS::SET_PACKED_STAT_INT_CODE(iParam0, epctParam1, iParam2);
 	return;
 }
 
@@ -14213,12 +14213,12 @@ int func_105(BOOL bParam0) // Position - 0x10F8C (69516)
 	return 0;
 }
 
-int _STAT_GET_PACKED_INT(int iParam0, Interior inParam1) // Position - 0x10F9E (69534)
+int _STAT_GET_PACKED_INT(int iParam0, int iParam1) // Position - 0x10F9E (69534)
 {
-	if (inParam1 == -1)
-		inParam1 = func_7();
+	if (iParam1 == -1)
+		iParam1 = func_7();
 
-	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, inParam1);
+	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, iParam1);
 }
 
 BOOL func_107(int iParam0, var uParam1) // Position - 0x10FBA (69562)
@@ -15586,13 +15586,13 @@ int func_111(int iParam0) // Position - 0x120AB (73899)
 	return -1;
 }
 
-void func_112(int iParam0, ePedComponentType epctParam1, Interior inParam2, BOOL bParam3) // Position - 0x124F4 (74996)
+void func_112(int iParam0, ePedComponentType epctParam1, int iParam2, BOOL bParam3) // Position - 0x124F4 (74996)
 {
 	Hash statName;
 
 	if (iParam0 != 18486)
 	{
-		statName = func_113(iParam0, inParam2);
+		statName = func_113(iParam0, iParam2);
 	
 		if (statName != 0)
 			STATS::STAT_SET_INT(statName, epctParam1, bParam3);
@@ -15601,9 +15601,9 @@ void func_112(int iParam0, ePedComponentType epctParam1, Interior inParam2, BOOL
 	return;
 }
 
-Hash func_113(int iParam0, Interior inParam1) // Position - 0x12522 (75042)
+Hash func_113(int iParam0, int iParam1) // Position - 0x12522 (75042)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_94(inParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_94(iParam1));
 }
 
 int func_114(int iParam0) // Position - 0x12537 (75063)
@@ -15620,14 +15620,14 @@ int func_114(int iParam0) // Position - 0x12537 (75063)
 	return 14767;
 }
 
-ePedComponentType func_115(int iParam0, Interior inParam1) // Position - 0x12555 (75093)
+ePedComponentType func_115(int iParam0, int iParam1) // Position - 0x12555 (75093)
 {
 	Hash statHash;
 	int outValue;
 
 	if (iParam0 != 18486)
 	{
-		statHash = func_113(iParam0, inParam1);
+		statHash = func_113(iParam0, iParam1);
 	
 		if (STATS::STAT_GET_INT(statHash, &outValue, -1))
 			return outValue;
@@ -15636,12 +15636,12 @@ ePedComponentType func_115(int iParam0, Interior inParam1) // Position - 0x12555
 	return 0;
 }
 
-ePedComponentType func_116(int iParam0, Interior inParam1) // Position - 0x12584 (75140)
+ePedComponentType func_116(int iParam0, int iParam1) // Position - 0x12584 (75140)
 {
 	Hash statHash;
 	ePedComponentType outValue;
 
-	statHash = func_117(iParam0, inParam1);
+	statHash = func_117(iParam0, iParam1);
 
 	if (STATS::STAT_GET_INT(statHash, &outValue, -1))
 		return outValue;
@@ -15649,9 +15649,9 @@ ePedComponentType func_116(int iParam0, Interior inParam1) // Position - 0x12584
 	return PV_COMP_HEAD;
 }
 
-Hash func_117(int iParam0, Interior inParam1) // Position - 0x125A8 (75176)
+Hash func_117(int iParam0, int iParam1) // Position - 0x125A8 (75176)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_94(inParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_94(iParam1));
 }
 
 ePedComponentType func_118(int iParam0, int iParam1, int iParam2) // Position - 0x125BE (75198)
@@ -20336,7 +20336,7 @@ BOOL func_119(int iParam0) // Position - 0x15E56 (89686)
 	return false;
 }
 
-BOOL func_120(int iParam0, Interior inParam1) // Position - 0x15EAF (89775)
+BOOL func_120(int iParam0, int iParam1) // Position - 0x15EAF (89775)
 {
 	int num;
 	int num2;
@@ -20344,7 +20344,7 @@ BOOL func_120(int iParam0, Interior inParam1) // Position - 0x15EAF (89775)
 	if (func_123(iParam0) == 18486)
 		return false;
 
-	num = func_122(iParam0, inParam1);
+	num = func_122(iParam0, iParam1);
 	num2 = iParam0;
 	return IS_BIT_SET(num, func_121(num2));
 }
@@ -20354,11 +20354,11 @@ int func_121(int iParam0) // Position - 0x15EDE (89822)
 	return iParam0 % 32;
 }
 
-int func_122(int iParam0, Interior inParam1) // Position - 0x15EEB (89835)
+int func_122(int iParam0, int iParam1) // Position - 0x15EEB (89835)
 {
 	int num;
 
-	num = func_115(func_123(iParam0), inParam1);
+	num = func_115(func_123(iParam0), iParam1);
 	return num;
 }
 
@@ -21400,12 +21400,12 @@ int func_133(int iParam0) // Position - 0x1700C (94220)
 	return 0;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, Interior inParam1) // Position - 0x1705B (94299)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0x1705B (94299)
 {
-	if (inParam1 == -1)
-		inParam1 = func_7();
+	if (iParam1 == -1)
+		iParam1 = func_7();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, inParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
 }
 
 void func_135(int iParam0, int iParam1, int iParam2, var uParam3) // Position - 0x17077 (94327)
@@ -22179,223 +22179,223 @@ char* func_150(int iParam0, int iParam1) // Position - 0x17CCE (97486)
 	switch (iParam0)
 	{
 		case 7:
-			return "TAT_FM_REVENKIL_D" /*Complete The Equalizer platinum Award. ~n~Get 50 Revenge kills in Deathmatch.*/;
+			return "TAT_FM_REVENKIL_D" /*Consigue el premio de platino Ecualizador. ~n~Consigue 50 bajas por venganza en una partida a muerte.*/;
 	
 		case 6:
-			return "TAT_FM_RECHOLD_d" /*Complete The Record Holder platinum Award. ~n~Hold a World Record in a Rockstar Race.*/;
+			return "TAT_FM_RECHOLD_d" /*Consigue el premio de platino Plusmarquista. ~n~Consigue un récord mundial en una carrera de Rockstar.*/;
 	
 		case 8:
-			return "TAT_FM_KIL3RACE_D" /*Complete the Road Rage platinum Award. ~n~Kill at least 3 other racers in a GTA Race and win.*/;
+			return "TAT_FM_KIL3RACE_D" /*Consigue el premio de platino Conducción agresiva. ~n~Mata al menos a otros tres participantes en una carrera GTA y gana.*/;
 	
 		case 5:
-			return "TAT_FM_KILb_D" /*Complete The Bounty Hunter platinum Award. ~n~Kill 25 Bounty Targets.*/;
+			return "TAT_FM_KILb_D" /*Consigue el premio de platino Cazarrecompensas. ~n~Mata a 25 objetivos de recompensas.*/;
 	
 		case 0:
-			return "TAT_FM_HEADBANG_D" /*Complete the Head Banger platinum Award. ~n~Get 500 player headshots.*/;
+			return "TAT_FM_HEADBANG_D" /*Consigue el premio de platino Revientacabezas. ~n~Consigue 500 tiros en la cabeza de jugadores.*/;
 	
 		case 12:
-			return "TAT_RACE50_D" /*Complete The Champion platinum Award. ~n~Win 50 Races.*/;
+			return "TAT_RACE50_D" /*Consigue el premio de platino Campeón. ~n~Gana 50 carreras.*/;
 	
 		case 2:
-			return "TAT_CLEAROUT_D" /*Complete the Clear Out platinum Award. ~n~Clear 5 Gang Attacks in one day, in a single session.*/;
+			return "TAT_CLEAROUT_D" /*Consigue el premio de platino Eliminador. ~n~Supera 5 ataques a bandas en un día en una sola sesión.*/;
 	
 		case 9:
-			return "TAT_FM_RANK1_D" /*Complete The Widow Maker silver Award. ~n~Get 250 player kills.*/;
+			return "TAT_FM_RANK1_D" /*Consigue el premio de plata Aniquilador. ~n~Mata a 250 jugadores.*/;
 	
 		case 10:
-			return "TAT_FM_RANK2_D" /*Complete The Widow Maker gold Award. ~n~Get 500 player kills.*/;
+			return "TAT_FM_RANK2_D" /*Consigue el premio de oro Aniquilador. ~n~Mata a 500 jugadores.*/;
 	
 		case 11:
-			return "TAT_FM_RANK3_D" /*Complete The Widow Maker platinum Award. ~n~Get 1000 player kills.*/;
+			return "TAT_FM_RANK3_D" /*Consigue el premio de platino Aniquilador. ~n~Mata a 1000 jugadores.*/;
 	
 		case 4:
-			return "TAT_FM_HUST_D" /*Complete The Hustler platinum Award. ~n~Earn $50,000 winnings from betting.*/;
+			return "TAT_FM_HUST_D" /*Consigue el premio de platino Buscavidas. ~n~Gana 50 000 $ apostando.*/;
 	
 		case 1:
-			return "TAT_FM_SLAY_D" /*Complete The Slayer platinum Award. ~n~Win 50 Deathmatches.*/;
+			return "TAT_FM_SLAY_D" /*Consigue el premio de platino Acribillador. ~n~Gana 50 partidas a muerte.*/;
 	
 		case 54:
-			return "TAT_FM_EVERMODE1_D" /*Complete the All Rounder platinum Award. ~n~Win every game mode.*/;
+			return "TAT_FM_EVERMODE1_D" /*Consigue el premio de platino Completo. ~n~Gana en todos los modos de juego.*/;
 	
 		case 3:
-			return "TAT_FM_ARVANTAKE_D" /*Complete the Full Metal Jacket platinum Award. ~n~Rob 25 Armored Trucks.*/;
+			return "TAT_FM_ARVANTAKE_D" /*Consigue el premio de platino Chaqueta metálica. ~n~Roba 25 furgones blindados.*/;
 	
 		case 56:
-			return "TAT_CHEATER_D" /*Complete The Car Bomber platinum Award. ~n~Kill 25 players using vehicle explosives.*/;
+			return "TAT_CHEATER_D" /*Consigue el premio de platino Bombardero móvil. ~n~Mata a 25 jugadores con vehículos explosivos.*/;
 	
 		case 13:
-			return "TAT_CRANKA_D" /*Reached Crew Rank 26.*/;
+			return "TAT_CRANKA_D" /*Llega al nivel de Crew 26.*/;
 	
 		case 14:
-			return "TAT_CRANKB_D" /*Reached Crew Rank 45.*/;
+			return "TAT_CRANKB_D" /*Llega al nivel de Crew 45.*/;
 	
 		case 15:
-			return "TAT_CRANKC_D" /*Reached Crew Rank 18.*/;
+			return "TAT_CRANKC_D" /*Llega al nivel de Crew 18.*/;
 	
 		case 16:
-			return "TAT_CRANKD_D" /*Reached Crew Rank 52.*/;
+			return "TAT_CRANKD_D" /*Llega al nivel de Crew 52.*/;
 	
 		case 89:
-			return "TAT_FM_ROCKSTAR_D" /*Create a Race, Deathmatch, Capture, or Last Team Standing and get it verified by Rockstar Games.*/;
+			return "TAT_FM_ROCKSTAR_D" /*Crea una actividad (carrera, partida a muerte, captura o UEEP) y consigue que sea verificada por Rockstar Games.*/;
 	
 		case 87:
-			return "TAT_FM_REDSKULL_D" /*Complete The Survivor platinum Award. ~n~Complete a Survival.*/;
+			return "TAT_FM_REDSKULL_D" /*Consigue el premio de platino Superviviente. ~n~Completa una partida de supervivencia.*/;
 	
 		case 55:
-			return "TAT_FM_MODDED_D" /*Complete the Suped Up platinum Award. ~n~Apply each type of mod to a single vehicle.*/;
+			return "TAT_FM_MODDED_D" /*Consigue el premio de platino A tope. ~n~Instala todos los tipos de modificaciones en el mismo vehículo.*/;
 	}
 
 	switch (iParam0)
 	{
 		case 17:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 18:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 19:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 20:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 21:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 22:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 23:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 24:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 25:
-			return "TAT_FM_TAT9D" /*Complete the Death Toll platinum Award. ~n~Get 500 kills in Deathmatch.*/;
+			return "TAT_FM_TAT9D" /*Consigue el premio de platino Recuento de víctimas. ~n~Consigue 500 bajas en partidas a muerte.*/;
 	
 		case 26:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 27:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 28:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 61:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 62:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 63:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 64:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 65:
-			return "TAT_FM_TAT17D" /*Complete the Bloodiest Of The Bunch platinum Award. ~n~Get the most kills in a 4 player Survival.*/;
+			return "TAT_FM_TAT17D" /*Consigue el premio de platino Sangriento. ~n~Consigue el mayor número de bajas en una partida de supervivencia para 4 jugadores.*/;
 	
 		case 29:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 30:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 31:
-			return "TAT_RANK10_D" /*Reach Rank 10 To Unlock Tattoo.*/;
+			return "TAT_RANK10_D" /*Llega al nivel 10 para desbloquear este tatuaje.*/;
 	
 		case 66:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 32:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 33:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 34:
-			return "TAT_FM_TAT24D" /*Complete the Lapping It Up platinum Award. ~n~Get 25 Private Dances.*/;
+			return "TAT_FM_TAT24D" /*Consigue el premio de platino Arrimando cebolleta. ~n~Disfruta de 25 bailes privados.*/;
 	
 		case 35:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 36:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 37:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 38:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 39:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 40:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 67:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 41:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 68:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 42:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 43:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 44:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 45:
-			return "TAT_FM_TAT37D" /*Complete the Pistol Whipped platinum Award. ~n~Get 500 Pistol kills.*/;
+			return "TAT_FM_TAT37D" /*Consigue el premio de platino A punta de pistola.~n~Consigue 500 bajas con pistola.*/;
 	
 		case 46:
-			return "TAT_FM_TAT38D" /*Complete the Team Carrier platinum Award. ~n~Earn 50 MVPs in Team Deathmatch.*/;
+			return "TAT_FM_TAT38D" /*Consigue el premio de platino Líder del equipo. ~n~Sé 50 veces el jugador más valioso en partidas a muerte por equipos.*/;
 	
 		case 47:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 48:
-			return "TAT_FM_TAT40D" /*Complete the Scoping Out platinum Award. ~n~Get 100 Sniper kills.*/;
+			return "TAT_FM_TAT40D" /*Consigue el premio de platino En el punto de mira. ~n~Consigue 100 bajas con fusil de francotirador.*/;
 	
 		case 49:
-			return "TAT_FM_TAT41D" /*Complete the Killstreaker platinum Award. ~n~Earn a 10 plus killstreak in Deathmatch.*/;
+			return "TAT_FM_TAT41D" /*Consigue el premio de platino En racha de bajas. ~n~Consigue una racha de más de 10 bajas en partidas a muerte.*/;
 	
 		case 50:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 51:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 52:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 53:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 69:
-			return "TAT_RANK20_D" /*Reach Rank 20 To Unlock Tattoo.*/;
+			return "TAT_RANK20_D" /*Llega al nivel 20 para desbloquear este tatuaje.*/;
 	
 		case 57:
-			return "TAT_HOLDUP1V_D" /*Complete the Armed Robber bronze Award. ~n~Hold up 5 stores.*/;
+			return "TAT_HOLDUP1V_D" /*Consigue el premio de bronce Atracador a mano armada. ~n~Atraca 5 tiendas.*/;
 	
 		case 58:
-			return "TAT_HOLDUP5V_D" /*Complete the Armed Robber silver Award. ~n~Hold up 10 stores.*/;
+			return "TAT_HOLDUP5V_D" /*Consigue el premio de plata Atracador a mano armada.~n~Atraca 10 tiendas.*/;
 	
 		case 59:
-			return "TAT_HOLDUP10V_D" /*Complete the Armed Robber gold Award. ~n~Hold up 15 stores.*/;
+			return "TAT_HOLDUP10V_D" /*Consigue el premio de oro Atracador a mano armada. ~n~Atraca 15 tiendas.*/;
 	
 		case 60:
-			return "TAT_HOLDUP20V_D" /*Complete the Armed Robber platinum Award. ~n~Hold up 20 stores.*/;
+			return "TAT_HOLDUP20V_D" /*Consigue el premio de platino Atracador a mano armada. ~n~Atraca 20 tiendas.*/;
 	}
 
 	return str;
@@ -22412,226 +22412,226 @@ char* func_151(int iParam0, int iParam1) // Position - 0x1817A (98682)
 	switch (iParam0)
 	{
 		case 0:
-			return "TAT_FM_HEADBANG" /*Skull*/;
+			return "TAT_FM_HEADBANG" /*Calavera*/;
 	
 		case 2:
-			return "TAT_CLEAROUT" /*Grim Reaper Smoking Gun*/;
+			return "TAT_CLEAROUT" /*Pistola de la muerte*/;
 	
 		case 9:
-			return "TAT_FM_RANK1" /*Blank Scroll*/;
+			return "TAT_FM_RANK1" /*Pergamino en blanco*/;
 	
 		case 10:
-			return "TAT_FM_RANK2" /*Embellished Scroll*/;
+			return "TAT_FM_RANK2" /*Pergamino adornado*/;
 	
 		case 11:
-			return "TAT_FM_RANK3" /*Seven Deadly Sins*/;
+			return "TAT_FM_RANK3" /*Siete pecados capitales*/;
 	
 		case 4:
-			return "TAT_FM_HUST" /*Hustler*/;
+			return "TAT_FM_HUST" /*Buscavidas*/;
 	
 		case 1:
-			return "TAT_FM_SLAY" /*Burning Heart*/;
+			return "TAT_FM_SLAY" /*Corazón en llamas*/;
 	
 		case 54:
-			return "TAT_FM_EVERMODE1" /*Angel*/;
+			return "TAT_FM_EVERMODE1" /*Ángel*/;
 	
 		case 3:
 			return "TAT_FM_ARVANTAKE" /*Blackjack*/;
 	
 		case 7:
-			return "TAT_FM_REVENKIL" /*Dragon and Dagger*/;
+			return "TAT_FM_REVENKIL" /*Dragón y puñal*/;
 	
 		case 5:
-			return "TAT_FM_KILb" /*Skull and Sword*/;
+			return "TAT_FM_KILb" /*Calavera y espada*/;
 	
 		case 8:
-			return "TAT_FM_KIL3RACE" /*Ride or Die*/;
+			return "TAT_FM_KIL3RACE" /*Correr o morir*/;
 	
 		case 6:
-			return "TAT_FM_RECHOLD" /*Racing Blonde*/;
+			return "TAT_FM_RECHOLD" /*Rubia de las carreras*/;
 	
 		case 12:
-			return "TAT_RACE50" /*Racing Brunette*/;
+			return "TAT_RACE50" /*Morena de las carreras*/;
 	
 		case 13:
-			return "TAT_CRANKA" /*Crew Rank 1*/;
+			return "TAT_CRANKA" /*Nivel de Crew 1*/;
 	
 		case 14:
-			return "TAT_CRANKB" /*Crew Rank 2*/;
+			return "TAT_CRANKB" /*Nivel de Crew 2*/;
 	
 		case 15:
-			return "TAT_CRANKC" /*Crew Rank 3*/;
+			return "TAT_CRANKC" /*Nivel de Crew 3*/;
 	
 		case 16:
-			return "TAT_CRANKD" /*Crew Rank 4*/;
+			return "TAT_CRANKD" /*Nivel de Crew 4*/;
 	
 		case 87:
-			return "TAT_FM_REDSKULL" /*Red Skull T-Shirt*/;
+			return "TAT_FM_REDSKULL" /*Camiseta de calavera roja*/;
 	
 		case 88:
-			return "TAT_FM_BELLE" /*Los Santos Belle T-Shirt*/;
+			return "TAT_FM_BELLE" /*Camiseta LS Belle*/;
 	
 		case 89:
-			return "TAT_FM_ROCKSTAR" /*Rockstar T-Shirt*/;
+			return "TAT_FM_ROCKSTAR" /*Camiseta de Rockstar*/;
 	
 		case 55:
 			return "TAT_FM_MODDED" /*Los Santos Customs*/;
 	
 		case 17:
-			return "TAT_FM_TAT1" /*Tattoo 1*/;
+			return "TAT_FM_TAT1" /*Tatuaje 1*/;
 	
 		case 18:
-			return "TAT_FM_TAT2" /*Tattoo 2*/;
+			return "TAT_FM_TAT2" /*Tatuaje 2*/;
 	
 		case 19:
-			return "TAT_FM_TAT3" /*Tattoo 3*/;
+			return "TAT_FM_TAT3" /*Tatuaje 3*/;
 	
 		case 20:
-			return "TAT_FM_TAT4" /*Tattoo 4*/;
+			return "TAT_FM_TAT4" /*Tatuaje 4*/;
 	
 		case 21:
-			return "TAT_FM_TAT5" /*Tattoo 5*/;
+			return "TAT_FM_TAT5" /*Tatuaje 5*/;
 	
 		case 22:
-			return "TAT_FM_TAT6" /*Tattoo 6*/;
+			return "TAT_FM_TAT6" /*Tatuaje 6*/;
 	
 		case 56:
-			return "TAT_CHEATER" /*Trust No One*/;
+			return "TAT_CHEATER" /*No te fíes de nadie*/;
 	}
 
 	switch (iParam0)
 	{
 		case 23:
-			return "TAT_FM_TAT7" /*Tattoo 7*/;
+			return "TAT_FM_TAT7" /*Tatuaje 7*/;
 	
 		case 24:
-			return "TAT_FM_TAT8" /*Tattoo 8*/;
+			return "TAT_FM_TAT8" /*Tatuaje 8*/;
 	
 		case 25:
-			return "TAT_FM_TAT9" /*Melting Skull*/;
+			return "TAT_FM_TAT9" /*Calavera fundida*/;
 	
 		case 26:
-			return "TAT_FM_TAT10" /*Tattoo 10*/;
+			return "TAT_FM_TAT10" /*Tatuaje 10*/;
 	
 		case 27:
-			return "TAT_FM_TAT11" /*Tattoo 11*/;
+			return "TAT_FM_TAT11" /*Tatuaje 11*/;
 	
 		case 28:
-			return "TAT_FM_TAT12" /*Tattoo 12*/;
+			return "TAT_FM_TAT12" /*Tatuaje 12*/;
 	
 		case 61:
-			return "TAT_FM_TAT13" /*Tattoo 13*/;
+			return "TAT_FM_TAT13" /*Tatuaje 13*/;
 	
 		case 62:
-			return "TAT_FM_TAT14" /*Tattoo 14*/;
+			return "TAT_FM_TAT14" /*Tatuaje 14*/;
 	
 		case 63:
-			return "TAT_FM_TAT15" /*Tattoo 1*/;
+			return "TAT_FM_TAT15" /*Tatuaje 1*/;
 	
 		case 64:
-			return "TAT_FM_TAT16" /*Tattoo 16*/;
+			return "TAT_FM_TAT16" /*Tatuaje 16*/;
 	
 		case 65:
-			return "TAT_FM_TAT38" /*The Wages of Sin*/;
+			return "TAT_FM_TAT38" /*El peso del pecado*/;
 	
 		case 29:
-			return "TAT_FM_TAT18" /*Tattoo 19*/;
+			return "TAT_FM_TAT18" /*Tatuaje 19*/;
 	
 		case 30:
 			return "TAT_FM_TAT19";
 	
 		case 31:
-			return "TAT_FM_TAT20" /*Tattoo 20*/;
+			return "TAT_FM_TAT20" /*Tatuaje 20*/;
 	
 		case 66:
-			return "TAT_FM_TAT21" /*Tattoo 21*/;
+			return "TAT_FM_TAT21" /*Tatuaje 21*/;
 	
 		case 32:
-			return "TAT_FM_TAT22" /*Tattoo 22*/;
+			return "TAT_FM_TAT22" /*Tatuaje 22*/;
 	
 		case 33:
-			return "TAT_FM_TAT23" /*Tattoo 23*/;
+			return "TAT_FM_TAT23" /*Tatuaje 23*/;
 	
 		case 34:
-			return "TAT_FM_TAT24" /*Hottie*/;
+			return "TAT_FM_TAT24" /*Tía buena*/;
 	
 		case 35:
-			return "TAT_FM_TAT25" /*Tattoo 25*/;
+			return "TAT_FM_TAT25" /*Tatuaje 25*/;
 	
 		case 36:
-			return "TAT_FM_TAT26" /*Tattoo 26*/;
+			return "TAT_FM_TAT26" /*Tatuaje 26*/;
 	
 		case 37:
-			return "TAT_FM_TAT27" /*Tattoo 27*/;
+			return "TAT_FM_TAT27" /*Tatuaje 27*/;
 	
 		case 38:
-			return "TAT_FM_TAT28" /*Tattoo 28*/;
+			return "TAT_FM_TAT28" /*Tatuaje 28*/;
 	
 		case 39:
-			return "TAT_FM_TAT29" /*Tattoo 29*/;
+			return "TAT_FM_TAT29" /*Tatuaje 29*/;
 	
 		case 40:
-			return "TAT_FM_TAT30" /*Tattoo 30*/;
+			return "TAT_FM_TAT30" /*Tatuaje 30*/;
 	
 		case 67:
-			return "TAT_FM_TAT31" /*Tattoo 31*/;
+			return "TAT_FM_TAT31" /*Tatuaje 31*/;
 	
 		case 41:
-			return "TAT_FM_TAT32" /*Tattoo 32*/;
+			return "TAT_FM_TAT32" /*Tatuaje 32*/;
 	
 		case 68:
-			return "TAT_FM_TAT33" /*Tattoo 33*/;
+			return "TAT_FM_TAT33" /*Tatuaje 33*/;
 	
 		case 42:
-			return "TAT_FM_TAT34" /*Tattoo 34*/;
+			return "TAT_FM_TAT34" /*Tatuaje 34*/;
 	
 		case 43:
-			return "TAT_FM_TAT35" /*Tattoo 35*/;
+			return "TAT_FM_TAT35" /*Tatuaje 35*/;
 	
 		case 44:
-			return "TAT_FM_TAT36" /*Tattoo 36*/;
+			return "TAT_FM_TAT36" /*Tatuaje 36*/;
 	
 		case 45:
-			return "TAT_FM_TAT37" /*Way Of The Gun*/;
+			return "TAT_FM_TAT37" /*La senda de la pistola*/;
 	
 		case 46:
-			return "TAT_FM_TAT41" /*Grim Reaper*/;
+			return "TAT_FM_TAT41" /*La muerte*/;
 	
 		case 47:
-			return "TAT_FM_TAT39" /*Tattoo 39*/;
+			return "TAT_FM_TAT39" /*Tatuaje 39*/;
 	
 		case 48:
-			return "TAT_FM_TAT40" /*Broken Skull*/;
+			return "TAT_FM_TAT40" /*Cráneo fracturado*/;
 	
 		case 49:
-			return "TAT_FM_TAT17" /*Flaming Skull*/;
+			return "TAT_FM_TAT17" /*Calavera llameante*/;
 	
 		case 50:
-			return "TAT_FM_TAT42" /*Tattoo 42*/;
+			return "TAT_FM_TAT42" /*Tatuaje 42*/;
 	
 		case 51:
-			return "TAT_FM_TAT43" /*Tattoo 43*/;
+			return "TAT_FM_TAT43" /*Tatuaje 43*/;
 	
 		case 52:
-			return "TAT_FM_TAT44" /*Tattoo 44*/;
+			return "TAT_FM_TAT44" /*Tatuaje 44*/;
 	
 		case 53:
-			return "TAT_FM_TAT45" /*Tattoo 45*/;
+			return "TAT_FM_TAT45" /*Tatuaje 45*/;
 	
 		case 69:
-			return "TAT_FM_TAT46" /*Tattoo 46*/;
+			return "TAT_FM_TAT46" /*Tatuaje 46*/;
 	
 		case 57:
-			return "TAT_HOLDUP1V" /*Clown*/;
+			return "TAT_HOLDUP1V" /*Payaso*/;
 	
 		case 58:
-			return "TAT_HOLDUP5V" /*Clown and Gun*/;
+			return "TAT_HOLDUP5V" /*Payaso y pistola*/;
 	
 		case 59:
-			return "TAT_HOLDUP10V" /*Clown Dual Wield*/;
+			return "TAT_HOLDUP10V" /*Payaso con dos pistolas*/;
 	
 		case 60:
-			return "TAT_HOLDUP20V" /*Clown Dual Wield Dollars*/;
+			return "TAT_HOLDUP20V" /*Payaso con dinero*/;
 	}
 
 	return str;
@@ -23326,37 +23326,37 @@ char* func_163(int iParam0, int iParam1, int iParam2, BOOL bParam3) // Position 
 			return "AWS_786";
 	
 		case 1:
-			return "AWD_GANGOP0d" /*Complete Act I of The Doomsday Heist for the first time.*/;
+			return "AWD_GANGOP0d" /*Completa la parte I de Golpe del Juicio Final por primera vez.*/;
 	
 		case 2:
-			return "AWD_GANGOP1d" /*Complete Act II of The Doomsday Heist for the first time.*/;
+			return "AWD_GANGOP1d" /*Completa la parte II de Golpe del Juicio Final por primera vez.*/;
 	
 		case 6:
-			return "AWD_GANGOP2d" /*Complete Act III of The Doomsday Heist for the first time.*/;
+			return "AWD_GANGOP2d" /*Completa la parte III de Golpe del Juicio Final por primera vez.*/;
 	
 		case 3:
-			return "AWD_GANGOP3d" /*Complete The Doomsday Heist in order.*/;
+			return "AWD_GANGOP3d" /*Completa Golpe del Juicio Final en orden.*/;
 	
 		case 4:
-			return "AWD_GANGOP7d" /*Complete The Doomsday Heist in order with the same team of 4 players.*/;
+			return "AWD_GANGOP7d" /*Completa Golpe del Juicio Final en orden con el mismo equipo de 4 jugadores.*/;
 	
 		case 5:
-			return "AWD_GANGOP9d" /*Complete The Doomsday Heist in order, with the same team of 4 players, on Hard difficulty, without losing any lives on Setups and Finales.*/;
+			return "AWD_GANGOP9d" /*Completa Golpe del Juicio Final en orden con el mismo equipo de 4 jugadores, en dificultad Difícil y sin perder vidas en las misiones preparatorias y en las finales.*/;
 	
 		case 7:
-			return "AWD_GANGOP4d" /*Complete The Doomsday Heist in order with the same team of 2 players.*/;
+			return "AWD_GANGOP4d" /*Completa Golpe del Juicio Final en orden con el mismo equipo de 2 jugadores.*/;
 	
 		case 8:
-			return "AWD_GANGOP6d" /*Complete The Doomsday Heist in order with the same team of 3 players.*/;
+			return "AWD_GANGOP6d" /*Completa Golpe del Juicio Final en orden con el mismo equipo de 3 jugadores.*/;
 	
 		case 9:
-			return "AWD_GANGOP5d" /*Complete The Doomsday Heist in order, with the same team of 2 players, on Hard difficulty, without losing any lives on Setups and Finales.*/;
+			return "AWD_GANGOP5d" /*Completa Golpe del Juicio Final en orden con el mismo equipo de 2 jugadores, en dificultad Difícil y sin perder vidas en las misiones preparatorias y en las finales.*/;
 	
 		case 10:
-			return "AWD_GANGOP8d" /*Complete The Doomsday Heist in order, with the same team of 3 players, on Hard difficulty, without losing any lives on Setups and Finales.*/;
+			return "AWD_GANGOP8d" /*Completa Golpe del Juicio Final en orden con el mismo equipo de 3 jugadores, en dificultad Difícil y sin perder vidas en las misiones preparatorias y en las finales.*/;
 	
 		case 11:
-			return "AWD_GANGO10d" /*Complete all acts of The Doomsday Heist as a crew member, ending with completion of the Act III finale.*/;
+			return "AWD_GANGO10d" /*Completa todas las partes de Golpe del Juicio Final como miembro del equipo, terminando con el final de la parte III.*/;
 	
 		default:
 		
@@ -23427,37 +23427,37 @@ char* func_165(int iParam0) // Position - 0x19235 (102965)
 	switch (iParam0)
 	{
 		case 1:
-			return "AWD_GANGOPF0" /*Act I*/;
+			return "AWD_GANGOPF0" /*Parte I*/;
 	
 		case 2:
-			return "AWD_GANGOPF1" /*Act II*/;
+			return "AWD_GANGOPF1" /*Parte II*/;
 	
 		case 6:
-			return "AWD_GANGOPF2" /*Act III*/;
+			return "AWD_GANGOPF2" /*Parte III*/;
 	
 		case 3:
-			return "AWD_GANGOPA" /*All In Order II*/;
+			return "AWD_GANGOPA" /*Todo en orden II*/;
 	
 		case 4:
-			return "AWD_GANGOPL4" /*Loyalty IV*/;
+			return "AWD_GANGOPL4" /*Lealtad IV*/;
 	
 		case 7:
-			return "AWD_GANGOPL2" /*Loyalty II*/;
+			return "AWD_GANGOPL2" /*Lealtad II*/;
 	
 		case 8:
-			return "AWD_GANGOPL3" /*Loyalty III*/;
+			return "AWD_GANGOPL3" /*Lealtad III*/;
 	
 		case 5:
-			return "AWD_GANGOPM4" /*Criminal Mastermind IV*/;
+			return "AWD_GANGOPM4" /*Cerebro delictivo IV*/;
 	
 		case 9:
-			return "AWD_GANGOPM2" /*Criminal Mastermind II*/;
+			return "AWD_GANGOPM2" /*Cerebro delictivo II*/;
 	
 		case 10:
-			return "AWD_GANGOPM3" /*Criminal Mastermind III*/;
+			return "AWD_GANGOPM3" /*Cerebro delictivo III*/;
 	
 		case 11:
-			return "AWD_GANGOPSR" /*Supporting Role II*/;
+			return "AWD_GANGOPSR" /*Papel secundario II*/;
 	
 		default:
 		
@@ -25378,526 +25378,526 @@ char* func_176(int iParam0, int iParam1, int iParam2, BOOL bParam3) // Position 
 			return "AWS_820";
 	
 		case 53:
-			return "AWS_836" /*Complete Loose Cheng for the first time and earn $50,000.*/;
+			return "AWS_836" /*Completa Buscando a Cheng por primera vez y obtén 50µ000µ$.*/;
 	
 		case 54:
-			return "AWS_837" /*Complete House Keeping for the first time and earn $50,000.*/;
+			return "AWS_837" /*Completa Servicio de limpieza por primera vez y obtén 50µ000µ$.*/;
 	
 		case 55:
-			return "AWS_838" /*Complete Strong Arm Tactics for the first time and earn $50,000.*/;
+			return "AWS_838" /*Completa Por la fuerza por primera vez y obtén 50µ000µ$.*/;
 	
 		case 56:
-			return "AWS_839" /*Complete Play to Win for the first time and earn $50,000.*/;
+			return "AWS_839" /*Completa Juega y gana por primera vez y obtén 50µ000µ$.*/;
 	
 		case 57:
-			return "AWS_840" /*Complete Bad Beat for the first time and earn $50,000.*/;
+			return "AWS_840" /*Completa Mala racha por primera vez y obtén 50µ000µ$.*/;
 	
 		case 58:
-			return "AWS_841" /*Complete Cashing Out for the first time and earn $100,000.*/;
+			return "AWS_841" /*Completa Cobra lo tuyo por primera vez y obtén 100µ000µ$.*/;
 	
 		case 59:
-			return "AWS_842" /*Complete all Casino Story Missions in order and earn $500,000.*/;
+			return "AWS_842" /*Completa todas las misiones de la historia del casino en orden y obtén 500µ000µ$.*/;
 	
 		case 62:
-			return "AWS_846" /*Complete a Casino Story Mission without losing a life and earn $50,000.*/;
+			return "AWS_846" /*Completa una misión de la historia del casino sin perder ninguna vida y obtén 50µ000µ$.*/;
 	
 		case 60:
-			return "AWS_843" /*Complete all Casino Story Missions as a Crew member and earn $100,000.*/;
+			return "AWS_843" /*Completa todas las misiones de la historia del casino como miembro de un equipo y obtén 100µ000µ$.*/;
 	
 		case 61:
-			return "AWS_844" /*Complete all Casino Story Missions as Leader to earn $100,000 and a bonus item.*/;
+			return "AWS_844" /*Completa todas las misiones de la historia del casino como líder y obtén 100µ000µ$ y un artículo de regalo.*/;
 	
 		case 63:
-			return "AWS_857" /*Scope all entrances and exits for The Diamond Casino Heist.*/;
+			return "AWS_857" /*Examina todas las entradas y salidas en Golpe a The Diamond Casino.*/;
 	
 		case 64:
-			return "AWS_858" /*Unlock all possible crew members for The Diamond Casino Heist.*/;
+			return "AWS_858" /*Desbloquea a todos los miembros del equipo posibles en Golpe a The Diamond Casino.*/;
 	
 		case 65:
-			return "AWS_859" /*Stop a mall cop being fired again during The Diamond Casino Heist.*/;
+			return "AWS_859" /*Evita que vuelvan a despedir a un vigilante jurado en Golpe a The Diamond Casino.*/;
 	
 		case 66:
-			return "AWS_860" /*Use someone famous to get into the Casino back area.*/;
+			return "AWS_860" /*Usa a alguien famoso para entrar en la parte de atrás del casino.*/;
 	
 		case 67:
-			return "AWS_861" /*Find and help break out an old accomplice for The Diamond Casino Heist.*/;
+			return "AWS_861" /*Encuentra a un viejo cómplice y ayúdalo a huir en Golpe a The Diamond Casino.*/;
 	
 		case 68:
-			return "AWS_862" /*Complete the Aggressive approach to The Diamond Casino Heist and earn $100000.*/;
+			return "AWS_862" /*Completa la estrategia A tiro limpio de Golpe a The Diamond Casino y gana 100µ000µ$.*/;
 	
 		case 69:
-			return "AWS_863" /*Complete The Big Con approach to The Diamond Casino Heist without breaking your disguise inside the Casino and earn $150000.*/;
+			return "AWS_863" /*Completa la estrategia Estafa maestra de Golpe a The Diamond Casino sin que te descubran en el casino y gana 150µ000µ$.*/;
 	
 		case 70:
-			return "AWS_864" /*Complete the Silent & Sneaky approach to The Diamond Casino Heist without ever being detected and earn $200000.*/;
+			return "AWS_864" /*Completa la estrategia Sigilo de Golpe a The Diamond Casino sin que te detecten y gana 200µ000µ$.*/;
 	
 		case 71:
-			return "AWS_865" /*Complete the Aggressive, The Big Con and Silent & Sneaky approaches to The Diamond Casino Heist and earn $300000.*/;
+			return "AWS_865" /*Completa las estrategias Por la fuerza, Estafa maestra y Sigilo de Golpe a The Diamond Casino y gana 300µ000µ$.*/;
 	
 		case 72:
-			return "AWS_866" /*Complete the elite challenges for the Aggressive, The Big Con and Silent & Sneaky approaches to The Diamond Casino Heist and earn $350000.*/;
+			return "AWS_866" /*Completa los desafíos de élite de las estrategias Por la fuerza, Estafa maestra y Sigilo de Golpe a The Diamond Casino y gana 350µ000µ$.*/;
 	
 		case 73:
-			return "AWS_867" /*Complete The Diamond Casino Heist on Hard and without losing a life and earn $250,000.*/;
+			return "AWS_867" /*Completa Golpe a The Diamond Casino en dificultad difícil sin perder ninguna vida y gana 250µ000µ$.*/;
 	
 		case 74:
-			return "AWS_868" /*Complete The Diamond Casino Heist as a crew member.*/;
+			return "AWS_868" /*Completa Golpe a The Diamond Casino como miembro de un equipo.*/;
 	
 		case 75:
-			return "AWS_869" /*Use the elevator shaft to reach the staff lobby during The Diamond Casino Heist.*/;
+			return "AWS_869" /*Usa el hueco del ascensor para llegar hasta la sala de personal Golpe a The Diamond Casino.*/;
 	
 		case 76:
-			return "AWS_870" /*Steal all variations of loot from the vault during The Diamond Casino Heist.*/;
+			return "AWS_870" /*Roba todos los botines posibles en la cámara acorazada en Golpe a The Diamond Casino.*/;
 	
 		case 77:
-			return "AWS_871" /*Get over 90% accuracy for an entire playthrough of Badlands Revenge II.*/;
+			return "AWS_871" /*Consigue más de un 90 % de precisión en una partida entera de Badlands Revenge II.*/;
 	
 		case 78:
-			return "AWS_872" /*Complete Badlands Revenge II using only pistols.*/;
+			return "AWS_872" /*Completa Badlands Revenge II usando solo pistolas.*/;
 	
 		case 79:
-			return "AWS_873" /*Complete the full race without crashing in Race And Chase.*/;
+			return "AWS_873" /*Completa la carrera en Race And Chase sin estrellarte .*/;
 	
 		case 80:
-			return "AWS_874" /*Complete Race And Chase with all vehicle types.*/;
+			return "AWS_874" /*Completa Race And Chase con todos los tipos de vehículos.*/;
 	
 		case 81:
-			return "AWS_875" /*Complete The Wizard's Ruin adventure as Grog.*/;
+			return "AWS_875" /*Completa el juego The Wizard's Ruin con Grog.*/;
 	
 		case 82:
-			return "AWS_876" /*Survive any stage without taking any damage in Space Monkey 3: Bananas Gone Bad.*/;
+			return "AWS_876" /*Sobrevive a un campo de asteroides sin recibir daño en Space Monkey 3: Bananas Gone Bad.*/;
 	
 		case 83:
-			return "AWS_877" /*Complete Space Monkey 3: Bananas Gone Bad without the use of any powerups or pickups.*/;
+			return "AWS_877" /*Completa Space Monkey 3: Bananas Gone Bad sin usar poderes ni mejoras.*/;
 	
 		case 84:
-			return "AWS_878" /*Complete the underwater level in Monkey Paradise.*/;
+			return "AWS_878" /*Completa el nivel subacuático en Monkey's Paradise.*/;
 	
 		case 85:
-			return "AWS_879" /*Complete a level of Defender of the Faith by only pressing right.*/;
+			return "AWS_879" /*Completa un nivel de Defender of the Faith pulsando solo el botón hacia la derecha.*/;
 	
 		case 86:
-			return "AWS_880" /*Get a true love rating on The Love Professor.*/;
+			return "AWS_880" /*Consigue la puntuación de "Amor verdadero" en The Love Professor.*/;
 	
 		case 87:
-			return "AWS_881" /*Find your nemesis using The Love Professor Cabinet.*/;
+			return "AWS_881" /*Encuentra a tu némesis usando la recreativa de The Love Professor.*/;
 	
 		case 88:
-			return "AWS_882" /*The friendzone doesn't exist but perhaps you can find yourself in it using The Love Professor.*/;
+			return "AWS_882" /*La friendzone no existe, pero quizá puedas encontrar tu lugar en ella gracias a The Love Professor.*/;
 	
 		case 89:
-			return "AWS_886" /*Get first place on the QUB3D leaderboard.*/;
+			return "AWS_886" /*Consigue el primer puesto en el marcador de QUB3D.*/;
 	
 		case 90:
-			return "AWS_887" /*Reach level 20 in QUB3D without using special abilities.*/;
+			return "AWS_887" /*Llega al nivel 20 en QUB3D sin usar habilidades especiales.*/;
 	
 		case 93:
-			return "AWS_888" /*Get the highest score in Axe of Fury.*/;
+			return "AWS_888" /*Consigue la puntuación más elevada en Axe of Fury.*/;
 	
 		case 92:
-			return "AWS_889" /*Get a score of 19000 in a single play of QUB3D.*/;
+			return "AWS_889" /*Consigue una puntuación de 19µ000 en una partida de QUB3D.*/;
 	
 		case 91:
-			return "AWS_890" /*Reach level 20 without removing any blocks from play.*/;
+			return "AWS_890" /*Alcanza el nivel 20 sin eliminar ningún bloque de la partida.*/;
 	
 		case 94:
-			return "AWS_891" /*Get the highest score in Axe of Fury 11 times.*/;
+			return "AWS_891" /*Consigue la puntuación más elevada en Axe of Fury 11 veces.*/;
 	
 		case 95:
-			return "AWS_917" /*Scope out all infiltration and escape points on Cayo Perico.*/;
+			return "AWS_917" /*Examina todos los puntos de infiltración y huida de Cayo Perico.*/;
 	
 		case 96:
-			return "AWS_918" /*Scope out all entry points into El Rubio's compound on Cayo Perico.*/;
+			return "AWS_918" /*Examina todos los puntos de acceso al complejo del Rubio en Cayo Perico.*/;
 	
 		case 97:
-			return "AWS_919" /*Scope out all the secondary target locations in a single playthrough of The Cayo Perico Heist.*/;
+			return "AWS_919" /*Examina todas las ubicaciones de los objetivos secundarios en una sola partida de Golpe a Cayo Perico.*/;
 	
 		case 98:
-			return "AWS_920" /*Complete all three disruption prep missions in a single playthrough of The Cayo Perico Heist.*/;
+			return "AWS_920" /*Completa las tres misiones preparatorias de disrupción en una sola partida de Golpe a Cayo Perico.*/;
 	
 		case 99:
-			return "AWS_921" /*Complete The Cayo Perico Heist for the first time to earn $200,000.*/;
+			return "AWS_921" /*Lleva a cabo el golpe a Cayo Perico por primera vez para ganar 200µ000µ$.*/;
 	
 		case 100:
-			return "AWS_922" /*Complete The Cayo Perico Heist with one player to earn $100,000.*/;
+			return "AWS_922" /*Lleva a cabo el golpe a Cayo Perico con un jugador para ganar 100µ000µ$.*/;
 	
 		case 101:
-			return "AWS_923" /*Complete The Cayo Perico Heist with four players to earn $100,000.*/;
+			return "AWS_923" /*Lleva a cabo el golpe a Cayo Perico con cuatro jugadores para ganar 100µ000µ$.*/;
 	
 		case 102:
-			return "AWS_924" /*Approach The Cayo Perico Heist using all of the different vehicles to earn $250,000.*/;
+			return "AWS_924" /*Lleva a cabo el golpe a Cayo Perico usando todos los vehículos de aproximación para ganar 250µ000µ$.*/;
 	
 		case 103:
-			return "AWS_925" /*Steal all variations of the primary target during The Cayo Perico Heist to earn $150,000.*/;
+			return "AWS_925" /*Roba todas las variantes del objetivo principal en el golpe a Cayo Perico para ganar 150µ000µ$.*/;
 	
 		case 104:
-			return "AWS_926" /*Complete The Cayo Perico Heist without ever alerting the guards to earn $200,000.*/;
+			return "AWS_926" /*Lleva a cabo el golpe a Cayo Perico sin alertar a los guardias para ganar 200µ000µ$.*/;
 	
 		case 105:
-			return "AWS_927" /*Enter the compound using a stolen disguise during The Cayo Perico Heist.*/;
+			return "AWS_927" /*Entra en el complejo usando un disfraz robado durante el golpe a Cayo Perico.*/;
 	
 		case 106:
-			return "AWS_928" /*Steal El Rubio's prized weapon during The Cayo Perico Heist.*/;
+			return "AWS_928" /*Roba la preciada arma del Rubio durante el golpe a Cayo Perico.*/;
 	
 		case 107:
-			return "AWS_929" /*Complete the elite challenge for The Cayo Perico Heist to earn $200,000.*/;
+			return "AWS_929" /*Completa el desafío de élite de Golpe a Cayo Perico para ganar 200µ000µ$.*/;
 	
 		case 108:
-			return "AWS_930" /*Complete The Cayo Perico Heist on Hard and without losing a life to earn $200,000.*/;
+			return "AWS_930" /*Lleva a cabo el golpe a Cayo Perico en dificultad Difícil y sin perder ninguna vida para ganar 200µ000µ$.*/;
 	
 		case 109:
-			return "AWS_931" /*Complete all Palms Trax requests sent by Tom Connors.*/;
+			return "AWS_931" /*Completa todas las peticiones de Palms Trax que te envíe Tom Connors.*/;
 	
 		case 110:
-			return "AWS_932" /*Complete all Keinemusik's requests sent by English Dave.*/;
+			return "AWS_932" /*Completa todas las peticiones de Keinemusik que te envíe Dave el Inglés.*/;
 	
 		case 111:
-			return "AWS_933" /*Revisit the Cayo Perico beach party after completing The Cayo Perico Heist.*/;
+			return "AWS_933" /*Vuelve a la fiesta en la playa de Cayo Perico después de completar el golpe a Cayo Perico.*/;
 	
 		case 112:
-			return "AWS_934" /*Complete all Moodymann's requests sent by Tom Connors.*/;
+			return "AWS_934" /*Completa todas las peticiones de Moodymann que te envíe Tom Connors.*/;
 	
 		case 113:
-			return "AWS_944" /*Visit The LS Car Meet for the first time.*/;
+			return "AWS_944" /*Visita el club automovilístico de LS por primera vez.*/;
 	
 		case 114:
-			return "AWS_951" /*Deliver all 10 Exotic Exports Vehicles to the Docks in a single day.*/;
+			return "AWS_951" /*Entrega los 10 vehículos para exportar poco comunes en los muelles en un día.*/;
 	
 		case 115:
-			return "AWS_953" /*Complete The Union Depository Contract as leader to earn $75,000.*/;
+			return "AWS_953" /*Completa el contrato del Union Depository como líder para ganar 75µ000µ$.*/;
 	
 		case 116:
-			return "AWS_954" /*Complete The Superdollar Deal as leader to earn $75,000.*/;
+			return "AWS_954" /*Completa el acuerdo de superdólares como líder para ganar 75µ000µ$.*/;
 	
 		case 117:
-			return "AWS_955" /*Complete The Bank Contract as leader to earn $75,000.*/;
+			return "AWS_955" /*Completa el contrato del banco como líder para ganar 75µ000µ$.*/;
 	
 		case 118:
-			return "AWS_956" /*Complete The E.C.U. Job as leader to earn $75,000.*/;
+			return "AWS_956" /*Completa el golpe de las ECU como líder para ganar 75µ000µ$.*/;
 	
 		case 119:
-			return "AWS_957" /*Complete The Prison Contract as leader to earn $75,000.*/;
+			return "AWS_957" /*Completa el contrato de la prisión como líder para ganar 75µ000µ$.*/;
 	
 		case 120:
-			return "AWS_958" /*Complete The Agency Deal as leader to earn $75,000.*/;
+			return "AWS_958" /*Completa el acuerdo de la agencia como líder para ganar 75µ000µ$.*/;
 	
 		case 121:
-			return "AWS_959" /*Complete The Lost Contract as leader to earn $75,000.*/;
+			return "AWS_959" /*Completa el contrato de los Lost como líder para ganar 75µ000µ$.*/;
 	
 		case 122:
-			return "AWS_960" /*Complete The Data Contract as leader to earn $75,000.*/;
+			return "AWS_960" /*Completa el contrato de información como líder para ganar 75µ000µ$.*/;
 	
 		case 123:
-			return "AWS_963" /*Complete all levels using only the pistol in Camhedz.*/;
+			return "AWS_963" /*Completa todos los niveles usando únicamente el revólver en Camhedz.*/;
 	
 		case 124:
-			return "AWS_964" /*Kill all costumed weirdos across all scenes in Camhedz.*/;
+			return "AWS_964" /*Mata a todos los tipos disfrazados en todas las escenas de Camhedz.*/;
 	
 		case 125:
-			return "AWS_965" /*Get an average of 60% accuracy across all scenes in Camhedz.*/;
+			return "AWS_965" /*Consigue un 60µ% de precisión media en todas las escenas de Camhedz.*/;
 	
 		case 126:
-			return "AWS_966" /*Get a 5-star rating on each of the scenes in Camhedz.*/;
+			return "AWS_966" /*Consigue una puntuación de 5 estrellas en todas las escenas de Camhedz.*/;
 	
 		case 127:
-			return "AWS_968" /*Meet Dr. Dre at the Los Santos Golf Club as leader to earn $50,000.*/;
+			return "AWS_968" /*Reúnete con Dr. Dre en el club de golf de Los Santos como líder para ganar 50µ000µ$.*/;
 	
 		case 128:
-			return "AWS_969" /*Locate this copy of Dr. Dre's stolen music as leader to earn $100,000.*/;
+			return "AWS_969" /*Localiza esta copia de la música robada de Dr. Dre como líder para ganar 100µ000µ$.*/;
 	
 		case 129:
-			return "AWS_970" /*Locate this copy of Dr. Dre's stolen music as leader to earn $100,000.*/;
+			return "AWS_970" /*Localiza esta copia de la música robada de Dr. Dre como líder para ganar 100µ000µ$.*/;
 	
 		case 130:
-			return "AWS_971" /*Locate this copy of Dr. Dre's stolen music as leader to earn $100,000.*/;
+			return "AWS_971" /*Localiza esta copia de la música robada de Dr. Dre como líder para ganar 100µ000µ$.*/;
 	
 		case 131:
-			return "AWS_972" /*Help Dr. Dre at Record A Studios as leader to earn $100,000.*/;
+			return "AWS_972" /*Ayuda a Dr. Dre en Record A Studios como líder para ganar 100µ000µ$.*/;
 	
 		case 132:
-			return "AWS_973" /*Track down the thief who stole Dr. Dre's music as leader to earn $250,000.*/;
+			return "AWS_973" /*Localiza al ladrón que robó la música de Dr. Dre como líder para ganar 250µ000µ$.*/;
 	
 		case 133:
-			return "AWS_974" /*Complete all of Dr. Dre's Story missions as a member of an Organization or Motorcycle Club to earn $100,000.*/;
+			return "AWS_974" /*Completa todas las misiones de historia de Dr. Dre como miembro de una organización o un club de moteros para ganar 100µ000µ$.*/;
 	
 		case 134:
-			return "AWS_975" /*Complete Seed Capital as Franklin to earn $100,000.*/;
+			return "AWS_975" /*Completa Capital inicial como Franklin para ganar 100µ000µ$.*/;
 	
 		case 135:
-			return "AWS_977" /*Complete Fire It Up as Franklin to earn $100,000.*/;
+			return "AWS_977" /*Completa Dale caña como Franklin para ganar 100µ000µ$.*/;
 	
 		case 136:
-			return "AWS_984" /*Complete OG Kush as Franklin to earn $100,000.*/;
+			return "AWS_984" /*Completa OG Kush como Franklin para ganar 100µ000µ$.*/;
 	
 		case 137:
-			return "AWS_980" /*Complete every Payphone Hit with the Assassination Bonus.*/;
+			return "AWS_980" /*Completa todos los asesinatos por encargo con bonificación de asesinato.*/;
 	
 		case 138:
-			return "AWS_981" /*Pet Chop.*/;
+			return "AWS_981" /*Acaricia a Chop.*/;
 	
 		case 139:
-			return "AWS_982" /*Visit Record A Studios.*/;
+			return "AWS_982" /*Visita Record A Studios.*/;
 	
 		case 140:
-			return "AWS_976" /*Complete Seed Capital as Lamar to earn $100,000.*/;
+			return "AWS_976" /*Completa Capital inicial como Lamar para ganar 100µ000µ$.*/;
 	
 		case 141:
-			return "AWS_986" /*Complete Fire It Up as Lamar to earn $100,000.*/;
+			return "AWS_986" /*Completa Dale caña como Lamar para ganar 100µ000µ$.*/;
 	
 		case 142:
-			return "AWS_985" /*Complete OG Kush as Lamar to earn $100,000.*/;
+			return "AWS_985" /*Completa OG Kush como Lamar para ganar 100µ000µ$.*/;
 	
 		case 143:
-			return "AWS_1010" /*Complete First Dose - Welcome to the Troupe as leader to earn $50,000.*/;
+			return "AWS_1010" /*Completa Primera dosis: Bienvenidos a la tropa como líder para ganar 50µ000µ$.*/;
 	
 		case 144:
-			return "AWS_987" /*Complete First Dose - Designated Driver as leader to earn $50,000.*/;
+			return "AWS_987" /*Completa Primera dosis: Conductor designado como líder para ganar 50µ000µ$.*/;
 	
 		case 145:
-			return "AWS_988" /*Complete First Dose - Fatal Incursion as leader to earn $50,000.*/;
+			return "AWS_988" /*Completa Primera dosis: Incursión letal como líder para ganar 50µ000µ$.*/;
 	
 		case 146:
-			return "AWS_989" /*Complete First Dose - Uncontrolled Substance as leader to earn $50,000.*/;
+			return "AWS_989" /*Completa Primera dosis: Sustancia descontrolada como líder para ganar 50µ000µ$.*/;
 	
 		case 147:
-			return "AWS_990" /*Complete First Dose - Make War not Love as leader to earn $50,000.*/;
+			return "AWS_990" /*Completa Primera dosis: Haz la guerra, no el amor como líder para ganar 50µ000µ$.*/;
 	
 		case 148:
-			return "AWS_991" /*Complete First Dose - Off the Rails as leader to earn $250,000.*/;
+			return "AWS_991" /*Completa Primera dosis: Descarrilado como líder para ganar 250µ000µ$.*/;
 	
 		case 149:
-			return "AWS_992" /*Complete all of the missions in the First Dose as a member of an Organization or Motorcycle Club to earn $100,000.*/;
+			return "AWS_992" /*Completa todas las misiones de Primera dosis como miembro de una organización o un club de moteros para ganar 100µ000µ$.*/;
 	
 		case 150:
-			return "AWS_993" /*Set up your own Acid Lab.*/;
+			return "AWS_993" /*Monta tu propio laboratorio de ácido.*/;
 	
 		case 151:
-			return "AWS_994" /*Boost the production speed inside your Acid Lab.*/;
+			return "AWS_994" /*Potencia la velocidad de producción de tu laboratorio de ácido.*/;
 	
 		case 152:
-			return "AWS_995" /*Complete Last Dose - This is an Intervention as leader to earn $100,000.*/;
+			return "AWS_995" /*Completa Última dosis: Intervención como líder para ganar 100µ000µ$.*/;
 	
 		case 153:
-			return "AWS_996" /*Complete Last Dose - Unusual Suspects as leader to earn $100,000.*/;
+			return "AWS_996" /*Completa Última dosis: Sospechosos inusuales como líder para ganar 100µ000µ$.*/;
 	
 		case 154:
-			return "AWS_997" /*Complete Last Dose - FriedMind as leader to earn $100,000.*/;
+			return "AWS_997" /*Completa Última dosis: FriedMind como líder para ganar 100µ000µ$.*/;
 	
 		case 155:
-			return "AWS_998" /*Complete Last Dose - Checking In as leader to earn $100,000.*/;
+			return "AWS_998" /*Completa Última dosis: Desintoxicación como líder para ganar 100µ000µ$.*/;
 	
 		case 156:
-			return "AWS_999" /*Complete Last Dose - BDKD as leader to earn $100,000.*/;
+			return "AWS_999" /*Completa Última dosis: Budonkadonk como líder para ganar 100µ000µ$.*/;
 	
 		case 157:
-			return "AWS_1000" /*Complete all of the missions in the Last Dose as a member of an Organization or Motorcycle Club to earn $100,000.*/;
+			return "AWS_1000" /*Completa todas las misiones de Última dosis como miembro de una organización o un club de moteros para ganar 100µ000µ$.*/;
 	
 		case 158:
-			return "AWS_1001" /*Complete 10 fares in a row during Taxi Work.*/;
+			return "AWS_1001" /*Completa 10 viajes seguidos trabajando de taxista.*/;
 	
 		case 159:
-			return "AWS_1012" /*Complete The Duggan Robbery as leader to earn $50,000.*/;
+			return "AWS_1012" /*Completa el robo de los Duggan como líder para ganar 50µ000µ$.*/;
 	
 		case 160:
-			return "AWS_1013" /*Complete The Cargo Ship Robbery as leader to earn $50,000.*/;
+			return "AWS_1013" /*Completa el robo del carguero como líder para ganar 50µ000µ$.*/;
 	
 		case 161:
-			return "AWS_1014" /*Complete The Podium Robbery as leader to earn $50,000.*/;
+			return "AWS_1014" /*Completa el robo del podio como líder para ganar 50µ000µ$.*/;
 	
 		case 162:
-			return "AWS_1015" /*Complete The Gangbanger Robbery as leader to earn $50,000.*/;
+			return "AWS_1015" /*Completa el robo del pandillero como líder para ganar 50µ000µ$.*/;
 	
 		case 163:
-			return "AWS_1016" /*Complete The McTony Robbery as leader to earn $50,000.*/;
+			return "AWS_1016" /*Completa el robo de McTony como líder para ganar 50µ000µ$.*/;
 	
 		case 164:
-			return "AWS_1017" /*Complete all the Elite Challenges for a Salvage Yard Robbery as leader to earn $50,000.*/;
+			return "AWS_1017" /*Completa todos los desafíos de élite de un robo del desguace como líder para ganar 50µ000µ$.*/;
 	
 		case 165:
-			return "AWS_1018" /*Complete a Salvage Yard Robbery with all optional Planning Works and Tasks also completed.*/;
+			return "AWS_1018" /*Completa un robo del desguace con todas las misiones de planificación y tareas opcionales.*/;
 	
 		case 166:
-			return "AWS_1024" /*Complete Slush Fund as leader.*/;
+			return "AWS_1024" /*Completa La caja B como líder.*/;
 	
 		case 167:
-			return "AWS_1025" /*Complete all the Setup missions for The Cluckin' Bell Farm Raid as leader.*/;
+			return "AWS_1025" /*Completa todas las misiones preparatorias del asalto a Cluckin' Bell como líder.*/;
 	
 		case 168:
-			return "AWS_1026" /*Complete The Cluckin' Bell Farm Raid as leader to earn $250,000.*/;
+			return "AWS_1026" /*Completa el asalto a Cluckin' Bell como líder para ganar 250µ000µ$.*/;
 	
 		case 169:
-			return "AWS_1027" /*Complete The Cluckin' Bell Farm Raid as a Crew Member to earn $250,000.*/;
+			return "AWS_1027" /*Completa el asalto a Cluckin' Bell como miemrbo de un equipo para ganar 250µ000µ$.*/;
 	
 		case 170:
-			return "AWS_1028" /*Complete The Cluckin' Bell Farm Raid as leader using the stealth approach.*/;
+			return "AWS_1028" /*Completa el asalto a Cluckin' Bell usando la estrategia Sigilo como líder.*/;
 	
 		case 171:
-			return "AWS_1029" /*Complete The Cluckin' Bell Farm Raid as leader using the aggressive approach.*/;
+			return "AWS_1029" /*Completa el asalto a Cluckin' Bell usando la estrategia Por la fuerza como líder.*/;
 	
 		case 172:
-			return "AWS_1030" /*Steal all weapons and gear in one playthrough of Concealed Weapons.*/;
+			return "AWS_1030" /*Roba todas las armas y todo el equipo en una sola partida de Armamento oculto.*/;
 	
 		case 173:
-			return "AWS_1031" /*Steal all getaway vehicles in one playthrough of Hit and Run.*/;
+			return "AWS_1031" /*Roba todas las armas y todo el equipo en una sola partida de Atraco y fuga.*/;
 	
 		case 174:
-			return "AWS_1032" /*Complete Most Wanted - Whitney as leader to earn $25,000.*/;
+			return "AWS_1032" /*Completa Se busca - Whitney como líder para ganar 25µ000µ$.*/;
 	
 		case 175:
-			return "AWS_1033" /*Complete Most Wanted - Lieberman as leader to earn $25,000.*/;
+			return "AWS_1033" /*Completa Se busca - Lieberman como líder para ganar 25µ000µ$.*/;
 	
 		case 176:
-			return "AWS_1034" /*Complete Most Wanted - O'Neil as leader to earn $25,000.*/;
+			return "AWS_1034" /*Completa Se busca - O'Neil como líder para ganar 25µ000µ$.*/;
 	
 		case 177:
-			return "AWS_1035" /*Complete Most Wanted - Thompson as leader to earn $25,000.*/;
+			return "AWS_1035" /*Completa Se busca - Thompson como líder para ganar 25µ000µ$.*/;
 	
 		case 178:
-			return "AWS_1036" /*Complete Most Wanted - Song as leader to earn $25,000.*/;
+			return "AWS_1036" /*Completa Se busca - Song como líder para ganar 25µ000µ$.*/;
 	
 		case 179:
-			return "AWS_1037" /*Complete Most Wanted - Garcia as leader to earn $25,000.*/;
+			return "AWS_1037" /*Completa Se busca - García como líder para ganar 25µ000µ$.*/;
 	
 		case 180:
-			return "AWS_1044" /*Win Assault on ATT-16 in under 25 minutes on the Attacking team.*/;
+			return "AWS_1044" /*Gana Asalto al ATT-16 en menos de 25 minutos en el equipo atacante.*/;
 	
 		case 181:
-			return "AWS_1045" /*Win Assault on ATT-16 without any parts of the aircraft carrier being destroyed.*/;
+			return "AWS_1045" /*Gana Asalto al ATT-16 sin que ninguna parte del portaviones sea destruida.*/;
 	
 		case 182:
-			return "AWS_1049" /*Take out each type of undead in Ludendorff Cemetery Survival.*/;
+			return "AWS_1049" /*Elimina a todos los tipos de muertos vivientes en Supervivencia en Ludendorff.*/;
 	}
 
 	switch (iParam0)
 	{
 		case 183:
-			return "AWS_1050" /*Complete The Fine Art File as leader to earn $50,000.*/;
+			return "AWS_1050" /*Completa Expediente: Bellas Artes como líder para ganar 50µ000µ$.*/;
 	
 		case 184:
-			return "AWS_1051" /*Complete The Brute Force File as leader to earn $50,000.*/;
+			return "AWS_1051" /*Completa Expediente: Fuerza bruta como líder para ganar 50µ000µ$.*/;
 	
 		case 185:
-			return "AWS_1052" /*Complete The Project Breakaway File as leader to earn $50,000.*/;
+			return "AWS_1052" /*Completa Expediente: Proyecto Escisión como líder para ganar 50µ000µ$.*/;
 	
 		case 186:
-			return "AWS_1053" /*Complete The Black Box File as leader to earn $50,000.*/;
+			return "AWS_1053" /*Completa Expediente: Caja negra como líder para ganar 50µ000µ$.*/;
 	
 		case 187:
-			return "AWS_1054" /*Complete all mission challenges for an FIB File to earn $50,000.*/;
+			return "AWS_1054" /*Completa todos los desafíos de misión de un expediente del FIB para ganar 50µ000µ$.*/;
 	
 		case 188:
-			return "AWS_1059" /*Complete Up and Running as leader.*/;
+			return "AWS_1059" /*Completa Calentando motores como líder.*/;
 	
 		case 189:
-			return "AWS_1060" /*Complete Setup: Mogul as leader.*/;
+			return "AWS_1060" /*Completa Preparatoria: Mogul como líder.*/;
 	
 		case 190:
-			return "AWS_1061" /*Complete Setup: Intel as leader.*/;
+			return "AWS_1061" /*Completa Preparatoria: Información como líder.*/;
 	
 		case 191:
-			return "AWS_1063" /*Complete Setup: Iron Mule as leader.*/;
+			return "AWS_1063" /*Completa Preparatoria: Iron Mule como líder.*/;
 	
 		case 192:
-			return "AWS_1064" /*Complete Setup: Ammunition as leader.*/;
+			return "AWS_1064" /*Completa Preparatoria: Munición como líder.*/;
 	
 		case 193:
-			return "AWS_1065" /*Deliver the Ammunition and all bonus objectives directly onto the trailer in Setup: Ammunition.*/;
+			return "AWS_1065" /*Entrega la munición y todos los objetivos adicionales directamente en el remolque en Preparatoria: Munición.*/;
 	
 		case 194:
-			return "AWS_1067" /*Complete The Titan Job as leader to earn $250,000.*/;
+			return "AWS_1067" /*Completa El robo del Titan como líder para ganar 50µ000µ$.*/;
 	
 		case 195:
-			return "AWS_1068" /*Complete The Titan Job as a Crew Member to earn $100,000.*/;
+			return "AWS_1068" /*Completa El robo del Titan como miembro de un equipo y obtén 100µ000µ$.*/;
 	
 		case 196:
-			return "AWS_1078" /*Complete Liquid Market as leader.*/;
+			return "AWS_1078" /*Completa Mercado líquido como líder.*/;
 	
 		case 197:
-			return "AWS_1079" /*Complete ROI as leader.*/;
+			return "AWS_1079" /*Completa Inversión rentable como líder.*/;
 	
 		case 198:
-			return "AWS_1080" /*Complete Compound Interest as leader.*/;
+			return "AWS_1080" /*Completa Interés compuesto como líder.*/;
 	
 		case 199:
-			return "AWS_1081" /*Complete Mutual Funds as leader.*/;
+			return "AWS_1081" /*Completa Fondos de inversión como líder.*/;
 	
 		case 200:
-			return "AWS_1082" /*Complete Current Liabilities as leader.*/;
+			return "AWS_1082" /*Completa Pasivos corrientes como líder.*/;
 	
 		case 201:
-			return "AWS_1083" /*Find the target without any hints during Current Liabilities.*/;
+			return "AWS_1083" /*Encuentra al objetivo sin usar ninguna pista en Pasivos corrientes.*/;
 	
 		case 202:
-			return "AWS_1084" /*Complete The Monopoly as leader.*/;
+			return "AWS_1084" /*Completa Monopolio como líder.*/;
 	
 		case 203:
-			return "AWS_1085" /*Steal all bonus loot in all Mr Faber Work.*/;
+			return "AWS_1085" /*Roba todos los botines adicionales en todos los trabajos del Sr. Faber.*/;
 	
 		case 204:
-			return "AWS_1086" /*Acquire Higgins Helitours or Smoke on the Water.*/;
+			return "AWS_1086" /*Adquiere Viajes en helicóptero Higgins o Smoke on the Water.*/;
 	
 		case 205:
-			return "AWS_1087" /*Find and collect all 10 Smoke on the Water Product in one day.*/;
+			return "AWS_1087" /*Encuentra y recoge los 10 productos de Smoke on the Water en un día.*/;
 	
 		case 206:
-			return "AWS_1088" /*Complete all deliveries for QuickiePharm in under 10 minutes.*/;
+			return "AWS_1088" /*Completa todos los repartos de QuickiePharm en menos de 10 minutos.*/;
 	
 		case 207:
-			return "AWS_1089" /*Take less than 10% damage transporting goods for Gruppe Sechs or Bobcat Security.*/;
+			return "AWS_1089" /*Entrega la mercancía para Gruppe Sechs o Bobcat Security con un daño menor del 10%.*/;
 	
 		case 208:
-			return "AWS_1090" /*Take out each type of special undead in the Cayo Perico Survival.*/;
+			return "AWS_1090" /*Elimina a todos los tipos de muertos vivientes especiales en Supervivencia en Cayo Perico.*/;
 	
 		case 209:
-			return "AWS_1091";
+			return "AWS_1091" /*Completa Mala prensa como líder.*/;
 	
 		case 210:
-			return "AWS_1092";
+			return "AWS_1092" /*Completa todos los objetivos llevando el taxi de KnoWay durante Mala prensa.*/;
 	
 		case 211:
-			return "AWS_1093";
+			return "AWS_1093" /*Completa Desde dentro como líder.*/;
 	
 		case 212:
-			return "AWS_1094";
+			return "AWS_1094" /*Elimina al jefe usando el explosivo durante Desde dentro.*/;
 	
 		case 213:
-			return "AWS_1095";
+			return "AWS_1095" /*Completa Visión de túnel como líder.*/;
 	
 		case 214:
-			return "AWS_1096";
+			return "AWS_1096" /*Realiza el salto acrobático de la salida del túnel del metro en Visión de túnel.*/;
 	
 		case 215:
-			return "AWS_1097";
+			return "AWS_1097" /*Completa Trapos sucios como líder.*/;
 	
 		case 216:
-			return "AWS_1098";
+			return "AWS_1098" /*Recoge toda la basura durante Trapos sucios.*/;
 	
 		case 217:
-			return "AWS_1099";
+			return "AWS_1099" /*Completa Visita fugaz como líder para ganar 250µ000µ$.*/;
 	
 		case 218:
-			return "AWS_1100";
+			return "AWS_1100" /*Completa todas las misiones de KnoWay Out como miembro de una Crew para ganar 250µ000µ$.*/;
 	
 		case 219:
-			return "AWS_1101";
+			return "AWS_1101" /*Completa el desafío de élite de Visita fugaz.*/;
 	
 		case 220:
-			return "AWS_1102";
+			return "AWS_1102" /*Completa Hogar, dulce hogar para ganar 500µ000µ$.*/;
 	
 		case 222:
-			return "AWS_1103";
+			return "AWS_1103" /*Visita tu mansión.*/;
 	
 		case 223:
-			return "AWS_1105";
+			return "AWS_1105" /*Acaricia a un perro o a un gato en una mansión.*/;
 	
 		case 224:
-			return "AWS_1106";
+			return "AWS_1106" /*Gana Asalto a la mansión como atacante y defensor.*/;
 	
 		case 225:
-			return "AWS_1107";
+			return "AWS_1107" /*Completa todas las entregas en Reparto de periódicos con más de tres minutos restantes.*/;
 	
 		case 221:
-			return "AWS_1108";
+			return "AWS_1108" /*Elimina a todos los enemigos en la escena a cámara lenta durante Hogar, dulce hogar.*/;
 	
 		default:
 		
@@ -26076,124 +26076,124 @@ char* func_177(int iParam0, int iParam1, BOOL bParam2) // Position - 0x1BCCB (11
 			return "AWT_820";
 	
 		case 53:
-			return "AWT_836" /*Loose Cheng*/;
+			return "AWT_836" /*Buscando a Cheng*/;
 	
 		case 54:
-			return "AWT_837" /*House Keeping*/;
+			return "AWT_837" /*Servicio de limpieza*/;
 	
 		case 55:
-			return "AWT_838" /*Strong Arm Tactics*/;
+			return "AWT_838" /*Por la fuerza*/;
 	
 		case 56:
-			return "AWT_839" /*Play to Win*/;
+			return "AWT_839" /*Juega y gana*/;
 	
 		case 57:
-			return "AWT_840" /*Bad Beat*/;
+			return "AWT_840" /*Mala racha*/;
 	
 		case 58:
-			return "AWT_841" /*Cashing Out*/;
+			return "AWT_841" /*Cobra lo tuyo*/;
 	
 		case 59:
-			return "AWT_842" /*Straight*/;
+			return "AWT_842" /*Escalera*/;
 	
 		case 62:
-			return "AWT_846" /*Lucky Lucky*/;
+			return "AWT_846" /*Qué suerte la tuya*/;
 	
 		case 60:
-			return "AWT_843" /*Top Pair*/;
+			return "AWT_843" /*Pareja más alta*/;
 	
 		case 61:
-			return "AWT_844" /*Full House*/;
+			return "AWT_844" /*Full house*/;
 	
 		case 63:
-			return "AWT_857" /*Scope Out*/;
+			return "AWT_857" /*Reconocimiento*/;
 	
 		case 64:
-			return "AWT_858" /*All Crewed Up*/;
+			return "AWT_858" /*Ya estamos todos*/;
 	
 		case 65:
-			return "AWT_859" /*Moving On*/;
+			return "AWT_859" /*Pasando página*/;
 	
 		case 66:
-			return "AWT_860" /*After Party*/;
+			return "AWT_860" /*Fiesta trasera*/;
 	
 		case 67:
-			return "AWT_861" /*Gunman*/;
+			return "AWT_861" /*Pistolero*/;
 	
 		case 68:
-			return "AWT_862" /*Smash & Grab*/;
+			return "AWT_862" /*Ataca y atraca*/;
 	
 		case 69:
-			return "AWT_863" /*Hidden In Plain Sight*/;
+			return "AWT_863" /*Escondidos a plena vista*/;
 	
 		case 70:
-			return "AWT_864" /*Undetected*/;
+			return "AWT_864" /*Imperceptible*/;
 	
 		case 71:
-			return "AWT_865" /*All Rounder*/;
+			return "AWT_865" /*Versátil*/;
 	
 		case 72:
-			return "AWT_866" /*Elite Thief*/;
+			return "AWT_866" /*Ladrón de élite*/;
 	
 		case 73:
-			return "AWT_867" /*Professional*/;
+			return "AWT_867" /*Profesional*/;
 	
 		case 74:
-			return "AWT_868" /*Support Act*/;
+			return "AWT_868" /*Cuenta conmigo*/;
 	
 		case 75:
-			return "AWT_869" /*Shafted*/;
+			return "AWT_869" /*Por el hueco*/;
 	
 		case 76:
-			return "AWT_870" /*Collector*/;
+			return "AWT_870" /*Coleccionista*/;
 	
 		case 77:
 			return "AWT_871" /*Dead Eye*/;
 	
 		case 78:
-			return "AWT_872" /*Pistols At Dawn*/;
+			return "AWT_872" /*Pistolas al alba*/;
 	
 		case 79:
-			return "AWT_873" /*Beat The Traffic*/;
+			return "AWT_873" /*Evita el tráfico*/;
 	
 		case 80:
-			return "AWT_874" /*All Wheels*/;
+			return "AWT_874" /*Todas las ruedas*/;
 	
 		case 81:
-			return "AWT_875" /*Feelin' Groggy*/;
+			return "AWT_875" /*Un poco grogui*/;
 	
 		case 82:
-			return "AWT_876" /*Ape Escape*/;
+			return "AWT_876" /*Una escapada muy mona*/;
 	
 		case 83:
-			return "AWT_877" /*Monkey Mind*/;
+			return "AWT_877" /*Mente de mono*/;
 	
 		case 84:
-			return "AWT_878" /*Aquatic Ape*/;
+			return "AWT_878" /*Mono acuático*/;
 	
 		case 85:
-			return "AWT_879" /*Keeping The Faith*/;
+			return "AWT_879" /*Conservando la fe*/;
 	
 		case 86:
-			return "AWT_880" /*True Love*/;
+			return "AWT_880" /*Amor verdadero*/;
 	
 		case 87:
-			return "AWT_881" /*Nemesis*/;
+			return "AWT_881" /*Némesis*/;
 	
 		case 88:
-			return "AWT_882" /*Friendzoned*/;
+			return "AWT_882" /*En la friendzone*/;
 	
 		case 89:
-			return "AWT_886" /*King Of QUB3D*/;
+			return "AWT_886" /*Líder de QUB3D*/;
 	
 		case 90:
-			return "AWT_887" /*Qubism*/;
+			return "AWT_887" /*Qubismo*/;
 	
 		case 93:
-			return "AWT_888" /*Crank It To 11*/;
+			return "AWT_888" /*Súbelo al máximo*/;
 	
 		case 92:
-			return "AWT_889" /*God of QUB3D*/;
+			return "AWT_889" /*Dios de QUB3D*/;
 	
 		case 91:
 			return "AWT_890" /*Qubits*/;
@@ -26202,400 +26202,400 @@ char* func_177(int iParam0, int iParam1, BOOL bParam2) // Position - 0x1BCCB (11
 			return "AWT_891" /*11 11*/;
 	
 		case 95:
-			return "AWT_917" /*In And Out*/;
+			return "AWT_917" /*Entrar y salir*/;
 	
 		case 96:
-			return "AWT_918" /*Easy Access*/;
+			return "AWT_918" /*Acceso fácil*/;
 	
 		case 97:
-			return "AWT_919" /*It's A Steal*/;
+			return "AWT_919" /*Una ganga*/;
 	
 		case 98:
-			return "AWT_920" /*Maximum Disruption*/;
+			return "AWT_920" /*Disrupción máxima*/;
 	
 		case 99:
-			return "AWT_921" /*The Cayo Perico Heist*/;
+			return "AWT_921" /*Golpe a Cayo Perico*/;
 	
 		case 100:
-			return "AWT_922" /*Going Alone*/;
+			return "AWT_922" /*A tu bola*/;
 	
 		case 101:
-			return "AWT_923" /*Teamwork*/;
+			return "AWT_923" /*Trabajo en equipo*/;
 	
 		case 102:
-			return "AWT_924" /*Travel Plans*/;
+			return "AWT_924" /*Planes de viaje*/;
 	
 		case 103:
-			return "AWT_925" /*Professional Thief*/;
+			return "AWT_925" /*Profesional de los robos*/;
 	
 		case 104:
-			return "AWT_926" /*Cat Burglar*/;
+			return "AWT_926" /*Robo sigiloso*/;
 	
 		case 105:
-			return "AWT_927" /*One Of Them*/;
+			return "AWT_927" /*Uno de ellos*/;
 	
 		case 106:
-			return "AWT_928" /*Go For Gold*/;
+			return "AWT_928" /*A por el gordo*/;
 	
 		case 107:
-			return "AWT_929" /*Elitist*/;
+			return "AWT_929" /*Elitista*/;
 	
 		case 108:
-			return "AWT_930" /*Blow Hard*/;
+			return "AWT_930" /*Vaya fantasma*/;
 	
 		case 109:
-			return "AWT_931" /*Helping Out*/;
+			return "AWT_931" /*Echando una mano*/;
 	
 		case 110:
-			return "AWT_932" /*Courier*/;
+			return "AWT_932" /*Asistente*/;
 	
 		case 111:
-			return "AWT_933" /*Party Vibes*/;
+			return "AWT_933" /*Alma de la fiesta*/;
 	
 		case 112:
-			return "AWT_934" /*Helping Hand*/;
+			return "AWT_934" /*Mano amiga*/;
 	
 		case 113:
-			return "AWT_944" /*LS Car Meet*/;
+			return "AWT_944" /*Club automovilístico de LS*/;
 	
 		case 114:
-			return "AWT_951" /*Pro Car Exporter*/;
+			return "AWT_951" /*Exportador de coches profesional*/;
 	
 		case 115:
-			return "AWT_953" /*The Union Depository Contract*/;
+			return "AWT_953" /*El contrato del Union Depository*/;
 	
 		case 116:
-			return "AWT_954" /*The Superdollar Deal*/;
+			return "AWT_954" /*El acuerdo de superdólares*/;
 	
 		case 117:
-			return "AWT_955" /*The Bank Contract*/;
+			return "AWT_955" /*El contrato del banco*/;
 	
 		case 118:
-			return "AWT_956" /*The E.C.U. Job*/;
+			return "AWT_956" /*El golpe de las ECU*/;
 	
 		case 119:
-			return "AWT_957" /*The Prison Contract*/;
+			return "AWT_957" /*El contrato de la prisión*/;
 	
 		case 120:
-			return "AWT_958" /*The Agency Deal*/;
+			return "AWT_958" /*El acuerdo de la agencia*/;
 	
 		case 121:
-			return "AWT_959" /*The Lost Contract*/;
+			return "AWT_959" /*El contrato de los Lost*/;
 	
 		case 122:
-			return "AWT_960" /*The Data Contract*/;
+			return "AWT_960" /*El contrato de información*/;
 	
 		case 123:
-			return "AWT_963" /*Straight To Video*/;
+			return "AWT_963" /*Solo en VHS*/;
 	
 		case 124:
-			return "AWT_964" /*Monkey See Monkey Do*/;
+			return "AWT_964" /*Tengo todo el mono*/;
 	
 		case 125:
-			return "AWT_965" /*Trained To Kill*/;
+			return "AWT_965" /*Entrenado para matar*/;
 	
 		case 126:
-			return "AWT_966" /*The Director*/;
+			return "AWT_966" /*Mejor dirección*/;
 	
 		case 127:
-			return "AWT_968" /*On Course*/;
+			return "AWT_968" /*En el campo*/;
 	
 		case 128:
-			return "AWT_969" /*Nightlife Leak*/;
+			return "AWT_969" /*Filtración nocturna*/;
 	
 		case 129:
-			return "AWT_970" /*High Society Leak*/;
+			return "AWT_970" /*Filtración en la alta sociedad*/;
 	
 		case 130:
-			return "AWT_971" /*South Central Leak*/;
+			return "AWT_971" /*Filtración en South Central*/;
 	
 		case 131:
-			return "AWT_972" /*Studio Time*/;
+			return "AWT_972" /*En el estudio*/;
 	
 		case 132:
-			return "AWT_973" /*Don't Fuck With Dre*/;
+			return "AWT_973" /*No jodas a Dre*/;
 	
 		case 133:
-			return "AWT_974" /*Backup*/;
+			return "AWT_974" /*Refuerzos*/;
 	
 		case 134:
-			return "AWT_975" /*Seed Capital - Franklin*/;
+			return "AWT_975" /*Capital inicial: Franklin*/;
 	
 		case 135:
-			return "AWT_977" /*Fire It Up - Franklin*/;
+			return "AWT_977" /*Dale caña: Franklin*/;
 	
 		case 136:
-			return "AWT_984" /*OG Kush  - Franklin*/;
+			return "AWT_984" /*OG Kush: Franklin*/;
 	
 		case 137:
-			return "AWT_980" /*Contract Killer*/;
+			return "AWT_980" /*Asesino por encargo*/;
 	
 		case 138:
-			return "AWT_981" /*A Dog's Best Friend*/;
+			return "AWT_981" /*El mejor amigo del perro*/;
 	
 		case 139:
-			return "AWT_982" /*Sound Check*/;
+			return "AWT_982" /*Prueba de sonido*/;
 	
 		case 140:
-			return "AWT_976" /*Seed Capital - Lamar*/;
+			return "AWT_976" /*Capital inicial: Lamar*/;
 	
 		case 141:
-			return "AWT_986" /*Fire It Up - Lamar*/;
+			return "AWT_986" /*Dale caña: Lamar*/;
 	
 		case 142:
-			return "AWT_985" /*OG Kush  - Lamar*/;
+			return "AWT_985" /*OG Kush: Lamar*/;
 	
 		case 143:
-			return "AWT_1010" /*Welcome to the Troupe*/;
+			return "AWT_1010" /*Bienvenidos a la tropa*/;
 	
 		case 144:
-			return "AWT_987" /*Designated Driver*/;
+			return "AWT_987" /*Conductor designado*/;
 	
 		case 145:
-			return "AWT_988" /*Fatal Incursion*/;
+			return "AWT_988" /*Incursión letal*/;
 	
 		case 146:
-			return "AWT_989" /*Uncontrolled Substance*/;
+			return "AWT_989" /*Sustancia descontrolada*/;
 	
 		case 147:
-			return "AWT_990" /*Make War not Love*/;
+			return "AWT_990" /*Haz la guerra, no el amor*/;
 	
 		case 148:
-			return "AWT_991" /*Off The Rails*/;
+			return "AWT_991" /*Descarrilado*/;
 	
 		case 149:
-			return "AWT_992" /*Back It Up*/;
+			return "AWT_992" /*Copia de seguridad*/;
 	
 		case 150:
-			return "AWT_993" /*Lick My Acid*/;
+			return "AWT_993" /*Chupa mi ácido*/;
 	
 		case 151:
-			return "AWT_994" /*Chemical Reaction*/;
+			return "AWT_994" /*Reacción química*/;
 	
 		case 152:
-			return "AWT_995" /*This is an Intervention*/;
+			return "AWT_995" /*Intervención*/;
 	
 		case 153:
-			return "AWT_996" /*Unusual Suspects*/;
+			return "AWT_996" /*Sospechosos inusuales*/;
 	
 		case 154:
 			return "AWT_997" /*FriedMind*/;
 	
 		case 155:
-			return "AWT_998" /*Checking In*/;
+			return "AWT_998" /*Desintoxicación*/;
 	
 		case 156:
-			return "AWT_999" /*BDKD*/;
+			return "AWT_999" /*Budonkadonk*/;
 	
 		case 157:
-			return "AWT_1000" /*Back It Up 2*/;
+			return "AWT_1000" /*Copia de seguridad 2*/;
 	
 		case 158:
-			return "AWT_1001" /*5 Star Ride*/;
+			return "AWT_1001" /*Viaje de 5 estrellas*/;
 	
 		case 159:
-			return "AWT_1012" /*The Duggan Robbery*/;
+			return "AWT_1012" /*El robo de los Duggan*/;
 	
 		case 160:
-			return "AWT_1013" /*The Cargo Ship Robbery*/;
+			return "AWT_1013" /*El robo del carguero*/;
 	
 		case 161:
-			return "AWT_1014" /*The Podium Robbery*/;
+			return "AWT_1014" /*El robo del podio*/;
 	
 		case 162:
-			return "AWT_1015" /*The Gangbanger Robbery*/;
+			return "AWT_1015" /*El robo del pandillero*/;
 	
 		case 163:
-			return "AWT_1016" /*The McTony Robbery*/;
+			return "AWT_1016" /*El robo de McTony*/;
 	
 		case 164:
-			return "AWT_1017" /*Perfect Run*/;
+			return "AWT_1017" /*Sin fallos*/;
 	
 		case 165:
-			return "AWT_1018" /*Extra Mile*/;
+			return "AWT_1018" /*Esfuerzo adicional*/;
 	
 		case 166:
-			return "AWT_1024" /*Slush Fund*/;
+			return "AWT_1024" /*La caja B*/;
 	
 		case 167:
-			return "AWT_1025" /*Best Laid Plans*/;
+			return "AWT_1025" /*Planes perfectos*/;
 	
 		case 168:
-			return "AWT_1026" /*The Cluckin' Bell Farm Raid*/;
+			return "AWT_1026" /*Asalto a Cluckin' Bell*/;
 	
 		case 169:
-			return "AWT_1027" /*Pecking Order*/;
+			return "AWT_1027" /*El ala derecha*/;
 	
 		case 170:
-			return "AWT_1028" /*Sly Fox*/;
+			return "AWT_1028" /*Zorro astuto*/;
 	
 		case 171:
-			return "AWT_1029" /*Cock Fight*/;
+			return "AWT_1029" /*Pelea de gallos*/;
 	
 		case 172:
-			return "AWT_1030" /*All The Sides*/;
+			return "AWT_1030" /*Menú completo*/;
 	
 		case 173:
-			return "AWT_1031" /*Fly The Coop*/;
+			return "AWT_1031" /*Ahueca el ala*/;
 	
 		case 174:
-			return "AWT_1032" /*Get Whitney*/;
+			return "AWT_1032" /*Dale caza a Whitney*/;
 	
 		case 175:
-			return "AWT_1033" /*Get Lieberman*/;
+			return "AWT_1033" /*Dale caza a Lieberman*/;
 	
 		case 176:
-			return "AWT_1034" /*Get O'Neil*/;
+			return "AWT_1034" /*Dale caza a O'Neil*/;
 	
 		case 177:
-			return "AWT_1035" /*Get Thompson*/;
+			return "AWT_1035" /*Dale caza a Thompson*/;
 	
 		case 178:
-			return "AWT_1036" /*Get Song*/;
+			return "AWT_1036" /*Dale caza a Song*/;
 	
 		case 179:
-			return "AWT_1037" /*Get Garcia*/;
+			return "AWT_1037" /*Dale caza a García*/;
 	
 		case 180:
-			return "AWT_1044" /*Priority Boarding*/;
+			return "AWT_1044" /*Embarque prioritario*/;
 	
 		case 181:
-			return "AWT_1045" /*Not A Scratch*/;
+			return "AWT_1045" /*Sin rasguños*/;
 	
 		case 182:
-			return "AWT_1049" /*One Of A Kind*/;
+			return "AWT_1049" /*Único en su especie*/;
 	}
 
 	switch (iParam0)
 	{
 		case 183:
-			return "AWT_1050" /*The Fine Art File*/;
+			return "AWT_1050" /*Expediente: Bellas Artes*/;
 	
 		case 184:
-			return "AWT_1051" /*The Brute Force File*/;
+			return "AWT_1051" /*Expediente: Fuerza bruta*/;
 	
 		case 185:
-			return "AWT_1052" /*The Project Breakaway File*/;
+			return "AWT_1052" /*Expediente: Proyecto Escisión*/;
 	
 		case 186:
-			return "AWT_1053" /*The Black Box File*/;
+			return "AWT_1053" /*Expediente: Caja negra*/;
 	
 		case 187:
-			return "AWT_1054" /*Bonus Points*/;
+			return "AWT_1054" /*Puntos de bonificación*/;
 	
 		case 188:
-			return "AWT_1059" /*Up And Running*/;
+			return "AWT_1059" /*Calentando motores*/;
 	
 		case 189:
 			return "AWT_1060" /*Mogul*/;
 	
 		case 190:
-			return "AWT_1061" /*Intel*/;
+			return "AWT_1061" /*Información*/;
 	
 		case 191:
 			return "AWT_1063" /*Iron Mule*/;
 	
 		case 192:
-			return "AWT_1064" /*Ammunition*/;
+			return "AWT_1064" /*Munición*/;
 	
 		case 193:
-			return "AWT_1065" /*Direct Delivery*/;
+			return "AWT_1065" /*Entrega directa*/;
 	
 		case 194:
-			return "AWT_1067" /*The Titan Job*/;
+			return "AWT_1067" /*El robo del Titan*/;
 	
 		case 195:
-			return "AWT_1068" /*Permanent Contract*/;
+			return "AWT_1068" /*Contrato indefinido*/;
 	
 		case 196:
-			return "AWT_1078" /*Liquid Market*/;
+			return "AWT_1078" /*Mercado líquido*/;
 	
 		case 197:
-			return "AWT_1079" /*ROI*/;
+			return "AWT_1079" /*Inversión rentable*/;
 	
 		case 198:
-			return "AWT_1080" /*Compound Interest*/;
+			return "AWT_1080" /*Interés compuesto*/;
 	
 		case 199:
-			return "AWT_1081" /*Mutual Funds*/;
+			return "AWT_1081" /*Fondos de inversión*/;
 	
 		case 200:
-			return "AWT_1082" /*Current Liabilities*/;
+			return "AWT_1082" /*Pasivos corrientes*/;
 	
 		case 201:
-			return "AWT_1083" /*Gut Instinct*/;
+			return "AWT_1083" /*Corazonada*/;
 	
 		case 202:
-			return "AWT_1084" /*The Monopoly*/;
+			return "AWT_1084" /*Monopolio*/;
 	
 		case 203:
-			return "AWT_1085" /*Profit Maximization*/;
+			return "AWT_1085" /*Optimización de beneficios*/;
 	
 		case 204:
-			return "AWT_1086" /*Diversification*/;
+			return "AWT_1086" /*Diversificación*/;
 	
 		case 205:
-			return "AWT_1087" /*Kush Collector*/;
+			return "AWT_1087" /*Coleccionista de kush*/;
 	
 		case 206:
-			return "AWT_1088" /*First Responder*/;
+			return "AWT_1088" /*Primer interviniente*/;
 	
 		case 207:
-			return "AWT_1089" /*Ironclad*/;
+			return "AWT_1089" /*Acorazado*/;
 	
 		case 208:
-			return "AWT_1090" /*The Indiscriminator*/;
+			return "AWT_1090" /*El imparcial*/;
 	
 		case 209:
-			return "AWT_1091";
+			return "AWT_1091" /*Mala prensa*/;
 	
 		case 210:
-			return "AWT_1092";
+			return "AWT_1092" /*Autónomo*/;
 	
 		case 211:
-			return "AWT_1093";
+			return "AWT_1093" /*Desde dentro*/;
 	
 		case 212:
-			return "AWT_1094";
+			return "AWT_1094" /*Liderazgo explosivo*/;
 	
 		case 213:
-			return "AWT_1095";
+			return "AWT_1095" /*Visión de túnel*/;
 	
 		case 214:
-			return "AWT_1096";
+			return "AWT_1096" /*Acción en el metro*/;
 	
 		case 215:
-			return "AWT_1097";
+			return "AWT_1097" /*Trapos sucios*/;
 	
 		case 216:
-			return "AWT_1098";
+			return "AWT_1098" /*Cero residuos*/;
 	
 		case 217:
-			return "AWT_1099";
+			return "AWT_1099" /*Visita fugaz*/;
 	
 		case 218:
-			return "AWT_1100";
+			return "AWT_1100" /*Por voluntad propia*/;
 	
 		case 219:
-			return "AWT_1101";
+			return "AWT_1101" /*Visto y no visto*/;
 	
 		case 220:
-			return "AWT_1102";
+			return "AWT_1102" /*Hogar, dulce hogar*/;
 	
 		case 222:
-			return "AWT_1103";
+			return "AWT_1103" /*Un sitio como este*/;
 	
 		case 223:
-			return "AWT_1104";
+			return "AWT_1104" /*Instinto animal*/;
 	
 		case 224:
-			return "AWT_1106";
+			return "AWT_1106" /*Asalto a la mansión*/;
 	
 		case 225:
-			return "AWT_1107";
+			return "AWT_1107" /*Última hora*/;
 	
 		case 221:
-			return "AWT_1108";
+			return "AWT_1108" /*Pisando huevos*/;
 	
 		default:
 		
@@ -27697,7 +27697,7 @@ char* func_183(int iParam0, int iParam1, int iParam2) // Position - 0x1DC05 (121
 			return "KillMeleeWeapons";
 	
 		case 9:
-			return "Headshots" /*Headshot kills*/;
+			return "Headshots" /*Bajas por tiros a la cabeza*/;
 	
 		case 10:
 			return "BlowupVehicles";
@@ -28514,844 +28514,844 @@ char* func_184(int iParam0, int iParam1, int iParam2) // Position - 0x1E59F (124
 	
 		case 87:
 			if (iParam1 == 5)
-				return "AWS_845_4" /*Complete 50 Casino Work missions for Agatha and earn $100,000.*/;
+				return "AWS_845_4" /*Completa 50 misiones de trabajos en el casino para Agatha y gana 100µ000µ$.*/;
 			else if (iParam1 == 4)
-				return "AWS_845_3" /*Complete 25 Casino Work missions for Agatha and earn $50,000.*/;
+				return "AWS_845_3" /*Completa 25 misiones de trabajos en el casino para Agatha y gana 50µ000µ$.*/;
 			else if (iParam1 == 3)
-				return "AWS_845_2" /*Complete 10 Casino Work missions for Agatha and earn $20,000.*/;
+				return "AWS_845_2" /*Completa 10 misiones de trabajos en el casino para Agatha y gana 20µ000µ$.*/;
 			else
-				return "AWS_845_1" /*Complete 5 Casino Work missions for Agatha and earn $10,000.*/;
+				return "AWS_845_1" /*Completa 5 misiones de trabajos en el casino para Agatha y gana 10µ000µ$.*/;
 			break;
 	
 		case 88:
 			if (iParam1 == 5)
-				return "AWS_847_4" /*Complete 40 prep missions as part of The Diamond Casino Heist.*/;
+				return "AWS_847_4" /*Completa 40 misiones preliminares de Golpe a The Diamond Casino.*/;
 			else if (iParam1 == 4)
-				return "AWS_847_3" /*Complete 20 prep missions as part of The Diamond Casino Heist.*/;
+				return "AWS_847_3" /*Completa 20 misiones preliminares de Golpe a The Diamond Casino.*/;
 			else if (iParam1 == 3)
-				return "AWS_847_2" /*Complete 10 prep missions as part of The Diamond Casino Heist.*/;
+				return "AWS_847_2" /*Completa 10 misiones preliminares de Golpe a The Diamond Casino.*/;
 			else
-				return "AWS_847_1" /*Complete 5 prep missions as part of The Diamond Casino Heist.*/;
+				return "AWS_847_1" /*Completa 5 misiones preliminares de Golpe a The Diamond Casino.*/;
 			break;
 	
 		case 89:
 			if (iParam1 == 5)
-				return "AWS_848_4" /*Use the Drone to tranquilize 20 guards during The Diamond Casino Heist.*/;
+				return "AWS_848_4" /*Usa el dron para disparar tranquilizantes a 20 guardias en Golpe a The Diamond Casino.*/;
 			else if (iParam1 == 4)
-				return "AWS_848_3" /*Use the Drone to tranquilize 15 guards during The Diamond Casino Heist.*/;
+				return "AWS_848_3" /*Usa el dron para disparar tranquilizantes a 15 guardias en Golpe a The Diamond Casino.*/;
 			else if (iParam1 == 3)
-				return "AWS_848_2" /*Use the Drone to tranquilize 10 guards during The Diamond Casino Heist.*/;
+				return "AWS_848_2" /*Usa el dron para disparar tranquilizantes a 10 guardias en Golpe a The Diamond Casino.*/;
 			else
-				return "AWS_848_1" /*Use the Drone to tranquilize 5 guards during The Diamond Casino Heist.*/;
+				return "AWS_848_1" /*Usa el dron para disparar tranquilizantes a 5 guardias en Golpe a The Diamond Casino.*/;
 			break;
 	
 		case 90:
 			if (iParam1 == 5)
-				return "AWS_849_4" /*Steal a total of $100000 from the Daily Vault during The Diamond Casino Heist.*/;
+				return "AWS_849_4" /*Roba un total de 100 000 $ en la cámara acorazada de ingresos diarios en Golpe a The Diamond Casino.*/;
 			else if (iParam1 == 4)
-				return "AWS_849_3" /*Steal a total of $75000 from the Daily Vault during The Diamond Casino Heist.*/;
+				return "AWS_849_3" /*Roba un total de 75 000 $ en la cámara acorazada de ingresos diarios en Golpe a The Diamond Casino.*/;
 			else if (iParam1 == 3)
-				return "AWS_849_2" /*Steal a total of $50000 from the Daily Vault during The Diamond Casino Heist.*/;
+				return "AWS_849_2" /*Roba un total de 50 000 $ en la cámara acorazada de ingresos diarios en Golpe a The Diamond Casino.*/;
 			else
-				return "AWS_849_1" /*Steal a total of $25000 from the Daily Vault during The Diamond Casino Heist.*/;
+				return "AWS_849_1" /*Roba un total de 25 000 $ en la cámara acorazada de ingresos diarios en Golpe a The Diamond Casino.*/;
 			break;
 	
 		case 91:
 			if (iParam1 == 5)
-				return "AWS_850_4" /*Destroy 40 security cameras during The Diamond Casino Heist.*/;
+				return "AWS_850_4" /*Destruye 40 cámaras de seguridad en Golpe a The Diamond Casino.*/;
 			else if (iParam1 == 4)
-				return "AWS_850_3" /*Destroy 30 security cameras during The Diamond Casino Heist.*/;
+				return "AWS_850_3" /*Destruye 30 cámaras de seguridad en Golpe a The Diamond Casino.*/;
 			else if (iParam1 == 3)
-				return "AWS_850_2" /*Destroy 20 security cameras during The Diamond Casino Heist.*/;
+				return "AWS_850_2" /*Destruye 20 cámaras de seguridad en Golpe a The Diamond Casino.*/;
 			else
-				return "AWS_850_1" /*Destroy 10 security cameras during The Diamond Casino Heist.*/;
+				return "AWS_850_1" /*Destruye 10 cámaras de seguridad en Golpe a The Diamond Casino.*/;
 			break;
 	
 		case 92:
 			if (iParam1 == 5)
-				return "AWS_851_4" /*Kill 40 flying critters across all levels of Badlands Revenge II.*/;
+				return "AWS_851_4" /*Mata a 40 animales voladores en todos los niveles de Badlands Revenge II.*/;
 			else if (iParam1 == 4)
-				return "AWS_851_3" /*Kill 20 flying critters across all levels of Badlands Revenge II.*/;
+				return "AWS_851_3" /*Mata a 20 animales voladores en todos los niveles de Badlands Revenge II.*/;
 			else if (iParam1 == 3)
-				return "AWS_851_2" /*Kill 10 flying critters across all levels of Badlands Revenge II.*/;
+				return "AWS_851_2" /*Mata a 10 animales voladores en todos los niveles de Badlands Revenge II.*/;
 			else
-				return "AWS_851_1" /*Kill 5 flying critters across all levels of Badlands Revenge II.*/;
+				return "AWS_851_1" /*Mata a 5 animales voladores en todos los niveles de Badlands Revenge II.*/;
 			break;
 	
 		case 93:
 			if (iParam1 == 5)
-				return "AWS_852_4" /*Win 40 races against an opponent in Race And Chase.*/;
+				return "AWS_852_4" /*Gana 40 carreras a un rival en Race And Chase.*/;
 			else if (iParam1 == 4)
-				return "AWS_852_3" /*Win 20 races against an opponent in Race And Chase.*/;
+				return "AWS_852_3" /*Gana 20 carreras a un rival en Race And Chase.*/;
 			else if (iParam1 == 3)
-				return "AWS_852_2" /*Win 10 races against an opponent in Race And Chase.*/;
+				return "AWS_852_2" /*Gana 10 carreras a un rival en Race And Chase.*/;
 			else
-				return "AWS_852_1" /*Win 5 races against an opponent in Race And Chase.*/;
+				return "AWS_852_1" /*Gana 5 carreras a un rival en Race And Chase.*/;
 			break;
 	
 		case 94:
 			if (iParam1 == 5)
-				return "AWS_853_4" /*Score at least 1000000 during a single play of The Wizard's Ruin.*/;
+				return "AWS_853_4" /*Consigue una puntuación de al menos 1µ000µ000 durante una partida de The Wizard's Ruin.*/;
 			else if (iParam1 == 4)
-				return "AWS_853_3" /*Score at least 750000 during a single play of The Wizard's Ruin.*/;
+				return "AWS_853_3" /*Consigue una puntuación de al menos 750µ000 durante una partida de The Wizard's Ruin.*/;
 			else if (iParam1 == 3)
-				return "AWS_853_2" /*Score at least 500000 during a single play of The Wizard's Ruin.*/;
+				return "AWS_853_2" /*Consigue una puntuación de al menos 500µ000 durante una partida de The Wizard's Ruin.*/;
 			else
-				return "AWS_853_1" /*Score at least 250000 during a single play of The Wizard's Ruin.*/;
+				return "AWS_853_1" /*Consigue una puntuación de al menos 250µ000 durante una partida de The Wizard's Ruin.*/;
 			break;
 	
 		case 95:
 			if (iParam1 == 5)
-				return "AWS_854_4" /*Collect 950000 treasures during a single play of The Wizard's Ruin.*/;
+				return "AWS_854_4" /*Consigue 950µ000 tesoros durante una partida de The Wizard's Ruin.*/;
 			else if (iParam1 == 4)
-				return "AWS_854_3" /*Collect 700000 treasures during a single play of The Wizard's Ruin.*/;
+				return "AWS_854_3" /*Consigue 700µ000 tesoros durante una partida de The Wizard's Ruin.*/;
 			else if (iParam1 == 3)
-				return "AWS_854_2" /*Collect 450000 treasures during a single play of The Wizard's Ruin.*/;
+				return "AWS_854_2" /*Consigue 450µ000 tesoros durante una partida de The Wizard's Ruin.*/;
 			else
-				return "AWS_854_1" /*Collect 200000 treasures during a single play of The Wizard's Ruin.*/;
+				return "AWS_854_1" /*Consigue 200µ000 tesoros durante una partida de The Wizard's Ruin.*/;
 			break;
 	
 		case 96:
 			if (iParam1 == 5)
-				return "AWS_855_4" /*Score over 3000000 points in a single game of Space Monkey 3: Bananas Gone Bad.*/;
+				return "AWS_855_4" /*Consigue más de 3µ000µ000 puntos durante una partida de Space Monkey 3: Bananas Gone Bad.*/;
 			else if (iParam1 == 4)
-				return "AWS_855_3" /*Score over 2500000 points in a single game of Space Monkey 3: Bananas Gone Bad.*/;
+				return "AWS_855_3" /*Consigue más de 2µ500µ000 puntos durante una partida de Space Monkey 3: Bananas Gone Bad.*/;
 			else if (iParam1 == 3)
-				return "AWS_855_2" /*Score over 2000000 points in a single game of Space Monkey 3: Bananas Gone Bad.*/;
+				return "AWS_855_2" /*Consigue más de 2µ000µ000 puntos durante una partida de Space Monkey 3: Bananas Gone Bad.*/;
 			else
-				return "AWS_855_1" /*Score over 1500000 points in a single game of Space Monkey 3: Bananas Gone Bad.*/;
+				return "AWS_855_1" /*Consigue más de 1µ500µ000 puntos durante una partida de Space Monkey 3: Bananas Gone Bad.*/;
 			break;
 	
 		case 97:
 			if (iParam1 == 5)
-				return "AWS_856_4" /*Score over 40000 points in a single play of Penetrator.*/;
+				return "AWS_856_4" /*Consigue más de 40 000 puntos durante una partida de Penetrator.*/;
 			else if (iParam1 == 4)
-				return "AWS_856_3" /*Score over 20000 points in a single play of Penetrator.*/;
+				return "AWS_856_3" /*Consigue más de 20 000 puntos durante una partida de Penetrator.*/;
 			else if (iParam1 == 3)
-				return "AWS_856_2" /*Score over 10000 points in a single play of Penetrator.*/;
+				return "AWS_856_2" /*Consigue más de 10 000 puntos durante una partida de Penetrator.*/;
 			else
-				return "AWS_856_1" /*Score over 5000 points in a single play of Penetrator.*/;
+				return "AWS_856_1" /*Consigue más de 5000 puntos durante una partida de Penetrator.*/;
 			break;
 	
 		case 99:
 			if (iParam1 == 5)
-				return "AWS_936d" /*Dance to Keinemusik's set at the Cayo Perico beach party for 60 minutes.*/;
+				return "AWS_936d" /*Baila la sesión de Keinemusik en la fiesta en la playa de Cayo Perico durante 60 minutos.*/;
 			else if (iParam1 == 4)
-				return "AWS_936c" /*Dance to Keinemusik's set at the Cayo Perico beach party for 30 minutes.*/;
+				return "AWS_936c" /*Baila la sesión de Keinemusik en la fiesta en la playa de Cayo Perico durante 30 minutos.*/;
 			else if (iParam1 == 3)
-				return "AWS_936b" /*Dance to Keinemusik's set at the Cayo Perico beach party for 15 minutes.*/;
+				return "AWS_936b" /*Baila la sesión de Keinemusik en la fiesta en la playa de Cayo Perico durante 15 minutos.*/;
 			else
-				return "AWS_936a" /*Dance to Keinemusik's set at the Cayo Perico beach party for 5 minutes.*/;
+				return "AWS_936a" /*Baila la sesión de Keinemusik en la fiesta en la playa de Cayo Perico durante 5 minutos.*/;
 			break;
 	
 		case 100:
 			if (iParam1 == 5)
-				return "AWS_937d" /*Steal the loot from 50 treasure chests found on Cayo Perico.*/;
+				return "AWS_937d" /*Roba el botín de 50 cofres del tesoro hallados en Cayo Perico.*/;
 			else if (iParam1 == 4)
-				return "AWS_937c" /*Steal the loot from 20 treasure chests found on Cayo Perico.*/;
+				return "AWS_937c" /*Roba el botín de 20 cofres del tesoro hallados en Cayo Perico.*/;
 			else if (iParam1 == 3)
-				return "AWS_937b" /*Steal the loot from 10 treasure chests found on Cayo Perico.*/;
+				return "AWS_937b" /*Roba el botín de 10 cofres del tesoro hallados en Cayo Perico.*/;
 			else
-				return "AWS_937a" /*Steal the loot from 5 treasure chests found on Cayo Perico.*/;
+				return "AWS_937a" /*Roba el botín de 5 cofres del tesoro hallados en Cayo Perico.*/;
 			break;
 	
 		case 101:
 			if (iParam1 == 5)
-				return "AWS_938d" /*Steal a total of $1,000,000 from hidden caches found around the San Andreas coast.*/;
+				return "AWS_938d" /*Roba un total de 1µ000µ000µ$ de alijos ocultos hallados en la costa de San Andreas.*/;
 			else if (iParam1 == 4)
-				return "AWS_938c" /*Steal a total of $750,000 from hidden caches found around the San Andreas coast.*/;
+				return "AWS_938c" /*Roba un total de 750µ000µ$ de alijos ocultos hallados en la costa de San Andreas.*/;
 			else if (iParam1 == 3)
-				return "AWS_938b" /*Steal a total of $250,000 from hidden caches found around the San Andreas coast.*/;
+				return "AWS_938b" /*Roba un total de 250µ000µ$ de alijos ocultos hallados en la costa de San Andreas.*/;
 			else
-				return "AWS_938a" /*Steal a total of $50,000 from hidden caches found around the San Andreas coast.*/;
+				return "AWS_938a" /*Roba un total de 50µ000µ$ de alijos ocultos hallados en la costa de San Andreas.*/;
 			break;
 	
 		case 102:
 			if (iParam1 == 5)
-				return "AWS_939d" /*Dance to Keinemusik's set in The Music Locker for 60 minutes.*/;
+				return "AWS_939d" /*Baila la sesión de Keinemusik en The Music Locker durante 60 minutos.*/;
 			else if (iParam1 == 4)
-				return "AWS_939c" /*Dance to Keinemusik's set in The Music Locker for 30 minutes.*/;
+				return "AWS_939c" /*Baila la sesión de Keinemusik en The Music Locker durante 30 minutos.*/;
 			else if (iParam1 == 3)
-				return "AWS_939b" /*Dance to Keinemusik's set in The Music Locker for 15 minutes.*/;
+				return "AWS_939b" /*Baila la sesión de Keinemusik en The Music Locker durante 15 minutos.*/;
 			else
-				return "AWS_939a" /*Dance to Keinemusik's set in The Music Locker for 5 minutes.*/;
+				return "AWS_939a" /*Baila la sesión de Keinemusik en The Music Locker durante 5 minutos.*/;
 			break;
 	
 		case 103:
 			if (iParam1 == 5)
-				return "AWS_940d" /*Dance to Palms Trax set in The Music Locker for 60 minutes.*/;
+				return "AWS_940d" /*Baila la sesión de Palms Trax en The Music Locker durante 60 minutos.*/;
 			else if (iParam1 == 4)
-				return "AWS_940c" /*Dance to Palms Trax set in The Music Locker for 30 minutes.*/;
+				return "AWS_940c" /*Baila la sesión de Palms Trax en The Music Locker durante 30 minutos.*/;
 			else if (iParam1 == 3)
-				return "AWS_940b" /*Dance to Palms Trax set in The Music Locker for 15 minutes.*/;
+				return "AWS_940b" /*Baila la sesión de Palms Trax en The Music Locker durante 15 minutos.*/;
 			else
-				return "AWS_940a" /*Dance to Palms Trax set in The Music Locker for 5 minutes.*/;
+				return "AWS_940a" /*Baila la sesión de Palms Trax en The Music Locker durante 5 minutos.*/;
 			break;
 	
 		case 104:
 			if (iParam1 == 5)
-				return "AWS_941d" /*Dance to Moodymann's set in The Music Locker for 60 minutes.*/;
+				return "AWS_941d" /*Baila la sesión de Moodymann en The Music Locker durante 60 minutos.*/;
 			else if (iParam1 == 4)
-				return "AWS_941c" /*Dance to Moodymann's set in The Music Locker for 30 minutes.*/;
+				return "AWS_941c" /*Baila la sesión de Moodymann en The Music Locker durante 30 minutos.*/;
 			else if (iParam1 == 3)
-				return "AWS_941b" /*Dance to Moodymann's set in The Music Locker for 15 minutes.*/;
+				return "AWS_941b" /*Baila la sesión de Moodymann en The Music Locker durante 15 minutos.*/;
 			else
-				return "AWS_941a" /*Dance to Moodymann's set in The Music Locker for 5 minutes.*/;
+				return "AWS_941a" /*Baila la sesión de Moodymann en The Music Locker durante 5 minutos.*/;
 			break;
 	
 		case 105:
 			if (iParam1 == 5)
-				return "AWS_942d" /*Steal a total of $20,000,000 in secondary targets during The Cayo Perico Heist.*/;
+				return "AWS_942d" /*Roba un total de 20µ000µ000µ$ en objetivos secundarios en el golpe a Cayo Perico.*/;
 			else if (iParam1 == 4)
-				return "AWS_942c" /*Steal a total of $10,000,000 in secondary targets during The Cayo Perico Heist.*/;
+				return "AWS_942c" /*Roba un total de 10µ000µ000µ$ en objetivos secundarios en el golpe a Cayo Perico.*/;
 			else if (iParam1 == 3)
-				return "AWS_942b" /*Steal a total of $5,000,000 in secondary targets during The Cayo Perico Heist.*/;
+				return "AWS_942b" /*Roba un total de 5µ000µ000µ$ en objetivos secundarios en el golpe a Cayo Perico.*/;
 			else
-				return "AWS_942a" /*Steal a total of $1,000,000 in secondary targets during The Cayo Perico Heist.*/;
+				return "AWS_942a" /*Roba un total de 1µ000µ000µ$ en objetivos secundarios en el golpe a Cayo Perico.*/;
 			break;
 	
 		case 106:
 			if (iParam1 == 5)
-				return "AWS_943d" /*Complete 50 prep missions as part of The Cayo Perico Heist.*/;
+				return "AWS_943d" /*Completa 50 misiones preliminares del golpe a Cayo Perico.*/;
 			else if (iParam1 == 4)
-				return "AWS_943c" /*Complete 20 prep missions as part of The Cayo Perico Heist.*/;
+				return "AWS_943c" /*Completa 20 misiones preliminares del golpe a Cayo Perico.*/;
 			else if (iParam1 == 3)
-				return "AWS_943b" /*Complete 10 prep missions as part of The Cayo Perico Heist.*/;
+				return "AWS_943b" /*Completa 10 misiones preliminares del golpe a Cayo Perico.*/;
 			else
-				return "AWS_943a" /*Complete 5 prep missions as part of The Cayo Perico Heist.*/;
+				return "AWS_943a" /*Completa 5 misiones preliminares del golpe a Cayo Perico.*/;
 			break;
 	
 		case 107:
 			if (iParam1 == 5)
-				return "AWS_945d" /*Reach LS Car Meet Reputation Level 100.*/;
+				return "AWS_945d" /*Llega al nivel de reputación 100 en el club automovilístico de LS.*/;
 			else if (iParam1 == 4)
-				return "AWS_945c" /*Reach LS Car Meet Reputation Level 50.*/;
+				return "AWS_945c" /*Llega al nivel de reputación 50 en el club automovilístico de LS.*/;
 			else if (iParam1 == 3)
-				return "AWS_945b" /*Reach LS Car Meet Reputation Level 25.*/;
+				return "AWS_945b" /*Llega al nivel de reputación 25 en el club automovilístico de LS.*/;
 			else
-				return "AWS_945a" /*Reach LS Car Meet Reputation Level 5.*/;
+				return "AWS_945a" /*Llega al nivel de reputación 5 en el club automovilístico de LS.*/;
 			break;
 	
 		case 108:
 			if (iParam1 == 5)
-				return "AWS_967d" /*Win 50 Sprints.*/;
+				return "AWS_967d" /*Gana 50 carreras cortas.*/;
 			else if (iParam1 == 4)
-				return "AWS_967c" /*Win 25 Sprints.*/;
+				return "AWS_967c" /*Gana 25 carreras cortas.*/;
 			else if (iParam1 == 3)
-				return "AWS_967b" /*Win 10 Sprints.*/;
+				return "AWS_967b" /*Gana 10 carreras cortas.*/;
 			else
-				return "AWS_967a" /*Win 5 Sprints.*/;
+				return "AWS_967a" /*Gana 5 carreras cortas.*/;
 			break;
 	
 		case 109:
 			if (iParam1 == 5)
-				return "AWS_946d" /*Win 50 races in the Street Race Series.*/;
+				return "AWS_946d" /*Gana 50 carreras en las series de carreras urbanas.*/;
 			else if (iParam1 == 4)
-				return "AWS_946c" /*Win 25 races in the Street Race Series.*/;
+				return "AWS_946c" /*Gana 25 carreras en las series de carreras urbanas.*/;
 			else if (iParam1 == 3)
-				return "AWS_946b" /*Win 10 races in the Street Race Series.*/;
+				return "AWS_946b" /*Gana 10 carreras en las series de carreras urbanas.*/;
 			else
-				return "AWS_946a" /*Win 5 races in the Street Race Series.*/;
+				return "AWS_946a" /*Gana 5 carreras en las series de carreras urbanas.*/;
 			break;
 	
 		case 110:
 			if (iParam1 == 5)
-				return "AWS_947d" /*Win 50 races in the Pursuit Series.*/;
+				return "AWS_947d" /*Gana 50 carreras en las series de persecución.*/;
 			else if (iParam1 == 4)
-				return "AWS_947c" /*Win 25 races in the Pursuit Series.*/;
+				return "AWS_947c" /*Gana 25 carreras en las series de persecución.*/;
 			else if (iParam1 == 3)
-				return "AWS_947b" /*Win 10 races in the Pursuit Series.*/;
+				return "AWS_947b" /*Gana 10 carreras en las series de persecución.*/;
 			else
-				return "AWS_947a" /*Win 5 races in the Pursuit Series.*/;
+				return "AWS_947a" /*Gana 5 carreras en las series de persecución.*/;
 			break;
 	
 		case 112:
 			if (iParam1 == 5)
-				return "AWS_949d" /*Successfully mod and deliver 50 customer vehicles from your Auto Shop.*/;
+				return "AWS_949d" /*Modifica y entrega 50 vehículos de clientes de tu taller.*/;
 			else if (iParam1 == 4)
-				return "AWS_949c" /*Successfully mod and deliver 25 customer vehicles from your Auto Shop.*/;
+				return "AWS_949c" /*Modifica y entrega 25 vehículos de clientes de tu taller.*/;
 			else if (iParam1 == 3)
-				return "AWS_949b" /*Successfully mod and deliver 10 customer vehicles from your Auto Shop.*/;
+				return "AWS_949b" /*Modifica y entrega 10 vehículos de clientes de tu taller.*/;
 			else
-				return "AWS_949a" /*Successfully mod and deliver 5 customer vehicles from your Auto Shop.*/;
+				return "AWS_949a" /*Modifica y entrega 5 vehículos de clientes de tu taller.*/;
 			break;
 	
 		case 114:
 			if (iParam1 == 5)
-				return "AWS_952d" /*Complete 40 Planning Work missions as leader as part of the Contracts for KDJ and Sessanta.*/;
+				return "AWS_952d" /*Completa 40 misiones de planificación como líder como parte de los contratos de KDJ y Sessanta.*/;
 			else if (iParam1 == 4)
-				return "AWS_952c" /*Complete 20 Planning Work missions as leader as part of the Contracts for KDJ and Sessanta.*/;
+				return "AWS_952c" /*Completa 20 misiones de planificación como líder como parte de los contratos de KDJ y Sessanta.*/;
 			else if (iParam1 == 3)
-				return "AWS_952b" /*Complete 10 Planning Work missions as leader as part of the Contracts for KDJ and Sessanta.*/;
+				return "AWS_952b" /*Completa 10 misiones de planificación como líder como parte de los contratos de KDJ y Sessanta.*/;
 			else
-				return "AWS_952a" /*Complete 5 Planning Work missions as leader as part of the Contracts for KDJ and Sessanta.*/;
+				return "AWS_952a" /*Completa 5 misiones de planificación como líder como parte de los contratos de KDJ y Sessanta.*/;
 			break;
 	
 		case 115:
 			if (iParam1 == 5)
-				return "AWS_961d" /*Complete 100 Contracts for KDJ and Sessanta.*/;
+				return "AWS_961d" /*Completa 100 contratos para KDJ y Sessanta.*/;
 			else if (iParam1 == 4)
-				return "AWS_961c" /*Complete 50 Contracts for KDJ and Sessanta.*/;
+				return "AWS_961c" /*Completa 50 contratos para KDJ y Sessanta.*/;
 			else if (iParam1 == 3)
-				return "AWS_961b" /*Complete 25 Contracts for KDJ and Sessanta.*/;
+				return "AWS_961b" /*Completa 25 contratos para KDJ y Sessanta.*/;
 			else
-				return "AWS_961a" /*Complete 5 Contracts for KDJ and Sessanta.*/;
+				return "AWS_961a" /*Completa 5 contratos para KDJ y Sessanta.*/;
 			break;
 	
 		case 116:
 			if (iParam1 == 5)
-				return "AWS_962d" /*Carry out over 30 headshots across all scenes in Camhedz.*/;
+				return "AWS_962d" /*Consigue más de 30 tiros a la cabeza en todas las escenas de Camhedz.*/;
 			else if (iParam1 == 4)
-				return "AWS_962c" /*Carry out over 20 headshots across all scenes in Camhedz.*/;
+				return "AWS_962c" /*Consigue más de 20 tiros a la cabeza en todas las escenas de Camhedz.*/;
 			else if (iParam1 == 3)
-				return "AWS_962b" /*Carry out over 10 headshots across all scenes in Camhedz.*/;
+				return "AWS_962b" /*Consigue más de 10 tiros a la cabeza en todas las escenas de Camhedz.*/;
 			else
-				return "AWS_962a" /*Carry out over 5 headshots across all scenes in Camhedz.*/;
+				return "AWS_962a" /*Consigue más de 5 tiros a la cabeza en todas las escenas de Camhedz.*/;
 			break;
 	
 		case 111:
 			if (iParam1 == 5)
-				return "AWS_948d" /*Drive one of the test rides for 240 minutes inside the Test Track.*/;
+				return "AWS_948d" /*Conduce un vehículo de prueba durante 240µminutos en la pista de pruebas.*/;
 			else if (iParam1 == 4)
-				return "AWS_948c" /*Drive one of the test rides for 120 minutes inside the Test Track.*/;
+				return "AWS_948c" /*Conduce un vehículo de prueba durante 120µminutos en la pista de pruebas.*/;
 			else if (iParam1 == 3)
-				return "AWS_948b" /*Drive one of the test rides for 60 minutes inside the Test Track.*/;
+				return "AWS_948b" /*Conduce un vehículo de prueba durante 60µminutos en la pista de pruebas.*/;
 			else
-				return "AWS_948a" /*Drive one of the test rides for 30 minutes inside the Test Track.*/;
+				return "AWS_948a" /*Conduce un vehículo de prueba durante 30µminutos en la pista de pruebas.*/;
 			break;
 	
 		case 113:
 			if (iParam1 == 5)
-				return "AWS_950d" /*Deliver 100 Exotic Exports Vehicles to the Docks for Sessanta's partner.*/;
+				return "AWS_950d" /*Entrega 100µvehículos para exportar poco comunes al socio de Sessanta en los muelles.*/;
 			else if (iParam1 == 4)
-				return "AWS_950c" /*Deliver 50 Exotic Exports Vehicles to the Docks for Sessanta's partner.*/;
+				return "AWS_950c" /*Entrega 50µvehículos para exportar poco comunes al socio de Sessanta en los muelles.*/;
 			else if (iParam1 == 3)
-				return "AWS_950b" /*Deliver 25 Exotic Exports Vehicles to the Docks for Sessanta's partner.*/;
+				return "AWS_950b" /*Entrega 25µvehículos para exportar poco comunes al socio de Sessanta en los muelles.*/;
 			else
-				return "AWS_950a" /*Deliver 10 Exotic Exports Vehicles to the Docks for Sessanta's partner.*/;
+				return "AWS_950a" /*Entrega 10µvehículos para exportar poco comunes al socio de Sessanta en los muelles.*/;
 			break;
 	
 		case 117:
 			if (iParam1 == 5)
-				return "AWS_978d" /*Complete 50 Security Contracts.*/;
+				return "AWS_978d" /*Completa 50 contratos de seguridad.*/;
 			else if (iParam1 == 4)
-				return "AWS_978c" /*Complete 25 Security Contracts.*/;
+				return "AWS_978c" /*Completa 25 contratos de seguridad.*/;
 			else if (iParam1 == 3)
-				return "AWS_978b" /*Complete 15 Security Contracts.*/;
+				return "AWS_978b" /*Completa 15 contratos de seguridad.*/;
 			else
-				return "AWS_978a" /*Complete 5 Security Contracts.*/;
+				return "AWS_978a" /*Completa 5 contratos de seguridad.*/;
 			break;
 	
 		case 118:
 			if (iParam1 == 5)
-				return "AWS_979d" /*Complete 50 Payphone Hits.*/;
+				return "AWS_979d" /*Completa 50 asesinatos por encargo.*/;
 			else if (iParam1 == 4)
-				return "AWS_979c" /*Complete 25 Payphone Hits.*/;
+				return "AWS_979c" /*Completa 25 asesinatos por encargo.*/;
 			else if (iParam1 == 3)
-				return "AWS_979b" /*Complete 15 Payphone Hits.*/;
+				return "AWS_979b" /*Completa 15 asesinatos por encargo.*/;
 			else
-				return "AWS_979a" /*Complete 5 Payphone Hits.*/;
+				return "AWS_979a" /*Completa 5 asesinatos por encargo.*/;
 			break;
 	
 		case 119:
-			return "AWS_983" /*Watch Dr. Dre working in Record A Studios.*/;
+			return "AWS_983" /*Observa cómo trabaja Dr. Dre en Record A Studios.*/;
 	
 		case 120:
-			return "AWS_1002" /*Reach the gateway as the rabbit in First Dose - Uncontrolled Substance.*/;
+			return "AWS_1002" /*Llega al portal como el conejo en Primera dosis: Sustancia descontrolada.*/;
 	
 		case 121:
 			if (iParam1 == 5)
-				return "AWS_1003d" /*Complete 50 Fooligan Jobs for Dax.*/;
+				return "AWS_1003d" /*Completa 50 trabajos de los Fooligans para Dax.*/;
 			else if (iParam1 == 4)
-				return "AWS_1003c" /*Complete 20 Fooligan Jobs for Dax.*/;
+				return "AWS_1003c" /*Completa 20 trabajos de los Fooligans para Dax.*/;
 			else if (iParam1 == 3)
-				return "AWS_1003b" /*Complete 10 Fooligan Jobs for Dax.*/;
+				return "AWS_1003b" /*Completa 10 trabajos de los Fooligans para Dax.*/;
 			else
-				return "AWS_1003a" /*Complete 5 Fooligan Jobs for Dax.*/;
+				return "AWS_1003a" /*Completa 5 trabajos de los Fooligans para Dax.*/;
 			break;
 	
 		case 122:
 			if (iParam1 == 5)
-				return "AWS_1004d" /*Source Supplies for the Acid Lab 50 times.*/;
+				return "AWS_1004d" /*Obtén suministros para el laboratorio de ácido 50 veces.*/;
 			else if (iParam1 == 4)
-				return "AWS_1004c" /*Source Supplies for the Acid Lab 20 times.*/;
+				return "AWS_1004c" /*Obtén suministros para el laboratorio de ácido 20 veces.*/;
 			else if (iParam1 == 3)
-				return "AWS_1004b" /*Source Supplies for the Acid Lab 10 times.*/;
+				return "AWS_1004b" /*Obtén suministros para el laboratorio de ácido 10 veces.*/;
 			else
-				return "AWS_1004a" /*Source Supplies for the Acid Lab 5 times.*/;
+				return "AWS_1004a" /*Obtén suministros para el laboratorio de ácido 5 veces.*/;
 			break;
 	
 		case 123:
 			if (iParam1 == 5)
-				return "AWS_1005d" /*Raid and steal from 50 stash houses.*/;
+				return "AWS_1005d" /*Asalta y roba 50 narcopisos.*/;
 			else if (iParam1 == 4)
-				return "AWS_1005c" /*Raid and steal from 20 stash houses.*/;
+				return "AWS_1005c" /*Asalta y roba 20 narcopisos.*/;
 			else if (iParam1 == 3)
-				return "AWS_1005b" /*Raid and steal from 10 stash houses.*/;
+				return "AWS_1005b" /*Asalta y roba 10 narcopisos.*/;
 			else
-				return "AWS_1005a" /*Raid and steal from 5 stash houses.*/;
+				return "AWS_1005a" /*Asalta y roba 5 narcopisos.*/;
 			break;
 	
 		case 124:
 			if (iParam1 == 5)
-				return "AWS_1006d" /*Collect 50 G's Caches around Los Santos and Blaine County.*/;
+				return "AWS_1006d" /*Recoge 50 alijos de G en Los Santos y el condado de Blaine.*/;
 			else if (iParam1 == 4)
-				return "AWS_1006c" /*Collect 20 G's Caches around Los Santos and Blaine County.*/;
+				return "AWS_1006c" /*Recoge 20 alijos de G en Los Santos y el condado de Blaine.*/;
 			else if (iParam1 == 3)
-				return "AWS_1006b" /*Collect 10 G's Caches around Los Santos and Blaine County.*/;
+				return "AWS_1006b" /*Recoge 10 alijos de G en Los Santos y el condado de Blaine.*/;
 			else
-				return "AWS_1006a" /*Collect 5 G's Caches around Los Santos and Blaine County.*/;
+				return "AWS_1006a" /*Recoge 5 alijos de G en Los Santos y el condado de Blaine.*/;
 			break;
 	
 		case 125:
 			if (iParam1 == 5)
-				return "AWS_1007d" /*Return stolen cash to a shop 5 times.*/;
+				return "AWS_1007d" /*Devuelve dinero robado a un dependiente cinco veces.*/;
 			else if (iParam1 == 4)
-				return "AWS_1007c" /*Return stolen cash to a shop 3 times.*/;
+				return "AWS_1007c" /*Devuelve dinero robado a un dependiente tres veces.*/;
 			else if (iParam1 == 3)
-				return "AWS_1007b" /*Return stolen cash to a shop 2 times.*/;
+				return "AWS_1007b" /*Devuelve dinero robado a un dependiente dos veces.*/;
 			else
-				return "AWS_1007a" /*Return stolen cash to a shop once.*/;
+				return "AWS_1007a" /*Devuelve dinero robado a un dependiente una vez.*/;
 			break;
 	
 		case 126:
-			return "AWS_1008" /*Take out the hostile versions of yourself.*/;
+			return "AWS_1008" /*Elimina a tus versiones hostiles.*/;
 	
 		case 127:
 			if (iParam1 == 5)
-				return "AWS_1009d" /*Complete 50 fares during Taxi Work.*/;
+				return "AWS_1009d" /*Completa 50 viajes trabajando de taxista.*/;
 			else if (iParam1 == 4)
-				return "AWS_1009c" /*Complete 20 fares during Taxi Work.*/;
+				return "AWS_1009c" /*Completa 20 viajes trabajando de taxista.*/;
 			else if (iParam1 == 3)
-				return "AWS_1009b" /*Complete 10 fares during Taxi Work.*/;
+				return "AWS_1009b" /*Completa 10 viajes trabajando de taxista.*/;
 			else
-				return "AWS_1009a" /*Complete 5 fares during Taxi Work.*/;
+				return "AWS_1009a" /*Completa 5 viajes trabajando de taxista.*/;
 			break;
 	
 		case 128:
 			if (iParam1 == 5)
-				return "AWS_1019d" /*Steal 50 vehicles as part of the Salvage Yard Robberies as leader.*/;
+				return "AWS_1019d" /*Roba 50 vehículos en los robos del desguace como líder.*/;
 			else if (iParam1 == 4)
-				return "AWS_1019c" /*Steal 20 vehicles as part of the Salvage Yard Robberies as leader.*/;
+				return "AWS_1019c" /*Roba 20 vehículos en los robos del desguace como líder.*/;
 			else if (iParam1 == 3)
-				return "AWS_1019b" /*Steal 10 vehicles as part of the Salvage Yard Robberies as leader.*/;
+				return "AWS_1019b" /*Roba 10 vehículos en los robos del desguace como líder.*/;
 			else
-				return "AWS_1019a" /*Steal 5 vehicles as part of the Salvage Yard Robberies as leader.*/;
+				return "AWS_1019a" /*Roba 5 vehículos en los robos del desguace como líder.*/;
 			break;
 	
 		case 129:
 			if (iParam1 == 5)
-				return "AWS_1020d" /*Complete 50 Planning Works as part of Salvage Yard Robberies as leader.*/;
+				return "AWS_1020d" /*Completa 50 misiones de planificación en los robos del desguace como líder.*/;
 			else if (iParam1 == 4)
-				return "AWS_1020c" /*Complete 20 Planning Works as part of Salvage Yard Robberies as leader.*/;
+				return "AWS_1020c" /*Completa 20 misiones de planificación en los robos del desguace como líder.*/;
 			else if (iParam1 == 3)
-				return "AWS_1020b" /*Complete 10 Planning Works as part of Salvage Yard Robberies as leader.*/;
+				return "AWS_1020b" /*Completa 10 misiones de planificación en los robos del desguace como líder.*/;
 			else
-				return "AWS_1020a" /*Complete 5 Planning Works as part of Salvage Yard Robberies as leader.*/;
+				return "AWS_1020a" /*Completa 5 misiones de planificación en los robos del desguace como líder.*/;
 			break;
 	
 		case 130:
 			if (iParam1 == 5)
-				return "AWS_1021d" /*Earn $5,000,000 from selling acquired vehicles as part of the Salvage Yard Robberies.*/;
+				return "AWS_1021d" /*Gana 5µ000µ000µ$ vendiendo vehículos obtenidos en los robos del desguace.*/;
 			else if (iParam1 == 4)
-				return "AWS_1021c" /*Earn $2,500,000 from selling acquired vehicles as part of the Salvage Yard Robberies.*/;
+				return "AWS_1021c" /*Gana 2µ500µ000µ$ vendiendo vehículos obtenidos en los robos del desguace.*/;
 			else if (iParam1 == 3)
-				return "AWS_1021b" /*Earn $1,000,000 from selling acquired vehicles as part of the Salvage Yard Robberies.*/;
+				return "AWS_1021b" /*Gana 1µ000µ000µ$ vendiendo vehículos obtenidos en los robos del desguace.*/;
 			else
-				return "AWS_1021a" /*Earn $250,000 from selling acquired vehicles as part of the Salvage Yard Robberies.*/;
+				return "AWS_1021a" /*Gana 250µ000µ$ vendiendo vehículos obtenidos en los robos del desguace.*/;
 			break;
 	
 		case 131:
 			if (iParam1 == 5)
-				return "AWS_1022d" /*Earn $5,000,000 from salvaging acquired vehicles as part of the Salvage Yard Robberies or Tow Truck Service.*/;
+				return "AWS_1022d" /*Gana 5µ000µ000µ$ desguazando vehículos obtenidos en los robos del desguace o mediante el servicio de grúa.*/;
 			else if (iParam1 == 4)
-				return "AWS_1022c" /*Earn $2,500,000 from salvaging acquired vehicles as part of the Salvage Yard Robberies or Tow Truck Service.*/;
+				return "AWS_1022c" /*Gana 2µ500µ000µ$ desguazando vehículos obtenidos en los robos del desguace o mediante el servicio de grúa.*/;
 			else if (iParam1 == 3)
-				return "AWS_1022b" /*Earn $1,000,000 from salvaging acquired vehicles as part of the Salvage Yard Robberies or Tow Truck Service.*/;
+				return "AWS_1022b" /*Gana 1µ000µ000µ$ desguazando vehículos obtenidos en los robos del desguace o mediante el servicio de grúa.*/;
 			else
-				return "AWS_1022a" /*Earn $250,000 from salvaging acquired vehicles as part of the Salvage Yard Robberies or Tow Truck Service.*/;
+				return "AWS_1022a" /*Gana 250µ000µ$ desguazando vehículos obtenidos en los robos del desguace o mediante el servicio de grúa.*/;
 			break;
 	
 		case 132:
 			if (iParam1 == 5)
-				return "AWS_1023d" /*Recover 50 vehicles as part of the Tow Truck Service.*/;
+				return "AWS_1023d" /*Recupera 50 vehículos con el servicio de grúa.*/;
 			else if (iParam1 == 4)
-				return "AWS_1023c" /*Recover 20 vehicles as part of the Tow Truck Service.*/;
+				return "AWS_1023c" /*Recupera 20 vehículos con el servicio de grúa.*/;
 			else if (iParam1 == 3)
-				return "AWS_1023b" /*Recover 10 vehicles as part of the Tow Truck Service.*/;
+				return "AWS_1023b" /*Recupera 10 vehículos con el servicio de grúa.*/;
 			else
-				return "AWS_1023a" /*Recover 5 vehicles as part of the Tow Truck Service.*/;
+				return "AWS_1023a" /*Recupera 5 vehículos con el servicio de grúa.*/;
 			break;
 	
 		case 133:
 			if (iParam1 == 5)
-				return "AWS_1038d" /*Secure or eliminate 50 bounty targets.*/;
+				return "AWS_1038d" /*Captura o elimina a 50 objetivos.*/;
 			else if (iParam1 == 4)
-				return "AWS_1038c" /*Secure or eliminate 20 bounty targets.*/;
+				return "AWS_1038c" /*Captura o elimina a 20 objetivos.*/;
 			else if (iParam1 == 3)
-				return "AWS_1038b" /*Secure or eliminate 10 bounty targets.*/;
+				return "AWS_1038b" /*Captura o elimina a 10 objetivos.*/;
 			else
-				return "AWS_1038" /*Secure or eliminate 5 bounty targets.*/;
+				return "AWS_1038" /*Captura o elimina a 5 objetivos.*/;
 			break;
 	
 		case 134:
 			if (iParam1 == 5)
-				return "AWS_1039d" /*Secure 50 bounty targets alive.*/;
+				return "AWS_1039d" /*Captura a 50 objetivos con vida.*/;
 			else if (iParam1 == 4)
-				return "AWS_1039c" /*Secure 20 bounty targets alive.*/;
+				return "AWS_1039c" /*Captura a 20 objetivos con vida.*/;
 			else if (iParam1 == 3)
-				return "AWS_1039b" /*Secure 10 bounty targets alive.*/;
+				return "AWS_1039b" /*Captura a 10 objetivos con vida.*/;
 			else
-				return "AWS_1039" /*Secure 5 bounty targets alive.*/;
+				return "AWS_1039" /*Captura a 5 objetivos con vida.*/;
 			break;
 	
 		case 135:
 			if (iParam1 == 5)
-				return "AWS_1040d" /*Earn $5,000,000 from securing or eliminating bounty targets.*/;
+				return "AWS_1040d" /*Gana 5µ000µ000µ$ por capturar o eliminar a objetivos.*/;
 			else if (iParam1 == 4)
-				return "AWS_1040c" /*Earn $2,500,000 from securing or eliminating bounty targets.*/;
+				return "AWS_1040c" /*Gana 2µ500µ000µ$ por capturar o eliminar a objetivos.*/;
 			else if (iParam1 == 3)
-				return "AWS_1040b" /*Earn $1,000,000 from securing or eliminating bounty targets.*/;
+				return "AWS_1040b" /*Gana 1µ000µ000µ$ por capturar o eliminar a objetivos.*/;
 			else
-				return "AWS_1040" /*Earn $250,000 from securing or eliminating bounty targets.*/;
+				return "AWS_1040" /*Gana 250µ000µ$ por capturar o eliminar a objetivos.*/;
 			break;
 	
 		case 136:
 			if (iParam1 == 5)
-				return "AWS_1041d" /*Earn $1,000,000 in additional income from the Bail Enforcement Agents.*/;
+				return "AWS_1041d" /*Obtén 1µ000µ000µ$ en ingresos adicionales a través de los agentes de fianzas.*/;
 			else if (iParam1 == 4)
-				return "AWS_1041c" /*Earn $750,000 in additional income from the Bail Enforcement Agents.*/;
+				return "AWS_1041c" /*Obtén 750µ000µ$ en ingresos adicionales a través de los agentes de fianzas.*/;
 			else if (iParam1 == 3)
-				return "AWS_1041b" /*Earn $500,000 in additional income from the Bail Enforcement Agents.*/;
+				return "AWS_1041b" /*Obtén 500µ000µ$ en ingresos adicionales a través de los agentes de fianzas.*/;
 			else
-				return "AWS_1041" /*Earn $250,000 in additional income from the Bail Enforcement Agents.*/;
+				return "AWS_1041" /*Obtén 250µ000µ$ en ingresos adicionales a través de los agentes de fianzas.*/;
 			break;
 	
 		case 137:
 			if (iParam1 == 5)
-				return "AWS_1042d" /*Complete 50 Dispatch Works for Vincent.*/;
+				return "AWS_1042d" /*Completa 50 misiones de patrulla para Vincent.*/;
 			else if (iParam1 == 4)
-				return "AWS_1042c" /*Complete 20 Dispatch Works for Vincent.*/;
+				return "AWS_1042c" /*Completa 20 misiones de patrulla para Vincent.*/;
 			else if (iParam1 == 3)
-				return "AWS_1042b" /*Complete 10 Dispatch Works for Vincent.*/;
+				return "AWS_1042b" /*Completa 10 misiones de patrulla para Vincent.*/;
 			else
-				return "AWS_1042" /*Complete 5 Dispatch Works for Vincent.*/;
+				return "AWS_1042" /*Completa 5 misiones de patrulla para Vincent.*/;
 			break;
 	
 		case 138:
 			if (iParam1 == 5)
-				return "AWS_1043d" /*Make 50 deliveries for Pizza This...*/;
+				return "AWS_1043d" /*Completa 50 repartos para Pizza This...*/;
 			else if (iParam1 == 4)
-				return "AWS_1043c" /*Make 20 deliveries for Pizza This...*/;
+				return "AWS_1043c" /*Completa 20 repartos para Pizza This...*/;
 			else if (iParam1 == 3)
-				return "AWS_1043b" /*Make 10 deliveries for Pizza This...*/;
+				return "AWS_1043b" /*Completa 10 repartos para Pizza This...*/;
 			else
-				return "AWS_1043" /*Make 5 deliveries for Pizza This...*/;
+				return "AWS_1043" /*Completa 5 repartos para Pizza This...*/;
 			break;
 	
 		case 139:
 			if (iParam1 == 5)
-				return "AWS_1046d" /*Complete 20 bonus objectives in Assault on ATT-16.*/;
+				return "AWS_1046d" /*Completa 20 objetivos adicionales en Asalto al ATT-16.*/;
 			else if (iParam1 == 4)
-				return "AWS_1046c" /*Complete 10 bonus objectives in Assault on ATT-16.*/;
+				return "AWS_1046c" /*Completa 10 objetivos adicionales en Asalto al ATT-16.*/;
 			else if (iParam1 == 3)
-				return "AWS_1046b" /*Complete 5 bonus objectives in Assault on ATT-16.*/;
+				return "AWS_1046b" /*Completa 5 objetivos adicionales en Asalto al ATT-16.*/;
 			else
-				return "AWS_1046" /*Complete 3 bonus objectives in Assault on ATT-16.*/;
+				return "AWS_1046" /*Completa 3 objetivos adicionales en Asalto al ATT-16.*/;
 			break;
 	
 		case 140:
 			if (iParam1 == 5)
-				return "AWS_1047d" /*Steal 50 data drives during Assault on ATT-16.*/;
+				return "AWS_1047d" /*Roba 50 discos duros en Asalto al ATT-16.*/;
 			else if (iParam1 == 4)
-				return "AWS_1047c" /*Steal 20 data drives during Assault on ATT-16.*/;
+				return "AWS_1047c" /*Roba 20 discos duros en Asalto al ATT-16.*/;
 			else if (iParam1 == 3)
-				return "AWS_1047b" /*Steal 10 data drives during Assault on ATT-16.*/;
+				return "AWS_1047b" /*Roba 10 discos duros en Asalto al ATT-16.*/;
 			else
-				return "AWS_1047" /*Steal 5 data drives during Assault on ATT-16.*/;
+				return "AWS_1047" /*Roba 5 discos duros en Asalto al ATT-16.*/;
 			break;
 	
 		case 141:
 			if (iParam1 == 5)
-				return "AWS_1048d" /*Survive 15 waves in Ludendorff Cemetery Survival.*/;
+				return "AWS_1048d" /*Sobrevive a 15 oleadas en Supervivencia en Ludendorff.*/;
 			else if (iParam1 == 4)
-				return "AWS_1048c" /*Survive 10 waves in Ludendorff Cemetery Survival.*/;
+				return "AWS_1048c" /*Sobrevive a 10 oleadas en Supervivencia en Ludendorff.*/;
 			else if (iParam1 == 3)
-				return "AWS_1048b" /*Survive 7 waves in Ludendorff Cemetery Survival.*/;
+				return "AWS_1048b" /*Sobrevive a 7 oleadas en Supervivencia en Ludendorff.*/;
 			else
-				return "AWS_1048" /*Survive 5 waves in Ludendorff Cemetery Survival.*/;
+				return "AWS_1048" /*Sobrevive a 5 oleadas en Supervivencia en Ludendorff.*/;
 			break;
 	
 		case 142:
 			if (iParam1 == 5)
-				return "AWS_1055d" /*Complete 50 FIB Files.*/;
+				return "AWS_1055d" /*Completa 50 expedientes del FIB.*/;
 			else if (iParam1 == 4)
-				return "AWS_1055c" /*Complete 20 FIB Files.*/;
+				return "AWS_1055c" /*Completa 20 expedientes del FIB.*/;
 			else if (iParam1 == 3)
-				return "AWS_1055b" /*Complete 10 FIB Files.*/;
+				return "AWS_1055b" /*Completa 10 expedientes del FIB.*/;
 			else
-				return "AWS_1055a" /*Complete 5 FIB Files.*/;
+				return "AWS_1055a" /*Completa 5 expedientes del FIB.*/;
 			break;
 	
 		case 143:
 			if (iParam1 == 5)
-				return "AWS_1056d" /*Complete 50 Planning Works as part of The FIB Files.*/;
+				return "AWS_1056d" /*Completa 50 misiones de planificación en los expedientes del FIB.*/;
 			else if (iParam1 == 4)
-				return "AWS_1056c" /*Complete 20 Planning Works as part of The FIB Files.*/;
+				return "AWS_1056c" /*Completa 20 misiones de planificación en los expedientes del FIB.*/;
 			else if (iParam1 == 3)
-				return "AWS_1056b" /*Complete 10 Planning Works as part of The FIB Files.*/;
+				return "AWS_1056b" /*Completa 10 misiones de planificación en los expedientes del FIB.*/;
 			else
-				return "AWS_1056a" /*Complete 5 Planning Works as part of The FIB Files.*/;
+				return "AWS_1056a" /*Completa 5 misiones de planificación en los expedientes del FIB.*/;
 			break;
 	
 		case 144:
 			if (iParam1 == 5)
-				return "AWS_1057d" /*Earn $5,000,000 from The FIB Files.*/;
+				return "AWS_1057d" /*Gana 5µ000µ000µ$ con los expedientes del FIB.*/;
 			else if (iParam1 == 4)
-				return "AWS_1057c" /*Earn $2,500,000 from The FIB Files.*/;
+				return "AWS_1057c" /*Gana 2µ500µ000µ$ con los expedientes del FIB.*/;
 			else if (iParam1 == 3)
-				return "AWS_1057b" /*Earn $1,000,000 from The FIB Files.*/;
+				return "AWS_1057b" /*Gana 1µ000µ000µ$ con los expedientes del FIB.*/;
 			else
-				return "AWS_1057a" /*Earn $250,000 from The FIB Files.*/;
+				return "AWS_1057a" /*Gana 250µ000µ$ con los expedientes del FIB.*/;
 			break;
 	
 		case 145:
 			if (iParam1 == 5)
-				return "AWS_1058d" /*Earn $50,000 in additional income from the Garment Factory.*/;
+				return "AWS_1058d" /*Obtén 50µ000µ$ en ingresos adicionales en la fábrica textil.*/;
 			else if (iParam1 == 4)
-				return "AWS_1058c" /*Earn $25,000 in additional income from the Garment Factory.*/;
+				return "AWS_1058c" /*Obtén 25µ000µ$ en ingresos adicionales en la fábrica textil.*/;
 			else if (iParam1 == 3)
-				return "AWS_1058b" /*Earn $10,000 in additional income from the Garment Factory.*/;
+				return "AWS_1058b" /*Obtén 10µ000µ$ en ingresos adicionales en la fábrica textil.*/;
 			else
-				return "AWS_1058a" /*Earn $5,000 in additional income from the Garment Factory.*/;
+				return "AWS_1058a" /*Obtén 5000µ$ en ingresos adicionales en la fábrica textil.*/;
 			break;
 	
 		case 146:
 			if (iParam1 == 5)
-				return "AWS_1062d" /*Survive 5 shark attacks.*/;
+				return "AWS_1062d" /*Sobrevive a 5 ataques de tiburón.*/;
 			else if (iParam1 == 4)
-				return "AWS_1062c" /*Survive 3 shark attacks.*/;
+				return "AWS_1062c" /*Sobrevive a 3 ataques de tiburón.*/;
 			else if (iParam1 == 3)
-				return "AWS_1062b" /*Survive 2 shark attacks.*/;
+				return "AWS_1062b" /*Sobrevive a 2 ataques de tiburón.*/;
 			else
-				return "AWS_1062a" /*Survive 1 shark attack.*/;
+				return "AWS_1062a" /*Sobrevive a 1 ataque de tiburón.*/;
 			break;
 	
 		case 147:
 			if (iParam1 == 5)
-				return "AWS_1066d" /*Steal all additional equipment in a single playthrough of Oscar Guzman Flies Again.*/;
+				return "AWS_1066d" /*Roba todo el equipo adicional en una sola partida de Óscar Guzmán despega de nuevo.*/;
 			else if (iParam1 == 4)
-				return "AWS_1066c" /*Steal 5 pieces of additional equipment in a single playthrough of Oscar Guzman Flies Again.*/;
+				return "AWS_1066c" /*Roba 5 piezas de equipo adicional en una sola partida de Óscar Guzmán despega de nuevo.*/;
 			else if (iParam1 == 3)
-				return "AWS_1066b" /*Steal 3 pieces of additional equipment in a single playthrough of Oscar Guzman Flies Again.*/;
+				return "AWS_1066b" /*Roba 3 piezas de equipo adicional en una sola partida de Óscar Guzmán despega de nuevo.*/;
 			else
-				return "AWS_1066a" /*Steal 1 piece of additional equipment in a single playthrough of Oscar Guzman Flies Again.*/;
+				return "AWS_1066a" /*Roba 1 pieza de equipo adicional en una sola partida de Óscar Guzmán despega de nuevo.*/;
 			break;
 	
 		case 149:
 			if (iParam1 == 5)
-				return "AWS_1069d" /*Complete 50 Arms Trafficking missions for Oscar.*/;
+				return "AWS_1069d" /*Completa 50 misiones de Contrabando de armas para Óscar.*/;
 			else if (iParam1 == 4)
-				return "AWS_1069c" /*Complete 25 Arms Trafficking missions for Oscar.*/;
+				return "AWS_1069c" /*Completa 25 misiones de Contrabando de armas para Óscar.*/;
 			else if (iParam1 == 3)
-				return "AWS_1069b" /*Complete 10 Arms Trafficking missions for Oscar.*/;
+				return "AWS_1069b" /*Completa 10 misiones de Contrabando de armas para Óscar.*/;
 			else
-				return "AWS_1069a" /*Complete 5 Arms Trafficking missions for Oscar.*/;
+				return "AWS_1069a" /*Completa 5 misiones de Contrabando de armas para Óscar.*/;
 			break;
 	
 		case 150:
 			if (iParam1 == 2)
-				return "AWS_1070a" /*Distract 1 junkyard dog with dog food during Liquid Market.*/;
+				return "AWS_1070a" /*Distrae a un perro del desguace con comida de perro en Mercado líquido.*/;
 			else if (iParam1 == 3)
-				return "AWS_1070b" /*Distract 2 junkyard dogs with dog food during Liquid Market.*/;
+				return "AWS_1070b" /*Distrae a dos perros del desguace con comida de perro en Mercado líquido.*/;
 			else if (iParam1 == 4)
-				return "AWS_1070c" /*Distract 3 junkyard dogs with dog food during Liquid Market.*/;
+				return "AWS_1070c" /*Distrae a tres perros del desguace con comida de perro en Mercado líquido.*/;
 			else if (iParam1 == 5)
-				return "AWS_1070d" /*Distract 4 junkyard dogs with dog food during Liquid Market.*/;
+				return "AWS_1070d" /*Distrae a cuatro perros del desguace con comida de perro en Mercado líquido.*/;
 			else
-				return "AWS_1070a" /*Distract 1 junkyard dog with dog food during Liquid Market.*/;
+				return "AWS_1070a" /*Distrae a un perro del desguace con comida de perro en Mercado líquido.*/;
 			break;
 	
 		case 151:
 			if (iParam1 == 2)
-				return "AWS_1071a" /*Reduce heat at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours 5 times.*/;
+				return "AWS_1071a" /*Reduce el nivel de alerta 5 veces en el lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			else if (iParam1 == 3)
-				return "AWS_1071b" /*Reduce heat at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours 10 times.*/;
+				return "AWS_1071b" /*Reduce el nivel de alerta 10 veces en el lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			else if (iParam1 == 4)
-				return "AWS_1071c" /*Reduce heat at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours 15 times.*/;
+				return "AWS_1071c" /*Reduce el nivel de alerta 15 veces en el lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			else if (iParam1 == 5)
-				return "AWS_1071d" /*Reduce heat at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours 25 times.*/;
+				return "AWS_1071d" /*Reduce el nivel de alerta 25 veces en el lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			else
-				return "AWS_1071a" /*Reduce heat at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours 5 times.*/;
+				return "AWS_1071a" /*Reduce el nivel de alerta 5 veces en el lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			break;
 	
 		case 152:
 			if (iParam1 == 2)
-				return "AWS_1072a" /*Earn $250,000 completing jobs at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours.*/;
+				return "AWS_1072a" /*Gana 250µ000µ$ en trabajos del lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			else if (iParam1 == 3)
-				return "AWS_1072b" /*Earn $500,000 completing jobs at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours.*/;
+				return "AWS_1072b" /*Gana 500µ000µ$ en trabajos del lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			else if (iParam1 == 4)
-				return "AWS_1072c" /*Earn $1,000,000 completing jobs at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours.*/;
+				return "AWS_1072c" /*Gana 1µ000µ000µ$ en trabajos del lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			else if (iParam1 == 5)
-				return "AWS_1072d" /*Earn $2,000,000 completing jobs at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours.*/;
+				return "AWS_1072d" /*Gana 2µ000µ000µ$ en trabajos del lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			else
-				return "AWS_1072a" /*Earn $250,000 completing jobs at the Hands On Car Wash, Smoke on the Water, or Higgins Helitours.*/;
+				return "AWS_1072a" /*Gana 250µ000µ$ en trabajos del lavadero de coches Hands On, Smoke on the Water o Viajes en helicóptero Higgins.*/;
 			break;
 	
 		case 153:
 			if (iParam1 == 2)
-				return "AWS_1073a" /*Collect $50,000 in laundered income from the safe inside the Hands On Car Wash.*/;
+				return "AWS_1073a" /*Recoge 50µ000µ$ en ingresos blanqueados de la caja fuerte del lavadero de coches Hands On.*/;
 			else if (iParam1 == 3)
-				return "AWS_1073b" /*Collect $100,000 in laundered income from the safe inside the Hands On Car Wash.*/;
+				return "AWS_1073b" /*Recoge 100µ000µ$ en ingresos blanqueados de la caja fuerte del lavadero de coches Hands On.*/;
 			else if (iParam1 == 4)
-				return "AWS_1073c" /*Collect $200,000 in laundered income from the safe inside the Hands On Car Wash.*/;
+				return "AWS_1073c" /*Recoge 200µ000µ$ en ingresos blanqueados de la caja fuerte del lavadero de coches Hands On.*/;
 			else if (iParam1 == 5)
-				return "AWS_1073d" /*Collect $500,000 in laundered income from the safe inside the Hands On Car Wash.*/;
+				return "AWS_1073d" /*Recoge 500µ000µ$ en ingresos blanqueados de la caja fuerte del lavadero de coches Hands On.*/;
 			else
-				return "AWS_1073a" /*Collect $50,000 in laundered income from the safe inside the Hands On Car Wash.*/;
+				return "AWS_1073a" /*Recoge 50µ000µ$ en ingresos blanqueados de la caja fuerte del lavadero de coches Hands On.*/;
 			break;
 	
 		case 154:
 			if (iParam1 == 2)
-				return "AWS_1074a" /*Complete all deliveries for QuickiePharm 5 times.*/;
+				return "AWS_1074a" /*Completa todos los repartos de QuickiePharm 5 veces.*/;
 			else if (iParam1 == 3)
-				return "AWS_1074b" /*Complete all deliveries for QuickiePharm 10 times.*/;
+				return "AWS_1074b" /*Completa todos los repartos de QuickiePharm 10 veces.*/;
 			else if (iParam1 == 4)
-				return "AWS_1074c" /*Complete all deliveries for QuickiePharm 15 times.*/;
+				return "AWS_1074c" /*Completa todos los repartos de QuickiePharm 15 veces.*/;
 			else if (iParam1 == 5)
-				return "AWS_1074d" /*Complete all deliveries for QuickiePharm 20 times.*/;
+				return "AWS_1074d" /*Completa todos los repartos de QuickiePharm 20 veces.*/;
 			else
-				return "AWS_1074a" /*Complete all deliveries for QuickiePharm 5 times.*/;
+				return "AWS_1074a" /*Completa todos los repartos de QuickiePharm 5 veces.*/;
 			break;
 	
 		case 155:
 			if (iParam1 == 2)
-				return "AWS_1075a" /*Make 5 deliveries for Gruppe Sechs or Bobcat Security.*/;
+				return "AWS_1075a" /*Completa 5 repartos para Gruppe Sechs o Bobcat Security.*/;
 			else if (iParam1 == 3)
-				return "AWS_1075b" /*Make 10 deliveries for Gruppe Sechs or Bobcat Security.*/;
+				return "AWS_1075b" /*Completa 10 repartos para Gruppe Sechs o Bobcat Security.*/;
 			else if (iParam1 == 4)
-				return "AWS_1075c" /*Make 15 deliveries for Gruppe Sechs or Bobcat Security.*/;
+				return "AWS_1075c" /*Completa 15 repartos para Gruppe Sechs o Bobcat Security.*/;
 			else if (iParam1 == 5)
-				return "AWS_1075d" /*Make 20 deliveries for Gruppe Sechs or Bobcat Security.*/;
+				return "AWS_1075d" /*Completa 20 repartos para Gruppe Sechs o Bobcat Security.*/;
 			else
-				return "AWS_1075a" /*Make 5 deliveries for Gruppe Sechs or Bobcat Security.*/;
+				return "AWS_1075a" /*Completa 5 repartos para Gruppe Sechs o Bobcat Security.*/;
 			break;
 	
 		case 156:
 			if (iParam1 == 2)
-				return "AWS_1076a" /*Survive 5 waves in the Cayo Perico Survival.*/;
+				return "AWS_1076a" /*Sobrevive a 5 oleadas en Supervivencia en Cayo Perico.*/;
 			else if (iParam1 == 3)
-				return "AWS_1076b" /*Survive 7 waves in the Cayo Perico Survival.*/;
+				return "AWS_1076b" /*Sobrevive a 7 oleadas en Supervivencia en Cayo Perico.*/;
 			else if (iParam1 == 4)
-				return "AWS_1076c" /*Survive 10 waves in the Cayo Perico Survival.*/;
+				return "AWS_1076c" /*Sobrevive a 10 oleadas en Supervivencia en Cayo Perico.*/;
 			else if (iParam1 == 5)
-				return "AWS_1076d" /*Survive 15 waves in the Cayo Perico Survival.*/;
+				return "AWS_1076d" /*Sobrevive a 15 oleadas en Supervivencia en Cayo Perico.*/;
 			else
-				return "AWS_1076a" /*Survive 5 waves in the Cayo Perico Survival.*/;
+				return "AWS_1076a" /*Sobrevive a 5 oleadas en Supervivencia en Cayo Perico.*/;
 			break;
 	
 		case 157:
 			if (iParam1 == 2)
-				return "AWS_1077a" /*Perform a dancing Action while the undead DJ is active for 5 seconds.*/;
+				return "AWS_1077a" /*Baila durante al menos 5 segundos mientras el muerto viviente DJ esté pinchando.*/;
 			else if (iParam1 == 3)
-				return "AWS_1077b" /*Perform a dancing Action while the undead DJ is active for 10 seconds.*/;
+				return "AWS_1077b" /*Baila durante al menos 10 segundos mientras el muerto viviente DJ esté pinchando.*/;
 			else if (iParam1 == 4)
-				return "AWS_1077c" /*Perform a dancing Action while the undead DJ is active for 30 seconds.*/;
+				return "AWS_1077c" /*Baila durante al menos 30 segundos mientras el muerto viviente DJ esté pinchando.*/;
 			else if (iParam1 == 5)
-				return "AWS_1077d" /*Perform a dancing Action while the undead DJ is active for 60 seconds.*/;
+				return "AWS_1077d" /*Baila durante al menos 60 segundos mientras el muerto viviente DJ esté pinchando.*/;
 			else
-				return "AWS_1077a" /*Perform a dancing Action while the undead DJ is active for 5 seconds.*/;
+				return "AWS_1077a" /*Baila durante al menos 5 segundos mientras el muerto viviente DJ esté pinchando.*/;
 			break;
 	
 		case 158:
 			if (iParam1 == 2)
-				return "AWS_1109";
+				return "AWS_1109" /*Destruye 5 taxis de KnoWay.*/;
 			else if (iParam1 == 3)
-				return "AWS_1109b";
+				return "AWS_1109b" /*Destruye 10 taxis de KnoWay.*/;
 			else if (iParam1 == 4)
-				return "AWS_1109c";
+				return "AWS_1109c" /*Destruye 15 taxis de KnoWay.*/;
 			else if (iParam1 == 5)
-				return "AWS_1109d";
+				return "AWS_1109d" /*Destruye 20 taxis de KnoWay.*/;
 			else
-				return "AWS_1109";
+				return "AWS_1109" /*Destruye 5 taxis de KnoWay.*/;
 			break;
 	
 		case 159:
 			if (iParam1 == 2)
-				return "AWS_1110";
+				return "AWS_1110" /*Haz 5 posturas de yoga en una mansión.*/;
 			else if (iParam1 == 3)
-				return "AWS_1110b";
+				return "AWS_1110b" /*Haz 10 posturas de yoga en una mansión.*/;
 			else if (iParam1 == 4)
-				return "AWS_1110c";
+				return "AWS_1110c" /*Haz 25 posturas de yoga en una mansión.*/;
 			else if (iParam1 == 5)
-				return "AWS_1110d";
+				return "AWS_1110d" /*Haz 50 posturas de yoga en una mansión.*/;
 			else
-				return "AWS_1110";
+				return "AWS_1110" /*Haz 5 posturas de yoga en una mansión.*/;
 			break;
 	
 		case 160:
 			if (iParam1 == 2)
-				return "AWS_1111";
+				return "AWS_1111" /*Haz 10 repeticiones con el material de gimnasio de la mansión.*/;
 			else if (iParam1 == 3)
-				return "AWS_1111b";
+				return "AWS_1111b" /*Haz 50 repeticiones con el material de gimnasio de la mansión.*/;
 			else if (iParam1 == 4)
-				return "AWS_1111c";
+				return "AWS_1111c" /*Haz 75 repeticiones con el material de gimnasio de la mansión.*/;
 			else if (iParam1 == 5)
-				return "AWS_1111d";
+				return "AWS_1111d" /*Haz 100 repeticiones con el material de gimnasio de la mansión.*/;
 			else
-				return "AWS_1111";
+				return "AWS_1111" /*Haz 10 repeticiones con el material de gimnasio de la mansión.*/;
 			break;
 	
 		case 161:
 			if (iParam1 == 2)
-				return "AWS_1112";
+				return "AWS_1112" /*Desactiva o coloca explosivos en 2 paneles de seguridad en Asalto a la mansión.*/;
 			else if (iParam1 == 3)
-				return "AWS_1112b";
+				return "AWS_1112b" /*Desactiva o coloca explosivos en 4 paneles de seguridad en Asalto a la mansión.*/;
 			else if (iParam1 == 4)
-				return "AWS_1112c";
+				return "AWS_1112c" /*Desactiva o coloca explosivos en 6 paneles de seguridad en Asalto a la mansión.*/;
 			else if (iParam1 == 5)
-				return "AWS_1112d";
+				return "AWS_1112d" /*Desactiva o coloca explosivos en 10 paneles de seguridad en Asalto a la mansión.*/;
 			else
-				return "AWS_1112";
+				return "AWS_1112" /*Desactiva o coloca explosivos en 2 paneles de seguridad en Asalto a la mansión.*/;
 			break;
 	
 		case 162:
 			if (iParam1 == 2)
-				return "AWS_1113";
+				return "AWS_1113" /*Completa todos los encargos de Cuerpo de bomberos 5 veces.*/;
 			else if (iParam1 == 3)
-				return "AWS_1113b";
+				return "AWS_1113b" /*Completa todos los encargos de Cuerpo de bomberos 10 veces.*/;
 			else if (iParam1 == 4)
-				return "AWS_1113c";
+				return "AWS_1113c" /*Completa todos los encargos de Cuerpo de bomberos 15 veces.*/;
 			else if (iParam1 == 5)
-				return "AWS_1113d";
+				return "AWS_1113d" /*Completa todos los encargos de Cuerpo de bomberos 20 veces.*/;
 			else
-				return "AWS_1113";
+				return "AWS_1113" /*Completa todos los encargos de Cuerpo de bomberos 5 veces.*/;
 			break;
 	
 		case 163:
 			if (iParam1 == 2)
-				return "AWS_1114";
+				return "AWS_1114" /*Carga todos los productos para Alpha Mail 5 veces.*/;
 			else if (iParam1 == 3)
-				return "AWS_1114b";
+				return "AWS_1114b" /*Carga todos los productos para Alpha Mail 10 veces.*/;
 			else if (iParam1 == 4)
-				return "AWS_1114c";
+				return "AWS_1114c" /*Carga todos los productos para Alpha Mail 15 veces.*/;
 			else if (iParam1 == 5)
-				return "AWS_1114d";
+				return "AWS_1114d" /*Carga todos los productos para Alpha Mail 20 veces.*/;
 			else
-				return "AWS_1114";
+				return "AWS_1114" /*Carga todos los productos para Alpha Mail 5 veces.*/;
 			break;
 	
 		case 164:
 			if (iParam1 == 2)
-				return "AWS_1115";
+				return "AWS_1115" /*Entrega todos los periódicos 5 veces en Reparto de periódicos.*/;
 			else if (iParam1 == 3)
-				return "AWS_1115b";
+				return "AWS_1115b" /*Entrega todos los periódicos 10 veces en Reparto de periódicos.*/;
 			else if (iParam1 == 4)
-				return "AWS_1115c";
+				return "AWS_1115c" /*Entrega todos los periódicos 15 veces en Reparto de periódicos.*/;
 			else if (iParam1 == 5)
-				return "AWS_1115d";
+				return "AWS_1115d" /*Entrega todos los periódicos 20 veces en Reparto de periódicos.*/;
 			else
-				return "AWS_1115";
+				return "AWS_1115" /*Entrega todos los periódicos 5 veces en Reparto de periódicos.*/;
 			break;
 	}
 
@@ -29678,46 +29678,46 @@ char* func_185(int iParam0, int iParam1) // Position - 0x1FF4E (130894)
 			return "AWT_835";
 	
 		case 87:
-			return "AWT_845" /*High Roller*/;
+			return "AWT_845" /*Pez gordo*/;
 	
 		case 88:
-			return "AWT_847" /*Preparation*/;
+			return "AWT_847" /*Los preliminares*/;
 	
 		case 89:
-			return "AWT_848" /*Asleep On The Job*/;
+			return "AWT_848" /*Dormido en el trabajo*/;
 	
 		case 90:
-			return "AWT_849" /*Daily Cash Grab*/;
+			return "AWT_849" /*Dinerito diario*/;
 	
 		case 91:
-			return "AWT_850" /*Big Brother*/;
+			return "AWT_850" /*Hermano mayor*/;
 	
 		case 92:
-			return "AWT_851" /*Sharpshooter*/;
+			return "AWT_851" /*Francotirador*/;
 	
 		case 93:
-			return "AWT_852" /*Race Champion*/;
+			return "AWT_852" /*Campeón de las carreras*/;
 	
 		case 94:
-			return "AWT_853" /*Platinum Sword*/;
+			return "AWT_853" /*Espada de platino*/;
 	
 		case 95:
-			return "AWT_854" /*Coin Purse*/;
+			return "AWT_854" /*Monedero*/;
 	
 		case 96:
-			return "AWT_855" /*Astrochimp*/;
+			return "AWT_855" /*Mono espacial*/;
 	
 		case 97:
-			return "AWT_856" /*Masterful*/;
+			return "AWT_856" /*Magistral*/;
 	
 		case 99:
-			return "AWT_936" /*Sun Set*/;
+			return "AWT_936" /*Puesta de sol*/;
 	
 		case 100:
-			return "AWT_937" /*Treasure Hunter*/;
+			return "AWT_937" /*Cazatesoros*/;
 	
 		case 101:
-			return "AWT_938" /*Wreck Diving*/;
+			return "AWT_938" /*Buceando entre naufragios*/;
 	
 		case 102:
 			return "AWT_939" /*Keinemusik*/;
@@ -29729,181 +29729,181 @@ char* func_185(int iParam0, int iParam1) // Position - 0x1FF4E (130894)
 			return "AWT_941" /*Moodymann*/;
 	
 		case 105:
-			return "AWT_942" /*Fill Your Bags*/;
+			return "AWT_942" /*Con los bolsillos llenos*/;
 	
 		case 106:
-			return "AWT_943" /*Prepped*/;
+			return "AWT_943" /*Todo listo*/;
 	
 		case 107:
-			return "AWT_945" /*LS Car Meet Member*/;
+			return "AWT_945" /*Socio del club automovilístico de LS*/;
 	
 		case 108:
-			return "AWT_967" /*Sprint Racer*/;
+			return "AWT_967" /*Velocista*/;
 	
 		case 109:
-			return "AWT_946" /*Street Racer*/;
+			return "AWT_946" /*Piloto urbano*/;
 	
 		case 110:
-			return "AWT_947" /*Pursuit Racer*/;
+			return "AWT_947" /*Piloto perseguido*/;
 	
 		case 112:
-			return "AWT_949" /*Special Delivery*/;
+			return "AWT_949" /*Entrega especial*/;
 	
 		case 114:
-			return "AWT_952" /*Groundwork*/;
+			return "AWT_952" /*Todo a punto*/;
 	
 		case 115:
-			return "AWT_961" /*Contractual Criminal*/;
+			return "AWT_961" /*Criminal por contrato*/;
 	
 		case 116:
-			return "AWT_962" /*Faces Of Death*/;
+			return "AWT_962" /*El rostro de la muerte*/;
 	
 		case 111:
-			return "AWT_948" /*Tried and Tested*/;
+			return "AWT_948" /*Puesto a prueba*/;
 	
 		case 113:
-			return "AWT_950" /*Car Exporter*/;
+			return "AWT_950" /*Exportador de coches*/;
 	
 		case 117:
-			return "AWT_978" /*Contractual Obligations*/;
+			return "AWT_978" /*Obligaciones contractuales*/;
 	
 		case 118:
-			return "AWT_979" /*Cold Caller*/;
+			return "AWT_979" /*Llamada en frío*/;
 	
 		case 119:
-			return "AWT_983" /*Producer*/;
+			return "AWT_983" /*Productor*/;
 	
 		case 120:
-			return "AWT_1002" /*Run Rabbit Run*/;
+			return "AWT_1002" /*Corre, conejo, corre*/;
 	
 		case 121:
-			return "AWT_1003" /*Call Me*/;
+			return "AWT_1003" /*Llámame*/;
 	
 		case 122:
-			return "AWT_1004" /*Chemical Attraction*/;
+			return "AWT_1004" /*Atracción química*/;
 	
 		case 123:
-			return "AWT_1005" /*Stashes To Stashes*/;
+			return "AWT_1005" /*Asalto al narcopiso*/;
 	
 		case 124:
-			return "AWT_1006" /*Here Comes The Drop*/;
+			return "AWT_1006" /*Aquí llega el fardo*/;
 	
 		case 125:
-			return "AWT_1007" /*Good Samaritan*/;
+			return "AWT_1007" /*Buen samaritano*/;
 	
 		case 126:
-			return "AWT_1008" /*Your Own Worst Enemy*/;
+			return "AWT_1008" /*Tu peor enemigo*/;
 	
 		case 127:
-			return "AWT_1009" /*Taxi Driver*/;
+			return "AWT_1009" /*Taxista*/;
 	
 		case 128:
-			return "AWT_1019" /*New Car Smell*/;
+			return "AWT_1019" /*Olor a coche nuevo*/;
 	
 		case 129:
-			return "AWT_1020" /*Serious Prepper*/;
+			return "AWT_1020" /*Preparado para todo*/;
 	
 		case 130:
-			return "AWT_1021" /*Wheeler Dealer*/;
+			return "AWT_1021" /*Vendemotos*/;
 	
 		case 131:
-			return "AWT_1022" /*Second Hand Parts*/;
+			return "AWT_1022" /*Piezas de segunda mano*/;
 	
 		case 132:
-			return "AWT_1023" /*Towed Away*/;
+			return "AWT_1023" /*Se lo llevó la grúa*/;
 	
 		case 133:
-			return "AWT_1038" /*Bountiful*/;
+			return "AWT_1038" /*Cazarrecompensas profesional*/;
 	
 		case 134:
-			return "AWT_1039" /*Still Breathing*/;
+			return "AWT_1039" /*Aún con vida*/;
 	
 		case 135:
-			return "AWT_1040" /*Cash On Delivery*/;
+			return "AWT_1040" /*Pago a la entrega*/;
 	
 		case 136:
-			return "AWT_1041" /*Step Two: Profit*/;
+			return "AWT_1041" /*Paso dos: beneficios*/;
 	
 		case 137:
-			return "AWT_1042" /*Dispatched*/;
+			return "AWT_1042" /*En patrulla*/;
 	
 		case 138:
 			return "AWT_1043" /*Pizza This...*/;
 	
 		case 139:
-			return "AWT_1046" /*Happy Landings*/;
+			return "AWT_1046" /*Aterrizajes felices*/;
 	
 		case 140:
-			return "AWT_1047" /*Hard Drive Hoarder*/;
+			return "AWT_1047" /*Coleccionista de discos duros*/;
 	
 		case 141:
-			return "AWT_1048" /*Death Trap*/;
+			return "AWT_1048" /*Trampa mortal*/;
 	
 		case 142:
 			return "AWT_1055" /*Darnell Bros Inc.*/;
 	
 		case 143:
-			return "AWT_1056" /*Get Ready*/;
+			return "AWT_1056" /*Prepárate*/;
 	
 		case 144:
-			return "AWT_1057" /*Cash In Hand*/;
+			return "AWT_1057" /*En efectivo*/;
 	
 		case 145:
-			return "AWT_1058" /*Brotherly Love*/;
+			return "AWT_1058" /*Amor fraternal*/;
 	
 		case 146:
-			return "AWT_1062" /*Not Out Of Your Depth*/;
+			return "AWT_1062" /*Como pez dentro del agua*/;
 	
 		case 147:
-			return "AWT_1066" /*Fully Stocked*/;
+			return "AWT_1066" /*Abastecimiento completo*/;
 	
 		case 149:
-			return "AWT_1069" /*Arms In Arms*/;
+			return "AWT_1069" /*Hasta los dientes*/;
 	
 		case 150:
-			return "AWT_1070" /*Dog's Dinner*/;
+			return "AWT_1070" /*Cena del perro*/;
 	
 		case 151:
-			return "AWT_1071" /*Licensed Professional*/;
+			return "AWT_1071" /*Profesional con licencia*/;
 	
 		case 152:
-			return "AWT_1072" /*Cooking The Books*/;
+			return "AWT_1072" /*Maquillar las cuentas*/;
 	
 		case 153:
-			return "AWT_1073" /*Squeaky Clean*/;
+			return "AWT_1073" /*Como los chorros del oro*/;
 	
 		case 154:
 			return "AWT_1074" /*QuickiePharm*/;
 	
 		case 155:
-			return "AWT_1075" /*Safeguard*/;
+			return "AWT_1075" /*Salvoconducto*/;
 	
 		case 156:
-			return "AWT_1076" /*Sunburned Survivor*/;
+			return "AWT_1076" /*Superviviente con quemaduras solares*/;
 	
 		case 157:
-			return "AWT_1077" /*Dancing With Death*/;
+			return "AWT_1077" /*Bailando con la muerte*/;
 	
 		case 158:
-			return "AWT_1109";
+			return "AWT_1109" /*Nanay, KnoWay*/;
 	
 		case 159:
-			return "AWT_1110";
+			return "AWT_1110" /*Namasté*/;
 	
 		case 160:
-			return "AWT_1111";
+			return "AWT_1111" /*A tope*/;
 	
 		case 161:
-			return "AWT_1112";
+			return "AWT_1112" /*Escuadrón explosivo*/;
 	
 		case 162:
-			return "AWT_1113";
+			return "AWT_1113" /*Apagando fuegos*/;
 	
 		case 163:
-			return "AWT_1114";
+			return "AWT_1114" /*Alpha Mail*/;
 	
 		case 164:
-			return "AWT_1115";
+			return "AWT_1115" /*Meteórico*/;
 	}
 
 	return "";
@@ -29990,7 +29990,7 @@ void func_191(var uParam0, var uParam1) // Position - 0x20AA2 (133794)
 
 	num3 = uParam1->f_5 + 1;
 	num4 = iLocal_109 + 1;
-	func_192(0, num3, num4, "HUD_PAGE" /*Page ~1~ of ~1~*/, false);
+	func_192(0, num3, num4, "HUD_PAGE" /*Página ~1~ de ~1~*/, false);
 	return;
 }
 

@@ -399,7 +399,7 @@ void func_5(int iParam0, BOOL bParam1) // Position - 0x23F (575)
 			func_6(iParam0, 3, false);
 			func_6(iParam0, 4, false);
 			func_6(iParam0, 0, true);
-			Global_79070[iParam0] = 1;
+			Global_79070[iParam0] = true;
 		}
 	}
 	else
@@ -426,10 +426,10 @@ void func_6(int iParam0, int iParam1, BOOL bParam2) // Position - 0x29C (668)
 void func_7(int iParam0) // Position - 0x2D7 (727)
 {
 	int num;
+	BOOL flag;
 	int num2;
-	int num3;
 	var unk;
-	int num4;
+	int num3;
 	char* str;
 
 	num = func_13(iParam0);
@@ -440,52 +440,52 @@ void func_7(int iParam0) // Position - 0x2D7 (727)
 	if (Global_55413[num /*203*/].f_9 == 0)
 		return;
 
-	num2 = Global_55413[num /*203*/].f_10[Global_55413[num /*203*/].f_9 - 1 /*48*/];
-	num3 = Global_55413[num /*203*/].f_9 - 1;
+	flag = Global_55413[num /*203*/].f_10[Global_55413[num /*203*/].f_9 - 1 /*48*/];
+	num2 = Global_55413[num /*203*/].f_9 - 1;
 
-	if (!Global_55413[num /*203*/].f_10[num3 /*48*/].f_1)
+	if (!Global_55413[num /*203*/].f_10[num2 /*48*/].f_1)
 	{
-		num4 = Global_55413[num /*203*/].f_10[num3 /*48*/];
-		TEXT_LABEL_COPY(&unk, { func_12(Global_46113[num4 /*12*/].f_1) }, 4);
+		num3 = Global_55413[num /*203*/].f_10[num2 /*48*/];
+		TEXT_LABEL_COPY(&unk, { func_12(Global_46113[num3 /*12*/].f_1) }, 4);
 	}
 	else
 	{
-		unk = { Global_55413[num /*203*/].f_10[num3 /*48*/].f_2 };
+		unk = { Global_55413[num /*203*/].f_10[num2 /*48*/].f_2 };
 	}
 
 	if (iParam0 == 28)
 	{
-		switch (num2)
+		switch (flag)
 		{
 			case 249:
-				str = "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/;
+				str = "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/;
 				break;
 		
 			case 269:
-				str = "PW_FEED_EM_3" /*Hello Franklin,~n~The Southern San Andreas Tourist Board Young Amateur Wildlife Photographer of the Year Competition is over.~n~Some of our photographers fell off cli...*/;
+				str = "PW_FEED_EM_3" /*Hola, Franklin:~n~La competición de fotógrafos amateur de animales de la oficina de turismo del sur de San Andreas ha terminado.~n~Algunos de nuestros fotógrafos cayeron por prec...*/;
 				break;
 		
 			default:
-				str = "PW_FEED_EM_2" /*Dear contestant,~n~Thank you for your recent photographic submission. Our image licensing department is already maximizing its profit-making potential. And you're a step clos...*/;
+				str = "PW_FEED_EM_2" /*Estimado participante,~n~Gracias por el envío de tu fotografía. Nuestro departamento de licencia de imágenes está aumentando el potencial de la foto para hacer dinero y tú estás un paso más...*/;
 				break;
 		}
 	
-		func_8(CHAR_FRANKLIN, Global_46113[num2 /*12*/].f_2, num2, str, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		func_8(CHAR_FRANKLIN, Global_46113[flag /*12*/].f_2, flag, str, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 	}
 	else
 	{
-		switch (Global_46113[num2 /*12*/].f_3)
+		switch (Global_46113[flag /*12*/].f_3)
 		{
 			case 0:
-				func_8(CHAR_MICHAEL, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_8(CHAR_MICHAEL, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		
 			case 1:
-				func_8(CHAR_FRANKLIN, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_8(CHAR_FRANKLIN, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		
 			case 2:
-				func_8(CHAR_TREVOR, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_8(CHAR_TREVOR, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		}
 	}
@@ -493,7 +493,7 @@ void func_7(int iParam0) // Position - 0x2D7 (727)
 	return;
 }
 
-void func_8(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const char* sParam4, const char* sParam5, const char* sParam6, const char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11, const char* sParam12, const char* sParam13) // Position - 0x643 (1603)
+void func_8(eCharacter echParam0, int iParam1, BOOL bParam2, char* sParam3, const char* sParam4, const char* sParam5, const char* sParam6, const char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11, const char* sParam12, const char* sParam13) // Position - 0x643 (1603)
 {
 	eCharacter character;
 	BOOL flag;
@@ -508,18 +508,18 @@ void func_8(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const
 
 	if (character == echParam0)
 	{
-		switch (iParam2)
+		switch (bParam2)
 		{
 			case 72:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 73:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 74:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			default:
@@ -632,7 +632,7 @@ char* func_10(int iParam0) // Position - 0x84F (2127)
 			return "EMSTR_12" /*Marnie*/;
 	
 		case 5:
-			return "EMSTR_29" /*Epsilon Store*/;
+			return "EMSTR_29" /*Tienda de Epsilon*/;
 	
 		case 6:
 			return "EMSTR_36" /*Maude*/;
@@ -650,10 +650,10 @@ char* func_10(int iParam0) // Position - 0x84F (2127)
 			return "EMSTR_58" /*Bank of Liberty*/;
 	
 		case 11:
-			return "EMSTR_78" /*Legendary Motorsport Sales*/;
+			return "EMSTR_78" /*Legendary Motorsport*/;
 	
 		case 12:
-			return "EMSTR_81" /*Elitas Sales*/;
+			return "EMSTR_81" /*Ventas de Elitas*/;
 	
 		case 13:
 			return "EMSTR_84" /*Cache & Carry*/;
@@ -674,13 +674,13 @@ char* func_10(int iParam0) // Position - 0x84F (2127)
 			return "EMSTR_145" /*Paige Harris*/;
 	
 		case 19:
-			return "EMSTR_152" /*Los Santos Tourist Info*/;
+			return "EMSTR_152" /*Turismo de Los Santos*/;
 	
 		case 20:
 			return "EMSTR_157" /*Rickie Luckens*/;
 	
 		case 21:
-			return "EMSTR_163" /*Minotaur Property Management*/;
+			return "EMSTR_163" /*Minotaur*/;
 	
 		case 22:
 			return "EMSTR_182" /*Saeeda Kadam*/;
@@ -689,10 +689,10 @@ char* func_10(int iParam0) // Position - 0x84F (2127)
 			return "EMSTR_187" /*Vanilla Unicorn*/;
 	
 		case 24:
-			return "EMSTR_190" /*Dr Isiah Friedlander*/;
+			return "EMSTR_190" /*Dr. Isiah Friedlander*/;
 	
 		case 25:
-			return "EMSTR_206" /*TRACEYHEARTSTEALER*/;
+			return "EMSTR_206" /*TRACIROBACORAZONES*/;
 	
 		case 26:
 			return "EMSTR_219" /*Dave Norton*/;
@@ -737,34 +737,34 @@ char* func_10(int iParam0) // Position - 0x84F (2127)
 			return "EMSTR_369" /*Hookies*/;
 	
 		case 40:
-			return "EMSTR_376" /*Towing Impound*/;
+			return "EMSTR_376" /*Depósito de coches*/;
 	
 		case 41:
-			return "EMSTR_379" /*Downtown Cab Co,*/;
+			return "EMSTR_379" /*Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_384" /*Sonar Collections Dock*/;
+			return "EMSTR_384" /*Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_387" /*Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_390" /*Cinema Doppler*/;
+			return "EMSTR_390" /*Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_393" /*Ten Cent Theater*/;
+			return "EMSTR_393" /*Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_396" /*Tivoli Cinema*/;
+			return "EMSTR_396" /*Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_399" /*Los Santos Golf Club*/;
+			return "EMSTR_399" /*Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_402" /*Car Scrap Yard*/;
+			return "EMSTR_402" /*Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_405" /*Smoke on the Water*/;
@@ -779,10 +779,10 @@ char* func_10(int iParam0) // Position - 0x84F (2127)
 			return "EMSTR_414" /*The Hen House*/;
 	
 		case 54:
-			return "EMSTR_465" /*Pedal & Metal Sales*/;
+			return "EMSTR_465" /*Ventas de P&M*/;
 	
 		case 55:
-			return "EMSTR_468" /*SSA Super Autos Sales*/;
+			return "EMSTR_468" /*SSA Super Autos*/;
 	
 		case 56:
 			return "EMSTR_489" /*Hush Smush*/;
@@ -806,13 +806,13 @@ char* func_10(int iParam0) // Position - 0x84F (2127)
 			return "EMSTR_507" /*Misscuddles*/;
 	
 		case 63:
-			return "EMSTR_640" /*Off-Road Events*/;
+			return "EMSTR_640" /*Eventos todoterreno*/;
 	
 		case 64:
 			return "EMSTR_643" /*DockTease*/;
 	
 		case 65:
-			return "EMSTR_652" /*Brother Adrian*/;
+			return "EMSTR_652" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -1109,16 +1109,16 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 {
 	int num;
 	int num2;
-	int num3;
+	BOOL flag;
 	var unk;
-	int num4;
-	int num5;
+	int num3;
+	BOOL flag2;
 	BOOL i;
 	BOOL j;
-	int num6;
+	int num4;
 	int k;
-	int num7;
-	int num8;
+	int num5;
+	BOOL flag3;
 
 	if (!(iParam0 < 3))
 		return;
@@ -1128,19 +1128,19 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 
 	if (!bParam2)
 	{
-		num4 = Global_49438[iParam1 /*46*/].f_42 - 1;
+		num3 = Global_49438[iParam1 /*46*/].f_42 - 1;
 	
-		if (num4 < 0)
+		if (num3 < 0)
 			return;
 	
-		num5 = Global_49438[iParam1 /*46*/].f_32[num4];
-		num3 = num5;
-		unk = { func_12(Global_46113[num5 /*12*/].f_1) };
+		flag2 = Global_49438[iParam1 /*46*/].f_32[num3];
+		flag = flag2;
+		unk = { func_12(Global_46113[flag2 /*12*/].f_1) };
 	
-		if (Global_46113[num5 /*12*/].f_2 == iParam0 && !(Global_46113[num5 /*12*/].f_3 == iParam0))
+		if (Global_46113[flag2 /*12*/].f_2 == iParam0 && !(Global_46113[flag2 /*12*/].f_3 == iParam0))
 			return;
 	
-		num2 = Global_46113[num5 /*12*/].f_2;
+		num2 = Global_46113[flag2 /*12*/].f_2;
 		num = Global_55051[iParam0 /*120*/];
 	
 		for (i = false; num >= 16; i = true)
@@ -1179,7 +1179,7 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 		}
 	
 		Global_55051[iParam0 /*120*/].f_18[num] = iParam1;
-		Global_55051[iParam0 /*120*/].f_1[num] = num4;
+		Global_55051[iParam0 /*120*/].f_1[num] = num3;
 		Global_55051[iParam0 /*120*/].f_35[num] = 0;
 		Global_55051[iParam0 /*120*/].f_86[num] = false;
 		Global_55051[iParam0 /*120*/].f_69[num] = false;
@@ -1224,33 +1224,33 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			}
 		}
 	
-		num6 = -1;
+		num4 = -1;
 		k = 0;
 	
 		for (k = 0; k < 7; k = k + 1)
 		{
 			if (Global_55413[k /*203*/].f_1 == iParam1 && Global_55413[k /*203*/].f_9 > 0)
-				num6 = k;
+				num4 = k;
 		}
 	
-		if (num6 == -1)
+		if (num4 == -1)
 			return;
 	
-		Global_55051[iParam0 /*120*/].f_18[num] = Global_55413[num6 /*203*/].f_1;
-		Global_55051[iParam0 /*120*/].f_1[num] = Global_55413[num6 /*203*/].f_9 - 1;
+		Global_55051[iParam0 /*120*/].f_18[num] = Global_55413[num4 /*203*/].f_1;
+		Global_55051[iParam0 /*120*/].f_1[num] = Global_55413[num4 /*203*/].f_9 - 1;
 		Global_55051[iParam0 /*120*/].f_35[num] = 0;
 		Global_55051[iParam0 /*120*/].f_86[num] = true;
 		Global_55051[iParam0 /*120*/].f_69[num] = false;
 		Global_55051[iParam0 /*120*/] = Global_55051[iParam0 /*120*/] + 1;
-		num7 = Global_55051[iParam0 /*120*/].f_1[num];
-		num8 = Global_55413[num6 /*203*/].f_10[num7 /*48*/];
-		num3 = num8;
-		num2 = Global_46113[num8 /*12*/].f_2;
+		num5 = Global_55051[iParam0 /*120*/].f_1[num];
+		flag3 = Global_55413[num4 /*203*/].f_10[num5 /*48*/];
+		flag = flag3;
+		num2 = Global_46113[flag3 /*12*/].f_2;
 	
-		if (Global_55413[num6 /*203*/].f_10[Global_55413[num6 /*203*/].f_9 - 1 /*48*/].f_1)
-			TEXT_LABEL_COPY(&unk, { Global_55413[num6 /*203*/].f_10[Global_55413[num6 /*203*/].f_9 - 1 /*48*/].f_2 }, 16);
+		if (Global_55413[num4 /*203*/].f_10[Global_55413[num4 /*203*/].f_9 - 1 /*48*/].f_1)
+			TEXT_LABEL_COPY(&unk, { Global_55413[num4 /*203*/].f_10[Global_55413[num4 /*203*/].f_9 - 1 /*48*/].f_2 }, 16);
 		else
-			unk = { func_12(Global_46113[num8 /*12*/].f_1) };
+			unk = { func_12(Global_46113[flag3 /*12*/].f_1) };
 	}
 
 	if (!bParam4)
@@ -1260,18 +1260,18 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			switch (iParam0)
 			{
 				case 0:
-					func_8(0, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_8(0, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 1:
-					if (num3 == 249)
-						func_8(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					if (flag == 249)
+						func_8(CHAR_FRANKLIN, num2, flag, "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
-						func_8(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_8(CHAR_FRANKLIN, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 2:
-					func_8(CHAR_TREVOR, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_8(CHAR_TREVOR, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			}
 		}
@@ -1463,10 +1463,10 @@ void func_21() // Position - 0x18A6 (6310)
 					}
 				
 					GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_230, "SHOW_BRIDGES_KNIVES_PROGRESS");
-					func_28("PW_TITLE" /*Wildlife Photography~s~*/);
+					func_28("PW_TITLE" /*Fotos de animales~s~*/);
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(20);
-					func_28("PW_PASS" /*Success!*/);
-					func_28("PW_CHALLENGE" /*Wildlife photographs taken*/);
+					func_28("PW_PASS" /*¡Éxito!*/);
+					func_28("PW_CHALLENGE" /*fotos de animales tomadas*/);
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(func_26());
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 					iLocal_247 = func_26();
@@ -1730,7 +1730,7 @@ void func_37(int iParam0) // Position - 0x1D53 (7507)
 
 BOOL func_38() // Position - 0x1DDD (7645)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -1848,90 +1848,90 @@ char* func_44(int iParam0) // Position - 0x200A (8202)
 	{
 		case 0:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 4) && !IS_BIT_SET(Global_114904.f_10056.f_99, 29))
-				return "PW_STRING_1_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> BOAR~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> BORDER COLLIE~nrt~*/;
+				return "PW_STRING_1_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> JABALÍ~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> BORDER COLLIE~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 4) && !IS_BIT_SET(Global_114904.f_10056.f_99, 29))
-				return "PW_STRING_1_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> BOAR~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> BORDER COLLIE~nrt~*/;
+				return "PW_STRING_1_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> JABALÍ~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> BORDER COLLIE~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 4) && IS_BIT_SET(Global_114904.f_10056.f_99, 29))
-				return "PW_STRING_1_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> BOAR~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> BORDER COLLIE~nrt~*/;
+				return "PW_STRING_1_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> JABALÍ~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> BORDER COLLIE~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 4) && IS_BIT_SET(Global_114904.f_10056.f_99, 29))
-				return "PW_STRING_1_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> BOAR~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> BORDER COLLIE~nrt~*/;
+				return "PW_STRING_1_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> JABALÍ~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> BORDER COLLIE~nrt~*/;
 			break;
 	
 		case 1:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 5) && !IS_BIT_SET(Global_114904.f_10056.f_99, 6))
-				return "PW_STRING_2_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CAT~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CHICKEN-HAWK~nrt~*/;
+				return "PW_STRING_2_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/>  GATO ~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> HALCÓN~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 5) && !IS_BIT_SET(Global_114904.f_10056.f_99, 6))
-				return "PW_STRING_2_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CAT~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CHICKEN-HAWK~nrt~*/;
+				return "PW_STRING_2_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> GATO~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> HALCÓN~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 5) && IS_BIT_SET(Global_114904.f_10056.f_99, 6))
-				return "PW_STRING_2_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CAT~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CHICKEN-HAWK~nrt~*/;
+				return "PW_STRING_2_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> GATO~nrt~~n~ <img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> HALCÓN~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 5) && IS_BIT_SET(Global_114904.f_10056.f_99, 6))
-				return "PW_STRING_2_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CAT~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CHICKEN-HAWK~nrt~*/;
+				return "PW_STRING_2_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> GATO~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> HALCÓN~nrt~*/;
 			break;
 	
 		case 2:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 7) && !IS_BIT_SET(Global_114904.f_10056.f_99, 8))
-				return "PW_STRING_3_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CORMORANT~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> COW~nrt~*/;
+				return "PW_STRING_3_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CORMORÁN~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> VACA~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 7) && !IS_BIT_SET(Global_114904.f_10056.f_99, 8))
-				return "PW_STRING_3_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CORMORANT~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> COW~nrt~*/;
+				return "PW_STRING_3_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CORMORÁN~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> VACA~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 7) && IS_BIT_SET(Global_114904.f_10056.f_99, 8))
-				return "PW_STRING_3_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CORMORANT~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> COW~nrt~*/;
+				return "PW_STRING_3_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CORMORÁN~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> VACA~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 7) && IS_BIT_SET(Global_114904.f_10056.f_99, 8))
-				return "PW_STRING_3_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CORMORANT~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> COW~nrt~*/;
+				return "PW_STRING_3_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CORMORÁN~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> VACA~nrt~*/;
 			break;
 	
 		case 3:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 9) && !IS_BIT_SET(Global_114904.f_10056.f_99, 10))
-				return "PW_STRING_4_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> COYOTE~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CROW~nrt~*/;
+				return "PW_STRING_4_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> COYOTE~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CUERVO~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 9) && !IS_BIT_SET(Global_114904.f_10056.f_99, 10))
-				return "PW_STRING_4_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> COYOTE~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CROW~nrt~*/;
+				return "PW_STRING_4_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> COYOTE~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CUERVO~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 9) && IS_BIT_SET(Global_114904.f_10056.f_99, 10))
-				return "PW_STRING_4_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> COYOTE~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CROW~nrt~*/;
+				return "PW_STRING_4_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> COYOTE~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CUERVO~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 9) && IS_BIT_SET(Global_114904.f_10056.f_99, 10))
-				return "PW_STRING_4_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> COYOTE~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CROW~nrt~*/;
+				return "PW_STRING_4_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> COYOTE~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CUERVO~nrt~*/;
 			break;
 	
 		case 4:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 11) && !IS_BIT_SET(Global_114904.f_10056.f_99, 14))
-				return "PW_STRING_5_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> DEER~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> HEN~nrt~*/;
+				return "PW_STRING_5_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CIERVO~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> GALLINA~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 11) && !IS_BIT_SET(Global_114904.f_10056.f_99, 14))
-				return "PW_STRING_5_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> DEER~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> HEN~nrt~*/;
+				return "PW_STRING_5_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CIERVO~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> GALLINA~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 11) && IS_BIT_SET(Global_114904.f_10056.f_99, 14))
-				return "PW_STRING_5_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> DEER~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> HEN~nrt~*/;
+				return "PW_STRING_5_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CIERVO~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> GALLINA~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 11) && IS_BIT_SET(Global_114904.f_10056.f_99, 14))
-				return "PW_STRING_5_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> DEER~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> HEN~nrt~*/;
+				return "PW_STRING_5_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CIERVO~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> GALLINA~nrt~*/;
 			break;
 	
 		case 5:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 16) && !IS_BIT_SET(Global_114904.f_10056.f_99, 18))
-				return "PW_STRING_6_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> HUSKY~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> MOUNTAIN LION~nrt~*/;
+				return "PW_STRING_6_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> HUSKY~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> PUMA~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 16) && !IS_BIT_SET(Global_114904.f_10056.f_99, 18))
-				return "PW_STRING_6_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> HUSKY~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> MOUNTAIN LION~nrt~*/;
+				return "PW_STRING_6_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> HUSKY~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> PUMA~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 16) && IS_BIT_SET(Global_114904.f_10056.f_99, 18))
-				return "PW_STRING_6_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> HUSKY~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> MOUNTAIN LION~nrt~*/;
+				return "PW_STRING_6_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> HUSKY~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> PUMA~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 16) && IS_BIT_SET(Global_114904.f_10056.f_99, 18))
-				return "PW_STRING_6_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> HUSKY~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> MOUNTAIN LION~nrt~*/;
+				return "PW_STRING_6_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> HUSKY~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> PUMA~nrt~*/;
 			break;
 	
 		case 6:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 19) && !IS_BIT_SET(Global_114904.f_10056.f_99, 21))
-				return "PW_STRING_7_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> PIG~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> POODLE~nrt~*/;
+				return "PW_STRING_7_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CERDO~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CANICHE~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 19) && !IS_BIT_SET(Global_114904.f_10056.f_99, 21))
-				return "PW_STRING_7_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> PIG~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> POODLE~nrt~*/;
+				return "PW_STRING_7_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CERDO~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CANICHE~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 19) && IS_BIT_SET(Global_114904.f_10056.f_99, 21))
-				return "PW_STRING_7_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> PIG~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> POODLE~nrt~*/;
+				return "PW_STRING_7_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CERDO~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CANICHE~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 19) && IS_BIT_SET(Global_114904.f_10056.f_99, 21))
-				return "PW_STRING_7_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> PIG~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> POODLE~nrt~*/;
+				return "PW_STRING_7_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CERDO~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CANICHE~nrt~*/;
 			break;
 	
 		case 7:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 22) && !IS_BIT_SET(Global_114904.f_10056.f_99, 23))
-				return "PW_STRING_8_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> PUG~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> RABBIT~nrt~*/;
+				return "PW_STRING_8_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CARLINO~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CONEJO~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 22) && !IS_BIT_SET(Global_114904.f_10056.f_99, 23))
-				return "PW_STRING_8_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> PUG~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> RABBIT~nrt~*/;
+				return "PW_STRING_8_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CARLINO~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CONEJO~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 22) && IS_BIT_SET(Global_114904.f_10056.f_99, 23))
-				return "PW_STRING_8_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> PUG~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> RABBIT~nrt~*/;
+				return "PW_STRING_8_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> CARLINO~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CONEJO~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 22) && IS_BIT_SET(Global_114904.f_10056.f_99, 23))
-				return "PW_STRING_8_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> PUG~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> RABBIT~nrt~*/;
+				return "PW_STRING_8_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CARLINO~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> CONEJO~nrt~*/;
 			break;
 	
 		case 8:
@@ -1947,13 +1947,13 @@ char* func_44(int iParam0) // Position - 0x200A (8202)
 	
 		case 9:
 			if (!IS_BIT_SET(Global_114904.f_10056.f_99, 26) && !IS_BIT_SET(Global_114904.f_10056.f_99, 31))
-				return "PW_STRING_10_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> SEAGULL~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> WEST HIGHLAND TERRIER~nrt~*/;
+				return "PW_STRING_10_1" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> GAVIOTA~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> WEST HIGHLAND TERRIER~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 26) && !IS_BIT_SET(Global_114904.f_10056.f_99, 31))
-				return "PW_STRING_10_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> SEAGULL~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> WEST HIGHLAND TERRIER~nrt~*/;
+				return "PW_STRING_10_2" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> GAVIOTA~nrt~~n~<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> WEST HIGHLAND TERRIER~nrt~*/;
 			else if (!IS_BIT_SET(Global_114904.f_10056.f_99, 26) && IS_BIT_SET(Global_114904.f_10056.f_99, 31))
-				return "PW_STRING_10_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> SEAGULL~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> WEST HIGHLAND TERRIER~nrt~*/;
+				return "PW_STRING_10_3" /*<img src='img://CELLPHONE_BADGER/u' height="32" width="32" vspace='-10'/> GAVIOTA~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> WEST HIGHLAND TERRIER~nrt~*/;
 			else if (IS_BIT_SET(Global_114904.f_10056.f_99, 26) && IS_BIT_SET(Global_114904.f_10056.f_99, 31))
-				return "PW_STRING_10_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> SEAGULL~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> WEST HIGHLAND TERRIER~nrt~*/;
+				return "PW_STRING_10_4" /*<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> GAVIOTA~nrt~~n~<img src='img://CELLPHONE_BADGER/t' height="32" width="32" vspace='-10'/> WEST HIGHLAND TERRIER~nrt~*/;
 			break;
 	}
 
@@ -2017,7 +2017,7 @@ void func_46() // Position - 0x2710 (10000)
 			switch (iLocal_78)
 			{
 				case 0:
-					_DISPLAY_HELP_TEXT("PW_HELP_1" /*Use ~INPUT_CELLPHONE_EXTRA_OPTION~ to email the photograph to the LS Tourist Board.*/, -1);
+					_DISPLAY_HELP_TEXT("PW_HELP_1" /*Usa ~INPUT_CELLPHONE_EXTRA_OPTION~ para enviar la foto a la oficina de turismo de Los Santos.*/, -1);
 				
 					if (func_61())
 					{
@@ -2025,8 +2025,8 @@ void func_46() // Position - 0x2710 (10000)
 						{
 							func_60(99);
 						
-							if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_1" /*Use ~INPUT_CELLPHONE_EXTRA_OPTION~ to email the photograph to the LS Tourist Board.*/))
-								HUD::CLEAR_THIS_PRINT("PW_HELP_1" /*Use ~INPUT_CELLPHONE_EXTRA_OPTION~ to email the photograph to the LS Tourist Board.*/);
+							if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_1" /*Usa ~INPUT_CELLPHONE_EXTRA_OPTION~ para enviar la foto a la oficina de turismo de Los Santos.*/))
+								HUD::CLEAR_THIS_PRINT("PW_HELP_1" /*Usa ~INPUT_CELLPHONE_EXTRA_OPTION~ para enviar la foto a la oficina de turismo de Los Santos.*/);
 						
 							iLocal_78 = 1;
 						}
@@ -2037,15 +2037,15 @@ void func_46() // Position - 0x2710 (10000)
 						func_63(false);
 						func_57(99);
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_1" /*Use ~INPUT_CELLPHONE_EXTRA_OPTION~ to email the photograph to the LS Tourist Board.*/))
-							HUD::CLEAR_THIS_PRINT("PW_HELP_1" /*Use ~INPUT_CELLPHONE_EXTRA_OPTION~ to email the photograph to the LS Tourist Board.*/);
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_1" /*Usa ~INPUT_CELLPHONE_EXTRA_OPTION~ para enviar la foto a la oficina de turismo de Los Santos.*/))
+							HUD::CLEAR_THIS_PRINT("PW_HELP_1" /*Usa ~INPUT_CELLPHONE_EXTRA_OPTION~ para enviar la foto a la oficina de turismo de Los Santos.*/);
 					
 						iLocal_77 = 7;
 					}
 					break;
 			
 				case 1:
-					_DISPLAY_HELP_TEXT("PW_HELP_2" /*Use ~INPUT_CELLPHONE_SELECT~ to send the email to the LS Tourist Board.*/, -1);
+					_DISPLAY_HELP_TEXT("PW_HELP_2" /*Usa ~INPUT_CELLPHONE_SELECT~ para enviar la foto a la oficina de turismo de Los Santos.*/, -1);
 				
 					if (func_55(99))
 					{
@@ -2053,8 +2053,8 @@ void func_46() // Position - 0x2710 (10000)
 						func_63(false);
 						func_57(99);
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_2" /*Use ~INPUT_CELLPHONE_SELECT~ to send the email to the LS Tourist Board.*/))
-							HUD::CLEAR_THIS_PRINT("PW_HELP_2" /*Use ~INPUT_CELLPHONE_SELECT~ to send the email to the LS Tourist Board.*/);
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_2" /*Usa ~INPUT_CELLPHONE_SELECT~ para enviar la foto a la oficina de turismo de Los Santos.*/))
+							HUD::CLEAR_THIS_PRINT("PW_HELP_2" /*Usa ~INPUT_CELLPHONE_SELECT~ para enviar la foto a la oficina de turismo de Los Santos.*/);
 					
 						iLocal_77 = 6;
 					}
@@ -2065,8 +2065,8 @@ void func_46() // Position - 0x2710 (10000)
 						func_63(false);
 						func_57(99);
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_2" /*Use ~INPUT_CELLPHONE_SELECT~ to send the email to the LS Tourist Board.*/))
-							HUD::CLEAR_THIS_PRINT("PW_HELP_2" /*Use ~INPUT_CELLPHONE_SELECT~ to send the email to the LS Tourist Board.*/);
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_2" /*Usa ~INPUT_CELLPHONE_SELECT~ para enviar la foto a la oficina de turismo de Los Santos.*/))
+							HUD::CLEAR_THIS_PRINT("PW_HELP_2" /*Usa ~INPUT_CELLPHONE_SELECT~ para enviar la foto a la oficina de turismo de Los Santos.*/);
 					
 						iLocal_77 = 7;
 					}
@@ -2111,11 +2111,11 @@ void func_47() // Position - 0x2950 (10576)
 	func_63(false);
 	func_57(99);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_1" /*Use ~INPUT_CELLPHONE_EXTRA_OPTION~ to email the photograph to the LS Tourist Board.*/))
-		HUD::CLEAR_THIS_PRINT("PW_HELP_1" /*Use ~INPUT_CELLPHONE_EXTRA_OPTION~ to email the photograph to the LS Tourist Board.*/);
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_1" /*Usa ~INPUT_CELLPHONE_EXTRA_OPTION~ para enviar la foto a la oficina de turismo de Los Santos.*/))
+		HUD::CLEAR_THIS_PRINT("PW_HELP_1" /*Usa ~INPUT_CELLPHONE_EXTRA_OPTION~ para enviar la foto a la oficina de turismo de Los Santos.*/);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_2" /*Use ~INPUT_CELLPHONE_SELECT~ to send the email to the LS Tourist Board.*/))
-		HUD::CLEAR_THIS_PRINT("PW_HELP_2" /*Use ~INPUT_CELLPHONE_SELECT~ to send the email to the LS Tourist Board.*/);
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PW_HELP_2" /*Usa ~INPUT_CELLPHONE_SELECT~ para enviar la foto a la oficina de turismo de Los Santos.*/))
+		HUD::CLEAR_THIS_PRINT("PW_HELP_2" /*Usa ~INPUT_CELLPHONE_SELECT~ para enviar la foto a la oficina de turismo de Los Santos.*/);
 
 	return;
 }

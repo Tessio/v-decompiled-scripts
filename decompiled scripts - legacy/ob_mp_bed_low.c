@@ -418,16 +418,16 @@ void main() // Position - 0x0 (0)
 	uLocal_346 = { 262.74f, -1004.344f, -99.575f };
 	uLocal_349 = { 0f, 0f, -162.36f };
 
-	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(16) || func_331() || Global_2733002.f_1041)
-		func_330();
+	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(16) || func_333() || Global_2733002.f_1041)
+		func_332();
 
-	if (func_327(9) || func_326() && !func_325())
-		func_330();
+	if (func_329(9) || func_328() && !func_327())
+		func_332();
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
 		NETWORK::NETWORK_SET_THIS_SCRIPT_IS_NETWORK_SCRIPT(32, false, -1);
-		func_323(0, -1, false);
+		func_325(0, -1, false);
 		MISC::SET_THIS_SCRIPT_CAN_BE_PAUSED(false);
 	}
 
@@ -438,14 +438,14 @@ void main() // Position - 0x0 (0)
 	{
 		BUILTIN::WAIT(0);
 	
-		if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() || func_322() == 5 && !_SHOULD_NETWORK_SCRIPT_TERMINATE())
+		if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() || func_324() == 5 && !_SHOULD_NETWORK_SCRIPT_TERMINATE())
 		{
 			if (MISC::GET_DISTANCE_BETWEEN_COORDS(uLocal_342, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), true) < 3f)
 			{
 				switch (iLocal_324)
 				{
 					case 0:
-						if (func_314())
+						if (func_316())
 							iLocal_324 = 1;
 						break;
 				
@@ -460,12 +460,12 @@ void main() // Position - 0x0 (0)
 			}
 			else if (MISC::GET_DISTANCE_BETWEEN_COORDS(uLocal_342, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), true) > 3f + 2f)
 			{
-				func_330();
+				func_332();
 			}
 		}
 		else
 		{
-			func_330();
+			func_332();
 		}
 	}
 
@@ -485,19 +485,19 @@ void func_1() // Position - 0x245 (581)
 			if (Global_1835495 == 8)
 				Global_1835495 = -1;
 		
-			if (func_322() == 5)
+			if (func_324() == 5)
 			{
 				iLocal_329 = NETWORK::NETWORK_CREATE_SYNCHRONISED_SCENE(uLocal_346, uLocal_349, 2, false, true, 1065353216, 0, 1065353216);
 				NETWORK::NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE(PLAYER::PLAYER_PED_ID(), iLocal_329, sLocal_332, sLocal_334, 8f, -2f, 261, 0, 1148846080, 0);
 				NETWORK::NETWORK_START_SYNCHRONISED_SCENE(iLocal_329);
 				iLocal_325 = 7;
 			}
-			else if (func_299(8))
+			else if (func_301(8))
 			{
-				if (func_295(uLocal_342, unk) && INTERIOR::GET_INTERIOR_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) == INTERIOR::GET_INTERIOR_AT_COORDS(uLocal_342) && ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), uLocal_336, uLocal_339, 2f, false, true, 0) && func_294() && !func_293(PLAYER::PLAYER_ID()))
+				if (func_297(uLocal_342, unk) && INTERIOR::GET_INTERIOR_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) == INTERIOR::GET_INTERIOR_AT_COORDS(uLocal_342) && ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), uLocal_336, uLocal_339, 2f, false, true, 0) && func_296() && !func_295(PLAYER::PLAYER_ID()))
 				{
 					if (iLocal_331 == -1)
-						_CONTEXT_ADD_HELP_TEXT(&iLocal_331, 3, "SA_BED_IN" /*Press ~INPUT_CONTEXT~ to get into bed.~n~*/, 0, 0, 0, 0);
+						_CONTEXT_ADD_HELP_TEXT(&iLocal_331, 3, "SA_BED_IN" /*Pulsa ~INPUT_CONTEXT~ para tumbarte en la cama.~n~*/, 0, 0, 0, 0);
 				
 					iLocal_325 = 1;
 				}
@@ -505,25 +505,25 @@ void func_1() // Position - 0x245 (581)
 			break;
 	
 		case 1:
-			if (func_291(true, false, true))
+			if (func_293(true, false, true))
 			{
-				if (func_295(uLocal_342, unk) && func_299(8) && INTERIOR::GET_INTERIOR_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) == INTERIOR::GET_INTERIOR_AT_COORDS(uLocal_342) && ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), uLocal_336, uLocal_339, 2f, false, true, 0) && func_294() && !func_293(PLAYER::PLAYER_ID()))
+				if (func_297(uLocal_342, unk) && func_301(8) && INTERIOR::GET_INTERIOR_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) == INTERIOR::GET_INTERIOR_AT_COORDS(uLocal_342) && ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), uLocal_336, uLocal_339, 2f, false, true, 0) && func_296() && !func_295(PLAYER::PLAYER_ID()))
 				{
-					if (func_289(iLocal_331, true))
+					if (func_291(iLocal_331, true))
 					{
-						func_287(&iLocal_331);
-						func_286();
+						func_289(&iLocal_331);
+						func_288();
 						Global_1835495 = 8;
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_IN" /*Press ~INPUT_CONTEXT~ to get into bed.~n~*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_IN" /*Pulsa ~INPUT_CONTEXT~ para tumbarte en la cama.~n~*/))
 							HUD::CLEAR_HELP(true);
 					
 						MISC::CLEAR_AREA_OF_PROJECTILES(uLocal_342, 3f, 0);
 						_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_LEAVE_CAMERA_CONTROL_ON, false);
 						bLocal_34 = true;
-						func_274();
+						func_276();
 						WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("WEAPON_UNARMED"), true);
-						func_265(true, true, true, false, false, false, false);
+						func_267(true, true, true, false, false, false, false);
 						uLocal_342 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(sLocal_332, sLocal_333, uLocal_346, uLocal_349, 0, 2) };
 						animInitialOffsetRotation = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_332, sLocal_333, uLocal_346, uLocal_349, 0, 2) };
 						fLocal_345 = animInitialOffsetRotation.f_2;
@@ -531,7 +531,7 @@ void func_1() // Position - 0x245 (581)
 					
 						if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() == FIRST_PERSON && ENTITY::DOES_ENTITY_EXIST(eLocal_39))
 						{
-							PED::SET_PED_DESIRED_HEADING(PLAYER::PLAYER_PED_ID(), func_264(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), ENTITY::GET_ENTITY_COORDS(eLocal_39, true)));
+							PED::SET_PED_DESIRED_HEADING(PLAYER::PLAYER_PED_ID(), func_266(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), ENTITY::GET_ENTITY_COORDS(eLocal_39, true)));
 							PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), joaat("MotionState_Aiming"), false, 0, false);
 							PED::SET_PED_RESET_FLAG(PLAYER::PLAYER_PED_ID(), 69, true);
 						}
@@ -541,9 +541,9 @@ void func_1() // Position - 0x245 (581)
 				}
 				else
 				{
-					func_287(&iLocal_331);
+					func_289(&iLocal_331);
 				
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_IN" /*Press ~INPUT_CONTEXT~ to get into bed.~n~*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_IN" /*Pulsa ~INPUT_CONTEXT~ para tumbarte en la cama.~n~*/))
 						HUD::CLEAR_HELP(true);
 				
 					iLocal_325 = 0;
@@ -552,13 +552,13 @@ void func_1() // Position - 0x245 (581)
 			break;
 	
 		case 2:
-			func_263();
-			func_260(true);
+			func_265();
+			func_262(true);
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
 		
 			if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() == FIRST_PERSON && ENTITY::DOES_ENTITY_EXIST(eLocal_39))
 			{
-				PED::SET_PED_DESIRED_HEADING(PLAYER::PLAYER_PED_ID(), func_264(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), ENTITY::GET_ENTITY_COORDS(eLocal_39, true)));
+				PED::SET_PED_DESIRED_HEADING(PLAYER::PLAYER_PED_ID(), func_266(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), ENTITY::GET_ENTITY_COORDS(eLocal_39, true)));
 				PED::SET_PED_RESET_FLAG(PLAYER::PLAYER_PED_ID(), 69, true);
 			}
 		
@@ -573,8 +573,8 @@ void func_1() // Position - 0x245 (581)
 			break;
 	
 		case 3:
-			func_263();
-			func_260(true);
+			func_265();
+			func_262(true);
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
 			iLocal_330 = NETWORK::NETWORK_GET_LOCAL_SCENE_FROM_NETWORK_ID(iLocal_329);
 		
@@ -583,8 +583,8 @@ void func_1() // Position - 0x245 (581)
 			break;
 	
 		case 4:
-			func_263();
-			func_260(true);
+			func_265();
+			func_262(true);
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
 		
 			if (PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_330) > 0.9f)
@@ -597,8 +597,8 @@ void func_1() // Position - 0x245 (581)
 			break;
 	
 		case 5:
-			func_263();
-			func_260(true);
+			func_265();
+			func_262(true);
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
 			iLocal_330 = NETWORK::NETWORK_GET_LOCAL_SCENE_FROM_NETWORK_ID(iLocal_329);
 		
@@ -606,27 +606,27 @@ void func_1() // Position - 0x245 (581)
 			{
 				PED::SET_SYNCHRONIZED_SCENE_LOOPED(iLocal_330, true);
 			
-				if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Press ~INPUT_SCRIPT_RUP~ to get out of bed.~n~*/))
-					func_10("SA_BED_OUT" /*Press ~INPUT_SCRIPT_RUP~ to get out of bed.~n~*/);
+				if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
+					func_10("SA_BED_OUT" /*Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/);
 			
 				iLocal_325 = 6;
 			}
 			break;
 	
 		case 6:
-			func_263();
-			func_260(true);
+			func_265();
+			func_262(true);
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
 		
 			if (!func_9(true))
-				if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Press ~INPUT_SCRIPT_RUP~ to get out of bed.~n~*/))
-					func_10("SA_BED_OUT" /*Press ~INPUT_SCRIPT_RUP~ to get out of bed.~n~*/);
-			else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Press ~INPUT_SCRIPT_RUP~ to get out of bed.~n~*/))
+				if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
+					func_10("SA_BED_OUT" /*Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/);
+			else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 				HUD::CLEAR_HELP(true);
 		
-			if (!func_293(PLAYER::PLAYER_ID()) && PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_SCRIPT_RUP))
+			if (!func_295(PLAYER::PLAYER_ID()) && PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_SCRIPT_RUP))
 			{
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Press ~INPUT_SCRIPT_RUP~ to get out of bed.~n~*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 					HUD::CLEAR_HELP(true);
 			
 				func_8();
@@ -651,8 +651,8 @@ void func_1() // Position - 0x245 (581)
 		case 8:
 			if (!bLocal_327)
 			{
-				func_263();
-				func_260(true);
+				func_265();
+				func_262(true);
 				HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
 			}
 		
@@ -666,7 +666,7 @@ void func_1() // Position - 0x245 (581)
 			break;
 	
 		case 9:
-			func_263();
+			func_265();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
 			func_3(0);
 		
@@ -680,7 +680,7 @@ void func_1() // Position - 0x245 (581)
 					bLocal_34 = false;
 				}
 			
-				func_265(false, true, true, false, false, false, false);
+				func_267(false, true, true, false, false, false, false);
 				iLocal_325 = 0;
 				Global_1835495 = -1;
 			}
@@ -713,7 +713,7 @@ void func_3(int iParam0) // Position - 0x87C (2172)
 
 void func_4(int iParam0) // Position - 0x8AD (2221)
 {
-	if (iParam0 == func_322())
+	if (iParam0 == func_324())
 		Global_2640098.f_19 = 1;
 
 	return;
@@ -754,7 +754,7 @@ void func_8() // Position - 0x91A (2330)
 	return;
 }
 
-BOOL func_9(BOOL bParam0) // Position - 0x938 (2360)
+ePedComponentType func_9(BOOL bParam0) // Position - 0x938 (2360)
 {
 	if (bParam0)
 		return Global_24390.f_4 && Global_24390.f_104 == 4;
@@ -776,9 +776,9 @@ void func_11(int iParam0, BOOL bParam1) // Position - 0x977 (2423)
 	if (Global_1989122.f_11)
 		return;
 
-	type = func_258(PLAYER::PLAYER_PED_ID(), 1, PV_COMP_INVALID);
+	type = func_260(PLAYER::PLAYER_PED_ID(), 1, PV_COMP_INVALID);
 
-	if (func_257(PLAYER::PLAYER_PED_ID(), 7))
+	if (func_259(PLAYER::PLAYER_PED_ID(), 7))
 	{
 		Global_1989122.f_3 = PED::GET_PED_PROP_INDEX(PLAYER::PLAYER_PED_ID(), PV_COMP_HEAD, 1);
 		Global_1989122.f_4 = PED::GET_PED_PROP_TEXTURE_INDEX(PLAYER::PLAYER_PED_ID(), PV_COMP_HEAD);
@@ -789,17 +789,17 @@ void func_11(int iParam0, BOOL bParam1) // Position - 0x977 (2423)
 		PED::SET_PED_COMPONENT_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_TEEF, 0, 0, 0);
 		Global_1989122.f_11 = 1;
 	}
-	else if (func_256(PLAYER::PLAYER_PED_ID()))
+	else if (func_258(PLAYER::PLAYER_PED_ID()))
 	{
 		Global_1989122.f_3 = PED::GET_PED_DRAWABLE_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_BERD);
 		Global_1989122.f_4 = PED::GET_PED_TEXTURE_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_BERD);
 		Global_1989122.f_5 = PED::GET_PED_DRAWABLE_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_TEEF);
 		Global_1989122.f_6 = PED::GET_PED_TEXTURE_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_TEEF);
 		Global_1989122.f_2 = 1;
-		func_255(PLAYER::PLAYER_PED_ID());
+		func_257(PLAYER::PLAYER_PED_ID());
 		Global_1989122.f_11 = 1;
 	}
-	else if (func_254(PLAYER::PLAYER_PED_ID(), PV_COMP_JBIB))
+	else if (func_256(PLAYER::PLAYER_PED_ID(), PV_COMP_JBIB))
 	{
 		Global_1989122.f_3 = PED::GET_PED_PROP_INDEX(PLAYER::PLAYER_PED_ID(), PV_COMP_HEAD, 1);
 		Global_1989122.f_4 = PED::GET_PED_PROP_TEXTURE_INDEX(PLAYER::PLAYER_PED_ID(), PV_COMP_HEAD);
@@ -811,7 +811,7 @@ void func_11(int iParam0, BOOL bParam1) // Position - 0x977 (2423)
 		Global_1989122.f_11 = 1;
 	}
 
-	if (func_252(func_253(), 1, type, -1) || bParam1 && Global_1989122.f_2 <= 0)
+	if (func_254(func_255(), 1, type, -1) || bParam1 && Global_1989122.f_2 <= 0)
 	{
 		Global_1989122.f_9 = PED::GET_PED_DRAWABLE_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_BERD);
 		Global_1989122.f_10 = PED::GET_PED_TEXTURE_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_BERD);
@@ -819,15 +819,15 @@ void func_11(int iParam0, BOOL bParam1) // Position - 0x977 (2423)
 		Global_1989122.f_11 = 1;
 	}
 
-	if (func_251(PLAYER::PLAYER_PED_ID()))
+	if (func_253(PLAYER::PLAYER_PED_ID()))
 	{
-		if (func_249(PLAYER::PLAYER_PED_ID()))
+		if (func_251(PLAYER::PLAYER_PED_ID()))
 			Global_1989122 = true;
 	
 		Global_1989122.f_11 = 1;
 	}
 
-	if (func_248(func_253(), 14, func_258(PLAYER::PLAYER_PED_ID(), 14, PV_COMP_HEAD), -1))
+	if (func_250(func_255(), 14, func_260(PLAYER::PLAYER_PED_ID(), 14, PV_COMP_HEAD), -1))
 	{
 		Global_1989122.f_7 = PED::GET_PED_PROP_INDEX(PLAYER::PLAYER_PED_ID(), PV_COMP_HEAD, 1);
 		Global_1989122.f_8 = PED::GET_PED_PROP_TEXTURE_INDEX(PLAYER::PLAYER_PED_ID(), PV_COMP_HEAD);
@@ -835,7 +835,7 @@ void func_11(int iParam0, BOOL bParam1) // Position - 0x977 (2423)
 		Global_1989122.f_11 = 1;
 	}
 
-	if (iParam0 && func_246(PLAYER::PLAYER_PED_ID(), 4, -1))
+	if (iParam0 && func_248(PLAYER::PLAYER_PED_ID(), 4, -1))
 	{
 		Global_1989122.f_1 = 1;
 		func_12(PLAYER::PLAYER_PED_ID(), 4, -1, -1);
@@ -876,7 +876,7 @@ void func_12(Ped pedParam0, int iParam1, Player plParam2, int iParam3) // Positi
 
 	flag2 = false;
 
-	if (func_240(pedParam0, &Global_80133, iParam1, &iParam3))
+	if (func_242(pedParam0, &Global_80133, iParam1, &iParam3))
 	{
 		for (i = PV_COMP_HEAD; i < PV_COMP_MAX; i = i + 1)
 		{
@@ -1023,11 +1023,11 @@ void func_14(BOOL bParam0) // Position - 0xFD8 (4056)
 	return;
 }
 
-void func_15(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position - 0xFEB (4075)
+void func_15(int iParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0xFEB (4075)
 {
 	Hash statName;
 
-	statName = func_16(iParam0, iParam2);
+	statName = func_16(iParam0, bParam2);
 
 	if (statName != 0)
 		STATS::STAT_SET_BOOL(statName, bParam1, bParam3);
@@ -1035,38 +1035,38 @@ void func_15(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position -
 	return;
 }
 
-Hash func_16(int iParam0, int iParam1) // Position - 0x100E (4110)
+Hash func_16(int iParam0, BOOL bParam1) // Position - 0x100E (4110)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(2, iParam0, func_17(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(2, iParam0, func_17(bParam1));
 }
 
-int func_17(int iParam0) // Position - 0x1023 (4131)
+BOOL func_17(BOOL bParam0) // Position - 0x1023 (4131)
 {
-	int num;
-	int num2;
+	BOOL flag;
+	BOOL flag2;
 
-	num = iParam0;
+	flag = bParam0;
 
-	if (num == -1)
+	if (flag == -1)
 	{
-		num2 = func_18();
+		flag2 = func_18();
 	
-		if (num2 > -1)
+		if (flag2 > -1)
 		{
 			Global_2741298 = 0;
-			num = num2;
+			flag = flag2;
 		}
 		else
 		{
-			num = 0;
+			flag = false;
 			Global_2741298 = 1;
 		}
 	}
 
-	return num;
+	return flag;
 }
 
-int func_18() // Position - 0x1057 (4183)
+BOOL func_18() // Position - 0x1057 (4183)
 {
 	return Global_1574927;
 }
@@ -1086,7 +1086,7 @@ void func_19(BOOL bParam0) // Position - 0x1063 (4195)
 	return;
 }
 
-void func_20(Ped pedParam0, int iParam1) // Position - 0x1095 (4245)
+void func_20(Ped pedParam0, BOOL bParam1) // Position - 0x1095 (4245)
 {
 	ePedComponentType headBlendData;
 	ePedComponentType shapeFirstID;
@@ -1107,30 +1107,30 @@ void func_20(Ped pedParam0, int iParam1) // Position - 0x1095 (4245)
 		return;
 
 	PED::GET_PED_HEAD_BLEND_DATA(pedParam0, &headBlendData);
-	shapeFirstID = func_237(2097, iParam1);
-	shapeSecondID = func_237(2098, iParam1);
-	shapeThirdID = func_237(2099, iParam1);
-	skinFirstID = func_237(2100, iParam1);
-	skinSecondID = func_237(2101, iParam1);
-	skinThirdID = func_237(2102, iParam1);
-	shapeMix = func_36(134, iParam1);
-	skinMix = func_36(135, iParam1);
-	thirdMix = func_36(136, iParam1);
-	isParent = func_238(160, iParam1);
+	shapeFirstID = func_237(2097, bParam1);
+	shapeSecondID = func_237(2098, bParam1);
+	shapeThirdID = func_237(2099, bParam1);
+	skinFirstID = func_237(2100, bParam1);
+	skinSecondID = func_237(2101, bParam1);
+	skinThirdID = func_237(2102, bParam1);
+	shapeMix = func_36(134, bParam1);
+	skinMix = func_36(135, bParam1);
+	thirdMix = func_36(136, bParam1);
+	isParent = func_238(160, bParam1);
 
 	if (headBlendData != shapeFirstID || headBlendData.f_1 != shapeSecondID || headBlendData.f_2 != shapeThirdID || headBlendData.f_3 != skinFirstID || headBlendData.f_4 != skinSecondID || headBlendData.f_5 != skinThirdID || headBlendData.f_6 != shapeMix || headBlendData.f_7 != skinMix || headBlendData.f_8 != thirdMix || headBlendData.f_9 != isParent)
 	{
 		PED::SET_PED_HEAD_BLEND_DATA(pedParam0, shapeFirstID, shapeSecondID, shapeThirdID, skinFirstID, skinSecondID, skinThirdID, shapeMix, skinMix, thirdMix, isParent);
-		type = func_237(2103, iParam1);
+		type = func_237(2103, bParam1);
 	
 		if (type > PV_COMP_HEAD)
-			func_21(pedParam0, iParam1, false);
+			func_21(pedParam0, bParam1, false);
 	}
 
 	return;
 }
 
-void func_21(Ped pedParam0, int iParam1, BOOL bParam2) // Position - 0x11D8 (4568)
+void func_21(Ped pedParam0, BOOL bParam1, BOOL bParam2) // Position - 0x11D8 (4568)
 {
 	int i;
 	int num;
@@ -1155,9 +1155,9 @@ void func_21(Ped pedParam0, int iParam1, BOOL bParam2) // Position - 0x11D8 (456
 		num2 = func_35(num);
 	
 		if (!bParam2)
-			scale = func_36(num2, iParam1);
+			scale = func_36(num2, bParam1);
 		else
-			scale = func_33(num2, iParam1);
+			scale = func_33(num2, bParam1);
 	
 		PED::SET_PED_MICRO_MORPH(pedParam0, num, scale);
 	}
@@ -1172,13 +1172,13 @@ void func_21(Ped pedParam0, int iParam1, BOOL bParam2) // Position - 0x11D8 (456
 		{
 			if (!bParam2)
 			{
-				num7 = _STAT_GET_PACKED_INT(num3, iParam1);
-				opacity = func_36(num4, iParam1);
+				num7 = _STAT_GET_PACKED_INT(num3, bParam1);
+				opacity = func_36(num4, bParam1);
 			}
 			else
 			{
-				num7 = func_28(num3, iParam1);
-				opacity = func_33(num4, iParam1);
+				num7 = func_28(num3, bParam1);
+				opacity = func_33(num4, bParam1);
 			}
 		
 			PED::SET_PED_HEAD_OVERLAY(pedParam0, overlayID, num7, opacity);
@@ -1189,13 +1189,13 @@ void func_21(Ped pedParam0, int iParam1, BOOL bParam2) // Position - 0x11D8 (456
 			{
 				if (!bParam2)
 				{
-					type = func_237(num5, iParam1);
-					secondColorID = func_237(num6, iParam1);
+					type = func_237(num5, bParam1);
+					secondColorID = func_237(num6, bParam1);
 				}
 				else
 				{
-					type = func_24(num5, iParam1);
-					secondColorID = func_24(num6, iParam1);
+					type = func_24(num5, bParam1);
+					secondColorID = func_24(num6, bParam1);
 				}
 			
 				func_23(type, &colorID, &colorType);
@@ -1204,18 +1204,18 @@ void func_21(Ped pedParam0, int iParam1, BOOL bParam2) // Position - 0x11D8 (456
 		}
 	}
 
-	func_22(&pedParam0, iParam1, bParam2);
+	func_22(&pedParam0, bParam1, bParam2);
 	return;
 }
 
-void func_22(var uParam0, int iParam1, BOOL bParam2) // Position - 0x1307 (4871)
+void func_22(var uParam0, BOOL bParam1, BOOL bParam2) // Position - 0x1307 (4871)
 {
 	float value;
 
 	if (!bParam2)
-		value = func_36(157, iParam1);
+		value = func_36(157, bParam1);
 	else
-		value = func_33(157, iParam1);
+		value = func_33(157, bParam1);
 
 	if (*uParam0 == PLAYER::PLAYER_PED_ID())
 	{
@@ -1235,12 +1235,12 @@ void func_23(ePedComponentType epctParam0, var uParam1, var uParam2) // Position
 	return;
 }
 
-ePedComponentType func_24(int iParam0, int iParam1) // Position - 0x1367 (4967)
+ePedComponentType func_24(int iParam0, BOOL bParam1) // Position - 0x1367 (4967)
 {
 	Hash hash;
 	int num;
 
-	hash = func_25(iParam0, iParam1);
+	hash = func_25(iParam0, bParam1);
 
 	if (HUD::GET_MENU_PED_INT_STAT(hash, &num))
 		return num;
@@ -1248,9 +1248,9 @@ ePedComponentType func_24(int iParam0, int iParam1) // Position - 0x1367 (4967)
 	return 0;
 }
 
-Hash func_25(int iParam0, int iParam1) // Position - 0x138A (5002)
+Hash func_25(int iParam0, BOOL bParam1) // Position - 0x138A (5002)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_17(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_17(bParam1));
 }
 
 int func_26(int iParam0) // Position - 0x139F (5023)
@@ -1305,7 +1305,7 @@ int func_27(int iParam0) // Position - 0x13EB (5099)
 	return -1;
 }
 
-int func_28(int iParam0, int iParam1) // Position - 0x1437 (5175)
+int func_28(int iParam0, BOOL bParam1) // Position - 0x1437 (5175)
 {
 	int outValue;
 	Hash packedIntStatKey;
@@ -1313,20 +1313,20 @@ int func_28(int iParam0, int iParam1) // Position - 0x1437 (5175)
 
 	outValue = 0;
 
-	if (iParam1 == -1)
-		iParam1 = func_18();
+	if (bParam1 == -1)
+		bParam1 = func_18();
 
 	packedIntStatKey = 0;
 	mask = 0;
 
 	if (iParam0 >= 384 && iParam0 < 457)
 	{
-		packedIntStatKey = STATS::GET_PACKED_INT_STAT_KEY(iParam0 - 384, false, true, iParam1);
+		packedIntStatKey = STATS::GET_PACKED_INT_STAT_KEY(iParam0 - 384, false, true, bParam1);
 		mask = (iParam0 - 384 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 384) * 8)) * 8;
 	}
 	else if (iParam0 >= 457 && iParam0 < 513)
 	{
-		packedIntStatKey = STATS::GET_PACKED_INT_STAT_KEY(iParam0 - 457, true, true, iParam1);
+		packedIntStatKey = STATS::GET_PACKED_INT_STAT_KEY(iParam0 - 457, true, true, bParam1);
 		mask = (iParam0 - 457 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 457) * 8)) * 8;
 	}
 	else if (iParam0 >= 1281 && iParam0 < 1305)
@@ -1341,7 +1341,7 @@ int func_28(int iParam0, int iParam1) // Position - 0x1437 (5175)
 	}
 	else if (iParam0 >= 1393 && iParam0 < 2919)
 	{
-		packedIntStatKey = STATS::GET_PACKED_TU_INT_STAT_KEY(iParam0 - 1393, false, true, iParam1);
+		packedIntStatKey = STATS::GET_PACKED_TU_INT_STAT_KEY(iParam0 - 1393, false, true, bParam1);
 		mask = (iParam0 - 1393 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 1393) * 8)) * 8;
 	}
 	else if (iParam0 >= 1361 && iParam0 < 1393)
@@ -1351,7 +1351,7 @@ int func_28(int iParam0, int iParam1) // Position - 0x1437 (5175)
 	}
 	else if (iParam0 >= 3879 && iParam0 < 4143)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 3879, false, true, iParam1, "_NGPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 3879, false, true, bParam1, "_NGPSTAT_INT");
 		mask = (iParam0 - 3879 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 3879) * 8)) * 8;
 	}
 	else if (iParam0 >= 4143 && iParam0 < 4207)
@@ -1361,37 +1361,37 @@ int func_28(int iParam0, int iParam1) // Position - 0x1437 (5175)
 	}
 	else if (iParam0 >= 4399 && iParam0 < 6028)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 4399, false, true, iParam1, "_MP_LRPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 4399, false, true, bParam1, "_MP_LRPSTAT_INT");
 		mask = (iParam0 - 4399 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 4399) * 8)) * 8;
 	}
 	else if (iParam0 >= 6413 && iParam0 < 7262)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 6413, false, true, iParam1, "_MP_APAPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 6413, false, true, bParam1, "_MP_APAPSTAT_INT");
 		mask = (iParam0 - 6413 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 6413) * 8)) * 8;
 	}
 	else if (iParam0 >= 7262 && iParam0 < 7313)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 7262, false, true, iParam1, "_MP_LR2PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 7262, false, true, bParam1, "_MP_LR2PSTAT_INT");
 		mask = (iParam0 - 7262 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 7262) * 8)) * 8;
 	}
 	else if (iParam0 >= 7681 && iParam0 < 9361)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 7681, false, true, iParam1, "_MP_BIKEPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 7681, false, true, bParam1, "_MP_BIKEPSTAT_INT");
 		mask = (iParam0 - 7681 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 7681) * 8)) * 8;
 	}
 	else if (iParam0 >= 9553 && iParam0 < 15265)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 9553, false, true, iParam1, "_MP_IMPEXPPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 9553, false, true, bParam1, "_MP_IMPEXPPSTAT_INT");
 		mask = (iParam0 - 9553 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 9553) * 8)) * 8;
 	}
 	else if (iParam0 >= 15265 && iParam0 < 15369)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 15265, false, true, iParam1, "_MP_GUNRPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 15265, false, true, bParam1, "_MP_GUNRPSTAT_INT");
 		mask = (iParam0 - 15265 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 15265) * 8)) * 8;
 	}
 	else if (iParam0 >= 7641 && iParam0 < 7681)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 7641, false, true, iParam1, "_NGDLCPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 7641, false, true, bParam1, "_NGDLCPSTAT_INT");
 		mask = (iParam0 - 7641 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 7641) * 8)) * 8;
 	}
 	else if (iParam0 >= 7313 && iParam0 < 7321)
@@ -1401,87 +1401,87 @@ int func_28(int iParam0, int iParam1) // Position - 0x1437 (5175)
 	}
 	else if (iParam0 >= 16010 && iParam0 < 18098)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 16010, false, true, iParam1, "_DLCSMUGCHARPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 16010, false, true, bParam1, "_DLCSMUGCHARPSTAT_INT");
 		mask = (iParam0 - 16010 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 16010) * 8)) * 8;
 	}
 	else if (iParam0 >= 18162 && iParam0 < 19018)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 18162, false, true, iParam1, "_GANGOPSPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 18162, false, true, bParam1, "_GANGOPSPSTAT_INT");
 		mask = (iParam0 - 18162 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 18162) * 8)) * 8;
 	}
 	else if (iParam0 >= 19018 && iParam0 < 22066)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 19018, false, true, iParam1, "_BUSINESSBATPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 19018, false, true, bParam1, "_BUSINESSBATPSTAT_INT");
 		mask = (iParam0 - 19018 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 19018) * 8)) * 8;
 	}
 	else if (iParam0 >= 22194 && iParam0 < 24962)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 22194, false, true, iParam1, "_ARENAWARSPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 22194, false, true, bParam1, "_ARENAWARSPSTAT_INT");
 		mask = (iParam0 - 22194 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 22194) * 8)) * 8;
 	}
 	else if (iParam0 >= 25538 && iParam0 < 26810)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 25538, false, true, iParam1, "_CASINOPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 25538, false, true, bParam1, "_CASINOPSTAT_INT");
 		mask = (iParam0 - 25538 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 25538) * 8)) * 8;
 	}
 	else if (iParam0 >= 27258 && iParam0 < 28098)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 27258, false, true, iParam1, "_CASINOHSTPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 27258, false, true, bParam1, "_CASINOHSTPSTAT_INT");
 		mask = (iParam0 - 27258 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 27258) * 8)) * 8;
 	}
 	else if (iParam0 >= 28483 && iParam0 < 30227)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 28483, false, true, iParam1, "_SU20PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 28483, false, true, bParam1, "_SU20PSTAT_INT");
 		mask = (iParam0 - 28483 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 28483) * 8)) * 8;
 	}
 	else if (iParam0 >= 30483 && iParam0 < 30515)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 30483, false, true, iParam1, "_HISLANDPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 30483, false, true, bParam1, "_HISLANDPSTAT_INT");
 		mask = (iParam0 - 30483 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 30483) * 8)) * 8;
 	}
 	else if (iParam0 >= 30707 && iParam0 < 31707)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 30707, false, true, iParam1, "_TUNERPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 30707, false, true, bParam1, "_TUNERPSTAT_INT");
 		mask = (iParam0 - 30707 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 30707) * 8)) * 8;
 	}
 	else if (iParam0 >= 32475 && iParam0 < 34123)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 32475, false, true, iParam1, "_FIXERPSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 32475, false, true, bParam1, "_FIXERPSTAT_INT");
 		mask = (iParam0 - 32475 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 32475) * 8)) * 8;
 	}
 	else if (iParam0 >= 34763 && iParam0 < 36627)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 34763, false, true, iParam1, "_DLC12022PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 34763, false, true, bParam1, "_DLC12022PSTAT_INT");
 		mask = (iParam0 - 34763 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 34763) * 8)) * 8;
 	}
 	else if (iParam0 >= 36947 && iParam0 < 41251)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 36947, false, true, iParam1, "_DLC22022PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 36947, false, true, bParam1, "_DLC22022PSTAT_INT");
 		mask = (iParam0 - 36947 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 36947) * 8)) * 8;
 	}
 	else if (iParam0 >= 42083 && iParam0 < 42107)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 42083, false, true, iParam1, "_DLC12023PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 42083, false, true, bParam1, "_DLC12023PSTAT_INT");
 		mask = (iParam0 - 42083 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 42083) * 8)) * 8;
 	}
 	else if (iParam0 >= 42299 && iParam0 < 51059)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 42299, false, true, iParam1, "_DLC22023PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 42299, false, true, bParam1, "_DLC22023PSTAT_INT");
 		mask = (iParam0 - 42299 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 42299) * 8)) * 8;
 	}
 	else if (iParam0 >= 51379 && iParam0 < 51555)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 51379, false, true, iParam1, "_DLC12024PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 51379, false, true, bParam1, "_DLC12024PSTAT_INT");
 		mask = (iParam0 - 51379 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 51379) * 8)) * 8;
 	}
 	else if (iParam0 >= 51555 && iParam0 < 54051)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 51555, false, true, iParam1, "_DLC22024PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 51555, false, true, bParam1, "_DLC22024PSTAT_INT");
 		mask = (iParam0 - 51555 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 51555) * 8)) * 8;
 	}
 	else if (iParam0 >= 54819 && iParam0 < 59907)
 	{
-		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 54819, false, true, iParam1, "_DLC22025PSTAT_INT");
+		packedIntStatKey = STATS::GET_PACKED_NG_INT_STAT_KEY(iParam0 - 54819, false, true, bParam1, "_DLC22025PSTAT_INT");
 		mask = (iParam0 - 54819 - (STATS::PACKED_STAT_GET_INT_STAT_INDEX(iParam0 - 54819) * 8)) * 8;
 	}
 
@@ -1492,12 +1492,12 @@ int func_28(int iParam0, int iParam1) // Position - 0x1437 (5175)
 	return outValue;
 }
 
-int _STAT_GET_PACKED_INT(int iParam0, int iParam1) // Position - 0x1CF0 (7408)
+int _STAT_GET_PACKED_INT(int iParam0, BOOL bParam1) // Position - 0x1CF0 (7408)
 {
-	if (iParam1 == -1)
-		iParam1 = func_18();
+	if (bParam1 == -1)
+		bParam1 = func_18();
 
-	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, bParam1);
 }
 
 int func_30(int iParam0) // Position - 0x1D0C (7436)
@@ -1650,12 +1650,12 @@ int func_32(int iParam0) // Position - 0x1E57 (7767)
 	return -1;
 }
 
-float func_33(int iParam0, int iParam1) // Position - 0x1EEE (7918)
+float func_33(int iParam0, BOOL bParam1) // Position - 0x1EEE (7918)
 {
 	Hash statHash;
 	float outValue;
 
-	statHash = func_34(iParam0, iParam1);
+	statHash = func_34(iParam0, bParam1);
 
 	if (HUD::GET_MENU_PED_FLOAT_STAT(statHash, &outValue))
 		return outValue;
@@ -1663,9 +1663,9 @@ float func_33(int iParam0, int iParam1) // Position - 0x1EEE (7918)
 	return 0f;
 }
 
-Hash func_34(int iParam0, int iParam1) // Position - 0x1F11 (7953)
+Hash func_34(int iParam0, BOOL bParam1) // Position - 0x1F11 (7953)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(1, iParam0, func_17(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(1, iParam0, func_17(bParam1));
 }
 
 int func_35(int iParam0) // Position - 0x1F26 (7974)
@@ -1739,12 +1739,12 @@ int func_35(int iParam0) // Position - 0x1F26 (7974)
 	return -1;
 }
 
-float func_36(int iParam0, int iParam1) // Position - 0x2012 (8210)
+float func_36(int iParam0, BOOL bParam1) // Position - 0x2012 (8210)
 {
 	Hash statHash;
 	float outValue;
 
-	statHash = func_34(iParam0, iParam1);
+	statHash = func_34(iParam0, bParam1);
 
 	if (STATS::STAT_GET_FLOAT(statHash, &outValue, -1))
 		return outValue;
@@ -1760,7 +1760,7 @@ BOOL func_37() // Position - 0x2036 (8246)
 	return false;
 }
 
-int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, ePedComponentType epctParam8, ePedComponentType epctParam9, int iParam10, BOOL bParam11, BOOL bParam12, BOOL bParam13) // Position - 0x205E (8286)
+int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, ePedComponentType epctParam8, ePedComponentType epctParam9, BOOL bParam10, BOOL bParam11, BOOL bParam12, BOOL bParam13) // Position - 0x205E (8286)
 {
 	int i;
 	int j;
@@ -1863,8 +1863,8 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 		if (!bParam12)
 			return 0;
 
-	if (iParam10 == -1)
-		iParam10 = Global_80060;
+	if (bParam10 == -1)
+		bParam10 = Global_80060;
 
 	Global_80061 = Global_80061 + 1;
 	entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
@@ -1964,7 +1964,7 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 			}
 			else if (i != 12 && i != 14)
 			{
-				Global_80063[1 /*14*/] = { func_195(entityModel, i, func_258(pedParam0, i, PV_COMP_INVALID), -1) };
+				Global_80063[1 /*14*/] = { func_195(entityModel, i, func_260(pedParam0, i, PV_COMP_INVALID), -1) };
 			
 				if (IS_BIT_SET(Global_80063[1 /*14*/].f_6, 3))
 				{
@@ -1983,7 +1983,7 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 			action = func_177();
 		
 			if (action != -1)
-				func_175(action, false, iParam10);
+				func_175(action, false, bParam10);
 		
 			func_170(pedParam0, 11, unk[11], iParam6, PV_COMP_HEAD);
 		}
@@ -2363,17 +2363,17 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 			func_170(pedParam0, iParam1, epctParam2, iParam6, PV_COMP_HEAD);
 		
 			if (iParam5 == 0)
-				type3 = func_158(entityModel, func_258(pedParam0, 8, PV_COMP_INVALID), epctParam2, func_258(pedParam0, 4, PV_COMP_INVALID));
+				type3 = func_158(entityModel, func_260(pedParam0, 8, PV_COMP_INVALID), epctParam2, func_260(pedParam0, 4, PV_COMP_INVALID));
 		}
 		else if (iParam1 == 2)
 		{
 			if (iParam5 == 0)
 			{
 				if (epctParam8 == PV_COMP_INVALID)
-					epctParam8 = func_237(2153, iParam10);
+					epctParam8 = func_237(2153, bParam10);
 			
 				if (epctParam9 == PV_COMP_INVALID)
-					epctParam9 = func_237(2160, iParam10);
+					epctParam9 = func_237(2160, bParam10);
 			
 				PED::SET_PED_HAIR_TINT(pedParam0, epctParam8, epctParam9);
 			}
@@ -2393,7 +2393,7 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 						epctParam2 = type22;
 				}
 			
-				func_78(pedParam0, epctParam2, iParam10, bParam11);
+				func_78(pedParam0, epctParam2, bParam10, bParam11);
 			}
 		}
 		else if (iParam1 == 8)
@@ -2464,10 +2464,10 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 		{
 			if (entityModel == joaat("MP_M_Freemode_01") && epctParam2 >= 26 && EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(Global_2883588, joaat("SHRINK_HEAD"), 0) || entityModel == joaat("MP_F_Freemode_01") && epctParam2 >= 26 && EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(Global_2883588, joaat("SHRINK_HEAD"), 0))
 			{
-				skinFirstID = func_237(2100, iParam10);
-				skinSecondID = func_237(2101, iParam10);
-				skinThirdID = func_237(2102, iParam10);
-				skinMix = func_36(135, iParam10);
+				skinFirstID = func_237(2100, bParam10);
+				skinSecondID = func_237(2101, bParam10);
+				skinThirdID = func_237(2102, bParam10);
+				skinMix = func_36(135, bParam10);
 			
 				if (entityModel == joaat("MP_M_Freemode_01"))
 					PED::SET_PED_HEAD_BLEND_DATA(pedParam0, 0, 0, 0, skinFirstID, skinSecondID, skinThirdID, 0f, skinMix, 0f, false);
@@ -2481,7 +2481,7 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 			}
 			else
 			{
-				func_20(pedParam0, iParam10);
+				func_20(pedParam0, bParam10);
 			}
 		}
 		else if (iParam1 == 4)
@@ -2646,13 +2646,13 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 			{
 				if (iParam1 == 11)
 				{
-					type34 = func_258(pedParam0, 4, PV_COMP_INVALID);
+					type34 = func_260(pedParam0, 4, PV_COMP_INVALID);
 					type35 = epctParam2;
 				}
 				else
 				{
 					type34 = epctParam2;
-					type35 = func_258(pedParam0, 11, PV_COMP_INVALID);
+					type35 = func_260(pedParam0, 11, PV_COMP_INVALID);
 				}
 			
 				if (func_55(entityModel, 11, type35, -1))
@@ -2844,7 +2844,7 @@ int func_38(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam
 
 	if (num != -1)
 	{
-		type39 = func_157(entityModel, func_258(pedParam0, 3, PV_COMP_INVALID), num);
+		type39 = func_157(entityModel, func_260(pedParam0, 3, PV_COMP_INVALID), num);
 	
 		if (type39 != PV_COMP_INVALID)
 		{
@@ -2870,7 +2870,7 @@ BOOL func_39(Ped pedParam0, var uParam1) // Position - 0x40AA (16554)
 	ePedComponentType type;
 	ePedComponentType type2;
 
-	*uParam1 = func_258(PLAYER::PLAYER_PED_ID(), 2, PV_COMP_INVALID);
+	*uParam1 = func_260(PLAYER::PLAYER_PED_ID(), 2, PV_COMP_INVALID);
 
 	if (func_237(754, Global_80060) != -99 && func_42())
 	{
@@ -2903,13 +2903,13 @@ BOOL func_39(Ped pedParam0, var uParam1) // Position - 0x40AA (16554)
 	return false;
 }
 
-void func_40(int iParam0, ePedComponentType epctParam1, int iParam2, BOOL bParam3) // Position - 0x41B3 (16819)
+void func_40(int iParam0, ePedComponentType epctParam1, BOOL bParam2, BOOL bParam3) // Position - 0x41B3 (16819)
 {
 	Hash statName;
 
 	if (iParam0 != 16715)
 	{
-		statName = func_25(iParam0, iParam2);
+		statName = func_25(iParam0, bParam2);
 	
 		if (statName != 0)
 			STATS::STAT_SET_INT(statName, epctParam1, bParam3);
@@ -2931,12 +2931,12 @@ BOOL func_42() // Position - 0x41ED (16877)
 	return false;
 }
 
-BOOL func_43(int iParam0) // Position - 0x420B (16907)
+ePedComponentType func_43(int iParam0) // Position - 0x420B (16907)
 {
 	return Global_1574538[iParam0];
 }
 
-BOOL func_44() // Position - 0x421B (16923)
+ePedComponentType func_44() // Position - 0x421B (16923)
 {
 	return func_43(func_18() + 1);
 }
@@ -5922,7 +5922,7 @@ BOOL func_67(ePedComponentType epctParam0, int iParam1, int iParam2, ePedCompone
 		
 			return true;
 		}
-		else if (func_252(epctParam0, iParam2, epctParam3, -1))
+		else if (func_254(epctParam0, iParam2, epctParam3, -1))
 		{
 			if (iParam1 == 1 || iParam1 == 2 || iParam1 == 4 || iParam1 == 5 || iParam1 == 10 || iParam1 == 11 || iParam1 == 12 || iParam1 == 14 || iParam1 == 18 || iParam1 == 50)
 				return false;
@@ -5953,7 +5953,7 @@ BOOL func_67(ePedComponentType epctParam0, int iParam1, int iParam2, ePedCompone
 		
 			return true;
 		}
-		else if (func_252(epctParam0, iParam2, epctParam3, -1))
+		else if (func_254(epctParam0, iParam2, epctParam3, -1))
 		{
 			if (iParam1 == 3 || iParam1 == 5 || iParam1 == 7 || iParam1 == 8 || iParam1 == 21)
 				if (iParam2 == 8)
@@ -6014,7 +6014,7 @@ BOOL func_67(ePedComponentType epctParam0, int iParam1, int iParam2, ePedCompone
 		
 			return true;
 		}
-		else if (func_252(epctParam0, iParam2, epctParam3, -1))
+		else if (func_254(epctParam0, iParam2, epctParam3, -1))
 		{
 			if (iParam1 == 1 || iParam1 == 2 || iParam1 == 3 || iParam1 == 6 || iParam1 == 8 || iParam1 == 11 || iParam1 == 45 || iParam1 == 12)
 				return false;
@@ -7753,7 +7753,7 @@ BOOL func_77(ePedComponentType epctParam0, ePedComponentType epctParam1, Hash hP
 	return false;
 }
 
-void func_78(Ped pedParam0, ePedComponentType epctParam1, int iParam2, BOOL bParam3) // Position - 0xF747 (63303)
+void func_78(Ped pedParam0, ePedComponentType epctParam1, BOOL bParam2, BOOL bParam3) // Position - 0xF747 (63303)
 {
 	ePedComponentType entityModel;
 	eControlAction action;
@@ -7764,10 +7764,10 @@ void func_78(Ped pedParam0, ePedComponentType epctParam1, int iParam2, BOOL bPar
 
 	if (action != -1)
 	{
-		if (iParam2 == -1)
-			iParam2 = Global_80060;
+		if (bParam2 == -1)
+			bParam2 = Global_80060;
 	
-		func_175(action, true, iParam2);
+		func_175(action, true, bParam2);
 	}
 
 	func_79(pedParam0, bParam3, false, -1, true);
@@ -7776,10 +7776,10 @@ void func_78(Ped pedParam0, ePedComponentType epctParam1, int iParam2, BOOL bPar
 
 void func_79(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam4) // Position - 0xF795 (63381)
 {
-	int num;
 	BOOL flag;
 	BOOL flag2;
 	BOOL flag3;
+	BOOL flag4;
 	var unk;
 	int characterType;
 	eControlAction i;
@@ -7790,31 +7790,31 @@ void func_79(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam
 
 	if (!PED::IS_PED_INJURED(pedParam0))
 	{
-		num = Global_80060;
+		flag = Global_80060;
 		PED::CLEAR_PED_DECORATIONS_LEAVE_SCARS(pedParam0);
-		flag = func_133(pedParam0, false);
-		flag2 = func_125(pedParam0);
-		flag3 = func_124(pedParam0, iParam3);
+		flag2 = func_133(pedParam0, false);
+		flag3 = func_125(pedParam0);
+		flag4 = func_124(pedParam0, iParam3);
 	
 		if (bParam1)
-			flag2 = true;
+			flag3 = true;
 	
 		if (bParam2)
-			flag2 = false;
+			flag3 = false;
 	
-		if (!bParam4 || num != func_18() || Global_1989163 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
+		if (!bParam4 || flag != func_18() || Global_1989163 || SCRIPT::GET_HASH_OF_THIS_SCRIPT_NAME() == joaat("maintransition"))
 		{
 			characterType = func_123(pedParam0);
 		
 			for (i = INPUT_NEXT_CAMERA; i < INPUT_VEH_SUB_PITCH_UP_ONLY; i = i + 1)
 			{
-				if (func_120(i, num))
+				if (func_120(i, flag))
 					if (func_112(&unk, i, characterType, pedParam0, -1))
-						if (func_109(pedParam0, &unk, i, unk.f_4, unk.f_8, flag, flag2, bParam1, flag3))
+						if (func_109(pedParam0, &unk, i, unk.f_4, unk.f_8, flag2, flag3, bParam1, flag4))
 							PED::ADD_PED_DECORATION_FROM_HASHES(pedParam0, unk.f_4, unk.f_5);
 			}
 		
-			if (func_120(INPUT_VEH_SUB_TURN_LR, num))
+			if (func_120(INPUT_VEH_SUB_TURN_LR, flag))
 				if (PED::GET_PED_DECORATION_ZONE_FROM_HASHES(joaat("mpBeach_overlays"), joaat("FM_Hair_Fuzz")) != 7)
 					PED::ADD_PED_DECORATION_FROM_HASHES(pedParam0, joaat("mpBeach_overlays"), joaat("FM_Hair_Fuzz"));
 		
@@ -7828,9 +7828,9 @@ void func_79(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam
 					{
 						action = 129 + j;
 					
-						if (func_120(action, num))
+						if (func_120(action, flag))
 						{
-							if (func_109(pedParam0, &(outComponent.f_7), action, outComponent.f_2, outComponent.f_6, flag, flag2, bParam1, flag3))
+							if (func_109(pedParam0, &(outComponent.f_7), action, outComponent.f_2, outComponent.f_6, flag2, flag3, bParam1, flag4))
 							{
 								if (!func_85(outComponent.f_2, outComponent.f_3, action))
 								{
@@ -7848,7 +7848,7 @@ void func_79(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam
 		}
 		else
 		{
-			func_80(pedParam0, flag2, flag3, flag, bParam1, false, false);
+			func_80(pedParam0, flag3, flag4, flag2, bParam1, false, false);
 		}
 	}
 
@@ -12127,7 +12127,7 @@ BOOL IS_ROCKSTAR_DEV() // Position - 0x168C4 (92356)
 	return DLC::IS_DLC_PRESENT(-1762644250);
 }
 
-BOOL func_88(eControlAction ecaParam0, int iParam1) // Position - 0x168D5 (92373)
+BOOL func_88(eControlAction ecaParam0, BOOL bParam1) // Position - 0x168D5 (92373)
 {
 	int num;
 	int num2;
@@ -12135,7 +12135,7 @@ BOOL func_88(eControlAction ecaParam0, int iParam1) // Position - 0x168D5 (92373
 	if (func_91(ecaParam0) == 16715)
 		return false;
 
-	num = func_90(ecaParam0, iParam1);
+	num = func_90(ecaParam0, bParam1);
 	num2 = ecaParam0;
 	return IS_BIT_SET(num, func_89(num2));
 }
@@ -12145,11 +12145,11 @@ int func_89(int iParam0) // Position - 0x16904 (92420)
 	return iParam0 % 32;
 }
 
-int func_90(int iParam0, int iParam1) // Position - 0x16911 (92433)
+int func_90(int iParam0, BOOL bParam1) // Position - 0x16911 (92433)
 {
 	int num;
 
-	num = func_237(func_91(iParam0), iParam1);
+	num = func_237(func_91(iParam0), bParam1);
 	return num;
 }
 
@@ -12161,7 +12161,7 @@ int func_91(int iParam0) // Position - 0x16929 (92457)
 	num = iParam0;
 	num2 = func_94(num);
 
-	if (func_93() == 0 || func_92() == 0 || func_93() == 999 && func_92() == 999)
+	if (func_93() == HUD_COLOUR_PURE_WHITE || func_92() == HUD_COLOUR_PURE_WHITE || func_93() == 999 && func_92() == 999)
 	{
 		switch (num2)
 		{
@@ -12332,12 +12332,12 @@ int func_91(int iParam0) // Position - 0x16929 (92457)
 	return 16715;
 }
 
-int func_92() // Position - 0x16CA4 (93348)
+eHudColour func_92() // Position - 0x16CA4 (93348)
 {
 	return Global_33776;
 }
 
-int func_93() // Position - 0x16CAF (93359)
+eHudColour func_93() // Position - 0x16CAF (93359)
 {
 	return Global_33775;
 }
@@ -12409,12 +12409,12 @@ BOOL func_98(int iParam0) // Position - 0x16D71 (93553)
 	return false;
 }
 
-BOOL func_99(int iParam0, int iParam1) // Position - 0x16D9A (93594)
+BOOL func_99(int iParam0, BOOL bParam1) // Position - 0x16D9A (93594)
 {
 	Hash statHash;
 	BOOL outValue;
 
-	statHash = func_100(iParam0, iParam1);
+	statHash = func_100(iParam0, bParam1);
 
 	if (STATS::STAT_GET_BOOL(statHash, &outValue, -1))
 		return outValue;
@@ -12422,9 +12422,9 @@ BOOL func_99(int iParam0, int iParam1) // Position - 0x16D9A (93594)
 	return false;
 }
 
-Hash func_100(int iParam0, int iParam1) // Position - 0x16DBE (93630)
+Hash func_100(int iParam0, BOOL bParam1) // Position - 0x16DBE (93630)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(10, iParam0, func_17(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(10, iParam0, func_17(bParam1));
 }
 
 ePedComponentType func_101(int iParam0, int iParam1, int iParam2) // Position - 0x16DD4 (93652)
@@ -17091,12 +17091,12 @@ ePedComponentType func_101(int iParam0, int iParam1, int iParam2) // Position - 
 	return 999;
 }
 
-ePedComponentType func_102(int iParam0, int iParam1) // Position - 0x1A66D (108141)
+ePedComponentType func_102(int iParam0, BOOL bParam1) // Position - 0x1A66D (108141)
 {
 	Hash statHash;
 	ePedComponentType outValue;
 
-	statHash = func_103(iParam0, iParam1);
+	statHash = func_103(iParam0, bParam1);
 
 	if (STATS::STAT_GET_INT(statHash, &outValue, -1))
 		return outValue;
@@ -17104,9 +17104,9 @@ ePedComponentType func_102(int iParam0, int iParam1) // Position - 0x1A66D (1081
 	return PV_COMP_HEAD;
 }
 
-Hash func_103(int iParam0, int iParam1) // Position - 0x1A691 (108177)
+Hash func_103(int iParam0, BOOL bParam1) // Position - 0x1A691 (108177)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_17(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_17(bParam1));
 }
 
 BOOL func_104(eControlAction ecaParam0, ePedComponentType epctParam1, BOOL bParam2) // Position - 0x1A6A7 (108199)
@@ -17120,9 +17120,9 @@ BOOL func_104(eControlAction ecaParam0, ePedComponentType epctParam1, BOOL bPara
 	return func_88(ecaParam0, -1) || func_105(ecaParam0, -1);
 }
 
-BOOL func_105(eControlAction ecaParam0, int iParam1) // Position - 0x1A6E3 (108259)
+BOOL func_105(eControlAction ecaParam0, BOOL bParam1) // Position - 0x1A6E3 (108259)
 {
-	return _STAT_GET_PACKED_BOOL(func_106(ecaParam0), iParam1);
+	return _STAT_GET_PACKED_BOOL(func_106(ecaParam0), bParam1);
 }
 
 int func_106(eControlAction ecaParam0) // Position - 0x1A6F7 (108279)
@@ -17191,12 +17191,12 @@ eControlAction func_107(ePedComponentType epctParam0, Hash hParam1) // Position 
 	return -1;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0x1A7FD (108541)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, BOOL bParam1) // Position - 0x1A7FD (108541)
 {
-	if (iParam1 == -1)
-		iParam1 = func_18();
+	if (bParam1 == -1)
+		bParam1 = func_18();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, bParam1);
 }
 
 BOOL func_109(Ped pedParam0, const char* sParam1, eControlAction ecaParam2, int iParam3, Hash hParam4, BOOL bParam5, BOOL bParam6, BOOL bParam7, BOOL bParam8) // Position - 0x1A819 (108569)
@@ -17548,7 +17548,7 @@ BOOL func_109(Ped pedParam0, const char* sParam1, eControlAction ecaParam2, int 
 						}
 						else if (func_120(INPUT_WEAPON_WHEEL_PREV, -1))
 						{
-							if (!MISC::ARE_STRINGS_EQUAL(sParam1, "TAT_FMM_CLB" /*Crew Emblem Back*/))
+							if (!MISC::ARE_STRINGS_EQUAL(sParam1, "TAT_FMM_CLB" /*Reverso de emblema de Crew*/))
 								return false;
 						}
 						else if (func_120(INPUT_SELECT_NEXT_WEAPON, -1))
@@ -17572,7 +17572,7 @@ BOOL func_109(Ped pedParam0, const char* sParam1, eControlAction ecaParam2, int 
 				}
 				else if (Global_4520863 == 15)
 				{
-					if (!MISC::ARE_STRINGS_EQUAL(sParam1, "TAT_FMM_CLB" /*Crew Emblem Back*/))
+					if (!MISC::ARE_STRINGS_EQUAL(sParam1, "TAT_FMM_CLB" /*Reverso de emblema de Crew*/))
 						return false;
 				}
 				else if (Global_4520863 == 16)
@@ -19794,27 +19794,27 @@ BOOL func_112(char* sParam0, eControlAction ecaParam1, int iParam2, Ped pedParam
 						break;
 				
 					case 13:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_100" /*Crew Emblem Small*/, "multiplayer_overlays", "000_A", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(5000) * Global_262145.f_2845), 0);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_100" /*Emblema de Crew pequeño*/, "multiplayer_overlays", "000_A", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(5000) * Global_262145.f_2845), 0);
 						break;
 				
 					case 14:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_101" /*Crew Emblem Large*/, "multiplayer_overlays", "000_B", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2846), 0);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_101" /*Emblema de Crew grande*/, "multiplayer_overlays", "000_B", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2846), 0);
 						break;
 				
 					case 15:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FMM_CLB" /*Crew Emblem Back*/, "multiplayer_overlays", "000_C", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2847), 2);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FMM_CLB" /*Reverso de emblema de Crew*/, "multiplayer_overlays", "000_C", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2847), 2);
 						break;
 				
 					case 16:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_100" /*Crew Emblem Small*/, "multiplayer_overlays", "000_D", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(5000) * Global_262145.f_2848), 0);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_100" /*Emblema de Crew pequeño*/, "multiplayer_overlays", "000_D", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(5000) * Global_262145.f_2848), 0);
 						break;
 				
 					case 71:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_101" /*Crew Emblem Large*/, "multiplayer_overlays", "000_E", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2848), 0);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_101" /*Emblema de Crew grande*/, "multiplayer_overlays", "000_E", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2848), 0);
 						break;
 				
 					case 72:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FMM_CLB" /*Crew Emblem Back*/, "multiplayer_overlays", "000_F", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2848), 0);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FMM_CLB" /*Reverso de emblema de Crew*/, "multiplayer_overlays", "000_F", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2848), 0);
 						break;
 				}
 			}
@@ -20015,19 +20015,19 @@ BOOL func_112(char* sParam0, eControlAction ecaParam1, int iParam2, Ped pedParam
 						break;
 				
 					case 13:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_100" /*Crew Emblem Small*/, "multiplayer_overlays", "000_A", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(5000) * Global_262145.f_2845), 0);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_100" /*Emblema de Crew pequeño*/, "multiplayer_overlays", "000_A", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(5000) * Global_262145.f_2845), 0);
 						break;
 				
 					case 14:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_100" /*Crew Emblem Small*/, "multiplayer_overlays", "000_B", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(5000) * Global_262145.f_2846), 0);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_100" /*Emblema de Crew pequeño*/, "multiplayer_overlays", "000_B", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(5000) * Global_262145.f_2846), 0);
 						break;
 				
 					case 15:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_101" /*Crew Emblem Large*/, "multiplayer_overlays", "000_C", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2847), 2);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_101" /*Emblema de Crew grande*/, "multiplayer_overlays", "000_C", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2847), 2);
 						break;
 				
 					case 16:
-						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_101" /*Crew Emblem Large*/, "multiplayer_overlays", "000_D", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2848), 0);
+						func_119(sParam0, ecaParam1, pedParam3, "TAT_FM_101" /*Emblema de Crew grande*/, "multiplayer_overlays", "000_D", "crewLogo", iParam2, BUILTIN::ROUND(BUILTIN::TO_FLOAT(10000) * Global_262145.f_2848), 0);
 						break;
 				}
 			}
@@ -20273,7 +20273,7 @@ void func_119(char* sParam0, int iParam1, Ped pedParam2, char* sParam3, char* sP
 	return;
 }
 
-BOOL func_120(eControlAction ecaParam0, int iParam1) // Position - 0x20020 (131104)
+BOOL func_120(eControlAction ecaParam0, BOOL bParam1) // Position - 0x20020 (131104)
 {
 	ePedComponentType type;
 	int num;
@@ -20281,7 +20281,7 @@ BOOL func_120(eControlAction ecaParam0, int iParam1) // Position - 0x20020 (1311
 	if (ecaParam0 == -1)
 		return false;
 
-	type = func_121(ecaParam0, iParam1);
+	type = func_121(ecaParam0, bParam1);
 	num = func_89(ecaParam0);
 
 	if (num < 0 || num >= 32)
@@ -20290,7 +20290,7 @@ BOOL func_120(eControlAction ecaParam0, int iParam1) // Position - 0x20020 (1311
 	return IS_BIT_SET(type, num);
 }
 
-ePedComponentType func_121(eControlAction ecaParam0, int iParam1) // Position - 0x2005F (131167)
+ePedComponentType func_121(eControlAction ecaParam0, BOOL bParam1) // Position - 0x2005F (131167)
 {
 	int num;
 	ePedComponentType type;
@@ -20298,12 +20298,12 @@ ePedComponentType func_121(eControlAction ecaParam0, int iParam1) // Position - 
 	num = func_122(ecaParam0);
 
 	if (num == 16715)
-		if (func_93() == 2 && func_92() == 2)
+		if (func_93() == HUD_COLOUR_BLACK && func_92() == HUD_COLOUR_BLACK)
 			return PV_COMP_HEAD;
 		else
 			return PV_COMP_HEAD;
 
-	type = func_237(num, iParam1);
+	type = func_237(num, bParam1);
 	return type;
 }
 
@@ -20315,7 +20315,7 @@ int func_122(int iParam0) // Position - 0x200A5 (131237)
 	num = iParam0;
 	num2 = func_94(num);
 
-	if (func_93() == 0 || func_92() == 0 || func_93() == 999 && func_92() == 999)
+	if (func_93() == HUD_COLOUR_PURE_WHITE || func_92() == HUD_COLOUR_PURE_WHITE || func_93() == 999 && func_92() == 999)
 	{
 		switch (num2)
 		{
@@ -20488,7 +20488,7 @@ int func_122(int iParam0) // Position - 0x200A5 (131237)
 		return 16715;
 	}
 
-	if (func_93() == 2 && func_92() == 2)
+	if (func_93() == HUD_COLOUR_BLACK && func_92() == HUD_COLOUR_BLACK)
 		return 16715;
 
 	return 16715;
@@ -20542,7 +20542,7 @@ BOOL func_124(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x204A9
 		
 			if (pedDrawableVariation > 15)
 			{
-				type2 = func_258(pedParam0, 11, PV_COMP_INVALID);
+				type2 = func_260(pedParam0, 11, PV_COMP_INVALID);
 			
 				if (type2 >= 237)
 				{
@@ -20603,7 +20603,7 @@ BOOL func_124(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x204A9
 			}
 			else if (pedDrawableVariation > 15)
 			{
-				type3 = func_258(pedParam0, 11, PV_COMP_INVALID);
+				type3 = func_260(pedParam0, 11, PV_COMP_INVALID);
 			
 				if (type3 >= 256)
 				{
@@ -20789,7 +20789,7 @@ BOOL func_133(Ped pedParam0, BOOL bParam1) // Position - 0x20911 (133393)
 						case 1:
 						case 7:
 						case 12:
-							action = func_138(joaat("MP_M_Freemode_01"), 11, func_258(pedParam0, 11, PV_COMP_INVALID), PV_COMP_HEAD);
+							action = func_138(joaat("MP_M_Freemode_01"), 11, func_260(pedParam0, 11, PV_COMP_INVALID), PV_COMP_HEAD);
 						
 							if (pedTextureVariation == 1 && action == INPUT_VEH_FLY_THROTTLE_DOWN || pedTextureVariation == 7 && action == INPUT_VEH_FLY_YAW_LEFT || pedTextureVariation == 12 && action == INPUT_VEH_FLY_THROTTLE_UP)
 								return 1;
@@ -20841,7 +20841,7 @@ BOOL func_133(Ped pedParam0, BOOL bParam1) // Position - 0x20911 (133393)
 				default:
 					if (pedDrawableVariation > 15)
 					{
-						type = func_258(pedParam0, 11, PV_COMP_INVALID);
+						type = func_260(pedParam0, 11, PV_COMP_INVALID);
 					
 						if (type >= 237)
 						{
@@ -20922,7 +20922,7 @@ BOOL func_133(Ped pedParam0, BOOL bParam1) // Position - 0x20911 (133393)
 				default:
 					if (pedDrawableVariation > 15)
 					{
-						type2 = func_258(pedParam0, 8, PV_COMP_INVALID);
+						type2 = func_260(pedParam0, 8, PV_COMP_INVALID);
 					
 						if (type2 >= 241)
 						{
@@ -20952,7 +20952,7 @@ BOOL func_133(Ped pedParam0, BOOL bParam1) // Position - 0x20911 (133393)
 						case 7:
 						case 4:
 						case 9:
-							action2 = func_138(joaat("MP_F_Freemode_01"), 11, func_258(pedParam0, 11, PV_COMP_INVALID), PV_COMP_HEAD);
+							action2 = func_138(joaat("MP_F_Freemode_01"), 11, func_260(pedParam0, 11, PV_COMP_INVALID), PV_COMP_HEAD);
 						
 							if (pedTextureVariation == 7 && action2 == INPUT_VEH_FLY_THROTTLE_DOWN || pedTextureVariation == 4 && action2 == INPUT_VEH_FLY_YAW_LEFT || pedTextureVariation == 9 && action2 == INPUT_VEH_FLY_THROTTLE_UP)
 								return 1;
@@ -20993,7 +20993,7 @@ BOOL func_133(Ped pedParam0, BOOL bParam1) // Position - 0x20911 (133393)
 				default:
 					if (pedDrawableVariation > 15)
 					{
-						type3 = func_258(pedParam0, 11, PV_COMP_INVALID);
+						type3 = func_260(pedParam0, 11, PV_COMP_INVALID);
 					
 						if (type3 >= 256)
 						{
@@ -21021,7 +21021,7 @@ BOOL func_133(Ped pedParam0, BOOL bParam1) // Position - 0x20911 (133393)
 						case 7:
 						case 4:
 						case 9:
-							action3 = func_138(joaat("MP_F_Freemode_01"), 11, func_258(pedParam0, 11, PV_COMP_INVALID), PV_COMP_HEAD);
+							action3 = func_138(joaat("MP_F_Freemode_01"), 11, func_260(pedParam0, 11, PV_COMP_INVALID), PV_COMP_HEAD);
 						
 							if (pedTextureVariation == 7 && action3 == INPUT_VEH_FLY_THROTTLE_DOWN || pedTextureVariation == 4 && action3 == INPUT_VEH_FLY_YAW_LEFT || pedTextureVariation == 9 && action3 == INPUT_VEH_FLY_THROTTLE_UP)
 								return 1;
@@ -21039,7 +21039,7 @@ BOOL func_133(Ped pedParam0, BOOL bParam1) // Position - 0x20911 (133393)
 						case 7:
 						case 4:
 						case 9:
-							action4 = func_138(joaat("MP_F_Freemode_01"), 11, func_258(pedParam0, 11, PV_COMP_INVALID), PV_COMP_HEAD);
+							action4 = func_138(joaat("MP_F_Freemode_01"), 11, func_260(pedParam0, 11, PV_COMP_INVALID), PV_COMP_HEAD);
 						
 							if (pedTextureVariation == 7 && action4 == INPUT_VEH_FLY_THROTTLE_DOWN || pedTextureVariation == 4 && action4 == INPUT_VEH_FLY_YAW_LEFT || pedTextureVariation == 9 && action4 == INPUT_VEH_FLY_THROTTLE_UP)
 								return 1;
@@ -21090,7 +21090,7 @@ BOOL func_133(Ped pedParam0, BOOL bParam1) // Position - 0x20911 (133393)
 				default:
 					if (pedDrawableVariation > 15)
 					{
-						type4 = func_258(pedParam0, 8, PV_COMP_INVALID);
+						type4 = func_260(pedParam0, 8, PV_COMP_INVALID);
 					
 						if (type4 >= 136)
 						{
@@ -28216,7 +28216,7 @@ BOOL func_167(Ped pedParam0, var uParam1, Hash hParam2, Hash hParam3, Hash hPara
 		}
 	}
 
-	if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(hParam3, joaat("HAZ_MASK"), 0) && !func_248(entityModel, 14, func_258(pedParam0, 14, PV_COMP_HEAD), -1))
+	if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(hParam3, joaat("HAZ_MASK"), 0) && !func_250(entityModel, 14, func_260(pedParam0, 14, PV_COMP_HEAD), -1))
 		return true;
 	else
 		return false;
@@ -30236,7 +30236,7 @@ BOOL func_172(Ped pedParam0) // Position - 0x2EDA0 (191904)
 		
 			if (pedDrawableVariation > 15)
 			{
-				type = func_258(pedParam0, 11, PV_COMP_INVALID);
+				type = func_260(pedParam0, 11, PV_COMP_INVALID);
 			
 				if (type >= 237)
 				{
@@ -30271,7 +30271,7 @@ BOOL func_172(Ped pedParam0) // Position - 0x2EDA0 (191904)
 		
 			if (pedDrawableVariation > 15)
 			{
-				type2 = func_258(pedParam0, 11, PV_COMP_INVALID);
+				type2 = func_260(pedParam0, 11, PV_COMP_INVALID);
 			
 				if (type2 >= 237)
 				{
@@ -30312,36 +30312,36 @@ BOOL func_174(Player plParam0, int iParam1) // Position - 0x2F150 (192848)
 	return IS_BIT_SET(Global_1892653[plParam0 /*615*/].f_10.f_4, iParam1);
 }
 
-void func_175(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position - 0x2F168 (192872)
+void func_175(eControlAction ecaParam0, BOOL bParam1, BOOL bParam2) // Position - 0x2F168 (192872)
 {
 	if (bParam1)
 	{
-		if (!func_120(ecaParam0, iParam2))
+		if (!func_120(ecaParam0, bParam2))
 		{
-			func_176(ecaParam0, true, iParam2);
+			func_176(ecaParam0, true, bParam2);
 		
-			if (iParam2 == -1 || iParam2 == func_18())
+			if (bParam2 == -1 || bParam2 == func_18())
 				func_82(ecaParam0, true);
 		}
 	}
-	else if (func_120(ecaParam0, iParam2))
+	else if (func_120(ecaParam0, bParam2))
 	{
-		func_176(ecaParam0, false, iParam2);
+		func_176(ecaParam0, false, bParam2);
 	
-		if (iParam2 == -1 || iParam2 == func_18())
+		if (bParam2 == -1 || bParam2 == func_18())
 			func_82(ecaParam0, false);
 	}
 
 	return;
 }
 
-void func_176(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position - 0x2F1D7 (192983)
+void func_176(eControlAction ecaParam0, BOOL bParam1, BOOL bParam2) // Position - 0x2F1D7 (192983)
 {
 	ePedComponentType address;
 	int num;
 	int num2;
 
-	address = func_121(ecaParam0, iParam2);
+	address = func_121(ecaParam0, bParam2);
 	num = ecaParam0;
 
 	if (num > -1)
@@ -30356,7 +30356,7 @@ void func_176(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position -
 			num2 = func_122(ecaParam0);
 		
 			if (num2 != 16715)
-				func_40(num2, address, iParam2, true);
+				func_40(num2, address, bParam2, true);
 		}
 	}
 
@@ -30365,26 +30365,26 @@ void func_176(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position -
 
 eControlAction func_177() // Position - 0x2F23D (193085)
 {
-	int num;
+	BOOL flag;
 
-	num = Global_80060;
+	flag = Global_80060;
 
-	if (func_120(13, num))
+	if (func_120(13, flag))
 		return 13;
 
-	if (func_120(14, num))
+	if (func_120(14, flag))
 		return 14;
 
-	if (func_120(15, num))
+	if (func_120(15, flag))
 		return 15;
 
-	if (func_120(16, num))
+	if (func_120(16, flag))
 		return 16;
 
-	if (func_120(71, num))
+	if (func_120(71, flag))
 		return 71;
 
-	if (func_120(72, num))
+	if (func_120(72, flag))
 		return 72;
 
 	return -1;
@@ -30412,7 +30412,7 @@ void func_178(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epc
 		{
 			type = func_179(pedParam0, epctParam2, epctParam3, epctParam1);
 		
-			if (func_248(ENTITY::GET_ENTITY_MODEL(pedParam0), 14, type, EXTRAMETADATA::GET_HASH_NAME_FOR_PROP(pedParam0, 0, epctParam2, epctParam3)))
+			if (func_250(ENTITY::GET_ENTITY_MODEL(pedParam0), 14, type, EXTRAMETADATA::GET_HASH_NAME_FOR_PROP(pedParam0, 0, epctParam2, epctParam3)))
 			{
 				PED::SET_PED_CONFIG_FLAG(pedParam0, 34, true);
 				PED::SET_PED_CONFIG_FLAG(pedParam0, 36, true);
@@ -33077,23 +33077,23 @@ BOOL func_191(int iParam0, int iParam1, var uParam2) // Position - 0x33539 (2102
 	return *uParam2 != 979;
 }
 
-void func_192(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, int iParam4) // Position - 0x3393E (211262)
+void func_192(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4) // Position - 0x3393E (211262)
 {
-	int num;
+	BOOL flag;
 	int offset;
-	int num2;
+	int num;
 	ePedComponentType address;
 
-	num = Global_80060;
+	flag = Global_80060;
 
-	if (iParam4 != -1)
-		num = iParam4;
+	if (bParam4 != -1)
+		flag = bParam4;
 
-	if (func_193(epctParam0, iParam1, &num2, &offset, bParam2, bParam3))
+	if (func_193(epctParam0, iParam1, &num, &offset, bParam2, bParam3))
 	{
-		address = func_237(num2, num);
+		address = func_237(num, flag);
 		MISC::SET_BIT(&address, offset);
-		func_40(num2, address, num, true);
+		func_40(num, address, flag, true);
 	}
 
 	return;
@@ -37300,22 +37300,22 @@ BOOL func_201(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	return false;
 }
 
-BOOL func_202(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, int iParam4) // Position - 0x38446 (230470)
+BOOL func_202(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4) // Position - 0x38446 (230470)
 {
+	BOOL flag;
 	int num;
 	int num2;
 	int num3;
-	int num4;
 
-	num = Global_80060;
+	flag = Global_80060;
 
-	if (iParam4 != -1)
-		num = iParam4;
+	if (bParam4 != -1)
+		flag = bParam4;
 
-	if (func_193(epctParam0, iParam1, &num3, &num2, bParam2, bParam3))
+	if (func_193(epctParam0, iParam1, &num2, &num, bParam2, bParam3))
 	{
-		num4 = func_237(num3, num);
-		return IS_BIT_SET(num4, num2);
+		num3 = func_237(num2, flag);
+		return IS_BIT_SET(num3, num);
 	}
 
 	return false;
@@ -37618,163 +37618,163 @@ void func_208(int iParam0, Hash hParam1) // Position - 0x38910 (231696)
 		case 1:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S1" /*The Indie Heart*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S1" /*Alternativa*/, 16);
 			break;
 	
 		case 2:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S2" /*The Kitten*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S2" /*Gatita*/, 16);
 			break;
 	
 		case 3:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S3" /*The Vacation*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S3" /*Turista*/, 16);
 			break;
 	
 		case 4:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S4" /*The Girly*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S4" /*Niña buena*/, 16);
 			break;
 	
 		case 5:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S5" /*The Standout*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S5" /*Llamativa*/, 16);
 			break;
 	
 		case 6:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S6" /*The Streetwise*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S6" /*Listilla*/, 16);
 			break;
 	
 		case 7:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S7" /*The Butterfly*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S7" /*Mariposas y flores*/, 16);
 			break;
 	
 		case 8:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S8" /*The Festival*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_S8" /*De festival*/, 16);
 			break;
 	
 		case 9:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P1" /*The Interview*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P1" /*Para entrevista*/, 16);
 			break;
 	
 		case 10:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P2" /*The Red Hot*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P2" /*Rojo pasión*/, 16);
 			break;
 	
 		case 11:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P3" /*The Upmarket*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P3" /*Cotizando alto*/, 16);
 			break;
 	
 		case 12:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P4" /*The Power Suit*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P4" /*Siente el poder*/, 16);
 			break;
 	
 		case 13:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P5" /*The Versatile*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P5" /*Versátil*/, 16);
 			break;
 	
 		case 14:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P6" /*The Egyptian*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P6" /*Egipcia*/, 16);
 			break;
 	
 		case 15:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P7" /*The Chalet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P7" /*Pija*/, 16);
 			break;
 	
 		case 16:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P8" /*The Cougar*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P8" /*Cuarentona*/, 16);
 			break;
 	
 		case 17:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P9" /*The Spring Break*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P9" /*De vacaciones*/, 16);
 			break;
 	
 		case 18:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P10" /*The Yacht Club*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_P10" /*Club de campo*/, 16);
 			break;
 	
 		case 19:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B1" /*The Holla Over*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B1" /*Chica del barrio*/, 16);
 			break;
 	
 		case 20:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B2" /*The Tough Chick*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B2" /*Chica dura*/, 16);
 			break;
 	
 		case 21:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B3" /*The Chica*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B3" /*Poligonera*/, 16);
 			break;
 	
 		case 22:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B4" /*The Tomboy*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B4" /*Machola*/, 16);
 			break;
 	
 		case 23:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B5" /*The Basics*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B5" /*Urbana*/, 16);
 			break;
 	
 		case 24:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B6" /*The Young Luck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B6" /*Joven*/, 16);
 			break;
 	
 		case 25:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B7" /*The Workout*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B7" /*Deportista*/, 16);
 			break;
 	
 		case 26:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B8" /*The She Devil*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B8" /*Peligrosa*/, 16);
 			break;
 	
 		case 27:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B9" /*The Beach Beauty*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMF_B9" /*Reina de la playa*/, 16);
 			break;
 	
 		default:
@@ -37878,7 +37878,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 10:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_0" /*Red Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_0" /*Cascos rojos*/, 16);
 			num = 0;
 			num2 = 0;
 			value = 65;
@@ -37887,7 +37887,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 11:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_1" /*Magenta Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_1" /*Cascos magenta*/, 16);
 			num = 0;
 			num2 = 1;
 			value = 65;
@@ -37896,7 +37896,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 12:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_2" /*Green Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_2" /*Cascos verdes*/, 16);
 			num = 0;
 			num2 = 2;
 			value = 85;
@@ -37905,7 +37905,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 13:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_3" /*Yellow Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_3" /*Cascos amarillos*/, 16);
 			num = 0;
 			num2 = 3;
 			value = 75;
@@ -37914,7 +37914,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 14:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_4" /*Desert Camo Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_4" /*Cascos de camuflaje*/, 16);
 			num = 0;
 			num2 = 4;
 			value = 235;
@@ -37923,7 +37923,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 15:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_5" /*Blue Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_5" /*Cascos azules*/, 16);
 			num = 0;
 			num2 = 5;
 			value = 80;
@@ -37932,7 +37932,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 16:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_6" /*Pale Blue Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_6" /*Cascos blancos*/, 16);
 			num = 0;
 			num2 = 6;
 			value = 85;
@@ -37941,7 +37941,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 17:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_7" /*Orange Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_0_7" /*Cascos naranjas*/, 16);
 			num = 0;
 			num2 = 7;
 			value = 90;
@@ -37970,7 +37970,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 20:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_2_1" /*Pink Accent Cowgirl Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_2_1" /*De vaquera negro y rosa*/, 16);
 			num = 2;
 			num2 = 1;
 			value = 5000;
@@ -38109,7 +38109,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 34:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_3_7" /*Gray Plaid Canvas Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_3_7" /*De lona a cuadros*/, 16);
 			num = 3;
 			num2 = 7;
 			value = 120;
@@ -38118,7 +38118,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 35:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_0" /*Black LS Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_0" /*Ajustable negra LS*/, 16);
 			num = 4;
 			num2 = 0;
 			value = 400;
@@ -38127,7 +38127,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 36:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_1" /*Fruntalot Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_1" /*Ajustable Fruntalot*/, 16);
 			num = 4;
 			num2 = 1;
 			value = 65;
@@ -38136,7 +38136,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 37:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_2" /*Broker Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_2" /*Ajustable Broker*/, 16);
 			num = 4;
 			num2 = 2;
 			value = 375;
@@ -38145,7 +38145,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 38:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_3" /*SA Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_3" /*Ajustable SA*/, 16);
 			num = 4;
 			num2 = 3;
 			value = 75;
@@ -38154,7 +38154,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 39:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_4" /*SA Boars Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_4" /*Ajustable SA Boars*/, 16);
 			num = 4;
 			num2 = 4;
 			value = 65;
@@ -38163,7 +38163,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 40:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_5" /*Stank Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_5" /*Ajustable Stank*/, 16);
 			num = 4;
 			num2 = 5;
 			value = 65;
@@ -38172,7 +38172,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 41:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_6" /*Red Mist XI Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_6" /*Ajustable Red Mist XI*/, 16);
 			num = 4;
 			num2 = 6;
 			value = 85;
@@ -38181,7 +38181,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 42:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_7" /*LS Corkers Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_4_7" /*Ajustable LS Corkers*/, 16);
 			num = 4;
 			num2 = 7;
 			value = 325;
@@ -38190,7 +38190,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 43:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_0" /*Rearwall Black Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_0" /*Rearwall negro*/, 16);
 			num = 5;
 			num2 = 0;
 			value = 35;
@@ -38199,7 +38199,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 44:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_1" /*Crevis Ash Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_1" /*Crevis gris ceniza*/, 16);
 			num = 5;
 			num2 = 1;
 			value = 30;
@@ -38208,7 +38208,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 45:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_2" /*Crevis Pink Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_2" /*Crevis rosa*/, 16);
 			num = 5;
 			num2 = 2;
 			value = 35;
@@ -38217,7 +38217,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 46:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_3" /*LS Panic Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_3" /*LS Panic*/, 16);
 			num = 5;
 			num2 = 3;
 			value = 40;
@@ -38226,7 +38226,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 47:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_4" /*SA Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_4" /*SA*/, 16);
 			num = 5;
 			num2 = 4;
 			value = 35;
@@ -38235,7 +38235,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 48:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_5" /*Hawaiian Snow Blue Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_5" /*Hawaiian Snow azul*/, 16);
 			num = 5;
 			num2 = 5;
 			value = 30;
@@ -38244,7 +38244,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 49:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_6" /*Rearwall Lime Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_6" /*Rearwall verde lima*/, 16);
 			num = 5;
 			num2 = 6;
 			value = 35;
@@ -38253,7 +38253,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 50:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_7" /*Hawaiian Snow Plaid Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_5_7" /*Hawaiian Snow a cuadros*/, 16);
 			num = 5;
 			num2 = 7;
 			value = 255;
@@ -38262,7 +38262,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 51:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_0" /*Black Military Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_0" /*Militar negra*/, 16);
 			num = 6;
 			num2 = 0;
 			value = 360;
@@ -38271,7 +38271,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 52:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_1" /*Green Military Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_1" /*Militar verde*/, 16);
 			num = 6;
 			num2 = 1;
 			value = 195;
@@ -38280,7 +38280,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 53:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_2" /*Leopard Military Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_2" /*Militar de leopardo*/, 16);
 			num = 6;
 			num2 = 2;
 			value = 3970;
@@ -38289,7 +38289,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 54:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_3" /*Tan Military Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_3" /*Militar marrón claro*/, 16);
 			num = 6;
 			num2 = 3;
 			value = 135;
@@ -38298,7 +38298,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 55:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_4" /*Denim Military Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_4" /*Militar vaquera*/, 16);
 			num = 6;
 			num2 = 4;
 			value = 1355;
@@ -38307,7 +38307,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 56:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_5" /*Field Camo Military Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_5" /*Militar de camuflaje*/, 16);
 			num = 6;
 			num2 = 5;
 			value = 110;
@@ -38316,7 +38316,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 57:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_6" /*Desert Camo Military Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_6" /*Militar de camuflaje beis*/, 16);
 			num = 6;
 			num2 = 6;
 			value = 140;
@@ -38325,7 +38325,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 58:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_7" /*Woodland Camo Military Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_6_7" /*Militar de camuflaje verde*/, 16);
 			num = 6;
 			num2 = 7;
 			value = 130;
@@ -38334,7 +38334,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 59:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_0" /*Navy Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_0" /*De golf azul marino*/, 16);
 			num = 7;
 			num2 = 0;
 			value = 230;
@@ -38343,7 +38343,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 60:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_1" /*White Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_1" /*De golf blanca*/, 16);
 			num = 7;
 			num2 = 1;
 			value = 195;
@@ -38352,7 +38352,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 61:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_2" /*Gray Plaid Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_2" /*De golf gris a cuadros*/, 16);
 			num = 7;
 			num2 = 2;
 			value = 515;
@@ -38361,7 +38361,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 62:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_3" /*Brown Plaid Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_3" /*De golf marrón a cuadros*/, 16);
 			num = 7;
 			num2 = 3;
 			value = 545;
@@ -38370,7 +38370,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 63:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_4" /*Red Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_4" /*De golf roja*/, 16);
 			num = 7;
 			num2 = 4;
 			value = 195;
@@ -38379,7 +38379,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 64:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_5" /*Pink Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_5" /*De golf rosa*/, 16);
 			num = 7;
 			num2 = 5;
 			value = 155;
@@ -38388,7 +38388,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 65:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_6" /*Green Plaid Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_6" /*De golf verde a cuadros*/, 16);
 			num = 7;
 			num2 = 6;
 			value = 155;
@@ -38397,7 +38397,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 66:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_7" /*Fruity Plaid Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_7_7" /*De golf multicolor*/, 16);
 			num = 7;
 			num2 = 7;
 			value = 1440;
@@ -38489,7 +38489,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 75:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_0" /*Fruit Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_0" /*Fruit*/, 16);
 			num = 9;
 			num2 = 0;
 			value = 35;
@@ -38498,7 +38498,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 76:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_1" /*247 Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_1" /*247*/, 16);
 			num = 9;
 			num2 = 1;
 			value = 25;
@@ -38507,7 +38507,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 77:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_2" /*Fred's Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_2" /*Fred's*/, 16);
 			num = 9;
 			num2 = 2;
 			value = 30;
@@ -38516,7 +38516,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 78:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_3" /*US Post LS Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_3" /*US Post LS*/, 16);
 			num = 9;
 			num2 = 3;
 			value = 25;
@@ -38525,7 +38525,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 79:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_4" /*Swallow Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_4" /*Swallow*/, 16);
 			num = 9;
 			num2 = 4;
 			value = 50;
@@ -38534,7 +38534,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 80:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_5" /*CNT Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_5" /*CNT*/, 16);
 			num = 9;
 			num2 = 5;
 			value = 40;
@@ -38543,7 +38543,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 81:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_6" /*Peachy Chics Snakeskin Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_6" /*Peachy Chics de serpiente*/, 16);
 			num = 9;
 			num2 = 6;
 			value = 575;
@@ -38552,7 +38552,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 82:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_7" /*Peachy Chics Leopard Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_9_7" /*Peachy Chics de leopardo*/, 16);
 			num = 9;
 			num2 = 7;
 			value = 605;
@@ -38631,7 +38631,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 90:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_10_7" /*Tan Patterned Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_10_7" /*Marrón claro estampada*/, 16);
 			num = 10;
 			num2 = 7;
 			value = 285;
@@ -38650,7 +38650,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 92:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_11_1" /*Black Sun Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_11_1" /*Pamela negra*/, 16);
 			num = 11;
 			num2 = 1;
 			value = 2125;
@@ -38719,7 +38719,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 99:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_12_0" /*Black Saggy Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_12_0" /*De lana caído negro*/, 16);
 			num = 12;
 			num2 = 0;
 			value = 75;
@@ -38778,7 +38778,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 105:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_12_6" /*Hawaiian Snow Saggy Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_12_6" /*De lana caído verde*/, 16);
 			num = 12;
 			num2 = 6;
 			value = 75;
@@ -38787,7 +38787,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 106:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_12_7" /*Yeti Saggy Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_12_7" /*De lana caído Yeti*/, 16);
 			num = 12;
 			num2 = 7;
 			value = 295;
@@ -38796,7 +38796,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 107:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_0" /*Tan Straw Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_0" /*De paja marrón claro*/, 16);
 			num = 13;
 			num2 = 0;
 			value = 195;
@@ -38805,7 +38805,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 108:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_1" /*Two-Tone Straw Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_1" /*De paja bicolor*/, 16);
 			num = 13;
 			num2 = 1;
 			value = 200;
@@ -38814,7 +38814,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 109:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_2" /*Brown Straw Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_2" /*De paja marrón*/, 16);
 			num = 13;
 			num2 = 2;
 			value = 160;
@@ -38823,7 +38823,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 110:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_3" /*Safari Straw Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_3" /*De paja de safari*/, 16);
 			num = 13;
 			num2 = 3;
 			value = 855;
@@ -38832,7 +38832,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 111:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_4" /*Gray Patterned Straw Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_4" /*De paja con dibujo gris*/, 16);
 			num = 13;
 			num2 = 4;
 			value = 1615;
@@ -38841,7 +38841,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 112:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_5" /*Brown Striped Straw Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_5" /*De paja marrón a rayas*/, 16);
 			num = 13;
 			num2 = 5;
 			value = 1130;
@@ -38850,7 +38850,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 113:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_6" /*Gray Straw Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_6" /*De paja gris*/, 16);
 			num = 13;
 			num2 = 6;
 			value = 165;
@@ -38859,7 +38859,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 114:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_7" /*Navy Straw Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_13_7" /*De paja azul marino*/, 16);
 			num = 13;
 			num2 = 7;
 			value = 215;
@@ -38868,7 +38868,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 115:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_0" /*Black Beret*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_0" /*Boina negra*/, 16);
 			num = 14;
 			num2 = 0;
 			value = 145;
@@ -38877,7 +38877,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 116:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_1" /*Cherry Beret*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_1" /*Boina roja*/, 16);
 			num = 14;
 			num2 = 1;
 			value = 250;
@@ -38886,7 +38886,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 117:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_2" /*Purple Beret*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_2" /*Boina morada*/, 16);
 			num = 14;
 			num2 = 2;
 			value = 110;
@@ -38895,7 +38895,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 118:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_3" /*White Beret*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_3" /*Boina blanca*/, 16);
 			num = 14;
 			num2 = 3;
 			value = 145;
@@ -38904,7 +38904,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 119:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_4" /*Gray Beret*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_4" /*Boina gris*/, 16);
 			num = 14;
 			num2 = 4;
 			value = 105;
@@ -38913,7 +38913,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 120:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_5" /*Navy Beret*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_5" /*Boina azul marino*/, 16);
 			num = 14;
 			num2 = 5;
 			value = 105;
@@ -38922,7 +38922,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 121:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_6" /*Tan Beret*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_6" /*Boina marrón claro*/, 16);
 			num = 14;
 			num2 = 6;
 			value = 115;
@@ -38931,7 +38931,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 122:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_7" /*Magenta Beret*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_14_7" /*Boina magenta*/, 16);
 			num = 14;
 			num2 = 7;
 			value = 115;
@@ -38940,7 +38940,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 123:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_0" /*Beat Off White Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_0" /*Auriculares blancos*/, 16);
 			num = 15;
 			num2 = 0;
 			value = 390;
@@ -38949,7 +38949,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 124:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_1" /*Beat Off Black Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_1" /*Auriculares negros*/, 16);
 			num = 15;
 			num2 = 1;
 			value = 395;
@@ -38958,7 +38958,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 125:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_2" /*Beat Off Red Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_2" /*Auriculares rojos*/, 16);
 			num = 15;
 			num2 = 2;
 			value = 595;
@@ -38967,7 +38967,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 126:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_3" /*Beat Off Gray Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_3" /*Auriculares grises*/, 16);
 			num = 15;
 			num2 = 3;
 			value = 425;
@@ -38976,7 +38976,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 127:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_4" /*Beat Off Navy Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_4" /*Auriculares azul marino*/, 16);
 			num = 15;
 			num2 = 4;
 			value = 600;
@@ -38985,7 +38985,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 128:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_5" /*Beat Off Purple Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_5" /*Auriculares morados*/, 16);
 			num = 15;
 			num2 = 5;
 			value = 590;
@@ -38994,7 +38994,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 129:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_6" /*Beat Off Pink Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_6" /*Auriculares rosas*/, 16);
 			num = 15;
 			num2 = 6;
 			value = 595;
@@ -39003,7 +39003,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 130:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_7" /*Beat Off Orange Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMF_15_7" /*Auriculares naranjas*/, 16);
 			num = 15;
 			num2 = 7;
 			value = 555;
@@ -39015,7 +39015,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 	switch (iParam0)
 	{
 		case 131:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_0" /*Western MC Yellow Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_0" /*Casco Western MC amarillo*/, 16);
 			num = 16;
 			num2 = 0;
 			value = 1060;
@@ -39024,7 +39024,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 132:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_1" /*Steel Horse Blue Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_1" /*Casco Steel Horse azul*/, 16);
 			num = 16;
 			num2 = 1;
 			value = 1400;
@@ -39033,7 +39033,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 133:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_2" /*Steel Horse Orange Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_2" /*Casco Steel Horse naranja*/, 16);
 			num = 16;
 			num2 = 2;
 			value = 1315;
@@ -39042,7 +39042,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 134:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_3" /*Western MC Green Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_3" /*Casco Western MC verde*/, 16);
 			num = 16;
 			num2 = 3;
 			value = 1230;
@@ -39051,7 +39051,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 135:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_4" /*Western MC Red Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_4" /*Casco Western MC rojo*/, 16);
 			num = 16;
 			num2 = 4;
 			value = 1145;
@@ -39060,7 +39060,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 136:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_5" /*Steel Horse Black Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_5" /*Casco Steel Horse negro*/, 16);
 			num = 16;
 			num2 = 5;
 			value = 8450;
@@ -39069,7 +39069,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 137:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_6" /*Black Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_6" /*Casco negro*/, 16);
 			num = 16;
 			num2 = 6;
 			value = 675;
@@ -39078,7 +39078,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 138:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_7" /*Western MC Lilac Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_16_7" /*Casco Western MC lila*/, 16);
 			num = 16;
 			num2 = 7;
 			value = 8750;
@@ -39087,7 +39087,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 139:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_0" /*Blue Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_0" /*Casco 3/4 azul*/, 16);
 			num = 17;
 			num2 = 0;
 			value = 975;
@@ -39096,7 +39096,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 140:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_1" /*Orange Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_1" /*Casco 3/4 naranja*/, 16);
 			num = 17;
 			num2 = 1;
 			value = 750;
@@ -39105,7 +39105,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 141:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_2" /*Pale Blue Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_2" /*Casco 3/4 azul claro*/, 16);
 			num = 17;
 			num2 = 2;
 			value = 865;
@@ -39114,7 +39114,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 142:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_3" /*Red Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_3" /*Casco 3/4 rojo*/, 16);
 			num = 17;
 			num2 = 3;
 			value = 890;
@@ -39123,7 +39123,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 143:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_4" /*Gray Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_4" /*Casco 3/4 gris*/, 16);
 			num = 17;
 			num2 = 4;
 			value = 730;
@@ -39132,7 +39132,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 144:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_5" /*Black Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_5" /*Casco 3/4 negro*/, 16);
 			num = 17;
 			num2 = 5;
 			value = 650;
@@ -39141,7 +39141,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 145:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_6" /*Pink Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_6" /*Casco 3/4 rosa*/, 16);
 			num = 17;
 			num2 = 6;
 			value = 645;
@@ -39150,7 +39150,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 146:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_7" /*White Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_17_7" /*Casco 3/4 blanco*/, 16);
 			num = 17;
 			num2 = 7;
 			value = 755;
@@ -39159,7 +39159,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 147:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_0" /*Shatter Pattern Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_0" /*Casco con dibujo gris*/, 16);
 			num = 18;
 			num2 = 0;
 			value = 13850;
@@ -39168,7 +39168,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 148:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_1" /*Stars Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_1" /*Casco con estrellas*/, 16);
 			num = 18;
 			num2 = 1;
 			value = 2900;
@@ -39177,7 +39177,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 149:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_2" /*Squared Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_2" /*Casco a cuadros*/, 16);
 			num = 18;
 			num2 = 2;
 			value = 2895;
@@ -39186,7 +39186,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 150:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_3" /*Crimson Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_3" /*Casco carmesí*/, 16);
 			num = 18;
 			num2 = 3;
 			value = 12500;
@@ -39195,7 +39195,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 151:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_4" /*Skull Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_4" /*Casco con calavera*/, 16);
 			num = 18;
 			num2 = 4;
 			value = 15000;
@@ -39204,7 +39204,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 152:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_5" /*Ace of Spades Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_5" /*Casco con as de picas*/, 16);
 			num = 18;
 			num2 = 5;
 			value = 14750;
@@ -39213,7 +39213,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 153:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_6" /*Flamejob Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_6" /*Casco con llamas*/, 16);
 			num = 18;
 			num2 = 6;
 			value = 13150;
@@ -39222,7 +39222,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 154:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_7" /*White Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMF_18_7" /*Casco blanco*/, 16);
 			num = 18;
 			num2 = 7;
 			value = 2925;
@@ -39234,7 +39234,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 	switch (iParam0)
 	{
 		case 155:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_0" /*Hornet Sports Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_0" /*De sol deportivas avispa*/, 16);
 			num = 0;
 			num2 = 0;
 			value = 65;
@@ -39243,7 +39243,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 156:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_1" /*Two-Tone Sports Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_1" /*De sol deportivas bicolor*/, 16);
 			num = 0;
 			num2 = 1;
 			value = 65;
@@ -39252,7 +39252,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 157:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_2" /*Orange Sports Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_2" /*De sol deportivas naranjas*/, 16);
 			num = 0;
 			num2 = 2;
 			value = 85;
@@ -39261,7 +39261,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 158:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_3" /*Blue Sports Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_3" /*De sol deportivas azules*/, 16);
 			num = 0;
 			num2 = 3;
 			value = 75;
@@ -39270,7 +39270,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 159:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_4" /*Marble Sports Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_4" /*De sol deportivas mármol*/, 16);
 			num = 0;
 			num2 = 4;
 			value = 85;
@@ -39279,7 +39279,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 160:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_5" /*Purple Sports Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_5" /*De sol deportivas moradas*/, 16);
 			num = 0;
 			num2 = 5;
 			value = 80;
@@ -39288,7 +39288,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 161:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_6" /*Topaz Sports Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_6" /*De sol deportivas topacio*/, 16);
 			num = 0;
 			num2 = 6;
 			value = 85;
@@ -39297,7 +39297,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 162:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_7" /*Beige Sports Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_0_7" /*De sol deportivas beis*/, 16);
 			num = 0;
 			num2 = 7;
 			value = 90;
@@ -39333,7 +39333,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 166:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_0" /*Copper Marbles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_0" /*Marbles cobre*/, 16);
 			num = 1;
 			num2 = 0;
 			value = 160;
@@ -39342,7 +39342,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 167:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_1" /*Blue Tint Marbles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_1" /*Marbles con tinte azul*/, 16);
 			num = 1;
 			num2 = 1;
 			value = 165;
@@ -39351,7 +39351,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 168:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_2" /*Black Marbles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_2" /*Marbles negras*/, 16);
 			num = 1;
 			num2 = 2;
 			value = 170;
@@ -39360,7 +39360,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 169:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_3" /*Purple Marbles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_3" /*Marbles moradas*/, 16);
 			num = 1;
 			num2 = 3;
 			value = 135;
@@ -39369,7 +39369,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 170:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_4" /*Teal Marbles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_4" /*Marbles turquesa*/, 16);
 			num = 1;
 			num2 = 4;
 			value = 120;
@@ -39378,7 +39378,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 171:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_5" /*Red Tint Marbles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_5" /*Marbles con tinte rojo*/, 16);
 			num = 1;
 			num2 = 5;
 			value = 110;
@@ -39387,7 +39387,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 172:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_6" /*White Marbles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_6" /*Marbles blancas*/, 16);
 			num = 1;
 			num2 = 6;
 			value = 140;
@@ -39396,7 +39396,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 173:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_7" /*Pink Tint Marbles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_1_7" /*Marbles con tinte rosa*/, 16);
 			num = 1;
 			num2 = 7;
 			value = 130;
@@ -39432,7 +39432,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 177:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_0" /*Marble Mademoiselles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_0" /*De señora mármol*/, 16);
 			num = 2;
 			num2 = 0;
 			value = 180;
@@ -39441,7 +39441,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 178:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_1" /*Copper Mademoiselles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_1" /*De señora cobre*/, 16);
 			num = 2;
 			num2 = 1;
 			value = 110;
@@ -39450,7 +39450,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 179:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_2" /*Orange Tint Mademoiselles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_2" /*De señora con tinte naranja*/, 16);
 			num = 2;
 			num2 = 2;
 			value = 115;
@@ -39459,7 +39459,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 180:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_3" /*Pink Tint Mademoiselles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_3" /*De señora con tinte rosa*/, 16);
 			num = 2;
 			num2 = 3;
 			value = 120;
@@ -39468,7 +39468,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 181:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_4" /*Walnut Mademoiselles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_4" /*De señora color nogal*/, 16);
 			num = 2;
 			num2 = 4;
 			value = 595;
@@ -39477,7 +39477,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 182:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_5" /*Black Mademoiselles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_5" /*De señora negras*/, 16);
 			num = 2;
 			num2 = 5;
 			value = 160;
@@ -39486,7 +39486,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 183:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_6" /*Vintage Red Mademoiselles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_6" /*De señora retro rojas*/, 16);
 			num = 2;
 			num2 = 6;
 			value = 545;
@@ -39495,7 +39495,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 184:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_7" /*Gold Mademoiselles*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_2_7" /*De señora doradas*/, 16);
 			num = 2;
 			num2 = 7;
 			value = 590;
@@ -39531,7 +39531,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 188:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_0" /*Zebra Shields*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_0" /*Shields de cebra*/, 16);
 			num = 3;
 			num2 = 0;
 			value = 6250;
@@ -39540,7 +39540,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 189:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_1" /*Ombre Shields*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_1" /*Shields carey*/, 16);
 			num = 3;
 			num2 = 1;
 			value = 4065;
@@ -39549,7 +39549,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 190:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_2" /*Flame Shields*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_2" /*Shields con toque rojo*/, 16);
 			num = 3;
 			num2 = 2;
 			value = 3585;
@@ -39558,7 +39558,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 191:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_3" /*Violet Shields*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_3" /*Shields moradas*/, 16);
 			num = 3;
 			num2 = 3;
 			value = 4075;
@@ -39567,7 +39567,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 192:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_4" /*Sun Shields*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_4" /*Shields amarillas*/, 16);
 			num = 3;
 			num2 = 4;
 			value = 4935;
@@ -39576,7 +39576,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 193:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_5" /*Silver Accent Shields*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_5" /*Shields con toque gris*/, 16);
 			num = 3;
 			num2 = 5;
 			value = 130;
@@ -39585,7 +39585,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 194:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_6" /*Party Shields*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_6" /*Shields a rayas*/, 16);
 			num = 3;
 			num2 = 6;
 			value = 5600;
@@ -39594,7 +39594,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 195:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_7" /*Gold Shields*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_3_7" /*Shields doradas*/, 16);
 			num = 3;
 			num2 = 7;
 			value = 4790;
@@ -39630,7 +39630,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 199:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_0" /*Deep Walnut Retro*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_0" /*Retro color nogal*/, 16);
 			num = 4;
 			num2 = 0;
 			value = 2245;
@@ -39639,7 +39639,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 200:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_1" /*Marble Retro*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_1" /*Retro mármol*/, 16);
 			num = 4;
 			num2 = 1;
 			value = 250;
@@ -39648,7 +39648,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 201:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_2" /*Beige Retro*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_2" /*Retro beis*/, 16);
 			num = 4;
 			num2 = 2;
 			value = 210;
@@ -39657,7 +39657,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 202:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_3" /*Aqua Retro*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_3" /*Retro aguamarina*/, 16);
 			num = 4;
 			num2 = 3;
 			value = 245;
@@ -39666,7 +39666,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 203:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_4" /*Dice Retro*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_4" /*Retro bicolor*/, 16);
 			num = 4;
 			num2 = 4;
 			value = 1205;
@@ -39675,7 +39675,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 204:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_5" /*Black Retro*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_5" /*Retro negras*/, 16);
 			num = 4;
 			num2 = 5;
 			value = 205;
@@ -39684,7 +39684,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 205:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_6" /*Toffee Retro*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_6" /*Retro color caramelo*/, 16);
 			num = 4;
 			num2 = 6;
 			value = 2215;
@@ -39693,7 +39693,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 206:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_7" /*Red Retro*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_4_7" /*Retro rojas*/, 16);
 			num = 4;
 			num2 = 7;
 			value = 215;
@@ -39836,7 +39836,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 221:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_6_0" /*Purple Tint Bugs*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_6_0" /*Bugs con tinte morado*/, 16);
 			num = 6;
 			num2 = 0;
 			value = 5000;
@@ -39942,7 +39942,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 232:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_0" /*Champagne Figure 8s*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_0" /*Forma de 8 color cava*/, 16);
 			num = 7;
 			num2 = 0;
 			value = 4815;
@@ -39951,7 +39951,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 233:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_1" /*Platinum Figure 8s*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_1" /*Forma de 8 platino*/, 16);
 			num = 7;
 			num2 = 1;
 			value = 4795;
@@ -39960,7 +39960,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 234:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_2" /*Sapphire Figure 8s*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_2" /*Forma de 8 zafiro*/, 16);
 			num = 7;
 			num2 = 2;
 			value = 4305;
@@ -39969,7 +39969,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 235:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_3" /*Amethyst Figure 8s*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_3" /*Forma de 8 amatista*/, 16);
 			num = 7;
 			num2 = 3;
 			value = 4305;
@@ -39978,7 +39978,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 236:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_4" /*Gold Figure 8s*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_4" /*Forma de 8 doradas*/, 16);
 			num = 7;
 			num2 = 4;
 			value = 4965;
@@ -39987,7 +39987,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 237:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_5" /*White Figure 8s*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_5" /*Forma de 8 blancas*/, 16);
 			num = 7;
 			num2 = 5;
 			value = 480;
@@ -39996,7 +39996,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 238:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_6" /*Gray Figure 8s*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_6" /*Forma de 8 grises*/, 16);
 			num = 7;
 			num2 = 6;
 			value = 465;
@@ -40005,7 +40005,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 239:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_7" /*Garnet Figure 8s*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_7_7" /*Forma de 8 granate*/, 16);
 			num = 7;
 			num2 = 7;
 			value = 4320;
@@ -40044,7 +40044,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 	switch (iParam0)
 	{
 		case 243:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_8_0" /*Orange Tint Squared*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_8_0" /*Cuadradas naranjas*/, 16);
 			num = 8;
 			num2 = 0;
 			value = 500;
@@ -40150,7 +40150,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 254:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_0" /*Lime Tint Shooters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_0" /*De tirador verde lima*/, 16);
 			num = 9;
 			num2 = 0;
 			value = 70;
@@ -40159,7 +40159,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 255:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_1" /*Orange Tint Shooters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_1" /*De tirador naranjas*/, 16);
 			num = 9;
 			num2 = 1;
 			value = 60;
@@ -40168,7 +40168,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 256:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_2" /*Blue Shooters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_2" /*De tirador azules*/, 16);
 			num = 9;
 			num2 = 2;
 			value = 65;
@@ -40177,7 +40177,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 257:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_3" /*Tropic Shooters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_3" /*De tirador tropicales*/, 16);
 			num = 9;
 			num2 = 3;
 			value = 570;
@@ -40186,7 +40186,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 258:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_4" /*Fly Shooters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_4" /*De tirador bicolor*/, 16);
 			num = 9;
 			num2 = 4;
 			value = 525;
@@ -40195,7 +40195,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 259:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_5" /*Crimson Shooters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_5" /*De tirador carmesí*/, 16);
 			num = 9;
 			num2 = 5;
 			value = 75;
@@ -40204,7 +40204,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 260:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_6" /*Green Tint Shooters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_6" /*De tirador verdes*/, 16);
 			num = 9;
 			num2 = 6;
 			value = 75;
@@ -40213,7 +40213,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 261:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_7" /*Pink Shooters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_9_7" /*De tirador rosas*/, 16);
 			num = 9;
 			num2 = 7;
 			value = 90;
@@ -40249,7 +40249,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 265:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_0" /*Luxury Ice Sports*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_0" /*Anchas blancas de lujo*/, 16);
 			num = 10;
 			num2 = 0;
 			value = 4065;
@@ -40258,7 +40258,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 266:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_1" /*Black Sports*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_1" /*Anchas negras*/, 16);
 			num = 10;
 			num2 = 1;
 			value = 65;
@@ -40267,7 +40267,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 267:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_2" /*Green Sports*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_2" /*Anchas verdes*/, 16);
 			num = 10;
 			num2 = 2;
 			value = 85;
@@ -40276,7 +40276,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 268:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_3" /*Luxury Cowhide Sports*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_3" /*Anchas bicolor de lujo*/, 16);
 			num = 10;
 			num2 = 3;
 			value = 4275;
@@ -40285,7 +40285,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 269:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_4" /*Orange Sports*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_4" /*Anchas naranjas*/, 16);
 			num = 10;
 			num2 = 4;
 			value = 85;
@@ -40294,7 +40294,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 270:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_5" /*Black Pattern Sports*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_5" /*Anchas negras con dibujo*/, 16);
 			num = 10;
 			num2 = 5;
 			value = 80;
@@ -40303,7 +40303,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 271:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_6" /*Blue Pattern Sports*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_6" /*Anchas azules con dibujo*/, 16);
 			num = 10;
 			num2 = 6;
 			value = 85;
@@ -40312,7 +40312,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 272:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_7" /*Pink Pattern Sports*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_10_7" /*Anchas rosas con dibujo*/, 16);
 			num = 10;
 			num2 = 7;
 			value = 90;
@@ -40348,7 +40348,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 276:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_0" /*Pewter Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_0" /*De aviador estaño*/, 16);
 			num = 11;
 			num2 = 0;
 			value = 3660;
@@ -40357,7 +40357,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 277:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_1" /*Steel Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_1" /*De aviador de acero*/, 16);
 			num = 11;
 			num2 = 1;
 			value = 4165;
@@ -40366,7 +40366,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 278:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_2" /*Bronze Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_2" /*De aviador bronce*/, 16);
 			num = 11;
 			num2 = 2;
 			value = 3670;
@@ -40375,7 +40375,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 279:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_3" /*Black Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_3" /*De aviador negras*/, 16);
 			num = 11;
 			num2 = 3;
 			value = 135;
@@ -40384,7 +40384,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 280:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_4" /*Neon Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_4" /*De aviador neón*/, 16);
 			num = 11;
 			num2 = 4;
 			value = 3620;
@@ -40393,7 +40393,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 281:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_5" /*Copper Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_5" /*De aviador cobre*/, 16);
 			num = 11;
 			num2 = 5;
 			value = 3610;
@@ -40402,7 +40402,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 282:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_6" /*Gold Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_6" /*De aviador doradas*/, 16);
 			num = 11;
 			num2 = 6;
 			value = 4140;
@@ -40411,7 +40411,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 283:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_7" /*Slate Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_11_7" /*De aviador gris pizarra*/, 16);
 			num = 11;
 			num2 = 7;
 			value = 130;
@@ -40580,7 +40580,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 300:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_0" /*Black Cat Eyes*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_0" /*Ojos de gato negras*/, 16);
 			num = 14;
 			num2 = 0;
 			value = 325;
@@ -40589,7 +40589,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 301:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_1" /*Brown Marble Cat Eyes*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_1" /*Ojos de gato mármol marrón*/, 16);
 			num = 14;
 			num2 = 1;
 			value = 110;
@@ -40598,7 +40598,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 302:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_2" /*Pink Cat Eyes*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_2" /*Ojos de gato rosas*/, 16);
 			num = 14;
 			num2 = 2;
 			value = 115;
@@ -40607,7 +40607,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 303:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_3" /*Green Marble Cat Eyes*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_3" /*Ojos de gato mármol verde*/, 16);
 			num = 14;
 			num2 = 3;
 			value = 120;
@@ -40616,7 +40616,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 304:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_4" /*Red Cat Eyes*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_4" /*Ojos de gato rojas*/, 16);
 			num = 14;
 			num2 = 4;
 			value = 135;
@@ -40625,7 +40625,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 305:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_5" /*Teal Cat Eyes*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_5" /*Ojos de gato turquesa*/, 16);
 			num = 14;
 			num2 = 5;
 			value = 110;
@@ -40634,7 +40634,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 306:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_6" /*Purple Cat Eyes*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_6" /*Ojos de gato moradas*/, 16);
 			num = 14;
 			num2 = 6;
 			value = 115;
@@ -40643,7 +40643,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 307:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_7" /*Blue Cat Eyes*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMF_14_7" /*Ojos de gato azules*/, 16);
 			num = 14;
 			num2 = 7;
 			value = 120;
@@ -40802,7 +40802,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			break;
 	
 		case 323:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMF_0_4" /*Pewter Watch*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMF_0_4" /*Reloj de estaño*/, 16);
 			num = 0;
 			num2 = 4;
 			value = 825;
@@ -40850,7 +40850,7 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 			if (num7 > 8)
 				num7 = num7 - 1;
 		
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2039[num7] * Global_299531.f_20);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2039[num7] * Global_299533.f_20);
 		}
 	}
 	else if (num6 == 2)
@@ -40858,21 +40858,21 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 		num8 = iParam0 - 131;
 	
 		if (num8 >= 0 && num8 < 24)
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2160[num8] * Global_299531.f_21);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2160[num8] * Global_299533.f_21);
 	}
 	else if (num6 == 3)
 	{
 		num9 = iParam0 - 155;
 	
 		if (num9 >= 0 && num9 < 128)
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2185[num9] * Global_299531.f_44);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2185[num9] * Global_299533.f_44);
 	}
 	else if (num6 == 4)
 	{
 		num10 = iParam0 - 319;
 	
 		if (num10 >= 0 && num10 < 10)
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2314[num10] * Global_299531.f_22);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2314[num10] * Global_299533.f_22);
 	}
 
 	if (iParam0 >= 327)
@@ -40882,11 +40882,11 @@ void func_209(int iParam0, Hash hParam1) // Position - 0x38BEF (232431)
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
 			if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(Global_2883588, joaat("HAT"), 1))
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_20);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_20);
 			else if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(Global_2883588, joaat("GLASSES"), 1))
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_44);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_44);
 			else if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(Global_2883588, joaat("WATCH"), 1))
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_22);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_22);
 	}
 	else
 	{
@@ -40918,42 +40918,42 @@ void func_210(int iParam0, Hash hParam1) // Position - 0x3B9C4 (244164)
 	switch (iParam0)
 	{
 		case 0:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_0_0" /*No Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_0_0" /*Sin emblema de Crew*/, 16);
 			num2 = 0;
 			num3 = 0;
 			num = 0;
 			break;
 	
 		case 1:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Large Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Emblema de Crew grande*/, 16);
 			num2 = 1;
 			num3 = 0;
 			num = 10000;
 			break;
 	
 		case 2:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Small Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Emblema de Crew pequeño*/, 16);
 			num2 = 2;
 			num3 = 0;
 			num = 5000;
 			break;
 	
 		case 3:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Large Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Emblema de Crew grande*/, 16);
 			num2 = 3;
 			num3 = 0;
 			num = 10000;
 			break;
 	
 		case 4:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Small Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Emblema de Crew pequeño*/, 16);
 			num2 = 4;
 			num3 = 0;
 			num = 5000;
 			break;
 	
 		case 5:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Large Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Emblema de Crew grande*/, 16);
 			num2 = 5;
 			num3 = 0;
 			num = 10000;
@@ -41472,12 +41472,12 @@ void func_211(int iParam0, Hash hParam1) // Position - 0x3BAC9 (244425)
 			func_206(num5, iParam0, 55, hParam1);
 		
 			if (Global_80063[0 /*14*/].f_7 > 0)
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_46);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_46);
 		
 			return;
 	}
 
-	value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_299531.f_46);
+	value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_299533.f_46);
 	TEXT_LABEL_ASSIGN_STRING(&unk, "T_FMF_", 16);
 	TEXT_LABEL_APPEND_INT(&unk, num, 16);
 	TEXT_LABEL_APPEND_STRING(&unk, "_", 16);
@@ -41669,7 +41669,7 @@ void func_212(int iParam0, Hash hParam1) // Position - 0x3C2A6 (246438)
 			func_206(num5, iParam0, 26, hParam1);
 		
 			if (Global_80063[0 /*14*/].f_7 > 0)
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_23);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_23);
 		
 			return;
 	}
@@ -41681,7 +41681,7 @@ void func_212(int iParam0, Hash hParam1) // Position - 0x3C2A6 (246438)
 	num6 = iParam0 - 1;
 
 	if (num6 >= 0 && num6 < 26)
-		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2012[num6] * Global_299531.f_23);
+		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_2012[num6] * Global_299533.f_23);
 
 	func_198(&Global_80063[0 /*14*/], num5, iParam0, &unk, num, num2, value, flag, num3, num4, false);
 	return;
@@ -43369,7 +43369,7 @@ void func_213(int iParam0, Hash hParam1) // Position - 0x3C58B (247179)
 	num6 = iParam0;
 
 	if (num6 >= 0 && num6 < 256)
-		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1755[num6] * Global_299531.f_19);
+		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1755[num6] * Global_299533.f_19);
 
 	if (iParam0 >= 256)
 	{
@@ -43377,7 +43377,7 @@ void func_213(int iParam0, Hash hParam1) // Position - 0x3C58B (247179)
 		func_206(num5, iParam0, 256, hParam1);
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
-			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_19);
+			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_19);
 	}
 	else
 	{
@@ -45095,7 +45095,7 @@ void func_214(int iParam0, Hash hParam1) // Position - 0x3DBB2 (252850)
 	num6 = iParam0;
 
 	if (num6 >= 0 && num6 < 256)
-		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1241[num6] * Global_299531.f_17);
+		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1241[num6] * Global_299533.f_17);
 
 	if (iParam0 >= 256)
 	{
@@ -45103,7 +45103,7 @@ void func_214(int iParam0, Hash hParam1) // Position - 0x3DBB2 (252850)
 		func_206(num5, iParam0, 256, hParam1);
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
-			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_17);
+			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_17);
 	}
 	else
 	{
@@ -45463,224 +45463,224 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 	switch (iParam0)
 	{
 		case 0:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_0" /*Crew T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_0" /*Camiseta de Crew*/, 16);
 			num = 0;
 			num2 = 0;
 			value = 250;
 			break;
 	
 		case 1:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_1" /*Salamanders T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_1" /*Camiseta Salamanders*/, 16);
 			num = 0;
 			num2 = 1;
 			value = 225;
 			break;
 	
 		case 2:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_2" /*The Feud T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_2" /*Camiseta The Feud*/, 16);
 			num = 0;
 			num2 = 2;
 			value = 50;
 			break;
 	
 		case 3:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_3" /*Yellow T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_3" /*Camiseta amarilla*/, 16);
 			num = 0;
 			num2 = 3;
 			value = 40;
 			break;
 	
 		case 4:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_4" /*Red T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_4" /*Camiseta roja*/, 16);
 			num = 0;
 			num2 = 4;
 			value = 40;
 			break;
 	
 		case 5:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_5" /*Cyan T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_5" /*Camiseta cian*/, 16);
 			num = 0;
 			num2 = 5;
 			value = 40;
 			break;
 	
 		case 6:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_6" /*Blue T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_6" /*Camiseta azul*/, 16);
 			num = 0;
 			num2 = 6;
 			value = 40;
 			break;
 	
 		case 7:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_7" /*Tan T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_7" /*Camiseta marrón claro*/, 16);
 			num = 0;
 			num2 = 7;
 			value = 45;
 			break;
 	
 		case 8:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_8" /*Pink T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_8" /*Camiseta rosa*/, 16);
 			num = 0;
 			num2 = 8;
 			value = 40;
 			break;
 	
 		case 9:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_9" /*Mint T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_9" /*Camiseta verde menta*/, 16);
 			num = 0;
 			num2 = 9;
 			value = 40;
 			break;
 	
 		case 10:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_10" /*Ash T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_10" /*Camiseta gris ceniza*/, 16);
 			num = 0;
 			num2 = 10;
 			value = 135;
 			break;
 	
 		case 11:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_11" /*Gray T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_11" /*Camiseta gris*/, 16);
 			num = 0;
 			num2 = 11;
 			value = 60;
 			break;
 	
 		case 12:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_12" /*Leopard T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_12" /*Camiseta de leopardo*/, 16);
 			num = 0;
 			num2 = 12;
 			value = 220;
 			break;
 	
 		case 13:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_13" /*Two-Tone T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_13" /*Camiseta bicolor*/, 16);
 			num = 0;
 			num2 = 13;
 			value = 45;
 			break;
 	
 		case 14:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_14" /*Baby Blue T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_14" /*Camiseta azul pastel*/, 16);
 			num = 0;
 			num2 = 14;
 			value = 45;
 			break;
 	
 		case 15:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_15" /*Two-Tone Striped T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_15" /*Camiseta bicolor a rayas*/, 16);
 			num = 0;
 			num2 = 15;
 			value = 125;
 			break;
 	
 		case 16:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_0" /*Crew T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_0" /*Camiseta de Crew*/, 16);
 			num = 1;
 			num2 = 0;
 			value = 250;
 			break;
 	
 		case 17:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_1" /*Salamanders T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_1" /*Camiseta Salamanders*/, 16);
 			num = 1;
 			num2 = 1;
 			value = 60;
 			break;
 	
 		case 18:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_2" /*The Feud T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_2" /*Camiseta The Feud*/, 16);
 			num = 1;
 			num2 = 2;
 			value = 50;
 			break;
 	
 		case 19:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_3" /*Yellow T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_3" /*Camiseta amarilla*/, 16);
 			num = 1;
 			num2 = 3;
 			value = 40;
 			break;
 	
 		case 20:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_4" /*Red T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_4" /*Camiseta roja*/, 16);
 			num = 1;
 			num2 = 4;
 			value = 40;
 			break;
 	
 		case 21:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_5" /*Cyan T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_5" /*Camiseta cian*/, 16);
 			num = 1;
 			num2 = 5;
 			value = 40;
 			break;
 	
 		case 22:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_6" /*Blue T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_6" /*Camiseta azul*/, 16);
 			num = 1;
 			num2 = 6;
 			value = 40;
 			break;
 	
 		case 23:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_7" /*Tan T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_7" /*Camiseta marrón claro*/, 16);
 			num = 1;
 			num2 = 7;
 			value = 45;
 			break;
 	
 		case 24:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_8" /*Pink T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_8" /*Camiseta rosa*/, 16);
 			num = 1;
 			num2 = 8;
 			value = 40;
 			break;
 	
 		case 25:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_9" /*Mint T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_9" /*Camiseta verde menta*/, 16);
 			num = 1;
 			num2 = 9;
 			value = 40;
 			break;
 	
 		case 26:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_10" /*Ash T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_10" /*Camiseta gris ceniza*/, 16);
 			num = 1;
 			num2 = 10;
 			value = 135;
 			break;
 	
 		case 27:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_11" /*Gray T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_11" /*Camiseta gris*/, 16);
 			num = 1;
 			num2 = 11;
 			value = 60;
 			break;
 	
 		case 28:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_12" /*Leopard T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_12" /*Camiseta de leopardo*/, 16);
 			num = 1;
 			num2 = 12;
 			value = 220;
 			break;
 	
 		case 29:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_13" /*Two-Tone T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_13" /*Camiseta bicolor*/, 16);
 			num = 1;
 			num2 = 13;
 			value = 45;
 			break;
 	
 		case 30:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_14" /*Baby Blue T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_14" /*Camiseta azul pastel*/, 16);
 			num = 1;
 			num2 = 14;
 			value = 45;
 			break;
 	
 		case 31:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_15" /*Two-Tone Striped T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_0_15" /*Camiseta bicolor a rayas*/, 16);
 			num = 1;
 			num2 = 15;
 			value = 125;
@@ -45788,7 +45788,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 47:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_4_13" /*Red Two-Tone Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_4_13" /*De tirantes roja bicolor*/, 16);
 			num = 4;
 			num2 = 13;
 			value = 40;
@@ -45796,7 +45796,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 48:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_4_14" /*Two-Tone Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_4_14" /*De tirantes bicolor*/, 16);
 			num = 4;
 			num2 = 14;
 			value = 40;
@@ -45811,7 +45811,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 50:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_5_0" /*Off-White Cropped Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_5_0" /*Corta blanco roto*/, 16);
 			num = 5;
 			num2 = 0;
 			value = 45;
@@ -45819,7 +45819,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 51:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_5_1" /*Ash Cropped Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_5_1" /*Corta gris ceniza*/, 16);
 			num = 5;
 			num2 = 1;
 			value = 60;
@@ -45862,7 +45862,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 57:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_5_7" /*Snakeskin Cropped Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_5_7" /*Corta de serpiente*/, 16);
 			num = 5;
 			num2 = 7;
 			value = 375;
@@ -45877,7 +45877,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 59:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_5_9" /*White Stripe Cropped Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_5_9" /*Corta blanca con raya*/, 16);
 			num = 5;
 			num2 = 9;
 			value = 90;
@@ -45952,7 +45952,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 71:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_0" /*Sky Blue Racerback*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_0" /*Espalda cruzada azul celeste*/, 16);
 			num = 11;
 			num2 = 0;
 			value = 90;
@@ -45960,7 +45960,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 72:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_1" /*Purple Racerback*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_1" /*Espalda cruzada morado*/, 16);
 			num = 11;
 			num2 = 1;
 			value = 95;
@@ -45968,7 +45968,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 73:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_2" /*Gray Racerback*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_2" /*Espalda cruzada gris*/, 16);
 			num = 11;
 			num2 = 2;
 			value = 95;
@@ -46025,7 +46025,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 81:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_10" /*Los Santos 01 Racerback*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_10" /*Espalda cruzada Los Santos 01*/, 16);
 			num = 11;
 			num2 = 10;
 			value = 150;
@@ -46033,7 +46033,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 82:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_11" /*LS Racerback*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_11" /*Espalda cruzada LS*/, 16);
 			num = 11;
 			num2 = 11;
 			value = 65;
@@ -46062,7 +46062,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 86:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_15" /*LC Penetrators Racerback*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_11_15" /*Espalda cruzada LC Penetrators*/, 16);
 			num = 11;
 			num2 = 15;
 			value = 145;
@@ -46119,7 +46119,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 94:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_12_7" /*Neon Camisole*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_12_7" /*Camisola neón*/, 16);
 			num = 12;
 			num2 = 7;
 			value = 1560;
@@ -46127,7 +46127,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 95:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_12_8" /*Red Spotted Camisole*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_12_8" /*Camisola roja de topos*/, 16);
 			num = 12;
 			num2 = 8;
 			value = 195;
@@ -46135,7 +46135,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 96:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_12_9" /*Black Spotted Camisole*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_12_9" /*Camisola negra de topos*/, 16);
 			num = 12;
 			num2 = 9;
 			value = 200;
@@ -46185,7 +46185,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 103:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_0" /*Black Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_0" /*Bustier negro*/, 16);
 			num = 13;
 			num2 = 0;
 			value = 975;
@@ -46193,7 +46193,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 104:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_1" /*Pink Rose Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_1" /*Bustier con rosas*/, 16);
 			num = 13;
 			num2 = 1;
 			value = 2670;
@@ -46201,7 +46201,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 105:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_2" /*Olive Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_2" /*Bustier verde oliva*/, 16);
 			num = 13;
 			num2 = 2;
 			value = 480;
@@ -46209,7 +46209,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 106:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_3" /*Gray Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_3" /*Bustier gris*/, 16);
 			num = 13;
 			num2 = 3;
 			value = 400;
@@ -46217,7 +46217,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 107:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_4" /*Floral Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_4" /*Bustier de flores*/, 16);
 			num = 13;
 			num2 = 4;
 			value = 2500;
@@ -46225,7 +46225,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 108:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_5" /*Red Plaid Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_5" /*Bustier rojo a cuadros*/, 16);
 			num = 13;
 			num2 = 5;
 			value = 2060;
@@ -46233,7 +46233,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 109:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_6" /*Studded Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_6" /*Bustier con tachuelas*/, 16);
 			num = 13;
 			num2 = 6;
 			value = 2620;
@@ -46241,7 +46241,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 110:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_7" /*Pink Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_7" /*Bustier rosa*/, 16);
 			num = 13;
 			num2 = 7;
 			value = 475;
@@ -46249,7 +46249,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 111:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_8" /*White Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_8" /*Bustier blanco*/, 16);
 			num = 13;
 			num2 = 8;
 			value = 490;
@@ -46257,7 +46257,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 112:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_9" /*Vivid Blue Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_9" /*Bustier azul vivo*/, 16);
 			num = 13;
 			num2 = 9;
 			value = 2280;
@@ -46265,7 +46265,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 113:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_10" /*Denim Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_10" /*Bustier vaquero*/, 16);
 			num = 13;
 			num2 = 10;
 			value = 485;
@@ -46273,7 +46273,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 114:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_11" /*Pink Tribal Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_11" /*Bustier rosa tribal*/, 16);
 			num = 13;
 			num2 = 11;
 			value = 2390;
@@ -46281,7 +46281,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 115:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_12" /*Camo Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_12" /*Bustier de camuflaje*/, 16);
 			num = 13;
 			num2 = 12;
 			value = 2610;
@@ -46289,7 +46289,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 116:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_13" /*Blue Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_13" /*Bustier azul*/, 16);
 			num = 13;
 			num2 = 13;
 			value = 1450;
@@ -46297,7 +46297,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 117:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_14" /*Black & White Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_14" /*Bustier blanco y negro*/, 16);
 			num = 13;
 			num2 = 14;
 			value = 2720;
@@ -46305,7 +46305,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 118:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_15" /*Leopard Bustier*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_13_15" /*Bustier de leopardo*/, 16);
 			num = 13;
 			num2 = 15;
 			value = 4995;
@@ -46318,7 +46318,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 120:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_15_0" /*Black Bikini*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_15_0" /*Bikini negro*/, 16);
 			num = 15;
 			num2 = 0;
 			value = 325;
@@ -46340,7 +46340,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 123:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_15_3" /*Gray Bikini*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_15_3" /*Bikini gris*/, 16);
 			num = 15;
 			num2 = 3;
 			value = 130;
@@ -46390,7 +46390,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 130:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_15_10" /*Aqua Bikini*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_15_10" /*Bikini aguamarina*/, 16);
 			num = 15;
 			num2 = 10;
 			value = 450;
@@ -46398,7 +46398,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			break;
 	
 		case 131:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_15_11" /*Orange Bikini*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMF_15_11" /*Bikini naranja*/, 16);
 			num = 15;
 			num2 = 11;
 			value = 465;
@@ -46438,7 +46438,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			func_206(num5, iParam0, 136, hParam1);
 		
 			if (Global_80063[0 /*14*/].f_7 > 0)
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_18);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_18);
 		
 			return;
 	}
@@ -46447,7 +46447,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 	{
 		if (func_88(89, -1))
 		{
-			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_RS" /*Rockstar V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_RS" /*Cuello de pico Rockstar*/, 16);
 			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(1250) * Global_262145.f_2898);
 		}
 		else
@@ -46457,14 +46457,14 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 	}
 	else if (iParam0 == 7 || iParam0 == 23)
 	{
-		TEXT_LABEL_ASSIGN_STRING(&unk, "REW_LSB" /*Los Santos Belle V Neck*/, 16);
+		TEXT_LABEL_ASSIGN_STRING(&unk, "REW_LSB" /*Cuello de pico LS Belle*/, 16);
 		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(450) * Global_262145.f_2897);
 	}
 	else if (iParam0 == 9 || iParam0 == 25)
 	{
 		if (func_88(87, -1))
 		{
-			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_REDSK" /*Red Skull V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_REDSK" /*Cuello de pico calavera roja*/, 16);
 			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(500) * Global_262145.f_2896);
 		}
 		else
@@ -46487,7 +46487,7 @@ void func_217(int iParam0, Hash hParam1) // Position - 0x3F5EC (259564)
 			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1498[num7]);
 	}
 
-	value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_299531.f_18);
+	value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_299533.f_18);
 	func_198(&Global_80063[0 /*14*/], num5, iParam0, &unk, num, num2, value, flag, num3, num4, false);
 	return;
 }
@@ -48224,29 +48224,29 @@ void func_218(int iParam0, Hash hParam1) // Position - 0x4098F (264591)
 	{
 		if (func_88(89, -1))
 		{
-			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_RS" /*Rockstar V Neck*/, 16);
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(1250) * Global_262145.f_2898 * Global_299531.f_18);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_RS" /*Cuello de pico Rockstar*/, 16);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(1250) * Global_262145.f_2898 * Global_299533.f_18);
 		}
 		else
 		{
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(40) * Global_262145.f_1498[4] * Global_299531.f_18);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(40) * Global_262145.f_1498[4] * Global_299533.f_18);
 		}
 	}
 	else if (iParam0 == 7)
 	{
-		TEXT_LABEL_ASSIGN_STRING(&unk, "REW_LSB" /*Los Santos Belle V Neck*/, 16);
-		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(450) * Global_262145.f_2897 * Global_299531.f_18);
+		TEXT_LABEL_ASSIGN_STRING(&unk, "REW_LSB" /*Cuello de pico LS Belle*/, 16);
+		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(450) * Global_262145.f_2897 * Global_299533.f_18);
 	}
 	else if (iParam0 == 9)
 	{
 		if (func_88(87, -1))
 		{
-			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_REDSK" /*Red Skull V Neck*/, 16);
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(500) * Global_262145.f_2896 * Global_299531.f_18);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_REDSK" /*Cuello de pico calavera roja*/, 16);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(500) * Global_262145.f_2896 * Global_299533.f_18);
 		}
 		else
 		{
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(40) * Global_262145.f_1498[9] * Global_299531.f_18);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(40) * Global_262145.f_1498[9] * Global_299533.f_18);
 		}
 	}
 	else
@@ -48254,7 +48254,7 @@ void func_218(int iParam0, Hash hParam1) // Position - 0x4098F (264591)
 		num6 = iParam0;
 	
 		if (num6 >= 0 && num6 < 256)
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1498[num6] * Global_299531.f_18);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1498[num6] * Global_299533.f_18);
 	}
 
 	if (iParam0 >= 256)
@@ -48263,7 +48263,7 @@ void func_218(int iParam0, Hash hParam1) // Position - 0x4098F (264591)
 		func_206(num5, iParam0, 256, hParam1);
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
-			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_18);
+			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_18);
 	}
 	else
 	{
@@ -49280,151 +49280,151 @@ void func_224(int iParam0, Hash hParam1) // Position - 0x433BE (275390)
 		case 1:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S1" /*The Beat Maker*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S1" /*DJ*/, 16);
 			break;
 	
 		case 2:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S2" /*The Brand*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S2" /*De marca*/, 16);
 			break;
 	
 		case 3:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S3" /*The Skater*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S3" /*Skater*/, 16);
 			break;
 	
 		case 4:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S4" /*The Roller*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S4" /*Patinador*/, 16);
 			break;
 	
 		case 5:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S5" /*The Camo Kid*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S5" /*De camuflaje*/, 16);
 			break;
 	
 		case 6:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S6" /*The Vibe*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S6" /*A todo ritmo*/, 16);
 			break;
 	
 		case 7:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S7" /*The Color Junky*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S7" /*Adicto al color*/, 16);
 			break;
 	
 		case 8:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S8" /*The Classic T*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S8" /*Clásica con camiseta*/, 16);
 			break;
 	
 		case 9:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S9" /*The Worker*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_S9" /*De trabajo*/, 16);
 			break;
 	
 		case 10:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P1" /*The Ladies Man*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P1" /*Mujeriego*/, 16);
 			break;
 	
 		case 11:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P2" /*The Office*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P2" /*De oficina*/, 16);
 			break;
 	
 		case 12:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P3" /*The After Party*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P3" /*De resaca*/, 16);
 			break;
 	
 		case 13:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P4" /*The Rebel*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P4" /*Rebelde*/, 16);
 			break;
 	
 		case 14:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P5" /*The Trendsetter*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P5" /*A la moda*/, 16);
 			break;
 	
 		case 15:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P6" /*The Artist*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P6" /*Artista*/, 16);
 			break;
 	
 		case 16:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P7" /*The Icon*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P7" /*Icono*/, 16);
 			break;
 	
 		case 17:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P8" /*The Nightlife*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_P8" /*Fiestero*/, 16);
 			break;
 	
 		case 18:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B1" /*The Sun Bather*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B1" /*De playa*/, 16);
 			break;
 	
 		case 19:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B2" /*The Stoop*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B2" /*De andar por casa*/, 16);
 			break;
 	
 		case 20:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B3" /*The Street G*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B3" /*Pandillero*/, 16);
 			break;
 	
 		case 21:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B4" /*The Effortless*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B4" /*Descuidado*/, 16);
 			break;
 	
 		case 22:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B5" /*The Everyday*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B5" /*Diaria*/, 16);
 			break;
 	
 		case 23:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B6" /*The Hood*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B6" /*Chico del barrio*/, 16);
 			break;
 	
 		case 24:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B7" /*The Jock*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B7" /*Chandalero*/, 16);
 			break;
 	
 		case 25:
 			num2 = 0;
 			num3 = 0;
-			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B8" /*The Pounders Fan*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "O_FMM_B8" /*Hincha de los Pounders*/, 16);
 			break;
 	
 		default:
@@ -49528,7 +49528,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 10:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_0" /*Red Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_0" /*Cascos rojos*/, 16);
 			num = 0;
 			num2 = 0;
 			value = 65;
@@ -49537,7 +49537,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 11:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_1" /*Blue Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_1" /*Cascos azules*/, 16);
 			num = 0;
 			num2 = 1;
 			value = 65;
@@ -49546,7 +49546,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 12:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_2" /*Green Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_2" /*Cascos verdes*/, 16);
 			num = 0;
 			num2 = 2;
 			value = 85;
@@ -49555,7 +49555,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 13:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_3" /*Yellow Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_3" /*Cascos amarillos*/, 16);
 			num = 0;
 			num2 = 3;
 			value = 75;
@@ -49564,7 +49564,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 14:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_4" /*Desert Camo Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_4" /*Cascos de camuflaje*/, 16);
 			num = 0;
 			num2 = 4;
 			value = 235;
@@ -49573,7 +49573,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 15:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_5" /*Black Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_5" /*Cascos negros*/, 16);
 			num = 0;
 			num2 = 5;
 			value = 80;
@@ -49582,7 +49582,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 16:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_6" /*Gray Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_6" /*Cascos grises*/, 16);
 			num = 0;
 			num2 = 6;
 			value = 85;
@@ -49591,7 +49591,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 17:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_7" /*White Ear Defenders*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_0_7" /*Cascos blancos*/, 16);
 			num = 0;
 			num2 = 7;
 			value = 90;
@@ -49603,14 +49603,14 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 	switch (iParam0)
 	{
 		case 18:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_1_0" /*White Dunce Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_1_0" /*Capirote blanco*/, 16);
 			num = 1;
 			num2 = 0;
 			num3 = 0;
 			break;
 	
 		case 19:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_0" /*Black Winter Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_0" /*De invierno negro*/, 16);
 			num = 2;
 			num2 = 0;
 			value = 35;
@@ -49619,7 +49619,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 20:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_1" /*Gray Winter Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_1" /*De invierno gris*/, 16);
 			num = 2;
 			num2 = 1;
 			value = 30;
@@ -49628,7 +49628,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 21:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_2" /*Blue Winter Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_2" /*De invierno azul*/, 16);
 			num = 2;
 			num2 = 2;
 			value = 35;
@@ -49637,7 +49637,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 22:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_3" /*Rasta Winter Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_3" /*De invierno rasta*/, 16);
 			num = 2;
 			num2 = 3;
 			value = 320;
@@ -49646,7 +49646,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 23:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_4" /*Gray Striped Winter Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_4" /*De invierno gris a rayas*/, 16);
 			num = 2;
 			num2 = 4;
 			value = 185;
@@ -49655,7 +49655,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 24:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_5" /*Trio Knit Winter Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_5" /*De invierno tricolor*/, 16);
 			num = 2;
 			num2 = 5;
 			value = 245;
@@ -49664,7 +49664,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 25:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_6" /*White Winter Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_6" /*De invierno blanco*/, 16);
 			num = 2;
 			num2 = 6;
 			value = 35;
@@ -49673,7 +49673,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 26:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_7" /*Maroon Winter Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_2_7" /*De invierno granate*/, 16);
 			num = 2;
 			num2 = 7;
 			value = 40;
@@ -49692,7 +49692,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 28:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_3_1" /*Black Canvas Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_3_1" /*De lona negro*/, 16);
 			num = 3;
 			num2 = 1;
 			value = 60;
@@ -49701,7 +49701,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 29:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_3_2" /*Tan Canvas Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_3_2" /*De lona marrón claro*/, 16);
 			num = 3;
 			num2 = 2;
 			value = 65;
@@ -49760,7 +49760,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 35:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_4_0" /*Black LS Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_4_0" /*Ajustable negra LS*/, 16);
 			num = 4;
 			num2 = 0;
 			value = 415;
@@ -49769,7 +49769,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 36:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_4_1" /*Gray LS Fitted Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_4_1" /*Ajustable gris LS*/, 16);
 			num = 4;
 			num2 = 1;
 			value = 315;
@@ -49838,7 +49838,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 43:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_5_0" /*Black Saggy Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_5_0" /*De lana caído negro*/, 16);
 			num = 5;
 			num2 = 0;
 			value = 75;
@@ -49847,7 +49847,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 44:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_5_1" /*Gray Saggy Beanie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_5_1" /*De lana caído gris*/, 16);
 			num = 5;
 			num2 = 1;
 			value = 60;
@@ -49916,7 +49916,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 51:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_0" /*Green Army Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_0" /*Militar verde*/, 16);
 			num = 6;
 			num2 = 0;
 			value = 160;
@@ -49925,7 +49925,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 52:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_1" /*Black Army Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_1" /*Militar negra*/, 16);
 			num = 6;
 			num2 = 1;
 			value = 265;
@@ -49934,7 +49934,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 53:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_2" /*Gray Army Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_2" /*Militar gris*/, 16);
 			num = 6;
 			num2 = 2;
 			value = 170;
@@ -49943,7 +49943,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 54:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_3" /*Blue Army Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_3" /*Militar azul*/, 16);
 			num = 6;
 			num2 = 3;
 			value = 135;
@@ -49952,7 +49952,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 55:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_4" /*Desert Army Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_4" /*Militar de camuflaje beis*/, 16);
 			num = 6;
 			num2 = 4;
 			value = 570;
@@ -49961,7 +49961,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 56:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_5" /*Woodland Army Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_5" /*Militar de camuflaje*/, 16);
 			num = 6;
 			num2 = 5;
 			value = 560;
@@ -49970,7 +49970,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 57:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_6" /*Ranch Beige Army Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_6" /*Militar beis*/, 16);
 			num = 6;
 			num2 = 6;
 			value = 140;
@@ -49979,7 +49979,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 58:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_7" /*Ranch Brown Army Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_6_7" /*Militar marrón*/, 16);
 			num = 6;
 			num2 = 7;
 			value = 130;
@@ -49988,7 +49988,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 59:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_0" /*White Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_0" /*De golf blanca*/, 16);
 			num = 7;
 			num2 = 0;
 			value = 260;
@@ -49997,7 +49997,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 60:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_1" /*Gray Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_1" /*De golf gris*/, 16);
 			num = 7;
 			num2 = 1;
 			value = 215;
@@ -50006,7 +50006,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 61:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_2" /*Black Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_2" /*De golf negra*/, 16);
 			num = 7;
 			num2 = 2;
 			value = 430;
@@ -50015,7 +50015,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 62:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_3" /*Navy Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_3" /*De golf azul marino*/, 16);
 			num = 7;
 			num2 = 3;
 			value = 160;
@@ -50024,7 +50024,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 63:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_4" /*Red Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_4" /*De golf roja*/, 16);
 			num = 7;
 			num2 = 4;
 			value = 200;
@@ -50033,7 +50033,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 64:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_5" /*Brown Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_5" /*De golf marrón*/, 16);
 			num = 7;
 			num2 = 5;
 			value = 155;
@@ -50042,7 +50042,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 65:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_6" /*Green Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_6" /*De golf verde*/, 16);
 			num = 7;
 			num2 = 6;
 			value = 155;
@@ -50051,7 +50051,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 66:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_7" /*Yellow Flat Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_7_7" /*De golf amarilla*/, 16);
 			num = 7;
 			num2 = 7;
 			value = 165;
@@ -50193,7 +50193,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 80:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_9_5" /*Fruntalot Green Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_9_5" /*Gorra verde Fruntalot*/, 16);
 			num = 9;
 			num2 = 5;
 			value = 100;
@@ -50212,7 +50212,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 82:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_9_7" /*Stank Purple Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_9_7" /*Gorra morada Stank*/, 16);
 			num = 9;
 			num2 = 7;
 			value = 65;
@@ -50271,7 +50271,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 88:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_10_5" /*Fruntalot Green Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_10_5" /*Gorra verde Fruntalot*/, 16);
 			num = 10;
 			num2 = 5;
 			value = 65;
@@ -50290,7 +50290,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 90:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_10_7" /*Stank Purple Cap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_10_7" /*Gorra morada Stank*/, 16);
 			num = 10;
 			num2 = 7;
 			value = 65;
@@ -50309,7 +50309,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 92:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_11_1" /*Black Pork Pie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_11_1" /*Copa baja negro*/, 16);
 			num = 11;
 			num2 = 1;
 			value = 0;
@@ -50329,7 +50329,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 94:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_11_3" /*Olive Pork Pie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_11_3" /*Copa baja verde oliva*/, 16);
 			num = 11;
 			num2 = 3;
 			value = 0;
@@ -50359,7 +50359,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 97:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_11_6" /*Blue Pork Pie*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_11_6" /*Copa baja azul*/, 16);
 			num = 11;
 			num2 = 6;
 			value = 0;
@@ -50379,7 +50379,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 99:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_0" /*Black Fedora*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_0" /*Fedora negro*/, 16);
 			num = 12;
 			num2 = 0;
 			value = 1715;
@@ -50388,7 +50388,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 100:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_1" /*White Fedora*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_1" /*Fedora blanco*/, 16);
 			num = 12;
 			num2 = 1;
 			value = 3900;
@@ -50397,7 +50397,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 101:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_2" /*Ash Fedora*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_2" /*Fedora gris ceniza*/, 16);
 			num = 12;
 			num2 = 2;
 			value = 1550;
@@ -50416,7 +50416,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 103:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_4" /*Brown Fedora*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_4" /*Fedora marrón*/, 16);
 			num = 12;
 			num2 = 4;
 			value = 4250;
@@ -50435,7 +50435,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 105:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_6" /*Green Fedora*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_6" /*Fedora verde*/, 16);
 			num = 12;
 			num2 = 6;
 			value = 4460;
@@ -50444,7 +50444,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 106:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_7" /*Navy Fedora*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_12_7" /*Fedora azul marino*/, 16);
 			num = 12;
 			num2 = 7;
 			value = 4970;
@@ -50453,7 +50453,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 107:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_0" /*Black Cowboy Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_0" /*De vaquero negro*/, 16);
 			num = 13;
 			num2 = 0;
 			value = 290;
@@ -50462,7 +50462,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 108:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_1" /*Brown Cowboy Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_1" /*De vaquero marrón*/, 16);
 			num = 13;
 			num2 = 1;
 			value = 305;
@@ -50471,7 +50471,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 109:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_2" /*Chocolate Cowboy Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_2" /*De vaquero color chocolate*/, 16);
 			num = 13;
 			num2 = 2;
 			value = 4170;
@@ -50480,7 +50480,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 110:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_3" /*White Cowboy Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_3" /*De vaquero blanco*/, 16);
 			num = 13;
 			num2 = 3;
 			value = 335;
@@ -50489,7 +50489,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 111:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_4" /*Chestnut Cowboy Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_4" /*De vaquero color castaño*/, 16);
 			num = 13;
 			num2 = 4;
 			value = 4940;
@@ -50498,7 +50498,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 112:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_5" /*Beige Cowboy Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_5" /*De vaquero beis*/, 16);
 			num = 13;
 			num2 = 5;
 			value = 275;
@@ -50507,7 +50507,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 113:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_6" /*Red Cowboy Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_6" /*De vaquero rojo*/, 16);
 			num = 13;
 			num2 = 6;
 			value = 5000;
@@ -50516,7 +50516,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 114:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_7" /*Tan Cowboy Hat*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_13_7" /*De vaquero beis*/, 16);
 			num = 13;
 			num2 = 7;
 			value = 3620;
@@ -50525,7 +50525,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 115:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_0" /*White Paisley Bandana*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_0" /*Pañuelo blanco*/, 16);
 			num = 14;
 			num2 = 0;
 			value = 30;
@@ -50534,7 +50534,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 116:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_1" /*Black Paisley Bandana*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_1" /*Pañuelo negro*/, 16);
 			num = 14;
 			num2 = 1;
 			value = 25;
@@ -50543,7 +50543,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 117:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_2" /*Navy Bandana*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_2" /*Pañuelo azul marino*/, 16);
 			num = 14;
 			num2 = 2;
 			value = 30;
@@ -50552,7 +50552,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 118:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_3" /*Red Bandana*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_3" /*Pañuelo rojo*/, 16);
 			num = 14;
 			num2 = 3;
 			value = 30;
@@ -50561,7 +50561,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 119:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_4" /*Green Bandana*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_4" /*Pañuelo verde*/, 16);
 			num = 14;
 			num2 = 4;
 			value = 35;
@@ -50570,7 +50570,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 120:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_5" /*Purple Bandana*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_5" /*Pañuelo morado*/, 16);
 			num = 14;
 			num2 = 5;
 			value = 30;
@@ -50579,7 +50579,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 121:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_6" /*Camo Bandana*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_6" /*Pañuelo de camuflaje*/, 16);
 			num = 14;
 			num2 = 6;
 			value = 350;
@@ -50588,7 +50588,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 122:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_7" /*Yellow Bandana*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_14_7" /*Pañuelo amarillo*/, 16);
 			num = 14;
 			num2 = 7;
 			value = 35;
@@ -50597,7 +50597,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 123:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_0" /*Beat Off White Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_0" /*Auriculares blancos*/, 16);
 			num = 15;
 			num2 = 0;
 			value = 365;
@@ -50606,7 +50606,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 124:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_1" /*Beat Off Black Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_1" /*Auriculares negros*/, 16);
 			num = 15;
 			num2 = 1;
 			value = 380;
@@ -50615,7 +50615,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 125:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_2" /*Beat Off Red Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_2" /*Auriculares rojos*/, 16);
 			num = 15;
 			num2 = 2;
 			value = 595;
@@ -50624,7 +50624,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 126:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_3" /*Beat Off Blue Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_3" /*Auriculares azules*/, 16);
 			num = 15;
 			num2 = 3;
 			value = 595;
@@ -50633,7 +50633,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 127:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_4" /*Beat Off Yellow Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_4" /*Auriculares amarillos*/, 16);
 			num = 15;
 			num2 = 4;
 			value = 600;
@@ -50642,7 +50642,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 128:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_5" /*Beat Off Purple Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_5" /*Auriculares morados*/, 16);
 			num = 15;
 			num2 = 5;
 			value = 590;
@@ -50651,7 +50651,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 129:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_6" /*Beat Off Gray Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_6" /*Auriculares grises*/, 16);
 			num = 15;
 			num2 = 6;
 			value = 395;
@@ -50660,7 +50660,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 130:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_7" /*Beat Off Green Headphones*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HT_FMM_15_7" /*Auriculares verdes*/, 16);
 			num = 15;
 			num2 = 7;
 			value = 555;
@@ -50672,7 +50672,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 	switch (iParam0)
 	{
 		case 131:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_0" /*Western MC Yellow Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_0" /*Casco Western MC amarillo*/, 16);
 			num = 16;
 			num2 = 0;
 			value = 1060;
@@ -50681,7 +50681,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 132:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_1" /*Steel Horse Blue Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_1" /*Casco Steel Horse azul*/, 16);
 			num = 16;
 			num2 = 1;
 			value = 1400;
@@ -50690,7 +50690,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 133:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_2" /*Steel Horse Orange Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_2" /*Casco Steel Horse naranja*/, 16);
 			num = 16;
 			num2 = 2;
 			value = 1315;
@@ -50699,7 +50699,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 134:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_3" /*Western MC Green Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_3" /*Casco Western MC verde*/, 16);
 			num = 16;
 			num2 = 3;
 			value = 1230;
@@ -50708,7 +50708,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 135:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_4" /*Western MC Red Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_4" /*Casco Western MC rojo*/, 16);
 			num = 16;
 			num2 = 4;
 			value = 1145;
@@ -50717,7 +50717,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 136:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_5" /*Steel Horse Black Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_5" /*Casco Steel Horse negro*/, 16);
 			num = 16;
 			num2 = 5;
 			value = 8450;
@@ -50726,7 +50726,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 137:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_6" /*Black Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_6" /*Casco negro*/, 16);
 			num = 16;
 			num2 = 6;
 			value = 675;
@@ -50735,7 +50735,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 138:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_7" /*Western MC Lilac Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_16_7" /*Casco Western MC lila*/, 16);
 			num = 16;
 			num2 = 7;
 			value = 8750;
@@ -50744,7 +50744,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 139:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_0" /*Blue Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_0" /*Casco 3/4 azul*/, 16);
 			num = 17;
 			num2 = 0;
 			value = 975;
@@ -50753,7 +50753,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 140:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_1" /*Orange Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_1" /*Casco 3/4 naranja*/, 16);
 			num = 17;
 			num2 = 1;
 			value = 750;
@@ -50762,7 +50762,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 141:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_2" /*Pale Blue Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_2" /*Casco 3/4 azul claro*/, 16);
 			num = 17;
 			num2 = 2;
 			value = 865;
@@ -50771,7 +50771,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 142:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_3" /*Red Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_3" /*Casco 3/4 rojo*/, 16);
 			num = 17;
 			num2 = 3;
 			value = 890;
@@ -50780,7 +50780,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 143:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_4" /*Gray Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_4" /*Casco 3/4 gris*/, 16);
 			num = 17;
 			num2 = 4;
 			value = 730;
@@ -50789,7 +50789,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 144:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_5" /*Black Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_5" /*Casco 3/4 negro*/, 16);
 			num = 17;
 			num2 = 5;
 			value = 650;
@@ -50798,7 +50798,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 145:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_6" /*Pink Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_6" /*Casco 3/4 rosa*/, 16);
 			num = 17;
 			num2 = 6;
 			value = 645;
@@ -50807,7 +50807,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 146:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_7" /*White Open-Face Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_17_7" /*Casco 3/4 blanco*/, 16);
 			num = 17;
 			num2 = 7;
 			value = 755;
@@ -50816,7 +50816,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 147:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_0" /*Shatter Pattern Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_0" /*Casco con dibujo gris*/, 16);
 			num = 18;
 			num2 = 0;
 			value = 13850;
@@ -50825,7 +50825,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 148:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_1" /*Stars Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_1" /*Casco con estrellas*/, 16);
 			num = 18;
 			num2 = 1;
 			value = 2900;
@@ -50834,7 +50834,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 149:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_2" /*Squared Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_2" /*Casco a cuadros*/, 16);
 			num = 18;
 			num2 = 2;
 			value = 2895;
@@ -50843,7 +50843,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 150:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_3" /*Crimson Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_3" /*Casco carmesí*/, 16);
 			num = 18;
 			num2 = 3;
 			value = 12500;
@@ -50852,7 +50852,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 151:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_4" /*Skull Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_4" /*Casco con calavera*/, 16);
 			num = 18;
 			num2 = 4;
 			value = 15000;
@@ -50861,7 +50861,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 152:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_5" /*Ace of Spades Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_5" /*Casco con as de picas*/, 16);
 			num = 18;
 			num2 = 5;
 			value = 14750;
@@ -50870,7 +50870,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 153:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_6" /*Flamejob Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_6" /*Casco con llamas*/, 16);
 			num = 18;
 			num2 = 6;
 			value = 13150;
@@ -50879,7 +50879,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 154:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_7" /*White Helmet*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "HE_FMM_18_7" /*Casco blanco*/, 16);
 			num = 18;
 			num2 = 7;
 			value = 2925;
@@ -51008,7 +51008,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 167:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_1_1" /*Black Wraparounds*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_1_1" /*Deportivas negras*/, 16);
 			num = 1;
 			num2 = 1;
 			value = 180;
@@ -51077,7 +51077,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 174:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_0" /*Black Winter Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_0" /*Negras de invierno*/, 16);
 			num = 2;
 			num2 = 0;
 			value = 110;
@@ -51086,7 +51086,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 175:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_1" /*White Silver Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_1" /*Blancas plateadas*/, 16);
 			num = 2;
 			num2 = 1;
 			value = 140;
@@ -51095,7 +51095,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 176:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_2" /*Crimson Polarized Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_2" /*Carmesí polarizadas*/, 16);
 			num = 2;
 			num2 = 2;
 			value = 380;
@@ -51104,7 +51104,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 177:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_3" /*Black Summer Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_3" /*Negras de verano*/, 16);
 			num = 2;
 			num2 = 3;
 			value = 135;
@@ -51113,7 +51113,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 178:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_4" /*Black Autumn Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_4" /*Negras de otoño*/, 16);
 			num = 2;
 			num2 = 4;
 			value = 130;
@@ -51122,7 +51122,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 179:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_5" /*White Rust Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_5" /*Blanco roto*/, 16);
 			num = 2;
 			num2 = 5;
 			value = 110;
@@ -51131,7 +51131,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 180:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_6" /*White Steel Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_6" /*Blanco metálico*/, 16);
 			num = 2;
 			num2 = 6;
 			value = 140;
@@ -51140,7 +51140,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 181:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_7" /*Green Polarized Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_2_7" /*Verdes polarizadas*/, 16);
 			num = 2;
 			num2 = 7;
 			value = 390;
@@ -51176,7 +51176,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 185:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_0" /*Slate Janitor Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_0" /*Retro gris pizarra*/, 16);
 			num = 3;
 			num2 = 0;
 			value = 70;
@@ -51185,7 +51185,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 186:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_1" /*Black Janitor Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_1" /*Retro negras*/, 16);
 			num = 3;
 			num2 = 1;
 			value = 60;
@@ -51194,7 +51194,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 187:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_2" /*Gray Janitor Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_2" /*Retro grises*/, 16);
 			num = 3;
 			num2 = 2;
 			value = 65;
@@ -51203,7 +51203,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 188:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_3" /*Ash Janitor Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_3" /*Retro gris ceniza*/, 16);
 			num = 3;
 			num2 = 3;
 			value = 95;
@@ -51212,7 +51212,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 189:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_4" /*Tan Janitor Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_4" /*Retro marrón claro*/, 16);
 			num = 3;
 			num2 = 4;
 			value = 85;
@@ -51221,7 +51221,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 190:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_5" /*Smoke Janitor Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_5" /*Retro color humo*/, 16);
 			num = 3;
 			num2 = 5;
 			value = 75;
@@ -51230,7 +51230,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 191:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_6" /*Charcoal Janitor Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_6" /*Retro carbón*/, 16);
 			num = 3;
 			num2 = 6;
 			value = 75;
@@ -51239,7 +51239,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 192:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_7" /*White Janitor Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_3_7" /*Retro blancas*/, 16);
 			num = 3;
 			num2 = 7;
 			value = 90;
@@ -51275,7 +51275,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 196:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_0" /*Enema Brown Glasses*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_0" /*Marrones Enema*/, 16);
 			num = 4;
 			num2 = 0;
 			value = 245;
@@ -51284,7 +51284,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 197:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_1" /*Enema Gray Glasses*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_1" /*Grises Enema*/, 16);
 			num = 4;
 			num2 = 1;
 			value = 250;
@@ -51293,7 +51293,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 198:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_2" /*Enema Black Glasses*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_2" /*Negras Enema*/, 16);
 			num = 4;
 			num2 = 2;
 			value = 210;
@@ -51302,7 +51302,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 199:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_3" /*Enema Tortoiseshell Glasses*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_3" /*Carey Enema*/, 16);
 			num = 4;
 			num2 = 3;
 			value = 245;
@@ -51311,7 +51311,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 200:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_4" /*Enema Walnut Glasses*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_4" /*Color nogal Enema*/, 16);
 			num = 4;
 			num2 = 4;
 			value = 205;
@@ -51320,7 +51320,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 201:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_5" /*Enema Marble Glasses*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_5" /*Mármol Enema*/, 16);
 			num = 4;
 			num2 = 5;
 			value = 205;
@@ -51329,7 +51329,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 202:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_6" /*Enema Smoke Glasses*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_6" /*Ahumadas Enema*/, 16);
 			num = 4;
 			num2 = 6;
 			value = 215;
@@ -51338,7 +51338,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 203:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_7" /*Enema Smoke Shades*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_4_7" /*De sol ahumadas Enema*/, 16);
 			num = 4;
 			num2 = 7;
 			value = 215;
@@ -51374,7 +51374,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 207:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_0" /*Gold Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_0" /*De aviador doradas*/, 16);
 			num = 5;
 			num2 = 0;
 			value = 4050;
@@ -51383,7 +51383,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 208:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_1" /*Steel Aviators*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_1" /*De aviador de acero*/, 16);
 			num = 5;
 			num2 = 1;
 			value = 4060;
@@ -51392,7 +51392,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 209:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_2" /*Silver Aviators, Brown Tint*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_2" /*De aviador grises y marrones*/, 16);
 			num = 5;
 			num2 = 2;
 			value = 170;
@@ -51401,7 +51401,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 210:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_3" /*Gray Aviators, Green Tint*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_3" /*De aviador grises y verdes*/, 16);
 			num = 5;
 			num2 = 3;
 			value = 135;
@@ -51410,7 +51410,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 211:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_4" /*Silver Aviators, Blue Tint*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_4" /*De aviador plateadas y azules*/, 16);
 			num = 5;
 			num2 = 4;
 			value = 120;
@@ -51419,7 +51419,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 212:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_5" /*Tan Aviators, Dark Tint*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_5" /*De aviador doradas y negras*/, 16);
 			num = 5;
 			num2 = 5;
 			value = 110;
@@ -51428,7 +51428,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 213:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_6" /*Steel Aviators, Blue Tint*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_6" /*De aviador acero y azules*/, 16);
 			num = 5;
 			num2 = 6;
 			value = 140;
@@ -51437,7 +51437,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 214:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_7" /*Silver Aviators, Copper Tint*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_5_7" /*De aviador plateadas y cobre*/, 16);
 			num = 5;
 			num2 = 7;
 			value = 130;
@@ -51553,7 +51553,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 226:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_0" /*Black Casuals*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_0" /*Casuals negras*/, 16);
 			num = 7;
 			num2 = 0;
 			value = 180;
@@ -51562,7 +51562,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 227:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_1" /*Zap Casuals*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_1" /*Casuals moradas*/, 16);
 			num = 7;
 			num2 = 1;
 			value = 500;
@@ -51571,7 +51571,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 228:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_2" /*Tortoiseshell Casuals*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_2" /*Casuals carey*/, 16);
 			num = 7;
 			num2 = 2;
 			value = 115;
@@ -51580,7 +51580,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 229:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_3" /*Red Casuals*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_3" /*Casuals rojas*/, 16);
 			num = 7;
 			num2 = 3;
 			value = 220;
@@ -51589,7 +51589,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 230:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_4" /*White Casuals*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_4" /*Casuals blancas*/, 16);
 			num = 7;
 			num2 = 4;
 			value = 185;
@@ -51598,7 +51598,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 231:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_5" /*Camo Collection Casuals*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_5" /*Casuals de camuflaje*/, 16);
 			num = 7;
 			num2 = 5;
 			value = 1445;
@@ -51607,7 +51607,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 232:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_6" /*Lemon Casuals*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_6" /*Casuals amarillo limón*/, 16);
 			num = 7;
 			num2 = 6;
 			value = 530;
@@ -51616,7 +51616,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 233:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_7" /*Blood Casuals*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_7_7" /*Casuals burdeos*/, 16);
 			num = 7;
 			num2 = 7;
 			value = 650;
@@ -51655,7 +51655,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 	switch (iParam0)
 	{
 		case 237:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_0" /*Brown Eyewear*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_0" /*De policía marrones*/, 16);
 			num = 8;
 			num2 = 0;
 			value = 4260;
@@ -51664,7 +51664,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 238:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_1" /*Silver Eyewear*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_1" /*De policía plateadas*/, 16);
 			num = 8;
 			num2 = 1;
 			value = 4310;
@@ -51673,7 +51673,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 239:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_2" /*Gray Eyewear*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_2" /*De policía grises*/, 16);
 			num = 8;
 			num2 = 2;
 			value = 4130;
@@ -51682,7 +51682,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 240:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_3" /*Smoke Cop Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_3" /*De policía color humo*/, 16);
 			num = 8;
 			num2 = 3;
 			value = 135;
@@ -51691,7 +51691,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 241:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_4" /*Coffee Cop Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_4" /*De policía color café*/, 16);
 			num = 8;
 			num2 = 4;
 			value = 120;
@@ -51700,7 +51700,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 242:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_5" /*Black Cop Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_5" /*De policía negras*/, 16);
 			num = 8;
 			num2 = 5;
 			value = 110;
@@ -51709,7 +51709,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 243:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_6" /*Slate Cop Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_6" /*De policía gris pizarra*/, 16);
 			num = 8;
 			num2 = 6;
 			value = 140;
@@ -51718,7 +51718,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 244:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_7" /*Charcoal Cop Frames*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_8_7" /*De policía carbón*/, 16);
 			num = 8;
 			num2 = 7;
 			value = 130;
@@ -51754,7 +51754,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 248:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_0" /*Hawaiian Snow Black*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_0" /*Hawaiian Snow negras*/, 16);
 			num = 9;
 			num2 = 0;
 			value = 65;
@@ -51763,7 +51763,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 249:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_1" /*Hawaiian Snow Gray*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_1" /*Hawaiian Snow grises*/, 16);
 			num = 9;
 			num2 = 1;
 			value = 65;
@@ -51772,7 +51772,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 250:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_2" /*Hawaiian Snow White*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_2" /*Hawaiian Snow blancas*/, 16);
 			num = 9;
 			num2 = 2;
 			value = 85;
@@ -51781,7 +51781,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 251:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_3" /*Hawaiian Snow Ash*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_3" /*Hawaiian Snow gris ceniza*/, 16);
 			num = 9;
 			num2 = 3;
 			value = 75;
@@ -51790,7 +51790,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 252:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_4" /*Hawaiian Snow Copper*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_4" /*Hawaiian Snow cobre*/, 16);
 			num = 9;
 			num2 = 4;
 			value = 85;
@@ -51799,7 +51799,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 253:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_5" /*Hawaiian Snow Tortoiseshell*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_5" /*Hawaiian Snow carey*/, 16);
 			num = 9;
 			num2 = 5;
 			value = 4290;
@@ -51808,7 +51808,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 254:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_6" /*Hawaiian Snow Marble*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_6" /*Hawaiian Snow mármol*/, 16);
 			num = 9;
 			num2 = 6;
 			value = 4150;
@@ -51817,7 +51817,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 255:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_7" /*Hawaiian Snow Walnut*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_9_7" /*Hawaiian Snow color nogal*/, 16);
 			num = 9;
 			num2 = 7;
 			value = 4295;
@@ -51853,7 +51853,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 259:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_0" /*Gold Bull Emic*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_0" /*Bull Emic doradas*/, 16);
 			num = 10;
 			num2 = 0;
 			value = 6240;
@@ -51862,7 +51862,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 260:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_1" /*Gray Bull Emic*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_1" /*Bull Emic grises*/, 16);
 			num = 10;
 			num2 = 1;
 			value = 4955;
@@ -51871,7 +51871,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 261:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_2" /*Silver Bull Emic*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_2" /*Bull Emic plateadas*/, 16);
 			num = 10;
 			num2 = 2;
 			value = 5590;
@@ -51880,7 +51880,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 262:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_3" /*Black Bull Emic*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_3" /*Bull Emic negras*/, 16);
 			num = 10;
 			num2 = 3;
 			value = 4920;
@@ -51889,7 +51889,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 263:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_4" /*Brown Bull Emic*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_4" /*Bull Emic marrones*/, 16);
 			num = 10;
 			num2 = 4;
 			value = 4990;
@@ -51898,7 +51898,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 264:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_5" /*Slate Bull Emic*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_5" /*Bull Emic gris pizarra*/, 16);
 			num = 10;
 			num2 = 5;
 			value = 4780;
@@ -51907,7 +51907,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 265:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_6" /*White Bull Emic*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_6" /*Bull Emic blancas*/, 16);
 			num = 10;
 			num2 = 6;
 			value = 4775;
@@ -51916,7 +51916,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 266:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_7" /*Purple Tint Bull Emic*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_10_7" /*Bull Emic moradas*/, 16);
 			num = 10;
 			num2 = 7;
 			value = 4800;
@@ -52022,7 +52022,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 278:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_0" /*Orange Elvis*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_0" /*Elvis naranjas*/, 16);
 			num = 12;
 			num2 = 0;
 			value = 385;
@@ -52031,7 +52031,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 279:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_1" /*Gray Elvis*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_1" /*Elvis grises*/, 16);
 			num = 12;
 			num2 = 1;
 			value = 310;
@@ -52040,7 +52040,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 280:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_2" /*Slate Elvis*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_2" /*Elvis gris pizarra*/, 16);
 			num = 12;
 			num2 = 2;
 			value = 3655;
@@ -52049,7 +52049,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 281:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_3" /*Black Elvis*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_3" /*Elvis negras*/, 16);
 			num = 12;
 			num2 = 3;
 			value = 4055;
@@ -52058,7 +52058,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 282:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_4" /*White Elvis*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_4" /*Elvis blancas*/, 16);
 			num = 12;
 			num2 = 4;
 			value = 3595;
@@ -52067,7 +52067,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 283:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_5" /*Blue Tint Elvis*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_5" /*Elvis con tinte azul*/, 16);
 			num = 12;
 			num2 = 5;
 			value = 3605;
@@ -52076,7 +52076,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 284:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_6" /*Pink Tint Elvis*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_6" /*Elvis con tinte rosa*/, 16);
 			num = 12;
 			num2 = 6;
 			value = 3645;
@@ -52085,7 +52085,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 285:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_7" /*Copper Elvis*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_12_7" /*Elvis cobre*/, 16);
 			num = 12;
 			num2 = 7;
 			value = 320;
@@ -52121,7 +52121,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 289:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_0" /*Broker Black Hipsters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_0" /*Broker Hipsters negras*/, 16);
 			num = 13;
 			num2 = 0;
 			value = 230;
@@ -52130,7 +52130,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 290:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_1" /*White Polarized Hipsters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_1" /*Hipsters blancas*/, 16);
 			num = 13;
 			num2 = 1;
 			value = 1605;
@@ -52139,7 +52139,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 291:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_2" /*Choco Polarized Hipsters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_2" /*Hipsters color chocolate*/, 16);
 			num = 13;
 			num2 = 2;
 			value = 2230;
@@ -52148,7 +52148,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 292:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_3" /*Slate Hipsters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_3" /*Hipsters gris pizarra*/, 16);
 			num = 13;
 			num2 = 3;
 			value = 220;
@@ -52157,7 +52157,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 293:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_4" /*Charcoal Hipsters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_4" /*Hipsters carbón*/, 16);
 			num = 13;
 			num2 = 4;
 			value = 185;
@@ -52166,7 +52166,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 294:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_5" /*Olive Polarized Hipsters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_5" /*Hipsters verde oliva*/, 16);
 			num = 13;
 			num2 = 5;
 			value = 2070;
@@ -52175,7 +52175,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 295:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_6" /*Gold Polarized Hipsters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_6" /*Hipsters doradas*/, 16);
 			num = 13;
 			num2 = 6;
 			value = 2205;
@@ -52184,7 +52184,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 296:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_7" /*Candy Polarized Hipsters*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_13_7" /*Hipsters bicolor*/, 16);
 			num = 13;
 			num2 = 7;
 			value = 1690;
@@ -52300,7 +52300,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 308:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_0" /*Yellow Guns*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_0" /*Guns amarillas*/, 16);
 			num = 15;
 			num2 = 0;
 			value = 515;
@@ -52309,7 +52309,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 309:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_1" /*White Guns*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_1" /*Guns blancas*/, 16);
 			num = 15;
 			num2 = 1;
 			value = 60;
@@ -52318,7 +52318,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 310:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_2" /*Gray Guns*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_2" /*Guns grises*/, 16);
 			num = 15;
 			num2 = 2;
 			value = 65;
@@ -52327,7 +52327,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 311:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_3" /*Red Guns*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_3" /*Guns rojas*/, 16);
 			num = 15;
 			num2 = 3;
 			value = 95;
@@ -52336,7 +52336,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 312:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_4" /*Blue Guns*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_4" /*Guns azules*/, 16);
 			num = 15;
 			num2 = 4;
 			value = 85;
@@ -52345,7 +52345,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 313:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_5" /*Hornet Guns*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_5" /*Guns de avispa*/, 16);
 			num = 15;
 			num2 = 5;
 			value = 75;
@@ -52354,7 +52354,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 314:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_6" /*Orange Guns*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_6" /*Guns naranjas*/, 16);
 			num = 15;
 			num2 = 6;
 			value = 485;
@@ -52363,7 +52363,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 315:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_7" /*Pink Guns*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "G_FMM_15_7" /*Guns rosas*/, 16);
 			num = 15;
 			num2 = 7;
 			value = 545;
@@ -52402,7 +52402,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 	switch (iParam0)
 	{
 		case 319:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_0" /*Deep Sea Watch*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_0" /*Reloj de buceo*/, 16);
 			num = 0;
 			num2 = 0;
 			value = 5000;
@@ -52411,7 +52411,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 320:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_1" /*Gold Watch*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_1" /*Reloj de oro*/, 16);
 			num = 0;
 			num2 = 1;
 			value = 0;
@@ -52421,7 +52421,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 321:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_2" /*Silver Watch*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_2" /*Reloj de plata*/, 16);
 			num = 0;
 			num2 = 2;
 			value = 0;
@@ -52431,7 +52431,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 322:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_3" /*Black Watch*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_3" /*Reloj negro*/, 16);
 			num = 0;
 			num2 = 3;
 			value = 0;
@@ -52441,7 +52441,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 323:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_4" /*Gold Faced Silver Watch*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_0_4" /*De plata y esfera de oro*/, 16);
 			num = 0;
 			num2 = 4;
 			value = 0;
@@ -52451,7 +52451,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 324:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_1_0" /*White LED, Black Strap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_1_0" /*LED blanco y correa negra*/, 16);
 			num = 1;
 			num2 = 0;
 			value = 695;
@@ -52460,7 +52460,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 325:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_1_1" /*Red LED, White Strap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_1_1" /*LED rojo y correa blanca*/, 16);
 			num = 1;
 			num2 = 1;
 			value = 0;
@@ -52470,7 +52470,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			break;
 	
 		case 326:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_1_2" /*Red LED, Brown Strap*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "W_FMM_1_2" /*LED rojo y correa marrón*/, 16);
 			num = 1;
 			num2 = 2;
 			value = 0;
@@ -52489,7 +52489,7 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 			if (num7 > 8)
 				num7 = num7 - 1;
 		
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_950[num7] * Global_299531.f_12);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_950[num7] * Global_299533.f_12);
 		}
 	}
 	else if (num6 == 2)
@@ -52497,21 +52497,21 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 		num8 = iParam0 - 131;
 	
 		if (num8 >= 0 && num8 < 24)
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1071[num8] * Global_299531.f_13);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1071[num8] * Global_299533.f_13);
 	}
 	else if (num6 == 3)
 	{
 		num9 = iParam0 - 155;
 	
 		if (num9 >= 0 && num9 < 128)
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1096[num9] * Global_299531.f_14);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1096[num9] * Global_299533.f_14);
 	}
 	else if (num6 == 4)
 	{
 		num10 = iParam0 - 319;
 	
 		if (num10 >= 0 && num10 < 15)
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1225[num10] * Global_299531.f_15);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_1225[num10] * Global_299533.f_15);
 	}
 
 	if (iParam0 >= 327)
@@ -52521,11 +52521,11 @@ void func_225(int iParam0, Hash hParam1) // Position - 0x4366F (276079)
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
 			if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(Global_2883588, joaat("HAT"), 1))
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_12);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_12);
 			else if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(Global_2883588, joaat("GLASSES"), 1))
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_14);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_14);
 			else if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(Global_2883588, joaat("WATCH"), 1))
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_15);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_15);
 	}
 	else
 	{
@@ -52557,49 +52557,49 @@ void func_226(int iParam0, Hash hParam1) // Position - 0x46554 (288084)
 	switch (iParam0)
 	{
 		case 0:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_0_0" /*No Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_0_0" /*Sin emblema de Crew*/, 16);
 			num2 = 0;
 			num3 = 0;
 			num = 0;
 			break;
 	
 		case 1:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Small Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Emblema de Crew pequeño*/, 16);
 			num2 = 1;
 			num3 = 0;
 			num = 5000;
 			break;
 	
 		case 2:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Large Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Emblema de Crew grande*/, 16);
 			num2 = 2;
 			num3 = 0;
 			num = 10000;
 			break;
 	
 		case 3:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Small Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Emblema de Crew pequeño*/, 16);
 			num2 = 3;
 			num3 = 0;
 			num = 5000;
 			break;
 	
 		case 4:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Large Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Emblema de Crew grande*/, 16);
 			num2 = 4;
 			num3 = 0;
 			num = 10000;
 			break;
 	
 		case 5:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Small Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_1_0" /*Emblema de Crew pequeño*/, 16);
 			num2 = 5;
 			num3 = 0;
 			num = 5000;
 			break;
 	
 		case 6:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Large Crew Emblem*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "D_FMM_2_0" /*Emblema de Crew grande*/, 16);
 			num2 = 6;
 			num3 = 0;
 			num = 10000;
@@ -53287,12 +53287,12 @@ void func_227(int iParam0, Hash hParam1) // Position - 0x46675 (288373)
 			func_206(num5, iParam0, 92, hParam1);
 		
 			if (Global_80063[0 /*14*/].f_7 > 0)
-				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_45);
+				Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_45);
 		
 			return;
 	}
 
-	value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_299531.f_45);
+	value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_299533.f_45);
 	TEXT_LABEL_ASSIGN_STRING(&unk, "T_FMM_", 16);
 	TEXT_LABEL_APPEND_INT(&unk, num, 16);
 	TEXT_LABEL_APPEND_STRING(&unk, "_", 16);
@@ -53492,7 +53492,7 @@ void func_228(int iParam0, Hash hParam1) // Position - 0x46F6D (290669)
 	num6 = iParam0 - 1;
 
 	if (num6 >= 0 && num6 < 26)
-		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_923[num6] * Global_299531.f_16);
+		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_923[num6] * Global_299533.f_16);
 
 	func_198(&Global_80063[0 /*14*/], num5, iParam0, &unk, num, num2, value, flag, num3, num4, false);
 	return;
@@ -55188,7 +55188,7 @@ void func_229(int iParam0, Hash hParam1) // Position - 0x47224 (291364)
 	num6 = iParam0;
 
 	if (num6 >= 0 && num6 < 256)
-		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_666[num6] * Global_299531.f_11);
+		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_666[num6] * Global_299533.f_11);
 
 	TEXT_LABEL_ASSIGN_STRING(&unk, "F_FMM_", 16);
 	TEXT_LABEL_APPEND_INT(&unk, num, 16);
@@ -55201,7 +55201,7 @@ void func_229(int iParam0, Hash hParam1) // Position - 0x47224 (291364)
 		func_206(num5, iParam0, 256, hParam1);
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
-			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_11);
+			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_11);
 	}
 	else
 	{
@@ -56914,7 +56914,7 @@ void func_230(int iParam0, Hash hParam1) // Position - 0x4890D (297229)
 	num6 = iParam0;
 
 	if (num6 >= 0 && num6 < 256)
-		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_171[num6] * Global_299531.f_9);
+		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_171[num6] * Global_299533.f_9);
 
 	if (iParam0 >= 256)
 	{
@@ -56922,7 +56922,7 @@ void func_230(int iParam0, Hash hParam1) // Position - 0x4890D (297229)
 		func_206(num5, iParam0, 256, hParam1);
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
-			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_9);
+			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_9);
 	}
 	else
 	{
@@ -57330,42 +57330,42 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	switch (iParam0)
 	{
 		case 0:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_0" /*Crew T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_0" /*Camiseta de Crew*/, 16);
 			num = 0;
 			num2 = 0;
 			value = 250;
 			break;
 	
 		case 1:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_1" /*Yeti T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_1" /*Camiseta Yeti*/, 16);
 			num = 0;
 			num2 = 1;
 			value = 210;
 			break;
 	
 		case 2:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_2" /*Charcoal T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_2" /*Camiseta carbón*/, 16);
 			num = 0;
 			num2 = 2;
 			value = 50;
 			break;
 	
 		case 3:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_3" /*Stank T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_3" /*Camiseta Stank*/, 16);
 			num = 0;
 			num2 = 3;
 			value = 90;
 			break;
 	
 		case 4:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_4" /*Ranch T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_4" /*Camiseta Ranch*/, 16);
 			num = 0;
 			num2 = 4;
 			value = 210;
 			break;
 	
 		case 5:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_5" /*Pikeys T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_5" /*Camiseta Pikeys*/, 16);
 			num = 0;
 			num2 = 5;
 			value = 200;
@@ -57379,14 +57379,14 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 7:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_7" /*Multi-Logo T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_7" /*Camiseta multilogo*/, 16);
 			num = 0;
 			num2 = 7;
 			value = 130;
 			break;
 	
 		case 8:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_8" /*Sweatbox T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_8" /*Camiseta Sweatbox*/, 16);
 			num = 0;
 			num2 = 8;
 			value = 220;
@@ -57407,7 +57407,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 11:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_11" /*Eris T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_11" /*Camiseta Eris*/, 16);
 			num = 0;
 			num2 = 11;
 			value = 220;
@@ -57442,14 +57442,14 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 16:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_0" /*White V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_0" /*Cuello de pico blanca*/, 16);
 			num = 1;
 			num2 = 0;
 			value = 45;
 			break;
 	
 		case 17:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_1" /*Ash V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_1" /*Cuello de pico gris ceniza*/, 16);
 			num = 1;
 			num2 = 1;
 			value = 60;
@@ -57463,42 +57463,42 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 19:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_3" /*Swallow V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_3" /*Cuello de pico Swallow*/, 16);
 			num = 1;
 			num2 = 3;
 			value = 40;
 			break;
 	
 		case 20:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_4" /*Harsh Souls V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_4" /*Cuello de pico Harsh Souls*/, 16);
 			num = 1;
 			num2 = 4;
 			value = 315;
 			break;
 	
 		case 21:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_5" /*Broker V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_5" /*Cuello de pico Broker*/, 16);
 			num = 1;
 			num2 = 5;
 			value = 215;
 			break;
 	
 		case 22:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_6" /*Hip-Hop Royalty V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_6" /*Cuello de pico Hip-Hop Royalty*/, 16);
 			num = 1;
 			num2 = 6;
 			value = 265;
 			break;
 	
 		case 23:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_7" /*Green V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_7" /*Cuello de pico verde*/, 16);
 			num = 1;
 			num2 = 7;
 			value = 45;
 			break;
 	
 		case 24:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_8" /*G&B V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_8" /*Cuello de pico G&B*/, 16);
 			num = 1;
 			num2 = 8;
 			value = 205;
@@ -57519,14 +57519,14 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 27:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_11" /*Orange V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_11" /*Cuello de pico naranja*/, 16);
 			num = 1;
 			num2 = 11;
 			value = 60;
 			break;
 	
 		case 28:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_12" /*Brown V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_12" /*Cuello de pico marrón*/, 16);
 			num = 1;
 			num2 = 12;
 			value = 55;
@@ -57540,14 +57540,14 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 30:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_14" /*Signs V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_14" /*Cuello de pico Signs*/, 16);
 			num = 1;
 			num2 = 14;
 			value = 170;
 			break;
 	
 		case 31:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_15" /*Blue Striped V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_15" /*Cuello de pico azul a rayas*/, 16);
 			num = 1;
 			num2 = 15;
 			flag = true;
@@ -57557,42 +57557,42 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	switch (iParam0)
 	{
 		case 32:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_0" /*Crew T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_0" /*Camiseta de Crew*/, 16);
 			num = 2;
 			num2 = 0;
 			value = 250;
 			break;
 	
 		case 33:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_1" /*Yeti T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_1" /*Camiseta Yeti*/, 16);
 			num = 2;
 			num2 = 1;
 			value = 210;
 			break;
 	
 		case 34:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_2" /*Charcoal T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_2" /*Camiseta carbón*/, 16);
 			num = 2;
 			num2 = 2;
 			value = 50;
 			break;
 	
 		case 35:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_3" /*Stank T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_3" /*Camiseta Stank*/, 16);
 			num = 2;
 			num2 = 3;
 			value = 90;
 			break;
 	
 		case 36:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_4" /*Ranch T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_4" /*Camiseta Ranch*/, 16);
 			num = 2;
 			num2 = 4;
 			value = 210;
 			break;
 	
 		case 37:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_5" /*Pikeys T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_5" /*Camiseta Pikeys*/, 16);
 			num = 2;
 			num2 = 5;
 			value = 200;
@@ -57606,14 +57606,14 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 39:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_7" /*Multi-Logo T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_7" /*Camiseta multilogo*/, 16);
 			num = 2;
 			num2 = 7;
 			value = 130;
 			break;
 	
 		case 40:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_8" /*Sweatbox T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_8" /*Camiseta Sweatbox*/, 16);
 			num = 2;
 			num2 = 8;
 			value = 220;
@@ -57634,7 +57634,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 43:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_11" /*Eris T-Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_0_11" /*Camiseta Eris*/, 16);
 			num = 2;
 			num2 = 11;
 			value = 220;
@@ -57669,7 +57669,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 48:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_0" /*Black Vest*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_0" /*Chaleco negro*/, 16);
 			num = 3;
 			num2 = 0;
 		
@@ -57680,7 +57680,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 49:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_1" /*Gray Vest*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_1" /*Chaleco gris*/, 16);
 			num = 3;
 			num2 = 1;
 		
@@ -57691,7 +57691,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 50:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_2" /*Blue Vest*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_2" /*Chaleco azul*/, 16);
 			num = 3;
 			num2 = 2;
 		
@@ -57796,7 +57796,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	switch (iParam0)
 	{
 		case 64:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_0" /*Black Vest*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_0" /*Chaleco negro*/, 16);
 			num = 4;
 			num2 = 0;
 		
@@ -57807,7 +57807,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 65:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_1" /*Gray Vest*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_1" /*Chaleco gris*/, 16);
 			num = 4;
 			num2 = 1;
 		
@@ -57818,7 +57818,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 66:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_2" /*Blue Vest*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_3_2" /*Chaleco azul*/, 16);
 			num = 4;
 			num2 = 2;
 		
@@ -57920,7 +57920,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 80:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_5_0" /*White Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_5_0" /*De tirantes blanca*/, 16);
 			num = 5;
 			num2 = 0;
 			value = 80;
@@ -57928,7 +57928,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 81:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_5_1" /*Gray Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_5_1" /*De tirantes gris*/, 16);
 			num = 5;
 			num2 = 1;
 			value = 45;
@@ -57936,7 +57936,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 82:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_5_2" /*Black Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_5_2" /*De tirantes negra*/, 16);
 			num = 5;
 			num2 = 2;
 			value = 50;
@@ -57972,7 +57972,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 87:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_5_7" /*Red Tank*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_5_7" /*De tirantes roja*/, 16);
 			num = 5;
 			num2 = 7;
 			value = 50;
@@ -58039,7 +58039,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	switch (iParam0)
 	{
 		case 96:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_0" /*White Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_0" /*Camisa blanca*/, 16);
 			num = 6;
 			num2 = 0;
 		
@@ -58050,7 +58050,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 97:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_1" /*Silver Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_1" /*Camisa gris perla*/, 16);
 			num = 6;
 			num2 = 1;
 		
@@ -58061,7 +58061,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 98:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_2" /*Charcoal Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_2" /*Camisa carbón*/, 16);
 			num = 6;
 			num2 = 2;
 		
@@ -58072,7 +58072,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 99:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_3" /*Pale Blue Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_3" /*Camisa azul claro*/, 16);
 			num = 6;
 			num2 = 3;
 		
@@ -58083,7 +58083,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 100:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_4" /*Barely Blue Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_4" /*Camisa azulona*/, 16);
 			num = 6;
 			num2 = 4;
 		
@@ -58094,7 +58094,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 101:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_5" /*Pink Check Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_5" /*Camisa rosa a cuadros*/, 16);
 			num = 6;
 			num2 = 5;
 		
@@ -58105,7 +58105,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 102:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_6" /*Salmon Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_6" /*Camisa color salmón*/, 16);
 			num = 6;
 			num2 = 6;
 		
@@ -58116,7 +58116,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 103:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_7" /*Pale Olive Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_7" /*Camisa verde oliva claro*/, 16);
 			num = 6;
 			num2 = 7;
 		
@@ -58127,7 +58127,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 104:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_8" /*Fuchsia Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_8" /*Camisa fucsia*/, 16);
 			num = 6;
 			num2 = 8;
 		
@@ -58138,7 +58138,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 105:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_9" /*Off-White Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_9" /*Camisa blanco roto*/, 16);
 			num = 6;
 			num2 = 9;
 		
@@ -58149,7 +58149,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 106:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_10" /*Mint Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_10" /*Camisa verde menta*/, 16);
 			num = 6;
 			num2 = 10;
 		
@@ -58160,7 +58160,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 107:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_11" /*Tan Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_11" /*Camisa marrón claro*/, 16);
 			num = 6;
 			num2 = 11;
 		
@@ -58171,7 +58171,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 108:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_12" /*Dark Salmon Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_12" /*Camisa color salmón oscuro*/, 16);
 			num = 6;
 			num2 = 12;
 		
@@ -58182,7 +58182,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 109:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_13" /*Blue Check Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_13" /*Camisa azul a cuadros*/, 16);
 			num = 6;
 			num2 = 13;
 		
@@ -58193,7 +58193,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 110:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_14" /*Pink Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_14" /*Camisa rosa*/, 16);
 			num = 6;
 			num2 = 14;
 		
@@ -58204,7 +58204,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 111:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_15" /*Lemon Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_15" /*Camisa color limón*/, 16);
 			num = 6;
 			num2 = 15;
 		
@@ -58215,7 +58215,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 112:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_0" /*White Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_0" /*Camisa blanca*/, 16);
 			num = 7;
 			num2 = 0;
 		
@@ -58226,7 +58226,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 113:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_1" /*Silver Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_1" /*Camisa gris perla*/, 16);
 			num = 7;
 			num2 = 1;
 		
@@ -58237,7 +58237,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 114:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_2" /*Charcoal Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_2" /*Camisa carbón*/, 16);
 			num = 7;
 			num2 = 2;
 		
@@ -58248,7 +58248,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 115:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_3" /*Pale Blue Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_3" /*Camisa azul claro*/, 16);
 			num = 7;
 			num2 = 3;
 		
@@ -58259,7 +58259,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 116:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_4" /*Barely Blue Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_4" /*Camisa azulona*/, 16);
 			num = 7;
 			num2 = 4;
 		
@@ -58270,7 +58270,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 117:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_5" /*Pink Check Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_5" /*Camisa rosa a cuadros*/, 16);
 			num = 7;
 			num2 = 5;
 		
@@ -58281,7 +58281,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 118:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_6" /*Salmon Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_6" /*Camisa color salmón*/, 16);
 			num = 7;
 			num2 = 6;
 		
@@ -58292,7 +58292,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 119:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_7" /*Pale Olive Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_7" /*Camisa verde oliva claro*/, 16);
 			num = 7;
 			num2 = 7;
 		
@@ -58303,7 +58303,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 120:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_8" /*Fuchsia Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_8" /*Camisa fucsia*/, 16);
 			num = 7;
 			num2 = 8;
 		
@@ -58314,7 +58314,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 121:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_9" /*Off-White Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_9" /*Camisa blanco roto*/, 16);
 			num = 7;
 			num2 = 9;
 		
@@ -58325,7 +58325,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 122:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_10" /*Mint Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_10" /*Camisa verde menta*/, 16);
 			num = 7;
 			num2 = 10;
 		
@@ -58336,7 +58336,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 123:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_11" /*Tan Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_11" /*Camisa marrón claro*/, 16);
 			num = 7;
 			num2 = 11;
 		
@@ -58347,7 +58347,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 124:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_12" /*Dark Salmon Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_12" /*Camisa color salmón oscuro*/, 16);
 			num = 7;
 			num2 = 12;
 		
@@ -58358,7 +58358,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 125:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_13" /*Blue Check Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_13" /*Camisa azul a cuadros*/, 16);
 			num = 7;
 			num2 = 13;
 		
@@ -58369,7 +58369,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 126:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_14" /*Pink Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_14" /*Camisa rosa*/, 16);
 			num = 7;
 			num2 = 14;
 		
@@ -58380,7 +58380,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 127:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_15" /*Lemon Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_6_15" /*Camisa color limón*/, 16);
 			num = 7;
 			num2 = 15;
 		
@@ -58394,7 +58394,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	switch (iParam0)
 	{
 		case 128:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_8_0" /*Red Accent Tee*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_8_0" /*Camiseta azul y roja*/, 16);
 			num = 8;
 			num2 = 0;
 			value = 45;
@@ -58464,7 +58464,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 138:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_8_10" /*Sky Blue Tee*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_8_10" /*Camiseta azul celeste*/, 16);
 			num = 8;
 			num2 = 10;
 			value = 65;
@@ -58485,14 +58485,14 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 141:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_8_13" /*Slate Tee*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_8_13" /*Camiseta gris pizarra*/, 16);
 			num = 8;
 			num2 = 13;
 			value = 40;
 			break;
 	
 		case 142:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_8_14" /*Gray Two-Tone Tee*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_8_14" /*Camiseta gris bicolor*/, 16);
 			num = 8;
 			num2 = 14;
 			value = 45;
@@ -58506,56 +58506,56 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 144:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_0" /*White Striped Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_0" /*Polo blanco a rayas*/, 16);
 			num = 9;
 			num2 = 0;
 			value = 265;
 			break;
 	
 		case 145:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_1" /*Metal Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_1" /*Polo gris*/, 16);
 			num = 9;
 			num2 = 1;
 			value = 340;
 			break;
 	
 		case 146:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_2" /*Night Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_2" /*Polo negro*/, 16);
 			num = 9;
 			num2 = 2;
 			value = 335;
 			break;
 	
 		case 147:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_3" /*Cupcake Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_3" /*Polo rosa*/, 16);
 			num = 9;
 			num2 = 3;
 			value = 330;
 			break;
 	
 		case 148:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_4" /*Blue Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_4" /*Polo azul*/, 16);
 			num = 9;
 			num2 = 4;
 			value = 345;
 			break;
 	
 		case 149:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_5" /*Vibe Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_5" /*Polo naranja*/, 16);
 			num = 9;
 			num2 = 5;
 			value = 550;
 			break;
 	
 		case 150:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_6" /*Salmon Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_6" /*Polo salmón*/, 16);
 			num = 9;
 			num2 = 6;
 			value = 340;
 			break;
 	
 		case 151:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_7" /*Royale Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_7" /*Polo morado*/, 16);
 			num = 9;
 			num2 = 7;
 			value = 295;
@@ -58576,42 +58576,42 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 154:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_10" /*Pro Lite Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_10" /*Polo Pro Lite*/, 16);
 			num = 9;
 			num2 = 10;
 			value = 545;
 			break;
 	
 		case 155:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_11" /*Ice Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_11" /*Polo blanco hielo*/, 16);
 			num = 9;
 			num2 = 11;
 			value = 345;
 			break;
 	
 		case 156:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_12" /*Money Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_12" /*Polo verde menta*/, 16);
 			num = 9;
 			num2 = 12;
 			value = 315;
 			break;
 	
 		case 157:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_13" /*Hunter Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_13" /*Polo verde*/, 16);
 			num = 9;
 			num2 = 13;
 			value = 520;
 			break;
 	
 		case 158:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_14" /*Red Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_14" /*Polo rojo*/, 16);
 			num = 9;
 			num2 = 14;
 			value = 325;
 			break;
 	
 		case 159:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_15" /*Sunshine Polo Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_9_15" /*Polo amarillo claro*/, 16);
 			num = 9;
 			num2 = 15;
 			value = 330;
@@ -58621,7 +58621,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	switch (iParam0)
 	{
 		case 160:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_0" /*White Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_0" /*Camisa blanca*/, 16);
 			num = 10;
 			num2 = 0;
 		
@@ -58632,7 +58632,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 161:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_1" /*Silver Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_1" /*Camisa gris perla*/, 16);
 			num = 10;
 			num2 = 1;
 		
@@ -58643,7 +58643,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 162:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_2" /*Charcoal Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_2" /*Camisa carbón*/, 16);
 			num = 10;
 			num2 = 2;
 		
@@ -58654,7 +58654,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 163:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_3" /*Pale Blue Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_3" /*Camisa azul claro*/, 16);
 			num = 10;
 			num2 = 3;
 		
@@ -58665,7 +58665,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 164:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_4" /*Barely Blue Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_4" /*Camisa azulona*/, 16);
 			num = 10;
 			num2 = 4;
 		
@@ -58676,7 +58676,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 165:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_5" /*Pink Check Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_5" /*Camisa rosa a cuadros*/, 16);
 			num = 10;
 			num2 = 5;
 		
@@ -58687,7 +58687,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 166:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_6" /*Blue Woven Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_6" /*Camisa azul entretejida*/, 16);
 			num = 10;
 			num2 = 6;
 		
@@ -58698,7 +58698,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 167:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_7" /*Salmon Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_7" /*Camisa color salmón*/, 16);
 			num = 10;
 			num2 = 7;
 		
@@ -58709,7 +58709,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 168:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_8" /*Pale Olive Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_8" /*Camisa verde oliva claro*/, 16);
 			num = 10;
 			num2 = 8;
 		
@@ -58720,7 +58720,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 169:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_9" /*Fuchsia Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_9" /*Camisa fucsia*/, 16);
 			num = 10;
 			num2 = 9;
 		
@@ -58731,7 +58731,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 170:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_10" /*Off-White Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_10" /*Camisa blanco roto*/, 16);
 			num = 10;
 			num2 = 10;
 		
@@ -58742,7 +58742,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 171:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_11" /*Mint Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_11" /*Camisa verde menta*/, 16);
 			num = 10;
 			num2 = 11;
 		
@@ -58753,7 +58753,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 172:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_12" /*Blue Striped Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_12" /*Camisa azul a rayas*/, 16);
 			num = 10;
 			num2 = 12;
 		
@@ -58764,7 +58764,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 173:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_13" /*Pink Striped Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_13" /*Camisa rosa a rayas*/, 16);
 			num = 10;
 			num2 = 13;
 		
@@ -58775,7 +58775,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 174:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_14" /*Tan Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_14" /*Camisa marrón claro*/, 16);
 			num = 10;
 			num2 = 14;
 		
@@ -58786,7 +58786,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 175:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_15" /*Ocean Stripe Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_15" /*Camisa océano a rayas*/, 16);
 			num = 10;
 			num2 = 15;
 		
@@ -58797,7 +58797,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 176:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_0" /*White Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_0" /*Camisa blanca*/, 16);
 			num = 11;
 			num2 = 0;
 		
@@ -58808,7 +58808,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 177:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_1" /*Silver Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_1" /*Camisa gris perla*/, 16);
 			num = 11;
 			num2 = 1;
 		
@@ -58819,7 +58819,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 178:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_2" /*Charcoal Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_2" /*Camisa carbón*/, 16);
 			num = 11;
 			num2 = 2;
 		
@@ -58830,7 +58830,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 179:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_3" /*Pale Blue Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_3" /*Camisa azul claro*/, 16);
 			num = 11;
 			num2 = 3;
 		
@@ -58841,7 +58841,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 180:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_4" /*Barely Blue Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_4" /*Camisa azulona*/, 16);
 			num = 11;
 			num2 = 4;
 		
@@ -58852,7 +58852,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 181:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_5" /*Pink Check Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_5" /*Camisa rosa a cuadros*/, 16);
 			num = 11;
 			num2 = 5;
 		
@@ -58863,7 +58863,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 182:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_6" /*Blue Woven Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_6" /*Camisa azul entretejida*/, 16);
 			num = 11;
 			num2 = 6;
 		
@@ -58874,7 +58874,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 183:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_7" /*Salmon Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_7" /*Camisa color salmón*/, 16);
 			num = 11;
 			num2 = 7;
 		
@@ -58885,7 +58885,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 184:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_8" /*Pale Olive Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_8" /*Camisa verde oliva claro*/, 16);
 			num = 11;
 			num2 = 8;
 		
@@ -58896,7 +58896,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 185:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_9" /*Fuchsia Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_9" /*Camisa fucsia*/, 16);
 			num = 11;
 			num2 = 9;
 		
@@ -58907,7 +58907,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 186:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_10" /*Off-White Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_10" /*Camisa blanco roto*/, 16);
 			num = 11;
 			num2 = 10;
 		
@@ -58918,7 +58918,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 187:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_11" /*Mint Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_11" /*Camisa verde menta*/, 16);
 			num = 11;
 			num2 = 11;
 		
@@ -58929,7 +58929,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 188:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_12" /*Blue Striped Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_12" /*Camisa azul a rayas*/, 16);
 			num = 11;
 			num2 = 12;
 		
@@ -58940,7 +58940,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 189:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_13" /*Pink Striped Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_13" /*Camisa rosa a rayas*/, 16);
 			num = 11;
 			num2 = 13;
 		
@@ -58951,7 +58951,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 190:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_14" /*Tan Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_14" /*Camisa marrón claro*/, 16);
 			num = 11;
 			num2 = 14;
 		
@@ -58962,7 +58962,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 191:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_15" /*Ocean Stripe Shirt*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SP_FMM_10_15" /*Camisa océano a rayas*/, 16);
 			num = 11;
 			num2 = 15;
 		
@@ -58976,84 +58976,84 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	switch (iParam0)
 	{
 		case 192:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_0" /*White Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_0" /*Blanca por fuera*/, 16);
 			num = 12;
 			num2 = 0;
 			value = 420;
 			break;
 	
 		case 193:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_1" /*Steel Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_1" /*Color acero por fuera*/, 16);
 			num = 12;
 			num2 = 1;
 			value = 415;
 			break;
 	
 		case 194:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_2" /*Black Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_2" /*Negra por fuera*/, 16);
 			num = 12;
 			num2 = 2;
 			value = 695;
 			break;
 	
 		case 195:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_3" /*Sky Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_3" /*Azul cielo por fuera*/, 16);
 			num = 12;
 			num2 = 3;
 			value = 385;
 			break;
 	
 		case 196:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_4" /*Navy Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_4" /*Azul marino por fuera*/, 16);
 			num = 12;
 			num2 = 4;
 			value = 330;
 			break;
 	
 		case 197:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_5" /*Red Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_5" /*Roja por fuera*/, 16);
 			num = 12;
 			num2 = 5;
 			value = 345;
 			break;
 	
 		case 198:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_6" /*Moss Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_6" /*Color musgo por fuera*/, 16);
 			num = 12;
 			num2 = 6;
 			value = 340;
 			break;
 	
 		case 199:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_7" /*Ash Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_7" /*Gris ceniza por fuera*/, 16);
 			num = 12;
 			num2 = 7;
 			value = 450;
 			break;
 	
 		case 200:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_8" /*Mustard Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_8" /*Color mostaza por fuera*/, 16);
 			num = 12;
 			num2 = 8;
 			value = 295;
 			break;
 	
 		case 201:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_9" /*Butter Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_9" /*Amarilla por fuera*/, 16);
 			num = 12;
 			num2 = 9;
 			value = 340;
 			break;
 	
 		case 202:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_10" /*Forest Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_10" /*Verde a cuadros por fuera*/, 16);
 			num = 12;
 			num2 = 10;
 			value = 1060;
 			break;
 	
 		case 203:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_11" /*Azure Untucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_12_11" /*Azul a cuadros por fuera*/, 16);
 			num = 12;
 			num2 = 11;
 			value = 1040;
@@ -59088,28 +59088,28 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 208:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_0" /*White Tucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_0" /*Blanca por dentro*/, 16);
 			num = 13;
 			num2 = 0;
 			value = 420;
 			break;
 	
 		case 209:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_1" /*Silver Tucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_1" /*Gris perla por dentro*/, 16);
 			num = 13;
 			num2 = 1;
 			value = 415;
 			break;
 	
 		case 210:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_2" /*Black Tucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_2" /*Negra por dentro*/, 16);
 			num = 13;
 			num2 = 2;
 			value = 680;
 			break;
 	
 		case 211:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_3" /*Blue Tucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_3" /*Azul por dentro*/, 16);
 			num = 13;
 			num2 = 3;
 			value = 385;
@@ -59123,7 +59123,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 213:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_5" /*Burgundy Tucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_5" /*Burdeos por dentro*/, 16);
 			num = 13;
 			num2 = 5;
 			value = 345;
@@ -59179,7 +59179,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 221:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_13" /*Green Plaid Tucked*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_13_13" /*Verde a cuadros por dentro*/, 16);
 			num = 13;
 			num2 = 13;
 			value = 1065;
@@ -59203,7 +59203,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	switch (iParam0)
 	{
 		case 224:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_0" /*White V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_0" /*Cuello de pico blanca*/, 16);
 			num = 14;
 			num2 = 0;
 			value = 45;
@@ -59211,7 +59211,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 225:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_1" /*Ash V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_1" /*Cuello de pico gris ceniza*/, 16);
 			num = 14;
 			num2 = 1;
 			value = 60;
@@ -59226,7 +59226,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 227:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_3" /*Swallow V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_3" /*Cuello de pico Swallow*/, 16);
 			num = 14;
 			num2 = 3;
 			value = 40;
@@ -59234,7 +59234,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 228:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_4" /*Harsh Souls V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_4" /*Cuello de pico Harsh Souls*/, 16);
 			num = 14;
 			num2 = 4;
 			value = 315;
@@ -59242,7 +59242,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 229:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_5" /*Broker V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_5" /*Cuello de pico Broker*/, 16);
 			num = 14;
 			num2 = 5;
 			value = 215;
@@ -59250,7 +59250,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 230:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_6" /*Hip-Hop Royalty V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_6" /*Cuello de pico Hip-Hop Royalty*/, 16);
 			num = 14;
 			num2 = 6;
 			value = 265;
@@ -59258,7 +59258,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 231:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_7" /*Green V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_7" /*Cuello de pico verde*/, 16);
 			num = 14;
 			num2 = 7;
 			value = 45;
@@ -59266,7 +59266,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 232:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_8" /*G&B V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_8" /*Cuello de pico G&B*/, 16);
 			num = 14;
 			num2 = 8;
 			value = 205;
@@ -59288,7 +59288,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 235:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_11" /*Orange V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_11" /*Cuello de pico naranja*/, 16);
 			num = 14;
 			num2 = 11;
 			value = 60;
@@ -59296,7 +59296,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 236:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_12" /*Brown V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_12" /*Cuello de pico marrón*/, 16);
 			num = 14;
 			num2 = 12;
 			value = 55;
@@ -59311,7 +59311,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 238:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_14" /*Signs V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_14" /*Cuello de pico Signs*/, 16);
 			num = 14;
 			num2 = 14;
 			value = 170;
@@ -59319,7 +59319,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			break;
 	
 		case 239:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_15" /*Blue Striped V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "U_FMM_1_15" /*Cuello de pico azul a rayas*/, 16);
 			num = 14;
 			num2 = 15;
 			flag = true;
@@ -59338,7 +59338,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	{
 		if (func_88(89, -1))
 		{
-			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_RS" /*Rockstar V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_RS" /*Cuello de pico Rockstar*/, 16);
 			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(1250) * Global_262145.f_2898);
 		}
 		else
@@ -59348,14 +59348,14 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 	}
 	else if (iParam0 == 17 || iParam0 == 225)
 	{
-		TEXT_LABEL_ASSIGN_STRING(&unk, "REW_LSB" /*Los Santos Belle V Neck*/, 16);
+		TEXT_LABEL_ASSIGN_STRING(&unk, "REW_LSB" /*Cuello de pico LS Belle*/, 16);
 		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(450) * Global_262145.f_2897);
 	}
 	else if (iParam0 == 28 || iParam0 == 236)
 	{
 		if (func_88(87, -1))
 		{
-			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_REDSK" /*Red Skull V Neck*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_REDSK" /*Cuello de pico calavera roja*/, 16);
 			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(500) * Global_262145.f_2896);
 		}
 		else
@@ -59392,7 +59392,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_428[num9]);
 	}
 
-	value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_299531.f_10);
+	value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_299533.f_10);
 
 	if (iParam0 >= 241)
 	{
@@ -59400,7 +59400,7 @@ void func_233(int iParam0, Hash hParam1) // Position - 0x4A3B3 (304051)
 		func_206(num5, iParam0, 241, hParam1);
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
-			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_10);
+			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_10);
 	}
 	else
 	{
@@ -60990,29 +60990,29 @@ void func_234(int iParam0, Hash hParam1) // Position - 0x4C916 (313622)
 	{
 		if (func_88(89, -1))
 		{
-			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_RS" /*Rockstar V Neck*/, 16);
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(1250) * Global_262145.f_2898 * Global_299531.f_10);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_RS" /*Cuello de pico Rockstar*/, 16);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(1250) * Global_262145.f_2898 * Global_299533.f_10);
 		}
 		else
 		{
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(45) * Global_262145.f_428[23] * Global_299531.f_10);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(45) * Global_262145.f_428[23] * Global_299533.f_10);
 		}
 	}
 	else if (iParam0 == 17)
 	{
-		TEXT_LABEL_ASSIGN_STRING(&unk, "REW_LSB" /*Los Santos Belle V Neck*/, 16);
-		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(450) * Global_262145.f_2897 * Global_299531.f_10);
+		TEXT_LABEL_ASSIGN_STRING(&unk, "REW_LSB" /*Cuello de pico LS Belle*/, 16);
+		value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(450) * Global_262145.f_2897 * Global_299533.f_10);
 	}
 	else if (iParam0 == 28)
 	{
 		if (func_88(87, -1))
 		{
-			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_REDSK" /*Red Skull V Neck*/, 16);
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(500) * Global_262145.f_2896 * Global_299531.f_10);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "REW_REDSK" /*Cuello de pico calavera roja*/, 16);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(500) * Global_262145.f_2896 * Global_299533.f_10);
 		}
 		else
 		{
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(55) * Global_262145.f_428[28] * Global_299531.f_10);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(55) * Global_262145.f_428[28] * Global_299533.f_10);
 		}
 	}
 	else
@@ -61020,7 +61020,7 @@ void func_234(int iParam0, Hash hParam1) // Position - 0x4C916 (313622)
 		num6 = iParam0;
 	
 		if (num6 >= 0 && num6 < 237)
-			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_428[num6] * Global_299531.f_10);
+			value = BUILTIN::ROUND(BUILTIN::TO_FLOAT(value) * Global_262145.f_428[num6] * Global_299533.f_10);
 	}
 
 	if (iParam0 >= 237)
@@ -61029,7 +61029,7 @@ void func_234(int iParam0, Hash hParam1) // Position - 0x4C916 (313622)
 		func_206(num5, iParam0, 237, hParam1);
 	
 		if (Global_80063[0 /*14*/].f_7 > 0)
-			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299531.f_10);
+			Global_80063[0 /*14*/].f_7 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(Global_80063[0 /*14*/].f_7) * Global_299533.f_10);
 	}
 	else
 	{
@@ -61712,14 +61712,14 @@ void func_236() // Position - 0x4ED5B (322907)
 	return;
 }
 
-ePedComponentType func_237(int iParam0, int iParam1) // Position - 0x4EDD4 (323028)
+ePedComponentType func_237(int iParam0, BOOL bParam1) // Position - 0x4EDD4 (323028)
 {
 	Hash statHash;
 	int outValue;
 
 	if (iParam0 != 16715)
 	{
-		statHash = func_25(iParam0, iParam1);
+		statHash = func_25(iParam0, bParam1);
 	
 		if (STATS::STAT_GET_INT(statHash, &outValue, -1))
 			return outValue;
@@ -61728,12 +61728,12 @@ ePedComponentType func_237(int iParam0, int iParam1) // Position - 0x4EDD4 (3230
 	return 0;
 }
 
-BOOL func_238(int iParam0, int iParam1) // Position - 0x4EE03 (323075)
+BOOL func_238(int iParam0, BOOL bParam1) // Position - 0x4EE03 (323075)
 {
 	Hash statHash;
 	BOOL outValue;
 
-	statHash = func_16(iParam0, iParam1);
+	statHash = func_16(iParam0, bParam1);
 
 	if (STATS::STAT_GET_BOOL(statHash, &outValue, -1))
 		return outValue;
@@ -61743,11 +61743,33 @@ BOOL func_238(int iParam0, int iParam1) // Position - 0x4EE03 (323075)
 
 BOOL func_239(BOOL bParam0) // Position - 0x4EE27 (323111)
 {
-	bParam0;
+	if (bParam0 && Global_1575062)
+		if (func_240())
+			return false;
+		else
+			return true;
+
 	return Global_1575062;
 }
 
-BOOL func_240(Ped pedParam0, Any* panParam1, int iParam2, var uParam3) // Position - 0x4EE38 (323128)
+BOOL func_240() // Position - 0x4EE53 (323155)
+{
+	if (func_241())
+		return true;
+
+	return Global_1575065;
+}
+
+BOOL func_241() // Position - 0x4EE6E (323182)
+{
+	if (Global_1575062 || Global_1575068)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
+}
+
+BOOL func_242(Ped pedParam0, Any* panParam1, int iParam2, var uParam3) // Position - 0x4EE99 (323225)
 {
 	var outComponent;
 	var outProp;
@@ -61875,7 +61897,7 @@ BOOL func_240(Ped pedParam0, Any* panParam1, int iParam2, var uParam3) // Positi
 			else
 				type = Global_4718592.f_3553;
 		
-			*uParam3 = func_245(type);
+			*uParam3 = func_247(type);
 			ped.f_1 = -1;
 			ped.f_2 = -1;
 			ped.f_3 = -1;
@@ -61885,7 +61907,7 @@ BOOL func_240(Ped pedParam0, Any* panParam1, int iParam2, var uParam3) // Positi
 			ped.f_2 = *uParam3;
 			ped = pedParam0;
 		
-			if (func_241(panParam1, ped, true, true))
+			if (func_243(panParam1, ped, true, true))
 				return true;
 			break;
 	
@@ -62543,7 +62565,7 @@ BOOL func_240(Ped pedParam0, Any* panParam1, int iParam2, var uParam3) // Positi
 	return false;
 }
 
-BOOL func_241(var uParam0, Entity eParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20, var uParam21, var uParam22, var uParam23, var uParam24, var uParam25, var uParam26, var uParam27, var uParam28, var uParam29, var uParam30, var uParam31, var uParam32, var uParam33, var uParam34, var uParam35, var uParam36, var uParam37, var uParam38, var uParam39, var uParam40, var uParam41, var uParam42, var uParam43, var uParam44, var uParam45, var uParam46, var uParam47, var uParam48, var uParam49, var uParam50, var uParam51, var uParam52, var uParam53, var uParam54, var uParam55, var uParam56, var uParam57, var uParam58, var uParam59, var uParam60, var uParam61, var uParam62, var uParam63, var uParam64, BOOL bParam65, BOOL bParam66) // Position - 0x5017F (328063)
+BOOL func_243(var uParam0, Entity eParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20, var uParam21, var uParam22, var uParam23, var uParam24, var uParam25, var uParam26, var uParam27, var uParam28, var uParam29, var uParam30, var uParam31, var uParam32, var uParam33, var uParam34, var uParam35, var uParam36, var uParam37, var uParam38, var uParam39, var uParam40, var uParam41, var uParam42, var uParam43, var uParam44, var uParam45, var uParam46, var uParam47, var uParam48, var uParam49, var uParam50, var uParam51, var uParam52, var uParam53, var uParam54, var uParam55, var uParam56, var uParam57, var uParam58, var uParam59, var uParam60, var uParam61, var uParam62, var uParam63, var uParam64, BOOL bParam65, BOOL bParam66) // Position - 0x501E1 (328161)
 {
 	var unk;
 	int i;
@@ -62613,7 +62635,7 @@ BOOL func_241(var uParam0, Entity eParam1, var uParam2, var uParam3, var uParam4
 			}
 			else
 			{
-				num = func_244();
+				num = func_246();
 			
 				if (num != -1)
 				{
@@ -62622,7 +62644,7 @@ BOOL func_241(var uParam0, Entity eParam1, var uParam2, var uParam3, var uParam4
 					unk83.f_26 = 9;
 					unk83.f_36 = 9;
 					unk83.f_46 = 3;
-					func_242(&unk83, num, true, false);
+					func_244(&unk83, num, true, false);
 					unk[1] = unk83[1];
 					unk.f_13[1] = unk83.f_13[1];
 				}
@@ -65543,7 +65565,7 @@ BOOL func_241(var uParam0, Entity eParam1, var uParam2, var uParam3, var uParam4
 			{
 				EXTRAMETADATA::GET_SHOP_PED_COMPONENT(joaat("DLC_MP_H3_M_BERD_14_8") /* TUNEABLE: DLC_MP_H3_M_BERD_14_8 */, &outComponent);
 				unk[1] = outComponent.f_3;
-				unk.f_13[1] = *outComponent.f_4;
+				unk.f_13[1] = outComponent.f_4;
 			}
 			else
 			{
@@ -67680,13 +67702,13 @@ BOOL func_241(var uParam0, Entity eParam1, var uParam2, var uParam3, var uParam4
 	return false;
 }
 
-int func_242(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3) // Position - 0x56CDD (355549)
+int func_244(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3) // Position - 0x56D3D (355645)
 {
 	int i;
 	int j;
 	int num;
 
-	num = func_243();
+	num = func_245();
 
 	if (iParam1 >= 0 && iParam1 < 21 && Global_2359296[num /*5574*/].f_681.f_2312[iParam1] && bParam3 == iParam1 == 20)
 	{
@@ -67718,7 +67740,7 @@ int func_242(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3) // Position -
 	return 0;
 }
 
-int func_243() // Position - 0x56E25 (355877)
+int func_245() // Position - 0x56E85 (355973)
 {
 	int num;
 
@@ -67726,12 +67748,12 @@ int func_243() // Position - 0x56E25 (355877)
 	return num;
 }
 
-int func_244() // Position - 0x56E32 (355890)
+int func_246() // Position - 0x56E92 (355986)
 {
 	return Global_2686090.f_6506;
 }
 
-ePedComponentType func_245(ePedComponentType epctParam0) // Position - 0x56E41 (355905)
+ePedComponentType func_247(ePedComponentType epctParam0) // Position - 0x56EA1 (356001)
 {
 	if (epctParam0 <= PV_COMP_INVALID || epctParam0 >= PV_COMP_LOWR)
 		return PV_COMP_INVALID;
@@ -67739,7 +67761,7 @@ ePedComponentType func_245(ePedComponentType epctParam0) // Position - 0x56E41 (
 	return Global_2686090.f_6501[epctParam0];
 }
 
-int func_246(Ped pedParam0, int iParam1, int iParam2) // Position - 0x56E69 (355945)
+int func_248(Ped pedParam0, int iParam1, int iParam2) // Position - 0x56EC9 (356041)
 {
 	var unk;
 	ePedComponentType i;
@@ -67765,10 +67787,10 @@ int func_246(Ped pedParam0, int iParam1, int iParam2) // Position - 0x56E69 (355
 
 	if (iParam1 == 11 && iParam2 != -1)
 	{
-		if (func_247(pedParam0, iParam2))
+		if (func_249(pedParam0, iParam2))
 			return 1;
 	}
-	else if (func_240(pedParam0, &unk, iParam1, &iParam2))
+	else if (func_242(pedParam0, &unk, iParam1, &iParam2))
 	{
 		for (i = PV_COMP_HEAD; i < PV_COMP_MAX; i = i + 1)
 		{
@@ -67788,7 +67810,7 @@ int func_246(Ped pedParam0, int iParam1, int iParam2) // Position - 0x56E69 (355
 	return 0;
 }
 
-BOOL func_247(Ped pedParam0, int iParam1) // Position - 0x56FC4 (356292)
+BOOL func_249(Ped pedParam0, int iParam1) // Position - 0x57024 (356388)
 {
 	var unk;
 	Ped ped;
@@ -67808,7 +67830,7 @@ BOOL func_247(Ped pedParam0, int iParam1) // Position - 0x56FC4 (356292)
 	ped = pedParam0;
 	ped.f_2 = iParam1;
 
-	if (func_241(&unk, ped, true, true))
+	if (func_243(&unk, ped, true, true))
 	{
 		for (i = PV_COMP_HEAD; i < PV_COMP_MAX; i = i + 1)
 		{
@@ -67826,7 +67848,7 @@ BOOL func_247(Ped pedParam0, int iParam1) // Position - 0x56FC4 (356292)
 	return false;
 }
 
-BOOL func_248(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x570B5 (356533)
+BOOL func_250(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x57115 (356629)
 {
 	switch (epctParam0)
 	{
@@ -67860,7 +67882,7 @@ BOOL func_248(ePedComponentType epctParam0, int iParam1, ePedComponentType epctP
 	return false;
 }
 
-BOOL func_249(Ped pedParam0) // Position - 0x57183 (356739)
+BOOL func_251(Ped pedParam0) // Position - 0x571E3 (356835)
 {
 	int pedTextureVariation;
 	Hash hashNameForComponent;
@@ -67875,13 +67897,13 @@ BOOL func_249(Ped pedParam0) // Position - 0x57183 (356739)
 	
 		if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(hashNameForComponent, joaat("HOOD_UP"), 0))
 		{
-			drawableId = func_250(pedParam0, false);
+			drawableId = func_252(pedParam0, false);
 			PED::SET_PED_COMPONENT_VARIATION(pedParam0, PV_COMP_ACCS, drawableId, pedTextureVariation, 0);
 			return true;
 		}
 		else if (EXTRAMETADATA::DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(hashNameForComponent, joaat("HOOD_DOWN"), 0))
 		{
-			drawableId = func_250(pedParam0, true);
+			drawableId = func_252(pedParam0, true);
 			PED::SET_PED_COMPONENT_VARIATION(pedParam0, PV_COMP_ACCS, drawableId, pedTextureVariation, 0);
 			return true;
 		}
@@ -67892,7 +67914,7 @@ BOOL func_249(Ped pedParam0) // Position - 0x57183 (356739)
 	return false;
 }
 
-int func_250(Ped pedParam0, BOOL bParam1) // Position - 0x57215 (356885)
+int func_252(Ped pedParam0, BOOL bParam1) // Position - 0x57275 (356981)
 {
 	var outComponent;
 	BOOL flag;
@@ -67913,7 +67935,7 @@ int func_250(Ped pedParam0, BOOL bParam1) // Position - 0x57215 (356885)
 	return outComponent.f_3;
 }
 
-BOOL func_251(Ped pedParam0) // Position - 0x57278 (356984)
+BOOL func_253(Ped pedParam0) // Position - 0x572D8 (357080)
 {
 	Hash hashNameForComponent;
 
@@ -67925,7 +67947,7 @@ BOOL func_251(Ped pedParam0) // Position - 0x57278 (356984)
 	return false;
 }
 
-BOOL func_252(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x572BF (357055)
+BOOL func_254(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x5731F (357151)
 {
 	if (epctParam0 == joaat("Player_Zero"))
 	{
@@ -68011,12 +68033,12 @@ BOOL func_252(ePedComponentType epctParam0, int iParam1, ePedComponentType epctP
 	return false;
 }
 
-ePedComponentType func_253() // Position - 0x576E4 (358116)
+ePedComponentType func_255() // Position - 0x57744 (358212)
 {
 	return ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID());
 }
 
-BOOL func_254(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x576F4 (358132)
+BOOL func_256(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x57754 (358228)
 {
 	Hash hashNameForComponent;
 
@@ -68028,14 +68050,14 @@ BOOL func_254(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x576F4
 	return false;
 }
 
-void func_255(Ped pedParam0) // Position - 0x57760 (358240)
+void func_257(Ped pedParam0) // Position - 0x577C0 (358336)
 {
 	PED::SET_PED_COMPONENT_VARIATION(pedParam0, PV_COMP_TEEF, 0, 0, 0);
 	PED::SET_PED_COMPONENT_VARIATION(pedParam0, PV_COMP_BERD, 0, 0, 0);
 	return;
 }
 
-BOOL func_256(Ped pedParam0) // Position - 0x5777C (358268)
+BOOL func_258(Ped pedParam0) // Position - 0x577DC (358364)
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0) || ENTITY::IS_ENTITY_DEAD(pedParam0, false))
 		return false;
@@ -68046,7 +68068,7 @@ BOOL func_256(Ped pedParam0) // Position - 0x5777C (358268)
 	return false;
 }
 
-BOOL func_257(Ped pedParam0, int iParam1) // Position - 0x577B4 (358324)
+BOOL func_259(Ped pedParam0, int iParam1) // Position - 0x57814 (358420)
 {
 	if (EXTRAMETADATA::DOES_CURRENT_PED_COMPONENT_HAVE_RESTRICTION_TAG(pedParam0, iParam1, joaat("PILOT_SUIT")))
 		return true;
@@ -68054,7 +68076,7 @@ BOOL func_257(Ped pedParam0, int iParam1) // Position - 0x577B4 (358324)
 	return false;
 }
 
-ePedComponentType func_258(Ped pedParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x577D1 (358353)
+ePedComponentType func_260(Ped pedParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x57831 (358449)
 {
 	ePedComponentType i;
 	ePedComponentType j;
@@ -68086,7 +68108,7 @@ ePedComponentType func_258(Ped pedParam0, int iParam1, ePedComponentType epctPar
 			}
 			else
 			{
-				return func_259(pedParam0, epctParam2);
+				return func_261(pedParam0, epctParam2);
 			}
 		}
 		else
@@ -68098,7 +68120,7 @@ ePedComponentType func_258(Ped pedParam0, int iParam1, ePedComponentType epctPar
 	return -99;
 }
 
-ePedComponentType func_259(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x57872 (358514)
+ePedComponentType func_261(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x578D2 (358610)
 {
 	int pedPropIndex;
 	int pedPropTextureIndex;
@@ -68115,25 +68137,25 @@ ePedComponentType func_259(Ped pedParam0, ePedComponentType epctParam1) // Posit
 	return func_179(pedParam0, pedPropIndex, pedPropTextureIndex, epctParam1);
 }
 
-void func_260(BOOL bParam0) // Position - 0x578B9 (358585)
+void func_262(BOOL bParam0) // Position - 0x57919 (358681)
 {
 	if (bParam0)
-		func_262();
+		func_264();
 
-	func_261(4, -1);
-	func_261(6, -1);
-	func_261(7, -1);
-	func_261(3, -1);
-	func_261(1, -1);
-	func_261(2, -1);
-	func_261(11, -1);
-	func_261(13, -1);
-	func_261(14, -1);
-	func_261(16, -1);
+	func_263(4, -1);
+	func_263(6, -1);
+	func_263(7, -1);
+	func_263(3, -1);
+	func_263(1, -1);
+	func_263(2, -1);
+	func_263(11, -1);
+	func_263(13, -1);
+	func_263(14, -1);
+	func_263(16, -1);
 	return;
 }
 
-void func_261(int iParam0, int iParam1) // Position - 0x5790A (358666)
+void func_263(int iParam0, int iParam1) // Position - 0x5796A (358762)
 {
 	MISC::SET_BIT(&(Global_1677542.f_1047), iParam0);
 
@@ -68148,31 +68170,31 @@ void func_261(int iParam0, int iParam1) // Position - 0x5790A (358666)
 	return;
 }
 
-void func_262() // Position - 0x57940 (358720)
+void func_264() // Position - 0x579A0 (358816)
 {
 	Global_2733002.f_3725 = 0;
 	return;
 }
 
-void func_263() // Position - 0x57950 (358736)
+void func_265() // Position - 0x579B0 (358832)
 {
 	Global_24390.f_6 = 1;
 	return;
 }
 
-float func_264(var uParam0, var uParam1, var uParam2, float fParam3, var uParam4, var uParam5) // Position - 0x5795E (358750)
+float func_266(var uParam0, var uParam1, var uParam2, float fParam3, var uParam4, var uParam5) // Position - 0x579BE (358846)
 {
 	return MISC::GET_HEADING_FROM_VECTOR_2D(fParam3 - uParam0, fParam3.f_1 - uParam0.f_1);
 }
 
-void func_265(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x57978 (358776)
+void func_267(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x579D8 (358872)
 {
 	if (bParam0)
 	{
 		PLAYER::SPECIAL_ABILITY_DEACTIVATE_FAST(PLAYER::PLAYER_ID(), 0);
 		PLAYER::SET_ALL_RANDOM_PEDS_FLEE(PLAYER::PLAYER_ID(), true);
 		PLAYER::SET_POLICE_IGNORE_PLAYER(PLAYER::PLAYER_ID(), true);
-		func_273(1);
+		func_275(1);
 		HUD::THEFEED_FLUSH_QUEUE();
 		HUD::THEFEED_PAUSE();
 	
@@ -68181,20 +68203,20 @@ void func_265(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 			if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
 				AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		
-			if (!func_272())
+			if (!func_274())
 				Global_21610.f_1 = 3;
 		
 			Global_22983 = 5;
 		}
 	
-		func_271(true, bParam3, bParam2, false);
+		func_273(true, bParam3, bParam2, false);
 		Global_65016 = true;
-		Global_77345 = true;
-		Global_80278 = true;
+		Global_77345 = PV_COMP_BERD;
+		Global_80278 = PV_COMP_BERD;
 	}
 	else
 	{
-		func_273(0);
+		func_275(0);
 		HUD::THEFEED_RESUME();
 		Global_65016 = false;
 	
@@ -68203,26 +68225,26 @@ void func_265(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 	
 		PLAYER::SET_ALL_RANDOM_PEDS_FLEE(PLAYER::PLAYER_ID(), false);
 		PLAYER::SET_POLICE_IGNORE_PLAYER(PLAYER::PLAYER_ID(), false);
-		func_271(false, bParam3, bParam2, false);
+		func_273(false, bParam3, bParam2, false);
 	
 		if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_269(PLAYER::PLAYER_ID()) && !func_267(PLAYER::PLAYER_ID(), 0) && !func_266() && !bParam4 && !bParam5 && !NETWORK::NETWORK_IS_IN_SPECTATOR_MODE())
+			if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_271(PLAYER::PLAYER_ID()) && !func_269(PLAYER::PLAYER_ID(), 0) && !func_268() && !bParam4 && !bParam5 && !NETWORK::NETWORK_IS_IN_SPECTATOR_MODE())
 				ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
-		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_269(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
+		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_271(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80278 = false;
+		Global_80278 = PV_COMP_HEAD;
 	}
 
 	return;
 }
 
-BOOL func_266() // Position - 0x57AC7 (359111)
+BOOL func_268() // Position - 0x57B27 (359207)
 {
 	return IS_BIT_SET(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_36.f_18, 14);
 }
 
-BOOL func_267(Player plParam0, int iParam1) // Position - 0x57AE1 (359137)
+BOOL func_269(Player plParam0, int iParam1) // Position - 0x57B41 (359233)
 {
 	BOOL flag;
 
@@ -68230,7 +68252,7 @@ BOOL func_267(Player plParam0, int iParam1) // Position - 0x57AE1 (359137)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_268(-1, false) == CHAR_MIKE_FRANK_CONF;
+		flag = func_270(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845250[plParam0 /*880*/].f_198 == 8;
 
@@ -68241,36 +68263,36 @@ BOOL func_267(Player plParam0, int iParam1) // Position - 0x57AE1 (359137)
 	return flag;
 }
 
-eCharacter func_268(int iParam0, BOOL bParam1) // Position - 0x57B3A (359226)
+eCharacter func_270(BOOL bParam0, BOOL bParam1) // Position - 0x57B9A (359322)
 {
 	eCharacter character;
-	int num;
+	BOOL flag;
 
-	num = iParam0;
+	flag = bParam0;
 
-	if (num == -1)
-		num = func_18();
+	if (flag == -1)
+		flag = func_18();
 
-	if (Global_1575070[num] == true)
+	if (Global_1575070[flag] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		character = Global_1574921[flag];
 		bParam1;
 	}
 
 	return character;
 }
 
-BOOL func_269(Player plParam0) // Position - 0x57B7B (359291)
+BOOL func_271(Player plParam0) // Position - 0x57BDB (359387)
 {
-	if (func_267(plParam0, 0))
+	if (func_269(plParam0, 0))
 		return true;
 
-	if (func_270())
+	if (func_272())
 		if (plParam0 == PLAYER::PLAYER_ID())
 			return true;
 
@@ -68280,12 +68302,12 @@ BOOL func_269(Player plParam0) // Position - 0x57B7B (359291)
 	return false;
 }
 
-BOOL func_270() // Position - 0x57BBA (359354)
+BOOL func_272() // Position - 0x57C1A (359450)
 {
 	return IS_BIT_SET(Global_2621446, 3);
 }
 
-int func_271(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0x57BC8 (359368)
+int func_273(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0x57C28 (359464)
 {
 	int num;
 
@@ -68303,15 +68325,15 @@ int func_271(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position
 	return num;
 }
 
-BOOL func_272() // Position - 0x57BFB (359419)
+BOOL func_274() // Position - 0x57C5B (359515)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
 }
 
-void func_273(int iParam0) // Position - 0x57C22 (359458)
+void func_275(int iParam0) // Position - 0x57C82 (359554)
 {
 	if (iParam0 == 1)
 		MISC::SET_BIT(&Global_9463, 13);
@@ -68321,7 +68343,7 @@ void func_273(int iParam0) // Position - 0x57C22 (359458)
 	return;
 }
 
-void func_274() // Position - 0x57C45 (359493)
+void func_276() // Position - 0x57CA5 (359589)
 {
 	if (MISC::IS_PC_VERSION())
 	{
@@ -68335,7 +68357,7 @@ void func_274() // Position - 0x57C45 (359493)
 	return;
 }
 
-void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlags espcfParam2, BOOL bParam3) // Position - 0x57C68 (359528)
+void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlags espcfParam2, BOOL bParam3) // Position - 0x57CC8 (359624)
 {
 	eSetPlayerControlFlags flags;
 	BOOL flag;
@@ -68371,7 +68393,7 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 		if (SCRIPT::GET_NO_LOADING_SCREEN())
 			SCRIPT::SET_NO_LOADING_SCREEN(false);
 
-	if (func_284())
+	if (func_286())
 		if (bParam1)
 			return;
 		else
@@ -68413,7 +68435,7 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 		if (espcfParam2 & 33554432 != 0 || NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 			flag = false;
 	
-		if (!func_283())
+		if (!func_285())
 		{
 			flag24 = false;
 		
@@ -68443,7 +68465,7 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			{
 				if (flag17 && bParam1 == false && NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 					NETWORK::FADE_OUT_LOCAL_PLAYER(true);
-				else if (flag14 || !func_267(PLAYER::PLAYER_ID(), 0) && !func_270() && !func_269(PLAYER::PLAYER_ID()))
+				else if (flag14 || !func_269(PLAYER::PLAYER_ID(), 0) && !func_272() && !func_271(PLAYER::PLAYER_ID()))
 					ENTITY::SET_ENTITY_VISIBLE(playerPed, !flag14, false);
 			
 				if (!flag14)
@@ -68459,13 +68481,13 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			{
 				if (flag)
 				{
-					func_280(false, 0, 0);
+					func_282(false, 0, 0);
 				
 					if (flag23)
 						STREAMING::CLEAR_FOCUS();
 				}
 			
-				if (!func_279(playerPed) && !ENTITY::IS_ENTITY_ATTACHED_TO_ANY_VEHICLE(playerPed))
+				if (!func_281(playerPed) && !ENTITY::IS_ENTITY_ATTACHED_TO_ANY_VEHICLE(playerPed))
 					if (!flag20)
 						ENTITY::SET_ENTITY_COLLISION(playerPed, true, false);
 			
@@ -68492,8 +68514,8 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			
 				if (PLAYER::IS_PLAYER_CONTROL_ON(PLAYER::PLAYER_ID()) == false)
 				{
-					func_278();
-					func_277();
+					func_280();
+					func_279();
 				}
 			
 				if (PLAYER::IS_PLAYER_TELEPORT_ACTIVE())
@@ -68517,7 +68539,7 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			}
 			else
 			{
-				if (!func_279(playerPed) && !ENTITY::IS_ENTITY_ATTACHED_TO_ANY_VEHICLE(playerPed))
+				if (!func_281(playerPed) && !ENTITY::IS_ENTITY_ATTACHED_TO_ANY_VEHICLE(playerPed))
 				{
 					if (!flag20)
 						ENTITY::SET_ENTITY_COLLISION(playerPed, !flag15, false);
@@ -68531,11 +68553,11 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 							ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(playerPed, true);
 					}
 				
-					if (func_276(*Global_4718592.f_192777))
+					if (func_278(*Global_4718592.f_192777))
 						ENTITY::FREEZE_ENTITY_POSITION(playerPed, true);
 				}
 			
-				if (Global_1575062)
+				if (func_239(true))
 					flag10 = false;
 			
 				if (flag10)
@@ -68595,12 +68617,12 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 	return;
 }
 
-BOOL func_276(int iParam0) // Position - 0x5811D (360733)
+BOOL func_278(int iParam0) // Position - 0x5817E (360830)
 {
 	return iParam0 == 17;
 }
 
-void func_277() // Position - 0x5812A (360746)
+void func_279() // Position - 0x5818B (360843)
 {
 	var unk;
 
@@ -68613,7 +68635,7 @@ void func_277() // Position - 0x5812A (360746)
 	return;
 }
 
-void func_278() // Position - 0x58177 (360823)
+void func_280() // Position - 0x581D8 (360920)
 {
 	Global_2635562.f_703 = 0;
 	Global_2635562.f_3036 = 0;
@@ -68624,7 +68646,7 @@ void func_278() // Position - 0x58177 (360823)
 	return;
 }
 
-BOOL func_279(Ped pedParam0) // Position - 0x581B5 (360885)
+BOOL func_281(Ped pedParam0) // Position - 0x58216 (360982)
 {
 	int scriptTaskStatus;
 
@@ -68643,7 +68665,7 @@ BOOL func_279(Ped pedParam0) // Position - 0x581B5 (360885)
 	return false;
 }
 
-void func_280(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x581E6 (360934)
+void func_282(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x58247 (361031)
 {
 	int num;
 	eViewModeContext i;
@@ -68662,7 +68684,7 @@ void func_280(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x581E6 (3
 		{
 			if (bParam0 == true)
 			{
-				func_282();
+				func_284();
 			}
 			else if (!IS_BIT_SET(Global_2621446.f_67, 1))
 			{
@@ -68678,7 +68700,7 @@ void func_280(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x581E6 (3
 			}
 		}
 	
-		if (func_267(PLAYER::PLAYER_ID(), 0))
+		if (func_269(PLAYER::PLAYER_ID(), 0))
 			NETWORK::NETWORK_SET_IN_SPECTATOR_MODE_EXTENDED(bParam0, pedParam1, true);
 		else
 			NETWORK::NETWORK_SET_IN_SPECTATOR_MODE(bParam0, pedParam1);
@@ -68690,7 +68712,7 @@ void func_280(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x581E6 (3
 	return;
 }
 
-void _MPPLY_STAT_SET_BOOL(Hash hParam0, BOOL bParam1) // Position - 0x582B6 (361142)
+void _MPPLY_STAT_SET_BOOL(Hash hParam0, BOOL bParam1) // Position - 0x58317 (361239)
 {
 	Hash statName;
 
@@ -68702,7 +68724,7 @@ void _MPPLY_STAT_SET_BOOL(Hash hParam0, BOOL bParam1) // Position - 0x582B6 (361
 	return;
 }
 
-void func_282() // Position - 0x582D2 (361170)
+void func_284() // Position - 0x58333 (361267)
 {
 	eViewModeContext i;
 
@@ -68723,7 +68745,7 @@ void func_282() // Position - 0x582D2 (361170)
 	return;
 }
 
-BOOL func_283() // Position - 0x5832A (361258)
+BOOL func_285() // Position - 0x5838B (361355)
 {
 	if (func_6() == 0)
 		return true;
@@ -68731,7 +68753,7 @@ BOOL func_283() // Position - 0x5832A (361258)
 	return false;
 }
 
-BOOL func_284() // Position - 0x5833F (361279)
+BOOL func_286() // Position - 0x583A0 (361376)
 {
 	if (IS_BIT_SET(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_879, 2) && !(Global_2686090.f_2847.f_220 == -1))
 		return true;
@@ -68739,13 +68761,13 @@ BOOL func_284() // Position - 0x5833F (361279)
 	return false;
 }
 
-BOOL _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(char* message) // Position - 0x58370 (361328)
+BOOL _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(char* message) // Position - 0x583D1 (361425)
 {
 	HUD::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(message);
 	return HUD::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 
-void func_286() // Position - 0x58383 (361347)
+void func_288() // Position - 0x583E4 (361444)
 {
 	if (!Global_2673271.f_1023.f_10)
 		Global_2673271.f_1023.f_10 = 1;
@@ -68753,14 +68775,14 @@ void func_286() // Position - 0x58383 (361347)
 	return;
 }
 
-void func_287(var uParam0) // Position - 0x583A2 (361378)
+void func_289(var uParam0) // Position - 0x58403 (361475)
 {
 	int num;
 
 	if (*uParam0 == -1)
 		return;
 
-	num = func_288(*uParam0);
+	num = func_290(*uParam0);
 
 	if (num == -1)
 	{
@@ -68782,7 +68804,7 @@ void func_287(var uParam0) // Position - 0x583A2 (361378)
 	return;
 }
 
-int func_288(int iParam0) // Position - 0x583F9 (361465)
+int func_290(int iParam0) // Position - 0x5845A (361562)
 {
 	int i;
 
@@ -68800,11 +68822,11 @@ int func_288(int iParam0) // Position - 0x583F9 (361465)
 	return -1;
 }
 
-BOOL func_289(int iParam0, BOOL bParam1) // Position - 0x58434 (361524)
+BOOL func_291(int iParam0, BOOL bParam1) // Position - 0x58495 (361621)
 {
 	int num;
 
-	num = func_288(iParam0);
+	num = func_290(iParam0);
 
 	if (num == -1)
 		return false;
@@ -68812,7 +68834,7 @@ BOOL func_289(int iParam0, BOOL bParam1) // Position - 0x58434 (361524)
 	if (!PLAYER::IS_PLAYER_PLAYING(PLAYER::GET_PLAYER_INDEX()))
 		return false;
 
-	if (func_290(0))
+	if (func_292(0))
 		return false;
 
 	if (CUTSCENE::IS_CUTSCENE_PLAYING())
@@ -68840,7 +68862,7 @@ BOOL func_289(int iParam0, BOOL bParam1) // Position - 0x58434 (361524)
 	return false;
 }
 
-BOOL func_290(int iParam0) // Position - 0x584EC (361708)
+BOOL func_292(int iParam0) // Position - 0x5854D (361805)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
@@ -68860,7 +68882,7 @@ BOOL func_290(int iParam0) // Position - 0x584EC (361708)
 	return false;
 }
 
-BOOL func_291(BOOL bParam0, BOOL bParam1, BOOL bParam2) // Position - 0x58543 (361795)
+BOOL func_293(BOOL bParam0, BOOL bParam1, BOOL bParam2) // Position - 0x585A4 (361892)
 {
 	Vehicle vehiclePedIsIn;
 
@@ -68907,7 +68929,7 @@ BOOL func_291(BOOL bParam0, BOOL bParam1, BOOL bParam2) // Position - 0x58543 (3
 	return true;
 }
 
-void _CONTEXT_ADD_HELP_TEXT(var uParam0, int iParam1, char* sParam2, int iParam3, const char* sParam4, int iParam5, int iParam6) // Position - 0x58628 (362024)
+void _CONTEXT_ADD_HELP_TEXT(var uParam0, int iParam1, char* sParam2, int iParam3, const char* sParam4, int iParam5, int iParam6) // Position - 0x58689 (362121)
 {
 	int i;
 
@@ -68916,7 +68938,7 @@ void _CONTEXT_ADD_HELP_TEXT(var uParam0, int iParam1, char* sParam2, int iParam3
 	if (STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 	{
 		if (!(*uParam0 == -1))
-			func_287(uParam0);
+			func_289(uParam0);
 	
 		return;
 	}
@@ -68963,12 +68985,12 @@ void _CONTEXT_ADD_HELP_TEXT(var uParam0, int iParam1, char* sParam2, int iParam3
 	return;
 }
 
-BOOL func_293(Player plParam0) // Position - 0x58753 (362323)
+BOOL func_295(Player plParam0) // Position - 0x587B4 (362420)
 {
 	return IS_BIT_SET(Global_1677542.f_241.f_136[func_94(9) /*33*/][plParam0], func_89(9));
 }
 
-BOOL func_294() // Position - 0x58776 (362358)
+BOOL func_296() // Position - 0x587D7 (362455)
 {
 	var sizeAndPeds;
 	int pedNearbyPeds;
@@ -68990,7 +69012,7 @@ BOOL func_294() // Position - 0x58776 (362358)
 	return true;
 }
 
-BOOL func_295(Vector3 vParam0, var uParam1, var uParam2, float fParam3, var uParam4, var uParam5) // Position - 0x587D7 (362455)
+BOOL func_297(Vector3 vParam0, var uParam1, var uParam2, float fParam3, var uParam4, var uParam5) // Position - 0x58838 (362552)
 {
 	if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 	{
@@ -68998,12 +69020,12 @@ BOOL func_295(Vector3 vParam0, var uParam1, var uParam2, float fParam3, var uPar
 		{
 			if (!FIRE::IS_EXPLOSION_IN_SPHERE(-1, vParam0, 2f))
 			{
-				if (CAM::IS_GAMEPLAY_CAM_RENDERING() && !CUTSCENE::IS_CUTSCENE_PLAYING() && !CAM::IS_CINEMATIC_CAM_RENDERING() && !func_290(0) && !func_298())
+				if (CAM::IS_GAMEPLAY_CAM_RENDERING() && !CUTSCENE::IS_CUTSCENE_PLAYING() && !CAM::IS_CINEMATIC_CAM_RENDERING() && !func_292(0) && !func_300())
 				{
-					if (Global_99332 && Global_99333 || func_297())
+					if (Global_99332 && Global_99333 || func_299())
 						return false;
 				
-					if (func_296(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), vParam0, fParam3, false))
+					if (func_298(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), vParam0, fParam3, false))
 						return true;
 				}
 			}
@@ -69013,7 +69035,7 @@ BOOL func_295(Vector3 vParam0, var uParam1, var uParam2, float fParam3, var uPar
 	return false;
 }
 
-BOOL func_296(float fParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, float fParam6, BOOL bParam7) // Position - 0x5888A (362634)
+BOOL func_298(float fParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, float fParam6, BOOL bParam7) // Position - 0x588EB (362731)
 {
 	if (fParam6 < 0f)
 		fParam6 = 0f;
@@ -69030,7 +69052,7 @@ BOOL func_296(float fParam0, var uParam1, var uParam2, var uParam3, var uParam4,
 	return false;
 }
 
-BOOL func_297() // Position - 0x58905 (362757)
+BOOL func_299() // Position - 0x58966 (362854)
 {
 	if (Global_44869 == 15)
 		return false;
@@ -69038,7 +69060,7 @@ BOOL func_297() // Position - 0x58905 (362757)
 	return true;
 }
 
-BOOL func_298() // Position - 0x5891A (362778)
+BOOL func_300() // Position - 0x5897B (362875)
 {
 	int pedNearbyPeds;
 	int i;
@@ -69068,48 +69090,48 @@ BOOL func_298() // Position - 0x5891A (362778)
 	return false;
 }
 
-BOOL func_299(int iParam0) // Position - 0x589DE (362974)
+BOOL func_301(int iParam0) // Position - 0x58A3F (363071)
 {
 	Player player;
 
 	player = PLAYER::PLAYER_ID();
 
-	if (IS_BIT_SET(Global_1835494, iParam0) || Global_1835495 != -1 || func_313() || PLAYER::IS_PLAYER_FREE_AIMING(player) || PLAYER::IS_PLAYER_TARGETTING_ANYTHING(player) || func_312() || func_309(iParam0))
+	if (IS_BIT_SET(Global_1835494, iParam0) || Global_1835495 != -1 || func_315() || PLAYER::IS_PLAYER_FREE_AIMING(player) || PLAYER::IS_PLAYER_TARGETTING_ANYTHING(player) || func_314() || func_311(iParam0))
 		return false;
 
-	if (func_308(player) == 4)
+	if (func_310(player) == 4)
 		return false;
 
-	if (func_307(player) == 1)
+	if (func_309(player) == 1)
 		return false;
 
-	if (func_306(player) == 7 || func_303(player) != -1)
+	if (func_308(player) == 7 || func_305(player) != -1)
 		return false;
 
-	if (func_300(player))
+	if (func_302(player))
 		return false;
 
 	return true;
 }
 
-BOOL func_300(Player plParam0) // Position - 0x58A85 (363141)
+BOOL func_302(Player plParam0) // Position - 0x58AE6 (363238)
 {
-	if (func_301(plParam0) == 362)
+	if (func_303(plParam0) == 362)
 		return true;
 
 	return false;
 }
 
-ePedComponentType func_301(Player plParam0) // Position - 0x58A9E (363166)
+ePedComponentType func_303(Player plParam0) // Position - 0x58AFF (363263)
 {
 	if (func_137(plParam0))
-		if (func_302(plParam0, false))
+		if (func_304(plParam0, false))
 			return Global_1892653[plParam0 /*615*/].f_10.f_34;
 
 	return PV_COMP_INVALID;
 }
 
-BOOL func_302(Player plParam0, BOOL bParam1) // Position - 0x58ACA (363210)
+BOOL func_304(Player plParam0, BOOL bParam1) // Position - 0x58B2B (363307)
 {
 	if (func_137(plParam0))
 		if (Global_1892653[plParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID || bParam1 && Global_1892653[plParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID)
@@ -69118,65 +69140,65 @@ BOOL func_302(Player plParam0, BOOL bParam1) // Position - 0x58ACA (363210)
 	return false;
 }
 
-int func_303(Player plParam0) // Position - 0x58B0E (363278)
+int func_305(Player plParam0) // Position - 0x58B6F (363375)
 {
-	if (func_301(plParam0) == 328)
-		return func_304(plParam0, 328);
+	if (func_303(plParam0) == 328)
+		return func_306(plParam0, 328);
 
 	return -1;
 }
 
-int func_304(Player plParam0, ePedComponentType epctParam1) // Position - 0x58B2F (363311)
+int func_306(Player plParam0, ePedComponentType epctParam1) // Position - 0x58B90 (363408)
 {
-	if (func_301(plParam0) == epctParam1)
-		return func_305(plParam0);
+	if (func_303(plParam0) == epctParam1)
+		return func_307(plParam0);
 
 	return -1;
 }
 
-int func_305(Player plParam0) // Position - 0x58B4C (363340)
+int func_307(Player plParam0) // Position - 0x58BAD (363437)
 {
-	if (func_302(plParam0, false))
+	if (func_304(plParam0, false))
 		return Global_1892653[plParam0 /*615*/].f_10.f_183;
 
 	return -1;
 }
 
-int func_306(Player plParam0) // Position - 0x58B6F (363375)
+int func_308(Player plParam0) // Position - 0x58BD0 (363472)
 {
-	if (func_301(plParam0) == 327)
-		return func_304(plParam0, 327);
+	if (func_303(plParam0) == 327)
+		return func_306(plParam0, 327);
 
 	return -1;
 }
 
-int func_307(Player plParam0) // Position - 0x58B90 (363408)
+int func_309(Player plParam0) // Position - 0x58BF1 (363505)
 {
-	if (func_301(plParam0) == 299)
-		return func_305(plParam0);
+	if (func_303(plParam0) == 299)
+		return func_307(plParam0);
 
 	return -1;
 }
 
-int func_308(Player plParam0) // Position - 0x58BAE (363438)
+int func_310(Player plParam0) // Position - 0x58C0F (363535)
 {
-	if (func_301(plParam0) == 271)
-		return func_305(plParam0);
+	if (func_303(plParam0) == 271)
+		return func_307(plParam0);
 
 	return -1;
 }
 
-BOOL func_309(int iParam0) // Position - 0x58BCC (363468)
+BOOL func_311(int iParam0) // Position - 0x58C2D (363565)
 {
-	if (func_310())
+	if (func_312())
 		return true;
 
 	return false;
 }
 
-BOOL func_310() // Position - 0x58BE0 (363488)
+BOOL func_312() // Position - 0x58C41 (363585)
 {
-	if (func_311() != -1)
+	if (func_313() != -1)
 		return true;
 	else
 		return false;
@@ -69184,12 +69206,12 @@ BOOL func_310() // Position - 0x58BE0 (363488)
 	return false;
 }
 
-int func_311() // Position - 0x58BFC (363516)
+int func_313() // Position - 0x58C5D (363613)
 {
 	return Global_2696994;
 }
 
-BOOL func_312() // Position - 0x58C08 (363528)
+BOOL func_314() // Position - 0x58C69 (363625)
 {
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 		return Global_99882.f_44 == 1;
@@ -69197,7 +69219,7 @@ BOOL func_312() // Position - 0x58C08 (363528)
 	return false;
 }
 
-BOOL func_313() // Position - 0x58C24 (363556)
+BOOL func_315() // Position - 0x58C85 (363653)
 {
 	if (Global_4502481.f_910 == true)
 		return true;
@@ -69205,7 +69227,7 @@ BOOL func_313() // Position - 0x58C24 (363556)
 	return false;
 }
 
-BOOL func_314() // Position - 0x58C3C (363580)
+BOOL func_316() // Position - 0x58C9D (363677)
 {
 	STREAMING::REQUEST_ANIM_DICT(sLocal_332);
 
@@ -69216,23 +69238,23 @@ BOOL func_314() // Position - 0x58C3C (363580)
 	return true;
 }
 
-BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x58C5F (363615)
+BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x58CC0 (363712)
 {
 	if (Global_1575062 == false)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			return true;
 
-	if (func_321())
+	if (func_323())
 		return true;
 
 	if (Global_2699567)
 		return true;
 
-	if (func_320())
+	if (func_322())
 		return true;
 
 	if (_DOES_EVENT_OF_TYPE_EXIST(159))
-		if (!func_318())
+		if (!func_320())
 			return true;
 
 	if (_DOES_EVENT_OF_TYPE_EXIST(157))
@@ -69248,21 +69270,21 @@ BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x58C5F (363615)
 	return false;
 }
 
-Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x58CE3 (363747)
+Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x58D44 (363844)
 {
 	switch (func_93())
 	{
-		case 0:
-			return func_317();
+		case HUD_COLOUR_PURE_WHITE:
+			return func_319();
 	
-		case 2:
+		case HUD_COLOUR_BLACK:
 			return joaat("creator");
 	}
 
 	return 0;
 }
 
-Hash func_317() // Position - 0x58D16 (363798)
+Hash func_319() // Position - 0x58D77 (363895)
 {
 	switch (Global_2699676)
 	{
@@ -69276,12 +69298,12 @@ Hash func_317() // Position - 0x58D16 (363798)
 	return joaat("freemode");
 }
 
-BOOL func_318() // Position - 0x58D3A (363834)
+BOOL func_320() // Position - 0x58D9B (363931)
 {
 	return Global_2685150.f_700;
 }
 
-BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x58D49 (363849)
+BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x58DAA (363946)
 {
 	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
 		return true;
@@ -69289,22 +69311,22 @@ BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x58D49 (363849)
 	return false;
 }
 
-BOOL func_320() // Position - 0x58D60 (363872)
+BOOL func_322() // Position - 0x58DC1 (363969)
 {
 	return Global_2696964;
 }
 
-BOOL func_321() // Position - 0x58D6C (363884)
+BOOL func_323() // Position - 0x58DCD (363981)
 {
 	return Global_2685150.f_695;
 }
 
-int func_322() // Position - 0x58D7B (363899)
+int func_324() // Position - 0x58DDC (363996)
 {
 	return Global_2640098;
 }
 
-int func_323(int iParam0, int iParam1, BOOL bParam2) // Position - 0x58D87 (363911)
+int func_325(int iParam0, int iParam1, BOOL bParam2) // Position - 0x58DE8 (364008)
 {
 	int i;
 
@@ -69312,7 +69334,7 @@ int func_323(int iParam0, int iParam1, BOOL bParam2) // Position - 0x58D87 (3639
 	{
 		if (i == 3 || i == 4 || i == 5 || i == 6)
 			if (!bParam2)
-				func_324();
+				func_326();
 			else
 				return 0;
 	
@@ -69322,26 +69344,26 @@ int func_323(int iParam0, int iParam1, BOOL bParam2) // Position - 0x58D87 (3639
 			{
 				if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 					if (!bParam2)
-						func_324();
+						func_326();
 					else
 						return 0;
 			
-				if (func_321())
+				if (func_323())
 					if (!bParam2)
-						func_324();
+						func_326();
 					else
 						return 0;
 			
 				if (_DOES_EVENT_OF_TYPE_EXIST(157))
 					if (!bParam2)
-						func_324();
+						func_326();
 					else
 						return 0;
 			}
 			else if (!NETWORK::NETWORK_IS_IN_SESSION())
 			{
 				if (!bParam2)
-					func_324();
+					func_326();
 				else
 					return 0;
 			}
@@ -69356,25 +69378,25 @@ int func_323(int iParam0, int iParam1, BOOL bParam2) // Position - 0x58D87 (3639
 	if (iParam0 == 0)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			if (!bParam2)
-				func_324();
+				func_326();
 			else
 				return 0;
 	else if (!NETWORK::NETWORK_IS_IN_SESSION())
 		if (!bParam2)
-			func_324();
+			func_326();
 		else
 			return 0;
 
 	return 1;
 }
 
-void func_324() // Position - 0x58E9D (364189)
+void func_326() // Position - 0x58EFE (364286)
 {
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;
 }
 
-BOOL func_325() // Position - 0x58EA9 (364201)
+BOOL func_327() // Position - 0x58F0A (364298)
 {
 	if (MISC::IS_PC_VERSION())
 		if (MISC::GET_CITY_DENSITY() == 1f)
@@ -69383,7 +69405,7 @@ BOOL func_325() // Position - 0x58EA9 (364201)
 	return false;
 }
 
-BOOL func_326() // Position - 0x58EC6 (364230)
+BOOL func_328() // Position - 0x58F27 (364327)
 {
 	if (Global_99326 != -1)
 		return IS_BIT_SET(Global_93192[Global_99326 /*34*/].f_15, 20);
@@ -69391,7 +69413,7 @@ BOOL func_326() // Position - 0x58EC6 (364230)
 	return false;
 }
 
-BOOL func_327(int iParam0) // Position - 0x58EE9 (364265)
+BOOL func_329(int iParam0) // Position - 0x58F4A (364362)
 {
 	if (Global_44869 == 15)
 		return false;
@@ -69402,12 +69424,12 @@ BOOL func_327(int iParam0) // Position - 0x58EE9 (364265)
 	return true;
 }
 
-BOOL _CAN_ENTER_FREEROAM_STATE(int iParam0) // Position - 0x58F0B (364299)
+BOOL _CAN_ENTER_FREEROAM_STATE(int iParam0) // Position - 0x58F6C (364396)
 {
-	return func_329(iParam0, Global_44869);
+	return func_331(iParam0, Global_44869);
 }
 
-BOOL func_329(int iParam0, int iParam1) // Position - 0x58F1C (364316)
+BOOL func_331(int iParam0, int iParam1) // Position - 0x58F7D (364413)
 {
 	if (iParam1 == 15)
 		return 1;
@@ -69531,12 +69553,12 @@ BOOL func_329(int iParam0, int iParam1) // Position - 0x58F1C (364316)
 	return 0;
 }
 
-void func_330() // Position - 0x590FD (364797)
+void func_332() // Position - 0x5915E (364894)
 {
 	if (iLocal_331 > -1)
-		func_287(&iLocal_331);
+		func_289(&iLocal_331);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_IN" /*Press ~INPUT_CONTEXT~ to get into bed.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Press ~INPUT_SCRIPT_RUP~ to get out of bed.~n~*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_IN" /*Pulsa ~INPUT_CONTEXT~ para tumbarte en la cama.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SA_BED_OUT" /*Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 		HUD::CLEAR_HELP(true);
 
 	AUDIO::RELEASE_AMBIENT_AUDIO_BANK();
@@ -69547,24 +69569,24 @@ void func_330() // Position - 0x590FD (364797)
 	if (bLocal_326)
 		STREAMING::REMOVE_ANIM_DICT(sLocal_332);
 
-	if (bLocal_34 && !func_269(PLAYER::PLAYER_ID()))
+	if (bLocal_34 && !func_271(PLAYER::PLAYER_ID()))
 		_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), true, 0, false);
 
 	func_2();
 	func_8();
-	func_324();
+	func_326();
 	return;
 }
 
-BOOL func_331() // Position - 0x5917C (364924)
+BOOL func_333() // Position - 0x591DD (365021)
 {
-	if (func_332())
+	if (func_334())
 		return false;
 
 	return true;
 }
 
-BOOL func_332() // Position - 0x59190 (364944)
+BOOL func_334() // Position - 0x591F1 (365041)
 {
 	return Global_2621568 == 0;
 }

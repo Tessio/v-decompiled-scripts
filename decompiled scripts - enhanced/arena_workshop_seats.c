@@ -258,16 +258,16 @@ void func_3(var uParam0) // Position - 0xC6 (198)
 	return;
 }
 
-void func_4(BOOL bParam0) // Position - 0x10D (269)
+void func_4(int iParam0) // Position - 0x10D (269)
 {
-	Global_2697011 = bParam0;
-	Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_878 = bParam0;
+	Global_2697011 = iParam0;
+	Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_878 = iParam0;
 	return;
 }
 
 void func_5(var uParam0, BOOL bParam1) // Position - 0x12B (299)
 {
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MPOF_AC_PC_EXIT" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MPOF_AC_EXIT" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MPOFSEAT_PCEXIT" /*Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MPOFSEAT_EXIT" /*Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_PC" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_PC" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_PC_BM" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_BM" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_PC_BM" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_BM" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_PC_TOU" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_TOU" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_PC_TOU" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_TOU" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MPOF_AC_PC_EXIT" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MPOF_AC_EXIT" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MPOFSEAT_PCEXIT" /*Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MPOFSEAT_EXIT" /*Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_PC" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver al DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver al DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_PC" /*Pulsa ~INPUT_FRONTEND_X~ para ver al DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT" /*Pulsa ~INPUT_FRONTEND_X~ para ver al DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_PC_BM" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver a la DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_BM" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver a la DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_PC_BM" /*Pulsa ~INPUT_FRONTEND_X~ para ver a la DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_BM" /*Pulsa ~INPUT_FRONTEND_X~ para ver a la DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_PC_TOU" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver a los DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_SEAT_TOU" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver a los DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_PC_TOU" /*Pulsa ~INPUT_FRONTEND_X~ para ver a los DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DJ_PSEAT_TOU" /*Pulsa ~INPUT_FRONTEND_X~ para ver a los DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/))
 		HUD::CLEAR_HELP(true);
 
 	if (bParam1 && uParam0->f_43.f_5 != -1)
@@ -382,7 +382,7 @@ void func_9(var uParam0) // Position - 0x2CC (716)
 					if (uParam0->f_43.f_5 == -1)
 					{
 						if (MISC::GET_GAME_TIMER() - uParam0->f_43.f_6 > 150)
-							_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPJAC_SIT" /*Press ~INPUT_CONTEXT~ to sit down.*/, 0, 0, 0, 0);
+							_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPJAC_SIT" /*Pulsa ~INPUT_CONTEXT~ para sentarte.*/, 0, 0, 0, 0);
 					}
 					else if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT))
 					{
@@ -692,42 +692,42 @@ void func_16(var uParam0) // Position - 0x990 (2448)
 						if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 							if (flag)
 								if (func_17(PLAYER::PLAYER_ID()) == 3)
-									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_PC_BM" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/, 0, 0, 0, 0);
+									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_PC_BM" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver a la DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/, 0, 0, 0, 0);
 								else if (func_17(PLAYER::PLAYER_ID()) == 2)
-									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_PC_TOU" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/, 0, 0, 0, 0);
+									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_PC_TOU" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver a los DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/, 0, 0, 0, 0);
 								else
-									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_PC" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/, 0, 0, 0, 0);
+									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_PC" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver al DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/, 0, 0, 0, 0);
 							else
-								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPOF_AC_PC_EXIT" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPOF_AC_PC_EXIT" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/, 0, 0, 0, 0);
 						else if (flag)
 							if (func_17(PLAYER::PLAYER_ID()) == 3)
-								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_BM" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_BM" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver a la DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/, 0, 0, 0, 0);
 							else if (func_17(PLAYER::PLAYER_ID()) == 2)
-								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_TOU" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT_TOU" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver a los DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/, 0, 0, 0, 0);
 							else
-								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_SEAT" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_X~ para ver al DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/, 0, 0, 0, 0);
 						else
-							_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPOF_AC_EXIT" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change pose.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/, 0, 0, 0, 0);
+							_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPOF_AC_EXIT" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de postura.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/, 0, 0, 0, 0);
 					else if (uParam0->f_43.f_8 == 2)
 						if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 							if (flag)
 								if (func_17(PLAYER::PLAYER_ID()) == 3)
-									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_PC_BM" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/, 0, 0, 0, 0);
+									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_PC_BM" /*Pulsa ~INPUT_FRONTEND_X~ para ver a la DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/, 0, 0, 0, 0);
 								else if (func_17(PLAYER::PLAYER_ID()) == 2)
-									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_PC_TOU" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/, 0, 0, 0, 0);
+									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_PC_TOU" /*Pulsa ~INPUT_FRONTEND_X~ para ver a los DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/, 0, 0, 0, 0);
 								else
-									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_PC" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/, 0, 0, 0, 0);
+									_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_PC" /*Pulsa ~INPUT_FRONTEND_X~ para ver al DJ en directo.~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/, 0, 0, 0, 0);
 							else
-								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPOFSEAT_PCEXIT" /*Press ~INPUT_SCRIPT_RRIGHT~ to stand up.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPOFSEAT_PCEXIT" /*Pulsa ~INPUT_SCRIPT_RRIGHT~ para levantarte.*/, 0, 0, 0, 0);
 						else if (flag)
 							if (func_17(PLAYER::PLAYER_ID()) == 3)
-								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_BM" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_BM" /*Pulsa ~INPUT_FRONTEND_X~ para ver a la DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/, 0, 0, 0, 0);
 							else if (func_17(PLAYER::PLAYER_ID()) == 2)
-								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_TOU" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT_TOU" /*Pulsa ~INPUT_FRONTEND_X~ para ver a los DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/, 0, 0, 0, 0);
 							else
-								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT" /*Press ~INPUT_FRONTEND_X~ to watch DJ live stream.~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "DJ_PSEAT" /*Pulsa ~INPUT_FRONTEND_X~ para ver al DJ en directo.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/, 0, 0, 0, 0);
 						else
-							_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPOFSEAT_EXIT" /*Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/, 0, 0, 0, 0);
+							_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_43.f_5), 4, "MPOFSEAT_EXIT" /*Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/, 0, 0, 0, 0);
 			
 				if (uParam0->f_43.f_4 == 6)
 				{
@@ -851,41 +851,41 @@ BOOL func_23() // Position - 0x102B (4139)
 	return true;
 }
 
-BOOL func_24(ePedComponentType epctParam0) // Position - 0x1045 (4165)
+BOOL func_24(Player plParam0) // Position - 0x1045 (4165)
 {
 	if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 		return IS_BIT_SET(Global_4718592.f_192053.f_14, 4);
 
-	if (epctParam0 == _INVALID_PLAYER_INDEX())
+	if (plParam0 == _INVALID_PLAYER_INDEX())
 		return false;
 
-	return IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_364.f_1, 1);
+	return IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_364.f_1, 1);
 }
 
-BOOL func_25(ePedComponentType epctParam0, int iParam1) // Position - 0x1087 (4231)
+BOOL func_25(Player plParam0, int iParam1) // Position - 0x1087 (4231)
 {
-	if (epctParam0 == _INVALID_PLAYER_INDEX())
+	if (plParam0 == _INVALID_PLAYER_INDEX())
 		return false;
 
 	switch (iParam1)
 	{
 		case 0:
-			return IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_321.f_7, 0);
+			return IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_321.f_7, 0);
 	
 		case 1:
-			return IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_321.f_7, 1);
+			return IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_321.f_7, 1);
 	
 		case 4:
-			return IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_321.f_7, 2);
+			return IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_321.f_7, 2);
 	
 		case 2:
-			return IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_321.f_7, 3);
+			return IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_321.f_7, 3);
 	
 		case 3:
-			return IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_321.f_7, 4);
+			return IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_321.f_7, 4);
 	
 		case 5:
-			return IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_321.f_7, 5);
+			return IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_321.f_7, 5);
 	}
 
 	return false;
@@ -899,12 +899,12 @@ BOOL func_26() // Position - 0x115E (4446)
 	return 0;
 }
 
-BOOL func_27(BOOL bParam0) // Position - 0x119C (4508)
+BOOL func_27(int iParam0) // Position - 0x119C (4508)
 {
 	if (Global_262145.f_24029)
 		return false;
 
-	switch (bParam0)
+	switch (iParam0)
 	{
 		case 4:
 		case 5:
@@ -920,7 +920,7 @@ BOOL func_27(BOOL bParam0) // Position - 0x119C (4508)
 	return false;
 }
 
-BOOL func_28() // Position - 0x11DC (4572)
+int func_28() // Position - 0x11DC (4572)
 {
 	return Global_2697011;
 }
@@ -1697,13 +1697,13 @@ int func_59(Player plParam0) // Position - 0x1F94 (8084)
 	return -1;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x1FB5 (8117)
+BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x1FB5 (8117)
 {
-	ePedComponentType type;
+	Player player;
 
-	type = player;
+	player = player;
 
-	if (type != PV_COMP_INVALID)
+	if (player != -1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -1712,9 +1712,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 					return false;
 		
 			if (bUnk)
-				if (type == Global_2673274.f_3)
+				if (player == Global_2673274.f_3)
 					return Global_2673274.f_2;
-				else if (Global_2658294[type /*468*/] != 4)
+				else if (Global_2658294[player /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -2152,7 +2152,29 @@ int func_93(int iParam0, int iParam1, BOOL bParam2) // Position - 0x26B9 (9913)
 
 BOOL func_94(BOOL bParam0) // Position - 0x27CF (10191)
 {
-	bParam0;
+	if (bParam0 && Global_1575064)
+		if (func_95())
+			return false;
+		else
+			return true;
+
 	return Global_1575064;
+}
+
+BOOL func_95() // Position - 0x27FB (10235)
+{
+	if (func_96())
+		return true;
+
+	return Global_1575067;
+}
+
+BOOL func_96() // Position - 0x2816 (10262)
+{
+	if (Global_1575064 || Global_1575070)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
 }
 

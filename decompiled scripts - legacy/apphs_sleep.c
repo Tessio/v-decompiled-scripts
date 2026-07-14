@@ -125,7 +125,7 @@ BOOL func_1() // Position - 0x113 (275)
 {
 	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 3 || Global_21610.f_1 == 0 || Global_21554 == 1)
 	{
-		Global_21597 = 1;
+		Global_21597 = INPUT_LOOK_LR;
 		return true;
 	}
 
@@ -310,7 +310,7 @@ BOOL func_8() // Position - 0x422 (1058)
 {
 	if (Global_10086 == 1 || Global_21610.f_1 < 7)
 	{
-		Global_21597 = 1;
+		Global_21597 = INPUT_LOOK_LR;
 		return true;
 	}
 
@@ -521,8 +521,8 @@ void func_19() // Position - 0x73B (1851)
 
 	if (Global_21598)
 	{
-		func_20(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-		func_20(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+		func_20(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+		func_20(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 	}
 	else
 	{
@@ -712,12 +712,12 @@ void func_26() // Position - 0xB5E (2910)
 	}
 
 	func_9(Global_21591, "DISPLAY_VIEW", 13f, -1082130432, -1082130432, -1082130432, -1082130432);
-	func_13(Global_21591, "SET_HEADER", "CELL_16" /*Settings*/, 0, 0, 0, 0);
+	func_13(Global_21591, "SET_HEADER", "CELL_16" /*Ajustes*/, 0, 0, 0, 0);
 
 	if (Global_21598)
 	{
-		func_20(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-		func_20(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+		func_20(Global_21591, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+		func_20(Global_21591, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 	}
 	else
 	{

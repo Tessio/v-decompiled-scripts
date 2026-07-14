@@ -296,7 +296,7 @@ void func_5(int iParam0) // Position - 0x2DE (734)
 	}
 
 	TEXT_LABEL_COPY(&Global_65042, { func_10(iParam0) }, 4);
-	Global_65030 = false;
+	Global_65030 = 0;
 	Global_65029 = false;
 
 	switch (iParam0)
@@ -344,7 +344,7 @@ void func_5(int iParam0) // Position - 0x2DE (734)
 	{
 		if (Global_77273 != num2 || Global_77122 == 0 || num != Global_77272)
 		{
-			Global_34046 = false;
+			Global_34046 = 0;
 			func_11();
 			func_7(iParam0);
 		}
@@ -5051,7 +5051,7 @@ BOOL func_83(float fParam0, var uParam1, var uParam2) // Position - 0x75D1 (3016
 	return false;
 }
 
-ePedComponentType func_84() // Position - 0x75FB (30203)
+int func_84() // Position - 0x75FB (30203)
 {
 	return Global_2658294[PLAYER::PLAYER_ID() /*468*/].f_325.f_8;
 }
@@ -6489,7 +6489,7 @@ void func_122(int iParam0, var uParam1) // Position - 0x9608 (38408)
 			break;
 	
 		case 5:
-			func_123(uParam1, "Barry3A", func_10(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Areas where you can find vehicles with a hidden stash have been marked on the map. Collect these vehicles for Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_124(iParam0), 0, 1);
+			func_123(uParam1, "Barry3A", func_10(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Las zonas en las que puedes encontrar vehículos con un alijo oculto aparecerán indicadas en el mapa. Recoge estos vehículos para Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_124(iParam0), 0, 1);
 			break;
 	
 		case 6:
@@ -6501,7 +6501,7 @@ void func_122(int iParam0, var uParam1) // Position - 0x9608 (38408)
 			break;
 	
 		case 8:
-			func_123(uParam1, "Dreyfuss1", func_10(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*The killer's identity and location have been revealed.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_124(iParam0), 0, 0);
+			func_123(uParam1, "Dreyfuss1", func_10(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*Se ha revelado la identidad y el paradero del asesino.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_124(iParam0), 0, 0);
 			break;
 	
 		case 9:
@@ -6621,7 +6621,7 @@ void func_122(int iParam0, var uParam1) // Position - 0x9608 (38408)
 			break;
 	
 		case 38:
-			func_123(uParam1, "Nigel1A", func_10(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Areas where you can find celebrity items have been marked on the map. Steal these items for Nigel and Mrs. Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_124(iParam0), 1, 1);
+			func_123(uParam1, "Nigel1A", func_10(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Se han marcado en el mapa las zonas en las que puedes encontrar objetos de famosos. Róbalos para Nigel y para la señora Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_124(iParam0), 1, 1);
 			break;
 	
 		case 39:
@@ -6665,7 +6665,7 @@ void func_122(int iParam0, var uParam1) // Position - 0x9608 (38408)
 			break;
 	
 		case 49:
-			func_123(uParam1, "Paparazzo3A", func_10(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Areas where you can find celebrity photo opportunities have been marked on the map. Track down and photograph these celebrities for Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_124(iParam0), 0, 1);
+			func_123(uParam1, "Paparazzo3A", func_10(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Las zonas en las que puedes encontrar oportunidades para sacar fotos a famosos se han marcado en el mapa. Localiza y fotografía a estos famosos para Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_124(iParam0), 0, 1);
 			break;
 	
 		case 50:
@@ -6701,7 +6701,7 @@ void func_122(int iParam0, var uParam1) // Position - 0x9608 (38408)
 			break;
 	
 		case 58:
-			func_123(uParam1, "Tonya1", func_10(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_124(iParam0), 0, 1);
+			func_123(uParam1, "Tonya1", func_10(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_124(iParam0), 0, 1);
 			break;
 	
 		case 59:
@@ -7009,12 +7009,12 @@ void func_126(int iParam0) // Position - 0xABD5 (43989)
 	return;
 }
 
-void func_127(BOOL bParam0) // Position - 0xAC70 (44144)
+void func_127(int iParam0) // Position - 0xAC70 (44144)
 {
-	if (bParam0 < 63)
+	if (iParam0 < 63)
 	{
 		func_128();
-		Global_80561 = bParam0;
+		Global_80561 = iParam0;
 		Global_80560 = 0;
 		Global_80563 = 7;
 	}
@@ -7490,11 +7490,11 @@ BOOL func_151(int iParam0, int iParam1) // Position - 0xB256 (45654)
 	return 0;
 }
 
-BOOL func_152(BOOL bParam0) // Position - 0xB437 (46135)
+BOOL func_152(int iParam0) // Position - 0xB437 (46135)
 {
 	if (func_120(false))
 		if (Global_80552.f_1 == 7)
-			if (Global_80552 == bParam0)
+			if (Global_80552 == iParam0)
 				return true;
 
 	return false;
@@ -7802,7 +7802,7 @@ void func_168() // Position - 0xBE92 (48786)
 		case 1:
 			if (!func_173(25) && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS())
 			{
-				func_170("MRSP_01_HELP" /*Find a van with the Deludamol pharmaceuticals logo.*/, 1, 0, -1, 10000, 4, 0, 0, 0);
+				func_170("MRSP_01_HELP" /*Busca una furgoneta con el logotipo de Deludamol.*/, 1, 0, -1, 10000, 4, 0, 0, 0);
 				func_169(25);
 			}
 		

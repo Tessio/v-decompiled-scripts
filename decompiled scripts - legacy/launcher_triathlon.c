@@ -460,20 +460,20 @@ void main() // Position - 0x0 (0)
 								
 									if (!func_120(iLocal_92, 1024))
 									{
-										_DISPLAY_HELP_TEXT("MG_GET_ON_FOOT" /*You cannot participate in this race with a vehicle.*/, -1);
+										_DISPLAY_HELP_TEXT("MG_GET_ON_FOOT" /*No puedes participar en esta carrera con un vehículo.*/, -1);
 										func_88(&iLocal_92, 1024);
 									}
 								}
 								else if (func_120(iLocal_92, 1024))
 								{
 									func_124(&iLocal_92, 1024);
-									HUD::CLEAR_THIS_PRINT("MG_GET_ON_FOOT" /*You cannot participate in this race with a vehicle.*/);
+									HUD::CLEAR_THIS_PRINT("MG_GET_ON_FOOT" /*No puedes participar en esta carrera con un vehículo.*/);
 								}
 							}
 							else if (func_120(iLocal_92, 1024))
 							{
 								func_124(&iLocal_92, 1024);
-								HUD::CLEAR_THIS_PRINT("MG_GET_ON_FOOT" /*You cannot participate in this race with a vehicle.*/);
+								HUD::CLEAR_THIS_PRINT("MG_GET_ON_FOOT" /*No puedes participar en esta carrera con un vehículo.*/);
 							}
 						
 							if (!PLAYER::IS_PLAYER_CONTROL_ON(PLAYER::PLAYER_ID()))
@@ -856,7 +856,7 @@ void func_7() // Position - 0xBEF (3055)
 				}
 				else
 				{
-					func_16("TRI_NEWRC" /*New Triathlon race unlocked at ~BLIP_TRIATHLON~*/, 0, 0, -1, 10000, 7, 0, 0, 0);
+					func_16("TRI_NEWRC" /*Nuevo triatlón desbloqueado en ~BLIP_TRIATHLON~*/, 0, 0, -1, 10000, 7, 0, 0, 0);
 					func_15(62);
 				}
 			}
@@ -1118,7 +1118,7 @@ void func_18() // Position - 0x1256 (4694)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -1533,18 +1533,18 @@ BOOL func_23(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position -
 
 BOOL func_24() // Position - 0x1E71 (7793)
 {
-	if (func_26() == -1 || func_26() == 999 && !(func_25() == 0))
+	if (func_26() == -1 || func_26() == 999 && !(func_25() == HUD_COLOUR_PURE_WHITE))
 		return true;
 
 	return false;
 }
 
-int func_25() // Position - 0x1EA1 (7841)
+eHudColour func_25() // Position - 0x1EA1 (7841)
 {
 	return Global_33776;
 }
 
-int func_26() // Position - 0x1EAC (7852)
+eHudColour func_26() // Position - 0x1EAC (7852)
 {
 	return Global_33775;
 }
@@ -3225,7 +3225,7 @@ void func_30() // Position - 0x56D3 (22227)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_31() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -3773,7 +3773,7 @@ void func_62() // Position - 0x5FBD (24509)
 	}
 	else if (PED::IS_PED_INJURED(pedLocal_127) || EVENT::IS_SHOCKING_EVENT_IN_SPHERE(EVENT_SHOCKING_GUNSHOT_FIRED, ENTITY::GET_ENTITY_COORDS(pedLocal_127, true), 40f) || EVENT::IS_SHOCKING_EVENT_IN_SPHERE(EVENT_SHOCKING_SEEN_WEAPON_THREAT, ENTITY::GET_ENTITY_COORDS(pedLocal_127, true), 40f))
 	{
-		_DISPLAY_HELP_TEXT("TRI_DEATH" /*Come back later for this race.*/, -1);
+		_DISPLAY_HELP_TEXT("TRI_DEATH" /*Vuelve a esta carrera más tarde.*/, -1);
 		num = iLocal_103;
 		func_75(iLocal_103);
 		iLocal_103 = num;
@@ -4257,29 +4257,29 @@ void _DISPLAY_HELP_TEXT(char* text, int iParam1) // Position - 0x6883 (26755)
 	return;
 }
 
-BOOL func_82() // Position - 0x689A (26778)
+ePedComponentType func_82() // Position - 0x689A (26778)
 {
 	return Global_77342;
 }
 
-BOOL func_83(int iParam0) // Position - 0x68A6 (26790)
+ePedComponentType func_83(int iParam0) // Position - 0x68A6 (26790)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_84(int iParam0, int iParam1) // Position - 0x68FD (26877)
@@ -4475,7 +4475,7 @@ BOOL func_97() // Position - 0x724A (29258)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_98() // Position - 0x725B (29275)
+ePedComponentType func_98() // Position - 0x725B (29275)
 {
 	return Global_1575090;
 }
@@ -5093,7 +5093,7 @@ BOOL func_120(int iParam0, int iParam1) // Position - 0x7F94 (32660)
 void func_121() // Position - 0x7FA3 (32675)
 {
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "TriathlonSP", 64);
-	sLocal_99 = "PLAY_TRIATH" /*Press ~INPUT_CONTEXT~ to enter the triathlon.*/;
+	sLocal_99 = "PLAY_TRIATH" /*Pulsa ~INPUT_CONTEXT~ para participar en el triatlón.*/;
 	iLocal_97 = 17;
 	func_88(&iLocal_92, 4194304);
 	essLocal_95 = 64500;
@@ -5312,15 +5312,15 @@ void func_129(BOOL bParam0, int iParam1) // Position - 0x8289 (33417)
 	return;
 }
 
-void func_130(int* piParam0) // Position - 0x834F (33615)
+void func_130(int iParam0) // Position - 0x834F (33615)
 {
-	if (piParam0->f_9 != 0)
+	if (iParam0->f_9 != 0)
 	{
-		if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
-			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(piParam0);
+		if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(iParam0);
 	
-		*piParam0 = 0;
-		piParam0->f_9 = 0;
+		*iParam0 = 0;
+		iParam0->f_9 = 0;
 	}
 
 	return;

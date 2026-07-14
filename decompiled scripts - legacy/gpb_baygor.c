@@ -1474,7 +1474,7 @@ void func_11() // Position - 0x1576 (5494)
 {
 	if (!func_15(86) && !func_14(34))
 	{
-		_DISPLAY_HELP_TEXT("PBBY_ENDCHLP" /*You can visit the Epsilon website at www.epsilonprogram.com on your in-game phone browser*/, -1);
+		_DISPLAY_HELP_TEXT("PBBY_ENDCHLP" /*Puedes visitar el sitio web de Epsilon, www.epsilonprogram.com en el navegador de Internet de tu móvil.*/, -1);
 		func_12(34);
 	}
 
@@ -1552,7 +1552,7 @@ void func_18() // Position - 0x1696 (5782)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -1935,7 +1935,7 @@ int func_38(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x1C94 (7316
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -2201,7 +2201,7 @@ void func_46() // Position - 0x2096 (8342)
 
 BOOL func_47() // Position - 0x212B (8491)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -2590,7 +2590,7 @@ void func_73(int iParam0, BOOL bParam1) // Position - 0x2746 (10054)
 					func_77(func_78(iParam0));
 				
 					if (!func_14(70))
-						func_74("DI_HLP_SPCL" /*Unique characters become available in Rockstar Editor's Director Mode as you meet them around Los Santos.*/, 2, 0, 20000, 10000, 7, 0, 210, 0);
+						func_74("DI_HLP_SPCL" /*Los personajes especiales estarán disponibles en el modo director del editor Rockstar a medida que los encuentres por Los Santos.*/, 2, 0, 20000, 10000, 7, 0, 210, 0);
 				}
 			}
 		}
@@ -2666,7 +2666,7 @@ void func_76() // Position - 0x29A9 (10665)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -2690,7 +2690,7 @@ void func_76() // Position - 0x29A9 (10665)
 void func_77(char* sParam0) // Position - 0x2AC0 (10944)
 {
 	HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
-	HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT_SUBTITLE_LABEL("CHAR_ACTING_UP", "CHAR_ACTING_UP", false, 0, "DI_FEED_CHAR" /*Director Mode Actor Unlock*/, sParam0);
+	HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT_SUBTITLE_LABEL("CHAR_ACTING_UP", "CHAR_ACTING_UP", false, 0, "DI_FEED_CHAR" /*Actor del modo director desbloqueado*/, sParam0);
 	return;
 }
 
@@ -2726,16 +2726,16 @@ char* func_78(int iParam0) // Position - 0x2AE3 (10979)
 			return "CM_SPEMAN" /*Mani*/;
 	
 		case 9:
-			return "CM_SPEMIM" /*Mime*/;
+			return "CM_SPEMIM" /*Mimo*/;
 	
 		case 10:
 			return "CM_SPEPAM" /*Pamela Drake*/;
 	
 		case 11:
-			return "CM_SPEIMP" /*Impotent Rage*/;
+			return "CM_SPEIMP" /*Furia Impotente*/;
 	
 		case 12:
-			return "CM_SPEZOM" /*Zombie*/;
+			return "CM_SPEZOM" /*Zombi*/;
 	}
 
 	return "ERROR!";
@@ -3176,7 +3176,7 @@ void func_109() // Position - 0x3285 (12933)
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_216, "Base", 64);
 	bLocal_434 = !Global_4;
 	iLocal_250 = 8;
-	sLocal_301 = "PBBY_INTERACT" /*Press ~INPUT_CONTEXT~ to talk to Baygor.*/;
+	sLocal_301 = "PBBY_INTERACT" /*Pulsa ~INPUT_CONTEXT~ para hablar con Baygor.*/;
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_310, "PBBY_CONV_GM", 16);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_314, "PBBY_CONV_GT", 16);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_318, "PBBY_CONV_GF", 16);

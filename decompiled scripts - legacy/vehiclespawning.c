@@ -248,10 +248,10 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x298 (664)
 {
 	switch (func_10())
 	{
-		case 0:
+		case HUD_COLOUR_PURE_WHITE:
 			return func_9();
 	
-		case 2:
+		case HUD_COLOUR_BLACK:
 			return joaat("creator");
 	}
 
@@ -272,7 +272,7 @@ Hash func_9() // Position - 0x2CB (715)
 	return joaat("freemode");
 }
 
-int func_10() // Position - 0x2EF (751)
+eHudColour func_10() // Position - 0x2EF (751)
 {
 	return Global_33775;
 }
@@ -295,7 +295,7 @@ BOOL func_13() // Position - 0x320 (800)
 	return Global_2696964;
 }
 
-BOOL func_14() // Position - 0x32C (812)
+ePedComponentType func_14() // Position - 0x32C (812)
 {
 	return Global_2685150.f_695;
 }
@@ -420,7 +420,29 @@ int func_18(int iParam0, int iParam1, BOOL bParam2) // Position - 0x3E5 (997)
 
 BOOL func_19(BOOL bParam0) // Position - 0x4FB (1275)
 {
-	bParam0;
+	if (bParam0 && Global_1575062)
+		if (func_20())
+			return false;
+		else
+			return true;
+
 	return Global_1575062;
+}
+
+BOOL func_20() // Position - 0x527 (1319)
+{
+	if (func_21())
+		return true;
+
+	return Global_1575065;
+}
+
+BOOL func_21() // Position - 0x542 (1346)
+{
+	if (Global_1575062 || Global_1575068)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
 }
 

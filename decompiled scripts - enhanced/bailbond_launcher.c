@@ -474,8 +474,8 @@ BOOL func_4() // Position - 0x3FC (1020)
 	char* str2;
 
 	num = 79;
-	str = "BBONDS_DMAIL_K5" /*I can only assume it was you, Trevor, who sent that malefactor to hell early?~n~~a~*/;
-	str2 = "BBONDS_DMAIL_C5" /*Well, in any case, I regret to inform you that our partnership has come to an end.  I've decided to get out of this distasteful business and strike out in search of pursuits more savory.  You'll always have a rare and special place in my heart.  Good luck and goodbye.*/;
+	str = "BBONDS_DMAIL_K5" /*Solo puedo suponer que has sido tú, Trevor, el que ha enviado a ese malhechor al infierno antes de tiempo.~n~~a~*/;
+	str2 = "BBONDS_DMAIL_C5" /*Bueno, de todas formas, lamento decirte que nuestra colaboración ha llegado a su fin. He decidido dejar este desagradable negocio y parto en busca de nuevos propósitos. Siempre te tendré en un lugar especial en mi corazón. Buena suerte y adiós.*/;
 
 	if (func_14(26, num, true))
 	{
@@ -488,7 +488,7 @@ BOOL func_4() // Position - 0x3FC (1020)
 	return false;
 }
 
-void func_5(const char* sParam0) // Position - 0x439 (1081)
+void func_5(int iParam0) // Position - 0x439 (1081)
 {
 	int num;
 	int num2;
@@ -497,7 +497,7 @@ void func_5(const char* sParam0) // Position - 0x439 (1081)
 	int num4;
 	char* str;
 
-	num = func_11(sParam0);
+	num = func_11(iParam0);
 
 	if (num == -1)
 		return;
@@ -518,20 +518,20 @@ void func_5(const char* sParam0) // Position - 0x439 (1081)
 		unk = { Global_55430[num /*203*/].f_10[num3 /*48*/].f_2 };
 	}
 
-	if (sParam0 == 28)
+	if (iParam0 == 28)
 	{
 		switch (num2)
 		{
 			case 249:
-				str = "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/;
+				str = "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/;
 				break;
 		
 			case 269:
-				str = "PW_FEED_EM_3" /*Hello Franklin,~n~The Southern San Andreas Tourist Board Young Amateur Wildlife Photographer of the Year Competition is over.~n~Some of our photographers fell off cli...*/;
+				str = "PW_FEED_EM_3" /*Hola, Franklin:~n~La competición de fotógrafos amateur de animales de la oficina de turismo del sur de San Andreas ha terminado.~n~Algunos de nuestros fotógrafos cayeron por prec...*/;
 				break;
 		
 			default:
-				str = "PW_FEED_EM_2" /*Dear contestant,~n~Thank you for your recent photographic submission. Our image licensing department is already maximizing its profit-making potential. And you're a step clos...*/;
+				str = "PW_FEED_EM_2" /*Estimado participante,~n~Gracias por el envío de tu fotografía. Nuestro departamento de licencia de imágenes está aumentando el potencial de la foto para hacer dinero y tú estás un paso más...*/;
 				break;
 		}
 	
@@ -576,15 +576,15 @@ void func_6(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const
 		switch (iParam2)
 		{
 			case 72:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 73:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 74:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			default:
@@ -697,7 +697,7 @@ char* func_8(int iParam0) // Position - 0x9B2 (2482)
 			return "EMSTR_12" /*Marnie*/;
 	
 		case 5:
-			return "EMSTR_29" /*Epsilon Store*/;
+			return "EMSTR_29" /*Tienda de Epsilon*/;
 	
 		case 6:
 			return "EMSTR_36" /*Maude*/;
@@ -715,10 +715,10 @@ char* func_8(int iParam0) // Position - 0x9B2 (2482)
 			return "EMSTR_58" /*Bank of Liberty*/;
 	
 		case 11:
-			return "EMSTR_78" /*Legendary Motorsport Sales*/;
+			return "EMSTR_78" /*Legendary Motorsport*/;
 	
 		case 12:
-			return "EMSTR_81" /*Elitas Sales*/;
+			return "EMSTR_81" /*Ventas de Elitas*/;
 	
 		case 13:
 			return "EMSTR_84" /*Cache & Carry*/;
@@ -739,13 +739,13 @@ char* func_8(int iParam0) // Position - 0x9B2 (2482)
 			return "EMSTR_145" /*Paige Harris*/;
 	
 		case 19:
-			return "EMSTR_152" /*Los Santos Tourist Info*/;
+			return "EMSTR_152" /*Turismo de Los Santos*/;
 	
 		case 20:
 			return "EMSTR_157" /*Rickie Luckens*/;
 	
 		case 21:
-			return "EMSTR_163" /*Minotaur Property Management*/;
+			return "EMSTR_163" /*Minotaur*/;
 	
 		case 22:
 			return "EMSTR_182" /*Saeeda Kadam*/;
@@ -754,10 +754,10 @@ char* func_8(int iParam0) // Position - 0x9B2 (2482)
 			return "EMSTR_187" /*Vanilla Unicorn*/;
 	
 		case 24:
-			return "EMSTR_190" /*Dr Isiah Friedlander*/;
+			return "EMSTR_190" /*Dr. Isiah Friedlander*/;
 	
 		case 25:
-			return "EMSTR_206" /*TRACEYHEARTSTEALER*/;
+			return "EMSTR_206" /*TRACIROBACORAZONES*/;
 	
 		case 26:
 			return "EMSTR_219" /*Dave Norton*/;
@@ -802,34 +802,34 @@ char* func_8(int iParam0) // Position - 0x9B2 (2482)
 			return "EMSTR_369" /*Hookies*/;
 	
 		case 40:
-			return "EMSTR_376" /*Towing Impound*/;
+			return "EMSTR_376" /*Depósito de coches*/;
 	
 		case 41:
-			return "EMSTR_379" /*Downtown Cab Co,*/;
+			return "EMSTR_379" /*Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_384" /*Sonar Collections Dock*/;
+			return "EMSTR_384" /*Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_387" /*Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_390" /*Cinema Doppler*/;
+			return "EMSTR_390" /*Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_393" /*Ten Cent Theater*/;
+			return "EMSTR_393" /*Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_396" /*Tivoli Cinema*/;
+			return "EMSTR_396" /*Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_399" /*Los Santos Golf Club*/;
+			return "EMSTR_399" /*Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_402" /*Car Scrap Yard*/;
+			return "EMSTR_402" /*Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_405" /*Smoke on the Water*/;
@@ -844,10 +844,10 @@ char* func_8(int iParam0) // Position - 0x9B2 (2482)
 			return "EMSTR_414" /*The Hen House*/;
 	
 		case 54:
-			return "EMSTR_465" /*Pedal & Metal Sales*/;
+			return "EMSTR_465" /*Ventas de P&M*/;
 	
 		case 55:
-			return "EMSTR_468" /*SSA Super Autos Sales*/;
+			return "EMSTR_468" /*SSA Super Autos*/;
 	
 		case 56:
 			return "EMSTR_489" /*Hush Smush*/;
@@ -871,13 +871,13 @@ char* func_8(int iParam0) // Position - 0x9B2 (2482)
 			return "EMSTR_507" /*Misscuddles*/;
 	
 		case 63:
-			return "EMSTR_640" /*Off-Road Events*/;
+			return "EMSTR_640" /*Eventos todoterreno*/;
 	
 		case 64:
 			return "EMSTR_643" /*DockTease*/;
 	
 		case 65:
-			return "EMSTR_652" /*Brother Adrian*/;
+			return "EMSTR_652" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -1063,7 +1063,7 @@ struct<16> func_10(int iParam0) // Position - 0x10E6 (4326)
 	return unk17;
 }
 
-int func_11(const char* sParam0) // Position - 0x1117 (4375)
+int func_11(int iParam0) // Position - 0x1117 (4375)
 {
 	int i;
 	int num;
@@ -1075,7 +1075,7 @@ int func_11(const char* sParam0) // Position - 0x1117 (4375)
 
 	for (i = 0; i < 7; i = i + 1)
 	{
-		if (Global_55430[i /*203*/].f_2 == sParam0)
+		if (Global_55430[i /*203*/].f_2 == iParam0)
 		{
 			if (Global_55430[i /*203*/].f_1 > num2)
 			{
@@ -1091,12 +1091,12 @@ int func_11(const char* sParam0) // Position - 0x1117 (4375)
 	return -1;
 }
 
-void func_12(const char* sParam0, char* sParam1) // Position - 0x117B (4475)
+void func_12(int iParam0, char* sParam1) // Position - 0x117B (4475)
 {
 	int num;
 	int num2;
 
-	num = func_11(sParam0);
+	num = func_11(iParam0);
 
 	if (num == -1)
 		return;
@@ -1113,11 +1113,11 @@ void func_12(const char* sParam0, char* sParam1) // Position - 0x117B (4475)
 	return;
 }
 
-void func_13(const char* sParam0, char* sParam1, BOOL bParam2) // Position - 0x1230 (4656)
+void func_13(int iParam0, char* sParam1, BOOL bParam2) // Position - 0x1230 (4656)
 {
 	int num;
 
-	num = func_11(sParam0);
+	num = func_11(iParam0);
 
 	if (num == -1)
 		return;
@@ -1135,19 +1135,19 @@ void func_13(const char* sParam0, char* sParam1, BOOL bParam2) // Position - 0x1
 	TEXT_LABEL_ASSIGN_STRING(&Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 - 1 /*48*/].f_7[4 /*4*/], "", 16);
 
 	if (bParam2)
-		func_5(sParam0);
+		func_5(iParam0);
 
 	return;
 }
 
-BOOL func_14(const char* sParam0, int iParam1, BOOL bParam2) // Position - 0x134D (4941)
+BOOL func_14(int iParam0, int iParam1, BOOL bParam2) // Position - 0x134D (4941)
 {
 	int num;
 	int i;
 	int num2;
 	int num3;
 
-	num = func_16(sParam0, true);
+	num = func_16(iParam0, true);
 
 	if (num == -1)
 		return false;
@@ -1155,7 +1155,7 @@ BOOL func_14(const char* sParam0, int iParam1, BOOL bParam2) // Position - 0x134
 	if (Global_55430[num /*203*/].f_9 == 4)
 		return false;
 
-	Global_55430[num /*203*/].f_2 = sParam0;
+	Global_55430[num /*203*/].f_2 = iParam0;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/] = iParam1;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/].f_1 = 0;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/].f_6 = 0;
@@ -1271,22 +1271,22 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < false)
-							Global_46122 = false;
+						if (Global_46122 < 0)
+							Global_46122 = 0;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < false)
-							Global_46123 = false;
+						if (Global_46123 < 0)
+							Global_46123 = 0;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < false)
-							Global_46124 = false;
+						if (Global_46124 < 0)
+							Global_46124 = 0;
 						break;
 				}
 			}
@@ -1317,22 +1317,22 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < false)
-							Global_46122 = false;
+						if (Global_46122 < 0)
+							Global_46122 = 0;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < false)
-							Global_46123 = false;
+						if (Global_46123 < 0)
+							Global_46123 = 0;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < false)
-							Global_46124 = false;
+						if (Global_46124 < 0)
+							Global_46124 = 0;
 						break;
 				}
 			}
@@ -1379,7 +1379,7 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			
 				case 1:
 					if (num3 == 249)
-						func_6(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_6(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
 						func_6(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
@@ -1394,7 +1394,7 @@ void func_15(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 	return;
 }
 
-int func_16(const char* sParam0, BOOL bParam1) // Position - 0x191D (6429)
+int func_16(int iParam0, BOOL bParam1) // Position - 0x191D (6429)
 {
 	int num;
 	int i;
@@ -1406,7 +1406,7 @@ int func_16(const char* sParam0, BOOL bParam1) // Position - 0x191D (6429)
 	int num4;
 	int k;
 
-	num = func_11(sParam0);
+	num = func_11(iParam0);
 
 	if (num > -1)
 		if (Global_55430[num /*203*/].f_9 < 4)
@@ -1497,7 +1497,7 @@ int func_16(const char* sParam0, BOOL bParam1) // Position - 0x191D (6429)
 		}
 	}
 
-	Global_55430[num2 /*203*/].f_2 = sParam0;
+	Global_55430[num2 /*203*/].f_2 = iParam0;
 	Global_55430[num2 /*203*/].f_3 = 0;
 
 	if (!bParam1)
@@ -1996,10 +1996,10 @@ void func_38() // Position - 0x239E (9118)
 	func_42();
 	func_41();
 	func_40();
-	Global_102491 = false;
+	Global_102491 = 0;
 	Global_96604 = -1;
 	MISC::CLEAR_BIT(&(Global_102454.f_20), 17);
-	Global_102489 = false;
+	Global_102489 = 0;
 	MISC::PAUSE_DEATH_ARREST_RESTART(false);
 	MISC::IGNORE_NEXT_RESTART(false);
 	MISC::SET_FADE_IN_AFTER_DEATH_ARREST(true);
@@ -2071,13 +2071,13 @@ void func_44() // Position - 0x24CA (9418)
 
 void func_45() // Position - 0x24EA (9450)
 {
-	if (Global_102454.f_16 != false)
+	if (Global_102454.f_16 != 0)
 	{
 		GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&(Global_102454.f_16));
 		Global_102454.f_16 = 0;
 	}
 
-	if (Global_102454.f_17 != false)
+	if (Global_102454.f_17 != 0)
 	{
 		GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&(Global_102454.f_17));
 		Global_102454.f_17 = 0;
@@ -6868,7 +6868,7 @@ BOOL func_134(float fParam0, var uParam1, var uParam2) // Position - 0x9AF1 (396
 	return false;
 }
 
-ePedComponentType func_135() // Position - 0x9B1B (39707)
+int func_135() // Position - 0x9B1B (39707)
 {
 	return Global_2658294[PLAYER::PLAYER_ID() /*468*/].f_325.f_8;
 }
@@ -6883,10 +6883,10 @@ Vector3 func_137() // Position - 0x9B48 (39752)
 	return -880f, -2770f, -50f;
 }
 
-BOOL func_138(ePedComponentType epctParam0) // Position - 0x9B5F (39775)
+BOOL func_138(Player plParam0) // Position - 0x9B5F (39775)
 {
-	if (epctParam0 != _INVALID_PLAYER_INDEX())
-		if (IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 0) || IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 1) || IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 2))
+	if (plParam0 != _INVALID_PLAYER_INDEX())
+		if (IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 0) || IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 1) || IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 2))
 			return true;
 
 	return false;
@@ -7405,10 +7405,10 @@ BOOL func_145(int iParam0, var uParam1) // Position - 0xA993 (43411)
 	return false;
 }
 
-BOOL func_146(ePedComponentType epctParam0) // Position - 0xAA15 (43541)
+BOOL func_146(Player plParam0) // Position - 0xAA15 (43541)
 {
-	if (epctParam0 != _INVALID_PLAYER_INDEX())
-		if (IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 3) || IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 4) || IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 5))
+	if (plParam0 != _INVALID_PLAYER_INDEX())
+		if (IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 3) || IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 4) || IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 5))
 			return true;
 
 	return false;
@@ -8320,13 +8320,13 @@ void func_174(int iParam0) // Position - 0xC02F (49199)
 			{
 				if (func_31(26, func_32(iParam0), 0))
 				{
-					func_178("AM_H_BAILBONDS" /*Trevor can do a bail bond job by visiting a suspect's last known location. A larger reward is given if a suspect is captured alive.*/, 1, 0, -1, 10000, 4, 0, 0, 0);
+					func_178("AM_H_BAILBONDS" /*Trevor puede hacer un trabajo de cazafugitivos visitando el último lugar en el que un sospechoso haya sido visto. Recibirá una recompensa mayor si lo captura con vida.*/, 1, 0, -1, 10000, 4, 0, 0, 0);
 					bLocal_49 = true;
 				}
 			}
 			else
 			{
-				switch (func_176("AM_H_BAILBONDS" /*Trevor can do a bail bond job by visiting a suspect's last known location. A larger reward is given if a suspect is captured alive.*/))
+				switch (func_176("AM_H_BAILBONDS" /*Trevor puede hacer un trabajo de cazafugitivos visitando el último lugar en el que un sospechoso haya sido visto. Recibirá una recompensa mayor si lo captura con vida.*/))
 				{
 					case 2:
 						bLocal_49 = false;
@@ -8531,7 +8531,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = 0;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
 	Global_23997 = 0;
@@ -8556,8 +8556,8 @@ BOOL func_184(char* sParam0, int iParam1, BOOL bParam2) // Position - 0xC570 (50
 					Global_23000 = 0;
 					Global_23001 = 1;
 					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = 0;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -9794,7 +9794,7 @@ void func_216(int iParam0) // Position - 0xDB2B (56107)
 	if (flag)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&txdName, "CHAR_LIFEINVADER", 64);
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*You have redeemed your promotion for ~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*Has canjeado tu promoción de ~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(func_217(iParam0));
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, true, 0, "", 0);
 	}
@@ -9807,28 +9807,28 @@ char* func_217(int iParam0) // Position - 0xDCF5 (56565)
 	switch (iParam0)
 	{
 		case 0:
-			return "COUP_HAIRC" /*one free haircut.*/;
+			return "COUP_HAIRC" /*un corte de pelo gratis.*/;
 	
 		case 1:
-			return "COUP_TATTOO" /*one free tattoo.*/;
+			return "COUP_TATTOO" /*un tatuaje gratis.*/;
 	
 		case 2:
-			return "COUP_WARSTOCK" /*10% off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 3:
-			return "COUP_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 4:
-			return "COUP_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 5:
-			return "COUP_MEDSPENS" /*10 percent off your next medical expenses.*/;
+			return "COUP_MEDSPENS" /*10% de descuento en tus próximos gastos médicos.*/;
 	
 		case 6:
-			return "COUP_SPRUNK" /*one free can of Sprunk.*/;
+			return "COUP_SPRUNK" /*una lata gratis de Sprunk.*/;
 	
 		case 7:
-			return "COUP_RESPRAY" /*one free respray.*/;
+			return "COUP_RESPRAY" /*una pintura de vehículo gratis.*/;
 	
 		case 8:
 			return "COUP_XMAS2017";
@@ -9843,32 +9843,32 @@ char* func_217(int iParam0) // Position - 0xDCF5 (56565)
 			return "COUP_CAR2_XMAS2018";
 	
 		case 12:
-			return "COUP_CAS_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_CAS_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 13:
-			return "COUP_CAS_DOCKTEASE" /*10 percent off your next purchase at DockTease.com.*/;
+			return "COUP_CAS_DOCKTEASE" /*10% de descuento en tu próxima compra en DockTease.com.*/;
 	
 		case 14:
-			return "COUP_CAS_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_CAS_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 15:
-			return "COUP_CAS_SSASA" /*10 percent off your next purchase at southernsanandreassuperautos.com.*/;
+			return "COUP_CAS_SSASA" /*10% de descuento en tu próxima compra en southernsanandreassuperautos.com.*/;
 	
 		case 16:
-			return "COUP_CAS_WARSTOCK" /*10 percent off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_CAS_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 17:
-			return "COUP_CAS_PANDM" /*10 percent off your next purchase at pandmcycles.com.*/;
+			return "COUP_CAS_PANDM" /*10% de descuento en tu próxima compra en pandmcycles.com.*/;
 	
 		case 39:
 			return "COUPON_CAR_GEN9_MIGRATION";
 	
 		default:
 			if (func_224(iParam0))
-				return "HSW_COUP" /*One free respray, livery or spoiler.*/;
+				return "HSW_COUP" /*Una pintura, cubierta o alerón de vehículo gratis.*/;
 		
 			if (func_222(iParam0))
-				return "HSWU_COUP" /*One free Hao's Special Works upgrade.*/;
+				return "HSWU_COUP" /*Una mejora de Hao's Special Works gratis.*/;
 			break;
 	}
 
@@ -10344,16 +10344,16 @@ char* func_237(int iParam0) // Position - 0xE52B (58667)
 	switch (iParam0)
 	{
 		case 0:
-			return "BBONDS_DMAIL_C1" /*I got a tip-off this particular reprobate has been hiding out at the quarry. Slippery character by all accounts so you might have a runner on your hands.~nrt~~n~<img src='img://Email_Quarry_Bail_Bond/Target_Quarry' height="190" width="322" hspace='5' /> ~n~Last known location:~n~<img src='img://Email_Quarry_Bail_Bond/Location_Quarry' height="190" width="322" hspace='5' />~nrt~*/;
+			return "BBONDS_DMAIL_C1" /*Me ha llegado un soplo de que este rufián ha estado ocultándose en la cantera. Es un tipo escurridizo, así que puedes estar ante un corredor.~nrt~~n~<img src='img://Email_Quarry_Bail_Bond/Target_Quarry' height="190" width="322" hspace='5' /> ~n~Última ubicación conocida:~n~<img src='img://Email_Quarry_Bail_Bond/Location_Quarry' height="190" width="322" hspace='5' />~nrt~*/;
 	
 		case 1:
-			return "BBONDS_DMAIL_C2" /*If my sources serve me correctly, this pillar of society has been spotted hiding out in an old barn with a few of his cronies. He's a meth dealer with a history of violence so you two should get along just fine :)~nrt~~n~<img src='img://Email_AbandonedFarm_Bail_Bond/Target_AbandonedFarm' height="190" width="322" hspace='5' />~n~Last known location:~n~<img src='img://Email_AbandonedFarm_Bail_Bond/Location_AbandonedFarm' height="190" width="322" hspace='5' />~nrt~*/;
+			return "BBONDS_DMAIL_C2" /*Si mis fuentes me informan correctamente, este pilar de la sociedad ha sido visto escondiéndose en un viejo granero con algunos de sus compinches. Es un vendedor de meta con un historial de violencia, así que deberíais llevaros bien :)~nrt~~n~<img src='img://Email_AbandonedFarm_Bail_Bond/Target_AbandonedFarm' height="190" width="322" hspace='5' />~n~Última ubicación conocida:~n~<img src='img://Email_AbandonedFarm_Bail_Bond/Location_AbandonedFarm' height="190" width="322" hspace='5' />~nrt~*/;
 	
 		case 2:
-			return "BBONDS_DMAIL_C3" /*This next feller's the worst kind of criminal there is – a banker. And looking at some of the videos he's posted online, he fancies himself as a bit of an adrenaline junkie and internet celebrity on the side.  So he'll be a real pleasure to put behind bars.~nrt~~n~<img src='img://email_mountain_bail_bond/Target_Mountains' height="190" width="322" hspace='5' />~n~Last known location:~n~<img src='img://email_mountain_bail_bond/Location_Mountains' height="190" width="322" hspace='5' />~nrt~*/;
+			return "BBONDS_DMAIL_C3" /*Este otro es el peor tipo de criminal que existe: un banquero. Y por los vídeos que ha subido a Internet, le va lo de ser un adicto a la adrenalina y se cree un famosete de la red. Así que será un placer ponerlo en una celda.~nrt~~n~<img src='img://email_mountain_bail_bond/Target_Mountains' height="190" width="322" hspace='5' />~n~Last known location:~n~<img src='img://email_mountain_bail_bond/Location_Mountains' height="190" width="322" hspace='5' />~nrt~*/;
 	
 		case 3:
-			return "BBONDS_DMAIL_C4" /*This old-timer's one of them crazy anti-establishment types, lives outside the system in some kind of hobo camp.  Might look harmless but watch yourself, he's got a couple of screws loose alright.~nrt~~n~<img src='img://Email_HoboCamp_Bail_Bond/Target_Hobocamp' height="190" width="322" hspace='5' /> ~n~Last known location:~n~<img src='img://Email_HoboCamp_Bail_Bond/Location_HoboCamp' height="190" width="322" hspace='5' />~nrt~*/;
+			return "BBONDS_DMAIL_C4" /*Este veterano es uno de esos locos antisistema, vive fuera de la sociedad, en una especie de campamento para vagabundos. Puede parecer inofensivo, pero ten cuidado, le faltan unos cuantos tornillos.~nrt~~n~<img src='img://Email_HoboCamp_Bail_Bond/Target_Hobocamp' height="190" width="322" hspace='5' /> ~n~Última ubicación conocida:~n~<img src='img://Email_HoboCamp_Bail_Bond/Location_HoboCamp' height="190" width="322" hspace='5' />~nrt~*/;
 	
 		default:
 		
@@ -10368,30 +10368,30 @@ char* func_238(int iParam0, BOOL bParam1) // Position - 0xE570 (58736)
 	{
 		case 0:
 			if (bParam1)
-				return "BBONDS_DMAIL_K1" /*Hey Trevor~n~~a~*/;
+				return "BBONDS_DMAIL_K1" /*Hola, Trevor~n~~a~*/;
 			else
-				return "BBONDS_DMAIL_N1" /*Hey Trevor~n~~a~*/;
+				return "BBONDS_DMAIL_N1" /*Hola, Trevor~n~~a~*/;
 			break;
 	
 		case 1:
 			if (bParam1)
-				return "BBONDS_DMAIL_K2" /*So, Trevor, did you miss the part where I said bring the fugitive back to me? Do you think you might be able to deliver this feller in one piece?~n~~a~*/;
+				return "BBONDS_DMAIL_K2" /*Trevor, ¿no estabas escuchando cuando te dije que me trajeras al fugitivo? ¿Crees que podrás traerme a este de una pieza?~n~~a~*/;
 			else
-				return "BBONDS_DMAIL_N2" /*Hi Handsome~n~~a~*/;
+				return "BBONDS_DMAIL_N2" /*¡Hola, guapetón!~n~~a~*/;
 			break;
 	
 		case 2:
 			if (bParam1)
-				return "BBONDS_DMAIL_K3" /*I can't say I wasn't disappointed by the news that you disposed of our fugitive instead of returning him to my care.  Do you think you could resist the temptation to dispense your own justice this time?~n~~a~*/;
+				return "BBONDS_DMAIL_K3" /*No puedo decir que no me decepcionase escuchar que te habías cargado a nuestro fugitivo en vez de traérmelo. ¿Crees que podrás resistir la tentación de ajusticiarlo esta vez?~n~~a~*/;
 			else
-				return "BBONDS_DMAIL_N3" /*Ok Trevor~n~~a~*/;
+				return "BBONDS_DMAIL_N3" /*Vale, Trevor.~n~~a~*/;
 			break;
 	
 		case 3:
 			if (bParam1)
-				return "BBONDS_DMAIL_K4" /*What happened? Did you lose your head in the heat of the moment? As it's you, I'm going to give you one more chance.  But can you please try to bring this one in alive?~n~~a~*/;
+				return "BBONDS_DMAIL_K4" /*¿Qué ha pasado? ¿Te has dejado llevar por el momento? Como eres tú, voy a darte una oportunidad más. Si puede ser, ¿puedes traer a este vivo?~n~~a~*/;
 			else
-				return "BBONDS_DMAIL_N4" /*Me again~n~~a~*/;
+				return "BBONDS_DMAIL_N4" /*Soy yo, otra vez.~n~~a~*/;
 			break;
 	}
 
@@ -10947,7 +10947,7 @@ void func_251(int iParam0, var uParam1) // Position - 0xEFDE (61406)
 			break;
 	
 		case 5:
-			func_252(uParam1, "Barry3A", func_254(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Areas where you can find vehicles with a hidden stash have been marked on the map. Collect these vehicles for Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_253(iParam0), 0, 1);
+			func_252(uParam1, "Barry3A", func_254(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Las zonas en las que puedes encontrar vehículos con un alijo oculto aparecerán indicadas en el mapa. Recoge estos vehículos para Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_253(iParam0), 0, 1);
 			break;
 	
 		case 6:
@@ -10959,7 +10959,7 @@ void func_251(int iParam0, var uParam1) // Position - 0xEFDE (61406)
 			break;
 	
 		case 8:
-			func_252(uParam1, "Dreyfuss1", func_254(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*The killer's identity and location have been revealed.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_253(iParam0), 0, 0);
+			func_252(uParam1, "Dreyfuss1", func_254(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*Se ha revelado la identidad y el paradero del asesino.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_253(iParam0), 0, 0);
 			break;
 	
 		case 9:
@@ -11079,7 +11079,7 @@ void func_251(int iParam0, var uParam1) // Position - 0xEFDE (61406)
 			break;
 	
 		case 38:
-			func_252(uParam1, "Nigel1A", func_254(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Areas where you can find celebrity items have been marked on the map. Steal these items for Nigel and Mrs. Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_253(iParam0), 1, 1);
+			func_252(uParam1, "Nigel1A", func_254(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Se han marcado en el mapa las zonas en las que puedes encontrar objetos de famosos. Róbalos para Nigel y para la señora Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_253(iParam0), 1, 1);
 			break;
 	
 		case 39:
@@ -11123,7 +11123,7 @@ void func_251(int iParam0, var uParam1) // Position - 0xEFDE (61406)
 			break;
 	
 		case 49:
-			func_252(uParam1, "Paparazzo3A", func_254(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Areas where you can find celebrity photo opportunities have been marked on the map. Track down and photograph these celebrities for Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_253(iParam0), 0, 1);
+			func_252(uParam1, "Paparazzo3A", func_254(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Las zonas en las que puedes encontrar oportunidades para sacar fotos a famosos se han marcado en el mapa. Localiza y fotografía a estos famosos para Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_253(iParam0), 0, 1);
 			break;
 	
 		case 50:
@@ -11159,7 +11159,7 @@ void func_251(int iParam0, var uParam1) // Position - 0xEFDE (61406)
 			break;
 	
 		case 58:
-			func_252(uParam1, "Tonya1", func_254(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_253(iParam0), 0, 1);
+			func_252(uParam1, "Tonya1", func_254(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_253(iParam0), 0, 1);
 			break;
 	
 		case 59:
@@ -11717,22 +11717,22 @@ int func_256() // Position - 0x109AD (68013)
 	return 0;
 }
 
-BOOL func_257(ePedComponentType epctParam0) // Position - 0x109F3 (68083)
+BOOL func_257(Ped pedParam0) // Position - 0x109F3 (68083)
 {
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return false;
 
-	if (func_258(epctParam0) == -1)
+	if (func_258(pedParam0) == -1)
 		return false;
 
 	return true;
 }
 
-int func_258(ePedComponentType epctParam0) // Position - 0x10A14 (68116)
+int func_258(Ped pedParam0) // Position - 0x10A14 (68116)
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return -1;
 
 	i = 0;
@@ -11740,7 +11740,7 @@ int func_258(ePedComponentType epctParam0) // Position - 0x10A14 (68116)
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!(Global_45897[i /*5*/] == -1))
-			if (epctParam0 == Global_45897[i /*5*/].f_1)
+			if (pedParam0 == Global_45897[i /*5*/].f_1)
 				return i;
 	}
 
@@ -12045,12 +12045,12 @@ void func_269() // Position - 0x10F8A (69514)
 	{
 		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
 		TEXT_LABEL_ASSIGN_STRING(&subject, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(&Global_10107[1 /*6*/]), 64);
-		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*New Contact*/);
+		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*Nuevo contacto*/);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, filenameForAudioConversation, &subject);
 	}
 	else
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*New Contact: ~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*Nuevo contacto: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Global_10107[1 /*6*/]);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, "", 0);
 	}
@@ -12108,7 +12108,7 @@ void func_274(eCharacter echParam0, int iParam1, int iParam2) // Position - 0x11
 
 void func_275() // Position - 0x110F4 (69876)
 {
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_BAILBONDS" /*Trevor can do a bail bond job by visiting a suspect's last known location. A larger reward is given if a suspect is captured alive.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AM_H_BAILBONDS" /*Trevor puede hacer un trabajo de cazafugitivos visitando el último lugar en el que un sospechoso haya sido visto. Recibirá una recompensa mayor si lo captura con vida.*/))
 		HUD::CLEAR_HELP(true);
 
 	func_276(&uLocal_51, 2);

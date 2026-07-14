@@ -718,7 +718,7 @@ int _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iParam
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -742,9 +742,9 @@ int func_5(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x738 (1848)
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_23053 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -1213,7 +1213,7 @@ void func_23() // Position - 0xF19 (3865)
 		case 0:
 			if (func_92(uLocal_334, unk) && !func_91() && PED::IS_PED_HEADING_TOWARDS_POSITION(PLAYER::PLAYER_PED_ID(), uLocal_337, 90f) && func_90())
 			{
-				func_89("TV_HLP0" /*Press ~INPUT_CONTEXT~ to sit on the couch.*/);
+				func_89("TV_HLP0" /*Pulsa ~INPUT_CONTEXT~ para sentarte en el sofá.*/);
 			
 				if (!AUDIO::IS_AUDIO_SCENE_ACTIVE("FRANKLIN_SAFEHOUSE_ACTIVITIES_SCENE"))
 					AUDIO::START_AUDIO_SCENE("FRANKLIN_SAFEHOUSE_ACTIVITIES_SCENE");
@@ -1229,7 +1229,7 @@ void func_23() // Position - 0xF19 (3865)
 				{
 					if (!PLAYER::IS_PLAYER_FREE_AIMING(PLAYER::PLAYER_ID()) && !PLAYER::IS_PLAYER_TARGETTING_ANYTHING(PLAYER::PLAYER_ID()) && PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT) && func_90())
 					{
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP0" /*Press ~INPUT_CONTEXT~ to sit on the couch.*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP0" /*Pulsa ~INPUT_CONTEXT~ para sentarte en el sofá.*/))
 							HUD::CLEAR_HELP(true);
 					
 						MISC::CLEAR_AREA_OF_PROJECTILES(uLocal_337, 3f, 0);
@@ -1250,7 +1250,7 @@ void func_23() // Position - 0xF19 (3865)
 				}
 				else
 				{
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP0" /*Press ~INPUT_CONTEXT~ to sit on the couch.*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP0" /*Pulsa ~INPUT_CONTEXT~ para sentarte en el sofá.*/))
 						HUD::CLEAR_HELP(true);
 				
 					iLocal_306 = 0;
@@ -1349,7 +1349,7 @@ void func_23() // Position - 0xF19 (3865)
 		
 			if (!Global_33853[0 /*11*/].f_2)
 			{
-				func_89("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/);
+				func_89("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/);
 			
 				if (func_75(caLocal_325))
 					CAM::SHAKE_CAM(caLocal_325, "HAND_SHAKE", 0.2f / 3f);
@@ -1358,13 +1358,13 @@ void func_23() // Position - 0xF19 (3865)
 			}
 			else
 			{
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 					HUD::CLEAR_HELP(true);
 			
 				if (PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_328) > 0.2f)
 				{
-					if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
-						func_89("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/);
+					if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
+						func_89("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/);
 				
 					if (func_75(caLocal_325))
 						CAM::SHAKE_CAM(caLocal_325, "HAND_SHAKE", 0.2f / 3f);
@@ -1383,8 +1383,8 @@ void func_23() // Position - 0xF19 (3865)
 			if (func_75(caLocal_325))
 				func_71(caLocal_325, uLocal_352);
 		
-			if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
-				func_89("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/);
+			if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
+				func_89("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/);
 		
 			if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT))
 			{
@@ -1450,7 +1450,7 @@ void func_23() // Position - 0xF19 (3865)
 				if (PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_328) > 0.5f)
 				{
 					func_61(0, 0, 1, 0, 0);
-					func_89("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/);
+					func_89("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/);
 				
 					if (!AUDIO::IS_AUDIO_SCENE_ACTIVE("TV_FRANKLINS_HOUSE_SOCEN"))
 						AUDIO::START_AUDIO_SCENE("TV_FRANKLINS_HOUSE_SOCEN");
@@ -1564,7 +1564,7 @@ void func_23() // Position - 0xF19 (3865)
 						if (AUDIO::IS_AUDIO_SCENE_ACTIVE("TV_FRANKLINS_HOUSE_SOCEN"))
 							AUDIO::STOP_AUDIO_SCENE("TV_FRANKLINS_HOUSE_SOCEN");
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 							HUD::CLEAR_HELP(true);
 					
 						bLocal_316 = false;
@@ -1605,7 +1605,7 @@ void func_23() // Position - 0xF19 (3865)
 			switch (iLocal_307)
 			{
 				case 0:
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 						HUD::CLEAR_HELP(true);
 				
 					iLocal_328 = PED::CREATE_SYNCHRONIZED_SCENE(func_74(), func_73(), 2);
@@ -1619,7 +1619,7 @@ void func_23() // Position - 0xF19 (3865)
 					break;
 			
 				case 1:
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 						HUD::CLEAR_HELP(true);
 				
 					if (!PED::IS_SYNCHRONIZED_SCENE_RUNNING(iLocal_328) || bLocal_312)
@@ -1785,7 +1785,7 @@ void func_23() // Position - 0xF19 (3865)
 							TASK::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iLocal_328, sLocal_333, "tv_base", 8f, -8f, 64, 0, 1148846080, 0);
 							ENTITY::PLAY_SYNCHRONIZED_ENTITY_ANIM(func_68(), iLocal_328, "tv_base_remote", sLocal_333, 8f, -8f, 64, 1148846080);
 							PED::SET_SYNCHRONIZED_SCENE_LOOPED(iLocal_328, true);
-							func_89("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/);
+							func_89("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/);
 							iLocal_306 = 7;
 						}
 						else
@@ -1797,7 +1797,7 @@ void func_23() // Position - 0xF19 (3865)
 								CAM::SET_CAM_PARAMS(caLocal_325, uLocal_349, uLocal_352, fLocal_355, 0, 1, 1, 2);
 						
 							PED::SET_SYNCHRONIZED_SCENE_LOOPED(iLocal_328, true);
-							func_89("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/);
+							func_89("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/);
 							iLocal_306 = 5;
 						}
 					}
@@ -1919,7 +1919,7 @@ void func_24(int iParam0) // Position - 0x2279 (8825)
 	return;
 }
 
-void func_25(ePedComponentType epctParam0, Cam caParam1, int iParam2, int iParam3, int iParam4) // Position - 0x22C1 (8897)
+void func_25(Ped pedParam0, Cam caParam1, int iParam2, int iParam3, int iParam4) // Position - 0x22C1 (8897)
 {
 	int num;
 	int num2;
@@ -1930,14 +1930,14 @@ void func_25(ePedComponentType epctParam0, Cam caParam1, int iParam2, int iParam
 	int num7;
 	int num8;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return;
 
-	if (func_44(epctParam0) + iParam2 > 10)
-		iParam2 = 10 - func_44(epctParam0);
+	if (func_44(pedParam0) + iParam2 > 10)
+		iParam2 = 10 - func_44(pedParam0);
 
 	num = 20000;
 
@@ -1949,11 +1949,11 @@ void func_25(ePedComponentType epctParam0, Cam caParam1, int iParam2, int iParam
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && iParam4 == -1)
 		num2 = num2 * 3;
 
-	if (!func_42(epctParam0))
+	if (!func_42(pedParam0))
 	{
-		func_40(epctParam0, num2, false, -1082130432);
+		func_40(pedParam0, num2, false, -1082130432);
 		func_37(num2, num2, 0.3f, func_38(), caParam1, false);
-		num3 = func_36(epctParam0);
+		num3 = func_36(pedParam0);
 	
 		if (num3 == -1)
 		{
@@ -1965,7 +1965,7 @@ void func_25(ePedComponentType epctParam0, Cam caParam1, int iParam2, int iParam
 	}
 	else
 	{
-		num5 = func_36(epctParam0);
+		num5 = func_36(pedParam0);
 		num6 = -1;
 	
 		if (num5 == -1)
@@ -1983,13 +1983,13 @@ void func_25(ePedComponentType epctParam0, Cam caParam1, int iParam2, int iParam
 		else
 		{
 			Global_46078 = Global_46078 + num2;
-			func_32(epctParam0, num2);
+			func_32(pedParam0, num2);
 		}
 	}
 
 	Global_46084 = 0.25f;
 	TEXT_LABEL_ASSIGN_STRING(&Global_46085, func_31(iParam3), 16);
-	num7 = func_36(epctParam0);
+	num7 = func_36(pedParam0);
 
 	if (num7 == -1)
 	{
@@ -1998,17 +1998,17 @@ void func_25(ePedComponentType epctParam0, Cam caParam1, int iParam2, int iParam
 		return;
 	}
 
-	func_26(1, num7, 4, epctParam0, iParam2);
+	func_26(1, num7, 4, pedParam0, iParam2);
 	return;
 }
 
-void func_26(int iParam0, int iParam1, int iParam2, ePedComponentType epctParam3, int iParam4) // Position - 0x2438 (9272)
+void func_26(int iParam0, int iParam1, int iParam2, Ped pedParam3, int iParam4) // Position - 0x2438 (9272)
 {
-	func_27(iParam0, iParam1, iParam2, epctParam3, 0, iParam4);
+	func_27(iParam0, iParam1, iParam2, pedParam3, 0, iParam4);
 	return;
 }
 
-void func_27(int iParam0, int iParam1, int iParam2, ePedComponentType epctParam3, int iParam4, int iParam5) // Position - 0x244F (9295)
+void func_27(int iParam0, int iParam1, int iParam2, Ped pedParam3, int iParam4, int iParam5) // Position - 0x244F (9295)
 {
 	int num;
 
@@ -2032,7 +2032,7 @@ void func_27(int iParam0, int iParam1, int iParam2, ePedComponentType epctParam3
 	Global_45978[num /*6*/] = iParam0;
 	Global_45978[num /*6*/].f_1 = iParam1;
 	Global_45978[num /*6*/].f_2 = iParam2;
-	Global_45978[num /*6*/].f_3 = epctParam3;
+	Global_45978[num /*6*/].f_3 = pedParam3;
 	Global_45978[num /*6*/].f_4 = iParam4;
 	Global_45978[num /*6*/].f_5 = iParam5;
 	return;
@@ -2095,26 +2095,26 @@ char* func_31(int iParam0) // Position - 0x2569 (9577)
 	return "INVALID_SMOKING_EFFECT";
 }
 
-void func_32(ePedComponentType epctParam0, int iParam1) // Position - 0x2596 (9622)
+void func_32(Ped pedParam0, int iParam1) // Position - 0x2596 (9622)
 {
 	int num;
 	int num2;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return;
 
 	if (iParam1 < 0)
 		return;
 
-	num = func_36(epctParam0);
+	num = func_36(pedParam0);
 	num2 = -1;
 
 	if (num == -1)
 	{
-		num2 = func_34(epctParam0);
+		num2 = func_34(pedParam0);
 	
 		if (!(num2 == -1))
 		{
@@ -2135,7 +2135,7 @@ void func_33(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 	return;
 }
 
-int func_34(ePedComponentType epctParam0) // Position - 0x262B (9771)
+int func_34(Ped pedParam0) // Position - 0x262B (9771)
 {
 	int i;
 
@@ -2143,7 +2143,7 @@ int func_34(ePedComponentType epctParam0) // Position - 0x262B (9771)
 
 	for (i = 0; i < 5; i = i + 1)
 	{
-		if (Global_45866[i /*6*/].f_1 == epctParam0)
+		if (Global_45866[i /*6*/].f_1 == pedParam0)
 			return i;
 	}
 
@@ -2165,18 +2165,18 @@ int func_35(int iParam0) // Position - 0x265C (9820)
 	return -1;
 }
 
-int func_36(ePedComponentType epctParam0) // Position - 0x268C (9868)
+int func_36(Ped pedParam0) // Position - 0x268C (9868)
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return -1;
 
 	i = 0;
 
 	for (i = 0; i < 16; i = i + 1)
 	{
-		if (epctParam0 == Global_45897[i /*5*/].f_1)
+		if (pedParam0 == Global_45897[i /*5*/].f_1)
 			return Global_45897[i /*5*/];
 	}
 
@@ -2270,18 +2270,18 @@ float func_38() // Position - 0x2788 (10120)
 	return num;
 }
 
-int func_39(ePedComponentType epctParam0) // Position - 0x2807 (10247)
+int func_39(Ped pedParam0) // Position - 0x2807 (10247)
 {
 	int num;
 	int num2;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return 0;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return 0;
 
-	num = func_36(epctParam0);
+	num = func_36(pedParam0);
 	num2 = func_35(num);
 
 	if (num2 == -1)
@@ -2290,24 +2290,24 @@ int func_39(ePedComponentType epctParam0) // Position - 0x2807 (10247)
 	return Global_45897[num2 /*5*/].f_3;
 }
 
-int func_40(ePedComponentType epctParam0, int iParam1, BOOL bParam2, int iParam3) // Position - 0x284A (10314)
+int func_40(Ped pedParam0, int iParam1, BOOL bParam2, int iParam3) // Position - 0x284A (10314)
 {
 	int num;
 	int num2;
 	int num3;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return 0;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return 0;
 
-	num = func_36(epctParam0);
+	num = func_36(pedParam0);
 
 	if (!(num == -1))
 		return 1;
 
-	num2 = func_34(epctParam0);
+	num2 = func_34(pedParam0);
 
 	if (!(num2 == -1))
 		return 1;
@@ -2322,13 +2322,13 @@ int func_40(ePedComponentType epctParam0, int iParam1, BOOL bParam2, int iParam3
 		return 0;
 
 	Global_45866[num3 /*6*/] = 0;
-	Global_45866[num3 /*6*/].f_1 = epctParam0;
+	Global_45866[num3 /*6*/].f_1 = pedParam0;
 	Global_45866[num3 /*6*/].f_2 = iParam1;
 	Global_45866[num3 /*6*/].f_3 = iParam1;
 	Global_45866[num3 /*6*/].f_4 = 0;
 	Global_45866[num3 /*6*/].f_5 = iParam3;
 
-	if (epctParam0 == PLAYER::PLAYER_PED_ID())
+	if (pedParam0 == PLAYER::PLAYER_PED_ID())
 		Global_46109 = 1;
 
 	Global_45864 = Global_45864 + 1;
@@ -2350,22 +2350,22 @@ int func_41() // Position - 0x2911 (10513)
 	return -1;
 }
 
-BOOL func_42(ePedComponentType epctParam0) // Position - 0x2940 (10560)
+BOOL func_42(Ped pedParam0) // Position - 0x2940 (10560)
 {
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return false;
 
-	if (func_43(epctParam0) == -1)
+	if (func_43(pedParam0) == -1)
 		return false;
 
 	return true;
 }
 
-int func_43(ePedComponentType epctParam0) // Position - 0x2961 (10593)
+int func_43(Ped pedParam0) // Position - 0x2961 (10593)
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return -1;
 
 	i = 0;
@@ -2373,25 +2373,25 @@ int func_43(ePedComponentType epctParam0) // Position - 0x2961 (10593)
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!(Global_45897[i /*5*/] == -1))
-			if (epctParam0 == Global_45897[i /*5*/].f_1)
+			if (pedParam0 == Global_45897[i /*5*/].f_1)
 				return i;
 	}
 
 	return -1;
 }
 
-int func_44(ePedComponentType epctParam0) // Position - 0x29AA (10666)
+int func_44(Ped pedParam0) // Position - 0x29AA (10666)
 {
 	int num;
 	int num2;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return 0;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return 0;
 
-	num = func_36(epctParam0);
+	num = func_36(pedParam0);
 	num2 = func_35(num);
 
 	if (num2 == -1)
@@ -3010,7 +3010,7 @@ void func_65() // Position - 0x35F1 (13809)
 	if (func_75(caLocal_325))
 		CAM::SET_CAM_PARAMS(caLocal_325, uLocal_363, uLocal_366, fLocal_369, 0, 1, 1, 2);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 		HUD::CLEAR_HELP(true);
 
 	if (PED::GET_PED_STEALTH_MOVEMENT(PLAYER::PLAYER_PED_ID()))
@@ -3025,7 +3025,7 @@ void func_66() // Position - 0x364E (13902)
 	{
 		func_67(202, 1);
 	
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 			HUD::CLEAR_HELP(true);
 	
 		if (Global_33853[0 /*11*/].f_2)
@@ -3399,7 +3399,7 @@ void func_77(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		func_85(true, bParam3, bParam2, false);
 		Global_65033 = true;
 		Global_77362 = true;
-		Global_80303 = PV_COMP_BERD;
+		Global_80303 = true;
 	}
 	else
 	{
@@ -3420,7 +3420,7 @@ void func_77(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_83(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80303 = PV_COMP_HEAD;
+		Global_80303 = false;
 	}
 
 	return;
@@ -3450,31 +3450,31 @@ BOOL func_79(Player plParam0, int iParam1) // Position - 0x3EF8 (16120)
 	return flag;
 }
 
-eCharacter func_80(Interior inParam0, BOOL bParam1) // Position - 0x3F51 (16209)
+eCharacter func_80(int iParam0, BOOL bParam1) // Position - 0x3F51 (16209)
 {
 	eCharacter character;
-	Interior interior;
+	int num;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
-		interior = func_81();
+	if (num == -1)
+		num = func_81();
 
-	if (Global_1575072[interior] == true)
+	if (Global_1575072[num] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[interior];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
 	return character;
 }
 
-Interior func_81() // Position - 0x3F92 (16274)
+int func_81() // Position - 0x3F92 (16274)
 {
 	return Global_1574927;
 }
@@ -4214,7 +4214,7 @@ void func_114() // Position - 0x4FAB (20395)
 {
 	func_119();
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_118()) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP0" /*Press ~INPUT_CONTEXT~ to sit on the couch.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Press ~INPUT_CONTEXT~ to turn on the TV.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP2" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_NEXT_CAMERA~ to change view.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Use ~INPUT_SCRIPT_LEFT_AXIS_X~ to change the channel.~n~Use ~INPUT_SCRIPT_LEFT_AXIS_Y~ to change the volume.~n~Press ~INPUT_CONTEXT~ to stop watching.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_118()) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP0" /*Pulsa ~INPUT_CONTEXT~ para sentarte en el sofá.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP1" /*Pulsa ~INPUT_CONTEXT~ para encender la televisión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP2" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_NEXT_CAMERA~ para cambiar la vista.~n~Pulsa ~INPUT_CONTEXT~ para dejar de verla.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Pulsa ~INPUT_CONTEXT~ para ver la tele.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP4" /*Usa ~INPUT_SCRIPT_LEFT_AXIS_X~ para cambiar de canal.~n~Usa ~INPUT_SCRIPT_LEFT_AXIS_Y~ para ajustar el volumen.~n~Pulsa ~INPUT_CONTEXT~ para dejar de ver la televisión.~n~Pulsa ~INPUT_SCRIPT_RLEFT~ para fumar.~n~Pulsa ~INPUT_SCRIPT_RUP~ para levantarte.~n~*/))
 		HUD::CLEAR_HELP(true);
 
 	AUDIO::RELEASE_AMBIENT_AUDIO_BANK();
@@ -4292,53 +4292,53 @@ char* func_118() // Position - 0x511A (20762)
 	{
 		case joaat("prop_bong_01"):
 			if (bLocal_47)
-				str = "SA_BONG2" /*Press ~INPUT_CONTEXT~ to take a hit from the bong.*/;
+				str = "SA_BONG2" /*Pulsa ~INPUT_CONTEXT~ para fumar de la pipa de vidrio.*/;
 			else
-				str = "SA_BONG" /*Press ~INPUT_CONTEXT~ to take a hit from Jimmy's bong.*/;
+				str = "SA_BONG" /*Pulsa ~INPUT_CONTEXT~ para fumar de la pipa de vidrio de Jimmy.*/;
 			break;
 	
 		case joaat("prop_cigar_03"):
-			str = "SA_CIGAR" /*Press ~INPUT_CONTEXT~ to smoke a cigar.*/;
+			str = "SA_CIGAR" /*Pulsa ~INPUT_CONTEXT~ para fumar un puro.*/;
 			break;
 	
 		case joaat("prop_cs_beer_bot_01"):
-			str = "SA_BEER" /*Press ~INPUT_CONTEXT~ to drink a beer.*/;
+			str = "SA_BEER" /*Pulsa ~INPUT_CONTEXT~ para beber una cerveza.*/;
 			break;
 	
 		case joaat("p_cs_joint_01"):
-			str = "SA_SPLFF" /*Press ~INPUT_CONTEXT~ to smoke a joint.*/;
+			str = "SA_SPLFF" /*Pulsa ~INPUT_CONTEXT~ para fumar un porro.*/;
 			break;
 	
 		case joaat("p_tumbler_02_s1"):
-			str = "SA_WHSKY" /*Press ~INPUT_CONTEXT~ to drink whiskey.*/;
+			str = "SA_WHSKY" /*Pulsa ~INPUT_CONTEXT~ para beber whisky.*/;
 			break;
 	
 		case joaat("p_tumbler_cs2_s"):
-			str = "SA_WHSKY" /*Press ~INPUT_CONTEXT~ to drink whiskey.*/;
+			str = "SA_WHSKY" /*Pulsa ~INPUT_CONTEXT~ para beber whisky.*/;
 			break;
 	
 		case joaat("p_tumbler_cs2_s_trev"):
-			str = "SA_WHSKY" /*Press ~INPUT_CONTEXT~ to drink whiskey.*/;
+			str = "SA_WHSKY" /*Pulsa ~INPUT_CONTEXT~ para beber whisky.*/;
 			break;
 	
 		case joaat("prop_rolled_sock_02"):
-			str = "SA_GAS" /*Press ~INPUT_CONTEXT~ to huff gas.*/;
+			str = "SA_GAS" /*Pulsa ~INPUT_CONTEXT~ para inhalar gasolina.*/;
 			break;
 	
 		case joaat("prop_mr_raspberry_01"):
-			str = "SA_MRJAM" /*Press ~INPUT_CONTEXT~ to play with Mr. Raspberry Jam.*/;
+			str = "SA_MRJAM" /*Pulsa ~INPUT_CONTEXT~ para jugar con el Sr.µMermelada.*/;
 			break;
 	
 		case joaat("prop_radio_01"):
-			str = "SA_BEER" /*Press ~INPUT_CONTEXT~ to drink a beer.*/;
+			str = "SA_BEER" /*Pulsa ~INPUT_CONTEXT~ para beber una cerveza.*/;
 			break;
 	
 		case joaat("p_w_grass_gls_s"):
-			str = "SA_WHEAT" /*Press ~INPUT_CONTEXT~ to drink green juice.*/;
+			str = "SA_WHEAT" /*Pulsa ~INPUT_CONTEXT~ para beber zumo verde.*/;
 			break;
 	
 		case joaat("p_wine_glass_s"):
-			str = "SA_WINE" /*Press ~INPUT_CONTEXT~ to drink some wine.*/;
+			str = "SA_WINE" /*Pulsa ~INPUT_CONTEXT~ para beber vino.*/;
 			break;
 	
 		default:

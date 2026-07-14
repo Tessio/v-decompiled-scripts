@@ -763,7 +763,7 @@ void main() // Position - 0x0 (0)
 									{
 										if (!func_145(iLocal_92, 134217728))
 										{
-											func_96("MG_NA_TIME" /*This activity is not available at this time of day. Come back between ~1~:00 and ~1~:00 to participate in this activity.*/, iLocal_117, iLocal_118);
+											func_96("MG_NA_TIME" /*La actividad no está disponible en este momento. Vuelve de ~1~:00 a ~1~:00 para participar en ella.*/, iLocal_117, iLocal_118);
 											func_104(&iLocal_92, 134217728);
 										}
 									}
@@ -782,7 +782,7 @@ void main() // Position - 0x0 (0)
 								{
 									if (!func_145(iLocal_92, 134217728))
 									{
-										func_96("MG_NA_TIME" /*This activity is not available at this time of day. Come back between ~1~:00 and ~1~:00 to participate in this activity.*/, iLocal_117, iLocal_118);
+										func_96("MG_NA_TIME" /*La actividad no está disponible en este momento. Vuelve de ~1~:00 a ~1~:00 para participar en ella.*/, iLocal_117, iLocal_118);
 										func_104(&iLocal_92, 134217728);
 									}
 								}
@@ -1258,7 +1258,7 @@ void func_8() // Position - 0xD00 (3328)
 					break;
 			}
 		
-			func_14("OFFR_NEW" /*New Off-Road Race unlocked at ~BLIP_OFF_ROAD_RACING~*/, 0, 0, -1, 10000, 7, 0, 0, 0);
+			func_14("OFFR_NEW" /*Nueva carrera todoterreno desbloqueada en   ~BLIP_OFF_ROAD_RACING~.*/, 0, 0, -1, 10000, 7, 0, 0, 0);
 		}
 		else
 		{
@@ -1475,7 +1475,7 @@ void func_16() // Position - 0x13B4 (5044)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -1598,7 +1598,7 @@ void func_21() // Position - 0x16E4 (5860)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_22() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -2291,7 +2291,7 @@ int func_58(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x2220 (8736
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -2557,7 +2557,7 @@ void func_66() // Position - 0x2624 (9764)
 
 BOOL func_67() // Position - 0x26B9 (9913)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -2723,7 +2723,7 @@ void func_77() // Position - 0x2A06 (10758)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -3567,29 +3567,29 @@ void func_96(char* sParam0, int iParam1, int iParam2) // Position - 0x3B6B (1521
 	return;
 }
 
-BOOL func_97() // Position - 0x3B8D (15245)
+ePedComponentType func_97() // Position - 0x3B8D (15245)
 {
 	return Global_77342;
 }
 
-BOOL func_98(int iParam0) // Position - 0x3B99 (15257)
+ePedComponentType func_98(int iParam0) // Position - 0x3B99 (15257)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_99(int iParam0, int iParam1) // Position - 0x3BF0 (15344)
@@ -3785,7 +3785,7 @@ BOOL func_112() // Position - 0x453F (17727)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_113() // Position - 0x4550 (17744)
+ePedComponentType func_113() // Position - 0x4550 (17744)
 {
 	return Global_1575090;
 }
@@ -4760,9 +4760,9 @@ void func_146() // Position - 0x5D9A (23962)
 	}
 
 	if (iLocal_122 == 1 || iLocal_122 == 5)
-		sLocal_99 = "PLAY_OFFROAD_V" /*Press ~INPUT_CONTEXT~ to enter an off-road truck race.*/;
+		sLocal_99 = "PLAY_OFFROAD_V" /*Pulsa ~INPUT_CONTEXT~ para participar en la carrera todoterreno de coches.*/;
 	else
-		sLocal_99 = "PLAY_OFFROAD_M" /*Press ~INPUT_CONTEXT~ to enter an off-road motorcycle / ATV race.*/;
+		sLocal_99 = "PLAY_OFFROAD_M" /*Pulsa ~INPUT_CONTEXT~ para participar en la carrera todoterreno de motos/quads.*/;
 
 	return;
 }

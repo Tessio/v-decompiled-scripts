@@ -1235,7 +1235,7 @@ void func_17(int iParam0, int iParam1) // Position - 0x1337 (4919)
 	
 		if (!func_37(51))
 		{
-			func_27("RE_REWARD" /*Some Random Events will reward the player with stat boosts or money.*/, 1, 0, 4000, 10000, func_30(), 0, 138, 0);
+			func_27("RE_REWARD" /*Algunos eventos aleatorios recompensarán al jugador con mejoras de estadísticas o con dinero.*/, 1, 0, 4000, 10000, func_30(), 0, 138, 0);
 			func_26(51);
 		}
 	
@@ -1498,16 +1498,16 @@ BOOL func_21(int iParam0, int iParam1) // Position - 0x19E9 (6633)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x1A3A (6714)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x1A3A (6714)
 {
-	if (inParam2 == -1)
-		inParam2 = func_23();
+	if (iParam2 == -1)
+		iParam2 = func_23();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
 	return;
 }
 
-Interior func_23() // Position - 0x1A58 (6744)
+int func_23() // Position - 0x1A58 (6744)
 {
 	return Global_1574927;
 }
@@ -3179,7 +3179,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -3203,9 +3203,9 @@ BOOL func_72(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x3DDA (158
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_23053 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -3677,7 +3677,7 @@ BOOL func_91(var uParam0, char* sParam1, char* sParam2, char* sParam3, int iPara
 			iParam4 = 7;
 
 	Global_23007 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
@@ -4058,7 +4058,7 @@ void func_95() // Position - 0x4F87 (20359)
 	{
 		if (!Global_34033)
 		{
-			_DISPLAY_HELP_TEXT("CULT_BLIP_HELP" /*Trevor can sometimes deliver Random Event passengers to the Altruist Cult, located at ~BLIP_ALTRUIST~*/, -1);
+			_DISPLAY_HELP_TEXT("CULT_BLIP_HELP" /*A veces, Trevor puede llevar a pasajeros de eventos aleatorios a la secta altruista. Los encontrarás en ~BLIP_ALTRUIST~.*/, -1);
 			Global_34033 = true;
 		}
 	}
@@ -4152,7 +4152,7 @@ void func_100(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 		func_107(true, bParam3, bParam2, false);
 		Global_65033 = true;
 		Global_77362 = true;
-		Global_80303 = PV_COMP_BERD;
+		Global_80303 = true;
 	}
 	else
 	{
@@ -4173,7 +4173,7 @@ void func_100(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_105(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80303 = PV_COMP_HEAD;
+		Global_80303 = false;
 	}
 
 	return;
@@ -4203,24 +4203,24 @@ BOOL func_102(Player plParam0, int iParam1) // Position - 0x5226 (21030)
 	return flag;
 }
 
-eCharacter func_103(Interior inParam0, BOOL bParam1) // Position - 0x527F (21119)
+eCharacter func_103(int iParam0, BOOL bParam1) // Position - 0x527F (21119)
 {
 	eCharacter character;
-	Interior interior;
+	int num;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
-		interior = func_23();
+	if (num == -1)
+		num = func_23();
 
-	if (Global_1575072[interior] == true)
+	if (Global_1575072[num] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[interior];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
@@ -4899,7 +4899,7 @@ int func_121(BOOL bParam0) // Position - 0x6182 (24962)
 		if (func_25(Global_114920))
 			func_122(0);
 	
-		HUD::SET_MISSION_NAME(true, "RE_TITLE" /*Random Event*/);
+		HUD::SET_MISSION_NAME(true, "RE_TITLE" /*Evento aleatorio*/);
 	
 		if (bParam0 && func_25(Global_114920))
 			HUD::FLASH_MINIMAP_DISPLAY();
@@ -4963,15 +4963,15 @@ char* func_123(int iParam0) // Position - 0x62B0 (25264)
 	switch (iParam0)
 	{
 		case 0:
-			str = "AM_H_REFS" /*Various events unfold across San Andreas daily. These events will become blipped on the Radar when nearby.*/;
+			str = "AM_H_REFS" /*Ocurren varios eventos en San Andreas cada día. Aparecerá un icono en tu radar cuando estés cerca de uno de ellos.*/;
 			break;
 	
 		case 1:
-			str = "RE_FLASHBLIP" /*Flashing blue and red blips indicate situations around San Andreas that you can choose to help with.*/;
+			str = "RE_FLASHBLIP" /*Los iconos intermitentes azules y rojos indican situaciones en San Andreas en las que puedes participar.*/;
 			break;
 	
 		case 2:
-			str = "RE_HANDOVER" /*If you retrieve a stolen item, you can choose to keep it or return it for a reward.*/;
+			str = "RE_HANDOVER" /*Si recuperas un artículo robado, puedes quedártelo o devolverlo a cambio de una recompensa.*/;
 			break;
 	}
 
@@ -5832,30 +5832,30 @@ Hash func_147(int iParam0, int iParam1) // Position - 0x78FF (30975)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_148(iParam1));
 }
 
-Interior func_148(Interior inParam0) // Position - 0x7914 (30996)
+int func_148(int iParam0) // Position - 0x7914 (30996)
 {
-	Interior interior;
-	Interior interior2;
+	int num;
+	int num2;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
+	if (num == -1)
 	{
-		interior2 = func_23();
+		num2 = func_23();
 	
-		if (interior2 > -1)
+		if (num2 > -1)
 		{
 			Global_2741524 = 0;
-			interior = interior2;
+			num = num2;
 		}
 		else
 		{
-			interior = 0;
+			num = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return interior;
+	return num;
 }
 
 int func_149(int iParam0, int iParam1) // Position - 0x7948 (31048)
@@ -6299,7 +6299,7 @@ void func_158(int iParam0, var uParam1) // Position - 0x81A7 (33191)
 			break;
 	
 		case 5:
-			func_159(uParam1, "Barry3A", func_161(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Areas where you can find vehicles with a hidden stash have been marked on the map. Collect these vehicles for Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_160(iParam0), 0, 1);
+			func_159(uParam1, "Barry3A", func_161(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Las zonas en las que puedes encontrar vehículos con un alijo oculto aparecerán indicadas en el mapa. Recoge estos vehículos para Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_160(iParam0), 0, 1);
 			break;
 	
 		case 6:
@@ -6311,7 +6311,7 @@ void func_158(int iParam0, var uParam1) // Position - 0x81A7 (33191)
 			break;
 	
 		case 8:
-			func_159(uParam1, "Dreyfuss1", func_161(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*The killer's identity and location have been revealed.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_160(iParam0), 0, 0);
+			func_159(uParam1, "Dreyfuss1", func_161(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*Se ha revelado la identidad y el paradero del asesino.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_160(iParam0), 0, 0);
 			break;
 	
 		case 9:
@@ -6431,7 +6431,7 @@ void func_158(int iParam0, var uParam1) // Position - 0x81A7 (33191)
 			break;
 	
 		case 38:
-			func_159(uParam1, "Nigel1A", func_161(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Areas where you can find celebrity items have been marked on the map. Steal these items for Nigel and Mrs. Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_160(iParam0), 1, 1);
+			func_159(uParam1, "Nigel1A", func_161(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Se han marcado en el mapa las zonas en las que puedes encontrar objetos de famosos. Róbalos para Nigel y para la señora Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_160(iParam0), 1, 1);
 			break;
 	
 		case 39:
@@ -6475,7 +6475,7 @@ void func_158(int iParam0, var uParam1) // Position - 0x81A7 (33191)
 			break;
 	
 		case 49:
-			func_159(uParam1, "Paparazzo3A", func_161(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Areas where you can find celebrity photo opportunities have been marked on the map. Track down and photograph these celebrities for Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_160(iParam0), 0, 1);
+			func_159(uParam1, "Paparazzo3A", func_161(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Las zonas en las que puedes encontrar oportunidades para sacar fotos a famosos se han marcado en el mapa. Localiza y fotografía a estos famosos para Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_160(iParam0), 0, 1);
 			break;
 	
 		case 50:
@@ -6511,7 +6511,7 @@ void func_158(int iParam0, var uParam1) // Position - 0x81A7 (33191)
 			break;
 	
 		case 58:
-			func_159(uParam1, "Tonya1", func_161(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_160(iParam0), 0, 1);
+			func_159(uParam1, "Tonya1", func_161(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_160(iParam0), 0, 1);
 			break;
 	
 		case 59:

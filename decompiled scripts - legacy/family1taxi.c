@@ -112,10 +112,10 @@ void func_1() // Position - 0xA4 (164)
 			break;
 	
 		case 2:
-			switch (func_5("AM_H_TAXI1" /*Use ~INPUT_CONTEXT~ to flag down passing taxis.*/))
+			switch (func_5("AM_H_TAXI1" /*Usa ~INPUT_CONTEXT~ para parar un taxi.*/))
 			{
 				case 2:
-					func_2("AM_H_TAXI1" /*Use ~INPUT_CONTEXT~ to flag down passing taxis.*/, 2, 0, 1000, 10000, 1, 0, 0, 0);
+					func_2("AM_H_TAXI1" /*Usa ~INPUT_CONTEXT~ para parar un taxi.*/, 2, 0, 1000, 10000, 1, 0, 0, 0);
 					break;
 			
 				case 1:
@@ -125,10 +125,10 @@ void func_1() // Position - 0xA4 (164)
 			break;
 	
 		case 3:
-			switch (func_5("AM_H_TAXI2" /*Taxi pick ups can be requested through the phone.*/))
+			switch (func_5("AM_H_TAXI2" /*Puedes llamar por teléfono para que un taxi te venga a recoger.*/))
 			{
 				case 2:
-					func_2("AM_H_TAXI2" /*Taxi pick ups can be requested through the phone.*/, 2, 0, 1000, 10000, 1, 0, 0, 0);
+					func_2("AM_H_TAXI2" /*Puedes llamar por teléfono para que un taxi te venga a recoger.*/, 2, 0, 1000, 10000, 1, 0, 0, 0);
 					break;
 			
 				case 1:
@@ -212,7 +212,7 @@ void func_4() // Position - 0x390 (912)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -282,22 +282,22 @@ BOOL func_9(int iParam0) // Position - 0x541 (1345)
 
 void func_10() // Position - 0x56D (1389)
 {
-	if (func_6("AM_H_TAXI1" /*Use ~INPUT_CONTEXT~ to flag down passing taxis.*/))
-		func_11("AM_H_TAXI1" /*Use ~INPUT_CONTEXT~ to flag down passing taxis.*/, 1);
+	if (func_6("AM_H_TAXI1" /*Usa ~INPUT_CONTEXT~ para parar un taxi.*/))
+		func_11("AM_H_TAXI1" /*Usa ~INPUT_CONTEXT~ para parar un taxi.*/, 1);
 
-	if (func_6("AM_H_TAXI2" /*Taxi pick ups can be requested through the phone.*/))
-		func_11("AM_H_TAXI2" /*Taxi pick ups can be requested through the phone.*/, true);
+	if (func_6("AM_H_TAXI2" /*Puedes llamar por teléfono para que un taxi te venga a recoger.*/))
+		func_11("AM_H_TAXI2" /*Puedes llamar por teléfono para que un taxi te venga a recoger.*/, 1);
 
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;
 }
 
-void func_11(char* sParam0, BOOL bParam1) // Position - 0x59D (1437)
+void func_11(char* sParam0, const char* sParam1) // Position - 0x59D (1437)
 {
 	int i;
 	int j;
 
-	if (Global_113541 && bParam1)
+	if (Global_113541 && sParam1)
 		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) && !HUD::IS_HELP_MESSAGE_FADING_OUT())
 			HUD::CLEAR_HELP(false);
 

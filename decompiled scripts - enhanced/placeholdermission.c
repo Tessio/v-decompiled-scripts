@@ -119,7 +119,7 @@ void func_3() // Position - 0xFC (252)
 
 void func_4() // Position - 0x16B (363)
 {
-	Global_102489 = true;
+	Global_102489 = 1;
 
 	if (PLAYER::IS_PLAYER_BEING_ARRESTED(PLAYER::PLAYER_ID(), true))
 	{
@@ -128,22 +128,22 @@ void func_4() // Position - 0x16B (363)
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
 				case CHAR_MICHAEL:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_MARRE" /*~s~Michael was arrested.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_MARRE" /*~s~Michael ha sido detenido.*/, 16);
 					break;
 			
 				case CHAR_FRANKLIN:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_FARRE" /*~s~Franklin was arrested.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_FARRE" /*~s~Franklin ha sido detenido.*/, 16);
 					break;
 			
 				case CHAR_TREVOR:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_TARRE" /*~s~Trevor was arrested.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_TARRE" /*~s~Trevor ha sido detenido.*/, 16);
 					break;
 			}
 		
 			TEXT_LABEL_ASSIGN_STRING(&Global_80542, "", 16);
 		}
 	
-		Global_102489 = false;
+		Global_102489 = 0;
 	}
 	else if (!PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 	{
@@ -152,22 +152,22 @@ void func_4() // Position - 0x16B (363)
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
 				case CHAR_MICHAEL:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_MDIED" /*~s~Michael died.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_MDIED" /*~s~Michael ha muerto.*/, 16);
 					break;
 			
 				case CHAR_FRANKLIN:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_FDIED" /*~s~Franklin died.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_FDIED" /*~s~Franklin ha muerto.*/, 16);
 					break;
 			
 				case CHAR_TREVOR:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_TDIED" /*~s~Trevor died.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80538, "CMN_TDIED" /*~s~Trevor ha muerto.*/, 16);
 					break;
 			}
 		
 			TEXT_LABEL_ASSIGN_STRING(&Global_80542, "", 16);
 		}
 	
-		Global_102489 = false;
+		Global_102489 = 0;
 		MISC::SET_BIT(&(Global_102454.f_20), 25);
 	}
 
@@ -260,7 +260,7 @@ Hash func_11(eCharacter echParam0) // Position - 0x3E4 (996)
 BOOL func_12(int iParam0) // Position - 0x3F3 (1011)
 {
 	int num;
-	BOOL flag;
+	eCharacter character;
 
 	func_4();
 
@@ -268,20 +268,20 @@ BOOL func_12(int iParam0) // Position - 0x3F3 (1011)
 		PLAYER::START_FIRING_AMNESTY(5000);
 
 	num = Global_93181[iParam0 /*5*/];
-	flag = Global_80576.f_109[num /*4*/];
-	func_16(flag, true);
+	character = Global_80576.f_109[num /*4*/];
+	func_16(character, true);
 	PLAYER::SPECIAL_ABILITY_CHARGE_ON_MISSION_FAILED(PLAYER::PLAYER_ID(), 0);
 	PLAYER::SPECIAL_ABILITY_DEACTIVATE(PLAYER::PLAYER_ID(), 0);
-	func_13(&(Global_114931.f_2370.f_539), flag);
+	func_13(&(Global_114931.f_2370.f_539), character);
 
 	if (Global_96604 == Global_102491)
-		Global_114931.f_9092.f_330[flag /*6*/].f_1 = Global_114931.f_9092.f_330[flag /*6*/].f_1 + 1;
+		Global_114931.f_9092.f_330[character /*6*/].f_1 = Global_114931.f_9092.f_330[character /*6*/].f_1 + 1;
 
-	if (!IS_BIT_SET(Global_93217[flag /*34*/].f_15, 1))
+	if (!IS_BIT_SET(Global_93217[character /*34*/].f_15, 1))
 		if (!PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 			MISC::SET_FADE_IN_AFTER_DEATH_ARREST(false);
 
-	Global_114931.f_9092.f_330[flag /*6*/].f_2 = Global_114931.f_9092.f_330[flag /*6*/].f_2 + 1;
+	Global_114931.f_9092.f_330[character /*6*/].f_2 = Global_114931.f_9092.f_330[character /*6*/].f_2 + 1;
 	Global_96604 = Global_102491;
 
 	if (iParam0 == -1)
@@ -299,14 +299,14 @@ BOOL func_12(int iParam0) // Position - 0x3F3 (1011)
 	return true;
 }
 
-void func_13(var uParam0, BOOL bParam1) // Position - 0x503 (1283)
+void func_13(var uParam0, eCharacter echParam1) // Position - 0x503 (1283)
 {
 	int i;
 	eCharacter character;
 	var unk;
 	float num;
 
-	if (bParam1 == 94)
+	if (echParam1 == CHAR_BROKEN_DOWN_GIRL)
 		return;
 
 	for (i = 0; i < 3; i = i + 1)
@@ -700,13 +700,13 @@ BOOL func_15(eCharacter echParam0, var uParam1, var uParam2) // Position - 0x6D7
 	return false;
 }
 
-void func_16(BOOL bParam0, BOOL bParam1) // Position - 0x1046 (4166)
+void func_16(eCharacter echParam0, BOOL bParam1) // Position - 0x1046 (4166)
 {
 	if (bParam1)
-		if (bParam0 != 88 && bParam0 != 89 && bParam0 != 92)
-			Global_96414[bParam0 /*2*/] = true;
+		if (echParam0 != CHAR_DETONATEBOMB && echParam0 != CHAR_LS_CUSTOMS && echParam0 != CHAR_DOMESTIC_GIRL)
+			Global_96414[echParam0 /*2*/] = true;
 	else
-		Global_96414[bParam0 /*2*/] = false;
+		Global_96414[echParam0 /*2*/] = false;
 
 	return;
 }

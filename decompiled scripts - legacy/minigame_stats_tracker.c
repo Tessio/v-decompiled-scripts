@@ -410,7 +410,7 @@ void func_12(int iParam0) // Position - 0x58B (1419)
 
 BOOL func_13() // Position - 0x615 (1557)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;

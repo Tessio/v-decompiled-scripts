@@ -158,8 +158,8 @@ void main() // Position - 0x0 (0)
 	iLocal_83 = 7;
 	sLocal_86 = "missmurder";
 	sLocal_87 = "idle";
-	sLocal_88 = "MM_LETREAD" /*Press ~INPUT_SCRIPT_PAD_RIGHT~ to read the letter.*/;
-	sLocal_89 = "MM_LETCANC" /*Press ~INPUT_SCRIPT_PAD_RIGHT~ to stop reading.*/;
+	sLocal_88 = "MM_LETREAD" /*Pulsa ~INPUT_SCRIPT_PAD_RIGHT~ para leer la carta.*/;
+	sLocal_89 = "MM_LETCANC" /*Pulsa ~INPUT_SCRIPT_PAD_RIGHT~ para dejar de leer.*/;
 
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(83))
 		func_91();
@@ -257,7 +257,7 @@ void func_1() // Position - 0x15D (349)
 						if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT))
 							func_3();
 					
-						_DISPLAY_HELP_TEXT("MM_TOGGLE" /*Press ~INPUT_CONTEXT~ to cycle Vintage filters.*/, 10);
+						_DISPLAY_HELP_TEXT("MM_TOGGLE" /*Pulsa ~INPUT_CONTEXT~ para alternar filtros retro.*/, 10);
 					}
 				}
 			}
@@ -266,7 +266,7 @@ void func_1() // Position - 0x15D (349)
 			{
 				if (ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), -594.9976f, 2089.0046f, 130.34494f, -597.1125f, 2088.3645f, 133.30351f, 1f, false, true, 0))
 				{
-					_DISPLAY_HELP_TEXT("MM_HELP" /*Return to Isaac's corpse or call him on your cellphone to cycle Vintage filters.*/, 10000);
+					_DISPLAY_HELP_TEXT("MM_HELP" /*Vuelve al cadáver de Isaac o llámalo por teléfono para ver filtros vintage.*/, 10000);
 					func_33(1, false);
 				}
 			}
@@ -438,12 +438,12 @@ void func_8() // Position - 0x6DD (1757)
 	{
 		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
 		TEXT_LABEL_ASSIGN_STRING(&subject, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(&Global_10107[1 /*6*/]), 64);
-		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*New Contact*/);
+		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*Nuevo contacto*/);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, filenameForAudioConversation, &subject);
 	}
 	else
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*New Contact: ~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*Nuevo contacto: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Global_10107[1 /*6*/]);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, "", 0);
 	}
@@ -3273,7 +3273,7 @@ void func_46(int iParam0, BOOL bParam1) // Position - 0x513D (20797)
 	interior = 0;
 	string2 = func_39(iParam0, &interior);
 
-	if (!MISC::ARE_STRINGS_EQUAL("NONE" /*None*/, string2) && interior != 0)
+	if (!MISC::ARE_STRINGS_EQUAL("NONE" /*-*/, string2) && interior != 0)
 	{
 		if (bParam1)
 		{
@@ -3600,7 +3600,7 @@ BOOL func_63() // Position - 0x5692 (22162)
 	if (clockHours >= 21 || clockHours < 6)
 		return true;
 
-	_DISPLAY_HELP_TEXT("MM_SOLBUSY" /*Solomon's office is busy. Come back later.*/, 5000);
+	_DISPLAY_HELP_TEXT("MM_SOLBUSY" /*La oficina de Solomon está ocupada. Vuelve más tarde.*/, 5000);
 	return false;
 }
 

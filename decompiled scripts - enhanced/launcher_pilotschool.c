@@ -779,7 +779,7 @@ BOOL func_6(Vehicle veParam0) // Position - 0xADD (2781)
 	return false;
 }
 
-void func_7(char* sParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4) // Position - 0xB20 (2848)
+void func_7(char* sParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) // Position - 0xB20 (2848)
 {
 	if (MISC::IS_STRING_NULL_OR_EMPTY(&Global_99499))
 		return;
@@ -787,7 +787,7 @@ void func_7(char* sParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 	if (MISC::COMPARE_STRINGS(sParam0, &Global_99499, false, -1) != 0)
 		return;
 
-	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, bParam2, bParam3, bParam4, Global_96606);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, bParam3, bParam4, Global_96606);
 	TEXT_LABEL_ASSIGN_STRING(&Global_99499, "", 64);
 	return;
 }
@@ -822,7 +822,7 @@ void func_9() // Position - 0xBA1 (2977)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_10() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1062,19 +1062,19 @@ int func_28() // Position - 0xF9B (3995)
 	return num;
 }
 
-void func_29(ePedComponentType epctParam0) // Position - 0xFB8 (4024)
+void func_29(Ped pedParam0) // Position - 0xFB8 (4024)
 {
 	int num;
 	int num2;
 	int num3;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return;
 
-	num = func_37(epctParam0);
+	num = func_37(pedParam0);
 
 	if (!(num == -1))
 	{
@@ -1083,7 +1083,7 @@ void func_29(ePedComponentType epctParam0) // Position - 0xFB8 (4024)
 		return;
 	}
 
-	num3 = func_31(epctParam0);
+	num3 = func_31(pedParam0);
 
 	if (num3 == -1)
 		return;
@@ -1097,7 +1097,7 @@ void func_30(int iParam0) // Position - 0x1011 (4113)
 	if (iParam0 < 0 || iParam0 >= 5)
 		return;
 
-	if (!(Global_45866[iParam0 /*6*/].f_1 == PV_COMP_HEAD))
+	if (!(Global_45866[iParam0 /*6*/].f_1 == 0))
 		if (Global_45866[iParam0 /*6*/].f_1 == PLAYER::PLAYER_PED_ID())
 			Global_46109 = 0;
 
@@ -1114,7 +1114,7 @@ void func_30(int iParam0) // Position - 0x1011 (4113)
 	return;
 }
 
-int func_31(ePedComponentType epctParam0) // Position - 0x1094 (4244)
+int func_31(Ped pedParam0) // Position - 0x1094 (4244)
 {
 	int i;
 
@@ -1122,7 +1122,7 @@ int func_31(ePedComponentType epctParam0) // Position - 0x1094 (4244)
 
 	for (i = 0; i < 5; i = i + 1)
 	{
-		if (Global_45866[i /*6*/].f_1 == epctParam0)
+		if (Global_45866[i /*6*/].f_1 == pedParam0)
 			return i;
 	}
 
@@ -1205,11 +1205,11 @@ int func_36(int iParam0, int iParam1, int iParam2) // Position - 0x11A8 (4520)
 	return -1;
 }
 
-int func_37(ePedComponentType epctParam0) // Position - 0x11F4 (4596)
+int func_37(Ped pedParam0) // Position - 0x11F4 (4596)
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return -1;
 
 	i = 0;
@@ -1217,7 +1217,7 @@ int func_37(ePedComponentType epctParam0) // Position - 0x11F4 (4596)
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!(Global_45897[i /*5*/] == -1))
-			if (epctParam0 == Global_45897[i /*5*/].f_1)
+			if (pedParam0 == Global_45897[i /*5*/].f_1)
 				return i;
 	}
 
@@ -1918,10 +1918,10 @@ void func_82(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x23A7 (9127
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == BLIP_LEVEL)
-			Global_34170 = BLIP_LEVEL;
+		if (Global_34169 == true)
+			Global_34170 = true;
 	
-		Global_34169 = BLIP_LEVEL;
+		Global_34169 = true;
 	}
 
 	if (bParam1)
@@ -2117,15 +2117,15 @@ BOOL func_88(int iParam0, int iParam1) // Position - 0x2723 (10019)
 void func_89() // Position - 0x2732 (10034)
 {
 	iLocal_97 = 5;
-	sLocal_99 = "PLAY_PSCHOOL" /*Press ~INPUT_CONTEXT~ to enter Flight School.*/;
+	sLocal_99 = "PLAY_PSCHOOL" /*Pulsa ~INPUT_CONTEXT~ para entrar en la escuela de vuelo.*/;
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "Pilot_School", 64);
 	essLocal_95 = 64500;
 	return;
 }
 
-void func_90(float fParam0, int iParam1) // Position - 0x274F (10063)
+void func_90(int iParam0, int iParam1) // Position - 0x274F (10063)
 {
-	func_91(fParam0, iParam1);
+	func_91(iParam0, iParam1);
 	return;
 }
 

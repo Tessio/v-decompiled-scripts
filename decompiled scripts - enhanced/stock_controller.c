@@ -63,7 +63,7 @@ void main() // Position - 0x0 (0)
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("stock_controller")) > 1)
 		func_108();
 
-	Global_65011 = PV_COMP_BERD;
+	Global_65011 = true;
 	iLocal_20 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(480) / 16f);
 	func_107();
 	i = 0;
@@ -92,7 +92,7 @@ void main() // Position - 0x0 (0)
 	func_95();
 	func_94();
 	func_91();
-	Global_65011 = PV_COMP_HEAD;
+	Global_65011 = false;
 	func_90(true);
 	func_87();
 	func_84();
@@ -318,14 +318,14 @@ float func_7(int iParam0) // Position - 0x4CB (1227)
 	int i;
 	float num3;
 	int num4;
-	char* str;
-	char* str2;
-	char* str3;
 	int num5;
 	int num6;
 	int num7;
-	float num8;
-	float num9;
+	int num8;
+	int num9;
+	int num10;
+	float num11;
+	float num12;
 
 	num = 1f;
 
@@ -428,42 +428,42 @@ float func_7(int iParam0) // Position - 0x4CB (1227)
 	{
 		num3 = num - 1f;
 		num4 = iParam0;
-		str = func_8(0, num4);
-		str2 = func_8(1, num4);
-		str3 = func_8(2, num4);
+		num5 = func_8(0, num4);
+		num6 = func_8(1, num4);
+		num7 = func_8(2, num4);
 	
-		if (str + str2 + str3 > 0)
+		if (num5 + num6 + num7 > 0)
 		{
-			num5 = Global_62201[0] + Global_62201[1] + Global_62201[2];
+			num8 = Global_62201[0] + Global_62201[1] + Global_62201[2];
 		
 			for (i = 0; i < 10; i = i + 1)
 			{
 				if (Global_114931.f_20571.f_22[i] > 0)
-					num5 = num5 + BUILTIN::FLOOR(Global_114931.f_20571.f_11[i]);
+					num8 = num8 + BUILTIN::FLOOR(Global_114931.f_20571.f_11[i]);
 			
 				if (Global_114931.f_20571.f_55[i] > 0)
-					num5 = num5 + BUILTIN::FLOOR(Global_114931.f_20571.f_44[i]);
+					num8 = num8 + BUILTIN::FLOOR(Global_114931.f_20571.f_44[i]);
 			
 				if (Global_114931.f_20571.f_88[i] > 0)
-					num5 = num5 + BUILTIN::FLOOR(Global_114931.f_20571.f_77[i]);
+					num8 = num8 + BUILTIN::FLOOR(Global_114931.f_20571.f_77[i]);
 			}
 		
-			num6 = 700000000;
-			num7 = 1000000000;
+			num9 = 700000000;
+			num10 = 1000000000;
 		
-			if (num5 > num7)
+			if (num8 > num10)
 			{
 				num3 = 0f;
 			}
-			else if (num5 < num6)
+			else if (num8 < num9)
 			{
 				num3 = 1f;
 			}
 			else
 			{
-				num8 = BUILTIN::TO_FLOAT(num5 - num6);
-				num9 = BUILTIN::TO_FLOAT(num7 - num6);
-				num3 = num3 * (1f - (num8 / num9));
+				num11 = BUILTIN::TO_FLOAT(num8 - num9);
+				num12 = BUILTIN::TO_FLOAT(num10 - num9);
+				num3 = num3 * (1f - (num11 / num12));
 			}
 		}
 	
@@ -473,7 +473,7 @@ float func_7(int iParam0) // Position - 0x4CB (1227)
 	return num;
 }
 
-char* func_8(int iParam0, int iParam1) // Position - 0x844 (2116)
+int func_8(int iParam0, int iParam1) // Position - 0x844 (2116)
 {
 	if (iParam1 < 0 || iParam1 > 9)
 		return 0;
@@ -1542,73 +1542,73 @@ void func_42() // Position - 0x1BF5 (7157)
 
 float func_43(int iParam0) // Position - 0x1CD1 (7377)
 {
-	char* str;
-	char* str2;
-	char* str3;
 	int num;
 	int num2;
-	float value;
-	int i;
-	char* str4;
 	int num3;
 	int num4;
-	float num5;
-	float num6;
+	int num5;
+	float value;
+	int i;
+	int num6;
+	int num7;
+	int num8;
+	float num9;
+	float num10;
 
 	if (Global_57326[iParam0 /*36*/].f_8)
 		return 1f;
 
-	str = func_8(0, iParam0);
-	str2 = func_8(1, iParam0);
-	str3 = func_8(2, iParam0);
+	num = func_8(0, iParam0);
+	num2 = func_8(1, iParam0);
+	num3 = func_8(2, iParam0);
 
-	if (str + str2 + str3 < 1)
+	if (num + num2 + num3 < 1)
 		return 1f;
 
-	num = 1000000000;
-	num2 = Global_62201[0] + Global_62201[1] + Global_62201[2];
+	num4 = 1000000000;
+	num5 = Global_62201[0] + Global_62201[1] + Global_62201[2];
 
-	if (Global_62201[0] > num)
+	if (Global_62201[0] > num4)
 		return 0f;
 
-	if (Global_62201[1] > num)
+	if (Global_62201[1] > num4)
 		return 0f;
 
-	if (Global_62201[2] > num)
+	if (Global_62201[2] > num4)
 		return 0f;
 
 	value = 0f;
 
 	for (i = 0; i < 10; i = i + 1)
 	{
-		str4 = func_8(0, i);
+		num6 = func_8(0, i);
 	
-		if (str4 > 0)
-			value = value + (func_6(func_44(0, i)) * (float)str4);
+		if (num6 > 0)
+			value = value + (func_6(func_44(0, i)) * (float)num6);
 	
 		if (func_8(1, i) > 0)
-			value = value + (func_6(func_44(1, i)) * (float)str4);
+			value = value + (func_6(func_44(1, i)) * (float)num6);
 	
 		if (func_8(2, i) > 0)
-			value = value + (func_6(func_44(2, i)) * (float)str4);
+			value = value + (func_6(func_44(2, i)) * (float)num6);
 	}
 
-	num3 = BUILTIN::FLOOR(value) + num2;
-	num4 = 700000000;
+	num7 = BUILTIN::FLOOR(value) + num5;
+	num8 = 700000000;
 
-	if (num3 > num)
+	if (num7 > num4)
 		return 0f;
 
-	if (num3 < num4)
+	if (num7 < num8)
 		return 1f;
 
-	num5 = BUILTIN::TO_FLOAT(num3 - num4);
-	num6 = BUILTIN::TO_FLOAT(num - num4);
+	num9 = BUILTIN::TO_FLOAT(num7 - num8);
+	num10 = BUILTIN::TO_FLOAT(num4 - num8);
 
-	if (!(num6 > 0f))
+	if (!(num10 > 0f))
 		return 1f;
 
-	return 1f - (num5 / num6);
+	return 1f - (num9 / num10);
 }
 
 int func_44(int iParam0, int iParam1) // Position - 0x1E26 (7718)
@@ -1999,30 +1999,30 @@ BOOL func_58(Vehicle veParam0) // Position - 0x246D (9325)
 	return true;
 }
 
-BOOL func_59(ePedComponentType epctParam0) // Position - 0x24AF (9391)
+BOOL func_59(Vehicle veParam0) // Position - 0x24AF (9391)
 {
 	int i;
 
 	for (i = 0; i < 3; i = i + 1)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(Global_99790[i]))
-			if (Global_99790[i] == epctParam0)
+			if (Global_99790[i] == veParam0)
 				return true;
 	}
 
 	return false;
 }
 
-BOOL func_60(ePedComponentType epctParam0) // Position - 0x24EA (9450)
+BOOL func_60(Vehicle veParam0) // Position - 0x24EA (9450)
 {
 	int i;
 
-	if (ENTITY::DOES_ENTITY_EXIST(epctParam0) && VEHICLE::IS_VEHICLE_DRIVEABLE(epctParam0, false))
+	if (ENTITY::DOES_ENTITY_EXIST(veParam0) && VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
 	{
 		for (i = 0; i < 9; i = i + 1)
 		{
 			if (ENTITY::DOES_ENTITY_EXIST(Global_99760[i]) && VEHICLE::IS_VEHICLE_DRIVEABLE(Global_99760[i], false))
-				if (Global_99760[i] == epctParam0 && ENTITY::GET_ENTITY_MODEL(Global_99760[i]) == ENTITY::GET_ENTITY_MODEL(epctParam0))
+				if (Global_99760[i] == veParam0 && ENTITY::GET_ENTITY_MODEL(Global_99760[i]) == ENTITY::GET_ENTITY_MODEL(veParam0))
 					return true;
 		}
 	}
@@ -2030,17 +2030,17 @@ BOOL func_60(ePedComponentType epctParam0) // Position - 0x24EA (9450)
 	return false;
 }
 
-BOOL func_61(ePedComponentType epctParam0, var uParam1) // Position - 0x2566 (9574)
+BOOL func_61(Vehicle veParam0, var uParam1) // Position - 0x2566 (9574)
 {
 	int i;
 
 	for (i = 0; i < 68; i = i + 1)
 	{
-		if (Global_79095.f_484[i] == epctParam0)
+		if (Global_79095.f_484[i] == veParam0)
 		{
 			if (func_62(&Global_79095.f_555[0 /*21*/], i))
 			{
-				if (IS_BIT_SET(Global_79095.f_555[0 /*21*/].f_9, 10) && Global_79095.f_555[0 /*21*/].f_4 == ENTITY::GET_ENTITY_MODEL(epctParam0))
+				if (IS_BIT_SET(Global_79095.f_555[0 /*21*/].f_9, 10) && Global_79095.f_555[0 /*21*/].f_4 == ENTITY::GET_ENTITY_MODEL(veParam0))
 				{
 					*uParam1 = i;
 					return true;
@@ -2052,343 +2052,343 @@ BOOL func_61(ePedComponentType epctParam0, var uParam1) // Position - 0x2566 (95
 	return false;
 }
 
-BOOL func_62(Vehicle veParam0, int iParam1) // Position - 0x25D8 (9688)
+BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 (9688)
 {
 	BOOL num;
 	int num2;
 
-	*veParam0 = { 0f, 0f, 0f };
-	veParam0->f_3 = 0f;
-	veParam0->f_4 = 0;
-	TEXT_LABEL_ASSIGN_STRING(&(veParam0->f_5), "", 16);
-	veParam0->f_9 = 0;
-	veParam0->f_10 = 0;
-	veParam0->f_11 = 0;
-	veParam0->f_12 = 145;
-	veParam0->f_13 = -1;
-	veParam0->f_14 = 0;
-	veParam0->f_15 = { 0f, 0f, 0f };
-	veParam0->f_18 = { 0f, 0f, 0f };
+	*uParam0 = { 0f, 0f, 0f };
+	uParam0->f_3 = 0f;
+	uParam0->f_4 = 0;
+	TEXT_LABEL_ASSIGN_STRING(&(uParam0->f_5), "", 16);
+	uParam0->f_9 = 0;
+	uParam0->f_10 = 0;
+	uParam0->f_11 = 0;
+	uParam0->f_12 = 145;
+	uParam0->f_13 = -1;
+	uParam0->f_14 = 0;
+	uParam0->f_15 = { 0f, 0f, 0f };
+	uParam0->f_18 = { 0f, 0f, 0f };
 
 	switch (iParam1)
 	{
 		case 0:
-			*veParam0 = { -831.8538f, 172.1154f, 69.9058f };
-			veParam0->f_3 = 157.5705f;
-			veParam0->f_4 = func_65(CHAR_MICHAEL, 1);
-			veParam0->f_12 = 0;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { -831.8538f, 172.1154f, 69.9058f };
+			uParam0->f_3 = 157.5705f;
+			uParam0->f_4 = func_65(CHAR_MICHAEL, 1);
+			uParam0->f_12 = 0;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 1:
-			*veParam0 = { 1970.9434f, 3801.6838f, 31.1396f };
-			veParam0->f_3 = 301.3964f;
-			veParam0->f_4 = func_65(CHAR_MICHAEL, 1);
-			veParam0->f_12 = 0;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 1970.9434f, 3801.6838f, 31.1396f };
+			uParam0->f_3 = 301.3964f;
+			uParam0->f_4 = func_65(CHAR_MICHAEL, 1);
+			uParam0->f_12 = 0;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 2:
-			*veParam0 = { -22.6297f, -1439.1368f, 29.6549f };
-			veParam0->f_3 = 180.0808f;
-			veParam0->f_4 = func_65(CHAR_FRANKLIN, 1);
-			veParam0->f_12 = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { -22.6297f, -1439.1368f, 29.6549f };
+			uParam0->f_3 = 180.0808f;
+			uParam0->f_4 = func_65(CHAR_FRANKLIN, 1);
+			uParam0->f_12 = 1;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 3:
-			*veParam0 = { -22.5229f, -1434.6986f, 29.6552f };
-			veParam0->f_3 = 141.6114f;
-			veParam0->f_4 = func_65(CHAR_FRANKLIN, 2);
-			veParam0->f_12 = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 19);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { -22.5229f, -1434.6986f, 29.6552f };
+			uParam0->f_3 = 141.6114f;
+			uParam0->f_4 = func_65(CHAR_FRANKLIN, 2);
+			uParam0->f_12 = 1;
+			MISC::SET_BIT(&(uParam0->f_9), 19);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 4:
-			*veParam0 = { 10.9281f, 545.669f, 174.7951f };
-			veParam0->f_3 = 61.392f;
-			veParam0->f_4 = func_65(CHAR_FRANKLIN, 1);
-			veParam0->f_12 = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 10.9281f, 545.669f, 174.7951f };
+			uParam0->f_3 = 61.392f;
+			uParam0->f_4 = func_65(CHAR_FRANKLIN, 1);
+			uParam0->f_12 = 1;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 5:
-			*veParam0 = { 6.1093f, 544.9742f, 174.2835f };
-			veParam0->f_3 = 92.1548f;
-			veParam0->f_4 = func_65(CHAR_FRANKLIN, 2);
-			veParam0->f_12 = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 19);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 6.1093f, 544.9742f, 174.2835f };
+			uParam0->f_3 = 92.1548f;
+			uParam0->f_4 = func_65(CHAR_FRANKLIN, 2);
+			uParam0->f_12 = 1;
+			MISC::SET_BIT(&(uParam0->f_9), 19);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 6:
-			*veParam0 = { 1981.4163f, 3808.1313f, 31.1384f };
-			veParam0->f_3 = 117.2557f;
-			veParam0->f_4 = func_65(CHAR_TREVOR, 1);
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 1981.4163f, 3808.1313f, 31.1384f };
+			uParam0->f_3 = 117.2557f;
+			uParam0->f_4 = func_65(CHAR_TREVOR, 1);
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 7:
-			*veParam0 = { -1158.4875f, -1529.3673f, 3.8995f };
-			veParam0->f_3 = 35.7505f;
-			veParam0->f_4 = func_65(CHAR_TREVOR, 1);
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { -1158.4875f, -1529.3673f, 3.8995f };
+			uParam0->f_3 = 35.7505f;
+			uParam0->f_4 = func_65(CHAR_TREVOR, 1);
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 8:
-			*veParam0 = { 148.2868f, -1270.5695f, 28.2252f };
-			veParam0->f_3 = 208.4685f;
-			veParam0->f_4 = func_65(CHAR_TREVOR, 1);
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 20);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
+			*uParam0 = { 148.2868f, -1270.5695f, 28.2252f };
+			uParam0->f_3 = 208.4685f;
+			uParam0->f_4 = func_65(CHAR_TREVOR, 1);
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 20);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
 			num = 1;
 			break;
 	
 		case 9:
-			*veParam0 = { 1459.5085f, -1380.45f, 78.3259f };
-			veParam0->f_3 = 99.6211f;
-			veParam0->f_4 = joaat("scorcher");
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 1459.5085f, -1380.45f, 78.3259f };
+			uParam0->f_3 = 99.6211f;
+			uParam0->f_4 = joaat("scorcher");
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 10:
-			*veParam0 = { -1518.947f, -1387.8655f, -0.5134f };
-			veParam0->f_3 = 98.3867f;
-			veParam0->f_4 = joaat("seashark");
+			*uParam0 = { -1518.947f, -1387.8655f, -0.5134f };
+			uParam0->f_3 = 98.3867f;
+			uParam0->f_4 = joaat("seashark");
 			num = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			break;
 	
 		case 11:
-			*veParam0 = { 353.0926f, 3577.5925f, 32.351f };
-			veParam0->f_3 = 16.6205f;
-			veParam0->f_4 = joaat("duster");
+			*uParam0 = { 353.0926f, 3577.5925f, 32.351f };
+			uParam0->f_3 = 16.6205f;
+			uParam0->f_4 = joaat("duster");
 			num = 1;
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			break;
 	
 		case 12:
-			veParam0->f_14 = 0;
-			*veParam0 = { -1652.0043f, -3142.3484f, 12.9921f };
-			veParam0->f_3 = 329.1082f;
-			veParam0->f_12 = 0;
-			veParam0->f_13 = 359;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 0;
+			*uParam0 = { -1652.0043f, -3142.3484f, 12.9921f };
+			uParam0->f_3 = 329.1082f;
+			uParam0->f_12 = 0;
+			uParam0->f_13 = 359;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 13:
-			veParam0->f_14 = 1;
-			*veParam0 = { -1271.6487f, -3380.6853f, 12.9451f };
-			veParam0->f_3 = 329.5137f;
-			veParam0->f_12 = 1;
-			veParam0->f_13 = 359;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 1;
+			*uParam0 = { -1271.6487f, -3380.6853f, 12.9451f };
+			uParam0->f_3 = 329.5137f;
+			uParam0->f_12 = 1;
+			uParam0->f_13 = 359;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 14:
-			veParam0->f_14 = 2;
-			*veParam0 = { 1735.5863f, 3294.5305f, 40.1651f };
-			veParam0->f_3 = 194.9525f;
-			veParam0->f_12 = 2;
-			veParam0->f_13 = 359;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 2;
+			*uParam0 = { 1735.5863f, 3294.5305f, 40.1651f };
+			uParam0->f_3 = 194.9525f;
+			uParam0->f_12 = 2;
+			uParam0->f_13 = 359;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 15:
-			veParam0->f_14 = 3;
-			*veParam0 = { -846.27f, -1363.19f, 0.22f };
-			veParam0->f_3 = 108.78f;
-			veParam0->f_12 = 0;
-			veParam0->f_13 = 356;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 22);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 3;
+			*uParam0 = { -846.27f, -1363.19f, 0.22f };
+			uParam0->f_3 = 108.78f;
+			uParam0->f_12 = 0;
+			uParam0->f_13 = 356;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 22);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 16:
-			veParam0->f_14 = 4;
-			*veParam0 = { -849.47f, -1354.99f, 0.24f };
-			veParam0->f_3 = 109.84f;
-			veParam0->f_12 = 1;
-			veParam0->f_13 = 356;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 22);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 4;
+			*uParam0 = { -849.47f, -1354.99f, 0.24f };
+			uParam0->f_3 = 109.84f;
+			uParam0->f_12 = 1;
+			uParam0->f_13 = 356;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 22);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 17:
-			veParam0->f_14 = 5;
-			*veParam0 = { -852.47f, -1346.2f, 0.21f };
-			veParam0->f_3 = 108.76f;
-			veParam0->f_12 = 2;
-			veParam0->f_13 = 356;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 22);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 5;
+			*uParam0 = { -852.47f, -1346.2f, 0.21f };
+			uParam0->f_3 = 108.76f;
+			uParam0->f_12 = 2;
+			uParam0->f_13 = 356;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 22);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 18:
-			veParam0->f_14 = 6;
-			*veParam0 = { -745.857f, -1433.9036f, 4.0005f };
-			veParam0->f_12 = 0;
-			veParam0->f_13 = 360;
-			veParam0->f_15 = { -756.2952f, -1441.6093f, 2.9184f };
-			veParam0->f_18 = { -738.0606f, -1423.0676f, 8.2835f };
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 6;
+			*uParam0 = { -745.857f, -1433.9036f, 4.0005f };
+			uParam0->f_12 = 0;
+			uParam0->f_13 = 360;
+			uParam0->f_15 = { -756.2952f, -1441.6093f, 2.9184f };
+			uParam0->f_18 = { -738.0606f, -1423.0676f, 8.2835f };
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 19:
-			veParam0->f_14 = 7;
-			*veParam0 = { -761.8486f, -1453.8293f, 4.0005f };
-			veParam0->f_12 = 1;
-			veParam0->f_13 = 360;
-			veParam0->f_15 = { -772.8158f, -1459.9572f, 3.2894f };
-			veParam0->f_18 = { -754.3353f, -1440.836f, 8.3334f };
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 7;
+			*uParam0 = { -761.8486f, -1453.8293f, 4.0005f };
+			uParam0->f_12 = 1;
+			uParam0->f_13 = 360;
+			uParam0->f_15 = { -772.8158f, -1459.9572f, 3.2894f };
+			uParam0->f_18 = { -754.3353f, -1440.836f, 8.3334f };
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 20:
-			veParam0->f_14 = 8;
-			*veParam0 = { 1769.3f, 3244f, 41.1f };
-			veParam0->f_12 = 2;
-			veParam0->f_13 = 360;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
+			uParam0->f_14 = 8;
+			*uParam0 = { 1769.3f, 3244f, 41.1f };
+			uParam0->f_12 = 2;
+			uParam0->f_13 = 360;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
 			num = 1;
 			break;
 	
 		case 21:
-			veParam0->f_14 = 9;
-			*veParam0 = { 192.7897f, -1020.5385f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 0;
-			veParam0->f_13 = 357;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 9;
+			*uParam0 = { 192.7897f, -1020.5385f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 0;
+			uParam0->f_13 = 357;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
 		case 22:
-			veParam0->f_14 = 10;
-			*veParam0 = { 192.7897f, -1020.5385f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 1;
-			veParam0->f_13 = 357;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 10;
+			*uParam0 = { 192.7897f, -1020.5385f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 1;
+			uParam0->f_13 = 357;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
 		case 23:
-			veParam0->f_14 = 11;
-			*veParam0 = { 192.7897f, -1020.5385f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 2;
-			veParam0->f_13 = 357;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 14);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 28);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 11;
+			*uParam0 = { 192.7897f, -1020.5385f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 2;
+			uParam0->f_13 = 357;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 14);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 28);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
@@ -2396,17 +2396,17 @@ BOOL func_62(Vehicle veParam0, int iParam1) // Position - 0x25D8 (9688)
 		case 27:
 		case 28:
 			num2 = iParam1 - 26;
-			veParam0->f_14 = 12 + num2;
-			*veParam0 = { 196.2794f, -1020.4791f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 0 + num2;
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 27);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 12 + num2;
+			*uParam0 = { 196.2794f, -1020.4791f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 0 + num2;
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 27);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
@@ -2414,17 +2414,17 @@ BOOL func_62(Vehicle veParam0, int iParam1) // Position - 0x25D8 (9688)
 		case 30:
 		case 31:
 			num2 = iParam1 - 29;
-			veParam0->f_14 = 15 + num2;
-			*veParam0 = { 199.8872f, -1020.048f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 0 + num2;
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 27);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 15 + num2;
+			*uParam0 = { 199.8872f, -1020.048f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 0 + num2;
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 27);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
@@ -2432,385 +2432,385 @@ BOOL func_62(Vehicle veParam0, int iParam1) // Position - 0x25D8 (9688)
 		case 33:
 		case 34:
 			num2 = iParam1 - 32;
-			veParam0->f_14 = 18 + num2;
-			*veParam0 = { 203.6006f, -1019.7762f, -99.98f };
-			veParam0->f_3 = 180f;
-			veParam0->f_4 = 0;
-			veParam0->f_12 = 0 + num2;
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
-			MISC::SET_BIT(&(veParam0->f_9), 7);
-			MISC::SET_BIT(&(veParam0->f_9), 27);
-			MISC::SET_BIT(&(veParam0->f_9), 24);
-			MISC::SET_BIT(&(veParam0->f_9), 29);
+			uParam0->f_14 = 18 + num2;
+			*uParam0 = { 203.6006f, -1019.7762f, -99.98f };
+			uParam0->f_3 = 180f;
+			uParam0->f_4 = 0;
+			uParam0->f_12 = 0 + num2;
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
+			MISC::SET_BIT(&(uParam0->f_9), 7);
+			MISC::SET_BIT(&(uParam0->f_9), 27);
+			MISC::SET_BIT(&(uParam0->f_9), 24);
+			MISC::SET_BIT(&(uParam0->f_9), 29);
 			num = 1;
 			break;
 	
 		case 24:
-			veParam0->f_14 = 21;
-			*veParam0 = { 0f, 0f, 0f };
-			veParam0->f_3 = 0f;
-			veParam0->f_4 = 0;
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 11);
-			MISC::SET_BIT(&(veParam0->f_9), 13);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
+			uParam0->f_14 = 21;
+			*uParam0 = { 0f, 0f, 0f };
+			uParam0->f_3 = 0f;
+			uParam0->f_4 = 0;
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 11);
+			MISC::SET_BIT(&(uParam0->f_9), 13);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
 			num = 1;
 			break;
 	
 		case 25:
-			veParam0->f_14 = 22;
-			*veParam0 = { 723.2515f, -632.0496f, 27.1484f };
-			veParam0->f_3 = 12.9316f;
-			veParam0->f_4 = joaat("tailgater");
-			MISC::SET_BIT(&(veParam0->f_9), 10);
-			MISC::SET_BIT(&(veParam0->f_9), 11);
-			MISC::SET_BIT(&(veParam0->f_9), 13);
-			MISC::SET_BIT(&(veParam0->f_9), 12);
+			uParam0->f_14 = 22;
+			*uParam0 = { 723.2515f, -632.0496f, 27.1484f };
+			uParam0->f_3 = 12.9316f;
+			uParam0->f_4 = joaat("tailgater");
+			MISC::SET_BIT(&(uParam0->f_9), 10);
+			MISC::SET_BIT(&(uParam0->f_9), 11);
+			MISC::SET_BIT(&(uParam0->f_9), 13);
+			MISC::SET_BIT(&(uParam0->f_9), 12);
 			num = 1;
 			break;
 	
 		case 35:
-			*veParam0 = { -51.23f, 3111.9f, 24.95f };
-			veParam0->f_3 = 46.78f;
-			veParam0->f_4 = joaat("proptrailer");
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { -51.23f, 3111.9f, 24.95f };
+			uParam0->f_3 = 46.78f;
+			uParam0->f_4 = joaat("proptrailer");
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 36:
-			*veParam0 = { -55.7984f, -1096.5856f, 25.4223f };
-			veParam0->f_3 = 308.0596f;
-			veParam0->f_4 = joaat("bjxl");
-			veParam0->f_10 = 126;
-			veParam0->f_11 = 126;
-			MISC::SET_BIT(&(veParam0->f_9), 9);
-			MISC::SET_BIT(&(veParam0->f_9), 13);
+			*uParam0 = { -55.7984f, -1096.5856f, 25.4223f };
+			uParam0->f_3 = 308.0596f;
+			uParam0->f_4 = joaat("bjxl");
+			uParam0->f_10 = 126;
+			uParam0->f_11 = 126;
+			MISC::SET_BIT(&(uParam0->f_9), 9);
+			MISC::SET_BIT(&(uParam0->f_9), 13);
 			num = 1;
 			break;
 	
 		case 37:
-			*veParam0 = { -2892.93f, 3192.37f, 11.66f };
-			veParam0->f_3 = -132.35f;
-			veParam0->f_4 = joaat("velum");
-			veParam0->f_10 = 157;
-			veParam0->f_11 = 157;
-			MISC::SET_BIT(&(veParam0->f_9), 9);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 13);
+			*uParam0 = { -2892.93f, 3192.37f, 11.66f };
+			uParam0->f_3 = -132.35f;
+			uParam0->f_4 = joaat("velum");
+			uParam0->f_10 = 157;
+			uParam0->f_11 = 157;
+			MISC::SET_BIT(&(uParam0->f_9), 9);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 13);
 			num = 1;
 			break;
 	
 		case 38:
-			*veParam0 = { 1744.3083f, 3270.673f, 40.2076f };
-			veParam0->f_3 = 125f;
-			veParam0->f_4 = joaat("cargobob3");
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 1744.3083f, 3270.673f, 40.2076f };
+			uParam0->f_3 = 125f;
+			uParam0->f_4 = joaat("cargobob3");
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 39:
-			*veParam0 = { 1751.4397f, 3322.643f, 42.1855f };
-			veParam0->f_3 = 268.134f;
-			veParam0->f_4 = joaat("submersible");
-			MISC::SET_BIT(&(veParam0->f_9), 23);
+			*uParam0 = { 1751.4397f, 3322.643f, 42.1855f };
+			uParam0->f_3 = 268.134f;
+			uParam0->f_4 = joaat("submersible");
+			MISC::SET_BIT(&(uParam0->f_9), 23);
 			num = 1;
 			break;
 	
 		case 41:
-			*veParam0 = { 1377.1045f, -2076.2f, 52f };
-			veParam0->f_3 = 37.5f;
-			veParam0->f_4 = joaat("towtruck");
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 1377.1045f, -2076.2f, 52f };
+			uParam0->f_3 = 37.5f;
+			uParam0->f_4 = joaat("towtruck");
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 40:
-			*veParam0 = { 1380.42f, -2072.7695f, 51.7607f };
-			veParam0->f_3 = 37.5f;
-			veParam0->f_4 = joaat("trash");
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 1380.42f, -2072.7695f, 51.7607f };
+			uParam0->f_3 = 37.5f;
+			uParam0->f_4 = joaat("trash");
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 42:
-			*veParam0 = { 1359.3892f, 3618.4407f, 33.8907f };
-			veParam0->f_3 = 108.2337f;
-			veParam0->f_4 = joaat("barracks");
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 1359.3892f, 3618.4407f, 33.8907f };
+			uParam0->f_3 = 108.2337f;
+			uParam0->f_4 = joaat("barracks");
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 43:
-			*veParam0 = { 693.1154f, -1018.1551f, 21.6387f };
-			veParam0->f_3 = 177.6454f;
-			veParam0->f_4 = joaat("firetruk");
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 8);
+			*uParam0 = { 693.1154f, -1018.1551f, 21.6387f };
+			uParam0->f_3 = 177.6454f;
+			uParam0->f_4 = joaat("firetruk");
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 8);
 			num = 1;
 			break;
 	
 		case 44:
-			*veParam0 = { -73.6963f, 495.124f, 143.5226f };
-			veParam0->f_3 = 155.5994f;
-			veParam0->f_4 = joaat("vacca");
+			*uParam0 = { -73.6963f, 495.124f, 143.5226f };
+			uParam0->f_3 = 155.5994f;
+			uParam0->f_4 = joaat("vacca");
 			num = 1;
 			break;
 	
 		case 45:
-			*veParam0 = { -67.6314f, 891.8266f, 234.5348f };
-			veParam0->f_3 = 294.993f;
-			veParam0->f_4 = joaat("surano");
+			*uParam0 = { -67.6314f, 891.8266f, 234.5348f };
+			uParam0->f_3 = 294.993f;
+			uParam0->f_4 = joaat("surano");
 			num = 1;
 			break;
 	
 		case 46:
-			*veParam0 = { 533.9048f, -169.2469f, 53.7005f };
-			veParam0->f_3 = 1.2998f;
-			veParam0->f_4 = joaat("tornado2");
+			*uParam0 = { 533.9048f, -169.2469f, 53.7005f };
+			uParam0->f_3 = 1.2998f;
+			uParam0->f_4 = joaat("tornado2");
 			num = 1;
 			break;
 	
 		case 47:
-			*veParam0 = { -726.8914f, -408.6952f, 34.0416f };
-			veParam0->f_3 = 267.7392f;
-			veParam0->f_4 = joaat("superd");
+			*uParam0 = { -726.8914f, -408.6952f, 34.0416f };
+			uParam0->f_3 = 267.7392f;
+			uParam0->f_4 = joaat("superd");
 			num = 1;
 			break;
 	
 		case 48:
-			*veParam0 = { -1321.5186f, 261.3993f, 61.5709f };
-			veParam0->f_3 = 350.7697f;
-			veParam0->f_4 = joaat("double");
+			*uParam0 = { -1321.5186f, 261.3993f, 61.5709f };
+			uParam0->f_3 = 350.7697f;
+			uParam0->f_4 = joaat("double");
 			num = 1;
 			break;
 	
 		case 49:
-			*veParam0 = { -1267.9991f, 451.6463f, 93.7071f };
-			veParam0->f_3 = 48.9311f;
-			veParam0->f_4 = joaat("double");
+			*uParam0 = { -1267.9991f, 451.6463f, 93.7071f };
+			uParam0->f_3 = 48.9311f;
+			uParam0->f_4 = joaat("double");
 			num = 1;
 			break;
 	
 		case 50:
-			*veParam0 = { -1062.0762f, -226.7637f, 37.157f };
-			veParam0->f_3 = 234.2767f;
-			veParam0->f_4 = joaat("double");
+			*uParam0 = { -1062.0762f, -226.7637f, 37.157f };
+			uParam0->f_3 = 234.2767f;
+			uParam0->f_4 = joaat("double");
 			num = 1;
 			break;
 	
 		case 51:
-			*veParam0 = { 68.16914f, -1558.9581f, 29.469042f };
-			veParam0->f_3 = 49.905754f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 68.16914f, -1558.9581f, 29.469042f };
+			uParam0->f_3 = 49.905754f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 52:
-			*veParam0 = { 589.4399f, 2736.7078f, 42.033165f };
-			veParam0->f_3 = -175.7105f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 589.4399f, 2736.7078f, 42.033165f };
+			uParam0->f_3 = -175.7105f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 53:
-			*veParam0 = { -488.77396f, -344.57205f, 34.363564f };
-			veParam0->f_3 = 82.4042f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { -488.77396f, -344.57205f, 34.363564f };
+			uParam0->f_3 = 82.4042f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 54:
-			*veParam0 = { 288.88083f, -585.47284f, 43.15428f };
-			veParam0->f_3 = -20.807068f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 288.88083f, -585.47284f, 43.15428f };
+			uParam0->f_3 = -20.807068f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 55:
-			*veParam0 = { 304.82938f, -1383.6742f, 31.677443f };
-			veParam0->f_3 = -41.116028f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 304.82938f, -1383.6742f, 31.677443f };
+			uParam0->f_3 = -41.116028f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 56:
-			*veParam0 = { 1126.1943f, -1481.486f, 34.701603f };
-			veParam0->f_3 = -91.43369f;
-			veParam0->f_4 = joaat("rumpo2");
-			veParam0->f_12 = 2;
-			MISC::SET_BIT(&(veParam0->f_9), 26);
+			*uParam0 = { 1126.1943f, -1481.486f, 34.701603f };
+			uParam0->f_3 = -91.43369f;
+			uParam0->f_4 = joaat("rumpo2");
+			uParam0->f_12 = 2;
+			MISC::SET_BIT(&(uParam0->f_9), 26);
 			num = 1;
 			break;
 	
 		case 57:
-			*veParam0 = { -1598.36f, 5252.84f, 0f };
-			veParam0->f_3 = 28.14f;
-			veParam0->f_4 = joaat("submersible");
-			veParam0->f_13 = 308;
-			MISC::SET_BIT(&(veParam0->f_9), 2);
-			MISC::SET_BIT(&(veParam0->f_9), 30);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { -1598.36f, 5252.84f, 0f };
+			uParam0->f_3 = 28.14f;
+			uParam0->f_4 = joaat("submersible");
+			uParam0->f_13 = 308;
+			MISC::SET_BIT(&(uParam0->f_9), 2);
+			MISC::SET_BIT(&(uParam0->f_9), 30);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 58:
-			*veParam0 = { -1602.62f, 5260.37f, 0.86f };
-			veParam0->f_3 = 25.32f;
-			veParam0->f_4 = joaat("dinghy");
-			veParam0->f_13 = 404;
-			MISC::SET_BIT(&(veParam0->f_9), 2);
-			MISC::SET_BIT(&(veParam0->f_9), 22);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { -1602.62f, 5260.37f, 0.86f };
+			uParam0->f_3 = 25.32f;
+			uParam0->f_4 = joaat("dinghy");
+			uParam0->f_13 = 404;
+			MISC::SET_BIT(&(uParam0->f_9), 2);
+			MISC::SET_BIT(&(uParam0->f_9), 22);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 59:
-			*veParam0 = { 2116.571f, 4763.2793f, 40.1596f };
-			veParam0->f_3 = 198.723f;
-			veParam0->f_4 = joaat("bfinjection");
+			*uParam0 = { 2116.571f, 4763.2793f, 40.1596f };
+			uParam0->f_3 = 198.723f;
+			uParam0->f_4 = joaat("bfinjection");
 			num = 1;
 			break;
 	
 		case 60:
-			*veParam0 = { 1133.21f, 120.2f, 80.9f };
-			veParam0->f_3 = 134.4f;
+			*uParam0 = { 1133.21f, 120.2f, 80.9f };
+			uParam0->f_3 = 134.4f;
 		
 			if (_IS_EXCLUSIVE_CONTENT_UNLOCKED())
-				veParam0->f_4 = joaat("blimp2");
+				uParam0->f_4 = joaat("blimp2");
 			else
-				veParam0->f_4 = joaat("blimp");
+				uParam0->f_4 = joaat("blimp");
 		
-			veParam0->f_13 = 401;
-			MISC::SET_BIT(&(veParam0->f_9), 13);
-			MISC::SET_BIT(&(veParam0->f_9), 2);
-			MISC::SET_BIT(&(veParam0->f_9), 1);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
+			uParam0->f_13 = 401;
+			MISC::SET_BIT(&(uParam0->f_9), 13);
+			MISC::SET_BIT(&(uParam0->f_9), 2);
+			MISC::SET_BIT(&(uParam0->f_9), 1);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
 			num = 1;
 			break;
 	
 		case 61:
-			*veParam0 = { -806.31f, -2679.65f, 13.9f };
-			veParam0->f_3 = 150.54f;
+			*uParam0 = { -806.31f, -2679.65f, 13.9f };
+			uParam0->f_3 = 150.54f;
 		
 			if (_IS_EXCLUSIVE_CONTENT_UNLOCKED())
-				veParam0->f_4 = joaat("blimp2");
+				uParam0->f_4 = joaat("blimp2");
 			else
-				veParam0->f_4 = joaat("blimp");
+				uParam0->f_4 = joaat("blimp");
 		
-			veParam0->f_13 = 401;
-			MISC::SET_BIT(&(veParam0->f_9), 13);
-			MISC::SET_BIT(&(veParam0->f_9), 2);
-			MISC::SET_BIT(&(veParam0->f_9), 1);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
+			uParam0->f_13 = 401;
+			MISC::SET_BIT(&(uParam0->f_9), 13);
+			MISC::SET_BIT(&(uParam0->f_9), 2);
+			MISC::SET_BIT(&(uParam0->f_9), 1);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
 			num = 1;
 			break;
 	
 		case 62:
-			*veParam0 = { 1985.85f, 3828.96f, 31.98f };
-			veParam0->f_3 = -16.58f;
-			veParam0->f_4 = joaat("blazer3");
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 1985.85f, 3828.96f, 31.98f };
+			uParam0->f_3 = -16.58f;
+			uParam0->f_4 = joaat("blazer3");
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 63:
-			*veParam0 = { 3870.75f, 4464.67f, 0f };
-			veParam0->f_3 = 0f;
-			veParam0->f_4 = joaat("submersible2");
-			veParam0->f_13 = 308;
-			MISC::SET_BIT(&(veParam0->f_9), 0);
-			MISC::SET_BIT(&(veParam0->f_9), 21);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
-			MISC::SET_BIT(&(veParam0->f_9), 30);
+			*uParam0 = { 3870.75f, 4464.67f, 0f };
+			uParam0->f_3 = 0f;
+			uParam0->f_4 = joaat("submersible2");
+			uParam0->f_13 = 308;
+			MISC::SET_BIT(&(uParam0->f_9), 0);
+			MISC::SET_BIT(&(uParam0->f_9), 21);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
+			MISC::SET_BIT(&(uParam0->f_9), 30);
 			num = 1;
 			break;
 	
 		case 64:
-			*veParam0 = { 1257.7295f, -2564.474f, 41.717f };
-			veParam0->f_3 = 284.5561f;
-			veParam0->f_4 = joaat("dukes2");
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 1257.7295f, -2564.474f, 41.717f };
+			uParam0->f_3 = 284.5561f;
+			uParam0->f_4 = joaat("dukes2");
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 65:
-			*veParam0 = { 643.2823f, 3014.152f, 42.2733f };
-			veParam0->f_3 = 128.0554f;
-			veParam0->f_4 = joaat("dukes2");
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 643.2823f, 3014.152f, 42.2733f };
+			uParam0->f_3 = 128.0554f;
+			uParam0->f_4 = joaat("dukes2");
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 66:
-			*veParam0 = { 38.9368f, 850.8677f, 196.3f };
-			veParam0->f_3 = 311.6813f;
-			veParam0->f_4 = joaat("dodo");
-			MISC::SET_BIT(&(veParam0->f_9), 30);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 38.9368f, 850.8677f, 196.3f };
+			uParam0->f_3 = 311.6813f;
+			uParam0->f_4 = joaat("dodo");
+			MISC::SET_BIT(&(uParam0->f_9), 30);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	
 		case 67:
-			*veParam0 = { 1333.8752f, 4262.2256f, 30.78f };
-			veParam0->f_3 = 262.5293f;
-			veParam0->f_4 = joaat("dodo");
-			MISC::SET_BIT(&(veParam0->f_9), 30);
-			MISC::SET_BIT(&(veParam0->f_9), 23);
-			MISC::SET_BIT(&(veParam0->f_9), 6);
+			*uParam0 = { 1333.8752f, 4262.2256f, 30.78f };
+			uParam0->f_3 = 262.5293f;
+			uParam0->f_4 = joaat("dodo");
+			MISC::SET_BIT(&(uParam0->f_9), 30);
+			MISC::SET_BIT(&(uParam0->f_9), 23);
+			MISC::SET_BIT(&(uParam0->f_9), 6);
 			num = 1;
 			break;
 	}
 
-	if (IS_BIT_SET(veParam0->f_9, 10))
+	if (IS_BIT_SET(uParam0->f_9, 10))
 	{
-		veParam0->f_4 = Global_114931.f_32757.f_69[veParam0->f_14 /*78*/].f_66;
+		uParam0->f_4 = Global_114931.f_32757.f_69[uParam0->f_14 /*78*/].f_66;
 	
 		if (iParam1 == 14)
 		{
-			if (veParam0->f_4 == joaat("miljet") || veParam0->f_4 == joaat("besra") || veParam0->f_4 == joaat("luxor") || veParam0->f_4 == joaat("shamal") || veParam0->f_4 == joaat("titan") || veParam0->f_4 == joaat("luxor2"))
+			if (uParam0->f_4 == joaat("miljet") || uParam0->f_4 == joaat("besra") || uParam0->f_4 == joaat("luxor") || uParam0->f_4 == joaat("shamal") || uParam0->f_4 == joaat("titan") || uParam0->f_4 == joaat("luxor2"))
 			{
-				*veParam0 = { 1678.8f, 3229.6f, 41.8f };
-				veParam0->f_3 = 106.0906f;
+				*uParam0 = { 1678.8f, 3229.6f, 41.8f };
+				uParam0->f_3 = 106.0906f;
 			}
 		}
 	
-		if (!func_63(Global_114931.f_32757.f_1864[veParam0->f_14 /*3*/], 0f, 0f, 0f, false))
-			*veParam0 = { Global_114931.f_32757.f_1864[veParam0->f_14 /*3*/] };
+		if (!func_63(Global_114931.f_32757.f_1864[uParam0->f_14 /*3*/], 0f, 0f, 0f, false))
+			*uParam0 = { Global_114931.f_32757.f_1864[uParam0->f_14 /*3*/] };
 	
-		if (Global_114931.f_32757.f_1934[veParam0->f_14] != -1f)
-			veParam0->f_3 = Global_114931.f_32757.f_1934[veParam0->f_14];
+		if (Global_114931.f_32757.f_1934[uParam0->f_14] != -1f)
+			uParam0->f_3 = Global_114931.f_32757.f_1934[uParam0->f_14];
 	}
 
-	if (IS_BIT_SET(veParam0->f_9, 19))
+	if (IS_BIT_SET(uParam0->f_9, 19))
 	{
-		if (!func_63(Global_114931.f_2370.f_539.f_3588[1 /*10*/][veParam0->f_12 /*3*/], 0f, 0f, 0f, false))
+		if (!func_63(Global_114931.f_2370.f_539.f_3588[1 /*10*/][uParam0->f_12 /*3*/], 0f, 0f, 0f, false))
 		{
-			*veParam0 = { Global_114931.f_2370.f_539.f_3588[1 /*10*/][veParam0->f_12 /*3*/] };
-			veParam0->f_3 = Global_114931.f_2370.f_539.f_3609[1 /*4*/][veParam0->f_12];
+			*uParam0 = { Global_114931.f_2370.f_539.f_3588[1 /*10*/][uParam0->f_12 /*3*/] };
+			uParam0->f_3 = Global_114931.f_2370.f_539.f_3609[1 /*4*/][uParam0->f_12];
 		}
 	}
-	else if (IS_BIT_SET(veParam0->f_9, 20))
+	else if (IS_BIT_SET(uParam0->f_9, 20))
 	{
-		if (!func_63(Global_114931.f_2370.f_539.f_3588[0 /*10*/][veParam0->f_12 /*3*/], 0f, 0f, 0f, false))
+		if (!func_63(Global_114931.f_2370.f_539.f_3588[0 /*10*/][uParam0->f_12 /*3*/], 0f, 0f, 0f, false))
 		{
-			*veParam0 = { Global_114931.f_2370.f_539.f_3588[0 /*10*/][veParam0->f_12 /*3*/] };
-			veParam0->f_3 = Global_114931.f_2370.f_539.f_3609[0 /*4*/][veParam0->f_12];
+			*uParam0 = { Global_114931.f_2370.f_539.f_3588[0 /*10*/][uParam0->f_12 /*3*/] };
+			uParam0->f_3 = Global_114931.f_2370.f_539.f_3609[0 /*4*/][uParam0->f_12];
 		}
 	}
 
@@ -3258,16 +3258,16 @@ void func_70(int iParam0) // Position - 0x43F1 (17393)
 	return;
 }
 
-void func_71(Ped pedParam0, int iParam1) // Position - 0x44B4 (17588)
+void func_71(var uParam0, int iParam1) // Position - 0x44B4 (17588)
 {
 	int i;
 
 	for (i = 0; i < iParam1; i = i + 1)
 	{
 		if (i < iParam1 - 1)
-			pedParam0->[i] = pedParam0->[i + 1];
+			uParam0->[i] = uParam0->[i + 1];
 		else
-			pedParam0->[i] = MISC::GET_GAME_TIMER();
+			uParam0->[i] = MISC::GET_GAME_TIMER();
 	}
 
 	return;
@@ -3834,7 +3834,7 @@ void func_85(int iParam0) // Position - 0x4DD8 (19928)
 {
 	int i;
 	int num;
-	char* value;
+	int value;
 
 	for (i = 0; i < 80; i = i + 1)
 	{
@@ -3857,7 +3857,7 @@ void func_85(int iParam0) // Position - 0x4DD8 (19928)
 	return;
 }
 
-char* func_86(int iParam0, int iParam1) // Position - 0x4E40 (20032)
+int func_86(int iParam0, int iParam1) // Position - 0x4E40 (20032)
 {
 	int i;
 
@@ -4357,50 +4357,50 @@ void func_95() // Position - 0x5B64 (23396)
 		}
 	}
 
-	func_96(55, "ECL_P_SR_H" /*World gulping eCola in record volume, stocks up.*/, "ECL_P_SR_C", 0, 0);
-	func_96(55, "ECL_P_SF_H" /*Ecola 'sugar water' losing favour among investors.*/, "ECL_P_SF_C", 1, 0);
-	func_96(55, "ECL_P_RF_H" /*eCola stocks all over the place, sticky*/, "ECL_P_RF_C", 2, 0);
-	func_96(51, "BGR_P_SR_H" /*Burgershot stocks shoot up like cholesterol.*/, "BGR_P_SR_C", 0, 0);
-	func_96(51, "BGR_P_SF_H" /*Burgershot junk food stocks down.*/, "BGR_P_SF_C", 1, 0);
-	func_96(52, "CLK_P_SR_H" /*Cluckin' Bell stocks up on "Free Range is for Fairies" campaign.*/, "CLK_P_SR_C", 0, 0);
-	func_96(52, "CLK_P_SF_H" /*Cluckin' Bell chicken cruelty video brings stocks down.*/, "CLK_P_SF_C", 1, 0);
-	func_96(52, "CLK_P_RF_H" /*Investors don't know what to do with Cluckin' Bell fast food stocks.*/, "CLK_P_RF_C", 2, 0);
-	func_96(48, "BEN_P_SR_H" /*Bean Machine uses tax loopholes to win big.  Stocks rise.*/, "BEN_P_SR_C", 0, 0);
-	func_96(48, "BEN_P_SF_H" /*Fair trade coffee killing Bean Machine profits.  Stocks down.*/, "BEN_P_SF_C", 1, 0);
-	func_96(48, "BEN_P_RF_H" /*Coffee giant Bean Machine sees stocks moody, edgy.*/, "BEN_P_RF_C", 2, 0);
-	func_96(13, "FLC_P_SR_H" /*Credit card fees rack up huge profits says Fleeca.*/, "FLC_P_SR_C", 0, 0);
-	func_96(13, "FLC_P_SF_H" /*Cash is king - under the table deals killing Fleeca stock.*/, "FLC_P_SF_C", 1, 0);
-	func_96(13, "FLC_P_RF_H" /*Fleeca stock unsteady as market flails aimlessly.*/, "FLC_P_RF_C", 2, 0);
-	func_96(64, "PRO_P_SR_H" /*Prolaps shares up despite Bangladesh factory fire.*/, "PRO_P_SR_C", 0, 0);
-	func_96(64, "PRO_P_SF_H" /*Prolaps shares down as America goes more hipster.*/, "PRO_P_SF_C", 1, 0);
-	func_96(64, "PRO_P_RF_H" /*Prolaps unsteady after football player rampage.*/, "PRO_P_RF_C", 2, 0);
-	func_96(70, "UNI_P_SR_H" /*Vanilla Unicorn Strip Clubs are packed, stocks are up.*/, "UNI_P_SR_C", 0, 0);
-	func_96(70, "UNI_P_SF_H" /*Vanilla Unicorn strippers cry as stocks drop.*/, "UNI_P_SF_C", 1, 0);
-	func_96(70, "UNI_P_RF_H" /*Vanilla Unicorn Strip club stocks and clientele unpredictable.*/, "UNI_P_RF_C", 2, 0);
-	func_96(60, "KRP_P_SR_H" /*Krapea CEO announces new tax avoidance plan.  Stocks up.*/, "KRP_P_SR_C", 0, 0);
-	func_96(60, "KRP_P_SF_H" /*Krapea particle board furniture falling out of favour.*/, "KRP_P_SF_C", 1, 0);
-	func_96(60, "KRP_P_RF_H" /*Directions confusing for Krapea.*/, "KRP_P_RF_C", 2, 0);
-	func_96(56, "FUS_P_SR_H" /*No Strike! FlyUS stocks surge.*/, "FUS_P_SR_C", 0, 0);
-	func_96(56, "FUS_P_SF_H" /*Food poisoning on 154 FlyUS flights brings stock down.*/, "FUS_P_SF_C", 1, 0);
-	func_96(56, "FUS_P_RF_H" /*FlyUS stock hitting turbulence, bad headline.*/, "FUS_P_RF_C", 2, 0);
-	func_96(58, "GOP_P_SR_H" /*60% of shipments contain drugs says Go Postal CEO - stocks rise.*/, "GOP_P_SR_C", 0, 0);
-	func_96(58, "GOP_P_SF_H" /*Go Postal going profitless.*/, "GOP_P_SF_C", 1, 0);
-	func_96(58, "GOP_P_RF_H" /*Go Postal stocks unsteady as America ships less.*/, "GOP_P_RF_C", 2, 0);
-	func_96(53, "BAN_P_SR_H" /*Snotty coffee house Cool Beans stocks surge.*/, "BAN_P_SR_C", 0, 0);
-	func_96(53, "BAN_P_SF_H" /*Prices cool off for Cool Beans.*/, "BAN_P_SF_C", 1, 0);
-	func_96(53, "BAN_P_RF_H" /*Cool Beans stocks up, then down, then up.*/, "BAN_P_RF_C", 2, 0);
-	func_96(62, "MAX_P_SR_H" /*Female insecurity sends Max Renda stocks up.*/, "MAX_P_SR_C", 0, 0);
-	func_96(62, "MAX_P_SF_H" /*Max Renda stocks runny.*/, "MAX_P_SF_C", 1, 0);
-	func_96(62, "MAX_P_RF_H" /*Max Renda stocks bipolar.*/, "MAX_P_RF_C", 2, 0);
-	func_96(57, "GAS_P_SR_H" /*Surgery soars price of Gastro Band stock.*/, "GAS_P_SR_C", 0, 0);
-	func_96(57, "GAS_P_SF_H" /*Another Gastro Band stock brings price down.*/, "GAS_P_SF_C", 1, 0);
-	func_96(57, "GAS_P_RF_H" /*Gastro Band stock - feast then famine.*/, "GAS_P_RF_C", 2, 0);
-	func_96(59, "GRU_P_SR_H" /*GruppeSechs not all it's cracked up to be.*/, "GRU_P_SR_C", 0, 0);
-	func_96(59, "GRU_P_SF_H" /*GruppeSechs down after heist.*/, "GRU_P_SF_C", 1, 0);
-	func_96(59, "GRU_P_RF_H" /*GruppeSechs unsteady if investors decide whether to join in.*/, "GRU_P_RF_C", 2, 0);
-	func_96(44, "PMP_P_SR_H" /*Pump and Run franchise sees stock rise as abs harden.*/, "PMP_P_SR_C", 0, 0);
-	func_96(44, "PMP_P_SF_H" /*Americans not going to gym. Prefer binge eating. Pump and Run shares drop.*/, "PMP_P_SF_C", 1, 0);
-	func_96(44, "PMP_P_RF_H" /*PMP shares volatile as gym attendance murky.*/, "PMP_P_RF_C", 2, 0);
+	func_96(55, "ECL_P_SR_H" /*El mundo ingiere eCola en cantidades industriales. Sus acciones suben.*/, "ECL_P_SR_C", 0, 0);
+	func_96(55, "ECL_P_SF_H" /*Los inversores pierden el interés en el agua azucarada de eCola.*/, "ECL_P_SF_C", 1, 0);
+	func_96(55, "ECL_P_RF_H" /*Las acciones de eCola no saben hacia dónde ir y se muestran pegajosas.*/, "ECL_P_RF_C", 2, 0);
+	func_96(51, "BGR_P_SR_H" /*Las acciones de Burger Shot suben como el colesterol.*/, "BGR_P_SR_C", 0, 0);
+	func_96(51, "BGR_P_SF_H" /*Las acciones de la comida basura de Burger Shot bajan.*/, "BGR_P_SF_C", 1, 0);
+	func_96(52, "CLK_P_SR_H" /*Las acciones de Cluckin' Bell suben tras su campaña "los pollos de corral son para cobardes".*/, "CLK_P_SR_C", 0, 0);
+	func_96(52, "CLK_P_SF_H" /*Un vídeo sobre la crueldad con los pollos de Cluckin' Bell hace que sus acciones bajen.*/, "CLK_P_SF_C", 1, 0);
+	func_96(52, "CLK_P_RF_H" /*Los inversores no saben qué hacer con las acciones de la cadena de comida rápida Cluckin' Bell.*/, "CLK_P_RF_C", 2, 0);
+	func_96(48, "BEN_P_SR_H" /*Bean Machine usa lagunas fiscales para ahorrar mucho dinero. Las acciones suben.*/, "BEN_P_SR_C", 0, 0);
+	func_96(48, "BEN_P_SF_H" /*El café de comercio justo está acabando con los beneficios de Bean Machine. Las acciones bajan.*/, "BEN_P_SF_C", 1, 0);
+	func_96(48, "BEN_P_RF_H" /*Las acciones de Bean Machine, el gigante del café, se muestran ariscas.*/, "BEN_P_RF_C", 2, 0);
+	func_96(13, "FLC_P_SR_H" /*Fleeca anuncia que las cuotas de las tarjetas de crédito proporcionan enormes beneficios.*/, "FLC_P_SR_C", 0, 0);
+	func_96(13, "FLC_P_SF_H" /*El dinero en metálico es lo que cuenta: los acuerdos ilegales hacen caer las acciones de Fleeca.*/, "FLC_P_SF_C", 1, 0);
+	func_96(13, "FLC_P_RF_H" /*La cotización de Fleeca se muestra inestable mientras el mercado da bandazos.*/, "FLC_P_RF_C", 2, 0);
+	func_96(64, "PRO_P_SR_H" /*Las acciones de Prolaps suben a pesar del incendio en la fábrica de Bangladesh.*/, "PRO_P_SR_C", 0, 0);
+	func_96(64, "PRO_P_SF_H" /*Las acciones de Prolaps bajan mientras América se hace más gafapasta.*/, "PRO_P_SF_C", 1, 0);
+	func_96(64, "PRO_P_RF_H" /*Prolaps inestable después de la masacre del jugador de fútbol americano.*/, "PRO_P_RF_C", 2, 0);
+	func_96(70, "UNI_P_SR_H" /*Los clubs de striptease Vanilla Unicorn están a rebosar y sus acciones suben.*/, "UNI_P_SR_C", 0, 0);
+	func_96(70, "UNI_P_SF_H" /*Las strippers de Vanilla Unicorn lloran mientras su cotización baja.*/, "UNI_P_SF_C", 1, 0);
+	func_96(70, "UNI_P_RF_H" /*Las acciones de los clubs de striptease Vanilla Unicorn son tan impredecibles como su clientela.*/, "UNI_P_RF_C", 2, 0);
+	func_96(60, "KRP_P_SR_H" /*El director ejecutivo de Krapea anuncia un nuevo plan de evasión de impuestos. Las acciones suben.*/, "KRP_P_SR_C", 0, 0);
+	func_96(60, "KRP_P_SF_H" /*El mobiliario de aglomerado de Krapea empieza a pasarse de moda.*/, "KRP_P_SF_C", 1, 0);
+	func_96(60, "KRP_P_RF_H" /*La confusión reina en Krapea.*/, "KRP_P_RF_C", 2, 0);
+	func_96(56, "FUS_P_SR_H" /*¡No hay huelga! Las acciones de FlyUS suben.*/, "FUS_P_SR_C", 0, 0);
+	func_96(56, "FUS_P_SF_H" /*La intoxicación alimentaria masiva en 154 vuelos de FlyUS hace caer sus acciones.*/, "FUS_P_SF_C", 1, 0);
+	func_96(56, "FUS_P_RF_H" /*Las acciones de FlyUS sufren turbulencias.*/, "FUS_P_RF_C", 2, 0);
+	func_96(58, "GOP_P_SR_H" /*El 60% de los envíos contienen drogas, dice el director ejecutivo de Go Postal. Las acciones suben.*/, "GOP_P_SR_C", 0, 0);
+	func_96(58, "GOP_P_SF_H" /*Go Postal deja de tener beneficios.*/, "GOP_P_SF_C", 1, 0);
+	func_96(58, "GOP_P_RF_H" /*Las acciones de Go Postal se tambalean mientras América envía menos correspondencia.*/, "GOP_P_RF_C", 2, 0);
+	func_96(53, "BAN_P_SR_H" /*Las acciones de las cafeterías pijas Cool Beans suben.*/, "BAN_P_SR_C", 0, 0);
+	func_96(53, "BAN_P_SF_H" /*La cotización de Cool Beans se enfría.*/, "BAN_P_SF_C", 1, 0);
+	func_96(53, "BAN_P_RF_H" /*Las acciones de Cool Beans suben y bajan y suben.*/, "BAN_P_RF_C", 2, 0);
+	func_96(62, "MAX_P_SR_H" /*La inseguridad femenina hace subir la cotización de Max Renda.*/, "MAX_P_SR_C", 0, 0);
+	func_96(62, "MAX_P_SF_H" /*Las acciones de Max Renda chorrean.*/, "MAX_P_SF_C", 1, 0);
+	func_96(62, "MAX_P_RF_H" /*La cotización de Max Renda se comporta de forma bipolar.*/, "MAX_P_RF_C", 2, 0);
+	func_96(57, "GAS_P_SR_H" /*Las intervenciones se disparan y las acciones de Gastro Band también.*/, "GAS_P_SR_C", 0, 0);
+	func_96(57, "GAS_P_SF_H" /*Otro excedente de stock de Gastro Band hace caer su cotización.*/, "GAS_P_SF_C", 1, 0);
+	func_96(57, "GAS_P_RF_H" /*Las acciones de Gastro Band se dan un atracón y luego se ponen a dieta.*/, "GAS_P_RF_C", 2, 0);
+	func_96(59, "GRU_P_SR_H" /*GruppeSechs: no es oro todo lo que reluce.*/, "GRU_P_SR_C", 0, 0);
+	func_96(59, "GRU_P_SF_H" /*GruppeSechs baja después de un golpe.*/, "GRU_P_SF_C", 1, 0);
+	func_96(59, "GRU_P_RF_H" /*GruppeSechs se tambalea mientras los inversores deciden si compran o venden.*/, "GRU_P_RF_C", 2, 0);
+	func_96(44, "PMP_P_SR_H" /*Sube la cotización de la franquicia Pump and Run a medida que los abdominales se endurecen.*/, "PMP_P_SR_C", 0, 0);
+	func_96(44, "PMP_P_SF_H" /*Los estadounidenses no van al gimnasio y prefieren darse atracones. Caen las acciones de Pump and Run.*/, "PMP_P_SF_C", 1, 0);
+	func_96(44, "PMP_P_RF_H" /*Las grises cifras de asistencia a gimnasios provocan inestabilidad en las acciones de PMP.*/, "PMP_P_RF_C", 2, 0);
 	randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, Global_62488 - 1);
 
 	for (i = 0; i < 4; i = i + 1)
@@ -4483,33 +4483,33 @@ Hash func_99(int iParam0, int iParam1) // Position - 0x5FCE (24526)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_100(iParam1));
 }
 
-Interior func_100(Interior inParam0) // Position - 0x5FE3 (24547)
+int func_100(int iParam0) // Position - 0x5FE3 (24547)
 {
-	Interior interior;
-	Interior interior2;
+	int num;
+	int num2;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
+	if (num == -1)
 	{
-		interior2 = func_101();
+		num2 = func_101();
 	
-		if (interior2 > -1)
+		if (num2 > -1)
 		{
 			Global_2741524 = 0;
-			interior = interior2;
+			num = num2;
 		}
 		else
 		{
-			interior = 0;
+			num = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return interior;
+	return num;
 }
 
-Interior func_101() // Position - 0x6017 (24599)
+int func_101() // Position - 0x6017 (24599)
 {
 	return Global_1574927;
 }
@@ -4651,7 +4651,7 @@ void func_107() // Position - 0x60C0 (24768)
 	TEXT_LABEL_ASSIGN_STRING(&(Global_57326[11 /*36*/].f_4), "BSS_BSTR_22" /*WAP*/, 16);
 	Global_57326[11 /*36*/].f_8 = 1;
 	Global_57326[11 /*36*/].f_35 = 10;
-	TEXT_LABEL_ASSIGN_STRING(&Global_57326[12 /*36*/], "BSS_BSTR_23" /*Facade*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&Global_57326[12 /*36*/], "BSS_BSTR_23" /*Façade*/, 16);
 	TEXT_LABEL_ASSIGN_STRING(&(Global_57326[12 /*36*/].f_4), "BSS_BSTR_24" /*FAC*/, 16);
 	Global_57326[12 /*36*/].f_8 = 1;
 	Global_57326[12 /*36*/].f_35 = 11;
@@ -4859,7 +4859,7 @@ void func_107() // Position - 0x60C0 (24768)
 	TEXT_LABEL_ASSIGN_STRING(&(Global_57326[63 /*36*/].f_4), "BSS_BSTR_126" /*POP*/, 16);
 	Global_57326[63 /*36*/].f_8 = 0;
 	Global_57326[63 /*36*/].f_35 = 27;
-	TEXT_LABEL_ASSIGN_STRING(&Global_57326[64 /*36*/], "BSS_BSTR_127" /*ProLaps*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&Global_57326[64 /*36*/], "BSS_BSTR_127" /*Prolaps*/, 16);
 	TEXT_LABEL_ASSIGN_STRING(&(Global_57326[64 /*36*/].f_4), "BSS_BSTR_128" /*PRO*/, 16);
 	Global_57326[64 /*36*/].f_8 = 0;
 	Global_57326[64 /*36*/].f_35 = 28;

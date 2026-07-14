@@ -852,7 +852,7 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 					}
 					else if (iParam7 == 6)
 					{
-						windowTitle = "FMMC_KEY_TIP10" /*Enter Synopsis (MAX 125 characters):*/;
+						windowTitle = "FMMC_KEY_TIP10" /*Escribe la sinopsis (125 caracteres máx.):*/;
 					}
 					else if (iParam7 == 8)
 					{
@@ -909,7 +909,7 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 					if (bParam26)
 						windowTitle = "LINE_NUMBER";
 					else
-						windowTitle = "WEB_SEARCH" /*Search...*/;
+						windowTitle = "WEB_SEARCH" /*Buscar...*/;
 			
 				if (iParam35 != -1)
 					maxInputLength = iParam35;
@@ -1193,41 +1193,41 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 					{
 						if (func_64())
 							if (*piParam1 == 0)
-								windowTitle = "CELL_EMASH_SOD" /*Enter your Eyefind subject:*/;
+								windowTitle = "CELL_EMASH_SOD" /*Introduce el asunto de Eyefind:*/;
 							else if (*piParam1 == -1)
-								windowTitle = "CELL_EMASH_SODE" /*Subject too long. Try again:*/;
+								windowTitle = "CELL_EMASH_SODE" /*Asunto demasiado largo. Vuelve a intentarlo:*/;
 							else if (*piParam1 == -4)
 								windowTitle = func_63();
 							else
-								windowTitle = "CELL_EMASH_SODF" /*Forbidden text. Try again:*/;
+								windowTitle = "CELL_EMASH_SODF" /*Texto prohibido. Vuelve a intentarlo:*/;
 						else if (*piParam1 == 0)
-							windowTitle = "CELL_EMAIL_SOD" /*Enter your Eyefind subject (MAX 60 characters):*/;
+							windowTitle = "CELL_EMAIL_SOD" /*Asunto de Eyefind (60 caracteres máx.):*/;
 						else if (*piParam1 == -1)
-							windowTitle = "CELL_EMAIL_SODE" /*Subject too long. Try again (MAX 60 characters):*/;
+							windowTitle = "CELL_EMAIL_SODE" /*Asunto demasiado largo. Inténtalo de nuevo (60 caracteres máx.):*/;
 						else if (*piParam1 == -4)
 							windowTitle = func_63();
 						else
-							windowTitle = "CELL_EMAIL_SODF" /*Forbidden text. Try again (MAX 60 characters):*/;
+							windowTitle = "CELL_EMAIL_SODF" /*Texto prohibido. Inténtalo de nuevo (60 caracteres máx.):*/;
 					
 						if (MISC::IS_XBOX360_VERSION())
 						{
 							str = windowTitle;
-							windowTitle = "CELL_EMAIL_DESC" /*Description*/;
+							windowTitle = "CELL_EMAIL_DESC" /*Descripción*/;
 						}
 					}
 					else if (func_64())
 					{
 						if (*piParam1 == 0)
-							windowTitle = "FMMC_KEY_TIP8S" /*Enter Message (MAX 20 characters):*/;
+							windowTitle = "FMMC_KEY_TIP8S" /*Escribe un mensaje (20 caracteres máx.):*/;
 						else if (*piParam1 == -4)
 							windowTitle = func_63();
 						else
-							windowTitle = "FMMC_KEY_TIP8FS" /*Invalid Message. Try again (MAX 20 characters):*/;
+							windowTitle = "FMMC_KEY_TIP8FS" /*Mensaje no válido. Inténtalo de nuevo (20 caracteres máx.):*/;
 					
 						if (MISC::IS_XBOX360_VERSION())
 						{
 							str = windowTitle;
-							windowTitle = "FMMC_SMS4" /*Message*/;
+							windowTitle = "FMMC_SMS4" /*Mensaje*/;
 						}
 					
 						maxInputLength2 = 21;
@@ -1235,16 +1235,16 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 					else
 					{
 						if (*piParam1 == 0)
-							windowTitle = "FMMC_KEY_TIP8" /*Enter Message (MAX 60 characters):*/;
+							windowTitle = "FMMC_KEY_TIP8" /*Texto del mensaje (máx. 60 caracteres):*/;
 						else if (*piParam1 == -4)
 							windowTitle = func_63();
 						else
-							windowTitle = "FMMC_KEY_TIP8F" /*Forbidden Text. Try again (MAX 60 characters):*/;
+							windowTitle = "FMMC_KEY_TIP8F" /*Texto prohibido. Inténtalo de nuevo (60 caracteres máx.):*/;
 					
 						if (MISC::IS_XBOX360_VERSION())
 						{
 							str = windowTitle;
-							windowTitle = "FMMC_SMS4" /*Message*/;
+							windowTitle = "FMMC_SMS4" /*Mensaje*/;
 						}
 					}
 				
@@ -1259,16 +1259,16 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam12)
 				{
 					if (*piParam1 == 0)
-						windowTitle = "FMMC_KEY_TIP9" /*Enter Outfit Name (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP9" /*Introducir nombre de indumentaria (15 caracteres máx.):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "FMMC_KEY_TIP9F" /*Invalid Outfit Name. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP9F" /*Nombre no válido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					if (MISC::IS_XBOX360_VERSION())
 					{
 						str = windowTitle;
-						windowTitle = "FMMC_KEY_TIP9N" /*Outfit Name*/;
+						windowTitle = "FMMC_KEY_TIP9N" /*Nombre de indumentaria*/;
 					}
 				
 					maxInputLength2 = 16;
@@ -1284,15 +1284,15 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam39)
 				{
 					if (*piParam1 == 0)
-						windowTitle = "FMMC_KEY_TIP17S";
+						windowTitle = "FMMC_KEY_TIP17S" /*Introduce el nombre de la mascota (15 caracteres máx.):*/;
 					else if (*piParam1 == -1)
-						windowTitle = "FMMC_KEY_TIP17ES";
+						windowTitle = "FMMC_KEY_TIP17ES" /*Texto demasiado largo. Inténtalo de nuevo (15 caracteres máx.):*/;
 					else if (*piParam1 == -2)
-						windowTitle = "FMMC_KEY_TIP17OS";
+						windowTitle = "FMMC_KEY_TIP17OS" /*Texto vacío. Inténtalo de nuevo (15 caracteres máx.):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "FMMC_KEY_TIP17FS";
+						windowTitle = "FMMC_KEY_TIP17FS" /*Texto prohibido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					if (MISC::IS_XBOX360_VERSION())
 					{
@@ -1316,16 +1316,16 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam14)
 				{
 					if (*piParam1 == 0)
-						windowTitle = "FMMC_KEY_TIP12" /*Enter Custom Team Name (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP12" /*Introducir nombre de equipo personalizado (15 caracteres máx.):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "FMMC_KEY_TIP12F" /*Forbidden Text. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP12F" /*Texto prohibido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					if (MISC::IS_XBOX360_VERSION())
 					{
 						str = windowTitle;
-						windowTitle = "FMMC_KEY_TIP12N" /*Custom Team Name*/;
+						windowTitle = "FMMC_KEY_TIP12N" /*Nombre de equipo personalizado*/;
 					}
 				
 					maxInputLength2 = 16;
@@ -1360,11 +1360,11 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam15)
 				{
 					if (*piParam1 == 0)
-						windowTitle = "FMMC_KEY_TIP12" /*Enter Custom Team Name (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP12" /*Introducir nombre de equipo personalizado (15 caracteres máx.):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "FMMC_KEY_TIP12F" /*Forbidden Text. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP12F" /*Texto prohibido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					maxInputLength2 = 61;
 				
@@ -1379,20 +1379,20 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam17)
 				{
 					if (*piParam1 == 0)
-						windowTitle = "FMMC_KEY_TIP14S" /*Enter Yacht Name (MAX 20 characters):*/;
+						windowTitle = "FMMC_KEY_TIP14S" /*Introducir nombre de yate (20 caracteres máx.):*/;
 					else if (*piParam1 == -1)
-						windowTitle = "FMMC_KEY_TIP14ES" /*Subject too long. Try again (MAX 20 characters):*/;
+						windowTitle = "FMMC_KEY_TIP14ES" /*Asunto demasiado largo. Inténtalo de nuevo (20 caracteres máx.):*/;
 					else if (*piParam1 == -2)
-						windowTitle = "FMMC_KEY_TIP14OS" /*Empty Text. Try again (MAX 20 characters):*/;
+						windowTitle = "FMMC_KEY_TIP14OS" /*Texto vacío. Inténtalo de nuevo (20 caracteres máx.):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "FMMC_KEY_TIP14FS" /*Forbidden Text. Try again (MAX 20 characters):*/;
+						windowTitle = "FMMC_KEY_TIP14FS" /*Texto prohibido. Inténtalo de nuevo (20 caracteres máx.):*/;
 				
 					if (MISC::IS_XBOX360_VERSION())
 					{
 						str = windowTitle;
-						windowTitle = "FMMC_KEY_TIP14N" /*Yacht Name*/;
+						windowTitle = "FMMC_KEY_TIP14N" /*Nombre del yate*/;
 					}
 				
 					if (func_59())
@@ -1411,18 +1411,18 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam29)
 				{
 					if (*piParam1 == 0)
-						windowTitle = "FMMC_KEY_TIP16S" /*Enter Vehicle Name (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP16S" /*Escribe el nombre del vehículo (máx. 15 caracteres):*/;
 					else if (*piParam1 == -1)
-						windowTitle = "FMMC_KEY_TIP16ES" /*Subject too long. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP16ES" /*Asunto demasiado largo. Inténtalo de nuevo (máx. 15 caracteres):*/;
 					else if (*piParam1 == -2)
-						windowTitle = "FMMC_KEY_TIP16OS" /*Empty Text. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP16OS" /*Texto vacío. Inténtalo de nuevo (máx. 15 caracteres):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "FMMC_KEY_TIP16FS" /*Forbidden Text. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP16FS" /*Texto prohibido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					if (bParam23)
-						windowTitle = "FMMC_KEY_TIP16IS" /*Invalid Character. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP16IS" /*Carácter no válido. Vuelve a intentarlo (15 caracteres máx.):*/;
 				
 					if (MISC::IS_XBOX360_VERSION())
 					{
@@ -1444,24 +1444,24 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (iParam18 > 0)
 				{
 					if (bParam20)
-						windowTitle = "FMMC_KEY_TIP15B" /*You must enter a name (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP15B" /*Tienes que introducir un nombre (15 caracteres máx.):*/;
 					else if (bParam21)
-						windowTitle = "FMMC_KEY_TIP15U" /*Name already in use. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP15U" /*Nombre en uso. Elige otro (15 caracteres máx.):*/;
 					else if (bParam19)
-						windowTitle = "FMMC_KEY_TIP15N" /*Name Too Short. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP15N" /*Nombre muy corto. Inténtalo de nuevo (15 caracteres máx.):*/;
 					else if (bParam23)
-						windowTitle = "FMMC_KEY_TIP15I" /*Invalid Character. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP15I" /*Carácter no válido. Vuelve a intentarlo (15 caracteres máx.):*/;
 					else if (*piParam1 == 0)
 						if (iParam18 == 2)
-							windowTitle = "FMMC_MCK_TIP15" /*Enter MC Name (MAX 15 characters):*/;
+							windowTitle = "FMMC_MCK_TIP15" /*Introducir nombre de club (15 caracteres máx.):*/;
 						else
-							windowTitle = "FMMC_KEY_TIP15" /*Enter Organization Name (MAX 15 characters):*/;
+							windowTitle = "FMMC_KEY_TIP15" /*Introducir nombre de organización (15 caracteres máx.):*/;
 					else if (*piParam1 == -2)
-						windowTitle = "FMMC_KEY_TIP16OS" /*Empty Text. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP16OS" /*Texto vacío. Inténtalo de nuevo (máx. 15 caracteres):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "FMMC_KEY_TIP15F" /*Forbidden Text. Try again (MAX 15 characters):*/;
+						windowTitle = "FMMC_KEY_TIP15F" /*Texto prohibido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					if (MISC::IS_XBOX360_VERSION() || func_59())
 						maxInputLength2 = 16;
@@ -1479,15 +1479,15 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam36)
 				{
 					if (*piParam1 == 0)
-						windowTitle = "ACID_NAME_TIP1" /*Enter Product Name (MAX 15 characters):*/;
+						windowTitle = "ACID_NAME_TIP1" /*Escribe el nombre del producto (máx. 15µcaracteres):*/;
 					else if (*piParam1 == -1)
-						windowTitle = "ACID_NAME_TIP2" /*Name too long. Try again (MAX 15 characters):*/;
+						windowTitle = "ACID_NAME_TIP2" /*Nombre demasiado largo. Inténtalo de nuevo (máx. 15µcaracteres):*/;
 					else if (*piParam1 == -2)
-						windowTitle = "ACID_NAME_TIP3" /*Empty Text. Try again (MAX 15 characters):*/;
+						windowTitle = "ACID_NAME_TIP3" /*Texto vacío. Inténtalo de nuevo (máx. 15 caracteres):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "ACID_NAME_TIP4" /*Forbidden Text. Try again (MAX 15 characters):*/;
+						windowTitle = "ACID_NAME_TIP4" /*Texto prohibido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					if (bParam23)
 						windowTitle = "ACID_NAME_TIP5s";
@@ -1508,15 +1508,15 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam37)
 				{
 					if (*piParam1 == 0)
-						windowTitle = "LAB_NAME_TIP1" /*Enter Lab Name (MAX 15 characters):*/;
+						windowTitle = "LAB_NAME_TIP1" /*Introduce el nombre del laboratorio (máximo 15 caracteres):*/;
 					else if (*piParam1 == -1)
-						windowTitle = "LAB_NAME_TIP2" /*Name too long. Try again (MAX 15 characters):*/;
+						windowTitle = "LAB_NAME_TIP2" /*Nombre demasiado largo. Inténtalo de nuevo (máx. 15µcaracteres):*/;
 					else if (*piParam1 == -2)
-						windowTitle = "LAB_NAME_TIP3" /*Empty Text. Try again (MAX 15 characters):*/;
+						windowTitle = "LAB_NAME_TIP3" /*Texto vacío. Inténtalo de nuevo (máx. 15 caracteres):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "LAB_NAME_TIP4" /*Forbidden Text. Try again (MAX 15 characters):*/;
+						windowTitle = "LAB_NAME_TIP4" /*Texto prohibido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					if (bParam23)
 						windowTitle = "LAB_NAME_TIP5s";
@@ -1537,19 +1537,19 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				else if (bParam38)
 				{
 					if (bParam23)
-						windowTitle = "CSTM_TLTIP_TIP5" /*Invalid Character. Try again (MAX 15 characters):*/;
+						windowTitle = "CSTM_TLTIP_TIP5" /*Carácter no válido. Vuelve a intentarlo (15 caracteres máx.):*/;
 					else if (bParam19)
-						windowTitle = "CSTM_TLTIP_TIP6" /*Text too short. Try again (MAX 15 characters):*/;
+						windowTitle = "CSTM_TLTIP_TIP6" /*Texto muy corto. Inténtalo de nuevo (15 caracteres máx.):*/;
 					else if (*piParam1 == 0)
-						windowTitle = "CSTM_TLTIP_TIP1" /*Enter text. (MAX 15 characters):*/;
+						windowTitle = "CSTM_TLTIP_TIP1" /*Introduce el texto (15 caracteres máx.):*/;
 					else if (*piParam1 == -1)
-						windowTitle = "CSTM_TLTIP_TIP2" /*Text too long. Try again (MAX 15 characters):*/;
+						windowTitle = "CSTM_TLTIP_TIP2" /*Texto demasiado largo. Inténtalo de nuevo (15 caracteres máx.):*/;
 					else if (*piParam1 == -2)
-						windowTitle = "CSTM_TLTIP_TIP3" /*Empty Text. Try again (MAX 15 characters):*/;
+						windowTitle = "CSTM_TLTIP_TIP3" /*Texto vacío. Inténtalo de nuevo (15 caracteres máx.):*/;
 					else if (*piParam1 == -4)
 						windowTitle = func_63();
 					else
-						windowTitle = "CSTM_TLTIP_TIP4" /*Forbidden Text. Try again (MAX 15 characters):*/;
+						windowTitle = "CSTM_TLTIP_TIP4" /*Texto prohibido. Inténtalo de nuevo (15 caracteres máx.):*/;
 				
 					if (MISC::IS_XBOX360_VERSION() || func_59())
 						maxInputLength2 = 16;
@@ -1576,21 +1576,21 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 						{
 							if (func_64())
 								if (*piParam1 == 0)
-									windowTitle = "CELL_EMASH_BOD" /*Enter your Eyefind message:*/;
+									windowTitle = "CELL_EMASH_BOD" /*Introduce tu mensaje de Eyefind:*/;
 								else if (*piParam1 == -1)
-									windowTitle = "CELL_EMASH_BODE" /*Message too long. Try again:*/;
+									windowTitle = "CELL_EMASH_BODE" /*Mensaje demasiado largo. Vuelve a intentarlo:*/;
 								else if (*piParam1 == -4)
 									windowTitle = func_63();
 								else
-									windowTitle = "CELL_EMASH_BODF" /*Forbidden message. Try again:*/;
+									windowTitle = "CELL_EMASH_BODF" /*Mensaje prohibido. Vuelve a intentarlo:*/;
 							else if (*piParam1 == 0)
-								windowTitle = "CELL_EMAIL_BOD" /*Enter your Eyefind message (MAX 500 characters):*/;
+								windowTitle = "CELL_EMAIL_BOD" /*Mensaje de Eyefind (500 caracteres máx.):*/;
 							else if (*piParam1 == -1)
-								windowTitle = "CELL_EMAIL_BODE" /*Message too long. Try again (MAX 500 characters):*/;
+								windowTitle = "CELL_EMAIL_BODE" /*Mensaje demasiado largo. Inténtalo de nuevo (500 caracteres máx.):*/;
 							else if (*piParam1 == -4)
 								windowTitle = func_63();
 							else
-								windowTitle = "CELL_EMAIL_BODF" /*Forbidden message. Try again (MAX 500 characters):*/;
+								windowTitle = "CELL_EMAIL_BODF" /*Mensaje prohibido. Inténtalo de nuevo (500 caracteres máx.):*/;
 						}
 						else
 						{
@@ -1623,13 +1623,13 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 					
 						if (bParam11)
 							if (*piParam1 == 0)
-								windowTitle = "CELL_EMASH_BOD" /*Enter your Eyefind message:*/;
+								windowTitle = "CELL_EMASH_BOD" /*Introduce tu mensaje de Eyefind:*/;
 							else if (*piParam1 == -1)
-								windowTitle = "CELL_EMASH_BODE" /*Message too long. Try again:*/;
+								windowTitle = "CELL_EMASH_BODE" /*Mensaje demasiado largo. Vuelve a intentarlo:*/;
 							else if (*piParam1 == -4)
 								windowTitle = func_63();
 							else
-								windowTitle = "CELL_EMASH_BODF" /*Forbidden message. Try again:*/;
+								windowTitle = "CELL_EMASH_BODF" /*Mensaje prohibido. Vuelve a intentarlo:*/;
 						else if (func_64())
 							if (*piParam1 == 0)
 								windowTitle = "FMMC_KEY_TIPSS";
@@ -1655,7 +1655,7 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 						windowTitle = "FMMC_T0_M20";
 					
 						if (bParam11)
-							windowTitle = "CELL_EMAIL_DESC" /*Description*/;
+							windowTitle = "CELL_EMAIL_DESC" /*Descripción*/;
 					}
 				
 					for (l = 0; l <= 7; l = l + 1)
@@ -1836,17 +1836,17 @@ BOOL func_55(var uParam0, int* piParam1, var uParam2, BOOL bParam3, BOOL bParam4
 				
 					if (bParam17)
 					{
-						HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("ERROR_CHECKYACHTNAME" /*Registering your yacht's name.  Please wait...*/);
+						HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("ERROR_CHECKYACHTNAME" /*Espera mientras el nombre de tu yate se registra...*/);
 						HUD::END_TEXT_COMMAND_BUSYSPINNER_ON(1);
 					}
 					else if (bParam29)
 					{
-						HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("ERROR_CHECKVEHICLENAME" /*Registering your vehicle's name.  Please wait...*/);
+						HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("ERROR_CHECKVEHICLENAME" /*Registrando el nombre del vehículo. Espera...*/);
 						HUD::END_TEXT_COMMAND_BUSYSPINNER_ON(1);
 					}
 					else
 					{
-						HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("ERROR_CHECKPROFANITY" /*Checking your text for profanity.  Please wait...*/);
+						HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("ERROR_CHECKPROFANITY" /*Comprobando lenguaje malsonante. Un momento...*/);
 						HUD::END_TEXT_COMMAND_BUSYSPINNER_ON(1);
 					}
 				
@@ -1918,7 +1918,7 @@ BOOL func_62() // Position - 0x1FA5 (8101)
 
 char* func_63() // Position - 0x1FBC (8124)
 {
-	return "PROF_CHK_UA" /*Unable to connect to Rockstar Games to check profanity.*/;
+	return "PROF_CHK_UA" /*No se ha podido conectar con Rockstar Games para comprobar lenguaje malsonante.*/;
 }
 
 BOOL func_64() // Position - 0x1FC8 (8136)
@@ -2466,11 +2466,11 @@ void func_111(BOOL bParam0, int iParam1) // Position - 0x27FB (10235)
 	if (bParam0)
 	{
 		func_112(&Global_24546.f_6263[num /*10*/]);
-		Global_24546.f_6324[num] = PV_COMP_HEAD;
+		Global_24546.f_6324[num] = 0;
 	}
 	else
 	{
-		Global_24546.f_6324[num] = PV_COMP_HEAD;
+		Global_24546.f_6324[num] = 0;
 	}
 
 	GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("Shared");
@@ -2494,7 +2494,7 @@ void func_112(int iParam0) // Position - 0x28C1 (10433)
 BOOL func_113(var uParam0, BOOL bParam1, int iParam2) // Position - 0x28ED (10477)
 {
 	var unk;
-	ePedComponentType hashKey;
+	Hash hashKey;
 	int i;
 	int num;
 
@@ -2514,7 +2514,7 @@ BOOL func_113(var uParam0, BOOL bParam1, int iParam2) // Position - 0x28ED (1047
 			*uParam0 = i;
 			return true;
 		}
-		else if (Global_24546.f_6324[i] == PV_COMP_HEAD)
+		else if (Global_24546.f_6324[i] == 0)
 		{
 			num = i;
 		}
@@ -2861,10 +2861,10 @@ void func_122(var uParam0, int iParam1) // Position - 0x3095 (12437)
 
 int func_123(var uParam0) // Position - 0x30A3 (12451)
 {
-	func_124(INPUT_FRONTEND_CANCEL, "PIM_CEXI" /*Back*/, -1);
+	func_124(INPUT_FRONTEND_CANCEL, "PIM_CEXI" /*Volver*/, -1);
 
 	if (func_71(uParam0))
-		func_124(INPUT_FRONTEND_ACCEPT, "PIM_CSEL" /*Select*/, -1);
+		func_124(INPUT_FRONTEND_ACCEPT, "PIM_CSEL" /*Seleccionar*/, -1);
 
 	return 1;
 }
@@ -3587,9 +3587,9 @@ void func_168(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	return;
 }
 
-void func_169(float fParam0, float fParam1, int iParam2, float fParam3, BOOL bParam4, eHudColour ehcParam5, BOOL bParam6, BOOL bParam7) // Position - 0x3C77 (15479)
+void func_169(float fParam0, float fParam1, int iParam2, float fParam3, int iParam4, int iParam5, int iParam6, int iParam7) // Position - 0x3C77 (15479)
 {
-	GRAPHICS::DRAW_RECT(func_170(fParam0 + (iParam2 * 0.5f)), fParam1 + (fParam3 * 0.5f), func_170(iParam2), fParam3, bParam4, ehcParam5, bParam6, bParam7, false);
+	GRAPHICS::DRAW_RECT(func_170(fParam0 + (iParam2 * 0.5f)), fParam1 + (fParam3 * 0.5f), func_170(iParam2), fParam3, iParam4, iParam5, iParam6, iParam7, false);
 	return;
 }
 
@@ -4623,10 +4623,10 @@ void func_203() // Position - 0x4FDB (20443)
 void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, int iParam5, BOOL bParam6, BOOL bParam7, int iParam8) // Position - 0x4FF4 (20468)
 {
 	int num;
-	BOOL r;
-	eHudColour g;
-	BOOL b;
-	BOOL a;
+	int r;
+	int g;
+	int b;
+	int a;
 	int i;
 	ePedComponentType numberOfLinesForString;
 	ePedComponentType j;
@@ -4667,42 +4667,42 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	float num29;
 	float num30;
 	float num31;
+	int num32;
+	int num33;
+	int num34;
+	int num35;
+	float num36;
 	BOOL flag4;
-	eHudColour color;
 	BOOL flag5;
 	BOOL flag6;
-	float num32;
 	BOOL flag7;
-	BOOL flag8;
-	BOOL flag9;
-	BOOL flag10;
-	float num33;
-	float num34;
-	float num35;
-	float num36;
+	float num37;
+	float num38;
+	float num39;
+	float num40;
 	var unk3;
 	var unk4;
-	float num37;
+	float num41;
 	var unk5;
 	var unk21;
-	float num38;
+	float num42;
 	float size;
 	float size2;
 	ePedComponentType type;
-	float num39;
-	float num40;
+	float num43;
+	float num44;
 	int m;
-	BOOL r2;
-	eHudColour g2;
-	BOOL b2;
-	BOOL a2;
-	int num41;
+	int r2;
+	int g2;
+	int b2;
+	int a2;
+	int num45;
 	var text;
 	float value;
 	float value2;
-	float num42;
-	float num43;
-	float num44;
+	float num46;
+	float num47;
+	float num48;
 
 	if (!func_113(&num, false, iParam1))
 		return;
@@ -4714,32 +4714,32 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 
 	GRAPHICS::SET_SCRIPT_GFX_ALIGN(76, 84);
 	GRAPHICS::SET_SCRIPT_GFX_ALIGN_PARAMS(-0.05f, -0.05f, 0f, 0f);
-	num34 = 0f;
+	num38 = 0f;
 
 	if (Global_24546)
 		if (func_179(30, true, true, &num26, &num27, bParam7))
-			num35 = num27 / num26;
+			num39 = num27 / num26;
 		else
 			Global_24546 = false;
 
 	if (iParam5 == -1f)
 		iParam5 = Global_24545;
 
-	num34 = iParam5 * num35;
+	num38 = iParam5 * num39;
 
 	if (MISC::GET_HASH_KEY(&(Global_24546.f_1)) == MISC::GET_HASH_KEY("HIDE"))
-		num36 = Global_24544;
+		num40 = Global_24544;
 	else
-		num36 = Global_24544 + num34 + 0.034722f + 0f;
+		num40 = Global_24544 + num38 + 0.034722f + 0f;
 
-	num37 = 1f;
-	func_181(bParam7, &unk3, &unk4, &num37);
+	num41 = 1f;
+	func_181(bParam7, &unk3, &unk4, &num41);
 
 	if (bParam3)
 	{
 		if (Global_24546.f_5821 <= PV_COMP_BERD)
 		{
-			func_177(Global_24546.f_5821 + 1, "DFLT_MNU_OPT" /*Exit*/, 0, true, false, false, false);
+			func_177(Global_24546.f_5821 + 1, "DFLT_MNU_OPT" /*Salir*/, 0, true, false, false, false);
 			Global_24546.f_6617 = 1;
 		}
 	}
@@ -4750,7 +4750,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		{
 			if (MISC::GET_HASH_KEY(&(Global_24546.f_1)) == MISC::GET_HASH_KEY("HIDE"))
 			{
-				num32 = Global_24544;
+				num36 = Global_24544;
 			}
 			else
 			{
@@ -4761,12 +4761,12 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				
 					if (MISC::GET_HASH_KEY(&Global_24546.f_7744[30 /*16*/]) == joaat("CREW_LOGO"))
 					{
-						func_169(Global_24543, Global_24544, iParam5, num34, 0, 0, 0, 255);
-						func_232(&unk5, &unk21, Global_24543 + (iParam5 * 0.5f), Global_24544 + (num34 * 0.5f), iParam5, num34, 0f, 255, 255, 255, 255, false, 0);
+						func_169(Global_24543, Global_24544, iParam5, num38, 0, 0, 0, 255);
+						func_232(&unk5, &unk21, Global_24543 + (iParam5 * 0.5f), Global_24544 + (num38 * 0.5f), iParam5, num38, 0f, 255, 255, 255, 255, false, 0);
 					}
 					else
 					{
-						func_232(&unk5, &unk21, Global_24543 + (iParam5 * 0.5f), Global_24544 + (num34 * 0.5f), iParam5, num34, 0f, 255, 255, 255, 255, false, 0);
+						func_232(&unk5, &unk21, Global_24543 + (iParam5 * 0.5f), Global_24544 + (num38 * 0.5f), iParam5, num38, 0f, 255, 255, 255, 255, false, 0);
 					}
 				}
 			
@@ -4779,14 +4779,14 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 				else
 				{
-					r = false;
-					g = HUD_COLOUR_PURE_WHITE;
-					b = false;
+					r = 0;
+					g = 0;
+					b = 0;
 					a = 255;
 				}
 			
-				func_169(Global_24543, Global_24544 + num34, iParam5, 0.034722f, r, g, b, a);
-				num32 = Global_24544 + num34 + 0.034722f + 0f;
+				func_169(Global_24543, Global_24544 + num38, iParam5, 0.034722f, r, g, b, a);
+				num36 = Global_24544 + num38 + 0.034722f + 0f;
 			
 				if (MISC::GET_HASH_KEY(&(Global_24546.f_1)) != 0)
 				{
@@ -4841,27 +4841,27 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 						}
 					}
 				
-					func_230(Global_24543 + 0.00390625f, Global_24544 + num34 + 0.00416664f, 0);
+					func_230(Global_24543 + 0.00390625f, Global_24544 + num38 + 0.00416664f, 0);
 				}
 			
 				if (Global_24546.f_6338)
 				{
 					func_231();
-					func_228((Global_24543 + iParam5) - 0.00390625f - func_229("CM_ITEM_COUNT" /*~1~ / ~1~*/, Global_24546.f_6339, Global_24546.f_6340), Global_24544 + num34 + 0.00416664f, "CM_ITEM_COUNT" /*~1~ / ~1~*/, Global_24546.f_6339, Global_24546.f_6340);
+					func_228((Global_24543 + iParam5) - 0.00390625f - func_229("CM_ITEM_COUNT" /*~1~/~1~*/, Global_24546.f_6339, Global_24546.f_6340), Global_24544 + num38 + 0.00416664f, "CM_ITEM_COUNT" /*~1~/~1~*/, Global_24546.f_6339, Global_24546.f_6340);
 				}
 				else if (Global_24546.f_6334 > Global_24546.f_5828)
 				{
 					if (Global_24546.f_6337 != 0)
 					{
 						func_231();
-						func_228((Global_24543 + iParam5) - 0.00390625f - func_229("CM_ITEM_COUNT" /*~1~ / ~1~*/, Global_24546.f_6337, Global_24546.f_6336), Global_24544 + num34 + 0.00416664f, "CM_ITEM_COUNT" /*~1~ / ~1~*/, Global_24546.f_6337, Global_24546.f_6336);
+						func_228((Global_24543 + iParam5) - 0.00390625f - func_229("CM_ITEM_COUNT" /*~1~/~1~*/, Global_24546.f_6337, Global_24546.f_6336), Global_24544 + num38 + 0.00416664f, "CM_ITEM_COUNT" /*~1~/~1~*/, Global_24546.f_6337, Global_24546.f_6336);
 					}
 				}
 			}
 		
 			numberOfLinesForString = Global_24546.f_6341;
 			num2 = 0;
-			num38 = num32;
+			num42 = num36;
 		
 			if (Global_24546.f_9224)
 			{
@@ -4882,14 +4882,14 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					if (Global_24546.f_6088[numberOfLinesForString])
 					{
 						if (Global_24546.f_5959[numberOfLinesForString] && numberOfLinesForString != Global_24546.f_6341)
-							num32 = num32 + 0.00277776f;
+							num36 = num36 + 0.00277776f;
 					
-						num33 = 0.034722f;
+						num37 = 0.034722f;
 					
 						if (Global_24546.f_6348[numberOfLinesForString] != 0f)
-							num33 = Global_24546.f_6348[numberOfLinesForString];
+							num37 = Global_24546.f_6348[numberOfLinesForString];
 					
-						num32 = num32 + num33;
+						num36 = num36 + num37;
 						num2 = num2 + 1;
 					}
 				}
@@ -4897,7 +4897,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				numberOfLinesForString = numberOfLinesForString + 1;
 			}
 		
-			func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num38 + ((num32 - num38) * 0.5f)) - 0.00138888f, iParam5, num32 - num38, 0f, 255, 255, 255, 255, false, 0);
+			func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num42 + ((num36 - num42) * 0.5f)) - 0.00138888f, iParam5, num36 - num42, 0f, 255, 255, 255, 255, false, 0);
 		
 			if (Global_24546.f_6334 > Global_24546.f_5828)
 			{
@@ -4910,22 +4910,22 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 				else
 				{
-					r = false;
-					g = HUD_COLOUR_PURE_WHITE;
-					b = false;
+					r = 0;
+					g = 0;
+					b = 0;
 					a = 204;
 				}
 			
-				func_169(Global_24543, num32 + 0f, iParam5, 0.034722f, r, g, b, a);
+				func_169(Global_24543, num36 + 0f, iParam5, 0.034722f, r, g, b, a);
 				textureResolution = { GRAPHICS::GET_TEXTURE_RESOLUTION("CommonMenu", "shop_arrows_upANDdown") };
-				textureResolution = textureResolution * (0.5f / num37);
-				textureResolution.f_1 = textureResolution.f_1 * (0.5f / num37);
+				textureResolution = textureResolution * (0.5f / num41);
+				textureResolution.f_1 = textureResolution.f_1 * (0.5f / num41);
 			
 				if (Global_24546.f_9242)
 				{
-					r = false;
-					g = HUD_COLOUR_PURE_WHITE;
-					b = false;
+					r = 0;
+					g = 0;
+					b = 0;
 					a = 255;
 				}
 				else
@@ -4933,13 +4933,13 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
 				}
 			
-				func_232("CommonMenu", "shop_arrows_upANDdown", Global_24543 + (iParam5 * 0.5f), num32 + 0f + (0.034722f * 0.5f), (textureResolution / 1280f) * num37, (textureResolution.f_1 / 720f) * num37, 0f, r, g, b, a, false, 0);
-				num32 = num32 + 0f + 0.034722f;
+				func_232("CommonMenu", "shop_arrows_upANDdown", Global_24543 + (iParam5 * 0.5f), num36 + 0f + (0.034722f * 0.5f), (textureResolution / 1280f) * num41, (textureResolution.f_1 / 720f) * num41, 0f, r, g, b, a, false, 0);
+				num36 = num36 + 0f + 0.034722f;
 			}
 		
 			if (MISC::GET_HASH_KEY(&(Global_24546.f_5241)) != 0 && Global_24546.f_5323 != -1)
 			{
-				num32 = num32 + (0.00277776f * 2f);
+				num36 = num36 + (0.00277776f * 2f);
 				x = Global_24543 + 0.0046875f;
 			
 				if (Global_24546.f_5325 != 0)
@@ -4993,9 +4993,9 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num32 + 0.00277776f);
+				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num36 + 0.00277776f);
 				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
-				func_169(Global_24543, num32 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
+				func_169(Global_24543, num36 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_24546.f_9234)
 				{
@@ -5009,7 +5009,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
 				}
 			
-				func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num32 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
+				func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num36 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
 				func_227(x);
 				HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&(Global_24546.f_5241));
 				num7 = 0;
@@ -5060,20 +5060,20 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				func_230(x, num32 + 0.00277776f, 0);
+				func_230(x, num36 + 0.00277776f, 0);
 			
 				if (Global_24546.f_5325 != 0)
 				{
 					func_179(Global_24546.f_5325, true, true, &num26, &num27, bParam7);
-					func_226(Global_24546.f_5325, true, &flag4, &color, &flag5, &flag6);
-					func_232(func_186(Global_24546.f_5325), func_183(Global_24546.f_5325, true), Global_24543 + (num26 * 0.5f) + (0.00078125f * 2f), (num32 + (num27 * 0.5f)) - (0.00138888f * 4f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+					func_226(Global_24546.f_5325, true, &num32, &num33, &num34, &num35);
+					func_232(func_186(Global_24546.f_5325), func_183(Global_24546.f_5325, true), Global_24543 + (num26 * 0.5f) + (0.00078125f * 2f), (num36 + (num27 * 0.5f)) - (0.00138888f * 4f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 				}
 			
-				num32 = num32 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
+				num36 = num36 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
 			
 				if (!MISC::IS_STRING_NULL_OR_EMPTY(&(Global_24546.f_5247)))
 				{
-					num32 = num32 + (0.00138888f * 6f);
+					num36 = num36 + (0.00138888f * 6f);
 					func_227(x);
 					size = 0.35f;
 				
@@ -5082,9 +5082,9 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				
 					HUD::SET_TEXT_SCALE(0f, size);
 					HUD::BEGIN_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(&(Global_24546.f_5247));
-					numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num32 + 0.00277776f);
+					numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num36 + 0.00277776f);
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
-					func_169(Global_24543, num32 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
+					func_169(Global_24543, num36 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 				
 					if (Global_24546.f_9234)
 					{
@@ -5098,12 +5098,12 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 						HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
 					}
 				
-					func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num32 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
+					func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num36 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
 					func_227(x);
 					HUD::SET_TEXT_SCALE(0f, size);
 					HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&(Global_24546.f_5247));
-					func_230(x, num32 + 0.00277776f, 0);
-					num32 = num32 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
+					func_230(x, num36 + 0.00277776f, 0);
+					num36 = num36 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
 				}
 			
 				if (Global_24546.f_5323 > 0)
@@ -5117,7 +5117,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 			}
 			else if (!MISC::IS_STRING_NULL_OR_EMPTY(&(Global_24546.f_5247)))
 			{
-				num32 = num32 + (0.00277776f * 2f);
+				num36 = num36 + (0.00277776f * 2f);
 				x = Global_24543 + 0.0046875f;
 				size2 = 0.35f;
 			
@@ -5170,9 +5170,9 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num32 + 0.00277776f);
+				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num36 + 0.00277776f);
 				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
-				func_169(Global_24543, num32 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
+				func_169(Global_24543, num36 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_24546.f_9234)
 				{
@@ -5186,16 +5186,16 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
 				}
 			
-				func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num32 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
+				func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num36 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
 				func_227(x);
 				HUD::SET_TEXT_SCALE(0f, size2);
 				HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&(Global_24546.f_5247));
-				func_230(x, num32 + 0.00277776f, 0);
+				func_230(x, num36 + 0.00277776f, 0);
 			}
 		
 			if (MISC::GET_HASH_KEY(&(Global_4521195.f_21)) != 0 && Global_4521195.f_65 != -1)
 			{
-				num32 = num32 + (0.00277776f * 2f);
+				num36 = num36 + (0.00277776f * 2f);
 				x = Global_24543 + 0.0046875f;
 			
 				if (Global_4521195.f_67 != 0)
@@ -5254,9 +5254,9 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num32 + 0.00277776f);
+				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num36 + 0.00277776f);
 				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
-				func_169(Global_24543, num32 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
+				func_169(Global_24543, num36 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_24546.f_9234)
 				{
@@ -5270,7 +5270,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
 				}
 			
-				func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num32 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
+				func_232("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num36 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
 				func_227(x);
 				HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&(Global_4521195.f_21));
 				num7 = 0;
@@ -5321,16 +5321,16 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				func_230(x, num32 + 0.00277776f, 0);
+				func_230(x, num36 + 0.00277776f, 0);
 			
 				if (Global_4521195.f_67 != 0)
 				{
 					func_179(Global_4521195.f_67, true, true, &num26, &num27, bParam7);
-					func_226(Global_4521195.f_67, true, &flag4, &color, &flag5, &flag6);
-					func_232(func_186(Global_4521195.f_67), func_183(Global_4521195.f_67, true), Global_24543 + (num26 * 0.5f) + (0.00078125f * 2f), (num32 + (num27 * 0.5f)) - (0.00138888f * 4f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+					func_226(Global_4521195.f_67, true, &num32, &num33, &num34, &num35);
+					func_232(func_186(Global_4521195.f_67), func_183(Global_4521195.f_67, true), Global_24543 + (num26 * 0.5f) + (0.00078125f * 2f), (num36 + (num27 * 0.5f)) - (0.00138888f * 4f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 				}
 			
-				num32 = num32 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
+				num36 = num36 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
 			
 				if (Global_4521195.f_65 > 0)
 				{
@@ -5364,15 +5364,15 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 			if (Global_24546.f_6332)
 				type = Global_24546.f_6335 - 1;
 		
-			num39 = 0f;
-			num40 = 0f;
+			num43 = 0f;
+			num44 = 0f;
 		
 			for (j = PV_COMP_HEAD; j <= type; j = j + 1)
 			{
-				num33 = 0.034722f;
+				num37 = 0.034722f;
 			
 				if (Global_24546.f_6348[numberOfLinesForString] != 0f)
-					num33 = Global_24546.f_6348[numberOfLinesForString];
+					num37 = Global_24546.f_6348[numberOfLinesForString];
 			
 				if (Global_24546.f_6332)
 					numberOfLinesForString = Global_24546.f_8865[j];
@@ -5387,12 +5387,12 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					flag2 = true;
 				
 					if (Global_24546.f_6342 == numberOfLinesForString)
-						num40 = num39;
+						num44 = num43;
 				
 					if (Global_24546.f_5959[numberOfLinesForString])
 						num5 = num5 + 1;
 				
-					num25 = num36 + num39 + (0.00277776f * (float)num5) + 0.00277776f;
+					num25 = num40 + num43 + (0.00277776f * (float)num5) + 0.00277776f;
 				}
 			
 				Global_24546.f_6482[numberOfLinesForString] = num25;
@@ -5412,7 +5412,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					else
 						HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r2, &g2, &b2, &a2);
 				
-					func_232("CommonMenu", "Gradient_Nav", Global_24543 + (iParam5 * 0.5f), num36 + num40 + (0.00277776f * (float)num5) + (num33 * 0.5f), iParam5, num33, 0f, r2, g2, b2, a2, false, 0);
+					func_232("CommonMenu", "Gradient_Nav", Global_24543 + (iParam5 * 0.5f), num40 + num44 + (0.00277776f * (float)num5) + (num37 * 0.5f), iParam5, num37, 0f, r2, g2, b2, a2, false, 0);
 					Global_24546.f_6480 = num25;
 				}
 			
@@ -5437,15 +5437,15 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 							Global_24546.f_9045[(num2 * Global_24546.f_5829) + k] = num15;
 						}
 					
-						num41 = 0;
-						flag10 = false;
+						num45 = 0;
+						flag7 = false;
 					
 						if (Global_24546.f_6614[0] != -1)
 						{
 							if ((numberOfLinesForString * 5) + k == Global_24546.f_6611[0])
 							{
-								flag10 = true;
-								num41 = 0;
+								flag7 = true;
+								num45 = 0;
 							}
 						}
 					
@@ -5453,8 +5453,8 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 						{
 							if ((numberOfLinesForString * 5) + k == Global_24546.f_6611[1])
 							{
-								flag10 = true;
-								num41 = 1;
+								flag7 = true;
+								num45 = 1;
 							}
 						}
 					
@@ -5467,9 +5467,9 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 							num31 = (Global_24543 + Global_24545) - 0.0046875f - num24;
 					
 						if (Global_24546.f_5678[k] && Global_24546.f_6477 && flag)
-							flag9 = true;
+							flag6 = true;
 						else
-							flag9 = false;
+							flag6 = false;
 					
 						switch (Global_24546.f_5659[k])
 						{
@@ -5493,21 +5493,21 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 									
 										if (MISC::GET_HASH_KEY(&Global_24546.f_79[num16 /*6*/]) != 0)
 										{
-											flag7 = false;
-											flag8 = false;
+											flag4 = false;
+											flag5 = false;
 										
 											for (l = 0; l < 4; l = l + 1)
 											{
 												if (Global_24546.f_2387[num16 /*5*/][l] == 5 || Global_24546.f_2387[num16 /*5*/][l] == 8)
-													flag8 = true;
+													flag5 = true;
 												else if (Global_24546.f_2387[num16 /*5*/][l] == 9)
-													flag7 = true;
+													flag4 = true;
 											}
 										
 											if (Global_24546.f_2130[num16])
-												flag8 = true;
+												flag5 = true;
 										
-											func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, num41, flag8, flag7);
+											func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, num45, flag5, flag4);
 											HUD::BEGIN_TEXT_COMMAND_GET_SCREEN_WIDTH_OF_DISPLAY_TEXT(&Global_24546.f_79[num16 /*6*/]);
 										}
 									
@@ -5622,7 +5622,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										num29 = Global_24546.f_9168[(num2 * Global_24546.f_5829) + k];
 									}
 								
-									if (flag9)
+									if (flag6)
 									{
 										if (func_179(27, true, false, &num26, &num27, bParam7))
 										{
@@ -5633,10 +5633,10 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_179(27, true, true, &num26, &num27, bParam7))
 											{
-												func_226(27, true, &flag4, &color, &flag5, &flag6);
+												func_226(27, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_232(func_186(27), func_183(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_232(func_186(27), func_183(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									
@@ -5647,10 +5647,10 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_179(28, true, true, &num26, &num27, bParam7))
 											{
-												func_226(28, true, &flag4, &color, &flag5, &flag6);
+												func_226(28, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_232(func_186(28), func_183(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_232(func_186(28), func_183(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									}
@@ -5664,21 +5664,21 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 								
 									if (MISC::GET_HASH_KEY(&Global_24546.f_79[num16 /*6*/]) != 0 && i == 1)
 									{
-										flag7 = false;
-										flag8 = false;
+										flag4 = false;
+										flag5 = false;
 									
 										for (l = 0; l < 4; l = l + 1)
 										{
 											if (Global_24546.f_2387[num16 /*5*/][l] == 5 || Global_24546.f_2387[num16 /*5*/][l] == 8)
-												flag8 = true;
+												flag5 = true;
 											else if (Global_24546.f_2387[num16 /*5*/][l] == 9)
-												flag7 = true;
+												flag4 = true;
 										}
 									
 										if (Global_24546.f_2130[num16])
-											flag8 = true;
+											flag5 = true;
 									
-										func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, flag8, flag7);
+										func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, flag5, flag4);
 									
 										if (Global_24546.f_9240 && Global_24546.f_9241 == numberOfLinesForString)
 											func_216(flag);
@@ -5764,13 +5764,13 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 												
 													if (func_179(Global_24546.f_4984[num14 + num20], flag, true, &num26, &num27, bParam7))
 													{
-														func_226(Global_24546.f_4984[num14 + num20], flag, &flag4, &color, &flag5, &flag6);
+														func_226(Global_24546.f_4984[num14 + num20], flag, &num32, &num33, &num34, &num35);
 													
 														if (i == 1)
 															if (Global_24546.f_5686[k] == 2)
-																func_232(func_186(Global_24546.f_4984[num14 + num20]), func_183(Global_24546.f_4984[num14 + num20], flag), ((num24 + x) - (0.00078125f * 8f)) + (0.00078125f * 4f), (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_232(func_186(Global_24546.f_4984[num14 + num20]), func_183(Global_24546.f_4984[num14 + num20], flag), ((num24 + x) - (0.00078125f * 8f)) + (0.00078125f * 4f), (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 															else
-																func_232(func_186(Global_24546.f_4984[num14 + num20]), func_183(Global_24546.f_4984[num14 + num20], flag), (num24 + x) - (0.00078125f * 8f), (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_232(func_186(Global_24546.f_4984[num14 + num20]), func_183(Global_24546.f_4984[num14 + num20], flag), (num24 + x) - (0.00078125f * 8f), (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 													
 														x = x + (0.00078125f * 3f);
 													}
@@ -5797,21 +5797,21 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 												if (k == 0)
 												{
 													if (Global_24546.f_2130[num16])
-														flag8 = true;
+														flag5 = true;
 												
-													func_191(false, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, flag8, flag7);
+													func_191(false, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, flag5, flag4);
 													TEXT_LABEL_ASSIGN_STRING(&text, "TEST_LABEL", 16);
 													value = 0f;
 													value2 = 55f;
-													num42 = 0.0185f;
-													num43 = 0.004f;
-													num44 = 0.02f;
+													num46 = 0.0185f;
+													num47 = 0.004f;
+													num48 = 0.02f;
 													HUD::SET_TEXT_SCALE(0f, 0.35f * 0.7f);
 													HUD::SET_TEXT_COLOUR(255, 255, 255, 150);
-													GRAPHICS::DRAW_RECT(num24 - (num44 * 0.6f), num25 + (num42 * 0.75f), 0.0175f, 0.035f, BUILTIN::FLOOR(value), BUILTIN::FLOOR(value), BUILTIN::FLOOR(value), BUILTIN::FLOOR(value2), false);
+													GRAPHICS::DRAW_RECT(num24 - (num48 * 0.6f), num25 + (num46 * 0.75f), 0.0175f, 0.035f, BUILTIN::FLOOR(value), BUILTIN::FLOOR(value), BUILTIN::FLOOR(value), BUILTIN::FLOOR(value2), false);
 													HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&text);
 													HUD::ADD_TEXT_COMPONENT_INTEGER(Global_24546.f_6341 + num22);
-													func_230(num24 - num44, num25 + num43, 0);
+													func_230(num24 - num48, num25 + num47, 0);
 													num22 = num22 + 1;
 												}
 											}
@@ -5834,14 +5834,14 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 													{
 														if (func_179(Global_24546.f_4984[num14 + l], flag, true, &num26, &num27, bParam7))
 														{
-															func_226(Global_24546.f_4984[num14 + l], flag, &flag4, &color, &flag5, &flag6);
+															func_226(Global_24546.f_4984[num14 + l], flag, &num32, &num33, &num34, &num35);
 														
 															if (Global_24546.f_4984[num14 + l] == 31)
-																func_232(func_186(Global_24546.f_4984[num14 + l]), func_183(Global_24546.f_4984[num14 + l], flag), Global_24543 + (num26 * 0.5f), (num25 + 0.00277776f + (num27 * 0.5f)) - (0.00078125f * 11f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_232(func_186(Global_24546.f_4984[num14 + l]), func_183(Global_24546.f_4984[num14 + l], flag), Global_24543 + (num26 * 0.5f), (num25 + 0.00277776f + (num27 * 0.5f)) - (0.00078125f * 11f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 															else if (Global_24546.f_5686[k] == 2)
-																func_232(func_186(Global_24546.f_4984[num14 + l]), func_183(Global_24546.f_4984[num14 + l], flag), ((num24 + x + num28) - (0.00078125f * 8f)) + (0.00078125f * 4f), (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_232(func_186(Global_24546.f_4984[num14 + l]), func_183(Global_24546.f_4984[num14 + l], flag), ((num24 + x + num28) - (0.00078125f * 8f)) + (0.00078125f * 4f), (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 															else
-																func_232(func_186(Global_24546.f_4984[num14 + l]), func_183(Global_24546.f_4984[num14 + l], flag), (num24 + x + num28) - (0.00078125f * 12f), (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_232(func_186(Global_24546.f_4984[num14 + l]), func_183(Global_24546.f_4984[num14 + l], flag), (num24 + x + num28) - (0.00078125f * 12f), (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 														}
 													}
 												
@@ -5883,7 +5883,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 								{
 									if (!Global_24546.f_6332)
 									{
-										func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, false, false);
+										func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, false, false);
 									
 										if (Global_24546.f_9240 && Global_24546.f_9241 == numberOfLinesForString)
 											func_216(flag);
@@ -5907,7 +5907,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										num28 = Global_24546.f_9127[(num2 * Global_24546.f_5829) + k];
 									}
 								
-									if (flag9)
+									if (flag6)
 									{
 										if (func_179(27, true, false, &num26, &num27, bParam7))
 										{
@@ -5918,10 +5918,10 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_179(27, true, true, &num26, &num27, bParam7))
 											{
-												func_226(27, true, &flag4, &color, &flag5, &flag6);
+												func_226(27, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_232(func_186(27), func_183(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_232(func_186(27), func_183(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									
@@ -5932,17 +5932,17 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_179(28, true, true, &num26, &num27, bParam7))
 											{
-												func_226(28, true, &flag4, &color, &flag5, &flag6);
+												func_226(28, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_232(func_186(28), func_183(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_232(func_186(28), func_183(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									}
 								
 									if (i == 1)
 									{
-										func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, false, false);
+										func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, false, false);
 										func_215(num24 + x, num25, "NUMBER" /*~1~*/, Global_24546.f_4469[num12], 0);
 									}
 								}
@@ -5956,7 +5956,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 								{
 									if (!Global_24546.f_6332)
 									{
-										func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, false, false);
+										func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, false, false);
 									
 										if (Global_24546.f_9240 && Global_24546.f_9241 == numberOfLinesForString)
 											func_216(flag);
@@ -5980,7 +5980,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										num28 = Global_24546.f_9127[(num2 * Global_24546.f_5829) + k];
 									}
 								
-									if (flag9)
+									if (flag6)
 									{
 										if (func_179(27, true, false, &num26, &num27, false))
 										{
@@ -5991,10 +5991,10 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_179(27, true, true, &num26, &num27, bParam7))
 											{
-												func_226(27, true, &flag4, &color, &flag5, &flag6);
+												func_226(27, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_232(func_186(27), func_183(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_232(func_186(27), func_183(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									
@@ -6005,15 +6005,15 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_179(28, true, true, &num26, &num27, bParam7))
 											{
-												func_226(28, true, &flag4, &color, &flag5, &flag6);
+												func_226(28, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_232(func_186(28), func_183(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_232(func_186(28), func_183(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									}
 								
-									func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, false, false);
+									func_191(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, false, false);
 									func_214(num24 + x, num25, "NUMBER" /*~1~*/, Global_24546.f_4726[num13], Global_24546.f_4855[num13]);
 								}
 							
@@ -6045,7 +6045,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 											num29 = Global_24546.f_9168[(num2 * Global_24546.f_5829) + k];
 										}
 									
-										if (flag9)
+										if (flag6)
 										{
 											if (func_179(27, true, false, &num26, &num27, bParam7))
 											{
@@ -6056,10 +6056,10 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 											
 												if (func_179(27, true, true, &num26, &num27, bParam7))
 												{
-													func_226(27, true, &flag4, &color, &flag5, &flag6);
+													func_226(27, true, &num32, &num33, &num34, &num35);
 												
 													if (i == 1)
-														func_232(func_186(27), func_183(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+														func_232(func_186(27), func_183(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 												}
 											}
 										
@@ -6070,10 +6070,10 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 											
 												if (func_179(28, true, true, &num26, &num27, bParam7))
 												{
-													func_226(28, true, &flag4, &color, &flag5, &flag6);
+													func_226(28, true, &num32, &num33, &num34, &num35);
 												
 													if (i == 1)
-														func_232(func_186(28), func_183(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+														func_232(func_186(28), func_183(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 												}
 											}
 										}
@@ -6082,8 +6082,8 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										{
 											if (func_179(Global_24546.f_4984[num14], flag, true, &num26, &num27, bParam7))
 											{
-												func_226(Global_24546.f_4984[num14], flag, &flag4, &color, &flag5, &flag6);
-												func_232(func_186(Global_24546.f_4984[num14]), func_183(Global_24546.f_4984[num14], flag), num24 + x + (num26 * 0.5f), (num25 - 0.00277776f) + (num33 * 0.5f), num26 * func_213(Global_24546.f_4984[num14]), num27 * func_213(Global_24546.f_4984[num14]), 0f, flag4, color, flag5, flag6, false, 0);
+												func_226(Global_24546.f_4984[num14], flag, &num32, &num33, &num34, &num35);
+												func_232(func_186(Global_24546.f_4984[num14]), func_183(Global_24546.f_4984[num14], flag), num24 + x + (num26 * 0.5f), (num25 - 0.00277776f) + (num37 * 0.5f), num26 * func_213(Global_24546.f_4984[num14]), num27 * func_213(Global_24546.f_4984[num14]), 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									}
@@ -6132,9 +6132,9 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 							num6 = num6 + 1;
 					
 						if (Global_24546.f_6348[numberOfLinesForString] != 0f)
-							num39 = num39 + Global_24546.f_6348[numberOfLinesForString];
+							num43 = num43 + Global_24546.f_6348[numberOfLinesForString];
 						else
-							num39 = num39 + 0.034722f;
+							num43 = num43 + 0.034722f;
 					}
 				
 					if (!Global_24546.f_6331)
@@ -6161,7 +6161,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		
 			if (!Global_24546.f_6331)
 			{
-				Global_24546.f_6333 = num36 + num39 + (0.00277776f * (float)num5);
+				Global_24546.f_6333 = num40 + num43 + (0.00277776f * (float)num5);
 				Global_24546.f_6336 = num4;
 				Global_24546.f_6334 = num3;
 				Global_24546.f_6331 = 1;
@@ -6175,7 +6175,7 @@ void func_204(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		}
 	}
 
-	Global_24546.f_6479 = num32;
+	Global_24546.f_6479 = num36;
 	Global_24546.f_6481 = MISC::GET_GAME_TIMER();
 	HUD::THEFEED_SET_SCRIPTED_MENU_HEIGHT(Global_24546.f_6479);
 
@@ -6640,31 +6640,31 @@ BOOL func_220(Player plParam0, int iParam1) // Position - 0x89AF (35247)
 	return flag;
 }
 
-eCharacter func_221(Interior inParam0, BOOL bParam1) // Position - 0x8A08 (35336)
+eCharacter func_221(int iParam0, BOOL bParam1) // Position - 0x8A08 (35336)
 {
 	eCharacter character;
-	Interior interior;
+	int num;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
-		interior = func_222();
+	if (num == -1)
+		num = func_222();
 
-	if (Global_1575072[interior] == true)
+	if (Global_1575072[num] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[interior];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
 	return character;
 }
 
-Interior func_222() // Position - 0x8A49 (35401)
+int func_222() // Position - 0x8A49 (35401)
 {
 	return Global_1574927;
 }
@@ -6841,8 +6841,8 @@ void func_231() // Position - 0x8D1F (36127)
 {
 	int r;
 	int g;
-	BOOL b;
-	eHudColour a;
+	int b;
+	int a;
 
 	HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
 
@@ -6864,9 +6864,9 @@ void func_231() // Position - 0x8D1F (36127)
 	return;
 }
 
-void func_232(char* sParam0, char* sParam1, float fParam2, float fParam3, float fParam4, float fParam5, float fParam6, BOOL bParam7, eHudColour ehcParam8, BOOL bParam9, BOOL bParam10, BOOL bParam11, int iParam12) // Position - 0x8DA9 (36265)
+void func_232(char* sParam0, char* sParam1, float fParam2, float fParam3, float fParam4, float fParam5, float fParam6, int iParam7, int iParam8, int iParam9, int iParam10, BOOL bParam11, int iParam12) // Position - 0x8DA9 (36265)
 {
-	GRAPHICS::DRAW_SPRITE(sParam0, sParam1, func_170(fParam2), fParam3, func_170(fParam4), fParam5, fParam6, bParam7, ehcParam8, bParam9, bParam10, bParam11, iParam12);
+	GRAPHICS::DRAW_SPRITE(sParam0, sParam1, func_170(fParam2), fParam3, func_170(fParam4), fParam5, fParam6, iParam7, iParam8, iParam9, iParam10, bParam11, iParam12);
 	return;
 }
 

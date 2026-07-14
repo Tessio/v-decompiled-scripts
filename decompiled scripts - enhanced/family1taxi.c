@@ -112,10 +112,10 @@ void func_1() // Position - 0xA4 (164)
 			break;
 	
 		case 2:
-			switch (func_5("AM_H_TAXI1" /*Use ~INPUT_CONTEXT~ to flag down passing taxis.*/))
+			switch (func_5("AM_H_TAXI1" /*Usa ~INPUT_CONTEXT~ para parar un taxi.*/))
 			{
 				case 2:
-					func_2("AM_H_TAXI1" /*Use ~INPUT_CONTEXT~ to flag down passing taxis.*/, 2, 0, 1000, 10000, 1, 0, 0, 0);
+					func_2("AM_H_TAXI1" /*Usa ~INPUT_CONTEXT~ para parar un taxi.*/, 2, 0, 1000, 10000, 1, 0, 0, 0);
 					break;
 			
 				case 1:
@@ -125,10 +125,10 @@ void func_1() // Position - 0xA4 (164)
 			break;
 	
 		case 3:
-			switch (func_5("AM_H_TAXI2" /*Taxi pick ups can be requested through the phone.*/))
+			switch (func_5("AM_H_TAXI2" /*Puedes llamar por teléfono para que un taxi te venga a recoger.*/))
 			{
 				case 2:
-					func_2("AM_H_TAXI2" /*Taxi pick ups can be requested through the phone.*/, 2, 0, 1000, 10000, 1, 0, 0, 0);
+					func_2("AM_H_TAXI2" /*Puedes llamar por teléfono para que un taxi te venga a recoger.*/, 2, 0, 1000, 10000, 1, 0, 0, 0);
 					break;
 			
 				case 1:
@@ -282,11 +282,11 @@ BOOL func_9(int iParam0) // Position - 0x541 (1345)
 
 void func_10() // Position - 0x56D (1389)
 {
-	if (func_6("AM_H_TAXI1" /*Use ~INPUT_CONTEXT~ to flag down passing taxis.*/))
-		func_11("AM_H_TAXI1" /*Use ~INPUT_CONTEXT~ to flag down passing taxis.*/, 1);
+	if (func_6("AM_H_TAXI1" /*Usa ~INPUT_CONTEXT~ para parar un taxi.*/))
+		func_11("AM_H_TAXI1" /*Usa ~INPUT_CONTEXT~ para parar un taxi.*/, 1);
 
-	if (func_6("AM_H_TAXI2" /*Taxi pick ups can be requested through the phone.*/))
-		func_11("AM_H_TAXI2" /*Taxi pick ups can be requested through the phone.*/, true);
+	if (func_6("AM_H_TAXI2" /*Puedes llamar por teléfono para que un taxi te venga a recoger.*/))
+		func_11("AM_H_TAXI2" /*Puedes llamar por teléfono para que un taxi te venga a recoger.*/, true);
 
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;

@@ -366,10 +366,10 @@
 	float fLocal_364 = 0f;
 	int iLocal_365 = 0;
 	int iLocal_366 = 0;
-	ePedComponentType epctLocal_367 = PV_COMP_HEAD;
+	Vehicle veLocal_367 = 0;
 	Hash hLocal_368 = 0;
-	ePedComponentType epctLocal_369 = PV_COMP_HEAD;
-	ePedComponentType epctLocal_370 = PV_COMP_HEAD;
+	Ped pedLocal_369 = 0;
+	Ped pedLocal_370 = 0;
 	ePedComponentType epctLocal_371 = PV_COMP_HEAD;
 	Player plLocal_372 = 0;
 	Blip blLocal_373 = 0;
@@ -472,7 +472,7 @@ void main() // Position - 0x0 (0)
 					break;
 			
 				case 1:
-					if (func_324(epctLocal_367) && !PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && PED::GET_PED_CONFIG_FLAG(PLAYER::PLAYER_PED_ID(), 184, true) != IS_BIT_SET(Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_882, 6))
+					if (func_324(veLocal_367) && !PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && PED::GET_PED_CONFIG_FLAG(PLAYER::PLAYER_PED_ID(), 184, true) != IS_BIT_SET(Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_882, 6))
 					{
 						if (!IS_BIT_SET(iLocal_358, 0))
 						{
@@ -551,9 +551,9 @@ void func_1() // Position - 0x211 (529)
 	func_320();
 	func_319();
 	func_317();
-	func_314(epctLocal_367);
+	func_314(veLocal_367);
 
-	if (VEHICLE::IS_VEHICLE_DRIVEABLE(epctLocal_367, false) && NETWORK::IS_ENTITY_A_GHOST(epctLocal_367) && !(func_313(PLAYER::PLAYER_ID()) == 129) && bLocal_309 || bLocal_310 || bLocal_311 || bLocal_312 || Global_1579266 != -1 || bLocal_308)
+	if (VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false) && NETWORK::IS_ENTITY_A_GHOST(veLocal_367) && !(func_313(PLAYER::PLAYER_ID()) == 129) && bLocal_309 || bLocal_310 || bLocal_311 || bLocal_312 || Global_1579266 != -1 || bLocal_308)
 	{
 		func_312();
 		bLocal_305 = true;
@@ -593,7 +593,7 @@ void func_1() // Position - 0x211 (529)
 		{
 			if (!bLocal_320)
 			{
-				VEHICLE::DISABLE_VEHICLE_WEAPON(true, joaat("VEHICLE_WEAPON_SPACE_ROCKET"), epctLocal_367, PLAYER::PLAYER_PED_ID());
+				VEHICLE::DISABLE_VEHICLE_WEAPON(true, joaat("VEHICLE_WEAPON_SPACE_ROCKET"), veLocal_367, PLAYER::PLAYER_PED_ID());
 				bLocal_320 = true;
 			}
 		}
@@ -604,7 +604,7 @@ void func_1() // Position - 0x211 (529)
 		{
 			if (!bLocal_320 && hLocal_299 != joaat("hunter"))
 			{
-				VEHICLE::DISABLE_VEHICLE_WEAPON(true, joaat("VEHICLE_WEAPON_SPACE_ROCKET"), epctLocal_367, PLAYER::PLAYER_PED_ID());
+				VEHICLE::DISABLE_VEHICLE_WEAPON(true, joaat("VEHICLE_WEAPON_SPACE_ROCKET"), veLocal_367, PLAYER::PLAYER_PED_ID());
 				bLocal_320 = true;
 			}
 		}
@@ -613,7 +613,7 @@ void func_1() // Position - 0x211 (529)
 	{
 		if (bLocal_320)
 		{
-			VEHICLE::DISABLE_VEHICLE_WEAPON(false, joaat("VEHICLE_WEAPON_SPACE_ROCKET"), epctLocal_367, PLAYER::PLAYER_PED_ID());
+			VEHICLE::DISABLE_VEHICLE_WEAPON(false, joaat("VEHICLE_WEAPON_SPACE_ROCKET"), veLocal_367, PLAYER::PLAYER_PED_ID());
 			bLocal_320 = false;
 		}
 	}
@@ -641,7 +641,7 @@ void func_1() // Position - 0x211 (529)
 			}
 			else if (bLocal_309 || bLocal_310 || bLocal_311 || bLocal_312 || bLocal_308)
 			{
-				if (func_240(epctLocal_367))
+				if (func_240(veLocal_367))
 				{
 					PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_ATTACK, true);
 					PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_GUN_LR, true);
@@ -710,7 +710,7 @@ void func_1() // Position - 0x211 (529)
 					iLocal_388 = 0;
 				}
 			}
-			else if (func_324(epctLocal_367))
+			else if (func_324(veLocal_367))
 			{
 				iLocal_71 = GRAPHICS::REQUEST_SCALEFORM_MOVIE(func_232(hLocal_299));
 			}
@@ -735,17 +735,17 @@ void func_1() // Position - 0x211 (529)
 				}
 			
 				func_222(1, 2);
-				uLocal_72.f_9 = func_221(epctLocal_367);
+				uLocal_72.f_9 = func_221(veLocal_367);
 				uLocal_72.f_4 = 1;
 				MISC::SET_BIT(&(Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_882), 6);
-				func_219(&uLocal_72, epctLocal_367, 1, epctLocal_367, hLocal_299, 1);
+				func_219(&uLocal_72, veLocal_367, 1, veLocal_367, hLocal_299, 1);
 				Global_2708955 = 0;
-				Global_2740431 = PV_COMP_BERD;
+				Global_2740431 = true;
 				func_217();
-				ENTITY::SET_ENTITY_ALWAYS_PRERENDER(epctLocal_367, true);
+				ENTITY::SET_ENTITY_ALWAYS_PRERENDER(veLocal_367, true);
 				func_241(2);
 			
-				if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("volatol"))
+				if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
 					GRAPHICS::SET_PARTICLE_FX_OVERRIDE("muz_xm_volatol_twinmg", "scr_xm_volatol_turret_camera");
 			
 				if (!bLocal_309 && !bLocal_310 && !bLocal_311 && !bLocal_312 && !bLocal_308 && Global_1579266 == -1)
@@ -767,7 +767,7 @@ void func_1() // Position - 0x211 (529)
 			break;
 	
 		case 2:
-			if (Global_1579260 != -1 || Global_1579266 != -1 || func_324(epctLocal_367))
+			if (Global_1579260 != -1 || Global_1579266 != -1 || func_324(veLocal_367))
 				func_211();
 		
 			if (MISC::GET_FRAME_COUNT() % 30 == 0)
@@ -778,10 +778,10 @@ void func_1() // Position - 0x211 (529)
 			if (hLocal_300 != 0)
 				STREAMING::REQUEST_MODEL(hLocal_300);
 		
-			if (ENTITY::DOES_ENTITY_EXIST(epctLocal_367))
-				Global_2708955 = ENTITY::GET_ENTITY_MODEL(epctLocal_367);
+			if (ENTITY::DOES_ENTITY_EXIST(veLocal_367))
+				Global_2708955 = ENTITY::GET_ENTITY_MODEL(veLocal_367);
 		
-			if (Global_1579260 != -1 || func_324(epctLocal_367) || Global_1579266 != -1)
+			if (Global_1579260 != -1 || func_324(veLocal_367) || Global_1579266 != -1)
 			{
 				INTERIOR::ACTIVATE_INTERIOR_GROUPS_USING_CAMERA();
 				func_210(&uLocal_72, 0);
@@ -817,7 +817,7 @@ void func_1() // Position - 0x211 (529)
 						{
 							CAM::DO_SCREEN_FADE_IN(250);
 						}
-						else if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(epctLocal_367))
+						else if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(veLocal_367))
 						{
 							if (_STOPWATCH_IS_INITIALIZED(&uLocal_375) && func_205(&uLocal_375, 3000, false))
 							{
@@ -844,7 +844,7 @@ void func_1() // Position - 0x211 (529)
 			func_210(&uLocal_72, 1);
 			uLocal_72.f_4 = 1;
 		
-			if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("avenger") || ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("avenger3"))
+			if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("avenger") || ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("avenger3"))
 			{
 				if (CAM::DOES_CAM_EXIST(uLocal_72.f_32))
 				{
@@ -856,7 +856,7 @@ void func_1() // Position - 0x211 (529)
 				STREAMING::SUPPRESS_HD_MAP_STREAMING_THIS_FRAME();
 			}
 		
-			if (func_197(epctLocal_367) || func_196())
+			if (func_197(veLocal_367) || func_196())
 			{
 				PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_PASSENGER_AIM, true);
 				PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_PASSENGER_ATTACK, true);
@@ -887,7 +887,7 @@ void func_1() // Position - 0x211 (529)
 			
 				uLocal_72.f_25 = 50f;
 			
-				if (Global_1579260 == true)
+				if (Global_1579260 == 1)
 					func_117(&uLocal_72, 0, 30f, -12f, -50f, 50f, 1041865114, false);
 				else if (Global_1579260 == 2)
 					func_117(&uLocal_72, 0, 30f, -55f, -85f, 140f, 1041865114, false);
@@ -951,11 +951,11 @@ void func_1() // Position - 0x211 (529)
 					HUD::SET_BLIP_DISPLAY(blLocal_374, 5);
 				}
 			}
-			else if (func_324(epctLocal_367))
+			else if (func_324(veLocal_367))
 			{
 				uLocal_72.f_36 = 0.002f;
 			
-				if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("akula"))
+				if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula"))
 				{
 					switch (func_112())
 					{
@@ -980,12 +980,12 @@ void func_1() // Position - 0x211 (529)
 							break;
 					}
 				}
-				else if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("volatol"))
+				else if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
 				{
-					if (!MISC::GET_GROUND_Z_FOR_3D_COORD(ENTITY::GET_ENTITY_COORDS(epctLocal_367, true), &groundZ, true, false))
+					if (!MISC::GET_GROUND_Z_FOR_3D_COORD(ENTITY::GET_ENTITY_COORDS(veLocal_367, true), &groundZ, true, false))
 						groundZ = -1000f;
 				
-					entityCoords = { ENTITY::GET_ENTITY_COORDS(epctLocal_367, true) };
+					entityCoords = { ENTITY::GET_ENTITY_COORDS(veLocal_367, true) };
 					num = entityCoords.f_2 - groundZ;
 					num2 = func_111((uLocal_72.f_40 - uLocal_72.f_39) / (uLocal_72.f_38 - uLocal_72.f_39), 0f, 1f);
 					uLocal_72.f_39 = func_110(10f, 27.9f, 1f - func_111((num - 2f) / 40f, 0f, 1f));
@@ -1009,7 +1009,7 @@ void func_1() // Position - 0x211 (529)
 							break;
 					}
 				}
-				else if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == 858355070)
+				else if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == 858355070)
 				{
 					switch (func_109())
 					{
@@ -1279,7 +1279,7 @@ void func_1() // Position - 0x211 (529)
 			}
 		
 			if (bLocal_384)
-				if (func_324(epctLocal_367))
+				if (func_324(veLocal_367))
 					PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_EXIT, true);
 		
 			if (!HUD::IS_PAUSE_MENU_ACTIVE() && !func_66() && !func_65(0) && !HUD::IS_WARNING_MESSAGE_ACTIVE() || Global_1579260 != -1 && func_64(Global_1845129) && !NETWORK::NETWORK_IS_ACTIVITY_SESSION() || Global_1579266 != -1 && func_64(Global_1845129) && !NETWORK::NETWORK_IS_ACTIVITY_SESSION())
@@ -1293,18 +1293,18 @@ void func_1() // Position - 0x211 (529)
 					action = INPUT_SCRIPT_RRIGHT;
 				}
 			
-				if (func_324(epctLocal_367))
+				if (func_324(veLocal_367))
 				{
 					control = FRONTEND_CONTROL;
 					action = INPUT_SCRIPT_RRIGHT;
 					PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_CIN_CAM, true);
 				}
 			
-				if (PAD::IS_CONTROL_JUST_PRESSED(control, action) || !VEHICLE::IS_VEHICLE_DRIVEABLE(epctLocal_367, false) || func_63(epctLocal_367, false) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_T_3" /*Turrets are disabled inside of the Bunker.*/) || func_44() || func_39())
+				if (PAD::IS_CONTROL_JUST_PRESSED(control, action) || !VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false) || func_63(veLocal_367, false) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_T_3" /*Las torretas están desactivadas dentro del búnker.*/) || func_44() || func_39())
 				{
 					bLocal_301 = false;
 				
-					if (func_324(epctLocal_367))
+					if (func_324(veLocal_367))
 					{
 						func_233(&uLocal_343, true, false);
 						Global_1579267 = 1;
@@ -1327,7 +1327,7 @@ void func_1() // Position - 0x211 (529)
 						Global_1579261 = false;
 						func_96();
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_20(epctLocal_367)))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_20(veLocal_367)))
 							HUD::CLEAR_HELP(true);
 					
 						CAM::DO_SCREEN_FADE_OUT(0);
@@ -1342,7 +1342,7 @@ void func_1() // Position - 0x211 (529)
 					
 						HUD::UNLOCK_MINIMAP_POSITION();
 					}
-					else if (func_324(epctLocal_367))
+					else if (func_324(veLocal_367))
 					{
 						if (func_39())
 						{
@@ -1381,14 +1381,14 @@ void func_1() // Position - 0x211 (529)
 			if (func_227(&uLocal_72, 0) && GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(iLocal_71) && GRAPHICS::HAS_STREAMED_TEXTURE_DICT_LOADED("helicopterhud") && CAM::IS_SCREEN_FADED_OUT() || Global_1579260 == -1 && Global_1579266 == -1)
 			{
 				func_222(1, 2);
-				uLocal_72.f_9 = func_221(epctLocal_367);
+				uLocal_72.f_9 = func_221(veLocal_367);
 				uLocal_72.f_4 = 1;
 				uLocal_72.f_188 = { -13.75f, 0f, 0f };
-				func_219(&uLocal_72, epctLocal_367, 1, epctLocal_367, hLocal_299, 1);
+				func_219(&uLocal_72, veLocal_367, 1, veLocal_367, hLocal_299, 1);
 				Global_2708955 = 0;
-				Global_2740431 = PV_COMP_BERD;
+				Global_2740431 = true;
 				func_217();
-				ENTITY::SET_ENTITY_ALWAYS_PRERENDER(epctLocal_367, true);
+				ENTITY::SET_ENTITY_ALWAYS_PRERENDER(veLocal_367, true);
 				func_117(&uLocal_72, 0, -13.75f, -13.75f, 0f, 0f, fLocal_328, true);
 				func_241(4);
 			}
@@ -1397,10 +1397,10 @@ void func_1() // Position - 0x211 (529)
 		case 4:
 			Global_1579265 = -1;
 		
-			if (ENTITY::DOES_ENTITY_EXIST(epctLocal_367))
-				Global_2708955 = ENTITY::GET_ENTITY_MODEL(epctLocal_367);
+			if (ENTITY::DOES_ENTITY_EXIST(veLocal_367))
+				Global_2708955 = ENTITY::GET_ENTITY_MODEL(veLocal_367);
 		
-			if (func_324(epctLocal_367))
+			if (func_324(veLocal_367))
 			{
 				INTERIOR::ACTIVATE_INTERIOR_GROUPS_USING_CAMERA();
 				func_210(&uLocal_72, 0);
@@ -1432,7 +1432,7 @@ void func_1() // Position - 0x211 (529)
 						{
 							CAM::DO_SCREEN_FADE_IN(250);
 						}
-						else if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(epctLocal_367))
+						else if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(veLocal_367))
 						{
 							if (_STOPWATCH_IS_INITIALIZED(&uLocal_375) && func_205(&uLocal_375, 3000, false))
 							{
@@ -1482,9 +1482,9 @@ void func_1() // Position - 0x211 (529)
 		
 			if (!HUD::IS_PAUSE_MENU_ACTIVE() && !func_66() && !func_65(0) && !HUD::IS_WARNING_MESSAGE_ACTIVE())
 			{
-				if (!(PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_FRONTEND_X) || PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_FRONTEND_X)) || !VEHICLE::IS_VEHICLE_DRIVEABLE(epctLocal_367, false) || func_63(epctLocal_367, false))
+				if (!(PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_FRONTEND_X) || PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_FRONTEND_X)) || !VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false) || func_63(veLocal_367, false))
 				{
-					if (func_324(epctLocal_367))
+					if (func_324(veLocal_367))
 					{
 						func_233(&uLocal_343, true, false);
 						Global_1579267 = 1;
@@ -1661,7 +1661,7 @@ BOOL func_6() // Position - 0x1EF1 (7921)
 void func_7() // Position - 0x1F0A (7946)
 {
 	func_327(&(iLocal_353.f_2), true, false);
-	Global_1579259 = true;
+	Global_1579259 = 1;
 	CAM::DO_SCREEN_FADE_OUT(30);
 	return;
 }
@@ -1755,7 +1755,7 @@ int func_10(BOOL bParam0) // Position - 0x1F7B (8059)
 
 BOOL func_11() // Position - 0x20AD (8365)
 {
-	if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 1, false) && !func_12())
+	if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 1, false) && !func_12())
 		return true;
 
 	return false;
@@ -1763,7 +1763,7 @@ BOOL func_11() // Position - 0x20AD (8365)
 
 BOOL func_12() // Position - 0x20D0 (8400)
 {
-	if (VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+	if (VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 		if (_NETWORK_IS_PLAYER_VALID(epctLocal_371, true, true))
 			if (Global_1845299[epctLocal_371 /*883*/].f_863)
 				return true;
@@ -1800,12 +1800,12 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 
 BOOL func_14() // Position - 0x2168 (8552)
 {
-	return VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 3, false);
+	return VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 3, false);
 }
 
 BOOL func_15() // Position - 0x2179 (8569)
 {
-	return VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 2, false);
+	return VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 2, false);
 }
 
 int _GET_VEHICLE_SEAT_PED_IS_IN(Ped ped, BOOL includeLastVehicle) // Position - 0x218A (8586)
@@ -1864,7 +1864,7 @@ Vector3 _GET_PLAYER_COORDS(Player plParam0) // Position - 0x2248 (8776)
 	return ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(plParam0), false);
 }
 
-char* func_20(ePedComponentType epctParam0) // Position - 0x225B (8795)
+char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 {
 	BOOL flag;
 	BOOL flag2;
@@ -1876,9 +1876,9 @@ char* func_20(ePedComponentType epctParam0) // Position - 0x225B (8795)
 
 	if (Global_1579260 != -1)
 		if (func_64(Global_1845129) && !IS_BIT_SET(Global_4718592.f_26, 7))
-			return "HUNTGUN_T_3" /*Turrets are disabled inside of the Bunker.*/;
+			return "HUNTGUN_T_3" /*Las torretas están desactivadas dentro del búnker.*/;
 		else
-			return "HUNTGUN_T_2b" /*Mobile Operations Center Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+			return "HUNTGUN_T_2b" /*Torreta del Centro de Operaciones Móvil:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 
 	flag3 = func_38() && IS_BIT_SET(Global_1575014, 14);
 
@@ -1966,46 +1966,46 @@ char* func_20(ePedComponentType epctParam0) // Position - 0x225B (8795)
 		{
 			case 1:
 				if (flag && flag2)
-					return "IAA_T_2_OSM1" /*You are using the Entrance Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSM1" /*Estás utilizando la torreta de la entrada.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag2)
-					return "IAA_T_2_OSL1" /*You are using the Entrance Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSL1" /*Estás utilizando la torreta de la entrada.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag)
-					return "IAA_T_2_OSR1" /*You are using the Entrance Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ to switch cameras.*/;
+					return "IAA_T_2_OSR1" /*Estás utilizando la torreta de la entrada.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ para cambiar de cámara.*/;
 				else
-					return "IAA_T_2_OSN1" /*You are using the Entrance Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back.*/;
+					return "IAA_T_2_OSN1" /*Estás utilizando la torreta de la entrada.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver.*/;
 				break;
 		
 			case 2:
 				if (flag && flag2)
-					return "IAA_T_2_OSM2" /*You are using the South Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSM2" /*Estás utilizando la torreta sur.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~  para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag2)
-					return "IAA_T_2_OSL2" /*You are using the South Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSL2" /*Estás utilizando la torreta sur.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag)
-					return "IAA_T_2_OSR2" /*You are using the South Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ to switch cameras.*/;
+					return "IAA_T_2_OSR2" /*Estás utilizando la torreta sur.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ para cambiar de cámara.*/;
 				else
-					return "IAA_T_2_OSN2" /*You are using the South Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back.*/;
+					return "IAA_T_2_OSN2" /*Estás utilizando la torreta sur.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver.*/;
 				break;
 		
 			case 3:
 				if (flag && flag2)
-					return "IAA_T_2_OSM3" /*You are using the West Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSM3" /*Estás utilizando la torreta oeste.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag2)
-					return "IAA_T_2_OSL3" /*You are using the West Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSL3" /*Estás utilizando la torreta oeste.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag)
-					return "IAA_T_2_OSR3" /*You are using the West Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ to switch cameras.*/;
+					return "IAA_T_2_OSR3" /*Estás utilizando la torreta oeste.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ para cambiar de cámara.*/;
 				else
-					return "IAA_T_2_OSN3" /*You are using the West Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back.*/;
+					return "IAA_T_2_OSN3" /*Estás utilizando la torreta oeste.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver.*/;
 				break;
 		
 			case 4:
 				if (flag && flag2)
-					return "IAA_T_2_OSM4" /*You are using the East Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSM4" /*Estás utilizando la torreta este.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag2)
-					return "IAA_T_2_OSL4" /*You are using the East Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSL4" /*Estás utilizando la torreta este.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag)
-					return "IAA_T_2_OSR4" /*You are using the East Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ to switch cameras.*/;
+					return "IAA_T_2_OSR4" /*Estás utilizando la torreta este.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ para cambiar de cámara.*/;
 				else
-					return "IAA_T_2_OSN4" /*You are using the East Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back.*/;
+					return "IAA_T_2_OSN4" /*Estás utilizando la torreta este.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver.*/;
 				break;
 		}
 	}
@@ -2099,21 +2099,21 @@ char* func_20(ePedComponentType epctParam0) // Position - 0x225B (8795)
 				if (flag && flag2)
 				{
 					if (flag3)
-						return "HUNTGUN_T_2_OSMA1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Toggle Scanner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+						return "HUNTGUN_T_2_OSMA1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Cambiar de escáner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				
-					return "HUNTGUN_T_2_OSM1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSM1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag2)
 				{
-					return "HUNTGUN_T_2_OSL1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSL1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag)
 				{
-					return "HUNTGUN_T_2_OSR1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSR1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else
 				{
-					return "HUNTGUN_T_2_OSN1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSN1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				break;
 		
@@ -2121,21 +2121,21 @@ char* func_20(ePedComponentType epctParam0) // Position - 0x225B (8795)
 				if (flag && flag2)
 				{
 					if (flag3)
-						return "HUNTGUN_T_2_OSMA3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Toggle Scanner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+						return "HUNTGUN_T_2_OSMA3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Cambiar de escáner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				
-					return "HUNTGUN_T_2_OSM3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSM3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag2)
 				{
-					return "HUNTGUN_T_2_OSL3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSL3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag)
 				{
-					return "HUNTGUN_T_2_OSR3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSR3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else
 				{
-					return "HUNTGUN_T_2_OSN3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSN3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				break;
 		
@@ -2143,21 +2143,21 @@ char* func_20(ePedComponentType epctParam0) // Position - 0x225B (8795)
 				if (flag && flag2)
 				{
 					if (flag3)
-						return "HUNTGUN_T_2_OSMA2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Toggle Scanner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+						return "HUNTGUN_T_2_OSMA2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Cambiar de escáner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				
-					return "HUNTGUN_T_2_OSM2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSM2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag2)
 				{
-					return "HUNTGUN_T_2_OSL2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSL2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag)
 				{
-					return "HUNTGUN_T_2_OSR2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSR2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else
 				{
-					return "HUNTGUN_T_2_OSN2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSN2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				break;
 		
@@ -2165,39 +2165,39 @@ char* func_20(ePedComponentType epctParam0) // Position - 0x225B (8795)
 				if (flag && flag2)
 				{
 					if (flag3)
-						return "HUNTGUN_T_2_OSMA4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Toggle Scanner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+						return "HUNTGUN_T_2_OSMA4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Cambiar de escáner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				
-					return "HUNTGUN_T_2_OSM4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSM4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag2)
 				{
-					return "HUNTGUN_T_2_OSL4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSL4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag)
 				{
-					return "HUNTGUN_T_2_OSR4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSR4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else
 				{
-					return "HUNTGUN_T_2_OSN4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSN4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				break;
 		}
 	}
 
-	if (ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (ENTITY::DOES_ENTITY_EXIST(veParam0))
 	{
-		switch (ENTITY::GET_ENTITY_MODEL(epctParam0))
+		switch (ENTITY::GET_ENTITY_MODEL(veParam0))
 		{
 			case joaat("bombushka"):
 			case 858355070:
-				return "BOMBGUN_T_2c" /*Bombushka Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+				return "BOMBGUN_T_2c" /*Torreta superior dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 		
 			case joaat("rhino"):
-				return "BOMBGUN_T_2c" /*Bombushka Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+				return "BOMBGUN_T_2c" /*Torreta superior dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 		
 			case joaat("akula"):
-				return "AKULAGUN_P2" /*Akula Mounted Gun:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+				return "AKULAGUN_P2" /*Ametralladora montada del Akula:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 		}
 	}
 
@@ -2206,7 +2206,7 @@ char* func_20(ePedComponentType epctParam0) // Position - 0x225B (8795)
 
 BOOL func_21() // Position - 0x277B (10107)
 {
-	ePedComponentType type;
+	Vehicle vehicle;
 
 	if (!func_229(PLAYER::PLAYER_ID()) || !NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 		return false;
@@ -2223,20 +2223,20 @@ BOOL func_21() // Position - 0x277B (10107)
 	}
 
 	if (func_230(PLAYER::PLAYER_ID()))
-		type = func_26(false, false);
+		vehicle = func_26(false, false);
 	else if (func_229(PLAYER::PLAYER_ID()))
-		type = Global_2733138.f_314;
+		vehicle = Global_2733138.f_314;
 
-	if (ENTITY::DOES_ENTITY_EXIST(type))
+	if (ENTITY::DOES_ENTITY_EXIST(vehicle))
 	{
-		if (!ENTITY::IS_ENTITY_DEAD(type, false))
+		if (!ENTITY::IS_ENTITY_DEAD(vehicle, false))
 		{
 			if (func_230(PLAYER::PLAYER_ID()))
-				if (VEHICLE::GET_VEHICLE_MOD(type, 10) == 1 && !func_22())
+				if (VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 1 && !func_22())
 					return true;
 		
 			if (func_229(PLAYER::PLAYER_ID()))
-				if (VEHICLE::GET_VEHICLE_MOD(type, 10) == 1)
+				if (VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 1)
 					return true;
 		}
 	}
@@ -2246,18 +2246,18 @@ BOOL func_21() // Position - 0x277B (10107)
 
 BOOL func_22() // Position - 0x2855 (10325)
 {
-	ePedComponentType type;
+	BOOL flag;
 	Vector3 vector;
 
 	if (_NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, true))
 	{
-		if (Global_2658294[PLAYER::PLAYER_ID() /*468*/].f_276.f_22 != PV_COMP_HEAD)
+		if (Global_2658294[PLAYER::PLAYER_ID() /*468*/].f_276.f_22 != false)
 		{
-			type = func_25(PLAYER::PLAYER_ID());
+			flag = func_25(PLAYER::PLAYER_ID());
 		
-			if (func_24(type))
+			if (func_24(flag))
 			{
-				vector = { func_23(type) };
+				vector = { func_23(flag) };
 			
 				if (ENTITY::DOES_ENTITY_EXIST(func_26(false, false)))
 					if (!ENTITY::IS_ENTITY_DEAD(func_26(false, false), false))
@@ -2270,25 +2270,25 @@ BOOL func_22() // Position - 0x2855 (10325)
 	return false;
 }
 
-Vector3 func_23(ePedComponentType epctParam0) // Position - 0x28D9 (10457)
+Vector3 func_23(BOOL bParam0) // Position - 0x28D9 (10457)
 {
-	return Global_4280768[epctParam0 /*45*/].f_4;
+	return Global_4280768[bParam0 /*45*/].f_4;
 }
 
-BOOL func_24(ePedComponentType epctParam0) // Position - 0x28ED (10477)
+BOOL func_24(BOOL bParam0) // Position - 0x28ED (10477)
 {
-	if (epctParam0 > PV_COMP_INVALID && epctParam0 < 42)
+	if (bParam0 > -1 && bParam0 < 42)
 		return true;
 
 	return false;
 }
 
-ePedComponentType func_25(Player plParam0) // Position - 0x290B (10507)
+BOOL func_25(Player plParam0) // Position - 0x290B (10507)
 {
 	return Global_2652582[plParam0 /*3*/];
 }
 
-ePedComponentType func_26(BOOL bParam0, BOOL bParam1) // Position - 0x291B (10523)
+Vehicle func_26(BOOL bParam0, BOOL bParam1) // Position - 0x291B (10523)
 {
 	if (func_230(PLAYER::PLAYER_ID()) || bParam0)
 	{
@@ -2307,7 +2307,7 @@ ePedComponentType func_26(BOOL bParam0, BOOL bParam1) // Position - 0x291B (1052
 		else if (Global_1845134 != _INVALID_PLAYER_INDEX())
 			return Global_1969791[Global_1845134];
 
-	return PV_COMP_INVALID;
+	return -1;
 }
 
 Player _INVALID_PLAYER_INDEX() // Position - 0x29A6 (10662)
@@ -2317,19 +2317,19 @@ Player _INVALID_PLAYER_INDEX() // Position - 0x29A6 (10662)
 
 BOOL func_28() // Position - 0x29AF (10671)
 {
-	ePedComponentType type;
+	Vehicle vehicle;
 
 	if (func_230(PLAYER::PLAYER_ID()))
-		type = func_26(false, false);
+		vehicle = func_26(false, false);
 	else if (func_229(PLAYER::PLAYER_ID()))
-		type = Global_2733138.f_314;
+		vehicle = Global_2733138.f_314;
 
-	if (ENTITY::DOES_ENTITY_EXIST(type))
+	if (ENTITY::DOES_ENTITY_EXIST(vehicle))
 	{
-		if (!ENTITY::IS_ENTITY_DEAD(type, false))
+		if (!ENTITY::IS_ENTITY_DEAD(vehicle, false))
 		{
 			if (func_230(PLAYER::PLAYER_ID()))
-				if (VEHICLE::GET_VEHICLE_MOD(type, 10) == 1 && !func_22())
+				if (VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 1 && !func_22())
 					return true;
 		
 			if (func_229(PLAYER::PLAYER_ID()))
@@ -2337,7 +2337,7 @@ BOOL func_28() // Position - 0x29AF (10671)
 				if (IS_BIT_SET(Global_1575014, 12))
 					return false;
 			
-				if (VEHICLE::GET_VEHICLE_MOD(type, 10) == 1)
+				if (VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 1)
 					return true;
 			}
 		}
@@ -2348,19 +2348,19 @@ BOOL func_28() // Position - 0x29AF (10671)
 
 BOOL func_29() // Position - 0x2A45 (10821)
 {
-	ePedComponentType type;
+	Vehicle vehicle;
 
 	if (func_230(PLAYER::PLAYER_ID()))
-		type = func_26(false, false);
+		vehicle = func_26(false, false);
 	else if (func_229(PLAYER::PLAYER_ID()))
-		type = Global_2733138.f_314;
+		vehicle = Global_2733138.f_314;
 
-	if (ENTITY::DOES_ENTITY_EXIST(type))
+	if (ENTITY::DOES_ENTITY_EXIST(vehicle))
 	{
-		if (!ENTITY::IS_ENTITY_DEAD(type, false))
+		if (!ENTITY::IS_ENTITY_DEAD(vehicle, false))
 		{
 			if (func_230(PLAYER::PLAYER_ID()))
-				if (VEHICLE::GET_VEHICLE_MOD(type, 10) == 1 && !func_22())
+				if (VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 1 && !func_22())
 					return true;
 		
 			if (func_229(PLAYER::PLAYER_ID()))
@@ -2368,7 +2368,7 @@ BOOL func_29() // Position - 0x2A45 (10821)
 				if (IS_BIT_SET(Global_1575014, 12))
 					return false;
 			
-				if (VEHICLE::GET_VEHICLE_MOD(type, 10) == 1)
+				if (VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 1)
 					return true;
 			}
 		}
@@ -2379,23 +2379,23 @@ BOOL func_29() // Position - 0x2A45 (10821)
 
 BOOL func_30() // Position - 0x2ADB (10971)
 {
-	ePedComponentType type;
+	Vehicle vehicle;
 
 	if (func_230(PLAYER::PLAYER_ID()))
-		type = func_26(0, false);
+		vehicle = func_26(0, false);
 	else if (func_229(PLAYER::PLAYER_ID()))
-		type = Global_2733138.f_314;
+		vehicle = Global_2733138.f_314;
 
-	if (ENTITY::DOES_ENTITY_EXIST(type))
+	if (ENTITY::DOES_ENTITY_EXIST(vehicle))
 	{
-		if (!ENTITY::IS_ENTITY_DEAD(type, false))
+		if (!ENTITY::IS_ENTITY_DEAD(vehicle, false))
 		{
 			if (func_230(PLAYER::PLAYER_ID()))
 			{
 				if (func_31(Global_1845135) && !func_22())
 					return true;
 			
-				if (VEHICLE::GET_VEHICLE_MOD(type, 10) == 0 || VEHICLE::GET_VEHICLE_MOD(type, 10) == 1 && !func_22())
+				if (VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 0 || VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 1 && !func_22())
 					return true;
 			}
 		
@@ -2404,7 +2404,7 @@ BOOL func_30() // Position - 0x2ADB (10971)
 				if (IS_BIT_SET(Global_1575014, 12))
 					return false;
 			
-				if (VEHICLE::GET_VEHICLE_MOD(type, 10) == 0 || VEHICLE::GET_VEHICLE_MOD(type, 10) == 1)
+				if (VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 0 || VEHICLE::GET_VEHICLE_MOD(vehicle, 10) == 1)
 					return true;
 			}
 		}
@@ -2539,7 +2539,7 @@ int func_37(int iParam0) // Position - 0x2E28 (11816)
 {
 	int i;
 
-	if (ENTITY::IS_ENTITY_DEAD(epctLocal_367, false))
+	if (ENTITY::IS_ENTITY_DEAD(veLocal_367, false))
 		return -1;
 
 	if (iParam0 == 0)
@@ -2560,10 +2560,10 @@ int func_37(int iParam0) // Position - 0x2E28 (11816)
 
 BOOL func_38() // Position - 0x2E9D (11933)
 {
-	if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(epctLocal_367))
+	if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(veLocal_367))
 		return false;
 
-	if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("akula") && bLocal_310 || bLocal_311)
+	if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula") && bLocal_310 || bLocal_311)
 		return true;
 
 	return IS_BIT_SET(Global_1575014, 13) && func_309(&uLocal_72);
@@ -2743,7 +2743,7 @@ BOOL func_45(ePedComponentType epctParam0) // Position - 0x336F (13167)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1 && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 20;
 
 	return false;
@@ -2798,7 +2798,7 @@ BOOL func_50(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x3464 (1
 
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1 && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 12;
 
 	return false;
@@ -2838,9 +2838,9 @@ BOOL func_55() // Position - 0x3576 (13686)
 	return IS_BIT_SET(Global_1950714, 6);
 }
 
-BOOL func_56(ePedComponentType epctParam0) // Position - 0x3584 (13700)
+BOOL func_56(Hash hParam0) // Position - 0x3584 (13700)
 {
-	return Global_262145.f_4699[4] == epctParam0;
+	return Global_262145.f_4699[4] == hParam0;
 }
 
 BOOL func_57(Vehicle veParam0) // Position - 0x3599 (13721)
@@ -2851,23 +2851,23 @@ BOOL func_57(Vehicle veParam0) // Position - 0x3599 (13721)
 	return false;
 }
 
-int func_58(ePedComponentType epctParam0) // Position - 0x35C7 (13767)
+int func_58(BOOL bParam0) // Position - 0x35C7 (13767)
 {
-	switch (epctParam0)
+	switch (bParam0)
 	{
-		case PV_COMP_HEAD:
-		case PV_COMP_BERD:
-		case PV_COMP_HAIR:
-		case PV_COMP_UPPR:
-		case PV_COMP_LOWR:
-		case PV_COMP_HAND:
-		case PV_COMP_FEET:
-		case PV_COMP_TEEF:
-		case PV_COMP_ACCS:
-		case PV_COMP_TASK:
-		case PV_COMP_DECL:
-		case PV_COMP_JBIB:
-		case PV_COMP_MAX:
+		case false:
+		case true:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
 		case 13:
 		case 14:
 		case 15:
@@ -3113,12 +3113,12 @@ int func_58(ePedComponentType epctParam0) // Position - 0x35C7 (13767)
 	return -1;
 }
 
-ePedComponentType func_59(ePedComponentType epctParam0) // Position - 0x3B30 (15152)
+BOOL func_59(ePedComponentType epctParam0) // Position - 0x3B30 (15152)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX() && _NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
 		return Global_2658294[epctParam0 /*468*/].f_325.f_18;
 
-	return PV_COMP_INVALID;
+	return -1;
 }
 
 BOOL func_60(ePedComponentType epctParam0) // Position - 0x3B61 (15201)
@@ -3143,12 +3143,12 @@ BOOL _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(char* message) // Position - 0x3BB6 (
 	return HUD::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 
-BOOL func_63(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x3BC9 (15305)
+BOOL func_63(Vehicle veParam0, BOOL bParam1) // Position - 0x3BC9 (15305)
 {
-	if (ENTITY::DOES_ENTITY_EXIST(epctParam0))
-		if (!ENTITY::IS_ENTITY_DEAD(epctParam0, false) || bParam1)
-			if (ENTITY::IS_ENTITY_IN_WATER(epctParam0))
-				if (ENTITY::GET_ENTITY_SUBMERGED_LEVEL(epctParam0) >= 0.7f)
+	if (ENTITY::DOES_ENTITY_EXIST(veParam0))
+		if (!ENTITY::IS_ENTITY_DEAD(veParam0, false) || bParam1)
+			if (ENTITY::IS_ENTITY_IN_WATER(veParam0))
+				if (ENTITY::GET_ENTITY_SUBMERGED_LEVEL(veParam0) >= 0.7f)
 					return true;
 
 	return false;
@@ -3284,9 +3284,9 @@ void func_68(float fParam0, float fParam1) // Position - 0x3DD3 (15827)
 	func_70(&unk, &unk3, fParam0, fParam1);
 
 	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-		_DISPLAY_HELP_TEXT("HUNTGUN_5_KM" /*Press ~INPUT_AIM~ to tag.*/, -1);
+		_DISPLAY_HELP_TEXT("HUNTGUN_5_KM" /*Pulsa ~INPUT_AIM~ para etiquetar.*/, -1);
 	else
-		_DISPLAY_HELP_TEXT("HUNTGUN_5" /*Press ~INPUT_FRONTEND_ACCEPT~ to tag.~n~Press ~INPUT_FRONTEND_RIGHT~ to go back.*/, -1);
+		_DISPLAY_HELP_TEXT("HUNTGUN_5" /*Pulsa ~INPUT_FRONTEND_ACCEPT~ para etiquetar.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para volver atrás.*/, -1);
 
 	return;
 }
@@ -3399,7 +3399,7 @@ void func_78() // Position - 0x3FF7 (16375)
 	Hash weapontypeModel;
 	int damage;
 	int _int;
-	ePedComponentType vehicleIndexFromEntityIndex;
+	Vehicle vehicleIndexFromEntityIndex;
 	Vector3 finalRenderedCamCoord;
 	float finalRenderedCamRot;
 	var unk5;
@@ -3407,7 +3407,7 @@ void func_78() // Position - 0x3FF7 (16375)
 	Vector3 vector;
 	int damage2;
 	int _int2;
-	ePedComponentType vehicleIndexFromEntityIndex2;
+	Vehicle vehicleIndexFromEntityIndex2;
 	Vector3 offsetFromCoordAndHeadingInWorldCoords;
 	var camRot;
 	var unk17;
@@ -3419,16 +3419,16 @@ void func_78() // Position - 0x3FF7 (16375)
 	var unk25;
 	var unk27;
 
-	if (func_197(epctLocal_367) || func_196() && !HUD::IS_PAUSE_MENU_ACTIVE())
+	if (func_197(veLocal_367) || func_196() && !HUD::IS_PAUSE_MENU_ACTIVE())
 	{
 		if (!func_95())
 		{
 			if (func_208(3))
 				weapontypeModel = joaat("w_ex_vehiclemissile_3");
-			else if (func_326(PLAYER::PLAYER_ID()) || func_231(PLAYER::PLAYER_ID()) || func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()) || VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+			else if (func_326(PLAYER::PLAYER_ID()) || func_231(PLAYER::PLAYER_ID()) || func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()) || VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 				weapontypeModel = joaat("w_lr_rpg_rocket");
 			else
-				weapontypeModel = WEAPON::GET_WEAPONTYPE_MODEL(func_94(epctLocal_367));
+				weapontypeModel = WEAPON::GET_WEAPONTYPE_MODEL(func_94(veLocal_367));
 		
 			STREAMING::REQUEST_MODEL(weapontypeModel);
 		
@@ -3451,16 +3451,16 @@ void func_78() // Position - 0x3FF7 (16375)
 										_int = -1;
 									
 										if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MC_EntityID", INT))
-											if (DECORATOR::DECOR_EXIST_ON(epctLocal_367, "MC_EntityID"))
-												_int = DECORATOR::DECOR_GET_INT(epctLocal_367, "MC_EntityID");
+											if (DECORATOR::DECOR_EXIST_ON(veLocal_367, "MC_EntityID"))
+												_int = DECORATOR::DECOR_GET_INT(veLocal_367, "MC_EntityID");
 									
 										if (_int != -1 && Global_4980736.f_68415[_int /*626*/].f_342 != -1)
 											damage = Global_4980736.f_68415[_int /*626*/].f_342;
 									}
 								
-									vehicleIndexFromEntityIndex = epctLocal_367;
+									vehicleIndexFromEntityIndex = veLocal_367;
 								
-									if (func_89(epctLocal_367, Global_1579265) || func_196())
+									if (func_89(veLocal_367, Global_1579265) || func_196())
 									{
 										if (func_86())
 										{
@@ -3469,26 +3469,26 @@ void func_78() // Position - 0x3FF7 (16375)
 										
 											finalRenderedCamCoord = { func_83() };
 										
-											if (func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()) || VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+											if (func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()) || VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 											{
 												finalRenderedCamCoord = { CAM::GET_FINAL_RENDERED_CAM_COORD() };
 												finalRenderedCamRot = { CAM::GET_FINAL_RENDERED_CAM_ROT(2) };
 												unk5 = { -BUILTIN::SIN(finalRenderedCamRot.f_2) * BUILTIN::COS(finalRenderedCamRot), BUILTIN::COS(finalRenderedCamRot.f_2) * BUILTIN::COS(finalRenderedCamRot), BUILTIN::SIN(finalRenderedCamRot) };
 												unk8 = { 10f, 10f, 10f };
 												vector = { finalRenderedCamCoord + (unk5 * unk8) };
-												MISC::SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY_NEW(finalRenderedCamCoord, vector, damage, true, func_94(epctLocal_367), PLAYER::PLAYER_PED_ID(), true, true, -1082130432, vehicleIndexFromEntityIndex, false, false, 0, true, 0, 1, 0);
+												MISC::SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY_NEW(finalRenderedCamCoord, vector, damage, true, func_94(veLocal_367), PLAYER::PLAYER_PED_ID(), true, true, -1082130432, vehicleIndexFromEntityIndex, false, false, 0, true, 0, 1, 0);
 												func_80();
 											}
 											else
 											{
-												MISC::SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY_NEW(finalRenderedCamCoord, uLocal_72.f_45, damage, true, func_94(epctLocal_367), PLAYER::PLAYER_PED_ID(), true, true, -1082130432, vehicleIndexFromEntityIndex, false, false, 0, true, 0, 1, 0);
+												MISC::SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY_NEW(finalRenderedCamCoord, uLocal_72.f_45, damage, true, func_94(veLocal_367), PLAYER::PLAYER_PED_ID(), true, true, -1082130432, vehicleIndexFromEntityIndex, false, false, 0, true, 0, 1, 0);
 											}
 										
 											func_233(&(Global_2673274.f_3877), false, false);
 										
 											if (iLocal_360 != 0)
 											{
-												AUDIO::PLAY_SOUND_FROM_ENTITY(-1, func_4(iLocal_360, 2), epctLocal_367, func_3(iLocal_360), true, func_79(iLocal_360, 2));
+												AUDIO::PLAY_SOUND_FROM_ENTITY(-1, func_4(iLocal_360, 2), veLocal_367, func_3(iLocal_360), true, func_79(iLocal_360, 2));
 											
 												if (iLocal_360 == 4)
 													AUDIO::PLAY_SOUND_FRONTEND(-1, func_4(iLocal_360, 2), 0, true);
@@ -3497,7 +3497,7 @@ void func_78() // Position - 0x3FF7 (16375)
 									}
 									else
 									{
-										!func_89(epctLocal_367, Global_1579265);
+										!func_89(veLocal_367, Global_1579265);
 									}
 								}
 							}
@@ -3527,16 +3527,16 @@ void func_78() // Position - 0x3FF7 (16375)
 											_int2 = -1;
 										
 											if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MC_EntityID", INT))
-												if (DECORATOR::DECOR_EXIST_ON(epctLocal_367, "MC_EntityID"))
-													_int2 = DECORATOR::DECOR_GET_INT(epctLocal_367, "MC_EntityID");
+												if (DECORATOR::DECOR_EXIST_ON(veLocal_367, "MC_EntityID"))
+													_int2 = DECORATOR::DECOR_GET_INT(veLocal_367, "MC_EntityID");
 										
 											if (_int2 != -1 && Global_4980736.f_68415[_int2 /*626*/].f_342 != -1)
 												damage2 = Global_4980736.f_68415[_int2 /*626*/].f_342;
 										}
 									
-										vehicleIndexFromEntityIndex2 = epctLocal_367;
+										vehicleIndexFromEntityIndex2 = veLocal_367;
 									
-										if (func_89(epctLocal_367, Global_1579265) || func_196())
+										if (func_89(veLocal_367, Global_1579265) || func_196())
 										{
 											if (!ENTITY::IS_ENTITY_DEAD(uLocal_72.f_9, false))
 												vehicleIndexFromEntityIndex2 = ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(uLocal_72.f_9);
@@ -3553,11 +3553,11 @@ void func_78() // Position - 0x3FF7 (16375)
 											func_233(&uLocal_294, false, false);
 										
 											if (iLocal_360 != 0)
-												AUDIO::PLAY_SOUND_FROM_ENTITY(-1, func_4(iLocal_360, 3), epctLocal_367, func_3(iLocal_360), true, 120);
+												AUDIO::PLAY_SOUND_FROM_ENTITY(-1, func_4(iLocal_360, 3), veLocal_367, func_3(iLocal_360), true, 120);
 										}
 										else
 										{
-											!func_89(epctLocal_367, Global_1579265);
+											!func_89(veLocal_367, Global_1579265);
 										}
 									}
 								}
@@ -3573,7 +3573,7 @@ void func_78() // Position - 0x3FF7 (16375)
 		
 			if (_STOPWATCH_IS_INITIALIZED(&(Global_2673274.f_3877)) || _STOPWATCH_IS_INITIALIZED(&uLocal_294))
 			{
-				if (func_89(epctLocal_367, Global_1579265) || func_196())
+				if (func_89(veLocal_367, Global_1579265) || func_196())
 				{
 					if (func_326(PLAYER::PLAYER_ID()) || func_231(PLAYER::PLAYER_ID()))
 					{
@@ -3591,13 +3591,13 @@ void func_78() // Position - 0x3FF7 (16375)
 							Global_2673274.f_3877 = { unk19 };
 						}
 					}
-					else if (VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+					else if (VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 					{
 						seat = 1;
 					
-						if (WEAPON::_GET_AMMO_IN_VEHICLE_WEAPON_CLIP(epctLocal_367, seat, &ammo) && ammo > 0)
+						if (WEAPON::_GET_AMMO_IN_VEHICLE_WEAPON_CLIP(veLocal_367, seat, &ammo) && ammo > 0)
 						{
-							if (func_205(&(Global_2673274.f_3877), 500, false) && !WEAPON::_HAS_WEAPON_RELOADING_IN_VEHICLE(epctLocal_367, seat))
+							if (func_205(&(Global_2673274.f_3877), 500, false) && !WEAPON::_HAS_WEAPON_RELOADING_IN_VEHICLE(veLocal_367, seat))
 							{
 								_STOPWATCH_DESTROY(&(Global_2673274.f_3877));
 								Global_2673274.f_3877 = { unk21 };
@@ -3656,18 +3656,18 @@ void func_80() // Position - 0x46AB (18091)
 	int ammo;
 	int seat;
 
-	if (VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+	if (VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 	{
 		seat = 1;
 	
-		if (WEAPON::_GET_AMMO_IN_VEHICLE_WEAPON_CLIP(epctLocal_367, seat, &ammo))
+		if (WEAPON::_GET_AMMO_IN_VEHICLE_WEAPON_CLIP(veLocal_367, seat, &ammo))
 		{
 			ammo = ammo - 1;
 			ammo = func_81(ammo, 0, WEAPON::GET_MAX_AMMO_IN_CLIP(PLAYER::PLAYER_PED_ID(), func_82(), true));
-			WEAPON::_SET_AMMO_IN_VEHICLE_WEAPON_CLIP(epctLocal_367, seat, ammo);
+			WEAPON::_SET_AMMO_IN_VEHICLE_WEAPON_CLIP(veLocal_367, seat, ammo);
 		
 			if (ammo == 0)
-				WEAPON::_TRIGGER_VEHICLE_WEAPON_RELOAD(epctLocal_367, seat, PLAYER::PLAYER_PED_ID());
+				WEAPON::_TRIGGER_VEHICLE_WEAPON_RELOAD(veLocal_367, seat, PLAYER::PLAYER_PED_ID());
 		}
 	}
 
@@ -3718,7 +3718,7 @@ Vector3 func_83() // Position - 0x477E (18302)
 	var unk13;
 	var unk16;
 
-	func_85(epctLocal_367, &unk3);
+	func_85(veLocal_367, &unk3);
 
 	switch (hLocal_299)
 	{
@@ -3768,7 +3768,7 @@ Vector3 func_83() // Position - 0x477E (18302)
 			break;
 	}
 
-	if (func_324(epctLocal_367))
+	if (func_324(veLocal_367))
 	{
 		switch (func_112())
 		{
@@ -3788,7 +3788,7 @@ Vector3 func_83() // Position - 0x477E (18302)
 
 	if (Global_1579266 != -1)
 	{
-		if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("bombushka"))
+		if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("bombushka"))
 		{
 			switch (Global_1579266)
 			{
@@ -3806,7 +3806,7 @@ Vector3 func_83() // Position - 0x477E (18302)
 			}
 		}
 	
-		if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("volatol"))
+		if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
 		{
 			switch (Global_1579266)
 			{
@@ -3857,7 +3857,7 @@ Vector3 func_83() // Position - 0x477E (18302)
 	{
 		switch (Global_1579260)
 		{
-			case true:
+			case 1:
 				vector = { 0f, 9f, 0.92f };
 				break;
 		
@@ -3874,9 +3874,9 @@ Vector3 func_83() // Position - 0x477E (18302)
 				break;
 		}
 	
-		if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) && ENTITY::DOES_ENTITY_EXIST(epctLocal_367))
+		if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) && ENTITY::DOES_ENTITY_EXIST(veLocal_367))
 			if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
-				return ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(epctLocal_367, vector);
+				return ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(veLocal_367, vector);
 	}
 
 	if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()))
@@ -3890,7 +3890,7 @@ Vector3 func_83() // Position - 0x477E (18302)
 			}
 			else if (func_196())
 			{
-				return ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(epctLocal_367, vector);
+				return ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(veLocal_367, vector);
 			}
 		}
 	}
@@ -3933,9 +3933,9 @@ int func_84() // Position - 0x4BD1 (19409)
 	return 1;
 }
 
-BOOL func_85(ePedComponentType epctParam0, var uParam1) // Position - 0x4C8E (19598)
+BOOL func_85(Vehicle veParam0, var uParam1) // Position - 0x4C8E (19598)
 {
-	switch (ENTITY::GET_ENTITY_MODEL(epctParam0))
+	switch (ENTITY::GET_ENTITY_MODEL(veParam0))
 	{
 		case joaat("buzzard"):
 			return true;
@@ -3981,7 +3981,7 @@ BOOL func_85(ePedComponentType epctParam0, var uParam1) // Position - 0x4C8E (19
 			return true;
 	}
 
-	return func_324(epctParam0);
+	return func_324(veParam0);
 }
 
 BOOL func_86() // Position - 0x4D65 (19813)
@@ -3993,22 +3993,22 @@ BOOL func_86() // Position - 0x4D65 (19813)
 	num = MISC::ABSF(uLocal_72.f_188.f_2);
 	flag = true;
 
-	switch (ENTITY::GET_ENTITY_MODEL(epctLocal_367))
+	switch (ENTITY::GET_ENTITY_MODEL(veLocal_367))
 	{
 		case joaat("avenger"):
 		case joaat("avenger3"):
 			switch (Global_1579266)
 			{
 				case 1:
-					if (VEHICLE::GET_VEHICLE_FLIGHT_NOZZLE_POSITION(epctLocal_367) >= 0.4f)
+					if (VEHICLE::GET_VEHICLE_FLIGHT_NOZZLE_POSITION(veLocal_367) >= 0.4f)
 						if (num > 122.6f && num < 131.3f && uLocal_72.f_188 > 7.87f)
 							flag = false;
 						else if (num > 140.5f && num < 159.5f && uLocal_72.f_188 > func_88(6f, 15f, -159.5f, -140.5f, -num))
 							flag = false;
 				
-					if (flag && VEHICLE::GET_VEHICLE_HAS_LANDING_GEAR(epctLocal_367))
+					if (flag && VEHICLE::GET_VEHICLE_HAS_LANDING_GEAR(veLocal_367))
 					{
-						landingGearState = VEHICLE::GET_LANDING_GEAR_STATE(epctLocal_367);
+						landingGearState = VEHICLE::GET_LANDING_GEAR_STATE(veLocal_367);
 					
 						if (landingGearState == 0 || landingGearState == 3 || landingGearState == 1)
 							if (uLocal_72.f_188 > -13f)
@@ -4022,7 +4022,7 @@ BOOL func_86() // Position - 0x4D65 (19813)
 					break;
 			
 				case 2:
-					if (VEHICLE::GET_VEHICLE_FLIGHT_NOZZLE_POSITION(epctLocal_367) >= 0.4f)
+					if (VEHICLE::GET_VEHICLE_FLIGHT_NOZZLE_POSITION(veLocal_367) >= 0.4f)
 						flag = !(num > 111.2f && num < 125.8f && uLocal_72.f_188 < 20f);
 				
 					if (flag)
@@ -4042,7 +4042,7 @@ BOOL func_86() // Position - 0x4D65 (19813)
 					break;
 			
 				case 3:
-					if (VEHICLE::GET_VEHICLE_FLIGHT_NOZZLE_POSITION(epctLocal_367) >= 0.4f)
+					if (VEHICLE::GET_VEHICLE_FLIGHT_NOZZLE_POSITION(veLocal_367) >= 0.4f)
 						flag = !(num > 141.3f && num < 147.7f && uLocal_72.f_188 > -3.7f);
 				
 					if (flag)
@@ -4073,9 +4073,9 @@ float func_88(float fParam0, float fParam1, float fParam2, float fParam3, float 
 	return func_110(fParam0, fParam1, fParam4);
 }
 
-BOOL func_89(ePedComponentType epctParam0, int iParam1) // Position - 0x5118 (20760)
+BOOL func_89(Vehicle veParam0, int iParam1) // Position - 0x5118 (20760)
 {
-	switch (ENTITY::GET_ENTITY_MODEL(epctParam0))
+	switch (ENTITY::GET_ENTITY_MODEL(veParam0))
 	{
 		case joaat("buzzard"):
 			return true;
@@ -4089,12 +4089,12 @@ BOOL func_89(ePedComponentType epctParam0, int iParam1) // Position - 0x5118 (20
 
 	if (iParam1 != -1)
 	{
-		if (func_324(epctParam0))
+		if (func_324(veParam0))
 		{
-			switch (ENTITY::GET_ENTITY_MODEL(epctParam0))
+			switch (ENTITY::GET_ENTITY_MODEL(veParam0))
 			{
 				case 858355070:
-					if (iParam1 == 4 && VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctParam0, -1, false) == PLAYER::PLAYER_PED_ID())
+					if (iParam1 == 4 && VEHICLE::GET_PED_IN_VEHICLE_SEAT(veParam0, -1, false) == PLAYER::PLAYER_PED_ID())
 						return true;
 					break;
 			}
@@ -4150,11 +4150,11 @@ int func_93() // Position - 0x5213 (21011)
 	return Global_33792;
 }
 
-Hash func_94(ePedComponentType epctParam0) // Position - 0x521E (21022)
+Hash func_94(Vehicle veParam0) // Position - 0x521E (21022)
 {
 	Hash entityModel;
 
-	entityModel = ENTITY::GET_ENTITY_MODEL(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(epctParam0));
+	entityModel = ENTITY::GET_ENTITY_MODEL(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(veParam0));
 
 	if (func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()))
 		return joaat("VEHICLE_WEAPON_AVENGER_CANNON");
@@ -4187,7 +4187,7 @@ BOOL func_95() // Position - 0x52B4 (21172)
 
 void func_96() // Position - 0x52C0 (21184)
 {
-	ePedComponentType type;
+	Vehicle vehicle;
 
 	func_237(false);
 	func_104();
@@ -4201,16 +4201,16 @@ void func_96() // Position - 0x52C0 (21184)
 	}
 
 	func_104();
-	func_219(&uLocal_72, type, 0, epctLocal_367, hLocal_299, 1);
-	Global_2740431 = PV_COMP_HEAD;
+	func_219(&uLocal_72, vehicle, 0, veLocal_367, hLocal_299, 1);
+	Global_2740431 = false;
 	MISC::CLEAR_BIT(&(Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_882), 6);
 
-	if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("volatol"))
+	if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
 		GRAPHICS::RESET_PARTICLE_FX_OVERRIDE("muz_xm_volatol_twinmg");
 
-	if (Global_1579260 != -1 || func_324(epctLocal_367) || Global_1579266 != -1)
-		if (!func_324(epctLocal_367) && NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(epctLocal_367))
-			VEHICLE::SET_SHOULD_RESET_TURRET_IN_SCRIPTED_CAMERAS(epctLocal_367, true);
+	if (Global_1579260 != -1 || func_324(veLocal_367) || Global_1579266 != -1)
+		if (!func_324(veLocal_367) && NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(veLocal_367))
+			VEHICLE::SET_SHOULD_RESET_TURRET_IN_SCRIPTED_CAMERAS(veLocal_367, true);
 
 	if (Global_2697466)
 		if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()))
@@ -4235,8 +4235,8 @@ void func_96() // Position - 0x52C0 (21184)
 
 void func_97() // Position - 0x53E2 (21474)
 {
-	if (func_98() && NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(epctLocal_367))
-		PHYSICS::ACTIVATE_PHYSICS(epctLocal_367);
+	if (func_98() && NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(veLocal_367))
+		PHYSICS::ACTIVATE_PHYSICS(veLocal_367);
 
 	return;
 }
@@ -4315,7 +4315,7 @@ char* func_102(Hash hParam0) // Position - 0x54B2 (21682)
 
 BOOL func_103() // Position - 0x54D4 (21716)
 {
-	if (VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+	if (VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 		return true;
 
 	return false;
@@ -4323,46 +4323,46 @@ BOOL func_103() // Position - 0x54D4 (21716)
 
 void func_104() // Position - 0x54F0 (21744)
 {
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2" /*You are using the helicopter's rocket launcher.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2" /*Estás usando el lanzacohetes del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2b" /*You are using the helicopter's mounted surveillance camera.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2b" /*Estás usando la cámara montada de vigilancia del helicóptero.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2c" /*You are using the helicopter's gun.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2c" /*Estás usando el arma del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar o alejar la vista.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4" /*You are viewing the co-pilot's rocket launcher. Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4" /*Estás viendo el lanzacohetes del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4b" /*You are viewing the co-pilot's mounted surveillance camera. Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4b" /*Estás viendo la cámara montada de vigilancia del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4c" /*You are viewing the co-pilot's gun. Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4c" /*Estás viendo el arma del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_5" /*Press ~INPUT_FRONTEND_ACCEPT~ to tag.~n~Press ~INPUT_FRONTEND_RIGHT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_5" /*Pulsa ~INPUT_FRONTEND_ACCEPT~ para etiquetar.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_6" /*You can tag other players for the pilot to see. To tag a player, target them with the camera and press ~INPUT_FRONTEND_ACCEPT~.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_6" /*Puedes etiquetar a otros jugadores para que los vea el piloto. Para ello, apúntalos con la cámara y pulsa ~INPUT_FRONTEND_ACCEPT~.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_P1" /*Akula Passenger Cam:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ Switch Camera Modes*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_P1" /*Cámara de pasajero del Akula:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ alternar modos de la cámara*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_P2" /*Akula Mounted Gun:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_P2" /*Ametralladora montada del Akula:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/))
 		HUD::CLEAR_HELP(true);
 
 	if (MISC::IS_PC_VERSION())
 	{
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_5_KM" /*Press ~INPUT_AIM~ to tag.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_5_KM" /*Pulsa ~INPUT_AIM~ para etiquetar.*/))
 			HUD::CLEAR_HELP(true);
 	
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_6_KM" /*You can tag other players for the pilot to see. To tag a player, target them with the camera and press ~INPUT_AIM~.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_6_KM" /*Puedes etiquetar a otros jugadores para que los vea el piloto. Para ello, apúntalos con la cámara y pulsa ~INPUT_AIM~.*/))
 			HUD::CLEAR_HELP(true);
 	}
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2b" /*Bombushka Dual .50 Cal Nose Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2c" /*Bombushka Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2d" /*Bombushka Dual .50 Cal Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_T_2b" /*Volatol Dual .50 Cal Nose Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_T_2c" /*Volatol Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2b" /*Torreta frontal dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2c" /*Torreta superior dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2d" /*Torreta trasera dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_T_2b" /*Torreta frontal dual del calibre 50 del Volatol:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_T_2c" /*Torreta superior dual del calibre 50 del Volatol:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/))
 		HUD::CLEAR_HELP(true);
 
 	return;
@@ -4462,7 +4462,7 @@ int func_107() // Position - 0x58C0 (22720)
 	{
 		switch (Global_1579260)
 		{
-			case true:
+			case 1:
 			
 		
 			case 2:
@@ -4514,7 +4514,7 @@ BOOL func_108(ePedComponentType epctParam0) // Position - 0x595E (22878)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 9;
 
 	return false;
@@ -4804,7 +4804,7 @@ void func_117(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 
 void func_118() // Position - 0x5DF0 (24048)
 {
-	Global_99713 = true;
+	Global_99713 = 1;
 	return;
 }
 
@@ -5920,16 +5920,16 @@ char* func_139() // Position - 0x7B03 (31491)
 	switch (Global_1579265)
 	{
 		case 1:
-			return "TITAN2_WH40" /*40MM CANNON*/;
+			return "TITAN2_WH40" /*CAÑÓN: 40 MM*/;
 	
 		case 3:
-			return "TITAN2_WH105" /*105MM CANNON*/;
+			return "TITAN2_WH105" /*CAÑÓN: 105 MM*/;
 	
 		case 2:
-			return "TITAN2_WH25" /*25MM CANNON*/;
+			return "TITAN2_WH25" /*CAÑÓN: 25 MM*/;
 	
 		case 4:
-			return "TITAN2_WH40" /*40MM CANNON*/;
+			return "TITAN2_WH40" /*CAÑÓN: 40 MM*/;
 	
 		default:
 		
@@ -6003,7 +6003,7 @@ void func_142(var uParam0) // Position - 0x7BC2 (31682)
 void func_143(int iParam0, int iParam1) // Position - 0x7C12 (31762)
 {
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_71, "SET_CANNON_LABEL");
-	GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CANNON_AMMO" /*AMMO: ~1~/~1~*/);
+	GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CANNON_AMMO" /*MUNICIÓN: ~1~/~1~*/);
 	HUD::ADD_TEXT_COMPONENT_INTEGER(iParam0);
 	HUD::ADD_TEXT_COMPONENT_INTEGER(iParam1);
 	GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
@@ -6246,7 +6246,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 								{
 									if (Global_1579260 != -1 || Global_1579266 != -1)
 									{
-										_DISPLAY_HELP_TEXT("TUR_WATER" /*Turret is underwater. You cannot use this turret while it is under water.*/, -1);
+										_DISPLAY_HELP_TEXT("TUR_WATER" /*La torreta está bajo el agua. No puedes utilizarla mientras esté ahí.*/, -1);
 										uParam0->f_34 = 1;
 									}
 								}
@@ -6257,7 +6257,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 								else
 								{
 									if (Global_1579266 != -1)
-										_DISPLAY_HELP_TEXT("TUR_GR" /*Turret is underground. You cannot use this turret while it is underground.*/, -1);
+										_DISPLAY_HELP_TEXT("TUR_GR" /*La torreta está bajo tierra. No puedes utilizarla mientras esté ahí.*/, -1);
 								
 									uParam0->f_34 = 1;
 									CAM::DO_SCREEN_FADE_OUT(0);
@@ -6320,7 +6320,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 								case joaat("trailerlarge"):
 									switch (Global_1579260)
 									{
-										case true:
+										case 1:
 											vector = { 0f, 8.4f, 1.3f };
 											break;
 									
@@ -7308,7 +7308,7 @@ void func_164() // Position - 0x9A19 (39449)
 {
 	if (bLocal_321)
 	{
-		if (PED::IS_PED_IN_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, false))
+		if (PED::IS_PED_IN_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, false))
 		{
 			switch (iLocal_366)
 			{
@@ -7319,7 +7319,7 @@ void func_164() // Position - 0x9A19 (39449)
 					break;
 			
 				case 1:
-					AUDIO::SET_AUDIO_SCENE_VARIABLE("MP_HELI_CAM_FILTERING", "HeliFiltering", ENTITY::GET_ENTITY_SPEED(epctLocal_367));
+					AUDIO::SET_AUDIO_SCENE_VARIABLE("MP_HELI_CAM_FILTERING", "HeliFiltering", ENTITY::GET_ENTITY_SPEED(veLocal_367));
 					break;
 			}
 		}
@@ -7349,50 +7349,50 @@ void func_165() // Position - 0x9AA2 (39586)
 				if (bLocal_309 || bLocal_308)
 				{
 					if (hLocal_299 == joaat("buzzard") && !Global_2740436 || hLocal_299 == joaat("savage") || hLocal_299 == -1659004814)
-						_DISPLAY_HELP_TEXT("HUNTGUN_2" /*You are using the helicopter's rocket launcher.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_2" /*Estás usando el lanzacohetes del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (hLocal_299 == joaat("valkyrie"))
-						_DISPLAY_HELP_TEXT("HUNTGUN_2c" /*You are using the helicopter's gun.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_2c" /*Estás usando el arma del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar o alejar la vista.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (hLocal_299 == joaat("hunter"))
-						_DISPLAY_HELP_TEXT("HUNTGUN_2c" /*You are using the helicopter's gun.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/, -1);
-					else if (func_324(epctLocal_367))
-						_DISPLAY_HELP_TEXT(func_20(epctLocal_367), -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_2c" /*Estás usando el arma del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar o alejar la vista.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
+					else if (func_324(veLocal_367))
+						_DISPLAY_HELP_TEXT(func_20(veLocal_367), -1);
 					else if (Global_1579260 != -1 || Global_1579266 != -1)
-						_DISPLAY_HELP_TEXT(func_20(epctLocal_367), -1);
+						_DISPLAY_HELP_TEXT(func_20(veLocal_367), -1);
 					else
-						_DISPLAY_HELP_TEXT("HUNTGUN_2b" /*You are using the helicopter's mounted surveillance camera.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_2b" /*Estás usando la cámara montada de vigilancia del helicóptero.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 				}
 				else if (bLocal_310)
 				{
-					if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("bombushka"))
-						_DISPLAY_HELP_TEXT("BOMBGUN_T_2b" /*Bombushka Dual .50 Cal Nose Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/, -1);
+					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("bombushka"))
+						_DISPLAY_HELP_TEXT("BOMBGUN_T_2b" /*Torreta frontal dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/, -1);
 				
-					if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("akula"))
-						_DISPLAY_HELP_TEXT("AKULAGUN_P1" /*Akula Passenger Cam:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ Switch Camera Modes*/, -1);
+					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula"))
+						_DISPLAY_HELP_TEXT("AKULAGUN_P1" /*Cámara de pasajero del Akula:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ alternar modos de la cámara*/, -1);
 				
-					if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("volatol"))
-						_DISPLAY_HELP_TEXT("VOLGUN_T_2b" /*Volatol Dual .50 Cal Nose Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/, -1);
+					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
+						_DISPLAY_HELP_TEXT("VOLGUN_T_2b" /*Torreta frontal dual del calibre 50 del Volatol:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/, -1);
 				}
 				else if (bLocal_311)
 				{
-					if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("bombushka"))
-						_DISPLAY_HELP_TEXT("BOMBGUN_T_2d" /*Bombushka Dual .50 Cal Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/, -1);
+					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("bombushka"))
+						_DISPLAY_HELP_TEXT("BOMBGUN_T_2d" /*Torreta trasera dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/, -1);
 				
-					if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("akula"))
-						_DISPLAY_HELP_TEXT("AKULAGUN_P1" /*Akula Passenger Cam:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ Switch Camera Modes*/, -1);
+					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula"))
+						_DISPLAY_HELP_TEXT("AKULAGUN_P1" /*Cámara de pasajero del Akula:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ alternar modos de la cámara*/, -1);
 				
-					if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("volatol"))
-						_DISPLAY_HELP_TEXT("VOLGUN_T_2c" /*Volatol Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/, -1);
+					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
+						_DISPLAY_HELP_TEXT("VOLGUN_T_2c" /*Torreta superior dual del calibre 50 del Volatol:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/, -1);
 				}
-				else if (!func_324(epctLocal_367))
+				else if (!func_324(veLocal_367))
 				{
 					if (hLocal_299 == joaat("buzzard") || hLocal_299 == joaat("savage") || hLocal_299 == -1659004814)
-						_DISPLAY_HELP_TEXT("HUNTGUN_4" /*You are viewing the co-pilot's rocket launcher. Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_4" /*Estás viendo el lanzacohetes del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (hLocal_299 == joaat("valkyrie") || hLocal_299 == joaat("hunter"))
-						_DISPLAY_HELP_TEXT("HUNTGUN_4c" /*You are viewing the co-pilot's gun. Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_4c" /*Estás viendo el arma del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (func_208(3))
-						_DISPLAY_HELP_TEXT("IAAGUN_1" /*You are viewing the IAA turret camera. ~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Hold ~INPUT_AIM~ to fire the machine gun. ~n~Press ~INPUT_FRONTEND_CANCEL~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("IAAGUN_1" /*Estás viendo la cámara de la torreta de la IAA. ~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Mantén pulsado ~INPUT_AIM~ para disparar la ametralladora. ~n~Pulsa ~INPUT_FRONTEND_CANCEL~ para volver.*/, -1);
 					else
-						_DISPLAY_HELP_TEXT("HUNTGUN_4b" /*You are viewing the co-pilot's mounted surveillance camera. Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_4b" /*Estás viendo la cámara montada de vigilancia del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 				}
 			
 				iLocal_365 = iLocal_365 + 1;
@@ -7400,23 +7400,23 @@ void func_165() // Position - 0x9AA2 (39586)
 			break;
 	
 		case 1:
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2" /*You are using the helicopter's rocket launcher.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4" /*You are viewing the co-pilot's rocket launcher. Press ~INPUT_CONTEXT~ to go back.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2b" /*You are using the helicopter's mounted surveillance camera.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4b" /*You are viewing the co-pilot's mounted surveillance camera. Press ~INPUT_CONTEXT~ to go back.*/) && Global_1579266 == -1)
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2" /*Estás usando el lanzacohetes del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4" /*Estás viendo el lanzacohetes del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2b" /*Estás usando la cámara montada de vigilancia del helicóptero.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4b" /*Estás viendo la cámara montada de vigilancia del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/) && Global_1579266 == -1)
 				iLocal_365 = iLocal_365 + 1;
 		
 			if (Global_1579260 != -1 || Global_1579266 != -1)
 			{
 				if (func_64(Global_1845129) && !IS_BIT_SET(Global_4718592.f_26, 7))
 				{
-					_DISPLAY_HELP_TEXT(func_20(epctLocal_367), -1);
+					_DISPLAY_HELP_TEXT(func_20(veLocal_367), -1);
 				}
 				else if (func_168())
 				{
-					_DISPLAY_HELP_TEXT(func_20(epctLocal_367), -1);
+					_DISPLAY_HELP_TEXT(func_20(veLocal_367), -1);
 				
 					if (!_STOPWATCH_IS_INITIALIZED(&uLocal_296))
 						func_233(&uLocal_296, false, false);
 				}
-				else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_20(epctLocal_367)))
+				else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_20(veLocal_367)))
 				{
 					HUD::CLEAR_HELP(true);
 				}
@@ -7430,9 +7430,9 @@ void func_165() // Position - 0x9AA2 (39586)
 					if (func_167(PLAYER::PLAYER_ID(), 19))
 						if (!func_166())
 							if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-								_DISPLAY_HELP_TEXT("HUNTGUN_6_KM" /*You can tag other players for the pilot to see. To tag a player, target them with the camera and press ~INPUT_AIM~.*/, -1);
+								_DISPLAY_HELP_TEXT("HUNTGUN_6_KM" /*Puedes etiquetar a otros jugadores para que los vea el piloto. Para ello, apúntalos con la cámara y pulsa ~INPUT_AIM~.*/, -1);
 							else
-								_DISPLAY_HELP_TEXT("HUNTGUN_6" /*You can tag other players for the pilot to see. To tag a player, target them with the camera and press ~INPUT_FRONTEND_ACCEPT~.*/, -1);
+								_DISPLAY_HELP_TEXT("HUNTGUN_6" /*Puedes etiquetar a otros jugadores para que los vea el piloto. Para ello, apúntalos con la cámara y pulsa ~INPUT_FRONTEND_ACCEPT~.*/, -1);
 			
 				iLocal_365 = iLocal_365 + 1;
 			}
@@ -7474,13 +7474,13 @@ void func_169() // Position - 0x9E6B (40555)
 			isUsingKeyboardAndMouse = PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL);
 		
 			if (isUsingKeyboardAndMouse)
-				func_191(INPUT_VEH_EXIT, "MOVE_DRONE_RE" /*Exit*/, -1);
+				func_191(INPUT_VEH_EXIT, "MOVE_DRONE_RE" /*Salir*/, -1);
 			else
-				func_191(INPUT_VEH_CIN_CAM, "MOVE_DRONE_RE" /*Exit*/, -1);
+				func_191(INPUT_VEH_CIN_CAM, "MOVE_DRONE_RE" /*Salir*/, -1);
 		
 			if (func_184())
 			{
-				func_191(INPUT_CONTEXT, "SUB_H_MOD_L02" /*Countermeasures*/, -1);
+				func_191(INPUT_CONTEXT, "SUB_H_MOD_L02" /*Contramedidas*/, -1);
 				bLocal_327 = true;
 			}
 			else
@@ -7493,13 +7493,13 @@ void func_169() // Position - 0x9E6B (40555)
 			else
 				func_191(INPUT_FRONTEND_AXIS_Y, "CELL_284" /*Zoom*/, -1);
 		
-			func_183(true, "DRONE_POSITION" /*Move*/, -1);
+			func_183(1, "DRONE_POSITION" /*Mover*/, -1);
 		
 			if (func_41())
 			{
 				controlInstructionalButtonsString = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_VEH_FLY_YAW_LEFT, true);
 				controlInstructionalButtonsString2 = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_VEH_FLY_YAW_RIGHT, true);
-				func_182("TURRET_SWITCH" /*Switch Weapon*/, controlInstructionalButtonsString2, controlInstructionalButtonsString, 0, 0);
+				func_182("TURRET_SWITCH" /*Cambiar arma*/, controlInstructionalButtonsString2, controlInstructionalButtonsString, 0, 0);
 				bLocal_326 = true;
 			}
 			else
@@ -7509,11 +7509,11 @@ void func_169() // Position - 0x9E6B (40555)
 		
 			if (func_181())
 				if (isUsingKeyboardAndMouse)
-					func_191(INPUT_RELOAD, "INPUT_RELOAD" /*Reload*/, -1);
+					func_191(INPUT_RELOAD, "INPUT_RELOAD" /*Recargar*/, -1);
 				else
-					func_191(INPUT_FRONTEND_X, "INPUT_RELOAD" /*Reload*/, -1);
+					func_191(INPUT_FRONTEND_X, "INPUT_RELOAD" /*Recargar*/, -1);
 		
-			func_191(INPUT_ATTACK, "MO_ADB_OFF" /*Fire*/, -1);
+			func_191(INPUT_ATTACK, "MO_ADB_OFF" /*Disparar*/, -1);
 			bLocal_324 = true;
 			bLocal_325 = !isUsingKeyboardAndMouse;
 		}
@@ -7782,7 +7782,7 @@ BOOL func_172(Player plParam0, int iParam1) // Position - 0xA4AE (42158)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_173(-1, false) == CHAR_MIKE_FRANK_CONF;
+		flag = func_173(-1, false) == 8;
 	else
 		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
 
@@ -7793,28 +7793,28 @@ BOOL func_172(Player plParam0, int iParam1) // Position - 0xA4AE (42158)
 	return flag;
 }
 
-eCharacter func_173(int iParam0, BOOL bParam1) // Position - 0xA507 (42247)
+int func_173(int iParam0, BOOL bParam1) // Position - 0xA507 (42247)
 {
-	eCharacter character;
 	int num;
+	int num2;
 
-	num = iParam0;
+	num2 = iParam0;
 
-	if (num == -1)
-		num = func_174();
+	if (num2 == -1)
+		num2 = func_174();
 
-	if (Global_1575072[num] == true)
+	if (Global_1575072[num2] == true)
 	{
 		bParam1;
-		character = CHAR_MIKE_FRANK_CONF;
+		num = 8;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		num = Global_1574921[num2];
 		bParam1;
 	}
 
-	return character;
+	return num;
 }
 
 int func_174() // Position - 0xA548 (42312)
@@ -7888,7 +7888,7 @@ BOOL func_179(int iParam0, int iParam1) // Position - 0xA685 (42629)
 BOOL func_180(var uParam0, BOOL bParam1, int iParam2) // Position - 0xA6BD (42685)
 {
 	var unk;
-	ePedComponentType hashKey;
+	Hash hashKey;
 	int i;
 	int num;
 
@@ -7908,7 +7908,7 @@ BOOL func_180(var uParam0, BOOL bParam1, int iParam2) // Position - 0xA6BD (4268
 			*uParam0 = i;
 			return true;
 		}
-		else if (Global_24546.f_6324[i] == PV_COMP_HEAD)
+		else if (Global_24546.f_6324[i] == 0)
 		{
 			num = i;
 		}
@@ -7971,11 +7971,11 @@ void func_182(char* sParam0, const char* sParam1, const char* sParam2, const cha
 	return;
 }
 
-void func_183(BOOL bParam0, char* sParam1, int iParam2) // Position - 0xA895 (43157)
+void func_183(int iParam0, char* sParam1, int iParam2) // Position - 0xA895 (43157)
 {
 	const char* controlGroupInstructionalButtonsString;
 
-	controlGroupInstructionalButtonsString = PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, bParam0, true);
+	controlGroupInstructionalButtonsString = PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, iParam0, true);
 
 	if (Global_24546.f_5326 >= 14)
 	{
@@ -7991,7 +7991,7 @@ void func_183(BOOL bParam0, char* sParam1, int iParam2) // Position - 0xA895 (43
 	TEXT_LABEL_ASSIGN_STRING(&Global_24546.f_5553[Global_24546.f_5326 /*4*/], sParam1, 16);
 	Global_24546.f_5610[Global_24546.f_5326] = iParam2;
 	Global_24546.f_5625[Global_24546.f_5326] = 402;
-	Global_24546.f_5640[Global_24546.f_5326] = bParam0;
+	Global_24546.f_5640[Global_24546.f_5326] = iParam0;
 	Global_24546.f_5326 = Global_24546.f_5326 + 1;
 	return;
 }
@@ -7999,23 +7999,23 @@ void func_183(BOOL bParam0, char* sParam1, int iParam2) // Position - 0xA895 (43
 BOOL func_184() // Position - 0xA945 (43333)
 {
 	if (bLocal_308)
-		if (func_186() && !func_185(epctLocal_367, 0, 1075838976, false))
+		if (func_186() && !func_185(veLocal_367, 0, 1075838976, false))
 			return true;
 
 	return false;
 }
 
-BOOL func_185(ePedComponentType epctParam0, int iParam1, int iParam2, BOOL bParam3) // Position - 0xA973 (43379)
+BOOL func_185(Vehicle veParam0, int iParam1, int iParam2, BOOL bParam3) // Position - 0xA973 (43379)
 {
 	float groundZ;
 	Vector3 entityCoords;
 
 	if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false) || bParam3)
 	{
-		if (PED::IS_PED_IN_ANY_HELI(PLAYER::PLAYER_PED_ID()) || PED::IS_PED_IN_ANY_PLANE(PLAYER::PLAYER_PED_ID()) || bParam3 && VEHICLE::IS_THIS_MODEL_A_PLANE(ENTITY::GET_ENTITY_MODEL(epctParam0)) || VEHICLE::IS_THIS_MODEL_A_HELI(ENTITY::GET_ENTITY_MODEL(epctParam0)))
+		if (PED::IS_PED_IN_ANY_HELI(PLAYER::PLAYER_PED_ID()) || PED::IS_PED_IN_ANY_PLANE(PLAYER::PLAYER_PED_ID()) || bParam3 && VEHICLE::IS_THIS_MODEL_A_PLANE(ENTITY::GET_ENTITY_MODEL(veParam0)) || VEHICLE::IS_THIS_MODEL_A_HELI(ENTITY::GET_ENTITY_MODEL(veParam0)))
 		{
 			groundZ = -1f;
-			entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam0, true) };
+			entityCoords = { ENTITY::GET_ENTITY_COORDS(veParam0, true) };
 			MISC::GET_GROUND_Z_FOR_3D_COORD(entityCoords, &groundZ, false, false);
 		
 			if (entityCoords.f_2 - groundZ <= iParam1)
@@ -8037,44 +8037,44 @@ BOOL func_185(ePedComponentType epctParam0, int iParam1, int iParam2, BOOL bPara
 
 BOOL func_186() // Position - 0xAA1B (43547)
 {
-	if (func_187(epctLocal_367) && VEHICLE::GET_VEHICLE_COUNTERMEASURE_AMMO(epctLocal_367) > 0)
+	if (func_187(veLocal_367) && VEHICLE::GET_VEHICLE_COUNTERMEASURE_AMMO(veLocal_367) > 0)
 		return true;
 
 	return false;
 }
 
-BOOL func_187(ePedComponentType epctParam0) // Position - 0xAA40 (43584)
+BOOL func_187(Vehicle veParam0) // Position - 0xAA40 (43584)
 {
-	if (func_190(epctParam0))
+	if (func_190(veParam0))
 	{
-		if (VEHICLE::GET_VEHICLE_MOD(epctParam0, 1) == 1)
+		if (VEHICLE::GET_VEHICLE_MOD(veParam0, 1) == 1)
 			return true;
 	
-		if (VEHICLE::IS_VEHICLE_MODEL(epctParam0, joaat("oppressor2")))
-			if (VEHICLE::GET_VEHICLE_MOD(epctParam0, 6) == 1)
+		if (VEHICLE::IS_VEHICLE_MODEL(veParam0, joaat("oppressor2")))
+			if (VEHICLE::GET_VEHICLE_MOD(veParam0, 6) == 1)
 				return true;
 	}
 
-	if (func_189(epctParam0))
+	if (func_189(veParam0))
 	{
-		if (VEHICLE::GET_VEHICLE_MOD(epctParam0, 1) == 0)
+		if (VEHICLE::GET_VEHICLE_MOD(veParam0, 1) == 0)
 			return true;
 	
-		if (VEHICLE::IS_VEHICLE_MODEL(epctParam0, joaat("oppressor2")))
-			if (VEHICLE::GET_VEHICLE_MOD(epctParam0, 6) == 0)
+		if (VEHICLE::IS_VEHICLE_MODEL(veParam0, joaat("oppressor2")))
+			if (VEHICLE::GET_VEHICLE_MOD(veParam0, 6) == 0)
 				return true;
 	}
 
-	if (func_188(epctParam0))
-		if (VEHICLE::IS_TOGGLE_MOD_ON(epctParam0, 20))
+	if (func_188(veParam0))
+		if (VEHICLE::IS_TOGGLE_MOD_ON(veParam0, 20))
 			return true;
 
 	return false;
 }
 
-BOOL func_188(ePedComponentType epctParam0) // Position - 0xAACB (43723)
+BOOL func_188(Vehicle veParam0) // Position - 0xAACB (43723)
 {
-	switch (ENTITY::GET_ENTITY_MODEL(epctParam0))
+	switch (ENTITY::GET_ENTITY_MODEL(veParam0))
 	{
 		case joaat("cuban800"):
 		case joaat("mogul"):
@@ -8109,9 +8109,9 @@ BOOL func_188(ePedComponentType epctParam0) // Position - 0xAACB (43723)
 	return false;
 }
 
-BOOL func_189(ePedComponentType epctParam0) // Position - 0xAB88 (43912)
+BOOL func_189(Vehicle veParam0) // Position - 0xAB88 (43912)
 {
-	switch (ENTITY::GET_ENTITY_MODEL(epctParam0))
+	switch (ENTITY::GET_ENTITY_MODEL(veParam0))
 	{
 		case joaat("pyro"):
 		case joaat("rogue"):
@@ -8146,9 +8146,9 @@ BOOL func_189(ePedComponentType epctParam0) // Position - 0xAB88 (43912)
 	return false;
 }
 
-BOOL func_190(ePedComponentType epctParam0) // Position - 0xAC45 (44101)
+BOOL func_190(Vehicle veParam0) // Position - 0xAC45 (44101)
 {
-	switch (ENTITY::GET_ENTITY_MODEL(epctParam0))
+	switch (ENTITY::GET_ENTITY_MODEL(veParam0))
 	{
 		case joaat("cuban800"):
 		case joaat("mogul"):
@@ -8360,9 +8360,9 @@ BOOL func_196() // Position - 0xB03E (45118)
 	return 0;
 }
 
-BOOL func_197(ePedComponentType epctParam0) // Position - 0xB0AA (45226)
+BOOL func_197(Vehicle veParam0) // Position - 0xB0AA (45226)
 {
-	switch (ENTITY::GET_ENTITY_MODEL(epctParam0))
+	switch (ENTITY::GET_ENTITY_MODEL(veParam0))
 	{
 		case joaat("trailerlarge"):
 		case joaat("buzzard"):
@@ -8473,31 +8473,31 @@ BOOL func_204() // Position - 0xB258 (45656)
 	return HUD::GET_PAUSE_MENU_STATE() != 0;
 }
 
-BOOL func_205(ePedComponentType epctParam0, int iParam1, BOOL bParam2) // Position - 0xB266 (45670)
+BOOL func_205(var uParam0, int iParam1, BOOL bParam2) // Position - 0xB266 (45670)
 {
 	if (iParam1 == -1)
 		return true;
 
-	func_233(epctParam0, bParam2, false);
+	func_233(uParam0, bParam2, false);
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam2)
-		if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), *epctParam0)) >= iParam1)
+		if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), *uParam0)) >= iParam1)
 			return true;
-	else if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *epctParam0)) >= iParam1)
+	else if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *uParam0)) >= iParam1)
 		return true;
 
 	return false;
 }
 
-BOOL _STOPWATCH_IS_INITIALIZED(ePedComponentType epctParam0) // Position - 0xB2C4 (45764)
+BOOL _STOPWATCH_IS_INITIALIZED(var uParam0) // Position - 0xB2C4 (45764)
 {
-	return epctParam0->f_1;
+	return uParam0->f_1;
 }
 
-BOOL _DOES_ENTITY_EXIST_AND_IS_ALIVE(ePedComponentType epctParam0) // Position - 0xB2D0 (45776)
+BOOL _DOES_ENTITY_EXIST_AND_IS_ALIVE(Vehicle veParam0) // Position - 0xB2D0 (45776)
 {
-	if (ENTITY::DOES_ENTITY_EXIST(epctParam0))
-		if (!ENTITY::IS_ENTITY_DEAD(epctParam0, false))
+	if (ENTITY::DOES_ENTITY_EXIST(veParam0))
+		if (!ENTITY::IS_ENTITY_DEAD(veParam0, false))
 			return true;
 
 	return false;
@@ -8542,11 +8542,11 @@ void func_212() // Position - 0xB38D (45965)
 
 	if (func_326(PLAYER::PLAYER_ID()) || func_231(PLAYER::PLAYER_ID()))
 		iLocal_360 = 1;
-	else if (func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()) || VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+	else if (func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()) || VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 		iLocal_360 = 2;
 	else if (func_208(3))
 		iLocal_360 = 3;
-	else if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("buzzard") || ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("savage") || ENTITY::GET_ENTITY_MODEL(epctLocal_367) == -1659004814)
+	else if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("buzzard") || ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("savage") || ENTITY::GET_ENTITY_MODEL(veLocal_367) == -1659004814)
 		iLocal_360 = 4;
 
 	return;
@@ -8556,7 +8556,7 @@ void func_213() // Position - 0xB434 (46132)
 {
 	if (ENTITY::DOES_ENTITY_EXIST(uLocal_72.f_9))
 	{
-		if (!ENTITY::IS_ENTITY_DEAD(uLocal_72.f_9, false) && !(!ENTITY::IS_ENTITY_DEAD(Global_1673921, false) && ENTITY::GET_ENTITY_MODEL(uLocal_72.f_9) == ENTITY::GET_ENTITY_MODEL(Global_1673921)) && !func_324(epctLocal_367))
+		if (!ENTITY::IS_ENTITY_DEAD(uLocal_72.f_9, false) && !(!ENTITY::IS_ENTITY_DEAD(Global_1673921, false) && ENTITY::GET_ENTITY_MODEL(uLocal_72.f_9) == ENTITY::GET_ENTITY_MODEL(Global_1673921)) && !func_324(veLocal_367))
 		{
 			if (ENTITY::GET_ENTITY_MODEL(uLocal_72.f_9) != joaat("valkyrie") && ENTITY::GET_ENTITY_MODEL(uLocal_72.f_9) != joaat("savage") && ENTITY::GET_ENTITY_MODEL(uLocal_72.f_9) != joaat("hunter") && !func_230(PLAYER::PLAYER_ID()) && !func_229(PLAYER::PLAYER_ID()))
 			{
@@ -8667,13 +8667,13 @@ void func_217() // Position - 0xB6C3 (46787)
 	Vector3 vector;
 	Vector3 vector2;
 
-	if (bLocal_321 || Global_1579260 != -1 || Global_1579266 != -1 || func_324(epctLocal_367))
+	if (bLocal_321 || Global_1579260 != -1 || Global_1579266 != -1 || func_324(veLocal_367))
 	{
 		if (Global_1579260 != -1)
 		{
 			switch (Global_1579260)
 			{
-				case true:
+				case 1:
 					vector = { 0f, 50f, 1f };
 					break;
 			
@@ -8686,7 +8686,7 @@ void func_217() // Position - 0xB6C3 (46787)
 					break;
 			}
 		
-			offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(epctLocal_367, vector) };
+			offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(veLocal_367, vector) };
 		}
 		else if (Global_1579266 != -1)
 		{
@@ -8709,11 +8709,11 @@ void func_217() // Position - 0xB6C3 (46787)
 					break;
 			}
 		
-			offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(epctLocal_367, vector2) };
+			offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(veLocal_367, vector2) };
 		}
 		else
 		{
-			offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(epctLocal_367, 0f, 20f, -1f) };
+			offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(veLocal_367, 0f, 20f, -1f) };
 		}
 	
 		func_117(&uLocal_72, 0, 1086324736, -1030356992, -1020002304, 1127481344, 1041865114, false);
@@ -8721,10 +8721,10 @@ void func_217() // Position - 0xB6C3 (46787)
 		func_218(&uLocal_72, offsetFromEntityInWorldCoords);
 		CAM::SET_CAM_CONTROLS_MINI_MAP_HEADING(uLocal_72.f_32, true);
 	
-		if (Global_1579260 != -1 || func_324(epctLocal_367) || Global_1579266 != -1)
+		if (Global_1579260 != -1 || func_324(veLocal_367) || Global_1579266 != -1)
 			return;
 	
-		uLocal_72.f_42 = { ENTITY::GET_ENTITY_ROTATION(epctLocal_367, 2) - { 0f, 0f, 3f } };
+		uLocal_72.f_42 = { ENTITY::GET_ENTITY_ROTATION(veLocal_367, 2) - { 0f, 0f, 3f } };
 	}
 
 	return;
@@ -8742,7 +8742,7 @@ void func_218(var uParam0, var uParam1, var uParam2, var uParam3) // Position - 
 	return;
 }
 
-int func_219(var uParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, Hash hParam4, int iParam5) // Position - 0xB8B4 (47284)
+int func_219(var uParam0, Vehicle veParam1, int iParam2, Vehicle veParam3, Hash hParam4, int iParam5) // Position - 0xB8B4 (47284)
 {
 	Vector3 entityCoords;
 	var entityRotation;
@@ -8770,7 +8770,7 @@ int func_219(var uParam0, ePedComponentType epctParam1, int iParam2, ePedCompone
 			uParam0->f_35 = 0;
 			uParam0->f_32 = CAM::CREATE_CAM("default_scripted_camera", false);
 		
-			if (func_324(epctParam3) || func_209())
+			if (func_324(veParam3) || func_209())
 				uParam0->f_12 = 0.1f;
 		
 			CAM::SET_CAM_NEAR_CLIP(uParam0->f_32, uParam0->f_12);
@@ -8779,13 +8779,13 @@ int func_219(var uParam0, ePedComponentType epctParam1, int iParam2, ePedCompone
 		MISC::SET_INSTANCE_PRIORITY_HINT(4);
 		func_220(true, true, true, false);
 	
-		if (!ENTITY::IS_ENTITY_DEAD(epctParam1, false))
+		if (!ENTITY::IS_ENTITY_DEAD(veParam1, false))
 		{
 			if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			{
-				if (ENTITY::IS_ENTITY_A_VEHICLE(epctParam1))
+				if (ENTITY::IS_ENTITY_A_VEHICLE(veParam1))
 				{
-					uParam0->f_8 = ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(epctParam1);
+					uParam0->f_8 = ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(veParam1);
 					VEHICLE::SET_LIGHTS_CUTOFF_DISTANCE_TWEAK(300f);
 				}
 			
@@ -8794,10 +8794,10 @@ int func_219(var uParam0, ePedComponentType epctParam1, int iParam2, ePedCompone
 				uParam0->f_33 = 1;
 				uParam0->f_50 = 1;
 				uParam0->f_2 = 1;
-				uParam0->f_9 = epctParam1;
-				entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam1, true) };
+				uParam0->f_9 = veParam1;
+				entityCoords = { ENTITY::GET_ENTITY_COORDS(veParam1, true) };
 				uParam0->f_22 = entityCoords.f_2;
-				entityRotation = { ENTITY::GET_ENTITY_ROTATION(epctParam1, 2) };
+				entityRotation = { ENTITY::GET_ENTITY_ROTATION(veParam1, 2) };
 				uParam0->f_41 = entityRotation.f_2;
 			
 				if (uParam0->f_4)
@@ -9002,9 +9002,9 @@ int func_220(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position
 	return num;
 }
 
-ePedComponentType func_221(ePedComponentType epctParam0) // Position - 0xBDC6 (48582)
+Vehicle func_221(Vehicle veParam0) // Position - 0xBDC6 (48582)
 {
-	return epctParam0;
+	return veParam0;
 }
 
 void func_222(int iParam0, int iParam1) // Position - 0xBDD0 (48592)
@@ -9225,7 +9225,7 @@ BOOL func_229(ePedComponentType epctParam0) // Position - 0xC211 (49681)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 10;
 
 	return false;
@@ -9235,7 +9235,7 @@ BOOL func_230(ePedComponentType epctParam0) // Position - 0xC258 (49752)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1 && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 8;
 
 	return false;
@@ -9245,7 +9245,7 @@ BOOL func_231(ePedComponentType epctParam0) // Position - 0xC2B8 (49848)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 6;
 
 	return false;
@@ -9327,11 +9327,11 @@ void func_235(BOOL bParam0, int iParam1) // Position - 0xC3C0 (50112)
 	if (bParam0)
 	{
 		func_236(&Global_24546.f_6263[num /*10*/]);
-		Global_24546.f_6324[num] = PV_COMP_HEAD;
+		Global_24546.f_6324[num] = 0;
 	}
 	else
 	{
-		Global_24546.f_6324[num] = PV_COMP_HEAD;
+		Global_24546.f_6324[num] = 0;
 	}
 
 	GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("Shared");
@@ -9359,9 +9359,9 @@ void func_237(BOOL bParam0) // Position - 0xC4B2 (50354)
 	if (bLocal_322 == bParam0)
 		return;
 
-	if (ENTITY::DOES_ENTITY_EXIST(epctLocal_367) && !ENTITY::IS_ENTITY_DEAD(epctLocal_367, false))
+	if (ENTITY::DOES_ENTITY_EXIST(veLocal_367) && !ENTITY::IS_ENTITY_DEAD(veLocal_367, false))
 	{
-		entityModel = ENTITY::GET_ENTITY_MODEL(epctLocal_367);
+		entityModel = ENTITY::GET_ENTITY_MODEL(veLocal_367);
 	
 		switch (entityModel)
 		{
@@ -9369,9 +9369,9 @@ void func_237(BOOL bParam0) // Position - 0xC4B2 (50354)
 			case joaat("avenger3"):
 			case joaat("bombushka"):
 			case 858355070:
-				VEHICLE::SET_TURRET_HIDDEN(epctLocal_367, 0, bParam0);
-				VEHICLE::SET_TURRET_HIDDEN(epctLocal_367, 1, bParam0);
-				VEHICLE::SET_TURRET_HIDDEN(epctLocal_367, 2, bParam0);
+				VEHICLE::SET_TURRET_HIDDEN(veLocal_367, 0, bParam0);
+				VEHICLE::SET_TURRET_HIDDEN(veLocal_367, 1, bParam0);
+				VEHICLE::SET_TURRET_HIDDEN(veLocal_367, 2, bParam0);
 				break;
 		}
 	
@@ -9383,45 +9383,45 @@ void func_237(BOOL bParam0) // Position - 0xC4B2 (50354)
 
 void func_238() // Position - 0xC52E (50478)
 {
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1" /*You are the co-pilot of a combat helicopter. Press ~INPUT_CONTEXT~ to use the rocket launcher.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1" /*Eres el copiloto de un helicóptero de combate. Pulsa ~INPUT_CONTEXT~ para usar el lanzacohetes.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1b" /*You are the co-pilot of a helicopter. Press ~INPUT_CONTEXT~ to use the mounted surveillance camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1b" /*Eres el copiloto de un helicóptero. Pulsa ~INPUT_CONTEXT~ para usar la cámara montada de vigilancia.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1c" /*You are the co-pilot of a Valkyrie helicopter. Press ~INPUT_CONTEXT~ to enter and exit the gun camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1c" /*Eres el copiloto de un helicóptero Valkyrie. Pulsa ~INPUT_CONTEXT~ para mirar/dejar de mirar por la cámara de la ametralladora.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3" /*Your co-pilot is operating the helicopter's rocket launcher. Press ~INPUT_CONTEXT~ to view the camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3" /*Tu copiloto está manejando el lanzacohetes del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3b" /*Your co-pilot is operating the helicopter's mounted surveillance camera. Press ~INPUT_CONTEXT~ to view the camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3b" /*Tu copiloto está manejando la cámara de observación del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3c" /*Your co-pilot is operating the helicopter's gun. Press ~INPUT_CONTEXT~ to view the camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3c" /*Tu copiloto está manejando el arma del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c1" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera. ~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c2" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera. ~n~Hold ~INPUT_CONTEXT~ to move to the Rear Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c1" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c2" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Rear Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c1" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c2" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_BUSY" /*You cannot move to another seat or enter the turret camera while moving to another seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_2" /*You are a passenger of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the passenger camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_1" /*You are the co-pilot of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~The aircraft's other stations are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c1" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Co-Pilot seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c2" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~The aircraft's other stations are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c1" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c2" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Co-Pilot seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c" /*You are the Co-Pilot of a Volatol.~n~The aircraft's other stations are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c1" /*You are the Co-Pilot of a Volatol.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c2" /*You are the Co-Pilot of a Volatol.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c" /*Titan 250 D 40mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c1" /*Titan 250 D 40mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_2c" /*Titan 250 D 25mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_2c1" /*Titan 250 D 25mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_3c" /*Titan 250 D 105mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_3c1" /*Titan 250 D 105mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 40mm Cannon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c1" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 25mm Cannon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c2" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 105mm Cannon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c1" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta frontal.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c2" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta trasera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c1" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta superior.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c2" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta trasera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c1" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta superior.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c2" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta frontal.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_BUSY" /*No puedes moverte a otro asiento ni pasar a la cámara de la torreta mientras te cambias de asiento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_2" /*Eres el pasajero de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara de pasajero.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_1" /*Eres el copiloto de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c" /*Torreta frontal del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para entrar en la cámara del arma.~n~Las otras torretas porque se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c1" /*Torreta frontal del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento del copiloto.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c2" /*Torreta frontal del Volatol.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta superior.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para entrar en la cámara del arma.~n~Las otras torretas porque se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c1" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta frontal.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c2" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento del copiloto.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c" /*Eres el copiloto de un Volatol.~n~Las otras torretas porque se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c1" /*Eres el copiloto de un Volatol.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta frontal.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c2" /*Eres el copiloto de un Volatol.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta superior.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c" /*Cañón de 40 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c1" /*Cañón de 40 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_2c" /*Cañón de 25 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_2c1" /*Cañón de 25 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_3c" /*Cañón de 105 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_3c1" /*Cañón de 105 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 40µmm.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c1" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 25µmm.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c2" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 105µmm.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUNH_1c" /*You are the co-pilot of a Hunter helicopter. Press ~INPUT_CONTEXT~ to enter and exit the gun camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUNH_1c" /*Eres el copiloto de un helicóptero Hunter. Pulsa ~INPUT_CONTEXT~ para entrar y salir de la cámara del arma.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_20(epctLocal_367)))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_20(veLocal_367)))
 		HUD::CLEAR_HELP(true);
 
 	return;
 }
 
-void _STOPWATCH_DESTROY(ePedComponentType epctParam0) // Position - 0xC7B3 (51123)
+void _STOPWATCH_DESTROY(var uParam0) // Position - 0xC7B3 (51123)
 {
-	epctParam0->f_1 = 0;
+	uParam0->f_1 = 0;
 	return;
 }
 
-BOOL func_240(ePedComponentType epctParam0) // Position - 0xC7C0 (51136)
+BOOL func_240(Vehicle veParam0) // Position - 0xC7C0 (51136)
 {
-	switch (ENTITY::GET_ENTITY_MODEL(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(epctParam0)))
+	switch (ENTITY::GET_ENTITY_MODEL(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(veParam0)))
 	{
 		case joaat("valkyrie"):
 		case joaat("bombushka"):
@@ -9452,7 +9452,7 @@ BOOL func_242() // Position - 0xC826 (51238)
 	eControlAction action;
 	eControlType control;
 
-	if (!bLocal_309 && !bLocal_310 && !bLocal_311 && !bLocal_312 && !bLocal_308 && func_324(epctLocal_367))
+	if (!bLocal_309 && !bLocal_310 && !bLocal_311 && !bLocal_312 && !bLocal_308 && func_324(veLocal_367))
 		return false;
 
 	if (func_251())
@@ -9472,7 +9472,7 @@ BOOL func_242() // Position - 0xC826 (51238)
 	if (scriptTaskStatus == 1 || scriptTaskStatus == 0 || PED::GET_PED_RESET_FLAG(PLAYER::PLAYER_PED_ID(), 373))
 		return false;
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TUR_GR" /*Turret is underground. You cannot use this turret while it is underground.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TUR_WATER" /*Turret is underwater. You cannot use this turret while it is under water.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TUR_GR" /*La torreta está bajo tierra. No puedes utilizarla mientras esté ahí.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TUR_WATER" /*La torreta está bajo el agua. No puedes utilizarla mientras esté ahí.*/))
 	{
 		if (CAM::IS_SCREEN_FADED_OUT())
 			CAM::DO_SCREEN_FADE_IN(500);
@@ -9492,7 +9492,7 @@ BOOL func_242() // Position - 0xC826 (51238)
 			if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT) && iLocal_314 < 1)
 			{
 				func_238();
-				_DISPLAY_HELP_TEXT("BOMBGUN_BUSY" /*You cannot move to another seat or enter the turret camera while moving to another seat.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_BUSY" /*No puedes moverte a otro asiento ni pasar a la cámara de la torreta mientras te cambias de asiento.*/, -1);
 				iLocal_314 = iLocal_314 + 1;
 			}
 		}
@@ -9512,14 +9512,14 @@ BOOL func_242() // Position - 0xC826 (51238)
 			}
 		
 			if (Global_1579260 != -1)
-				if (!ENTITY::DOES_ENTITY_EXIST(epctLocal_367))
+				if (!ENTITY::DOES_ENTITY_EXIST(veLocal_367))
 					if (ENTITY::DOES_ENTITY_EXIST(Global_1673923))
-						epctLocal_367 = Global_1673923;
+						veLocal_367 = Global_1673923;
 		
-			if (ENTITY::DOES_ENTITY_EXIST(epctLocal_367))
-				if (!ENTITY::IS_ENTITY_DEAD(epctLocal_367, false))
-					if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, -1, false))
-						epctLocal_369 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, -1, false);
+			if (ENTITY::DOES_ENTITY_EXIST(veLocal_367))
+				if (!ENTITY::IS_ENTITY_DEAD(veLocal_367, false))
+					if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, -1, false))
+						pedLocal_369 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, -1, false);
 		
 			if (PAD::IS_CONTROL_JUST_PRESSED(control, action))
 				func_233(&uLocal_341, true, false);
@@ -9595,7 +9595,7 @@ BOOL func_242() // Position - 0xC826 (51238)
 		
 			if (!func_251())
 			{
-				if (PAD::IS_CONTROL_JUST_RELEASED(control, action) && !(epctLocal_369 == PLAYER::PLAYER_PED_ID() && hLocal_299 == joaat("hunter")) && !func_324(epctLocal_367) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(control, action) && Global_1579260 != -1 && !func_247() || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(control, action) && Global_1579266 != -1 && !func_247() || bLocal_345)
+				if (PAD::IS_CONTROL_JUST_RELEASED(control, action) && !(pedLocal_369 == PLAYER::PLAYER_PED_ID() && hLocal_299 == joaat("hunter")) && !func_324(veLocal_367) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(control, action) && Global_1579260 != -1 && !func_247() || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(control, action) && Global_1579266 != -1 && !func_247() || bLocal_345)
 				{
 					bLocal_345 = false;
 				
@@ -9603,7 +9603,7 @@ BOOL func_242() // Position - 0xC826 (51238)
 					{
 						if (!IS_BIT_SET(Global_4718592.f_16, 12) && !Global_2697023.f_2)
 						{
-							if (VEHICLE::IS_VEHICLE_DRIVEABLE(epctLocal_367, false) && !func_63(epctLocal_367, false))
+							if (VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false) && !func_63(veLocal_367, false))
 							{
 								flag = 1;
 								Global_2708953 = true;
@@ -9612,14 +9612,14 @@ BOOL func_242() // Position - 0xC826 (51238)
 							}
 							else
 							{
-								if (!VEHICLE::IS_VEHICLE_DRIVEABLE(epctLocal_367, false) && ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("avenger"))
+								if (!VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false) && ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("avenger"))
 								{
 									flag = 1;
 									Global_2708953 = true;
 									Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_863 = 1;
 								}
 							
-								!VEHICLE::IS_VEHICLE_DRIVEABLE(epctLocal_367, false) && ENTITY::GET_ENTITY_MODEL(epctLocal_367) != joaat("avenger");
+								!VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false) && ENTITY::GET_ENTITY_MODEL(veLocal_367) != joaat("avenger");
 							}
 						}
 						else
@@ -9677,19 +9677,19 @@ BOOL func_243() // Position - 0xCCEE (52462)
 	return true;
 }
 
-BOOL func_244(ePedComponentType epctParam0, eScriptTaskHash esthParam1) // Position - 0xCE8C (52876)
+BOOL func_244(Ped pedParam0, eScriptTaskHash esthParam1) // Position - 0xCE8C (52876)
 {
-	if (func_245(epctParam0))
-		if (TASK::GET_SCRIPT_TASK_STATUS(epctParam0, esthParam1) == 1 || TASK::GET_SCRIPT_TASK_STATUS(epctParam0, esthParam1) == 0)
+	if (func_245(pedParam0))
+		if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, esthParam1) == 1 || TASK::GET_SCRIPT_TASK_STATUS(pedParam0, esthParam1) == 0)
 			return true;
 
 	return false;
 }
 
-BOOL func_245(ePedComponentType epctParam0) // Position - 0xCEBF (52927)
+BOOL func_245(Ped pedParam0) // Position - 0xCEBF (52927)
 {
-	if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(epctParam0))
-		if (!PED::IS_PED_INJURED(epctParam0))
+	if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(pedParam0))
+		if (!PED::IS_PED_INJURED(pedParam0))
 			return true;
 
 	return false;
@@ -9720,7 +9720,7 @@ BOOL func_247() // Position - 0xCF09 (53001)
 
 BOOL func_248() // Position - 0xCF35 (53045)
 {
-	if (func_324(epctLocal_367))
+	if (func_324(veLocal_367))
 		return bLocal_357;
 
 	return false;
@@ -9730,7 +9730,7 @@ BOOL func_249(ePedComponentType epctParam0, BOOL bParam1) // Position - 0xCF51 (
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (bParam1 || _NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 35;
 
 	return false;
@@ -9740,7 +9740,7 @@ BOOL func_250(ePedComponentType epctParam0) // Position - 0xCFA0 (53152)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 7;
 
 	return false;
@@ -9750,32 +9750,32 @@ BOOL func_251() // Position - 0xCFE6 (53222)
 {
 	if (!func_254(PLAYER::PLAYER_ID()))
 	{
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BHH_LEFTRANGE" /*You are out of range of the Business Battle that is currently in progress. Press ~INPUT_CONTEXT~ to continue participating.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BHH_LEFTRANGE" /*Estás demasiado lejos de la batalla comercial que está en curso. Pulsa ~INPUT_CONTEXT~ para seguir participando.*/))
 			return true;
 	
 		if (func_252(PLAYER::PLAYER_ID()) == 239)
 			return true;
 	
-		if (VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070) && Global_1579265 == -1 && !bLocal_309)
+		if (VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070) && Global_1579265 == -1 && !bLocal_309)
 			return true;
 	}
 
 	return false;
 }
 
-ePedComponentType func_252(Player plParam0) // Position - 0xD042 (53314)
+int func_252(Player plParam0) // Position - 0xD042 (53314)
 {
 	if (func_92(plParam0))
 		if (func_253(plParam0, false))
 			return Global_1892798[plParam0 /*615*/].f_10.f_34;
 
-	return PV_COMP_INVALID;
+	return -1;
 }
 
 BOOL func_253(Player plParam0, BOOL bParam1) // Position - 0xD06E (53358)
 {
 	if (func_92(plParam0))
-		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID)
+		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != -1 || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != -1)
 			return true;
 
 	return false;
@@ -9785,18 +9785,18 @@ BOOL func_254(ePedComponentType epctParam0) // Position - 0xD0B2 (53426)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			return Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID;
+			return Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1;
 		else if (Global_1575092 && epctParam0 == PLAYER::PLAYER_ID() && _NETWORK_IS_PLAYER_VALID(epctParam0, true, false))
-			return Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID;
+			return Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1;
 
 	return false;
 }
 
 void func_255() // Position - 0xD118 (53528)
 {
-	if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("volatol"))
+	if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
 		func_261();
-	else if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == 858355070)
+	else if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == 858355070)
 		func_257();
 	else
 		func_256();
@@ -9806,7 +9806,7 @@ void func_255() // Position - 0xD118 (53528)
 
 void func_256() // Position - 0xD150 (53584)
 {
-	if (!func_324(epctLocal_367) || ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("akula"))
+	if (!func_324(veLocal_367) || ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula"))
 	{
 		bLocal_346 = false;
 		return;
@@ -9819,56 +9819,56 @@ void func_256() // Position - 0xD150 (53584)
 	
 		if (bLocal_309)
 		{
-			if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 1, false))
+			if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 1, false))
 			{
-				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), epctLocal_367, false);
+				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), veLocal_367, false);
 				iLocal_347 = 1;
-				PED::SET_PED_INTO_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, iLocal_347);
+				PED::SET_PED_INTO_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, iLocal_347);
 			}
-			else if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 2, false))
+			else if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 2, false))
 			{
-				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), epctLocal_367, true);
+				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), veLocal_367, true);
 				iLocal_347 = 2;
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
 		else if (bLocal_310)
 		{
-			if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 2, false))
+			if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 2, false))
 			{
-				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), epctLocal_367, false);
+				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), veLocal_367, false);
 				iLocal_347 = 2;
 			}
-			else if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 0, false))
+			else if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 0, false))
 			{
-				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), epctLocal_367, true);
+				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), veLocal_367, true);
 				iLocal_347 = 0;
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
 		else if (bLocal_311)
 		{
-			if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 0, false))
+			if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 0, false))
 			{
-				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), epctLocal_367, false);
+				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), veLocal_367, false);
 				iLocal_347 = 0;
 			}
-			else if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 1, false))
+			else if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 1, false))
 			{
-				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), epctLocal_367, true);
+				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), veLocal_367, true);
 				iLocal_347 = 1;
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
@@ -9876,7 +9876,7 @@ void func_256() // Position - 0xD150 (53584)
 
 	if (iLocal_347 != -2)
 	{
-		if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, iLocal_347, false) == PLAYER::PLAYER_PED_ID())
+		if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, iLocal_347, false) == PLAYER::PLAYER_PED_ID())
 		{
 			bLocal_357 = false;
 			iLocal_347 = -2;
@@ -9886,20 +9886,20 @@ void func_256() // Position - 0xD150 (53584)
 		{
 			bLocal_357 = true;
 		
-			if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, iLocal_347, false))
+			if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, iLocal_347, false))
 			{
 				switch (iLocal_347)
 				{
 					case 0:
-						_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*There is a player already occupying the Top Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*Ya hay un jugador ocupando la torreta superior.*/, 1000);
 						break;
 				
 					case 1:
-						_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*There is a player already occupying the Nose Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*Ya hay un jugador ocupando la torreta frontal.*/, 1000);
 						break;
 				
 					case 2:
-						_DISPLAY_HELP_TEXT("BOMBGUN_3o" /*There is a player already occupying the Rear Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_3o" /*Ya hay un jugador ocupando la torreta trasera.*/, 1000);
 						break;
 				}
 			
@@ -9919,7 +9919,7 @@ void func_257() // Position - 0xD347 (54087)
 	int seat2;
 	int seat3;
 
-	if (!func_324(epctLocal_367) && !bLocal_309 || bLocal_308)
+	if (!func_324(veLocal_367) && !bLocal_309 || bLocal_308)
 	{
 		bLocal_346 = false;
 		return;
@@ -9937,25 +9937,25 @@ void func_257() // Position - 0xD347 (54087)
 		{
 			if (!bLocal_309)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
 		else
 		{
 			func_260();
-			TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, 20000, seat, 1073741824, 8388624, 0);
+			TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, 20000, seat, 1073741824, 8388624, 0);
 			func_259();
 			iLocal_347 = seat;
 		}
 	}
 	else if (iLocal_353 != -2 && iLocal_347 == -2)
 	{
-		if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, iLocal_353, false))
+		if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, iLocal_353, false))
 		{
 			iLocal_348 = _GET_VEHICLE_SEAT_PED_IS_IN(PLAYER::PLAYER_PED_ID(), false);
 			func_260();
-			TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, 20000, iLocal_353, 1073741824, 8388624, 0);
+			TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, 20000, iLocal_353, 1073741824, 8388624, 0);
 			func_259();
 			iLocal_347 = iLocal_353;
 		}
@@ -9967,7 +9967,7 @@ void func_257() // Position - 0xD347 (54087)
 
 	if (iLocal_347 != -2)
 	{
-		if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, iLocal_347, false) == PLAYER::PLAYER_PED_ID())
+		if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, iLocal_347, false) == PLAYER::PLAYER_PED_ID())
 		{
 			bLocal_357 = false;
 			func_258();
@@ -9980,13 +9980,13 @@ void func_257() // Position - 0xD347 (54087)
 				iLocal_353 = -2;
 			}
 		}
-		else if (!PED::IS_PED_IN_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, false) && _DOES_ENTITY_EXIST_AND_IS_ALIVE(epctLocal_367) && bLocal_357)
+		else if (!PED::IS_PED_IN_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, false) && _DOES_ENTITY_EXIST_AND_IS_ALIVE(veLocal_367) && bLocal_357)
 		{
-			if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, iLocal_348, false))
+			if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, iLocal_348, false))
 			{
 				if (TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_ENTER_VEHICLE) != 1 && TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_ENTER_VEHICLE) != 0)
 				{
-					TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, 20000, iLocal_348, 1073741824, 8388624, 0);
+					TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, 20000, iLocal_348, 1073741824, 8388624, 0);
 					func_260();
 					func_259();
 					iLocal_347 = iLocal_348;
@@ -10000,7 +10000,7 @@ void func_257() // Position - 0xD347 (54087)
 				{
 					if (TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_ENTER_VEHICLE) != 1 && TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_ENTER_VEHICLE) != 0)
 					{
-						TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, 20000, seat2, 1073741824, 8388624, 0);
+						TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, 20000, seat2, 1073741824, 8388624, 0);
 						func_260();
 						func_259();
 						iLocal_347 = seat2;
@@ -10012,13 +10012,13 @@ void func_257() // Position - 0xD347 (54087)
 		{
 			bLocal_357 = true;
 		
-			if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, iLocal_347, false))
+			if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, iLocal_347, false))
 			{
-				if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(epctLocal_367) && VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, iLocal_348, false))
+				if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(veLocal_367) && VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, iLocal_348, false))
 				{
 					if (TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_ENTER_VEHICLE) != 1 && TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_ENTER_VEHICLE) != 0)
 					{
-						TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, 20000, iLocal_348, 1073741824, 8388624, 0);
+						TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, 20000, iLocal_348, 1073741824, 8388624, 0);
 						func_260();
 						func_259();
 						iLocal_347 = iLocal_348;
@@ -10032,7 +10032,7 @@ void func_257() // Position - 0xD347 (54087)
 					{
 						if (TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_ENTER_VEHICLE) != 1 && TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_ENTER_VEHICLE) != 0)
 						{
-							TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), epctLocal_367, 20000, seat3, 1073741824, 8388624, 0);
+							TASK::TASK_ENTER_VEHICLE(PLAYER::PLAYER_PED_ID(), veLocal_367, 20000, seat3, 1073741824, 8388624, 0);
 							func_260();
 							func_259();
 							iLocal_347 = seat3;
@@ -10043,15 +10043,15 @@ void func_257() // Position - 0xD347 (54087)
 						switch (iLocal_347)
 						{
 							case 1:
-								_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*There is a player already occupying the Top Turret seat.*/, 1000);
+								_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*Ya hay un jugador ocupando la torreta superior.*/, 1000);
 								break;
 						
 							case 2:
-								_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*There is a player already occupying the Nose Turret seat.*/, 1000);
+								_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*Ya hay un jugador ocupando la torreta frontal.*/, 1000);
 								break;
 						
 							case 3:
-								_DISPLAY_HELP_TEXT("BOMBGUN_3o" /*There is a player already occupying the Rear Turret seat.*/, 1000);
+								_DISPLAY_HELP_TEXT("BOMBGUN_3o" /*Ya hay un jugador ocupando la torreta trasera.*/, 1000);
 								break;
 						}
 					
@@ -10087,7 +10087,7 @@ void func_260() // Position - 0xD6D1 (54993)
 
 void func_261() // Position - 0xD6E6 (55014)
 {
-	if (!func_324(epctLocal_367))
+	if (!func_324(veLocal_367))
 	{
 		bLocal_346 = false;
 		return;
@@ -10100,27 +10100,27 @@ void func_261() // Position - 0xD6E6 (55014)
 	
 		if (bLocal_310)
 		{
-			if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 2, false))
+			if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 2, false))
 			{
-				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), epctLocal_367, false);
+				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), veLocal_367, false);
 				iLocal_347 = 2;
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
 		else if (bLocal_311)
 		{
-			if (VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 1, false))
+			if (VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 1, false))
 			{
-				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), epctLocal_367, true);
+				TASK::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(PLAYER::PLAYER_PED_ID(), veLocal_367, true);
 				iLocal_347 = 1;
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
@@ -10128,7 +10128,7 @@ void func_261() // Position - 0xD6E6 (55014)
 
 	if (iLocal_347 != -2)
 	{
-		if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, iLocal_347, false) == PLAYER::PLAYER_PED_ID())
+		if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, iLocal_347, false) == PLAYER::PLAYER_PED_ID())
 		{
 			bLocal_357 = false;
 			iLocal_347 = -2;
@@ -10138,16 +10138,16 @@ void func_261() // Position - 0xD6E6 (55014)
 		{
 			bLocal_357 = true;
 		
-			if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, iLocal_347, false))
+			if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, iLocal_347, false))
 			{
 				switch (iLocal_347)
 				{
 					case 1:
-						_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*There is a player already occupying the Nose Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*Ya hay un jugador ocupando la torreta frontal.*/, 1000);
 						break;
 				
 					case 2:
-						_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*There is a player already occupying the Top Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*Ya hay un jugador ocupando la torreta superior.*/, 1000);
 						break;
 				}
 			
@@ -10167,7 +10167,7 @@ void func_262() // Position - 0xD80B (55307)
 
 	if (bLocal_301 && HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 	{
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3" /*Your co-pilot is operating the helicopter's rocket launcher. Press ~INPUT_CONTEXT~ to view the camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3c" /*Your co-pilot is operating the helicopter's gun. Press ~INPUT_CONTEXT~ to view the camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3b" /*Your co-pilot is operating the helicopter's mounted surveillance camera. Press ~INPUT_CONTEXT~ to view the camera.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3" /*Tu copiloto está manejando el lanzacohetes del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3c" /*Tu copiloto está manejando el arma del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3b" /*Tu copiloto está manejando la cámara de observación del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/))
 		{
 			if (!func_284())
 			{
@@ -10186,7 +10186,7 @@ void func_262() // Position - 0xD80B (55307)
 	if (func_281())
 		return;
 
-	if (epctLocal_367 != Global_2733138.f_3729 || Global_1579260 != -1 || func_324(epctLocal_367) || Global_1579266 != -1)
+	if (veLocal_367 != Global_2733138.f_3729 || Global_1579260 != -1 || func_324(veLocal_367) || Global_1579266 != -1)
 	{
 		if (!bLocal_301 || Global_1579260 != -1)
 		{
@@ -10201,7 +10201,7 @@ void func_262() // Position - 0xD80B (55307)
 								flag = true;
 					
 						if (!flag)
-							_DISPLAY_HELP_TEXT("HUNTGUN_1" /*You are the co-pilot of a combat helicopter. Press ~INPUT_CONTEXT~ to use the rocket launcher.*/, -1);
+							_DISPLAY_HELP_TEXT("HUNTGUN_1" /*Eres el copiloto de un helicóptero de combate. Pulsa ~INPUT_CONTEXT~ para usar el lanzacohetes.*/, -1);
 					}
 					else if (hLocal_299 == joaat("valkyrie"))
 					{
@@ -10210,7 +10210,7 @@ void func_262() // Position - 0xD80B (55307)
 								flag = true;
 					
 						if (!flag)
-							_DISPLAY_HELP_TEXT("HUNTGUN_1c" /*You are the co-pilot of a Valkyrie helicopter. Press ~INPUT_CONTEXT~ to enter and exit the gun camera.*/, -1);
+							_DISPLAY_HELP_TEXT("HUNTGUN_1c" /*Eres el copiloto de un helicóptero Valkyrie. Pulsa ~INPUT_CONTEXT~ para mirar/dejar de mirar por la cámara de la ametralladora.*/, -1);
 					}
 					else if (hLocal_299 == joaat("hunter"))
 					{
@@ -10219,68 +10219,68 @@ void func_262() // Position - 0xD80B (55307)
 								flag = true;
 					
 						if (!flag)
-							_DISPLAY_HELP_TEXT("HUNTGUNH_1c" /*You are the co-pilot of a Hunter helicopter. Press ~INPUT_CONTEXT~ to enter and exit the gun camera.*/, -1);
+							_DISPLAY_HELP_TEXT("HUNTGUNH_1c" /*Eres el copiloto de un helicóptero Hunter. Pulsa ~INPUT_CONTEXT~ para entrar y salir de la cámara del arma.*/, -1);
 					}
 					else if (Global_1579260 != -1)
 					{
 					}
-					else if (func_324(epctLocal_367))
+					else if (func_324(veLocal_367))
 					{
 						if (!func_250(PLAYER::PLAYER_ID()) && !func_249(PLAYER::PLAYER_ID(), false))
 						{
 							if (hLocal_299 == joaat("akula"))
 							{
 								if (bLocal_309)
-									_DISPLAY_HELP_TEXT("AKULAGUN_1" /*You are the co-pilot of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/, -1);
+									_DISPLAY_HELP_TEXT("AKULAGUN_1" /*Eres el copiloto de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/, -1);
 								else if (bLocal_310)
-									_DISPLAY_HELP_TEXT("AKULAGUN_2" /*You are a passenger of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the passenger camera.*/, -1);
+									_DISPLAY_HELP_TEXT("AKULAGUN_2" /*Eres el pasajero de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara de pasajero.*/, -1);
 								else if (bLocal_311)
-									_DISPLAY_HELP_TEXT("AKULAGUN_2" /*You are a passenger of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the passenger camera.*/, -1);
+									_DISPLAY_HELP_TEXT("AKULAGUN_2" /*Eres el pasajero de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara de pasajero.*/, -1);
 							}
 							else if (hLocal_299 == joaat("volatol"))
 							{
 								if (bLocal_310)
 									if (!bLocal_334)
-										_DISPLAY_HELP_TEXT("VOLGUN_1c2" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/, -1);
+										_DISPLAY_HELP_TEXT("VOLGUN_1c2" /*Torreta frontal del Volatol.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta superior.*/, -1);
 									else
-										_DISPLAY_HELP_TEXT("VOLGUN_1c" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~The aircraft's other stations are currently in use.*/, -1);
+										_DISPLAY_HELP_TEXT("VOLGUN_1c" /*Torreta frontal del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para entrar en la cámara del arma.~n~Las otras torretas porque se están usando en este momento.*/, -1);
 								else if (bLocal_311)
 									if (!bLocal_330)
-										_DISPLAY_HELP_TEXT("VOLGUN_2c1" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/, -1);
+										_DISPLAY_HELP_TEXT("VOLGUN_2c1" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta frontal.*/, -1);
 									else
-										_DISPLAY_HELP_TEXT("VOLGUN_2c" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~The aircraft's other stations are currently in use.*/, -1);
+										_DISPLAY_HELP_TEXT("VOLGUN_2c" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para entrar en la cámara del arma.~n~Las otras torretas porque se están usando en este momento.*/, -1);
 							}
 							else if (hLocal_299 == 858355070)
 							{
 								if (bLocal_310)
 								{
 									if (!bLocal_334 || !bLocal_338)
-										func_277("TITAN2_1c1" /*Titan 250 D 40mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/);
+										func_277("TITAN2_1c1" /*Cañón de 40 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/);
 									else
-										func_277("TITAN2_1c" /*Titan 250 D 40mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/);
+										func_277("TITAN2_1c" /*Cañón de 40 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/);
 								}
 								else if (bLocal_311)
 								{
 									if (!bLocal_338 || !bLocal_330 && !func_12())
-										func_277("TITAN2_2c1" /*Titan 250 D 25mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/);
+										func_277("TITAN2_2c1" /*Cañón de 25 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/);
 									else
-										func_277("TITAN2_2c" /*Titan 250 D 25mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/);
+										func_277("TITAN2_2c" /*Cañón de 25 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/);
 								}
 								else if (bLocal_312)
 								{
 									if (!bLocal_330 && !func_12() || !bLocal_334)
-										func_277("TITAN2_3c1" /*Titan 250 D 105mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/);
+										func_277("TITAN2_3c1" /*Cañón de 105 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/);
 									else
-										func_277("TITAN2_3c" /*Titan 250 D 105mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/);
+										func_277("TITAN2_3c" /*Cañón de 105 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/);
 								}
 								else if (bLocal_309)
 								{
 									if (!bLocal_330 && !func_12())
-										func_277("TITAN2_4c" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 40mm Cannon.*/);
+										func_277("TITAN2_4c" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 40µmm.*/);
 									else if (!bLocal_334)
-										func_277("TITAN2_4c1" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 25mm Cannon.*/);
+										func_277("TITAN2_4c1" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 25µmm.*/);
 									else if (!bLocal_338)
-										func_277("TITAN2_4c2" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 105mm Cannon.*/);
+										func_277("TITAN2_4c2" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 105µmm.*/);
 								}
 								else if (bLocal_308)
 								{
@@ -10289,15 +10289,15 @@ void func_262() // Position - 0xD80B (55307)
 										if (func_274())
 										{
 											if (func_184())
-												func_277("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+												func_277("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/);
 											else
-												func_277("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+												func_277("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/);
 										
 											bLocal_302 = true;
 										}
 										else
 										{
-											func_277("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+											func_277("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 											bLocal_302 = false;
 										}
 									
@@ -10306,9 +10306,9 @@ void func_262() // Position - 0xD80B (55307)
 									else
 									{
 										if (func_184())
-											func_277("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+											func_277("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 										else
-											func_277("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+											func_277("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 									
 										bLocal_304 = true;
 									}
@@ -10317,35 +10317,35 @@ void func_262() // Position - 0xD80B (55307)
 							else if (bLocal_309)
 							{
 								if (!bLocal_330)
-									_DISPLAY_HELP_TEXT("BOMBGUN_1c1" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera. ~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_1c1" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta frontal.*/, -1);
 								else if (!bLocal_334)
-									_DISPLAY_HELP_TEXT("BOMBGUN_1c2" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera. ~n~Hold ~INPUT_CONTEXT~ to move to the Rear Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_1c2" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta trasera.*/, -1);
 								else
-									_DISPLAY_HELP_TEXT("BOMBGUN_1c" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_1c" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/, -1);
 							}
 							else if (bLocal_310)
 							{
 								if (!bLocal_334)
-									_DISPLAY_HELP_TEXT("BOMBGUN_2c2" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Rear Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_2c2" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta trasera.*/, -1);
 								else if (!bLocal_318)
-									_DISPLAY_HELP_TEXT("BOMBGUN_2c1" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_2c1" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta superior.*/, -1);
 								else
-									_DISPLAY_HELP_TEXT("BOMBGUN_2c" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_2c" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/, -1);
 							}
 							else if (bLocal_311)
 							{
 								if (!bLocal_318)
-									_DISPLAY_HELP_TEXT("BOMBGUN_3c1" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_3c1" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta superior.*/, -1);
 								else if (!bLocal_330)
-									_DISPLAY_HELP_TEXT("BOMBGUN_3c2" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_3c2" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta frontal.*/, -1);
 								else
-									_DISPLAY_HELP_TEXT("BOMBGUN_3c" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_3c" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/, -1);
 							}
 						}
 					}
 					else
 					{
-						_DISPLAY_HELP_TEXT("HUNTGUN_1b" /*You are the co-pilot of a helicopter. Press ~INPUT_CONTEXT~ to use the mounted surveillance camera.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_1b" /*Eres el copiloto de un helicóptero. Pulsa ~INPUT_CONTEXT~ para usar la cámara montada de vigilancia.*/, -1);
 					}
 				
 					bLocal_301 = true;
@@ -10356,14 +10356,14 @@ void func_262() // Position - 0xD80B (55307)
 					{
 						if (func_273(PLAYER::PLAYER_ID()) == 2)
 						{
-							_DISPLAY_HELP_TEXT("TR_HT_VKCHCAM" /*Press ~INPUT_CONTEXT~ to use the helicopter's mounted surveillance camera to scan license plates and locate the bank manager's vehicle. ~INPUT_VEH_HORN~ can be used to make the helicopter hover in place.*/, -1);
+							_DISPLAY_HELP_TEXT("TR_HT_VKCHCAM" /*Pulsa ~INPUT_CONTEXT~ para usar la cámara de vigilancia del helicóptero para escanear matrículas y localizar el vehículo del gerente del banco. Puedes usar ~INPUT_VEH_HORN~ para mantener el helicóptero estable en una posición.*/, -1);
 						}
 						else if (func_270(PLAYER::PLAYER_ID()) == 7)
 						{
 						}
 						else
 						{
-							_DISPLAY_HELP_TEXT("TR_HT_HCAM" /*Press ~INPUT_CONTEXT~ to use the mounted surveillance camera.*/, -1);
+							_DISPLAY_HELP_TEXT("TR_HT_HCAM" /*Pulsa ~INPUT_CONTEXT~ para usar la cámara montada de vigilancia.*/, -1);
 						}
 					
 						bLocal_301 = true;
@@ -10377,15 +10377,15 @@ void func_262() // Position - 0xD80B (55307)
 							if (func_274())
 							{
 								if (func_184())
-									func_277("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+									func_277("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/);
 								else
-									func_277("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+									func_277("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/);
 							
 								bLocal_302 = true;
 							}
 							else
 							{
-								func_277("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+								func_277("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 								bLocal_302 = false;
 							}
 						
@@ -10394,9 +10394,9 @@ void func_262() // Position - 0xD80B (55307)
 						else
 						{
 							if (func_184())
-								func_277("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+								func_277("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 							else
-								func_277("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+								func_277("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 						
 							bLocal_304 = true;
 						}
@@ -10407,16 +10407,16 @@ void func_262() // Position - 0xD80B (55307)
 				else if (func_284())
 				{
 					if (hLocal_299 == joaat("buzzard") && !Global_2740436 || hLocal_299 == joaat("savage") || hLocal_299 == -1659004814)
-						_DISPLAY_HELP_TEXT("HUNTGUN_3" /*Your co-pilot is operating the helicopter's rocket launcher. Press ~INPUT_CONTEXT~ to view the camera.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_3" /*Tu copiloto está manejando el lanzacohetes del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/, -1);
 					else if (hLocal_299 == joaat("valkyrie"))
-						_DISPLAY_HELP_TEXT("HUNTGUN_3c" /*Your co-pilot is operating the helicopter's gun. Press ~INPUT_CONTEXT~ to view the camera.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_3c" /*Tu copiloto está manejando el arma del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/, -1);
 					else
-						_DISPLAY_HELP_TEXT("HUNTGUN_3b" /*Your co-pilot is operating the helicopter's mounted surveillance camera. Press ~INPUT_CONTEXT~ to view the camera.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_3b" /*Tu copiloto está manejando la cámara de observación del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/, -1);
 				
 					bLocal_301 = true;
 				}
 			}
-			else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VEX_EYEHLPe" /*Enter the camera with ~INPUT_CONTEXT~ to access the vehicle scanner.*/))
+			else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VEX_EYEHLPe" /*Activa la cámara con ~INPUT_CONTEXT~ para acceder al escáner de vehículos.*/))
 			{
 				bLocal_301 = true;
 			}
@@ -10432,13 +10432,13 @@ void func_262() // Position - 0xD80B (55307)
 						if (func_263())
 						{
 							bLocal_307 = true;
-							Global_2733138.f_3729 = epctLocal_367;
+							Global_2733138.f_3729 = veLocal_367;
 						}
 					}
 					else
 					{
 						bLocal_307 = true;
-						Global_2733138.f_3729 = epctLocal_367;
+						Global_2733138.f_3729 = veLocal_367;
 					}
 				}
 			}
@@ -10446,7 +10446,7 @@ void func_262() // Position - 0xD80B (55307)
 		else
 		{
 			bLocal_307 = true;
-			Global_2733138.f_3729 = epctLocal_367;
+			Global_2733138.f_3729 = veLocal_367;
 		}
 	}
 	else
@@ -10520,9 +10520,9 @@ int func_270(Player plParam0) // Position - 0xDF9A (57242)
 	return -1;
 }
 
-int func_271(Player plParam0, ePedComponentType epctParam1) // Position - 0xDFBB (57275)
+int func_271(Player plParam0, int iParam1) // Position - 0xDFBB (57275)
 {
-	if (func_252(plParam0) == epctParam1)
+	if (func_252(plParam0) == iParam1)
 		return func_272(plParam0);
 
 	return -1;
@@ -10552,26 +10552,26 @@ BOOL func_274() // Position - 0xE019 (57369)
 	if (func_275(false))
 		return false;
 
-	entityVelocity = { ENTITY::GET_ENTITY_VELOCITY(epctLocal_367) };
+	entityVelocity = { ENTITY::GET_ENTITY_VELOCITY(veLocal_367) };
 	num = BUILTIN::SQRT((entityVelocity * entityVelocity) + (entityVelocity.f_1 * entityVelocity.f_1) + (entityVelocity.f_2 * entityVelocity.f_2));
-	return num >= 30f && !func_185(epctLocal_367, 0, 1075838976, false);
+	return num >= 30f && !func_185(veLocal_367, 0, 1075838976, false);
 }
 
 BOOL func_275(BOOL bParam0) // Position - 0xE073 (57459)
 {
-	if (func_276(epctLocal_367))
+	if (func_276(veLocal_367))
 	{
 		bParam0;
 		return true;
 	}
 
-	if (!VEHICLE::GET_IS_VEHICLE_ENGINE_RUNNING(epctLocal_367))
+	if (!VEHICLE::GET_IS_VEHICLE_ENGINE_RUNNING(veLocal_367))
 	{
 		bParam0;
 		return true;
 	}
 
-	if (VEHICLE::GET_VEHICLE_ENGINE_HEALTH(epctLocal_367) < 0f)
+	if (VEHICLE::GET_VEHICLE_ENGINE_HEALTH(veLocal_367) < 0f)
 	{
 		bParam0;
 		return true;
@@ -10580,12 +10580,12 @@ BOOL func_275(BOOL bParam0) // Position - 0xE073 (57459)
 	return false;
 }
 
-BOOL func_276(ePedComponentType epctParam0) // Position - 0xE0B8 (57528)
+BOOL func_276(Vehicle veParam0) // Position - 0xE0B8 (57528)
 {
-	if (ENTITY::DOES_ENTITY_EXIST(epctParam0))
-		if (ENTITY::IS_ENTITY_DEAD(epctParam0, false))
+	if (ENTITY::DOES_ENTITY_EXIST(veParam0))
+		if (ENTITY::IS_ENTITY_DEAD(veParam0, false))
 			return true;
-		else if (!VEHICLE::IS_VEHICLE_DRIVEABLE(epctParam0, false))
+		else if (!VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
 			return true;
 	else
 		return true;
@@ -10635,7 +10635,7 @@ BOOL func_281() // Position - 0xE17B (57723)
 {
 	if (!func_254(PLAYER::PLAYER_ID()))
 	{
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BHH_LEFTRANGE" /*You are out of range of the Business Battle that is currently in progress. Press ~INPUT_CONTEXT~ to continue participating.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BHH_LEFTRANGE" /*Estás demasiado lejos de la batalla comercial que está en curso. Pulsa ~INPUT_CONTEXT~ para seguir participando.*/))
 			return true;
 	
 		if (func_252(PLAYER::PLAYER_ID()) == 239)
@@ -10657,7 +10657,7 @@ BOOL func_283() // Position - 0xE249 (57929)
 
 BOOL func_284() // Position - 0xE258 (57944)
 {
-	if (func_307() && !Global_2697023.f_136 && !Global_1576402 && hLocal_299 != joaat("hunter") && !func_324(epctLocal_367))
+	if (func_307() && !Global_2697023.f_136 && !Global_1576402 && hLocal_299 != joaat("hunter") && !func_324(veLocal_367))
 		return true;
 
 	return false;
@@ -10679,7 +10679,7 @@ void func_285() // Position - 0xE29D (58013)
 
 void func_286() // Position - 0xE2BB (58043)
 {
-	if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == 858355070 && VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, -1, false) == PLAYER::PLAYER_PED_ID())
+	if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == 858355070 && VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, -1, false) == PLAYER::PLAYER_PED_ID())
 		if (PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_FRONTEND_X) || PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_FRONTEND_X) && func_268())
 			func_241(3);
 
@@ -10688,7 +10688,7 @@ void func_286() // Position - 0xE2BB (58043)
 
 void func_287() // Position - 0xE30B (58123)
 {
-	if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == 858355070)
+	if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == 858355070)
 	{
 		if (bLocal_310 || bLocal_311 || bLocal_312 || bLocal_308)
 		{
@@ -10758,11 +10758,11 @@ void func_292() // Position - 0xE407 (58375)
 	{
 		seat = func_144();
 		maxAmmoInClip = WEAPON::GET_MAX_AMMO_IN_CLIP(PLAYER::PLAYER_PED_ID(), func_82(), true);
-		WEAPON::_GET_AMMO_IN_VEHICLE_WEAPON_CLIP(epctLocal_367, seat, &ammo);
+		WEAPON::_GET_AMMO_IN_VEHICLE_WEAPON_CLIP(veLocal_367, seat, &ammo);
 	
-		if (!WEAPON::_HAS_WEAPON_RELOADING_IN_VEHICLE(epctLocal_367, seat) && ammo < maxAmmoInClip)
+		if (!WEAPON::_HAS_WEAPON_RELOADING_IN_VEHICLE(veLocal_367, seat) && ammo < maxAmmoInClip)
 		{
-			WEAPON::_TRIGGER_VEHICLE_WEAPON_RELOAD(epctLocal_367, seat, PLAYER::PLAYER_PED_ID());
+			WEAPON::_TRIGGER_VEHICLE_WEAPON_RELOAD(veLocal_367, seat, PLAYER::PLAYER_PED_ID());
 		
 			if (Global_1579265 == 4)
 				func_327(&(Global_2673274.f_3877), false, false);
@@ -10777,9 +10777,9 @@ void func_293() // Position - 0xE49F (58527)
 	Vector3 entityVelocity;
 	var entityRotation;
 
-	if (VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+	if (VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 	{
-		if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, -1, false) == PLAYER::PLAYER_PED_ID())
+		if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, -1, false) == PLAYER::PLAYER_PED_ID())
 		{
 			if (Global_1579265 == 4)
 			{
@@ -10791,7 +10791,7 @@ void func_293() // Position - 0xE49F (58527)
 					{
 						if (func_274())
 						{
-							ENTITY::SET_ENTITY_HAS_GRAVITY(epctLocal_367, false);
+							ENTITY::SET_ENTITY_HAS_GRAVITY(veLocal_367, false);
 							bLocal_317 = true;
 						}
 						else
@@ -10806,21 +10806,21 @@ void func_293() // Position - 0xE49F (58527)
 					else
 					{
 						MISC::GET_FRAME_COUNT() % 100 == 0;
-						VEHICLE::SET_VEHICLE_FORWARD_SPEED(epctLocal_367, 35f);
-						VEHICLE::SET_HELI_BLADES_FULL_SPEED(epctLocal_367);
-						entityVelocity = { ENTITY::GET_ENTITY_VELOCITY(epctLocal_367) };
-						entityRotation = { ENTITY::GET_ENTITY_ROTATION(epctLocal_367, 2) };
+						VEHICLE::SET_VEHICLE_FORWARD_SPEED(veLocal_367, 35f);
+						VEHICLE::SET_HELI_BLADES_FULL_SPEED(veLocal_367);
+						entityVelocity = { ENTITY::GET_ENTITY_VELOCITY(veLocal_367) };
+						entityRotation = { ENTITY::GET_ENTITY_ROTATION(veLocal_367, 2) };
 						entityVelocity.f_2 = 0.15f;
-						ENTITY::SET_ENTITY_ROTATION(epctLocal_367, func_110(entityRotation, 0f, MISC::GET_FRAME_TIME() * 0.25f), func_110(entityRotation.f_1, 0f, MISC::GET_FRAME_TIME() * 0.25f), entityRotation.f_2, 2, true);
-						ENTITY::SET_ENTITY_VELOCITY(epctLocal_367, entityVelocity);
-						ENTITY::SET_ENTITY_ANGULAR_VELOCITY(epctLocal_367, 0f, 0f, 0f);
+						ENTITY::SET_ENTITY_ROTATION(veLocal_367, func_110(entityRotation, 0f, MISC::GET_FRAME_TIME() * 0.25f), func_110(entityRotation.f_1, 0f, MISC::GET_FRAME_TIME() * 0.25f), entityRotation.f_2, 2, true);
+						ENTITY::SET_ENTITY_VELOCITY(veLocal_367, entityVelocity);
+						ENTITY::SET_ENTITY_ANGULAR_VELOCITY(veLocal_367, 0f, 0f, 0f);
 					}
 				}
 				else
 				{
 					if (!func_268())
 					{
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/))
 							HUD::CLEAR_HELP(true);
 					
 						if (!bLocal_303)
@@ -10840,13 +10840,13 @@ void func_293() // Position - 0xE49F (58527)
 							bLocal_302 = true;
 						}
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/))
 							HUD::CLEAR_HELP(true);
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) && !func_186())
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) && !func_186())
 							HUD::CLEAR_HELP(true);
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) && func_186())
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) && func_186())
 							HUD::CLEAR_HELP(true);
 					}
 					else
@@ -10857,17 +10857,17 @@ void func_293() // Position - 0xE49F (58527)
 							bLocal_302 = false;
 						}
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/))
 							HUD::CLEAR_HELP(true);
 					}
 				
 					if (bLocal_317)
 					{
 						bLocal_317 = false;
-						ENTITY::SET_ENTITY_HAS_GRAVITY(epctLocal_367, true);
+						ENTITY::SET_ENTITY_HAS_GRAVITY(veLocal_367, true);
 					}
 				
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/))
 						HUD::CLEAR_HELP(true);
 				
 					if (bLocal_304)
@@ -10885,7 +10885,7 @@ void func_293() // Position - 0xE49F (58527)
 					bLocal_304 = true;
 				}
 			
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/))
 					HUD::CLEAR_HELP(true);
 			}
 		}
@@ -11082,13 +11082,13 @@ void func_300() // Position - 0xE97C (59772)
 
 	if (epctLocal_371 == PLAYER::PLAYER_ID())
 	{
-		if (func_301(epctLocal_367))
+		if (func_301(veLocal_367))
 		{
 			if (bLocal_320 && !bLocal_306 && PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_VEH_SELECT_NEXT_WEAPON) || PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_VEH_SELECT_PREV_WEAPON))
 			{
 				if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 				{
-					_DISPLAY_HELP_TEXT("HUNTGUN_8" /*Only the gun is available as your co-pilot is operating the helicopter's rocket launcher.*/, -1);
+					_DISPLAY_HELP_TEXT("HUNTGUN_8" /*El arma solo está disponible cuando tu copiloto esté utilizando el lanzacohetes del helicóptero.*/, -1);
 					bLocal_306 = true;
 				}
 			}
@@ -11098,13 +11098,13 @@ void func_300() // Position - 0xE97C (59772)
 	return;
 }
 
-BOOL func_301(ePedComponentType epctParam0) // Position - 0xEA10 (59920)
+BOOL func_301(Vehicle veParam0) // Position - 0xEA10 (59920)
 {
 	Hash entityModel;
 
-	entityModel = ENTITY::GET_ENTITY_MODEL(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(epctParam0));
+	entityModel = ENTITY::GET_ENTITY_MODEL(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(veParam0));
 
-	if (ENTITY::GET_ENTITY_MODEL(epctParam0) == joaat("akula"))
+	if (ENTITY::GET_ENTITY_MODEL(veParam0) == joaat("akula"))
 		return true;
 
 	if (Global_2698885)
@@ -11125,7 +11125,7 @@ BOOL func_301(ePedComponentType epctParam0) // Position - 0xEA10 (59920)
 	if (Global_1579260 != -1 && !func_64(Global_1845129))
 		return true;
 
-	if (func_324(epctParam0))
+	if (func_324(veParam0))
 		return true;
 
 	if (Global_1579266 != -1)
@@ -11136,18 +11136,18 @@ BOOL func_301(ePedComponentType epctParam0) // Position - 0xEA10 (59920)
 
 void func_302() // Position - 0xEABA (60090)
 {
-	if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("akula") && bLocal_310 || bLocal_311)
+	if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula") && bLocal_310 || bLocal_311)
 		return;
 
-	if (VEHICLE::IS_VEHICLE_DRIVEABLE(epctLocal_367, false))
+	if (VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false))
 	{
-		if (!ENTITY::IS_ENTITY_IN_AIR(epctLocal_367))
+		if (!ENTITY::IS_ENTITY_IN_AIR(veLocal_367))
 		{
 			if (hLocal_299 == 858355070)
 			{
 				uLocal_72.f_219 = func_304();
 			}
-			else if (func_324(epctLocal_367))
+			else if (func_324(veLocal_367))
 			{
 				if (func_303())
 					if (bLocal_310)
@@ -11290,7 +11290,7 @@ void func_310() // Position - 0xEC9A (60570)
 
 void func_311() // Position - 0xECD3 (60627)
 {
-	ePedComponentType vehiclePedIsIn;
+	Vehicle vehiclePedIsIn;
 
 	if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false))
 	{
@@ -11320,7 +11320,7 @@ void func_312() // Position - 0xED32 (60722)
 	return;
 }
 
-ePedComponentType func_313(Player plParam0) // Position - 0xED9A (60826)
+int func_313(Player plParam0) // Position - 0xED9A (60826)
 {
 	Player player;
 
@@ -11329,14 +11329,14 @@ ePedComponentType func_313(Player plParam0) // Position - 0xED9A (60826)
 	if (player != -1)
 		return Global_1892798[player /*615*/];
 
-	return PV_COMP_INVALID;
+	return -1;
 }
 
-int func_314(ePedComponentType epctParam0) // Position - 0xEDB9 (60857)
+int func_314(Vehicle veParam0) // Position - 0xEDB9 (60857)
 {
 	var surfaceNormal;
 	var endCoords;
-	ePedComponentType entityHit;
+	Vehicle entityHit;
 	int shapeTestResult;
 	var hit;
 	var camRot;
@@ -11345,7 +11345,7 @@ int func_314(ePedComponentType epctParam0) // Position - 0xEDB9 (60857)
 	Vector3 vector;
 	int flags;
 
-	if (Global_1579266 != 4 || !ENTITY::DOES_ENTITY_EXIST(epctLocal_367) || !CAM::DOES_CAM_EXIST(uLocal_72.f_32))
+	if (Global_1579266 != 4 || !ENTITY::DOES_ENTITY_EXIST(veLocal_367) || !CAM::DOES_CAM_EXIST(uLocal_72.f_32))
 		return 0;
 
 	camRot = { CAM::GET_CAM_ROT(uLocal_72.f_32, 2) };
@@ -11365,7 +11365,7 @@ int func_314(ePedComponentType epctParam0) // Position - 0xEDB9 (60857)
 	
 		if (shapeTestResult == 2)
 		{
-			if (func_315(epctParam0) != entityHit)
+			if (func_315(veParam0) != entityHit)
 			{
 				uLocal_72.f_194 = 0;
 				uLocal_72.f_195 = 1;
@@ -11385,9 +11385,9 @@ int func_314(ePedComponentType epctParam0) // Position - 0xEDB9 (60857)
 	return uLocal_72.f_195;
 }
 
-ePedComponentType func_315(ePedComponentType epctParam0) // Position - 0xEEAC (61100)
+Vehicle func_315(Vehicle veParam0) // Position - 0xEEAC (61100)
 {
-	return epctParam0;
+	return veParam0;
 }
 
 Vector3 func_316(float fParam0, var uParam1, var uParam2) // Position - 0xEEB6 (61110)
@@ -11411,14 +11411,14 @@ void func_317() // Position - 0xEEE3 (61155)
 
 void func_318() // Position - 0xEF14 (61204)
 {
-	Global_1579259 = false;
+	Global_1579259 = 0;
 	CAM::DO_SCREEN_FADE_IN(0);
 	return;
 }
 
 void func_319() // Position - 0xEF26 (61222)
 {
-	if (ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("akula") || ENTITY::GET_ENTITY_MODEL(epctLocal_367) == joaat("phantom3"))
+	if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula") || ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("phantom3"))
 	{
 		if (bLocal_310 || bLocal_311)
 		{
@@ -11505,14 +11505,14 @@ void func_323() // Position - 0xF08B (61579)
 	return;
 }
 
-BOOL func_324(ePedComponentType epctParam0) // Position - 0xF100 (61696)
+BOOL func_324(Vehicle veParam0) // Position - 0xF100 (61696)
 {
 	Hash entityModel;
 
-	if (!ENTITY::DOES_ENTITY_EXIST(epctParam0))
+	if (!ENTITY::DOES_ENTITY_EXIST(veParam0))
 		return false;
 
-	entityModel = ENTITY::GET_ENTITY_MODEL(epctParam0);
+	entityModel = ENTITY::GET_ENTITY_MODEL(veParam0);
 
 	switch (entityModel)
 	{
@@ -11541,32 +11541,32 @@ BOOL func_326(ePedComponentType epctParam0) // Position - 0xF15D (61789)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1 && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
 				return func_58(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 5;
 
 	return false;
 }
 
-void func_327(ePedComponentType epctParam0, BOOL bParam1, BOOL bParam2) // Position - 0xF1BC (61884)
+void func_327(var uParam0, BOOL bParam1, BOOL bParam2) // Position - 0xF1BC (61884)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam1)
 		if (!bParam2)
-			*epctParam0 = NETWORK::GET_NETWORK_TIME();
+			*uParam0 = NETWORK::GET_NETWORK_TIME();
 		else
-			*epctParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
+			*uParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
 	else
-		*epctParam0 = MISC::GET_GAME_TIMER();
+		*uParam0 = MISC::GET_GAME_TIMER();
 
-	epctParam0->f_1 = 1;
+	uParam0->f_1 = 1;
 	return;
 }
 
 BOOL func_328() // Position - 0xF1F9 (61945)
 {
-	if (func_340(joaat("hunter")) && _DOES_ENTITY_EXIST_AND_IS_ALIVE(epctLocal_369) && epctLocal_369 == PLAYER::PLAYER_PED_ID() && !_DOES_ENTITY_EXIST_AND_IS_ALIVE(epctLocal_370))
+	if (func_340(joaat("hunter")) && _DOES_ENTITY_EXIST_AND_IS_ALIVE(pedLocal_369) && pedLocal_369 == PLAYER::PLAYER_PED_ID() && !_DOES_ENTITY_EXIST_AND_IS_ALIVE(pedLocal_370))
 		return true;
 
-	if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(epctLocal_367))
+	if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(veLocal_367))
 		return true;
 
 	if (_SHOULD_NETWORK_SCRIPT_TERMINATE())
@@ -11622,7 +11622,7 @@ BOOL func_328() // Position - 0xF1F9 (61945)
 		if (Global_1579266 == -1)
 			return true;
 
-	if (VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070) && epctLocal_369 == PLAYER::PLAYER_PED_ID() && Global_1579265 == 4 && !VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 1, false))
+	if (VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070) && pedLocal_369 == PLAYER::PLAYER_PED_ID() && Global_1579265 == 4 && !VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 1, false))
 	{
 		Global_1579265 = -1;
 		return true;
@@ -11698,7 +11698,7 @@ int func_334() // Position - 0xF449 (62537)
 
 void func_335() // Position - 0xF457 (62551)
 {
-	Global_2698884 = true;
+	Global_2698884 = 1;
 	return;
 }
 
@@ -11766,8 +11766,8 @@ void func_341() // Position - 0xF50E (62734)
 	bLocal_339 = true;
 	bLocal_318 = false;
 	bLocal_319 = true;
-	epctLocal_369 = PV_COMP_INVALID;
-	epctLocal_370 = PV_COMP_INVALID;
+	pedLocal_369 = -1;
+	pedLocal_370 = -1;
 	epctLocal_371 = _INVALID_PLAYER_INDEX();
 	plLocal_372 = _INVALID_PLAYER_INDEX();
 	bLocal_309 = false;
@@ -11787,31 +11787,31 @@ void func_341() // Position - 0xF50E (62734)
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(ped, false))
 		{
-			if (ENTITY::DOES_ENTITY_EXIST(epctLocal_367) && VEHICLE::IS_VEHICLE_DRIVEABLE(epctLocal_367, false))
+			if (ENTITY::DOES_ENTITY_EXIST(veLocal_367) && VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false))
 			{
-				hLocal_368 = ENTITY::GET_ENTITY_MODEL(epctLocal_367);
+				hLocal_368 = ENTITY::GET_ENTITY_MODEL(veLocal_367);
 				bLocal_321 = true;
 			
-				if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 0, false))
+				if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 0, false))
 				{
-					epctLocal_370 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, 0, false);
-					bLocal_318 = ENTITY::DOES_ENTITY_EXIST(epctLocal_370);
+					pedLocal_370 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, 0, false);
+					bLocal_318 = ENTITY::DOES_ENTITY_EXIST(pedLocal_370);
 				
 					if (bLocal_318)
 					{
-						bLocal_319 = ENTITY::IS_ENTITY_DEAD(epctLocal_370, false);
+						bLocal_319 = ENTITY::IS_ENTITY_DEAD(pedLocal_370, false);
 					
-						if (func_343(epctLocal_370, epctLocal_367, 0) && PED::IS_PED_IN_VEHICLE(epctLocal_370, epctLocal_367, false))
+						if (func_343(pedLocal_370, veLocal_367, 0) && PED::IS_PED_IN_VEHICLE(pedLocal_370, veLocal_367, false))
 						{
-							if (PED::IS_PED_A_PLAYER(epctLocal_370))
+							if (PED::IS_PED_A_PLAYER(pedLocal_370))
 							{
-								plLocal_372 = NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(epctLocal_370);
+								plLocal_372 = NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(pedLocal_370);
 							
 								if (plLocal_372 == PLAYER::PLAYER_ID())
 								{
 									bLocal_309 = true;
 								
-									if (func_324(epctLocal_367))
+									if (func_324(veLocal_367))
 										Global_1579265 = 0;
 								}
 								else
@@ -11824,31 +11824,31 @@ void func_341() // Position - 0xF50E (62734)
 				}
 				else
 				{
-					epctLocal_370 = PV_COMP_INVALID;
+					pedLocal_370 = -1;
 					bLocal_318 = false;
 					bLocal_309 = false;
 				}
 			
-				if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, -1, false))
+				if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, -1, false))
 				{
-					epctLocal_369 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, -1, false);
-					bLocal_315 = ENTITY::DOES_ENTITY_EXIST(epctLocal_369);
+					pedLocal_369 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, -1, false);
+					bLocal_315 = ENTITY::DOES_ENTITY_EXIST(pedLocal_369);
 				
 					if (bLocal_315)
 					{
-						bLocal_316 = ENTITY::IS_ENTITY_DEAD(epctLocal_369, false);
+						bLocal_316 = ENTITY::IS_ENTITY_DEAD(pedLocal_369, false);
 					
-						if (PED::IS_PED_A_PLAYER(epctLocal_369))
+						if (PED::IS_PED_A_PLAYER(pedLocal_369))
 						{
-							epctLocal_371 = NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(epctLocal_369);
+							epctLocal_371 = NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(pedLocal_369);
 						
-							if (func_342(epctLocal_367) && !bLocal_318 || bLocal_319 || !PED::IS_PED_A_PLAYER(epctLocal_370) || VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
+							if (func_342(veLocal_367) && !bLocal_318 || bLocal_319 || !PED::IS_PED_A_PLAYER(pedLocal_370) || VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
 							{
 								if (epctLocal_371 == PLAYER::PLAYER_ID())
 									bLocal_308 = true;
 							
-								if (VEHICLE::IS_VEHICLE_MODEL(epctLocal_367, 858355070))
-									if (epctLocal_371 == PLAYER::PLAYER_ID() && VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 1, false))
+								if (VEHICLE::IS_VEHICLE_MODEL(veLocal_367, 858355070))
+									if (epctLocal_371 == PLAYER::PLAYER_ID() && VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 1, false))
 										Global_1579265 = 4;
 									else
 										Global_1579265 = -1;
@@ -11857,18 +11857,18 @@ void func_341() // Position - 0xF50E (62734)
 					}
 				}
 			
-				if (func_324(epctLocal_367))
+				if (func_324(veLocal_367))
 				{
-					if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 1, false))
+					if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 1, false))
 					{
-						pedLocal_329 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, 1, false);
+						pedLocal_329 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, 1, false);
 						bLocal_330 = ENTITY::DOES_ENTITY_EXIST(pedLocal_329);
 					
 						if (bLocal_330)
 						{
 							bLocal_331 = ENTITY::IS_ENTITY_DEAD(pedLocal_329, false);
 						
-							if (func_343(pedLocal_329, epctLocal_367, 1) && PED::IS_PED_IN_VEHICLE(pedLocal_329, epctLocal_367, false))
+							if (func_343(pedLocal_329, veLocal_367, 1) && PED::IS_PED_IN_VEHICLE(pedLocal_329, veLocal_367, false))
 							{
 								if (PED::IS_PED_A_PLAYER(pedLocal_329))
 								{
@@ -11894,16 +11894,16 @@ void func_341() // Position - 0xF50E (62734)
 						bLocal_310 = false;
 					}
 				
-					if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 2, false))
+					if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 2, false))
 					{
-						pedLocal_333 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, 2, false);
+						pedLocal_333 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, 2, false);
 						bLocal_334 = ENTITY::DOES_ENTITY_EXIST(pedLocal_333);
 					
 						if (bLocal_334)
 						{
 							bLocal_335 = ENTITY::IS_ENTITY_DEAD(pedLocal_333, false);
 						
-							if (func_343(pedLocal_333, epctLocal_367, 2) && PED::IS_PED_IN_VEHICLE(pedLocal_333, epctLocal_367, false))
+							if (func_343(pedLocal_333, veLocal_367, 2) && PED::IS_PED_IN_VEHICLE(pedLocal_333, veLocal_367, false))
 							{
 								if (PED::IS_PED_A_PLAYER(pedLocal_333))
 								{
@@ -11929,16 +11929,16 @@ void func_341() // Position - 0xF50E (62734)
 						pedLocal_333 = -1;
 					}
 				
-					if (!VEHICLE::IS_VEHICLE_SEAT_FREE(epctLocal_367, 3, false))
+					if (!VEHICLE::IS_VEHICLE_SEAT_FREE(veLocal_367, 3, false))
 					{
-						pedLocal_337 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctLocal_367, 3, false);
+						pedLocal_337 = VEHICLE::GET_PED_IN_VEHICLE_SEAT(veLocal_367, 3, false);
 						bLocal_338 = ENTITY::DOES_ENTITY_EXIST(pedLocal_337);
 					
 						if (bLocal_338)
 						{
 							bLocal_339 = ENTITY::IS_ENTITY_DEAD(pedLocal_337, false);
 						
-							if (func_343(pedLocal_337, epctLocal_367, 3) && PED::IS_PED_IN_VEHICLE(pedLocal_337, epctLocal_367, false))
+							if (func_343(pedLocal_337, veLocal_367, 3) && PED::IS_PED_IN_VEHICLE(pedLocal_337, veLocal_367, false))
 							{
 								if (PED::IS_PED_A_PLAYER(pedLocal_337))
 								{
@@ -11986,22 +11986,22 @@ void func_341() // Position - 0xF50E (62734)
 	return;
 }
 
-BOOL func_342(ePedComponentType epctParam0) // Position - 0xF92D (63789)
+BOOL func_342(Vehicle veParam0) // Position - 0xF92D (63789)
 {
 	if (Global_2740432)
 		return true;
 
-	if (VEHICLE::IS_VEHICLE_MODEL(epctParam0, 858355070))
+	if (VEHICLE::IS_VEHICLE_MODEL(veParam0, 858355070))
 		return true;
 
 	return false;
 }
 
-BOOL func_343(Ped pedParam0, ePedComponentType epctParam1, int iParam2) // Position - 0xF953 (63827)
+BOOL func_343(Ped pedParam0, Vehicle veParam1, int iParam2) // Position - 0xF953 (63827)
 {
-	if (!ENTITY::IS_ENTITY_DEAD(pedParam0, false) && !ENTITY::IS_ENTITY_DEAD(epctParam1, false))
-		if (PED::IS_PED_SITTING_IN_VEHICLE(pedParam0, epctParam1))
-			if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(epctParam1, iParam2, false) == pedParam0)
+	if (!ENTITY::IS_ENTITY_DEAD(pedParam0, false) && !ENTITY::IS_ENTITY_DEAD(veParam1, false))
+		if (PED::IS_PED_SITTING_IN_VEHICLE(pedParam0, veParam1))
+			if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(veParam1, iParam2, false) == pedParam0)
 				return true;
 
 	return false;
@@ -12027,9 +12027,9 @@ void func_344() // Position - 0xF991 (63889)
 	func_238();
 	Global_1579258 = false;
 
-	if (ENTITY::DOES_ENTITY_EXIST(epctLocal_367))
-		if (epctLocal_369 == PLAYER::PLAYER_PED_ID() && NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(epctLocal_367))
-			VEHICLE::DISABLE_VEHICLE_WEAPON(false, joaat("VEHICLE_WEAPON_SPACE_ROCKET"), epctLocal_367, PLAYER::PLAYER_PED_ID());
+	if (ENTITY::DOES_ENTITY_EXIST(veLocal_367))
+		if (pedLocal_369 == PLAYER::PLAYER_PED_ID() && NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(veLocal_367))
+			VEHICLE::DISABLE_VEHICLE_WEAPON(false, joaat("VEHICLE_WEAPON_SPACE_ROCKET"), veLocal_367, PLAYER::PLAYER_PED_ID());
 
 	Global_1579267 = 0;
 	func_104();
@@ -12044,13 +12044,13 @@ void func_344() // Position - 0xF991 (63889)
 	if (HUD::DOES_BLIP_EXIST(HUD::GET_MAIN_PLAYER_BLIP_ID()))
 		HUD::SET_BLIP_ALPHA(HUD::GET_MAIN_PLAYER_BLIP_ID(), 255);
 
-	func_219(&uLocal_72, entity, 0, epctLocal_367, hLocal_299, 1);
-	Global_2740431 = PV_COMP_HEAD;
+	func_219(&uLocal_72, entity, 0, veLocal_367, hLocal_299, 1);
+	Global_2740431 = false;
 	Global_1579261 = false;
 	Global_1835532 = false;
 	MISC::CLEAR_BIT(&(Global_1845299[PLAYER::PLAYER_ID() /*883*/].f_882), 6);
 
-	if (Global_1579260 != -1 || func_324(epctLocal_367) || Global_1579266 != -1)
+	if (Global_1579260 != -1 || func_324(veLocal_367) || Global_1579266 != -1)
 	{
 		HUD::UNLOCK_MINIMAP_POSITION();
 		Global_1579260 = -1;
@@ -12196,7 +12196,7 @@ void func_355() // Position - 0xFC95 (64661)
 
 void func_356(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20) // Position - 0xFCA2 (64674)
 {
-	func_360(func_361(uParam0), uParam0);
+	func_362(func_363(uParam0), uParam0);
 	func_358(0, -1, false);
 	NETWORK::NETWORK_REGISTER_HOST_BROADCAST_VARIABLES(&iLocal_377, 1, 0);
 	NETWORK::NETWORK_REGISTER_PLAYER_BROADCAST_VARIABLES(&uLocal_378, 5, 0);
@@ -12211,7 +12211,7 @@ void func_356(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 				if (VEHICLE::IS_VEHICLE_DRIVEABLE(PED::GET_VEHICLE_PED_IS_USING(PLAYER::PLAYER_PED_ID()), false))
 				{
 					hLocal_299 = ENTITY::GET_ENTITY_MODEL(PED::GET_VEHICLE_PED_IS_USING(PLAYER::PLAYER_PED_ID()));
-					epctLocal_367 = PED::GET_VEHICLE_PED_IS_USING(PLAYER::PLAYER_PED_ID());
+					veLocal_367 = PED::GET_VEHICLE_PED_IS_USING(PLAYER::PLAYER_PED_ID());
 					hLocal_300 = joaat("w_lr_rpg_rocket");
 				
 					if (hLocal_300 != 0)
@@ -12226,30 +12226,30 @@ void func_356(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 		if (func_326(PLAYER::PLAYER_ID()) || func_231(PLAYER::PLAYER_ID()))
 		{
 			if (IS_BIT_SET(Global_4718592.f_26, 7))
-				if (epctLocal_367 != Global_2733138.f_312)
-					epctLocal_367 = Global_2733138.f_312;
-			else if (epctLocal_367 != Global_1673923)
-				epctLocal_367 = Global_1673923;
+				if (veLocal_367 != Global_2733138.f_312)
+					veLocal_367 = Global_2733138.f_312;
+			else if (veLocal_367 != Global_1673923)
+				veLocal_367 = Global_1673923;
 		}
 		else if (func_230(PLAYER::PLAYER_ID()))
 		{
-			epctLocal_367 = Global_1673942;
+			veLocal_367 = Global_1673942;
 		
-			if (ENTITY::DOES_ENTITY_EXIST(epctLocal_367))
+			if (ENTITY::DOES_ENTITY_EXIST(veLocal_367))
 			{
 			}
 		}
 		else if (func_229(PLAYER::PLAYER_ID()))
 		{
-			epctLocal_367 = Global_2733138.f_314;
+			veLocal_367 = Global_2733138.f_314;
 		
-			if (ENTITY::DOES_ENTITY_EXIST(epctLocal_367))
+			if (ENTITY::DOES_ENTITY_EXIST(veLocal_367))
 			{
 			}
 		}
 		else if (func_108(PLAYER::PLAYER_ID()) || func_208(3))
 		{
-			epctLocal_367 = Global_1950684;
+			veLocal_367 = Global_1950684;
 		}
 	
 		if (func_229(PLAYER::PLAYER_ID()) || func_230(PLAYER::PLAYER_ID()))
@@ -12359,11 +12359,33 @@ int func_358(int iParam0, int iParam1, BOOL bParam2) // Position - 0xFEA5 (65189
 
 BOOL func_359(BOOL bParam0) // Position - 0xFFBB (65467)
 {
-	bParam0;
+	if (bParam0 && Global_1575064)
+		if (func_360())
+			return false;
+		else
+			return true;
+
 	return Global_1575064;
 }
 
-void func_360(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20, var uParam21) // Position - 0xFFCC (65484)
+BOOL func_360() // Position - 0xFFE7 (65511)
+{
+	if (func_361())
+		return true;
+
+	return Global_1575067;
+}
+
+BOOL func_361() // Position - 0x10003 (65539)
+{
+	if (Global_1575064 || Global_1575070)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
+}
+
+void func_362(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20, var uParam21) // Position - 0x1002E (65582)
 {
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 		func_345();
@@ -12372,7 +12394,7 @@ void func_360(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 	return;
 }
 
-int func_361(int iParam0) // Position - 0xFFEB (65515)
+int func_363(int iParam0) // Position - 0x1004D (65613)
 {
 	switch (iParam0)
 	{
@@ -12917,7 +12939,7 @@ int func_361(int iParam0) // Position - 0xFFEB (65515)
 		
 	}
 
-	switch (func_362(func_363(iParam0, true)))
+	switch (func_364(func_365(iParam0, true)))
 	{
 		case 0:
 			return 8;
@@ -12935,7 +12957,7 @@ int func_361(int iParam0) // Position - 0xFFEB (65515)
 	return 0;
 }
 
-int func_362(int iParam0) // Position - 0x107CD (67533)
+int func_364(int iParam0) // Position - 0x10821 (67617)
 {
 	switch (iParam0)
 	{
@@ -13234,7 +13256,7 @@ int func_362(int iParam0) // Position - 0x107CD (67533)
 	return -1;
 }
 
-int func_363(int iParam0, BOOL bParam1) // Position - 0x10B9D (68509)
+int func_365(int iParam0, BOOL bParam1) // Position - 0x10BF1 (68593)
 {
 	switch (iParam0)
 	{

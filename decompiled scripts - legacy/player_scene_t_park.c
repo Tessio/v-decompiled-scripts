@@ -570,7 +570,7 @@ int func_3(Object* pobParam0, int iParam1) // Position - 0x3E7 (999)
 				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
 				HUD::CLEAR_REMINDER_MESSAGE();
 			
-				if (Global_21610.f_1 != 1)
+				if (Global_21610.f_1 != true)
 					func_7(true);
 			
 				BUILTIN::WAIT(0);
@@ -580,7 +580,7 @@ int func_3(Object* pobParam0, int iParam1) // Position - 0x3E7 (999)
 			HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
 			HUD::CLEAR_REMINDER_MESSAGE();
 		
-			if (Global_21610.f_1 != 1)
+			if (Global_21610.f_1 != true)
 				func_7(true);
 		
 			OBJECT::DELETE_OBJECT(pobParam0);
@@ -650,7 +650,7 @@ int func_3(Object* pobParam0, int iParam1) // Position - 0x3E7 (999)
 				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
 				HUD::CLEAR_REMINDER_MESSAGE();
 			
-				if (Global_21610.f_1 != 1)
+				if (Global_21610.f_1 != true)
 					func_7(true);
 			
 				BUILTIN::WAIT(0);
@@ -660,7 +660,7 @@ int func_3(Object* pobParam0, int iParam1) // Position - 0x3E7 (999)
 			HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
 			HUD::CLEAR_REMINDER_MESSAGE();
 		
-			if (Global_21610.f_1 != 1)
+			if (Global_21610.f_1 != true)
 				func_7(true);
 		
 			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(effectName, entityCoords3, entityRotation3, 1065353216, false, false, false);
@@ -700,7 +700,7 @@ int func_3(Object* pobParam0, int iParam1) // Position - 0x3E7 (999)
 				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
 				HUD::CLEAR_REMINDER_MESSAGE();
 			
-				if (Global_21610.f_1 != 1)
+				if (Global_21610.f_1 != true)
 					func_7(true);
 			
 				BUILTIN::WAIT(0);
@@ -742,7 +742,7 @@ int func_3(Object* pobParam0, int iParam1) // Position - 0x3E7 (999)
 				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
 				HUD::CLEAR_REMINDER_MESSAGE();
 			
-				if (Global_21610.f_1 != 1)
+				if (Global_21610.f_1 != true)
 					func_7(true);
 			
 				BUILTIN::WAIT(0);
@@ -752,7 +752,7 @@ int func_3(Object* pobParam0, int iParam1) // Position - 0x3E7 (999)
 			HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
 			HUD::CLEAR_REMINDER_MESSAGE();
 		
-			if (Global_21610.f_1 != 1)
+			if (Global_21610.f_1 != true)
 				func_7(true);
 		
 			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(effectName2, entityCoords4, entityRotation4, 1065353216, false, false, false);
@@ -1855,9 +1855,9 @@ void func_7(BOOL bParam0) // Position - 0x240B (9227)
 		if (func_13(0))
 			func_8(0);
 	}
-	else if (Global_21610.f_1 == 1)
+	else if (Global_21610.f_1 == true)
 	{
-		if (!(Global_21610.f_1 == 0))
+		if (!(Global_21610.f_1 == false))
 			Global_21610.f_1 = 3;
 	}
 
@@ -1896,7 +1896,7 @@ void func_8(int iParam0) // Position - 0x246E (9326)
 
 BOOL func_9() // Position - 0x24F8 (9464)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -1993,14 +1993,14 @@ BOOL func_16() // Position - 0x2657 (9815)
 
 void func_17(Ped pedParam0, Cam caParam1, int iParam2, int iParam3, int iParam4) // Position - 0x2671 (9841)
 {
+	BOOL flag;
+	BOOL flag2;
 	int num;
 	int num2;
 	int num3;
 	int num4;
 	int num5;
 	int num6;
-	int num7;
-	int num8;
 
 	if (pedParam0 == 0)
 		return;
@@ -2011,21 +2011,34 @@ void func_17(Ped pedParam0, Cam caParam1, int iParam2, int iParam3, int iParam4)
 	if (func_36(pedParam0) + iParam2 > 10)
 		iParam2 = 10 - func_36(pedParam0);
 
-	num = 20000;
+	flag = 20000;
 
 	if (iParam4 != -1)
-		num = iParam4;
+		flag = iParam4;
 
-	num2 = num;
+	flag2 = flag;
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && iParam4 == -1)
-		num2 = num2 * 3;
+		flag2 = flag2 * 3;
 
 	if (!func_34(pedParam0))
 	{
-		func_32(pedParam0, num2, false, -1082130432);
-		func_29(num2, num2, 0.3f, func_30(), caParam1, false);
+		func_32(pedParam0, flag2, false, -1082130432);
+		func_29(flag2, flag2, 0.3f, func_30(), caParam1, false);
+		num = func_28(pedParam0);
+	
+		if (num == -1)
+		{
+			num2 = func_27(num);
+		
+			if (!(num2 == -1))
+				Global_45880[num2 /*5*/].f_4 = Global_45880[num2 /*5*/].f_4 + iParam2;
+		}
+	}
+	else
+	{
 		num3 = func_28(pedParam0);
+		num4 = -1;
 	
 		if (num3 == -1)
 		{
@@ -2034,53 +2047,40 @@ void func_17(Ped pedParam0, Cam caParam1, int iParam2, int iParam3, int iParam4)
 			if (!(num4 == -1))
 				Global_45880[num4 /*5*/].f_4 = Global_45880[num4 /*5*/].f_4 + iParam2;
 		}
-	}
-	else
-	{
-		num5 = func_28(pedParam0);
-		num6 = -1;
-	
-		if (num5 == -1)
-		{
-			num6 = func_27(num5);
-		
-			if (!(num6 == -1))
-				Global_45880[num6 /*5*/].f_4 = Global_45880[num6 /*5*/].f_4 + iParam2;
-		}
 	
 		if (Global_46061 == 0 || Global_46061 <= MISC::GET_GAME_TIMER())
 		{
-			func_29(num2, num2, 0.3f, func_30(), caParam1, false);
+			func_29(flag2, flag2, 0.3f, func_30(), caParam1, false);
 		}
 		else
 		{
-			Global_46061 = Global_46061 + num2;
-			func_24(pedParam0, num2);
+			Global_46061 = Global_46061 + flag2;
+			func_24(pedParam0, flag2);
 		}
 	}
 
 	Global_46067 = 0.25f;
 	TEXT_LABEL_ASSIGN_STRING(&Global_46068, func_23(iParam3), 16);
-	num7 = func_28(pedParam0);
+	num5 = func_28(pedParam0);
 
-	if (num7 == -1)
+	if (num5 == -1)
 	{
-		num8 = func_27(num7);
-		!(num8 == -1);
+		num6 = func_27(num5);
+		!(num6 == -1);
 		return;
 	}
 
-	func_18(1, num7, 4, pedParam0, iParam2);
+	func_18(1, num5, 4, pedParam0, iParam2);
 	return;
 }
 
 void func_18(int iParam0, int iParam1, int iParam2, Ped pedParam3, int iParam4) // Position - 0x27E8 (10216)
 {
-	func_19(iParam0, iParam1, iParam2, pedParam3, 0, iParam4);
+	func_19(iParam0, iParam1, iParam2, pedParam3, false, iParam4);
 	return;
 }
 
-void func_19(int iParam0, int iParam1, int iParam2, Ped pedParam3, int iParam4, int iParam5) // Position - 0x27FF (10239)
+void func_19(int iParam0, int iParam1, int iParam2, Ped pedParam3, BOOL bParam4, int iParam5) // Position - 0x27FF (10239)
 {
 	int num;
 
@@ -2105,7 +2105,7 @@ void func_19(int iParam0, int iParam1, int iParam2, Ped pedParam3, int iParam4, 
 	Global_45961[num /*6*/].f_1 = iParam1;
 	Global_45961[num /*6*/].f_2 = iParam2;
 	Global_45961[num /*6*/].f_3 = pedParam3;
-	Global_45961[num /*6*/].f_4 = iParam4;
+	Global_45961[num /*6*/].f_4 = bParam4;
 	Global_45961[num /*6*/].f_5 = iParam5;
 	return;
 }
@@ -2167,7 +2167,7 @@ char* func_23(int iParam0) // Position - 0x2919 (10521)
 	return "INVALID_SMOKING_EFFECT";
 }
 
-void func_24(Ped pedParam0, int iParam1) // Position - 0x2946 (10566)
+void func_24(Ped pedParam0, BOOL bParam1) // Position - 0x2946 (10566)
 {
 	int num;
 	int num2;
@@ -2178,7 +2178,7 @@ void func_24(Ped pedParam0, int iParam1) // Position - 0x2946 (10566)
 	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return;
 
-	if (iParam1 < 0)
+	if (bParam1 < false)
 		return;
 
 	num = func_28(pedParam0);
@@ -2190,20 +2190,20 @@ void func_24(Ped pedParam0, int iParam1) // Position - 0x2946 (10566)
 	
 		if (!(num2 == -1))
 		{
-			Global_45849[num2 /*6*/].f_3 = Global_45849[num2 /*6*/].f_3 + iParam1;
-			Global_45849[num2 /*6*/].f_2 = Global_45849[num2 /*6*/].f_2 + iParam1;
+			Global_45849[num2 /*6*/].f_3 = Global_45849[num2 /*6*/].f_3 + bParam1;
+			Global_45849[num2 /*6*/].f_2 = Global_45849[num2 /*6*/].f_2 + bParam1;
 		}
 	
 		return;
 	}
 
-	func_25(1, num, 2, iParam1);
+	func_25(1, num, 2, bParam1);
 	return;
 }
 
-void func_25(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0x29C5 (10693)
+void func_25(int iParam0, int iParam1, int iParam2, BOOL bParam3) // Position - 0x29C5 (10693)
 {
-	func_19(iParam0, iParam1, iParam2, 0, iParam3, 1);
+	func_19(iParam0, iParam1, iParam2, 0, bParam3, 1);
 	return;
 }
 
@@ -2255,7 +2255,7 @@ int func_28(Ped pedParam0) // Position - 0x2A3C (10812)
 	return -1;
 }
 
-void func_29(int iParam0, int iParam1, float fParam2, float fParam3, Cam caParam4, BOOL bParam5) // Position - 0x2A7D (10877)
+void func_29(BOOL bParam0, BOOL bParam1, float fParam2, float fParam3, Cam caParam4, BOOL bParam5) // Position - 0x2A7D (10877)
 {
 	int gameTimer;
 
@@ -2266,7 +2266,7 @@ void func_29(int iParam0, int iParam1, float fParam2, float fParam3, Cam caParam
 		return;
 
 	if (!bParam5)
-		if (iParam0 < 0)
+		if (bParam0 < false)
 			return;
 
 	if (fParam2 < 0f || fParam2 > 5f)
@@ -2290,13 +2290,13 @@ void func_29(int iParam0, int iParam1, float fParam2, float fParam3, Cam caParam
 
 	Global_46059 = true;
 	gameTimer = MISC::GET_GAME_TIMER();
-	Global_46061 = gameTimer + iParam0;
+	Global_46061 = gameTimer + bParam0;
 
 	if (bParam5)
-		if (iParam0 == -1)
+		if (bParam0 == -1)
 			Global_46061 = -1;
 
-	Global_46062 = iParam1;
+	Global_46062 = bParam1;
 	Global_46063 = fParam2;
 	Global_46065 = fParam3;
 	Global_46064 = fParam3;
@@ -2385,7 +2385,7 @@ int func_32(Ped pedParam0, int iParam1, BOOL bParam2, int iParam3) // Position -
 		return 1;
 
 	if (!bParam2)
-		if (iParam1 == 0 || iParam1 < 0)
+		if (iParam1 == false || iParam1 < false)
 			return 0;
 
 	num3 = func_33();

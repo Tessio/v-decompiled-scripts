@@ -216,10 +216,10 @@ void main() // Position - 0x0 (0)
 								
 									if (!func_73(37))
 									{
-										switch (func_71("AM_H_FLINK" /*Some emails contain hyperlinks to web pages. Press ~INPUT_CELLPHONE_EXTRA_OPTION~ to jump to the linked page.*/))
+										switch (func_71("AM_H_FLINK" /*Algunos correos electrónicos contienen hipervínculos a sitios web. Pulsa ~INPUT_CELLPHONE_EXTRA_OPTION~ para ir a la página enlazada.*/))
 										{
 											case 2:
-												func_68("AM_H_FLINK" /*Some emails contain hyperlinks to web pages. Press ~INPUT_CELLPHONE_EXTRA_OPTION~ to jump to the linked page.*/, 2, 0, 1000, 10000, 7, 0, 0, 0);
+												func_68("AM_H_FLINK" /*Algunos correos electrónicos contienen hipervínculos a sitios web. Pulsa ~INPUT_CELLPHONE_EXTRA_OPTION~ para ir a la página enlazada.*/, 2, 0, 1000, 10000, 7, 0, 0, 0);
 												break;
 										
 											case 1:
@@ -232,7 +232,7 @@ void main() // Position - 0x0 (0)
 										if (!IS_BIT_SET(Global_4524844, 17))
 										{
 											MISC::SET_BIT(&Global_4524844, 17);
-											_DISPLAY_HELP_TEXT("AM_H_FLINK" /*Some emails contain hyperlinks to web pages. Press ~INPUT_CELLPHONE_EXTRA_OPTION~ to jump to the linked page.*/, -1);
+											_DISPLAY_HELP_TEXT("AM_H_FLINK" /*Algunos correos electrónicos contienen hipervínculos a sitios web. Pulsa ~INPUT_CELLPHONE_EXTRA_OPTION~ para ir a la página enlazada.*/, -1);
 										}
 									}
 								
@@ -242,10 +242,10 @@ void main() // Position - 0x0 (0)
 								{
 									if (!func_73(38))
 									{
-										switch (func_71("AM_H_SCROLL" /*Use ~INPUTGROUP_CELLPHONE_NAVIGATE_UD~ to scroll through an email.*/))
+										switch (func_71("AM_H_SCROLL" /*Usa ~INPUTGROUP_CELLPHONE_NAVIGATE_UD~ para desplazarte por un correo electrónico.*/))
 										{
 											case 2:
-												func_68("AM_H_SCROLL" /*Use ~INPUTGROUP_CELLPHONE_NAVIGATE_UD~ to scroll through an email.*/, 2, 0, 1000, 10000, 7, 0, 0, 0);
+												func_68("AM_H_SCROLL" /*Usa ~INPUTGROUP_CELLPHONE_NAVIGATE_UD~ para desplazarte por un correo electrónico.*/, 2, 0, 1000, 10000, 7, 0, 0, 0);
 												break;
 										
 											case 1:
@@ -337,7 +337,7 @@ BOOL func_3() // Position - 0x501 (1281)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -368,7 +368,7 @@ void func_5() // Position - 0x57D (1405)
 {
 	var unk;
 
-	if (Global_21610 == CHAR_FRANKLIN)
+	if (Global_21610 == 1)
 		return;
 
 	if (Global_21627.f_1 < 4)
@@ -401,8 +401,8 @@ void func_5() // Position - 0x57D (1405)
 		
 			if (Global_21615)
 			{
-				func_36(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+				func_36(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 			}
 			else
 			{
@@ -424,11 +424,11 @@ void func_5() // Position - 0x57D (1405)
 			{
 				if (Global_21860 == true)
 					if (Global_21615)
-						func_36(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, "CELL_225" /*NEXT*/, 0, 0, 0, 0);
+						func_36(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, "CELL_225" /*SIGUIENTE*/, 0, 0, 0, 0);
 					else
 						func_36(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, 0, 0, 0, 0, 0);
 				else if (Global_21615)
-					func_36(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, "CELL_225" /*NEXT*/, 0, 0, 0, 0);
+					func_36(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, "CELL_225" /*SIGUIENTE*/, 0, 0, 0, 0);
 				else
 					func_36(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, 0, 0, 0, 0, 0);
 			
@@ -462,7 +462,7 @@ void func_5() // Position - 0x57D (1405)
 			}
 			else if (Global_21615)
 			{
-				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*END CALL*/, 0, 0, 0, 0);
+				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*COLGAR*/, 0, 0, 0, 0);
 			
 				if (Global_21570)
 					func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
@@ -489,17 +489,17 @@ void func_5() // Position - 0x57D (1405)
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&Global_23015);
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					func_9("CELL_300" /*CHAR_DEFAULT*/);
-					func_9("CELL_217" /*INCOMING CALL*/);
-					func_9("CELL_217" /*INCOMING CALL*/);
+					func_9("CELL_217" /*LLAMADA ENTRANTE*/);
+					func_9("CELL_217" /*LLAMADA ENTRANTE*/);
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 				}
 				else if (func_8(Global_8778, Global_21627) == 0)
 				{
-					func_36(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_217" /*INCOMING CALL*/, "CELL_195" /*Unknown*/, 0);
+					func_36(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_217" /*LLAMADA ENTRANTE*/, "CELL_195" /*Desconocido*/, 0);
 				}
 				else
 				{
-					func_36(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_217" /*INCOMING CALL*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
+					func_36(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_217" /*LLAMADA ENTRANTE*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
 				}
 			
 				func_87(Global_21608, "DISPLAY_VIEW", 4f, -1082130432, -1082130432, -1082130432, -1082130432);
@@ -519,21 +519,21 @@ void func_5() // Position - 0x57D (1405)
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&Global_23015);
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					func_9("CELL_300" /*CHAR_DEFAULT*/);
-					func_9("CELL_219" /*CONNECTED*/);
-					func_9("CELL_219" /*CONNECTED*/);
+					func_9("CELL_219" /*CONECTADO*/);
+					func_9("CELL_219" /*CONECTADO*/);
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 				}
 				else
 				{
 					if (Global_23258)
-						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_219" /*CONNECTED*/, 24);
+						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_219" /*CONECTADO*/, 24);
 					else
-						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_211" /*DIALING...*/, 24);
+						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_211" /*MARCANDO...*/, 24);
 				
 					if (func_8(Global_8778, Global_21627) == 0)
 					{
 						func_87(Global_21608, "SET_DATA_SLOT_EMPTY", 4f, -1082130432, -1082130432, -1082130432, -1082130432);
-						func_36(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, &unk, "CELL_195" /*Unknown*/, 0);
+						func_36(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, &unk, "CELL_195" /*Desconocido*/, 0);
 					}
 					else
 					{
@@ -564,7 +564,7 @@ void func_6() // Position - 0xB69 (2921)
 		if (Global_21626 == 1)
 		{
 			if (Global_21615)
-				func_36(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_203" /*ANSWER*/, 0, 0, 0, 0);
+				func_36(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_203" /*RESPONDER*/, 0, 0, 0, 0);
 			else
 				func_36(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -573,7 +573,7 @@ void func_6() // Position - 0xB69 (2921)
 			else if (IS_BIT_SET(Global_9463, 20))
 				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 0f, 1f, -1f, -1f, 0, 0, 0, 0, 0);
 			else if (Global_21615)
-				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_204" /*REJECT*/, 0, 0, 0, 0);
+				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_204" /*RECHAZAR*/, 0, 0, 0, 0);
 			else
 				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -592,7 +592,7 @@ void func_6() // Position - 0xB69 (2921)
 			}
 			else if (Global_21615)
 			{
-				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*END CALL*/, 0, 0, 0, 0);
+				func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*COLGAR*/, 0, 0, 0, 0);
 			
 				if (Global_21570)
 					func_36(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
@@ -809,16 +809,16 @@ void func_11(BOOL bParam0) // Position - 0xFCA (4042)
 
 	if (func_30() && func_14())
 	{
-		func_12(21, "CELL_37" /*Quick Join*/, 0, "AppJIPMP", 14);
-		func_12(10, "CELL_16" /*Settings*/, 1, "appSettings", 24);
+		func_12(21, "CELL_37" /*Unirse rápidamente*/, 0, "AppJIPMP", 14);
+		func_12(10, "CELL_16" /*Ajustes*/, 1, "appSettings", 24);
 	}
 	else if (func_30() && !func_14())
 	{
-		func_12(21, "CELL_37" /*Quick Join*/, 0, "AppJIPMP", 14);
+		func_12(21, "CELL_37" /*Unirse rápidamente*/, 0, "AppJIPMP", 14);
 	}
 	else if (!func_30() && func_14())
 	{
-		func_12(10, "CELL_16" /*Settings*/, 0, "appSettings", 24);
+		func_12(10, "CELL_16" /*Ajustes*/, 0, "appSettings", 24);
 	}
 
 	if (bParam0)
@@ -986,13 +986,13 @@ BOOL func_27() // Position - 0x138B (5003)
 	return func_28(*Global_4718592.f_139000);
 }
 
-BOOL func_28(ePedComponentType epctParam0) // Position - 0x13A1 (5025)
+BOOL func_28(Hash hParam0) // Position - 0x13A1 (5025)
 {
 	int i;
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		if (Global_262145.f_31313[i] == epctParam0)
+		if (Global_262145.f_31313[i] == hParam0)
 			return 1;
 	}
 
@@ -1110,7 +1110,7 @@ void func_37(int iParam0) // Position - 0x15A4 (5540)
 	int j;
 	int value2;
 	int k;
-	BOOL value3;
+	int value3;
 	int value4;
 	int value5;
 	int value6;
@@ -1205,7 +1205,7 @@ void func_37(int iParam0) // Position - 0x15A4 (5540)
 									{
 										if (Global_4521275[k /*296*/].f_24 != 0)
 											if (Global_4521275[k /*296*/].f_28 == 0)
-												if (Global_4521275[k /*296*/].f_291[Global_21627] == true)
+												if (Global_4521275[k /*296*/].f_291[Global_21627] == 1)
 													value2 = value2 + 1;
 									}
 								
@@ -1638,10 +1638,10 @@ void func_40() // Position - 0x1C8F (7311)
 				}
 				else
 				{
-					if (func_71("AM_H_FLINK" /*Some emails contain hyperlinks to web pages. Press ~INPUT_CELLPHONE_EXTRA_OPTION~ to jump to the linked page.*/) == 0)
+					if (func_71("AM_H_FLINK" /*Algunos correos electrónicos contienen hipervínculos a sitios web. Pulsa ~INPUT_CELLPHONE_EXTRA_OPTION~ para ir a la página enlazada.*/) == 0)
 						func_67(37);
 				
-					if (func_71("AM_H_SCROLL" /*Use ~INPUTGROUP_CELLPHONE_NAVIGATE_UD~ to scroll through an email.*/) == 0)
+					if (func_71("AM_H_SCROLL" /*Usa ~INPUTGROUP_CELLPHONE_NAVIGATE_UD~ para desplazarte por un correo electrónico.*/) == 0)
 						func_67(38);
 				
 					if (Global_24034 == false && !Global_24033)
@@ -1668,10 +1668,10 @@ void func_40() // Position - 0x1C8F (7311)
 	{
 		if (bLocal_66)
 		{
-			if (func_71("AM_H_FLINK" /*Some emails contain hyperlinks to web pages. Press ~INPUT_CELLPHONE_EXTRA_OPTION~ to jump to the linked page.*/) == 0)
+			if (func_71("AM_H_FLINK" /*Algunos correos electrónicos contienen hipervínculos a sitios web. Pulsa ~INPUT_CELLPHONE_EXTRA_OPTION~ para ir a la página enlazada.*/) == 0)
 				func_67(37);
 		
-			if (func_71("AM_H_SCROLL" /*Use ~INPUTGROUP_CELLPHONE_NAVIGATE_UD~ to scroll through an email.*/) == 0)
+			if (func_71("AM_H_SCROLL" /*Usa ~INPUTGROUP_CELLPHONE_NAVIGATE_UD~ para desplazarte por un correo electrónico.*/) == 0)
 				func_67(38);
 		
 			TEXT_LABEL_ASSIGN_STRING(&Global_77342, sLocal_67, 64);
@@ -1826,7 +1826,7 @@ void func_44() // Position - 0x227F (8831)
 	return;
 }
 
-void func_45(eCharacter echParam0, int iParam1, BOOL bParam2) // Position - 0x22A1 (8865)
+void func_45(eCharacter echParam0, int iParam1, int iParam2) // Position - 0x22A1 (8865)
 {
 	int num;
 	int i;
@@ -1872,12 +1872,12 @@ void func_45(eCharacter echParam0, int iParam1, BOOL bParam2) // Position - 0x22
 		return;
 
 	Global_55068[num /*120*/].f_35[num2] = 1;
-	Global_55068[num /*120*/].f_52[num2] = bParam2;
-	func_46(num3, bParam2);
+	Global_55068[num /*120*/].f_52[num2] = iParam2;
+	func_46(num3, iParam2);
 	return;
 }
 
-void func_46(int iParam0, BOOL bParam1) // Position - 0x239B (9115)
+void func_46(int iParam0, int iParam1) // Position - 0x239B (9115)
 {
 	int num;
 	int num2;
@@ -1898,10 +1898,10 @@ void func_46(int iParam0, BOOL bParam1) // Position - 0x239B (9115)
 
 	num2 = Global_49455[iParam0 /*46*/].f_32[num];
 
-	if (!(bParam1 < Global_46130[num2 /*12*/].f_4))
+	if (!(iParam1 < Global_46130[num2 /*12*/].f_4))
 		return;
 
-	num3 = Global_46130[num2 /*12*/].f_5[bParam1 /*4*/].f_1;
+	num3 = Global_46130[num2 /*12*/].f_5[iParam1 /*4*/].f_1;
 	flag = false;
 
 	if (Global_49455[iParam0 /*46*/].f_31 < Global_49455[iParam0 /*46*/].f_30 - 1)
@@ -1929,10 +1929,10 @@ void func_46(int iParam0, BOOL bParam1) // Position - 0x239B (9115)
 		}
 	}
 
-	if (Global_46130[num2 /*12*/].f_5[bParam1 /*4*/].f_3 > -1)
-		func_47(Global_46130[num2 /*12*/].f_5[bParam1 /*4*/].f_3, false);
+	if (Global_46130[num2 /*12*/].f_5[iParam1 /*4*/].f_3 > -1)
+		func_47(Global_46130[num2 /*12*/].f_5[iParam1 /*4*/].f_3, false);
 
-	if (Global_46130[num2 /*12*/].f_5[bParam1 /*4*/].f_2)
+	if (Global_46130[num2 /*12*/].f_5[iParam1 /*4*/].f_2)
 	{
 		Global_49455[iParam0 /*46*/].f_1 = 1;
 	}
@@ -1998,7 +1998,7 @@ void func_49(int iParam0, BOOL bParam1) // Position - 0x25C7 (9671)
 		if (num < 0)
 			return;
 	
-		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[num] /*12*/].f_4 == false)
+		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[num] /*12*/].f_4 == 0)
 			Global_49455[iParam0 /*46*/].f_1 = 1;
 	
 		return;
@@ -2023,7 +2023,7 @@ void func_49(int iParam0, BOOL bParam1) // Position - 0x25C7 (9671)
 
 	if (Global_49455[iParam0 /*46*/].f_31 == Global_49455[iParam0 /*46*/].f_30)
 	{
-		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[Global_49455[iParam0 /*46*/].f_42 - 1] /*12*/].f_4 == false)
+		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[Global_49455[iParam0 /*46*/].f_42 - 1] /*12*/].f_4 == 0)
 		{
 			Global_49455[iParam0 /*46*/].f_1 = 1;
 			return;
@@ -2085,22 +2085,22 @@ void func_50(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < false)
-							Global_46122 = false;
+						if (Global_46122 < 0)
+							Global_46122 = 0;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < false)
-							Global_46123 = false;
+						if (Global_46123 < 0)
+							Global_46123 = 0;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < false)
-							Global_46124 = false;
+						if (Global_46124 < 0)
+							Global_46124 = 0;
 						break;
 				}
 			}
@@ -2131,22 +2131,22 @@ void func_50(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < false)
-							Global_46122 = false;
+						if (Global_46122 < 0)
+							Global_46122 = 0;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < false)
-							Global_46123 = false;
+						if (Global_46123 < 0)
+							Global_46123 = 0;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < false)
-							Global_46124 = false;
+						if (Global_46124 < 0)
+							Global_46124 = 0;
 						break;
 				}
 			}
@@ -2193,7 +2193,7 @@ void func_50(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			
 				case 1:
 					if (num3 == 249)
-						func_51(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_51(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
 						func_51(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
@@ -2226,15 +2226,15 @@ void func_51(eCharacter echParam0, int iParam1, int iParam2, const char* sParam3
 		switch (iParam2)
 		{
 			case 72:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 73:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 74:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			default:
@@ -2347,7 +2347,7 @@ char* func_53(int iParam0) // Position - 0x2D4E (11598)
 			return "EMSTR_12" /*Marnie*/;
 	
 		case 5:
-			return "EMSTR_29" /*Epsilon Store*/;
+			return "EMSTR_29" /*Tienda de Epsilon*/;
 	
 		case 6:
 			return "EMSTR_36" /*Maude*/;
@@ -2365,10 +2365,10 @@ char* func_53(int iParam0) // Position - 0x2D4E (11598)
 			return "EMSTR_58" /*Bank of Liberty*/;
 	
 		case 11:
-			return "EMSTR_78" /*Legendary Motorsport Sales*/;
+			return "EMSTR_78" /*Legendary Motorsport*/;
 	
 		case 12:
-			return "EMSTR_81" /*Elitas Sales*/;
+			return "EMSTR_81" /*Ventas de Elitas*/;
 	
 		case 13:
 			return "EMSTR_84" /*Cache & Carry*/;
@@ -2389,13 +2389,13 @@ char* func_53(int iParam0) // Position - 0x2D4E (11598)
 			return "EMSTR_145" /*Paige Harris*/;
 	
 		case 19:
-			return "EMSTR_152" /*Los Santos Tourist Info*/;
+			return "EMSTR_152" /*Turismo de Los Santos*/;
 	
 		case 20:
 			return "EMSTR_157" /*Rickie Luckens*/;
 	
 		case 21:
-			return "EMSTR_163" /*Minotaur Property Management*/;
+			return "EMSTR_163" /*Minotaur*/;
 	
 		case 22:
 			return "EMSTR_182" /*Saeeda Kadam*/;
@@ -2404,10 +2404,10 @@ char* func_53(int iParam0) // Position - 0x2D4E (11598)
 			return "EMSTR_187" /*Vanilla Unicorn*/;
 	
 		case 24:
-			return "EMSTR_190" /*Dr Isiah Friedlander*/;
+			return "EMSTR_190" /*Dr. Isiah Friedlander*/;
 	
 		case 25:
-			return "EMSTR_206" /*TRACEYHEARTSTEALER*/;
+			return "EMSTR_206" /*TRACIROBACORAZONES*/;
 	
 		case 26:
 			return "EMSTR_219" /*Dave Norton*/;
@@ -2452,34 +2452,34 @@ char* func_53(int iParam0) // Position - 0x2D4E (11598)
 			return "EMSTR_369" /*Hookies*/;
 	
 		case 40:
-			return "EMSTR_376" /*Towing Impound*/;
+			return "EMSTR_376" /*Depósito de coches*/;
 	
 		case 41:
-			return "EMSTR_379" /*Downtown Cab Co,*/;
+			return "EMSTR_379" /*Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_384" /*Sonar Collections Dock*/;
+			return "EMSTR_384" /*Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_387" /*Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_390" /*Cinema Doppler*/;
+			return "EMSTR_390" /*Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_393" /*Ten Cent Theater*/;
+			return "EMSTR_393" /*Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_396" /*Tivoli Cinema*/;
+			return "EMSTR_396" /*Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_399" /*Los Santos Golf Club*/;
+			return "EMSTR_399" /*Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_402" /*Car Scrap Yard*/;
+			return "EMSTR_402" /*Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_405" /*Smoke on the Water*/;
@@ -2494,10 +2494,10 @@ char* func_53(int iParam0) // Position - 0x2D4E (11598)
 			return "EMSTR_414" /*The Hen House*/;
 	
 		case 54:
-			return "EMSTR_465" /*Pedal & Metal Sales*/;
+			return "EMSTR_465" /*Ventas de P&M*/;
 	
 		case 55:
-			return "EMSTR_468" /*SSA Super Autos Sales*/;
+			return "EMSTR_468" /*SSA Super Autos*/;
 	
 		case 56:
 			return "EMSTR_489" /*Hush Smush*/;
@@ -2521,13 +2521,13 @@ char* func_53(int iParam0) // Position - 0x2D4E (11598)
 			return "EMSTR_507" /*Misscuddles*/;
 	
 		case 63:
-			return "EMSTR_640" /*Off-Road Events*/;
+			return "EMSTR_640" /*Eventos todoterreno*/;
 	
 		case 64:
 			return "EMSTR_643" /*DockTease*/;
 	
 		case 65:
-			return "EMSTR_652" /*Brother Adrian*/;
+			return "EMSTR_652" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -2918,7 +2918,7 @@ void func_63(int iParam0, eCharacter echParam1, int iParam2) // Position - 0x36E
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
 			func_9("");
 			func_9("");
-			func_9("EM_RESPONSE_NEW" /*Response:*/);
+			func_9("EM_RESPONSE_NEW" /*Respuesta:*/);
 			func_9(&unk17);
 			func_9(func_65(Global_46130[num7 /*12*/].f_2));
 			func_64(num7, Global_46130[num7 /*12*/].f_2);
@@ -3022,7 +3022,7 @@ char* func_65(int iParam0) // Position - 0x396F (14703)
 			return "EMSTR_14" /*M*/;
 	
 		case 5:
-			return "EMSTR_31" /*Praise Kraff*/;
+			return "EMSTR_31" /*Alabado sea Kraff*/;
 	
 		case 6:
 			return "EMSTR_38" /*-Maude*/;
@@ -3031,13 +3031,13 @@ char* func_65(int iParam0) // Position - 0x396F (14703)
 			return "EMSTR_41" /*-Lester*/;
 	
 		case 8:
-			return "EMSTR_54" /*Maze Online Support*/;
+			return "EMSTR_54" /*Servicio técnico en línea de Maze*/;
 	
 		case 9:
-			return "EMSTR_57" /*Fleeca Customer Services*/;
+			return "EMSTR_57" /*Servicio de atención al cliente de Fleeca*/;
 	
 		case 10:
-			return "EMSTR_60" /*BoL Transaction Services*/;
+			return "EMSTR_60" /*Servicios de transacciones de Bol*/;
 	
 		case 11:
 			return "EMSTR_80" /*Legendary Motorsport*/;
@@ -3049,7 +3049,7 @@ char* func_65(int iParam0) // Position - 0x396F (14703)
 			return "EMSTR_86" /*C&C*/;
 	
 		case 14:
-			return "EMSTR_89" /*DT Sales*/;
+			return "EMSTR_89" /*Ventas de DT*/;
 	
 		case 15:
 			return "EMSTR_106" /*LSC*/;
@@ -3064,13 +3064,13 @@ char* func_65(int iParam0) // Position - 0x396F (14703)
 			return "EMSTR_147" /*P*/;
 	
 		case 19:
-			return "EMSTR_154" /*LS Tourist Info*/;
+			return "EMSTR_154" /*Turismo de LS*/;
 	
 		case 20:
 			return "EMSTR_159" /*R*/;
 	
 		case 21:
-			return "EMSTR_165" /*Minotaur Finance - navigating the maze that is property ownership*/;
+			return "EMSTR_165" /*Minotaur Finance: nos movemos en el laberinto de las propiedades inmobiliarias*/;
 	
 		case 22:
 			return "EMSTR_184" /*-Saeeda Kadam*/;
@@ -3127,34 +3127,34 @@ char* func_65(int iParam0) // Position - 0x396F (14703)
 			return "EMSTR_371" /*- Hookies*/;
 	
 		case 40:
-			return "EMSTR_378" /*- Towing Impound*/;
+			return "EMSTR_378" /*- Depósito de coches*/;
 	
 		case 41:
 			return "EMSTR_381" /*- Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_386" /*- Sonar Collections Dock*/;
+			return "EMSTR_386" /*- Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_389" /*- Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_392" /*- Cinema Doppler*/;
+			return "EMSTR_392" /*- Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_395" /*- Ten Cent Theater*/;
+			return "EMSTR_395" /*- Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_398" /*- Tivoli Cinema*/;
+			return "EMSTR_398" /*- Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_401" /*- Los Santos Golf Club*/;
+			return "EMSTR_401" /*- Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_404" /*- Car Scrap Yard*/;
+			return "EMSTR_404" /*- Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_407" /*- Smoke on the Water*/;
@@ -3199,10 +3199,10 @@ char* func_65(int iParam0) // Position - 0x396F (14703)
 			return "EMSTR_642" /*- Southern San Andreas Super Autos*/;
 	
 		case 64:
-			return "EMSTR_645" /*- DockTease Events*/;
+			return "EMSTR_645" /*- Eventos de DockTease*/;
 	
 		case 65:
-			return "EMSTR_654" /*Brother Adrian*/;
+			return "EMSTR_654" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -3957,15 +3957,15 @@ BOOL func_80(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 	switch (iParam3)
 	{
 		case 72:
-			TEXT_LABEL_ASSIGN_STRING(&unk17, "PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/, 64);
+			TEXT_LABEL_ASSIGN_STRING(&unk17, "PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/, 64);
 			break;
 	
 		case 73:
-			TEXT_LABEL_ASSIGN_STRING(&unk17, "PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/, 64);
+			TEXT_LABEL_ASSIGN_STRING(&unk17, "PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/, 64);
 			break;
 	
 		case 74:
-			TEXT_LABEL_ASSIGN_STRING(&unk17, "PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/, 64);
+			TEXT_LABEL_ASSIGN_STRING(&unk17, "PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/, 64);
 			break;
 	}
 
@@ -4011,7 +4011,7 @@ BOOL func_80(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 			switch (num3)
 			{
 				case 0:
-					labelName = "ACCNA_TOWING" /*Towing Impound*/;
+					labelName = "ACCNA_TOWING" /*Depósito de coches*/;
 					break;
 			
 				case 1:
@@ -4019,11 +4019,11 @@ BOOL func_80(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 					break;
 			
 				case 2:
-					labelName = "ACCNA_ARMS" /*McKenzie Field Hangar*/;
+					labelName = "ACCNA_ARMS" /*Hangar del aeródromo de McKenzie*/;
 					break;
 			
 				case 3:
-					labelName = "ACCNA_SONAR" /*Sonar Collections Dock*/;
+					labelName = "ACCNA_SONAR" /*Muelle de búsquedas con sónar*/;
 					break;
 			
 				case 4:
@@ -4031,23 +4031,23 @@ BOOL func_80(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 					break;
 			
 				case 5:
-					labelName = "ACCNA_VCINEMA" /*Cinema Doppler*/;
+					labelName = "ACCNA_VCINEMA" /*Cine Doppler*/;
 					break;
 			
 				case 6:
-					labelName = "ACCNA_DCINEMA" /*Ten Cent Theater*/;
+					labelName = "ACCNA_DCINEMA" /*Cine Ten Cent*/;
 					break;
 			
 				case 7:
-					labelName = "ACCNA_MCINEMA" /*Tivoli Cinema*/;
+					labelName = "ACCNA_MCINEMA" /*Cine Tivoli*/;
 					break;
 			
 				case 8:
-					labelName = "ACCNA_GOLF" /*Los Santos Golf Club*/;
+					labelName = "ACCNA_GOLF" /*Club de golf de Los Santos*/;
 					break;
 			
 				case 9:
-					labelName = "ACCNA_CSCRAP" /*Car Scrapyard*/;
+					labelName = "ACCNA_CSCRAP" /*Desguace de coches*/;
 					break;
 			
 				case 10:
@@ -4078,7 +4078,7 @@ BOOL func_80(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam0, "SET_DATA_SLOT");
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(9);
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(value);
-			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("PROPR_INCEMAIL4" /*~a~: $~1~*/);
+			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("PROPR_INCEMAIL4" /*~a~: ~1~ $*/);
 			HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(labelName);
 			HUD::ADD_TEXT_COMPONENT_INTEGER(Global_114931.f_24911[num3 /*4*/].f_3);
 			GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
@@ -4318,22 +4318,22 @@ void func_83(int iParam0) // Position - 0x515B (20827)
 		case CHAR_MICHAEL:
 			Global_46122 = Global_46122 + iParam0;
 		
-			if (Global_46122 < false)
-				Global_46122 = false;
+			if (Global_46122 < 0)
+				Global_46122 = 0;
 			break;
 	
 		case CHAR_TREVOR:
 			Global_46124 = Global_46124 + iParam0;
 		
-			if (Global_46124 < false)
-				Global_46124 = false;
+			if (Global_46124 < 0)
+				Global_46124 = 0;
 			break;
 	
 		case CHAR_FRANKLIN:
 			Global_46123 = Global_46123 + iParam0;
 		
-			if (Global_46123 < false)
-				Global_46123 = false;
+			if (Global_46123 < 0)
+				Global_46123 = 0;
 			break;
 	
 		default:
@@ -4672,10 +4672,10 @@ void func_90(eCharacter echParam0) // Position - 0x5734 (22324)
 	int num4;
 	int j;
 	BOOL flag;
+	int unk120;
 	int num5;
-	int num6;
 	int k;
-	int num7;
+	int num6;
 
 	num = -1;
 
@@ -4734,29 +4734,29 @@ void func_90(eCharacter echParam0) // Position - 0x5734 (22324)
 	
 		if (Global_55068[num /*120*/].f_86[num3])
 		{
-			num5 = Global_55068[num /*120*/].f_18[num3];
-			num6 = -1;
+			unk120 = Global_55068[num /*120*/].f_18[num3];
+			num5 = -1;
 			k = 0;
 		
 			for (k = 0; k < 7; k = k + 1)
 			{
-				if (Global_55430[k /*203*/].f_1 == num5)
-					num6 = k;
+				if (Global_55430[k /*203*/].f_1 == unk120)
+					num5 = k;
 			}
 		
-			if (num6 == -1)
+			if (num5 == -1)
 				flag = false;
 		}
 	
 		if (flag)
 		{
-			num7 = num4;
-			num4.f_1[num7] = Global_55068[num /*120*/].f_1[num3];
-			num4.f_18[num7] = Global_55068[num /*120*/].f_18[num3];
-			num4.f_35[num7] = Global_55068[num /*120*/].f_35[num3];
-			num4.f_52[num7] = Global_55068[num /*120*/].f_52[num3];
-			num4.f_69[num7] = Global_55068[num /*120*/].f_69[num3];
-			num4.f_86[num7] = Global_55068[num /*120*/].f_86[num3];
+			num6 = num4;
+			num4.f_1[num6] = Global_55068[num /*120*/].f_1[num3];
+			num4.f_18[num6] = Global_55068[num /*120*/].f_18[num3];
+			num4.f_35[num6] = Global_55068[num /*120*/].f_35[num3];
+			num4.f_52[num6] = Global_55068[num /*120*/].f_52[num3];
+			num4.f_69[num6] = Global_55068[num /*120*/].f_69[num3];
+			num4.f_86[num6] = Global_55068[num /*120*/].f_86[num3];
 			num4 = num4 + 1;
 		}
 	

@@ -292,7 +292,7 @@ void func_7(var uParam0, int iParam1, char* sParam2) // Position - 0x14D (333)
 	if (func_8(&(uParam0->f_57), 7))
 		uParam0->f_57.f_14(&uParam0->[iParam1 /*14*/], iParam1, sParam2);
 	else
-		TEXT_LABEL_ASSIGN_STRING(sParam2, "MPJAC_EXIT" /*Press ~INPUT_CONTEXT~ to stand up.*/, 16);
+		TEXT_LABEL_ASSIGN_STRING(sParam2, "MPJAC_EXIT" /*Pulsa ~INPUT_CONTEXT~ para levantarte.*/, 16);
 
 	return;
 }
@@ -392,7 +392,7 @@ void func_11(var uParam0) // Position - 0x21C (540)
 				else if (uParam0->f_57.f_5 == -1)
 				{
 					if (MISC::GET_GAME_TIMER() - uParam0->f_57.f_6 > 150)
-						_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_57.f_5), 4, "MPJAC_SIT" /*Press ~INPUT_CONTEXT~ to sit down.*/, 0, 0, 0, 0);
+						_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_57.f_5), 4, "MPJAC_SIT" /*Pulsa ~INPUT_CONTEXT~ para sentarte.*/, 0, 0, 0, 0);
 				}
 				else if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT))
 				{
@@ -667,7 +667,7 @@ void func_18(var uParam0) // Position - 0x81A (2074)
 			if (!HUD::IS_PAUSE_MENU_ACTIVE() && !func_8(&(uParam0->f_57), 0) && !func_8(&(uParam0->f_57), 4) && !func_22() && !func_21() && !func_19(true) && uParam0->f_57.f_8.f_2 != 3)
 			{
 				if (uParam0->f_57.f_5 == -1)
-					_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_57.f_5), 4, "MPJAC_EXIT" /*Press ~INPUT_CONTEXT~ to stand up.*/, 0, 0, 0, 0);
+					_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_57.f_5), 4, "MPJAC_EXIT" /*Pulsa ~INPUT_CONTEXT~ para levantarte.*/, 0, 0, 0, 0);
 			
 				if (uParam0->f_57.f_4 == 6)
 					if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT))
@@ -1249,13 +1249,13 @@ BOOL func_48(var uParam0) // Position - 0x13D1 (5073)
 	return 0;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x143C (5180)
+BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x143C (5180)
 {
-	ePedComponentType type;
+	Player player;
 
-	type = player;
+	player = player;
 
-	if (type != PV_COMP_INVALID)
+	if (player != -1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -1264,9 +1264,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 					return false;
 		
 			if (bUnk)
-				if (type == Global_2673274.f_3)
+				if (player == Global_2673274.f_3)
 					return Global_2673274.f_2;
-				else if (Global_2658294[type /*468*/] != 4)
+				else if (Global_2658294[player /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -1762,7 +1762,29 @@ int func_81(int iParam0, int iParam1, BOOL bParam2) // Position - 0x1C59 (7257)
 
 BOOL func_82(BOOL bParam0) // Position - 0x1D6F (7535)
 {
-	bParam0;
+	if (bParam0 && Global_1575064)
+		if (func_83())
+			return false;
+		else
+			return true;
+
 	return Global_1575064;
+}
+
+BOOL func_83() // Position - 0x1D9B (7579)
+{
+	if (func_84())
+		return true;
+
+	return Global_1575067;
+}
+
+BOOL func_84() // Position - 0x1DB6 (7606)
+{
+	if (Global_1575064 || Global_1575070)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
 }
 

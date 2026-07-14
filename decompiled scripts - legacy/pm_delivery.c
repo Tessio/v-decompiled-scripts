@@ -270,7 +270,7 @@ void func_3(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4, i
 	return;
 }
 
-void func_4(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0x230 (560)
+void func_4(ePedComponentType epctParam0, BOOL bParam1, char* sParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, float fParam6, float fParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0x230 (560)
 {
 	int num;
 	int i;
@@ -289,7 +289,7 @@ void func_4(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedCompon
 		Global_1679103.f_1 = 1;
 		func_5(0, num);
 		Global_1679103.f_1177[num] = epctParam0;
-		Global_1679103.f_1177.f_11[num] = iParam1;
+		Global_1679103.f_1177.f_11[num] = bParam1;
 		TEXT_LABEL_ASSIGN_STRING(&Global_1679103.f_1177.f_22[num /*16*/], sParam2, 64);
 		Global_1679103.f_1177.f_194[num] = epctParam3;
 		Global_1679103.f_1177.f_183[num] = epctParam4;
@@ -355,9 +355,9 @@ void func_7() // Position - 0x526 (1318)
 		type = PV_COMP_HEAD;
 
 	if (MISC::GET_GAME_TIMER() >= iLocal_82)
-		func_8(type, "TIMER_TIME" /*TIME*/, 0, 0, -1, 0, 2, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -1);
+		func_8(type, "TIMER_TIME" /*TIEMPO*/, 0, 0, -1, 0, 2, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -1);
 	else
-		func_8(type, "TIMER_TIME" /*TIME*/, 0, 0, PV_COMP_INVALID, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1);
+		func_8(type, "TIMER_TIME" /*TIEMPO*/, 0, 0, PV_COMP_INVALID, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1);
 
 	switch (iLocal_79)
 	{
@@ -960,7 +960,7 @@ BOOL func_23(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 			{
 				func_44(sParam24);
 				func_44(sParam27);
-				func_44("MORE_SEATS" /*A vehicle with more seats is needed.*/);
+				func_44("MORE_SEATS" /*Se necesita un vehículo con más plazas.*/);
 			
 				if (bParam26 && PLAYER::IS_PLAYER_WANTED_LEVEL_GREATER(PLAYER::PLAYER_ID(), 0))
 				{
@@ -977,7 +977,7 @@ BOOL func_23(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 					{
 						if (bParam30)
 						{
-							func_35(pblParam0, "LOSE_WANTED" /*Lose the Cops.*/, false);
+							func_35(pblParam0, "LOSE_WANTED" /*Líbrate de la poli.*/, false);
 						
 							if (!PED::IS_PED_INJURED(pblParam0->f_17[0]))
 								func_33(pblParam0->f_17[0], "VEHICLE_POLICE_PURSUIT", 3);
@@ -991,7 +991,7 @@ BOOL func_23(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 				{
 					if (IS_BIT_SET(pblParam0->f_13, 0))
 					{
-						func_44("LOSE_WANTED" /*Lose the Cops.*/);
+						func_44("LOSE_WANTED" /*Líbrate de la poli.*/);
 						MISC::CLEAR_BIT(&(pblParam0->f_13), 0);
 						MISC::SET_BIT(&(pblParam0->f_13), 1);
 					}
@@ -1102,8 +1102,8 @@ BOOL func_23(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 								func_44(sParam21);
 								func_44(sParam22);
 								func_44(sParam23);
-								func_44("LOSE_WANTED" /*Lose the Cops.*/);
-								func_44("MORE_SEATS" /*A vehicle with more seats is needed.*/);
+								func_44("LOSE_WANTED" /*Líbrate de la poli.*/);
+								func_44("MORE_SEATS" /*Se necesita un vehículo con más plazas.*/);
 								func_44(sParam27);
 								func_14(pblParam0, true, false);
 								return 1;
@@ -1130,7 +1130,7 @@ BOOL func_23(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 					{
 						if (bParam30)
 						{
-							func_35(pblParam0, "LOSE_WANTED" /*Lose the Cops.*/, false);
+							func_35(pblParam0, "LOSE_WANTED" /*Líbrate de la poli.*/, false);
 						
 							if (!PED::IS_PED_INJURED(pblParam0->f_17[0]))
 								func_33(pblParam0->f_17[0], "VEHICLE_POLICE_PURSUIT", 3);
@@ -1144,7 +1144,7 @@ BOOL func_23(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 				{
 					if (IS_BIT_SET(pblParam0->f_13, 0))
 					{
-						func_44("LOSE_WANTED" /*Lose the Cops.*/);
+						func_44("LOSE_WANTED" /*Líbrate de la poli.*/);
 						MISC::CLEAR_BIT(&(pblParam0->f_13), 0);
 						MISC::SET_BIT(&(pblParam0->f_13), 1);
 					}
@@ -1245,7 +1245,7 @@ BOOL func_23(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 									if (!PED::IS_PED_INJURED(pblParam0->f_17[randomIntInRange]))
 										func_33(pblParam0->f_17[randomIntInRange], "NEED_A_BIGGER_VEHICLE", 3);
 								
-									func_35(pblParam0, "MORE_SEATS" /*A vehicle with more seats is needed.*/, false);
+									func_35(pblParam0, "MORE_SEATS" /*Se necesita un vehículo con más plazas.*/, false);
 									MISC::SET_BIT(&(pblParam0->f_13), 13);
 								}
 							}
@@ -1303,7 +1303,7 @@ BOOL func_23(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 		func_44(sParam24);
 		func_44(sParam27);
 		func_44(sParam24);
-		func_44("LOSE_WANTED" /*Lose the Cops.*/);
+		func_44("LOSE_WANTED" /*Líbrate de la poli.*/);
 	
 		if (HUD::DOES_BLIP_EXIST(pblParam0->f_5))
 			HUD::REMOVE_BLIP(&(pblParam0->f_5));
@@ -1953,7 +1953,7 @@ BOOL func_45(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 						if (!PED::IS_PED_INJURED(pblParam0->f_17[randomIntInRange]))
 							func_33(pblParam0->f_17[randomIntInRange], "NEED_A_BIGGER_VEHICLE", 3);
 					
-						func_35(pblParam0, "MORE_SEATS" /*A vehicle with more seats is needed.*/, false);
+						func_35(pblParam0, "MORE_SEATS" /*Se necesita un vehículo con más plazas.*/, false);
 						MISC::SET_BIT(&(pblParam0->f_13), 13);
 					}
 				}
@@ -1965,7 +1965,7 @@ BOOL func_45(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 		{
 			flag3 = false;
 			MISC::CLEAR_BIT(&(pblParam0->f_13), 13);
-			func_44("MORE_SEATS" /*A vehicle with more seats is needed.*/);
+			func_44("MORE_SEATS" /*Se necesita un vehículo con más plazas.*/);
 		}
 	
 		if (!ENTITY::DOES_ENTITY_EXIST(veParam10))
@@ -1980,7 +1980,7 @@ BOOL func_45(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 					
 						if (func_56(vehiclePedIsIn, pblParam0))
 						{
-							func_35(pblParam0, "CMN_VEHSUIT" /*~s~Vehicle is not suitable.*/, false);
+							func_35(pblParam0, "CMN_VEHSUIT" /*~s~Este vehículo no es adecuado.*/, false);
 							MISC::SET_BIT(&(pblParam0->f_13), 31);
 						}
 					}
@@ -1988,7 +1988,7 @@ BOOL func_45(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 				else if (!PED::IS_PED_SITTING_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID()))
 				{
 					MISC::CLEAR_BIT(&(pblParam0->f_13), 31);
-					func_44("CMN_VEHSUIT" /*~s~Vehicle is not suitable.*/);
+					func_44("CMN_VEHSUIT" /*~s~Este vehículo no es adecuado.*/);
 				}
 			}
 		}
@@ -2368,7 +2368,7 @@ BOOL func_45(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 				}
 			}
 		
-			func_44("MORE_SEATS" /*A vehicle with more seats is needed.*/);
+			func_44("MORE_SEATS" /*Se necesita un vehículo con más plazas.*/);
 			return true;
 		}
 	}
@@ -2949,9 +2949,9 @@ void func_72(var uParam0, Vehicle veParam1, var uParam2, var uParam3, var uParam
 
 	if (MISC::IS_STRING_NULL(string2))
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			string2 = "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/;
+			string2 = "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/;
 		else
-			string2 = "FM_IHELP_HNT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus.*/;
+			string2 = "FM_IHELP_HNT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para alternar la cámara.*/;
 
 	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(string2))
 		func_99();
@@ -3005,7 +3005,7 @@ void func_72(var uParam0, Vehicle veParam1, var uParam2, var uParam3, var uParam
 								_DISPLAY_HELP_TEXT(string2, -1);
 								uParam0->f_3 = string2;
 							
-								if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, string2))
+								if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, string2))
 									func_75(true);
 							}
 						}
@@ -3023,7 +3023,7 @@ void func_72(var uParam0, Vehicle veParam1, var uParam2, var uParam3, var uParam
 							_DISPLAY_HELP_TEXT(string2, -1);
 							uParam0->f_3 = string2;
 						
-							if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, string2))
+							if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, string2))
 								func_75(true);
 						}
 					}
@@ -3150,7 +3150,7 @@ BOOL func_77(const char* sParam0) // Position - 0x4120 (16672)
 {
 	if (!func_78(true, true, false))
 	{
-		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam0) && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/))
+		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam0) && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/))
 			HUD::CLEAR_HELP(true);
 	
 		return false;
@@ -3274,7 +3274,7 @@ BOOL func_79(ePedComponentType epctParam0) // Position - 0x4412 (17426)
 	return false;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x4478 (17528)
+ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x4478 (17528)
 {
 	ePedComponentType type;
 
@@ -3286,19 +3286,19 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 		{
 			if (bIsPlaying)
 				if (!PLAYER::IS_PLAYER_PLAYING(player))
-					return false;
+					return PV_COMP_HEAD;
 		
 			if (bUnk)
 				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
 				else if (Global_2658291[type /*468*/] != 4)
-					return false;
+					return PV_COMP_HEAD;
 		
-			return true;
+			return PV_COMP_BERD;
 		}
 	}
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 Player _INVALID_PLAYER_INDEX() // Position - 0x44D8 (17624)
@@ -3371,17 +3371,17 @@ int _GET_VEHICLE_SEAT_PED_IS_IN(Ped ped, BOOL includeLastVehicle) // Position - 
 	return seatIndex;
 }
 
-BOOL func_84() // Position - 0x45C8 (17864)
+ePedComponentType func_84() // Position - 0x45C8 (17864)
 {
 	return Global_2685150.f_19;
 }
 
-BOOL func_85(int iParam0) // Position - 0x45D6 (17878)
+ePedComponentType func_85(int iParam0) // Position - 0x45D6 (17878)
 {
 	return iParam0 == 51;
 }
 
-BOOL func_86() // Position - 0x45E3 (17891)
+ePedComponentType func_86() // Position - 0x45E3 (17891)
 {
 	return Global_2685150.f_18;
 }
@@ -3791,9 +3791,9 @@ void func_101(var uParam0, const char* sParam1, BOOL bParam2, BOOL bParam3) // P
 
 	if (MISC::IS_STRING_NULL(str))
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			str = "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/;
+			str = "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/;
 		else
-			str = "FM_IHELP_HNT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus.*/;
+			str = "FM_IHELP_HNT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para alternar la cámara.*/;
 
 	if (!MISC::IS_STRING_NULL(uParam0->f_3))
 		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(uParam0->f_3))

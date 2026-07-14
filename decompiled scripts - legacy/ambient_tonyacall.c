@@ -493,7 +493,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 		if (iParam3 < 12)
 			iParam3 = 7;
 
-	Global_22990 = 0;
+	Global_22990 = false;
 	Global_22992 = 0;
 	Global_22997 = 0;
 	Global_23974 = 0;
@@ -513,7 +513,7 @@ BOOL func_6(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x638 (1592)
 		{
 			if (iParam1 > Global_22985)
 			{
-				if (Global_22990 == 0)
+				if (Global_22990 == false)
 				{
 					AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 					Global_21610.f_1 = 3;
@@ -524,7 +524,7 @@ BOOL func_6(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x638 (1592)
 					Global_22980 = 0;
 					Global_22994 = 0;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -974,7 +974,7 @@ void func_27() // Position - 0xE64 (3684)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -992,10 +992,10 @@ void func_27() // Position - 0xE64 (3684)
 	return;
 }
 
-void func_28(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0xEBB (3771)
+void func_28(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0xEBB (3771)
 {
 	Global_22437 = { *uParam0 };
-	Global_8779 = iParam1;
+	Global_8779 = echParam1;
 	TEXT_LABEL_ASSIGN_STRING(&Global_23053, sParam2, 24);
 	Global_23972 = iParam5;
 

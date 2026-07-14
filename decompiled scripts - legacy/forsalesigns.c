@@ -639,9 +639,9 @@ void func_9() // Position - 0x443 (1091)
 		
 			case 1:
 				GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_39, "SHOW_SHARD_MIDSIZED_MESSAGE");
-				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("FS_TITLE" /*Sign Destroyed~s~*/);
+				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("FS_TITLE" /*Letrero destruido~s~*/);
 				GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
-				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("FS_DESTROY" /*~1~/15 signs destroyed.*/);
+				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("FS_DESTROY" /*~1~/15 letreros destruidos.*/);
 				HUD::ADD_TEXT_COMPONENT_INTEGER(func_5(2));
 				GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 				GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
@@ -926,7 +926,7 @@ BOOL func_26(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x937 (2359
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -1192,7 +1192,7 @@ void func_34() // Position - 0xD3A (3386)
 
 BOOL func_35() // Position - 0xDCF (3535)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -1376,7 +1376,7 @@ void func_47() // Position - 0x1161 (4449)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -1630,8 +1630,8 @@ void func_58() // Position - 0x16DE (5854)
 	{
 		func_66(88, 0, 0);
 		func_65(11);
-		func_64("JOSH1_TXT" /*BTW buddy, Avery has a website with all his real estate listings around the city, you might find it useful - ~b~<u>www.lennyavery-realty.com</u>~w~*/, 0);
-		func_62("JOSH1_TXT" /*BTW buddy, Avery has a website with all his real estate listings around the city, you might find it useful - ~b~<u>www.lennyavery-realty.com</u>~w~*/);
+		func_64("JOSH1_TXT" /*Por cierto, colega, Avery tiene todas las propiedades que maneja reflejadas en un sitio web. Podría resultarte útil: - ~b~<u>www.lennyavery-realty.com</u>~w~*/, 0);
+		func_62("JOSH1_TXT" /*Por cierto, colega, Avery tiene todas las propiedades que maneja reflejadas en un sitio web. Podría resultarte útil: - ~b~<u>www.lennyavery-realty.com</u>~w~*/);
 	
 		if (func_56(105) == false)
 			func_59(497850717, 1, 4, 58, 30000, 10000, -1, 176, -1, 0, 1);
@@ -1809,7 +1809,7 @@ void func_64(char* sParam0, int iParam1) // Position - 0x1ACE (6862)
 				Global_114904.f_14148[i /*104*/].f_24 == 0;
 				Global_114904.f_14148[i /*104*/].f_24 = 1;
 			
-				if (Global_114904.f_14148[i /*104*/].f_25 == 1)
+				if (Global_114904.f_14148[i /*104*/].f_25 == true)
 				{
 					if (Global_114904.f_14148[i /*104*/].f_99[0] == true)
 						Global_114904.f_14058[0 /*20*/].f_17 = 0;
@@ -2059,7 +2059,7 @@ void func_67() // Position - 0x1D23 (7459)
 	{
 		if (!Global_80280)
 		{
-			if (func_68() == 2 == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
+			if (func_68() == HUD_COLOUR_BLACK == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			{
 				if (NETWORK::NETWORK_IS_CLOUD_AVAILABLE())
 					Global_114638 = false;
@@ -2073,7 +2073,7 @@ void func_67() // Position - 0x1D23 (7459)
 	return;
 }
 
-int func_68() // Position - 0x21E1 (8673)
+eHudColour func_68() // Position - 0x21E1 (8673)
 {
 	return Global_33775;
 }

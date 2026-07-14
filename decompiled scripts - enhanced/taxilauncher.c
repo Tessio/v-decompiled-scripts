@@ -467,7 +467,7 @@ void func_5() // Position - 0x22D (557)
 	if (iLocal_93 != -1)
 		func_8(&iLocal_93);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TXM_H01" /*Press ~INPUT_CONTEXT~ to hail a taxi.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TXM_H01" /*Pulsa ~INPUT_CONTEXT~ para parar un taxi.*/))
 	{
 		iLocal_92 = iLocal_92 + 1;
 	
@@ -675,7 +675,7 @@ void func_10() // Position - 0x6CF (1743)
 
 	func_6();
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TX_H02" /*Press ~INPUT_ENTER~ to enter a taxi as a passenger. Hold ~INPUT_ENTER~ to jack a taxi.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TX_H02" /*Pulsa ~INPUT_ENTER~ para entrar en un taxi como pasajero. Mantén pulsado ~INPUT_ENTER~ para llevarte un taxi por la fuerza.*/))
 		HUD::CLEAR_HELP(true);
 
 	iLocal_94 = 0;
@@ -874,7 +874,7 @@ void func_16() // Position - 0xA58 (2648)
 			
 				if (bLocal_87)
 				{
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TX_H02" /*Press ~INPUT_ENTER~ to enter a taxi as a passenger. Hold ~INPUT_ENTER~ to jack a taxi.*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TX_H02" /*Pulsa ~INPUT_ENTER~ para entrar en un taxi como pasajero. Mantén pulsado ~INPUT_ENTER~ para llevarte un taxi por la fuerza.*/))
 						HUD::CLEAR_HELP(true);
 				
 					bLocal_87 = false;
@@ -1290,11 +1290,11 @@ void func_29() // Position - 0x120C (4620)
 			{
 				if (!HUD::IS_HELP_MESSAGE_ON_SCREEN())
 				{
-					if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TX_H02" /*Press ~INPUT_ENTER~ to enter a taxi as a passenger. Hold ~INPUT_ENTER~ to jack a taxi.*/))
+					if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TX_H02" /*Pulsa ~INPUT_ENTER~ para entrar en un taxi como pasajero. Mantén pulsado ~INPUT_ENTER~ para llevarte un taxi por la fuerza.*/))
 					{
 						if (Global_114931.f_10056.f_121 < 5)
 						{
-							_DISPLAY_HELP_TEXT("TX_H02" /*Press ~INPUT_ENTER~ to enter a taxi as a passenger. Hold ~INPUT_ENTER~ to jack a taxi.*/, -1);
+							_DISPLAY_HELP_TEXT("TX_H02" /*Pulsa ~INPUT_ENTER~ para entrar en un taxi como pasajero. Mantén pulsado ~INPUT_ENTER~ para llevarte un taxi por la fuerza.*/, -1);
 							Global_114931.f_10056.f_121 = Global_114931.f_10056.f_121 + 1;
 						}
 					
@@ -1339,7 +1339,7 @@ void func_29() // Position - 0x120C (4620)
 			}
 		}
 	}
-	else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TX_H02" /*Press ~INPUT_ENTER~ to enter a taxi as a passenger. Hold ~INPUT_ENTER~ to jack a taxi.*/))
+	else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TX_H02" /*Pulsa ~INPUT_ENTER~ para entrar en un taxi como pasajero. Mantén pulsado ~INPUT_ENTER~ para llevarte un taxi por la fuerza.*/))
 	{
 		HUD::CLEAR_HELP(true);
 	}
@@ -2062,11 +2062,11 @@ void func_58() // Position - 0x2011 (8209)
 								VEHICLE::SET_TAXI_LIGHTS(veLocal_276, true);
 					
 						if (iLocal_93 == -1)
-							_CONTEXT_ADD_HELP_TEXT(&iLocal_93, 0, "TXM_H01" /*Press ~INPUT_CONTEXT~ to hail a taxi.*/, 1, 0, 0, 0);
+							_CONTEXT_ADD_HELP_TEXT(&iLocal_93, 0, "TXM_H01" /*Pulsa ~INPUT_CONTEXT~ para parar un taxi.*/, 1, 0, 0, 0);
 					
 						if (func_61(iLocal_93, true))
 						{
-							if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TXM_H01" /*Press ~INPUT_CONTEXT~ to hail a taxi.*/))
+							if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TXM_H01" /*Pulsa ~INPUT_CONTEXT~ para parar un taxi.*/))
 								HUD::CLEAR_HELP(true);
 						
 							if (iLocal_90 == 0)
@@ -2686,7 +2686,7 @@ BOOL func_73(Vector3 vParam0, var uParam1, var uParam2) // Position - 0x2C7F (11
 
 	nameOfZone = ZONE::GET_NAME_OF_ZONE(vParam0);
 
-	if (MISC::ARE_STRINGS_EQUAL("SanAnd" /*San Andreas*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Alamo" /*Alamo Sea*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("ArmyB" /*Fort Zancudo*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("BhamCa" /*Banham Canyon*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Baytre" /*Baytree Canyon*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("BradT" /*Braddock Tunnel*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("BradP" /*Braddock Pass*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("CANNY" /*Raton Canyon*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("CCreak" /*Cassidy Creek*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("ChamH" /*Chamberlain Hills*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("CHU" /*Chumash*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("COSI" /*Countryside*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("CMSW" /*Chiliad Mountain State Wilderness*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Cypre" /*Cypress Flats*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Desrt" /*Grand Senora Desert*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("ELGorl" /*El Gordo Lighthouse*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Galli" /*Galileo Park*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Galfish" /*Galilee*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Harmo" /*Harmony*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("HumLab" /*Humane Labs and Research*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Jail" /*Bolingbroke Penitentiary*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("LAct" /*Land Act Reservoir*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("LDam" /*Land Act Dam*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Lago" /*Lago Zancudo*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("MTChil" /*Mount Chiliad*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("MTJose" /*Mount Josiah*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("MTGordo" /*Mount Gordo*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("NCHU" /*North Chumash*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Oceana" /*Pacific Ocean*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Palmpow" /*Palmer-Taylor Power Station*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("PBluff" /*Pacific Bluffs*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Paleto" /*Paleto Bay*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("PalCov" /*Paleto Cove*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("PalFor" /*Paleto Forest*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("PalHigh" /*Palomino Highlands*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("RTRAK" /*Redwood Lights Track*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Rancho" /*Rancho*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("SANDY" /*Sandy Shores*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("TongvaH" /*Tongva Hills*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("TongvaV" /*Tongva Valley*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Zenora" /*Senora Freeway*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Slab" /*Stab City*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("WindF" /*Ron Alternates Wind Farm*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Zancudo" /*Zancudo River*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("SanChia" /*San Chianski Mountain Range*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("zQ_UAR" /*Davis Quartz*/, nameOfZone))
+	if (MISC::ARE_STRINGS_EQUAL("SanAnd" /*San Andreas*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Alamo" /*Alamo Sea*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("ArmyB" /*Fort Zancudo*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("BhamCa" /*Banham Canyon*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Baytre" /*Baytree Canyon*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("BradT" /*Túnel de Braddock*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("BradP" /*Braddock Pass*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("CANNY" /*Raton Canyon*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("CCreak" /*Cassidy Creek*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("ChamH" /*Chamberlain Hills*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("CHU" /*Chumash*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("COSI" /*Zona rural*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("CMSW" /*Parque natural del monte Chiliad*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Cypre" /*Cypress Flats*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Desrt" /*Desierto de Grand Señora*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("ELGorl" /*Faro de El Gordo*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Galli" /*Galileo Park*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Galfish" /*Galilee*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Harmo" /*Harmony*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("HumLab" /*Laboratorios Humane*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Jail" /*Penitenciaría de Bolingbroke*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("LAct" /*Embalse de Land Act*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("LDam" /*Presa de Land Act*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Lago" /*Lago Zancudo*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("MTChil" /*Monte Chiliad*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("MTJose" /*Monte Josiah*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("MTGordo" /*Monte Gordo*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("NCHU" /*Chumash Norte*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Oceana" /*Océano Pacífico*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Palmpow" /*Central eléctrica Palmer-Taylor*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("PBluff" /*Pacific Bluffs*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Paleto" /*Paleto Bay*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("PalCov" /*Paleto Cove*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("PalFor" /*Bosque de Paleto*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("PalHigh" /*Palomino Highlands*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("RTRAK" /*Circuito Redwood Lights*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Rancho" /*Rancho*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("SANDY" /*Sandy Shores*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("TongvaH" /*Colinas de Tongva*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("TongvaV" /*Valle de Tongva*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Zenora" /*Autopista de Señora*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Slab" /*Stab City*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("WindF" /*Granja eólica de Ron Alternates*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("Zancudo" /*Río Zancudo*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("SanChia" /*Cordillera San Chianski*/, nameOfZone) || MISC::ARE_STRINGS_EQUAL("zQ_UAR" /*Davis Quartz*/, nameOfZone))
 		return true;
 
 	return false;
@@ -5481,7 +5481,7 @@ BOOL func_118(var uParam0, eCharacter echParam1, char* sParam2, char* sParam3, c
 
 BOOL func_119(var uParam0, var uParam1, int iParam2, BOOL bParam3) // Position - 0x804F (32847)
 {
-	BOOL i;
+	int i;
 
 	Global_23001 = 0;
 
@@ -5497,9 +5497,9 @@ BOOL func_119(var uParam0, var uParam1, int iParam2, BOOL bParam3) // Position -
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_23053 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 				}
 				else
 				{
@@ -5645,9 +5645,9 @@ BOOL func_119(var uParam0, var uParam1, int iParam2, BOOL bParam3) // Position -
 	
 		Global_23002 = iParam2;
 	
-		if (Global_22996 > false)
+		if (Global_22996 > 0)
 		{
-			for (i = false; i < Global_22996; i = i + 1)
+			for (i = 0; i < Global_22996; i = i + 1)
 			{
 				TEXT_LABEL_ASSIGN_STRING(&Global_22619.f_6[i /*6*/], uParam0->[i], 24);
 				TEXT_LABEL_ASSIGN_STRING(&Global_22619.f_187[i /*6*/], uParam1->[i], 24);
@@ -5855,11 +5855,11 @@ void func_128(int iParam0, var uParam1, var uParam2, char* sParam3, char* sParam
 	return;
 }
 
-void func_129(BOOL bParam0) // Position - 0x873A (34618)
+void func_129(int iParam0) // Position - 0x873A (34618)
 {
-	Global_22997 = bParam0;
+	Global_22997 = iParam0;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23997 = 0;
@@ -5869,16 +5869,16 @@ void func_129(BOOL bParam0) // Position - 0x873A (34618)
 
 void func_130() // Position - 0x8760 (34656)
 {
-	Global_23048 = 0;
+	Global_23048 = false;
 	Global_23007 = true;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23009 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23997 = 0;
 	Global_23005 = 0;
-	Global_23052 = 0;
+	Global_23052 = false;
 	Global_23054 = false;
 	Global_2883585 = 0;
 	return;

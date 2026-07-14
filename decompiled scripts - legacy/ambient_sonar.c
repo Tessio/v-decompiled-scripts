@@ -895,7 +895,7 @@ BOOL func_14(int iParam0, int iParam1, int iParam2, BOOL bParam3) // Position - 
 
 void func_15() // Position - 0x992 (2450)
 {
-	if (Global_80280 == false)
+	if (Global_80280 == 0)
 	{
 		Global_9470[14 /*15*/].f_4 = -99;
 		Global_9470[4 /*15*/].f_4 = -99;
@@ -905,16 +905,16 @@ void func_15() // Position - 0x992 (2450)
 			if (func_17(14))
 			{
 				func_16(2, "CELL_2" /*Internet*/, 2, "appInternet", 6, 1, 1, 0, 0);
-				func_16(14, "CELL_29" /*Job List*/, 7, "appMPJobListNEW", 12, 1, 1, 0, 0);
+				func_16(14, "CELL_29" /*Lista de actividades*/, 7, "appMPJobListNEW", 12, 1, 1, 0, 0);
 			}
 			else
 			{
-				func_16(14, "CELL_29" /*Job List*/, 2, "appMPJobListNEW", 12, 1, 1, 0, 0);
+				func_16(14, "CELL_29" /*Lista de actividades*/, 2, "appMPJobListNEW", 12, 1, 1, 0, 0);
 			}
 		}
 		else
 		{
-			func_16(4, "CELL_23" /*Check List*/, 2, "appChecklist", 39, 1, 1, 0, 0);
+			func_16(4, "CELL_23" /*Lista de control*/, 2, "appChecklist", 39, 1, 1, 0, 0);
 		}
 	}
 
@@ -1102,7 +1102,7 @@ void func_27() // Position - 0xD86 (3462)
 		Global_9470[i /*15*/].f_4 = -99;
 	}
 
-	if (Global_80280 == false)
+	if (Global_80280 == 0)
 	{
 		num = 0;
 	
@@ -1114,29 +1114,29 @@ void func_27() // Position - 0xD86 (3462)
 			num2 = num2 + 1;
 		}
 	
-		func_16(7, "CELL_5" /*Email*/, 0, "appEmail", 4, 1, 1, 0, 0);
-		func_16(1, "CELL_1" /*Texts*/, 1, "appTextMessage", 2, 1, 1, 0, 0);
-		func_16(4, "CELL_23" /*Check List*/, 2, "appChecklist", 39, 1, 1, 0, 0);
+		func_16(7, "CELL_5" /*Correo electrónico*/, 0, "appEmail", 4, 1, 1, 0, 0);
+		func_16(1, "CELL_1" /*Mensajes*/, 1, "appTextMessage", 2, 1, 1, 0, 0);
+		func_16(4, "CELL_23" /*Lista de control*/, 2, "appChecklist", 39, 1, 1, 0, 0);
 	
 		if (Global_44869 == 15 && func_33(false) == false && Global_9468 == 0)
 		{
-			func_16(20, "CELL_32" /*Quick Save*/, 3, "appSettings", 43, 1, 1, 0, 0);
+			func_16(20, "CELL_32" /*Guardado rápido*/, 3, "appSettings", 43, 1, 1, 0, 0);
 			Global_21845 = 0;
 			Global_9469 = 255;
 		}
 		else
 		{
-			func_16(20, "CELL_32" /*Quick Save*/, 3, "appSettings", 43, 1, 1, 0, 0);
+			func_16(20, "CELL_32" /*Guardado rápido*/, 3, "appSettings", 43, 1, 1, 0, 0);
 			Global_21845 = 1;
 			Global_9469 = 42;
 		}
 	
 		if (num == 1)
-			func_16(0, "CELL_0" /*Contacts*/, 4, "appContacts", 27, 1, 1, 0, 0);
+			func_16(0, "CELL_0" /*Contactos*/, 4, "appContacts", 27, 1, 1, 0, 0);
 		else
-			func_16(0, "CELL_0" /*Contacts*/, 4, "appContacts", 5, 1, 1, 0, 0);
+			func_16(0, "CELL_0" /*Contactos*/, 4, "appContacts", 5, 1, 1, 0, 0);
 	
-		func_16(10, "CELL_16" /*Settings*/, 5, "appSettings", 24, 1, 1, 0, 0);
+		func_16(10, "CELL_16" /*Ajustes*/, 5, "appSettings", 24, 1, 1, 0, 0);
 		func_16(3, "CELL_7" /*Snapmatic*/, 6, "appCamera", 1, 1, 1, 0, 0);
 		func_16(2, "CELL_2" /*Internet*/, 7, "appInternet", 6, 1, 1, 0, 0);
 	
@@ -1144,70 +1144,70 @@ void func_27() // Position - 0xD86 (3462)
 			func_16(17, "CELL_28" /*Trackify*/, 8, "appTrackify", 42, 1, 1, 0, 0);
 	
 		if (Global_114904.f_14058.f_88 == 1)
-			func_16(16, "CELL_25" /*Sniper*/, 0, "appContacts", 40, 2, 1, 0, 0);
+			func_16(16, "CELL_25" /*Francotirador*/, 0, "appContacts", 40, 2, 1, 0, 0);
 	
-		func_16(26, "CELL_14" /*More Apps*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_16(26, "CELL_14" /*Más aplicaciones*/, -99, "appContacts", 17, 2, 1, 0, 0);
 		func_16(9, "CELL_13" /*BAWSAQ*/, -99, "appContacts", 13, 2, 1, 0, 0);
-		func_16(11, "CELL_14" /*More Apps*/, -99, "appContacts", 8, 2, 1, 0, 0);
-		func_16(28, "CELL_15" /*Spare*/, -99, "appContacts", 17, 2, 1, 0, 0);
-		func_16(29, "CELL_15" /*Spare*/, -99, "appContacts", 17, 2, 1, 0, 0);
-		func_16(30, "CELL_15" /*Spare*/, -99, "appSettings", 17, 2, 1, 0, 0);
-		func_16(31, "CELL_15" /*Spare*/, -99, "appContacts", 17, 2, 1, 0, 0);
-		func_16(32, "CELL_15" /*Spare*/, -99, "appContacts", 17, 2, 1, 0, 0);
-		func_16(33, "CELL_15" /*Spare*/, -99, "appSettings", 17, 2, 1, 0, 0);
+		func_16(11, "CELL_14" /*Más aplicaciones*/, -99, "appContacts", 8, 2, 1, 0, 0);
+		func_16(28, "CELL_15" /*Libre*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_16(29, "CELL_15" /*Libre*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_16(30, "CELL_15" /*Libre*/, -99, "appSettings", 17, 2, 1, 0, 0);
+		func_16(31, "CELL_15" /*Libre*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_16(32, "CELL_15" /*Libre*/, -99, "appContacts", 17, 2, 1, 0, 0);
+		func_16(33, "CELL_15" /*Libre*/, -99, "appSettings", 17, 2, 1, 0, 0);
 	}
 	else
 	{
-		func_16(7, "CELL_5" /*Email*/, 0, "appMPEmail", 4, 1, 1, 0, 0);
-		func_16(21, "CELL_37" /*Quick Join*/, 3, "AppJIPMP", 14, 1, 1, 0, 0);
+		func_16(7, "CELL_5" /*Correo electrónico*/, 0, "appMPEmail", 4, 1, 1, 0, 0);
+		func_16(21, "CELL_37" /*Unirse rápidamente*/, 3, "AppJIPMP", 14, 1, 1, 0, 0);
 	
 		if (func_29())
 			func_16(23, "CELL_HACKER_ROB" /*Darnell Inc.*/, 5, "appHackerDen", 62, 1, 1, 0, 0);
 		else
-			func_16(10, "CELL_16" /*Settings*/, 5, "appSettings", 24, 1, 1, 0, 0);
+			func_16(10, "CELL_16" /*Ajustes*/, 5, "appSettings", 24, 1, 1, 0, 0);
 	
-		func_16(1, "CELL_1" /*Texts*/, 1, "appTextMessage", 2, 1, 1, 0, 0);
+		func_16(1, "CELL_1" /*Mensajes*/, 1, "appTextMessage", 2, 1, 1, 0, 0);
 		func_16(3, "CELL_7" /*Snapmatic*/, 6, "appCamera", 1, 1, 1, 0, 0);
 		func_16(2, "CELL_2" /*Internet*/, 7, "appInternet", 6, 1, 1, 0, 0);
-		func_16(14, "CELL_29" /*Job List*/, 4, "appMPJobListNEW", 12, 1, 1, 0, 0);
-		func_16(0, "CELL_0" /*Contacts*/, 2, "appContacts", 5, 1, 1, 0, 0);
+		func_16(14, "CELL_29" /*Lista de actividades*/, 4, "appMPJobListNEW", 12, 1, 1, 0, 0);
+		func_16(0, "CELL_0" /*Contactos*/, 2, "appContacts", 5, 1, 1, 0, 0);
 	
 		if (IS_BIT_SET(Global_4524844, 4))
 			func_16(17, "CELL_28" /*Trackify*/, 8, "appTrackify", 42, 1, 1, 0, 0);
 	
-		func_16(13, "CELL_35" /*Player List*/, -99, "appMPCopBackup", 39, 1, 1, 0, 0);
+		func_16(13, "CELL_35" /*Lista de jugadores*/, -99, "appMPCopBackup", 39, 1, 1, 0, 0);
 		func_16(13, "CELL_20", -99, "appMPCopBackup", 16, 1, 1, 0, 0);
-		func_16(15, "CELL_18" /*Map*/, -99, "appContacts", 8, 1, 1, 0, 0);
+		func_16(15, "CELL_18" /*Mapa*/, -99, "appContacts", 8, 1, 1, 0, 0);
 		func_16(9, "CELL_13" /*BAWSAQ*/, -99, "appContacts", 13, 2, 1, 0, 0);
-		func_16(5, "CELL_4" /*Sidetasks*/, -99, "appContacts", 12, 2, 1, 0, 0);
-		func_16(24, "CELL_15" /*Spare*/, 0, "appContacts", 17, 2, 1, 0, 0);
-		func_16(25, "CELL_15" /*Spare*/, 1, "appContacts", 17, 2, 1, 0, 0);
-		func_16(26, "CELL_15" /*Spare*/, 2, "appContacts", 17, 2, 1, 0, 0);
-		func_16(27, "CELL_15" /*Spare*/, 3, "appContacts", 17, 2, 1, 0, 0);
-		func_16(28, "CELL_15" /*Spare*/, 4, "appContacts", 17, 2, 1, 0, 0);
-		func_16(29, "CELL_15" /*Spare*/, 5, "appContacts", 17, 2, 1, 0, 0);
-		func_16(30, "CELL_15" /*Spare*/, 6, "appContacts", 17, 2, 1, 0, 0);
-		func_16(31, "CELL_15" /*Spare*/, 7, "appContacts", 17, 2, 1, 0, 0);
-		func_16(32, "CELL_15" /*Spare*/, 8, "appContacts", 17, 2, 1, 0, 0);
-		func_16(33, "CELL_15" /*Spare*/, 9, "appContacts", 17, 2, 1, 0, 0);
-		func_16(34, "CELL_15" /*Spare*/, 10, "appContacts", 17, 2, 1, 0, 0);
+		func_16(5, "CELL_4" /*Misiones secundarias*/, -99, "appContacts", 12, 2, 1, 0, 0);
+		func_16(24, "CELL_15" /*Libre*/, 0, "appContacts", 17, 2, 1, 0, 0);
+		func_16(25, "CELL_15" /*Libre*/, 1, "appContacts", 17, 2, 1, 0, 0);
+		func_16(26, "CELL_15" /*Libre*/, 2, "appContacts", 17, 2, 1, 0, 0);
+		func_16(27, "CELL_15" /*Libre*/, 3, "appContacts", 17, 2, 1, 0, 0);
+		func_16(28, "CELL_15" /*Libre*/, 4, "appContacts", 17, 2, 1, 0, 0);
+		func_16(29, "CELL_15" /*Libre*/, 5, "appContacts", 17, 2, 1, 0, 0);
+		func_16(30, "CELL_15" /*Libre*/, 6, "appContacts", 17, 2, 1, 0, 0);
+		func_16(31, "CELL_15" /*Libre*/, 7, "appContacts", 17, 2, 1, 0, 0);
+		func_16(32, "CELL_15" /*Libre*/, 8, "appContacts", 17, 2, 1, 0, 0);
+		func_16(33, "CELL_15" /*Libre*/, 9, "appContacts", 17, 2, 1, 0, 0);
+		func_16(34, "CELL_15" /*Libre*/, 10, "appContacts", 17, 2, 1, 0, 0);
 	
 		if (!IS_BIT_SET(Global_4524844, 4))
 			if (Global_1836187)
-				func_16(24, "CELL_CIRCBREAK" /*VLSI Unlock*/, 8, "AppVLSI", 54, 1, 1, 0, 0);
+				func_16(24, "CELL_CIRCBREAK" /*Desbloqueo VLSI*/, 8, "AppVLSI", 54, 1, 1, 0, 0);
 			else if (IS_BIT_SET(Global_4524844, 20))
-				func_16(24, "CELL_SIGHTS" /*Sightseer*/, 8, "AppSettings", 59, 1, 1, 0, 0);
+				func_16(24, "CELL_SIGHTS" /*Excursionista*/, 8, "AppSettings", 59, 1, 1, 0, 0);
 			else if (IS_BIT_SET(Global_4524844, 22))
-				func_16(24, "CELL_EXTRACT" /*Extraction*/, 8, "AppExtraction", 58, 1, 1, 0, 0);
+				func_16(24, "CELL_EXTRACT" /*Extracción*/, 8, "AppExtraction", 58, 1, 1, 0, 0);
 			else if (IS_BIT_SET(Global_4524844, 26))
 				if (func_28())
-					func_16(24, "CELL_0" /*Contacts*/, -99, "appContacts", 5, 1, 1, 0, 0);
+					func_16(24, "CELL_0" /*Contactos*/, -99, "appContacts", 5, 1, 1, 0, 0);
 				else
-					func_16(24, "CELL_SECHACK" /*SecuroServ Hack*/, 8, "AppSecuroHack", 57, 1, 1, 0, 0);
+					func_16(24, "CELL_SECHACK" /*Hackeo de SecuroServ*/, 8, "AppSecuroHack", 57, 1, 1, 0, 0);
 	
 		if (IS_BIT_SET(Global_4524844, 4) == false && Global_1836187 == false && IS_BIT_SET(Global_4524844, 20) == false && IS_BIT_SET(Global_4524844, 22) == false && IS_BIT_SET(Global_4524844, 26) == false)
 			if (func_28())
-				func_16(24, "CELL_0" /*Contacts*/, -99, "appContacts", 5, 1, 1, 0, 0);
+				func_16(24, "CELL_0" /*Contactos*/, -99, "appContacts", 5, 1, 1, 0, 0);
 			else
 				func_16(24, "CELL_BOSSAGE" /*SecuroServ*/, 8, "appMPBossAgency", 57, 1, 1, 0, 0);
 	}
@@ -1515,7 +1515,7 @@ void func_51(int iParam0, int iParam1, int iParam2) // Position - 0x173D (5949)
 
 	flag = true;
 
-	if (Global_114904.f_10201[iParam0 /*12*/].f_5 == 1)
+	if (Global_114904.f_10201[iParam0 /*12*/].f_5 == true)
 	{
 		if (Global_114904.f_10201[iParam0 /*12*/].f_6 == 11 || Global_114904.f_10201[iParam0 /*12*/].f_6 == 12)
 			flag = false;
@@ -1575,7 +1575,7 @@ void func_52() // Position - 0x1823 (6179)
 
 	while (num < 321)
 	{
-		if (Global_114904.f_10201[num /*12*/].f_5 == 1)
+		if (Global_114904.f_10201[num /*12*/].f_5 == true)
 		{
 			switch (Global_114904.f_10201[num /*12*/].f_6)
 			{
@@ -1727,7 +1727,7 @@ int func_53() // Position - 0x1CE1 (7393)
 	return 1;
 }
 
-int func_54() // Position - 0x1D2C (7468)
+BOOL func_54() // Position - 0x1D2C (7468)
 {
 	return Global_33775;
 }
@@ -2003,18 +2003,18 @@ Hash func_58(int iParam0, int iParam1) // Position - 0x1E4D (7757)
 	return joaat("PROP_BOUGHT_TOWI") /* TUNEABLE: PROP_BOUGHT_TOWI, PROP_BOUGHT_TOWI */;
 }
 
-void func_59(eCharacter echParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) // Position - 0x222B (8747)
+void func_59(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4) // Position - 0x222B (8747)
 {
 	int outValue;
 	Hash statHash;
 
-	if (func_76(echParam0) == 3)
+	if (func_76(iParam0) == 3)
 		return;
 
-	if (func_76(echParam0) == 4)
+	if (func_76(iParam0) == 4)
 		return;
 
-	func_60(func_76(echParam0), 1, iParam1, iParam2, false);
+	func_60(func_76(iParam0), 1, iParam1, iParam2, false);
 
 	if (bParam3)
 	{
@@ -2022,17 +2022,17 @@ void func_59(eCharacter echParam0, int iParam1, int iParam2, BOOL bParam3, BOOL 
 	
 		if (bParam4)
 		{
-			switch (echParam0)
+			switch (iParam0)
 			{
-				case CHAR_MICHAEL:
+				case 0:
 					statHash = joaat("SP0_MONEY_MADE_FROM_RANDOM_PEDS") /* TUNEABLE: SP0_MONEY_MADE_FROM_RANDOM_PEDS */;
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1:
 					statHash = joaat("SP1_MONEY_MADE_FROM_RANDOM_PEDS") /* TUNEABLE: SP1_MONEY_MADE_FROM_RANDOM_PEDS */;
 					break;
 			
-				case CHAR_TREVOR:
+				case 2:
 					statHash = joaat("SP2_MONEY_MADE_FROM_RANDOM_PEDS") /* TUNEABLE: SP2_MONEY_MADE_FROM_RANDOM_PEDS */;
 					break;
 			
@@ -2042,17 +2042,17 @@ void func_59(eCharacter echParam0, int iParam1, int iParam2, BOOL bParam3, BOOL 
 		}
 		else
 		{
-			switch (echParam0)
+			switch (iParam0)
 			{
-				case CHAR_MICHAEL:
+				case 0:
 					statHash = joaat("SP0_MONEY_MADE_FROM_MISSIONS") /* TUNEABLE: SP0_MONEY_MADE_FROM_MISSIONS */;
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1:
 					statHash = joaat("SP1_MONEY_MADE_FROM_MISSIONS") /* TUNEABLE: SP1_MONEY_MADE_FROM_MISSIONS */;
 					break;
 			
-				case CHAR_TREVOR:
+				case 2:
 					statHash = joaat("SP2_MONEY_MADE_FROM_MISSIONS") /* TUNEABLE: SP2_MONEY_MADE_FROM_MISSIONS */;
 					break;
 			
@@ -2550,7 +2550,7 @@ void func_63(int iParam0) // Position - 0x2BD8 (11224)
 	if (flag)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&txdName, "CHAR_LIFEINVADER", 64);
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*You have redeemed your promotion for ~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*Has canjeado tu promoción de ~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(func_64(iParam0));
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, true, 0, "", 0);
 	}
@@ -2563,28 +2563,28 @@ char* func_64(int iParam0) // Position - 0x2D52 (11602)
 	switch (iParam0)
 	{
 		case 0:
-			return "COUP_HAIRC" /*one free haircut.*/;
+			return "COUP_HAIRC" /*un corte de pelo gratis.*/;
 	
 		case 1:
-			return "COUP_TATTOO" /*one free tattoo.*/;
+			return "COUP_TATTOO" /*un tatuaje gratis.*/;
 	
 		case 2:
-			return "COUP_WARSTOCK" /*10% off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 3:
-			return "COUP_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 4:
-			return "COUP_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 5:
-			return "COUP_MEDSPENS" /*10 percent off your next medical expenses.*/;
+			return "COUP_MEDSPENS" /*10% de descuento en tus próximos gastos médicos.*/;
 	
 		case 6:
-			return "COUP_SPRUNK" /*one free can of Sprunk.*/;
+			return "COUP_SPRUNK" /*una lata gratis de Sprunk.*/;
 	
 		case 7:
-			return "COUP_RESPRAY" /*one free respray.*/;
+			return "COUP_RESPRAY" /*una pintura de vehículo gratis.*/;
 	
 		case 8:
 			return "COUP_XMAS2017";
@@ -2599,22 +2599,22 @@ char* func_64(int iParam0) // Position - 0x2D52 (11602)
 			return "COUP_CAR2_XMAS2018";
 	
 		case 12:
-			return "COUP_CAS_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_CAS_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 13:
-			return "COUP_CAS_DOCKTEASE" /*10 percent off your next purchase at DockTease.com.*/;
+			return "COUP_CAS_DOCKTEASE" /*10% de descuento en tu próxima compra en DockTease.com.*/;
 	
 		case 14:
-			return "COUP_CAS_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_CAS_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 15:
-			return "COUP_CAS_SSASA" /*10 percent off your next purchase at southernsanandreassuperautos.com.*/;
+			return "COUP_CAS_SSASA" /*10% de descuento en tu próxima compra en southernsanandreassuperautos.com.*/;
 	
 		case 16:
-			return "COUP_CAS_WARSTOCK" /*10 percent off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_CAS_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 17:
-			return "COUP_CAS_PANDM" /*10 percent off your next purchase at pandmcycles.com.*/;
+			return "COUP_CAS_PANDM" /*10% de descuento en tu próxima compra en pandmcycles.com.*/;
 	
 		default:
 			break;
@@ -2895,9 +2895,9 @@ void func_75() // Position - 0x31FF (12799)
 	return;
 }
 
-int func_76(eCharacter echParam0) // Position - 0x3274 (12916)
+int func_76(int iParam0) // Position - 0x3274 (12916)
 {
-	return Global_2339[echParam0 /*29*/].f_17;
+	return Global_2339[iParam0 /*29*/].f_17;
 }
 
 int func_77(int iParam0) // Position - 0x3285 (12933)
@@ -2997,7 +2997,7 @@ BOOL func_78(var uParam0, var uParam1) // Position - 0x3375 (13173)
 	}
 
 	if (!Global_80541)
-		func_85(&(uParam0->f_11), &(uParam0->f_12), &(uParam0->f_9), 3, &iLocal_391, &uLocal_392, "SUBM_TITLE" /*Waste Collected~s~*/, "SUBM_COLLECT" /*~1~/30 nuclear waste collected.*/);
+		func_85(&(uParam0->f_11), &(uParam0->f_12), &(uParam0->f_9), 3, &iLocal_391, &uLocal_392, "SUBM_TITLE" /*Desperdicio recogido~s~*/, "SUBM_COLLECT" /*~1~ de 30 desperdicios nucleares recogidos.*/);
 
 	if (uParam0->f_1.f_4 >= uParam0->f_1.f_3)
 	{
@@ -3747,7 +3747,7 @@ void func_112() // Position - 0x4216 (16918)
 		{
 			if (!func_119(15))
 			{
-				func_116("SUBM_HELP1" /*Follow the sonar blips on Trackify to locate nuclear waste lost on the sea bed.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
+				func_116("SUBM_HELP1" /*Sigue las señales del sónar para encontrar desperdicios nucleares en el fondo del mar.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
 				func_115(15);
 			}
 		
@@ -3757,7 +3757,7 @@ void func_112() // Position - 0x4216 (16918)
 			
 				if (!bLocal_387 && !(uLocal_40.f_1.f_4 >= uLocal_40.f_1.f_3))
 				{
-					func_116("SUBM_TRKHELP" /*To restart Trackify, select the Trackify app from the bottom right of the phone.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
+					func_116("SUBM_TRKHELP" /*Para reiniciar Trackify, selecciona la aplicación, abajo a la derecha, en la pantalla del móvil.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
 					bLocal_387 = true;
 				}
 			}
@@ -3876,7 +3876,7 @@ void func_118() // Position - 0x4554 (17748)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -3919,7 +3919,7 @@ void func_120() // Position - 0x46AB (18091)
 {
 	iLocal_391 = 0;
 	func_124();
-	func_123(&uLocal_40, 3, joaat("prop_rad_waste_barrel_01"), "SUBM_COLLECT" /*~1~/30 nuclear waste collected.*/);
+	func_123(&uLocal_40, 3, joaat("prop_rad_waste_barrel_01"), "SUBM_COLLECT" /*~1~ de 30 desperdicios nucleares recogidos.*/);
 	func_121(&uLocal_40, joaat("NUM_HIDDEN_PACKAGES_3") /* TUNEABLE: NUM_HIDDEN_PACKAGES_3, NUM_HIDDEN_PACKAGES_3 */, 815, 30);
 
 	if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(PLAYER::PLAYER_PED_ID()))

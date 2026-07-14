@@ -1843,7 +1843,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -1867,9 +1867,9 @@ int func_35(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x1B8D (7053
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_23053 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -2555,7 +2555,7 @@ void func_70(int iParam0, BOOL bParam1) // Position - 0x26B6 (9910)
 					func_75(func_76(iParam0));
 				
 					if (!func_74(70))
-						func_71("DI_HLP_SPCL" /*Unique characters become available in Rockstar Editor's Director Mode as you meet them around Los Santos.*/, 2, 0, 20000, 10000, 7, 0, 210, 0);
+						func_71("DI_HLP_SPCL" /*Los personajes especiales estarán disponibles en el modo director del editor Rockstar a medida que los encuentres por Los Santos.*/, 2, 0, 20000, 10000, 7, 0, 210, 0);
 				}
 			}
 		}
@@ -2673,7 +2673,7 @@ BOOL func_74(int iParam0) // Position - 0x2A30 (10800)
 void func_75(char* sParam0) // Position - 0x2A70 (10864)
 {
 	HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
-	HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT_SUBTITLE_LABEL("CHAR_ACTING_UP", "CHAR_ACTING_UP", false, 0, "DI_FEED_CHAR" /*Director Mode Actor Unlock*/, sParam0);
+	HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT_SUBTITLE_LABEL("CHAR_ACTING_UP", "CHAR_ACTING_UP", false, 0, "DI_FEED_CHAR" /*Actor del modo director desbloqueado*/, sParam0);
 	return;
 }
 
@@ -2709,16 +2709,16 @@ char* func_76(int iParam0) // Position - 0x2A93 (10899)
 			return "CM_SPEMAN" /*Mani*/;
 	
 		case 9:
-			return "CM_SPEMIM" /*Mime*/;
+			return "CM_SPEMIM" /*Mimo*/;
 	
 		case 10:
 			return "CM_SPEPAM" /*Pamela Drake*/;
 	
 		case 11:
-			return "CM_SPEIMP" /*Impotent Rage*/;
+			return "CM_SPEIMP" /*Furia Impotente*/;
 	
 		case 12:
-			return "CM_SPEZOM" /*Zombie*/;
+			return "CM_SPEZOM" /*Zombi*/;
 	}
 
 	return "ERROR!";
@@ -3158,7 +3158,7 @@ void func_107() // Position - 0x31F5 (12789)
 	bLocal_436 = true;
 	iLocal_250 = 15;
 	iLocal_251 = 5;
-	sLocal_301 = "PBCL_INTERACT" /*Press ~INPUT_CONTEXT~ to talk to Clinton.*/;
+	sLocal_301 = "PBCL_INTERACT" /*Pulsa ~INPUT_CONTEXT~ para hablar con Clinton.*/;
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_310, "PBCL_CONV_M1", 16);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_314, "PBCL_CONV_T1", 16);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_318, "PBCL_CONV_F1", 16);

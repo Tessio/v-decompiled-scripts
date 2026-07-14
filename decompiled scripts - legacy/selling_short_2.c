@@ -6383,8 +6383,8 @@ void func_6(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 	
 		func_14(true, bParam3, bParam2, false);
 		Global_65016 = true;
-		Global_77345 = true;
-		Global_80278 = true;
+		Global_77345 = PV_COMP_BERD;
+		Global_80278 = PV_COMP_BERD;
 	}
 	else
 	{
@@ -6405,7 +6405,7 @@ void func_6(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_12(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80278 = false;
+		Global_80278 = PV_COMP_HEAD;
 	}
 
 	return;
@@ -6435,31 +6435,31 @@ BOOL func_8(Player plParam0, int iParam1) // Position - 0x3DB (987)
 	return flag;
 }
 
-eCharacter func_9(int iParam0, BOOL bParam1) // Position - 0x434 (1076)
+eCharacter func_9(BOOL bParam0, BOOL bParam1) // Position - 0x434 (1076)
 {
 	eCharacter character;
-	int num;
+	BOOL flag;
 
-	num = iParam0;
+	flag = bParam0;
 
-	if (num == -1)
-		num = func_10();
+	if (flag == -1)
+		flag = func_10();
 
-	if (Global_1575070[num] == true)
+	if (Global_1575070[flag] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		character = Global_1574921[flag];
 		bParam1;
 	}
 
 	return character;
 }
 
-int func_10() // Position - 0x475 (1141)
+BOOL func_10() // Position - 0x475 (1141)
 {
 	return Global_1574927;
 }
@@ -6519,7 +6519,7 @@ int func_14(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position 
 
 BOOL func_15() // Position - 0x523 (1315)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -7287,9 +7287,9 @@ void func_35(BOOL bParam0) // Position - 0x282C (10284)
 		if (func_40(0))
 			func_36(0);
 	}
-	else if (Global_21610.f_1 == 1)
+	else if (Global_21610.f_1 == true)
 	{
-		if (!(Global_21610.f_1 == 0))
+		if (!(Global_21610.f_1 == false))
 			Global_21610.f_1 = 3;
 	}
 

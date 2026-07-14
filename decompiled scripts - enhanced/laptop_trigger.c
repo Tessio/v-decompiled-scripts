@@ -349,7 +349,7 @@ void main() // Position - 0x0 (0)
 					
 						if (iLocal_140 == -1)
 							if (flag)
-								_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "MPLA_BILL" /*Unable to use the laptop until utility charge is paid.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "MPLA_BILL" /*No puedes usar el portátil hasta que pagues la tasa de consumo.*/, 0, 0, 0, 0);
 							else if (func_376())
 								func_345(flag4);
 							else if (func_342())
@@ -359,7 +359,7 @@ void main() // Position - 0x0 (0)
 							else if (func_373())
 								func_327(flag4);
 							else
-								_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "BROWSEINPUTTRIG" /*Press ~INPUT_CONTEXT~ to browse the internet on this computer.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "BROWSEINPUTTRIG" /*Pulsa ~INPUT_CONTEXT~ para navegar por Internet desde este ordenador.*/, 0, 0, 0, 0);
 					}
 				
 					if (iLocal_140 != -1 && func_325(iLocal_140, true) && !TASK::IS_PED_RUNNING(PLAYER::PLAYER_PED_ID()) && func_324())
@@ -661,29 +661,29 @@ BOOL func_11(ePedComponentType epctParam0) // Position - 0xB19 (2841)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 				return func_12(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 13;
 
 	return false;
 }
 
-int func_12(ePedComponentType epctParam0) // Position - 0xB60 (2912)
+int func_12(BOOL bParam0) // Position - 0xB60 (2912)
 {
-	switch (epctParam0)
+	switch (bParam0)
 	{
-		case PV_COMP_HEAD:
-		case PV_COMP_BERD:
-		case PV_COMP_HAIR:
-		case PV_COMP_UPPR:
-		case PV_COMP_LOWR:
-		case PV_COMP_HAND:
-		case PV_COMP_FEET:
-		case PV_COMP_TEEF:
-		case PV_COMP_ACCS:
-		case PV_COMP_TASK:
-		case PV_COMP_DECL:
-		case PV_COMP_JBIB:
-		case PV_COMP_MAX:
+		case false:
+		case true:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
 		case 13:
 		case 14:
 		case 15:
@@ -1054,17 +1054,17 @@ BOOL func_23() // Position - 0x1259 (4697)
 	return Global_77359;
 }
 
-void func_24(ePedComponentType epctParam0, BOOL bParam1, BOOL bParam2) // Position - 0x1265 (4709)
+void func_24(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x1265 (4709)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam1)
 		if (!bParam2)
-			*epctParam0 = NETWORK::GET_NETWORK_TIME();
+			*iParam0 = NETWORK::GET_NETWORK_TIME();
 		else
-			*epctParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
+			*iParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
 	else
-		*epctParam0 = MISC::GET_GAME_TIMER();
+		*iParam0 = MISC::GET_GAME_TIMER();
 
-	epctParam0->f_1 = 1;
+	iParam0->f_1 = 1;
 	return;
 }
 
@@ -1087,7 +1087,7 @@ void func_26() // Position - 0x12C3 (4803)
 	return;
 }
 
-ePedComponentType func_27() // Position - 0x12F1 (4849)
+BOOL func_27() // Position - 0x12F1 (4849)
 {
 	return Global_2685153.f_693;
 }
@@ -1268,7 +1268,7 @@ void func_34(BOOL bParam0, int iParam1, int iParam2) // Position - 0x1576 (5494)
 		func_62();
 	
 		if (!func_121(PLAYER::PLAYER_ID()) && iParam1 != 1)
-			_SEND_TEXT_MESSAGE_FROM_CHARACTER_2(_CHAR_GANGAPP_SECUROSERV, "GB_TXTMSG_INIT2" /*Thank you for registering with SecuroServ as a VIP. Recruit your Protection Detail immediately to start feeling the benefits of having a troop of armed Bodyguards at your beck and call. But what now? Take your operation to the next level by getting an office on dynasty8realestate.com, of course! You'll become a CEO with access to Special Cargo, Vehicle Cargo, Special Vehicle Work and many other benefits.*/, 2, 0, 0, 0, 0, true, 0, 1);
+			_SEND_TEXT_MESSAGE_FROM_CHARACTER_2(_CHAR_GANGAPP_SECUROSERV, "GB_TXTMSG_INIT2" /*Gracias por registrarte como vip con SecuroServ. Recluta a tu grupo de seguridad inmediatamente para comenzar a disfrutar de los beneficios de tener una tropa armada de escoltas a tu disposición. ¿Y ahora qué? ¡Lleva la operación al siguiente nivel y compra una oficina en dynasty8realestate.com, cómo no! Te convertirás en jefe y podrás acceder a los trabajos de mercancía especial, exportación de vehículos y vehículos especiales, además de muchas otras ventajas.*/, 2, 0, 0, 0, 0, true, 0, 1);
 	}
 
 	return;
@@ -1641,7 +1641,7 @@ void func_44(int iParam0) // Position - 0x1D0B (7435)
 	int j;
 	int value2;
 	int k;
-	BOOL value3;
+	int value3;
 	int value4;
 	int value5;
 	int value6;
@@ -2227,9 +2227,9 @@ void func_62() // Position - 0x29ED (10733)
 {
 	if (!func_116() && func_77() && func_75(PLAYER::PLAYER_ID()))
 		if (func_72())
-			_THEFEED_SHOW_MESSAGE("GB_INFO_MC_L" /*There are players looking to join a MC in this session.*/, false);
+			_THEFEED_SHOW_MESSAGE("GB_INFO_MC_L" /*Hay jugadores que desean unirse a un club de moteros en esta sesión.*/, false);
 		else
-			_THEFEED_SHOW_MESSAGE("GB_INFO_LFG" /*There are players looking for work as Bodyguards in this session.*/, false);
+			_THEFEED_SHOW_MESSAGE("GB_INFO_LFG" /*Hay jugadores que buscan trabajo como escoltas en esta sesión.*/, false);
 
 	return;
 }
@@ -2251,7 +2251,7 @@ int _THEFEED_SHOW_MESSAGE(char* sParam0, BOOL bParam1) // Position - 0x2A31 (108
 	return num;
 }
 
-void func_64(int iParam0, char* sParam1, int iParam2, char* sParam3, ePedComponentType epctParam4, ePedComponentType epctParam5, ePedComponentType epctParam6, int iParam7, int iParam8, char* sParam9, char* sParam10, char* sParam11) // Position - 0x2A69 (10857)
+void func_64(int iParam0, char* sParam1, int iParam2, char* sParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6, int iParam7, int iParam8, char* sParam9, char* sParam10, char* sParam11) // Position - 0x2A69 (10857)
 {
 	int num;
 
@@ -2265,9 +2265,9 @@ void func_64(int iParam0, char* sParam1, int iParam2, char* sParam3, ePedCompone
 		Global_1944385.f_5[num /*53*/] = iParam0;
 		Global_1944385.f_5[num /*53*/].f_1 = iParam2;
 		TEXT_LABEL_ASSIGN_STRING(&(Global_1944385.f_5[num /*53*/].f_8), sParam1, 16);
-		Global_1944385.f_5[num /*53*/].f_2[0] = epctParam4;
-		Global_1944385.f_5[num /*53*/].f_2[1] = epctParam5;
-		Global_1944385.f_5[num /*53*/].f_2[2] = epctParam6;
+		Global_1944385.f_5[num /*53*/].f_2[0] = bParam4;
+		Global_1944385.f_5[num /*53*/].f_2[1] = bParam5;
+		Global_1944385.f_5[num /*53*/].f_2[2] = bParam6;
 		Global_1944385.f_5[num /*53*/].f_7 = iParam7;
 		Global_1944385.f_5[num /*53*/].f_6 = iParam8;
 		TEXT_LABEL_ASSIGN_STRING(&(Global_1944385.f_5[num /*53*/].f_12), sParam3, 64);
@@ -2323,7 +2323,7 @@ BOOL func_67(ePedComponentType epctParam0, int iParam1) // Position - 0x2C0C (11
 		return false;
 
 	if (epctParam0 == PLAYER::PLAYER_ID())
-		flag = func_68(-1, false) == CHAR_MIKE_FRANK_CONF;
+		flag = func_68(-1, false) == 8;
 	else
 		flag = Global_1845299[epctParam0 /*883*/].f_198 == 8;
 
@@ -2334,28 +2334,28 @@ BOOL func_67(ePedComponentType epctParam0, int iParam1) // Position - 0x2C0C (11
 	return flag;
 }
 
-eCharacter func_68(int iParam0, BOOL bParam1) // Position - 0x2C65 (11365)
+int func_68(int iParam0, BOOL bParam1) // Position - 0x2C65 (11365)
 {
-	eCharacter character;
 	int num;
+	int num2;
 
-	num = iParam0;
+	num2 = iParam0;
 
-	if (num == -1)
-		num = func_69();
+	if (num2 == -1)
+		num2 = func_69();
 
-	if (Global_1575072[num] == true)
+	if (Global_1575072[num2] == true)
 	{
 		bParam1;
-		character = CHAR_MIKE_FRANK_CONF;
+		num = 8;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		num = Global_1574921[num2];
 		bParam1;
 	}
 
-	return character;
+	return num;
 }
 
 int func_69() // Position - 0x2CA6 (11430)
@@ -2580,11 +2580,11 @@ int func_83(ePedComponentType epctParam0) // Position - 0x300B (12299)
 	return 0;
 }
 
-BOOL func_84(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x3025 (12325)
+BOOL func_84(ePedComponentType epctParam0, int iParam1, int iParam2) // Position - 0x3025 (12325)
 {
 	ePedComponentType type;
 
-	if (func_88(epctParam0) == epctParam1)
+	if (func_88(epctParam0) == iParam1)
 	{
 		if (iParam2 == -1)
 		{
@@ -2613,7 +2613,7 @@ int func_85(ePedComponentType epctParam0) // Position - 0x3063 (12387)
 BOOL func_86(Player plParam0, BOOL bParam1) // Position - 0x3086 (12422)
 {
 	if (func_70(plParam0))
-		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID)
+		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != -1 || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != -1)
 			return true;
 
 	return false;
@@ -2624,18 +2624,18 @@ ePedComponentType func_87(ePedComponentType epctParam0) // Position - 0x30CA (12
 	return Global_1892798[epctParam0 /*615*/].f_10.f_36;
 }
 
-ePedComponentType func_88(ePedComponentType epctParam0) // Position - 0x30DF (12511)
+int func_88(ePedComponentType epctParam0) // Position - 0x30DF (12511)
 {
 	if (func_89(epctParam0, false))
 		return Global_1892798[epctParam0 /*615*/].f_10.f_33;
 
-	return PV_COMP_INVALID;
+	return -1;
 }
 
 BOOL func_89(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x3102 (12546)
 {
 	if (func_70(epctParam0))
-		if (Global_1892798[epctParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID || bParam1 && Global_1892798[epctParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID)
+		if (Global_1892798[epctParam0 /*615*/].f_10.f_33 != -1 || bParam1 && Global_1892798[epctParam0 /*615*/].f_10.f_34 != -1)
 			return true;
 
 	return false;
@@ -2649,13 +2649,13 @@ int func_90(ePedComponentType epctParam0) // Position - 0x3146 (12614)
 	return 0;
 }
 
-ePedComponentType func_91(ePedComponentType epctParam0) // Position - 0x315F (12639)
+int func_91(ePedComponentType epctParam0) // Position - 0x315F (12639)
 {
 	if (func_70(epctParam0))
 		if (func_86(epctParam0, false))
 			return Global_1892798[epctParam0 /*615*/].f_10.f_34;
 
-	return PV_COMP_INVALID;
+	return -1;
 }
 
 BOOL func_92(ePedComponentType epctParam0) // Position - 0x318B (12683)
@@ -3287,12 +3287,12 @@ const char* func_141(ePedComponentType epctParam0, BOOL bParam1) // Position - 0
 		if (func_107(epctParam0, true))
 			return func_142();
 
-	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACC" /*An Organization*/);
+	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACC" /*Organización*/);
 }
 
 const char* func_142() // Position - 0x3BF5 (15349)
 {
-	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACCM" /*Motorcycle Club*/);
+	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACCM" /*Club de moteros*/);
 }
 
 struct<16> func_143(int iParam0, int iParam1, int iParam2) // Position - 0x3C05 (15365)
@@ -5151,21 +5151,21 @@ int func_172(int iParam0) // Position - 0x5B03 (23299)
 void func_173(int iParam0, int iParam1) // Position - 0x5C8C (23692)
 {
 	var entityCoords;
-	BOOL flag;
+	int num;
 	Hash hash;
 	Hash hash2;
 	Hash hash3;
-	int num;
+	int num2;
 
 	if (_NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, false))
 		entityCoords = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true) };
 
-	flag = func_178();
+	num = func_178();
 	hash = func_177();
 	hash2 = func_176(iParam1);
 	hash3 = func_174(iParam0);
-	num = -1;
-	STATS::_PLAYSTATS_PH_ACTIVITY(entityCoords, flag, hash, hash2, hash3, num);
+	num2 = -1;
+	STATS::_PLAYSTATS_PH_ACTIVITY(entityCoords, num, hash, hash2, hash3, num2);
 	return;
 }
 
@@ -5325,9 +5325,9 @@ Hash func_177() // Position - 0x5F45 (24389)
 	return MISC::GET_HASH_KEY("PROGRESS_HUB_TIER_COMPLETED");
 }
 
-BOOL func_178() // Position - 0x5F55 (24405)
+int func_178() // Position - 0x5F55 (24405)
 {
-	if (Global_1674225 == false)
+	if (Global_1674225 == 0)
 		func_179();
 
 	return Global_1674225;
@@ -8405,7 +8405,7 @@ int func_196(int iParam0) // Position - 0x88E0 (35040)
 void func_197(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7) // Position - 0x9495 (38037)
 {
 	var entityCoords;
-	BOOL flag;
+	int num;
 	Hash hash;
 	Hash hash2;
 	Any any;
@@ -8414,12 +8414,12 @@ void func_197(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 	if (_NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, false))
 		entityCoords = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true) };
 
-	flag = func_178();
+	num = func_178();
 	hash = func_202(uParam0.f_6 >= uParam0.f_2.f_2);
 	hash2 = func_198(uParam0, uParam0.f_1, uParam0.f_2);
 	any = uParam0.f_6;
 	any2 = uParam0.f_2.f_2;
-	STATS::_PLAYSTATS_PH_ACTIVITY(entityCoords, flag, hash, hash2, any, any2);
+	STATS::_PLAYSTATS_PH_ACTIVITY(entityCoords, num, hash, hash2, any, any2);
 	return;
 }
 
@@ -15888,12 +15888,12 @@ void func_230() // Position - 0x134C2 (79042)
 	{
 		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
 		TEXT_LABEL_ASSIGN_STRING(&subject, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(&Global_10107[1 /*6*/]), 64);
-		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*New Contact*/);
+		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*Nuevo contacto*/);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, filenameForAudioConversation, &subject);
 	}
 	else
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*New Contact: ~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*Nuevo contacto: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Global_10107[1 /*6*/]);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, "", 0);
 	}
@@ -16426,7 +16426,7 @@ BOOL func_268() // Position - 0x13EFD (81661)
 	return IS_BIT_SET(Global_2685153, 20);
 }
 
-ePedComponentType func_269() // Position - 0x13F0C (81676)
+BOOL func_269() // Position - 0x13F0C (81676)
 {
 	return IS_BIT_SET(Global_2686095.f_1.f_2810, 3);
 }
@@ -16516,7 +16516,7 @@ void func_275() // Position - 0x14041 (81985)
 	return;
 }
 
-ePedComponentType func_276() // Position - 0x140A2 (82082)
+BOOL func_276() // Position - 0x140A2 (82082)
 {
 	return Global_2685153.f_742;
 }
@@ -16548,7 +16548,7 @@ void func_279(int iParam0, int iParam1, BOOL bParam2) // Position - 0x14100 (821
 	{
 		if (iParam1 == 1)
 		{
-			if (Global_2733138.f_3589 == PV_COMP_INVALID)
+			if (Global_2733138.f_3589 == -1)
 				Global_2733138.f_3589 = Global_262145.f_26842;
 		
 			func_24(&(Global_2733138.f_3587), false, false);
@@ -16616,7 +16616,7 @@ BOOL func_283(Player plParam0) // Position - 0x1422F (82479)
 	return IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_11.f_1, 0);
 }
 
-ePedComponentType func_284() // Position - 0x14246 (82502)
+BOOL func_284() // Position - 0x14246 (82502)
 {
 	return Global_2685153.f_846;
 }
@@ -16963,7 +16963,7 @@ const char* func_305(int iParam0) // Position - 0x14869 (84073)
 		
 	}
 
-	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACC" /*An Organization*/);
+	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACC" /*Organización*/);
 }
 
 BOOL func_306() // Position - 0x1488D (84109)
@@ -17026,15 +17026,15 @@ int _MPPLY_STAT_GET_INT(Hash hParam0) // Position - 0x14941 (84289)
 	return 0;
 }
 
-ePedComponentType func_313() // Position - 0x1495F (84319)
+int func_313() // Position - 0x1495F (84319)
 {
 	return Global_262145.f_12914;
 }
 
-ePedComponentType func_314() // Position - 0x1496E (84334)
+int func_314() // Position - 0x1496E (84334)
 {
 	int i;
-	ePedComponentType num;
+	int num;
 	ePedComponentType type;
 
 	for (i = 0; i < 32; i = i + 1)
@@ -17440,7 +17440,7 @@ int func_326(int iParam0) // Position - 0x152E7 (86759)
 void func_327(BOOL bParam0) // Position - 0x15322 (86818)
 {
 	if (func_321() && !NETWORK::NETWORK_IS_PLAYER_IN_MP_CUTSCENE(PLAYER::PLAYER_ID()) && !func_328() && !Global_1950567)
-		_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 2, "ARENAWHINPUT" /*Press ~INPUT_CONTEXT~ to access arenawar.tv.~n~Press ~INPUT_CONTEXT_SECONDARY~ to view Sponsorship Tier Unlocks.*/, 0, 0, 0, 0);
+		_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 2, "ARENAWHINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder a arenawar.tv.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para ver los desbloqueos por nivel de patrocinio.*/, 0, 0, 0, 0);
 
 	return;
 }
@@ -17456,22 +17456,22 @@ void func_329(BOOL bParam0) // Position - 0x15371 (86897)
 	{
 		if (func_333())
 		{
-			func_332("WHPRIVSESLAP" /*Join a public session to access the SecuroServ network.*/);
+			func_332("WHPRIVSESLAP" /*Únete a una sesión pública para acceder a la red de SecuroServ.*/);
 		}
 		else if (!bParam0)
 		{
 			if (func_314() >= func_313())
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "WHSECUROMAXVIP" /*This computer is unavailable. The maximum number of VIPs, CEOs and Club Presidents has been reached in this session.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "WHSECUROMAXVIP" /*Este ordenador no está disponible. Esta sesión ha alcanzado el máximo número de vips, jefes y presidentes de club de moteros.*/, 0, 0, 0, 0);
 			else if (func_309(PLAYER::PLAYER_ID()))
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "PIM_EXECH0x1" /*SecuroServ access is currently blocked due to your recent behavior.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "PIM_EXECH0x1" /*Se ha bloqueado el acceso a SecuroServ por tus últimas acciones.*/, 0, 0, 0, 0);
 			else if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
-				func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+				func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			else
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "SECINPUTTREGLAP" /*Press ~INPUT_CONTEXT~ to register as a SecuroServ CEO and access this computer.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "SECINPUTTREGLAP" /*Pulsa ~INPUT_CONTEXT~ para registrarte en SecuroServ como jefe y acceder a este ordenador.*/, 0, 0, 0, 0);
 		}
 		else if (func_73(PLAYER::PLAYER_ID()))
 		{
-			func_332("WHBIKERBLCK" /*You need to register as a SecuroServ CEO to access this computer.*/);
+			func_332("WHBIKERBLCK" /*Necesitas registrarte como jefe en SecuroServ para acceder a este ordenador.*/);
 		}
 		else if (_STOPWATCH_IS_INITIALIZED(&uLocal_145) && func_384(&uLocal_145, 10000, true) || !bLocal_142)
 		{
@@ -17480,7 +17480,7 @@ void func_329(BOOL bParam0) // Position - 0x15371 (86897)
 				bLocal_142 = true;
 			
 				if (!Global_1950567)
-					func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+					func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			}
 			else
 			{
@@ -17489,13 +17489,13 @@ void func_329(BOOL bParam0) // Position - 0x15371 (86897)
 			
 				bLocal_142 = false;
 				_STOPWATCH_DESTROY(&uLocal_145);
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "WHSECUROINPUT" /*Press ~INPUT_CONTEXT~ to access this laptop.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "WHSECUROINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder a este portátil.*/, 0, 0, 0, 0);
 			}
 		}
 		else if (bLocal_142)
 		{
 			if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-				func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+				func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 		
 			if (!func_330(PLAYER::PLAYER_ID()))
 			{
@@ -17513,9 +17513,9 @@ BOOL func_330(Player plParam0) // Position - 0x154E6 (87270)
 	return func_331(func_91(plParam0));
 }
 
-BOOL func_331(ePedComponentType epctParam0) // Position - 0x154F8 (87288)
+BOOL func_331(int iParam0) // Position - 0x154F8 (87288)
 {
-	switch (epctParam0)
+	switch (iParam0)
 	{
 		case 178:
 		case 188:
@@ -17556,25 +17556,25 @@ BOOL func_335() // Position - 0x1555F (87391)
 	return Global_1575045 == 10;
 }
 
-ePedComponentType func_336(Player plParam0) // Position - 0x1556E (87406)
+int func_336(Player plParam0) // Position - 0x1556E (87406)
 {
 	if (plParam0 == _INVALID_PLAYER_INDEX())
-		return PV_COMP_HEAD;
+		return 0;
 
 	return Global_1845299[plParam0 /*883*/].f_260.f_156;
 }
 
-ePedComponentType func_337(ePedComponentType epctParam0) // Position - 0x15591 (87441)
+int func_337(ePedComponentType epctParam0) // Position - 0x15591 (87441)
 {
 	if (func_351(epctParam0))
 		return func_338(Global_2658294[epctParam0 /*468*/].f_325.f_8);
 
-	return PV_COMP_HEAD;
+	return 0;
 }
 
-ePedComponentType func_338(ePedComponentType epctParam0) // Position - 0x155B8 (87480)
+int func_338(BOOL bParam0) // Position - 0x155B8 (87480)
 {
-	switch (epctParam0)
+	switch (bParam0)
 	{
 		case 60:
 			return 1;
@@ -17616,14 +17616,14 @@ void func_339(BOOL bParam0) // Position - 0x1564D (87629)
 	{
 		if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 		{
-			func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+			func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 		}
 		else if (func_333())
 		{
 			if (func_350(PLAYER::PLAYER_ID()))
-				func_332("BIKERWHBLCKC" /*Join a public session to purchase a Business.*/);
+				func_332("BIKERWHBLCKC" /*Únete a una sesión pública para comprar un negocio.*/);
 			else
-				func_332("BIKERWHBLCKD" /*Join a public session to manage your Business*/);
+				func_332("BIKERWHBLCKD" /*Únete a una sesión pública para gestionar tu negocio.*/);
 		}
 		else if (func_73(PLAYER::PLAYER_ID()))
 		{
@@ -17634,7 +17634,7 @@ void func_339(BOOL bParam0) // Position - 0x1564D (87629)
 					bLocal_142 = true;
 				
 					if (!Global_1950567)
-						func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+						func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 				}
 				else
 				{
@@ -17643,13 +17643,13 @@ void func_339(BOOL bParam0) // Position - 0x1564D (87629)
 				
 					bLocal_142 = false;
 					_STOPWATCH_DESTROY(&uLocal_145);
-					_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "BIKERWHINPUT" /*Press ~INPUT_CONTEXT~ to securely access the Open Road website.*/, 0, 0, 0, 0);
+					_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "BIKERWHINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder al sitio web de Open Road de forma segura.*/, 0, 0, 0, 0);
 				}
 			}
 			else if (bLocal_142)
 			{
 				if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-					func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+					func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			
 				if (!func_340(PLAYER::PLAYER_ID()))
 				{
@@ -17660,11 +17660,11 @@ void func_339(BOOL bParam0) // Position - 0x1564D (87629)
 		}
 		else if (!bParam0 && func_314() < func_313())
 		{
-			_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "BIKERWHBLCKA" /*Press ~INPUT_CONTEXT~ to found a Motorcycle Club and access this computer.*/, 0, 0, 0, 0);
+			_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "BIKERWHBLCKA" /*Pulsa ~INPUT_CONTEXT~ para fundar un club de moteros y acceder a este ordenador.*/, 0, 0, 0, 0);
 		}
 		else
 		{
-			func_332("BIKERWHBLCKB" /*You need to be the President of a Motorcycle Club to access this computer.*/);
+			func_332("BIKERWHBLCKB" /*Debes ser el presidente de un club de moteros para acceder a este ordenador.*/);
 		}
 	}
 
@@ -17676,9 +17676,9 @@ BOOL func_340(Player plParam0) // Position - 0x157BC (87996)
 	return func_341(func_91(plParam0));
 }
 
-BOOL func_341(ePedComponentType epctParam0) // Position - 0x157CE (88014)
+BOOL func_341(int iParam0) // Position - 0x157CE (88014)
 {
-	switch (epctParam0)
+	switch (iParam0)
 	{
 		case 190:
 		case 191:
@@ -17718,7 +17718,7 @@ BOOL func_344(ePedComponentType epctParam0) // Position - 0x15855 (88149)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1 && Global_2658294[epctParam0 /*468*/].f_325.f_11 != _INVALID_PLAYER_INDEX())
 				return func_12(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 25;
 
 	return false;
@@ -17730,22 +17730,22 @@ void func_345(BOOL bParam0) // Position - 0x158B5 (88245)
 	{
 		if (func_333())
 		{
-			func_332("WHPRIVSESLAP" /*Join a public session to access the SecuroServ network.*/);
+			func_332("WHPRIVSESLAP" /*Únete a una sesión pública para acceder a la red de SecuroServ.*/);
 		}
 		else if (!bParam0)
 		{
 			if (func_314() >= func_313())
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "WHSECUROMAXVIP" /*This computer is unavailable. The maximum number of VIPs, CEOs and Club Presidents has been reached in this session.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "WHSECUROMAXVIP" /*Este ordenador no está disponible. Esta sesión ha alcanzado el máximo número de vips, jefes y presidentes de club de moteros.*/, 0, 0, 0, 0);
 			else if (func_309(PLAYER::PLAYER_ID()))
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "PIM_EXECH0x1" /*SecuroServ access is currently blocked due to your recent behavior.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "PIM_EXECH0x1" /*Se ha bloqueado el acceso a SecuroServ por tus últimas acciones.*/, 0, 0, 0, 0);
 			else if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
-				func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+				func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			else
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "SECINPUTTREGLAP" /*Press ~INPUT_CONTEXT~ to register as a SecuroServ CEO and access this computer.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "SECINPUTTREGLAP" /*Pulsa ~INPUT_CONTEXT~ para registrarte en SecuroServ como jefe y acceder a este ordenador.*/, 0, 0, 0, 0);
 		}
 		else if (func_73(PLAYER::PLAYER_ID()))
 		{
-			func_332("WHBIKERBLCK" /*You need to register as a SecuroServ CEO to access this computer.*/);
+			func_332("WHBIKERBLCK" /*Necesitas registrarte como jefe en SecuroServ para acceder a este ordenador.*/);
 		}
 		else if (_STOPWATCH_IS_INITIALIZED(&uLocal_145) && func_384(&uLocal_145, 10000, true) || !bLocal_142)
 		{
@@ -17754,7 +17754,7 @@ void func_345(BOOL bParam0) // Position - 0x158B5 (88245)
 				bLocal_142 = true;
 			
 				if (!Global_1950567)
-					func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+					func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			}
 			else
 			{
@@ -17763,13 +17763,13 @@ void func_345(BOOL bParam0) // Position - 0x158B5 (88245)
 			
 				bLocal_142 = false;
 				_STOPWATCH_DESTROY(&uLocal_145);
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "WHSECUROINPUT" /*Press ~INPUT_CONTEXT~ to access this laptop.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_140, 1, "WHSECUROINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder a este portátil.*/, 0, 0, 0, 0);
 			}
 		}
 		else if (bLocal_142)
 		{
 			if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-				func_332("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+				func_332("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 		
 			if (!func_389(PLAYER::PLAYER_ID()))
 			{
@@ -17840,7 +17840,7 @@ void _CONTEXT_ADD_HELP_TEXT(var uParam0, int iParam1, char* sParam2, int iParam3
 
 BOOL func_347() // Position - 0x15B3B (88891)
 {
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MP_OFF_LAP_1" /*Register as SecuroServ CEO to gain access to this computer. ~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHPRIVSESLAP" /*Join a public session to access the SecuroServ network.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHSECUROBLCK" /*This computer is unavailable during a mission.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SECINPUTTREGLAP" /*Press ~INPUT_CONTEXT~ to register as a SecuroServ CEO and access this computer.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHINPUT" /*Press ~INPUT_CONTEXT~ to securely access the Open Road website.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKA" /*Press ~INPUT_CONTEXT~ to found a Motorcycle Club and access this computer.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKB" /*You need to be the President of a Motorcycle Club to access this computer.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHBIKERBLCK" /*You need to register as a SecuroServ CEO to access this computer.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKC" /*Join a public session to purchase a Business.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKD" /*Join a public session to manage your Business*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("ARENAWHINPUT" /*Press ~INPUT_CONTEXT~ to access arenawar.tv.~n~Press ~INPUT_CONTEXT_SECONDARY~ to view Sponsorship Tier Unlocks.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MP_OFF_LAP_1" /*Regístrate en SecuroServ como jefe para acceder a este ordenador.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHPRIVSESLAP" /*Únete a una sesión pública para acceder a la red de SecuroServ.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SECINPUTTREGLAP" /*Pulsa ~INPUT_CONTEXT~ para registrarte en SecuroServ como jefe y acceder a este ordenador.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder al sitio web de Open Road de forma segura.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKA" /*Pulsa ~INPUT_CONTEXT~ para fundar un club de moteros y acceder a este ordenador.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKB" /*Debes ser el presidente de un club de moteros para acceder a este ordenador.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHBIKERBLCK" /*Necesitas registrarte como jefe en SecuroServ para acceder a este ordenador.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKC" /*Únete a una sesión pública para comprar un negocio.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKD" /*Únete a una sesión pública para gestionar tu negocio.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("ARENAWHINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder a arenawar.tv.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para ver los desbloqueos por nivel de patrocinio.*/))
 		return true;
 
 	return false;
@@ -17893,7 +17893,7 @@ BOOL func_351(ePedComponentType epctParam0) // Position - 0x15C82 (89218)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 				return func_12(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 1;
 
 	return false;
@@ -18030,7 +18030,7 @@ BOOL func_360(Ped pedParam0, float fParam1, float fParam2, float fParam3, float 
 	return BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(pedParam0, bParam5), fParam1) <= fParam4 * fParam4;
 }
 
-ePedComponentType func_361(Player plParam0) // Position - 0x15FC3 (90051)
+int func_361(Player plParam0) // Position - 0x15FC3 (90051)
 {
 	Player player;
 
@@ -18039,7 +18039,7 @@ ePedComponentType func_361(Player plParam0) // Position - 0x15FC3 (90051)
 	if (player != -1)
 		return Global_1892798[player /*615*/];
 
-	return PV_COMP_INVALID;
+	return -1;
 }
 
 int func_362(Player plParam0) // Position - 0x15FE2 (90082)
@@ -18055,7 +18055,7 @@ BOOL func_363() // Position - 0x15FFF (90111)
 	return func_372(PLAYER::PLAYER_ID());
 }
 
-ePedComponentType func_364() // Position - 0x1600F (90127)
+BOOL func_364() // Position - 0x1600F (90127)
 {
 	return Global_1845299[PLAYER::PLAYER_ID() /*883*/] == 148;
 }
@@ -18065,7 +18065,7 @@ BOOL func_365() // Position - 0x16025 (90149)
 	return Global_77360;
 }
 
-ePedComponentType func_366() // Position - 0x16031 (90161)
+BOOL func_366() // Position - 0x16031 (90161)
 {
 	return Global_1935999;
 }
@@ -18305,7 +18305,7 @@ BOOL func_385(ePedComponentType epctParam0) // Position - 0x16423 (91171)
 	{
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
 		{
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 			{
 				num = func_12(Global_2658294[epctParam0 /*468*/].f_325.f_8);
 				return num == 2 || num == 25;
@@ -18320,7 +18320,7 @@ BOOL func_386(ePedComponentType epctParam0) // Position - 0x16478 (91256)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[epctParam0 /*468*/].f_325.f_8 != -1)
 				return func_12(Global_2658294[epctParam0 /*468*/].f_325.f_8) == 0;
 
 	return false;
@@ -18354,9 +18354,9 @@ BOOL func_389(Player plParam0) // Position - 0x1650F (91407)
 	return func_390(func_91(plParam0));
 }
 
-BOOL func_390(ePedComponentType epctParam0) // Position - 0x16521 (91425)
+BOOL func_390(int iParam0) // Position - 0x16521 (91425)
 {
-	switch (epctParam0)
+	switch (iParam0)
 	{
 		case 167:
 		case 169:

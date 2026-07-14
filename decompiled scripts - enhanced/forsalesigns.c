@@ -639,9 +639,9 @@ void func_9() // Position - 0x443 (1091)
 		
 			case 1:
 				GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_39, "SHOW_SHARD_MIDSIZED_MESSAGE");
-				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("FS_TITLE" /*Sign Destroyed~s~*/);
+				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("FS_TITLE" /*Letrero destruido~s~*/);
 				GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
-				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("FS_DESTROY" /*~1~/15 signs destroyed.*/);
+				GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("FS_DESTROY" /*~1~/15 letreros destruidos.*/);
 				HUD::ADD_TEXT_COMPONENT_INTEGER(func_5(2));
 				GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 				GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
@@ -897,7 +897,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -921,9 +921,9 @@ BOOL func_26(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x937 (2359
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_23053 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -1630,8 +1630,8 @@ void func_58() // Position - 0x16DE (5854)
 	{
 		func_66(88, 0, 0);
 		func_65(11);
-		func_64("JOSH1_TXT" /*BTW buddy, Avery has a website with all his real estate listings around the city, you might find it useful - ~b~<u>www.lennyavery-realty.com</u>~w~*/, 0);
-		func_62("JOSH1_TXT" /*BTW buddy, Avery has a website with all his real estate listings around the city, you might find it useful - ~b~<u>www.lennyavery-realty.com</u>~w~*/);
+		func_64("JOSH1_TXT" /*Por cierto, colega, Avery tiene todas las propiedades que maneja reflejadas en un sitio web. Podría resultarte útil: - ~b~<u>www.lennyavery-realty.com</u>~w~*/, 0);
+		func_62("JOSH1_TXT" /*Por cierto, colega, Avery tiene todas las propiedades que maneja reflejadas en un sitio web. Podría resultarte útil: - ~b~<u>www.lennyavery-realty.com</u>~w~*/);
 	
 		if (func_56(105) == false)
 			func_59(497850717, 1, 4, 58, 30000, 10000, -1, 176, -1, 0, 1);

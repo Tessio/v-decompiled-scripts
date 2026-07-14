@@ -230,11 +230,11 @@ BOOL func_7(Player plParam0) // Position - 0x2AE (686)
 
 int func_8() // Position - 0x2C3 (707)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = Global_2673271;
+	type = Global_2673271;
 
-	if (IS_BIT_SET(Global_1882572[player /*315*/].f_17, 0) && Global_1882572[player /*315*/].f_27 == 2)
+	if (IS_BIT_SET(Global_1882572[type /*315*/].f_17, 0) && Global_1882572[type /*315*/].f_27 == 2)
 		return 1;
 
 	return 0;

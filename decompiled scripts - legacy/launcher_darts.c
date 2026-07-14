@@ -850,7 +850,7 @@ void func_7() // Position - 0xBAA (2986)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_8() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -4182,18 +4182,18 @@ struct<7> func_67(int iParam0) // Position - 0x31EA (12778)
 
 BOOL func_68() // Position - 0x5DF6 (24054)
 {
-	if (func_70() == -1 || func_70() == 999 && !(func_69() == 0))
+	if (func_70() == -1 || func_70() == 999 && !(func_69() == HUD_COLOUR_PURE_WHITE))
 		return true;
 
 	return false;
 }
 
-int func_69() // Position - 0x5E26 (24102)
+eHudColour func_69() // Position - 0x5E26 (24102)
 {
 	return Global_33776;
 }
 
-int func_70() // Position - 0x5E31 (24113)
+eHudColour func_70() // Position - 0x5E31 (24113)
 {
 	return Global_33775;
 }
@@ -4457,29 +4457,29 @@ BOOL func_80(var uParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3 vPa
 	return false;
 }
 
-BOOL func_81() // Position - 0x622B (25131)
+ePedComponentType func_81() // Position - 0x622B (25131)
 {
 	return Global_77342;
 }
 
-BOOL func_82(int iParam0) // Position - 0x6237 (25143)
+ePedComponentType func_82(int iParam0) // Position - 0x6237 (25143)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_83(int iParam0, int iParam1) // Position - 0x628E (25230)
@@ -4679,7 +4679,7 @@ BOOL func_96() // Position - 0x6C04 (27652)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_97() // Position - 0x6C15 (27669)
+ePedComponentType func_97() // Position - 0x6C15 (27669)
 {
 	return Global_1575090;
 }
@@ -5176,7 +5176,7 @@ void func_118() // Position - 0x741B (29723)
 	BOOL flag;
 
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "Darts", 64);
-	sLocal_99 = "PLAY_DARTS" /*Press ~INPUT_CONTEXT~ to play darts.*/;
+	sLocal_99 = "PLAY_DARTS" /*Pulsa ~INPUT_CONTEXT~ para jugar a los dardos.*/;
 	iLocal_97 = 1;
 	fLocal_115 = 2.5f;
 	uLocal_132 = { 0f, -0.5f, 0f };

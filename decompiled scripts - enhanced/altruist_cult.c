@@ -653,8 +653,8 @@ void main() // Position - 0x0 (0)
 	uLocal_166 = { -1063.6053f, 4972.88f, 241.12991f };
 	fLocal_169 = 12.875f;
 	iLocal_190 = 4;
-	sLocal_399 = "REPLAY_TMG" /*~r~FAILED~s~*/;
-	sLocal_400 = "CMN_TDIED" /*~s~Trevor died.*/;
+	sLocal_399 = "REPLAY_TMG" /*~r~MISIÓN FALLIDA~s~*/;
+	sLocal_400 = "CMN_TDIED" /*~s~Trevor ha muerto.*/;
 
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(26))
 		func_203();
@@ -862,30 +862,30 @@ void func_1(BOOL bParam0) // Position - 0x55E (1374)
 		MISC::SET_FADE_IN_AFTER_DEATH_ARREST(true);
 		MISC::PAUSE_DEATH_ARREST_RESTART(false);
 		MISC::SET_FADE_OUT_AFTER_DEATH(true);
-		func_2(0);
+		func_2(false);
 		Global_97687 = 0;
 	}
 
 	return;
 }
 
-void func_2(Entity eParam0) // Position - 0x5A0 (1440)
+void func_2(BOOL bParam0) // Position - 0x5A0 (1440)
 {
 	if (Global_44886 == 9 || Global_44886 == 10 || Global_44886 == 5)
 	{
-		Global_113577 = eParam0;
+		Global_113577 = bParam0;
 	
-		if (eParam0)
+		if (bParam0)
 		{
 		}
 	}
 	else
 	{
-		if (eParam0)
+		if (bParam0)
 		{
 		}
 	
-		Global_113577 = 0;
+		Global_113577 = false;
 	}
 
 	return;
@@ -1280,7 +1280,7 @@ BOOL func_25(Player plParam0, int iParam1) // Position - 0xC9C (3228)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_26(-1, false) == CHAR_MIKE_FRANK_CONF;
+		flag = func_26(-1, false) == 8;
 	else
 		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
 
@@ -1291,28 +1291,28 @@ BOOL func_25(Player plParam0, int iParam1) // Position - 0xC9C (3228)
 	return flag;
 }
 
-eCharacter func_26(int iParam0, BOOL bParam1) // Position - 0xCF5 (3317)
+int func_26(int iParam0, BOOL bParam1) // Position - 0xCF5 (3317)
 {
-	eCharacter character;
 	int num;
+	int num2;
 
-	num = iParam0;
+	num2 = iParam0;
 
-	if (num == -1)
-		num = func_27();
+	if (num2 == -1)
+		num2 = func_27();
 
-	if (Global_1575072[num] == 1)
+	if (Global_1575072[num2] == 1)
 	{
 		bParam1;
-		character = CHAR_MIKE_FRANK_CONF;
+		num = 8;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		num = Global_1574921[num2];
 		bParam1;
 	}
 
-	return character;
+	return num;
 }
 
 int func_27() // Position - 0xD36 (3382)
@@ -1432,7 +1432,7 @@ BOOL func_33(var uParam0, var uParam1, var uParam2, char* sParam3, char* sParam4
 				if (*uParam5)
 					MISC::IGNORE_NEXT_RESTART(true);
 				else if (!uParam0->f_5)
-					func_2(0);
+					func_2(false);
 			
 				SCRIPT::SET_NO_LOADING_SCREEN(false);
 				MISC::PAUSE_DEATH_ARREST_RESTART(false);
@@ -1509,8 +1509,8 @@ BOOL func_34(var uParam0, var uParam1, char* sParam2, char* sParam3, var uParam4
 				PAD::DISABLE_ALL_CONTROL_ACTIONS(PLAYER_CONTROL);
 		
 			func_52(&(uParam1->f_10), false, true, true, true);
-			func_51(&(uParam1->f_10), "IB_RETRY" /*Retry*/, 2, 201, 1, 1, 0);
-			func_51(&(uParam1->f_10), "FE_HLP16" /*Exit*/, 2, 202, 1, 1, 0);
+			func_51(&(uParam1->f_10), "IB_RETRY" /*Reintentar*/, 2, 201, 1, 1, 0);
+			func_51(&(uParam1->f_10), "FE_HLP16" /*Salir*/, 2, 202, 1, 1, 0);
 		
 			if (func_54(iParam5, 4))
 				AUDIO::PLAY_SOUND_FRONTEND(-1, "ScreenFlash", "MissionFailedSounds", true);
@@ -2171,7 +2171,7 @@ void func_64() // Position - 0x1C4B (7243)
 		}
 	
 		GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_397, "SHOW_SHARD_MIDSIZED_MESSAGE");
-		func_53("CULT_PASS" /*ALTRUIST CLEARED*/);
+		func_53("CULT_PASS" /*ALTRUISTAS ELIMINADOS*/);
 		GRAPHICS::END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE();
 	
 		while (!func_98())
@@ -3055,8 +3055,8 @@ Vector3 _GET_PLAYER_COORDS(Player plParam0) // Position - 0x2B68 (11112)
 
 void func_97() // Position - 0x2B7B (11131)
 {
-	Global_34031 = false;
-	Global_34032 = false;
+	Global_34031 = 0;
+	Global_34032 = 0;
 	Global_34034 = 0;
 	Global_34035 = 0;
 	Global_34036 = 0;
@@ -3137,8 +3137,8 @@ int func_102(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x2C9D (114
 					Global_23000 = 0;
 					Global_23001 = 1;
 					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = 0;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -3398,7 +3398,7 @@ void func_110() // Position - 0x30A1 (12449)
 	Global_23013 = Global_23014;
 	Global_23015 = { Global_23031 };
 	Global_23004 = Global_23005;
-	Global_24016 = false;
+	Global_24016 = 0;
 	Global_23049 = 0;
 	Global_23050 = 0;
 	MISC::CLEAR_BIT(&Global_9464, 16);
@@ -3518,10 +3518,10 @@ void func_115() // Position - 0x3301 (13057)
 	return;
 }
 
-void func_116(var uParam0, eCharacter echParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0x3358 (13144)
+void func_116(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0x3358 (13144)
 {
 	Global_22454 = { *uParam0 };
-	Global_8779 = echParam1;
+	Global_8779 = iParam1;
 	TEXT_LABEL_ASSIGN_STRING(&Global_23070, sParam2, 24);
 	Global_23989 = iParam5;
 
@@ -3911,7 +3911,7 @@ int func_119(BOOL bParam0) // Position - 0x4391 (17297)
 		if (func_123(Global_114920))
 			func_120(0);
 	
-		HUD::SET_MISSION_NAME(true, "RE_TITLE" /*Random Event*/);
+		HUD::SET_MISSION_NAME(true, "RE_TITLE" /*Evento aleatorio*/);
 	
 		if (bParam0 && func_123(Global_114920))
 			HUD::FLASH_MINIMAP_DISPLAY();
@@ -3982,15 +3982,15 @@ char* func_122(int iParam0) // Position - 0x44D6 (17622)
 	switch (iParam0)
 	{
 		case 0:
-			str = "AM_H_REFS" /*Various events unfold across San Andreas daily. These events will become blipped on the Radar when nearby.*/;
+			str = "AM_H_REFS" /*Ocurren varios eventos en San Andreas cada día. Aparecerá un icono en tu radar cuando estés cerca de uno de ellos.*/;
 			break;
 	
 		case 1:
-			str = "RE_FLASHBLIP" /*Flashing blue and red blips indicate situations around San Andreas that you can choose to help with.*/;
+			str = "RE_FLASHBLIP" /*Los iconos intermitentes azules y rojos indican situaciones en San Andreas en las que puedes participar.*/;
 			break;
 	
 		case 2:
-			str = "RE_HANDOVER" /*If you retrieve a stolen item, you can choose to keep it or return it for a reward.*/;
+			str = "RE_HANDOVER" /*Si recuperas un artículo robado, puedes quedártelo o devolverlo a cambio de una recompensa.*/;
 			break;
 	}
 
@@ -4367,7 +4367,7 @@ float func_136(var uParam0, var uParam1, var uParam2, float fParam3, var uParam4
 
 void func_137() // Position - 0x4AF5 (19189)
 {
-	Global_34032 = true;
+	Global_34032 = 1;
 	return;
 }
 
@@ -6572,7 +6572,7 @@ void func_166(int iParam0) // Position - 0x74C0 (29888)
 	if (flag)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&txdName, "CHAR_LIFEINVADER", 64);
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*You have redeemed your promotion for ~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*Has canjeado tu promoción de ~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(func_167(iParam0));
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, true, 0, "", 0);
 	}
@@ -6585,28 +6585,28 @@ char* func_167(int iParam0) // Position - 0x768C (30348)
 	switch (iParam0)
 	{
 		case 0:
-			return "COUP_HAIRC" /*one free haircut.*/;
+			return "COUP_HAIRC" /*un corte de pelo gratis.*/;
 	
 		case 1:
-			return "COUP_TATTOO" /*one free tattoo.*/;
+			return "COUP_TATTOO" /*un tatuaje gratis.*/;
 	
 		case 2:
-			return "COUP_WARSTOCK" /*10% off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 3:
-			return "COUP_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 4:
-			return "COUP_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 5:
-			return "COUP_MEDSPENS" /*10 percent off your next medical expenses.*/;
+			return "COUP_MEDSPENS" /*10% de descuento en tus próximos gastos médicos.*/;
 	
 		case 6:
-			return "COUP_SPRUNK" /*one free can of Sprunk.*/;
+			return "COUP_SPRUNK" /*una lata gratis de Sprunk.*/;
 	
 		case 7:
-			return "COUP_RESPRAY" /*one free respray.*/;
+			return "COUP_RESPRAY" /*una pintura de vehículo gratis.*/;
 	
 		case 8:
 			return "COUP_XMAS2017";
@@ -6621,32 +6621,32 @@ char* func_167(int iParam0) // Position - 0x768C (30348)
 			return "COUP_CAR2_XMAS2018";
 	
 		case 12:
-			return "COUP_CAS_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_CAS_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 13:
-			return "COUP_CAS_DOCKTEASE" /*10 percent off your next purchase at DockTease.com.*/;
+			return "COUP_CAS_DOCKTEASE" /*10% de descuento en tu próxima compra en DockTease.com.*/;
 	
 		case 14:
-			return "COUP_CAS_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_CAS_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 15:
-			return "COUP_CAS_SSASA" /*10 percent off your next purchase at southernsanandreassuperautos.com.*/;
+			return "COUP_CAS_SSASA" /*10% de descuento en tu próxima compra en southernsanandreassuperautos.com.*/;
 	
 		case 16:
-			return "COUP_CAS_WARSTOCK" /*10 percent off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_CAS_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 17:
-			return "COUP_CAS_PANDM" /*10 percent off your next purchase at pandmcycles.com.*/;
+			return "COUP_CAS_PANDM" /*10% de descuento en tu próxima compra en pandmcycles.com.*/;
 	
 		case 39:
 			return "COUPON_CAR_GEN9_MIGRATION";
 	
 		default:
 			if (func_174(iParam0))
-				return "HSW_COUP" /*One free respray, livery or spoiler.*/;
+				return "HSW_COUP" /*Una pintura, cubierta o alerón de vehículo gratis.*/;
 		
 			if (func_172(iParam0))
-				return "HSWU_COUP" /*One free Hao's Special Works upgrade.*/;
+				return "HSWU_COUP" /*Una mejora de Hao's Special Works gratis.*/;
 			break;
 	}
 
@@ -7778,7 +7778,7 @@ void func_203() // Position - 0x9005 (36869)
 			Global_97688 = 0;
 			func_14(0, true);
 			func_12(0, true);
-			func_2(0);
+			func_2(false);
 			MISC::SET_FADE_OUT_AFTER_DEATH(true);
 			MISC::PAUSE_DEATH_ARREST_RESTART(false);
 			MISC::IGNORE_NEXT_RESTART(false);
@@ -7802,7 +7802,7 @@ void func_203() // Position - 0x9005 (36869)
 		Global_97688 = 0;
 		func_14(0, true);
 		func_12(0, true);
-		func_2(0);
+		func_2(false);
 		MISC::SET_FADE_OUT_AFTER_DEATH(true);
 		MISC::PAUSE_DEATH_ARREST_RESTART(false);
 		MISC::IGNORE_NEXT_RESTART(false);

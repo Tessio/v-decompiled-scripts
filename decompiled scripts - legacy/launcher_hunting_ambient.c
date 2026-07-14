@@ -450,7 +450,7 @@ void main() // Position - 0x0 (0)
 									{
 										if (!func_89(iLocal_92, 134217728))
 										{
-											func_47("MG_NA_TIME" /*This activity is not available at this time of day. Come back between ~1~:00 and ~1~:00 to participate in this activity.*/, iLocal_118, iLocal_119);
+											func_47("MG_NA_TIME" /*La actividad no está disponible en este momento. Vuelve de ~1~:00 a ~1~:00 para participar en ella.*/, iLocal_118, iLocal_119);
 											func_61(&iLocal_92, 134217728);
 										}
 									}
@@ -469,7 +469,7 @@ void main() // Position - 0x0 (0)
 								{
 									if (!func_89(iLocal_92, 134217728))
 									{
-										func_47("MG_NA_TIME" /*This activity is not available at this time of day. Come back between ~1~:00 and ~1~:00 to participate in this activity.*/, iLocal_118, iLocal_119);
+										func_47("MG_NA_TIME" /*La actividad no está disponible en este momento. Vuelve de ~1~:00 a ~1~:00 para participar en ella.*/, iLocal_118, iLocal_119);
 										func_61(&iLocal_92, 134217728);
 									}
 								}
@@ -847,7 +847,7 @@ void func_7() // Position - 0xBE4 (3044)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_8() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1709,29 +1709,29 @@ Hash func_53(eCharacter echParam0) // Position - 0x1AB1 (6833)
 	return Global_2339[echParam0 /*29*/];
 }
 
-BOOL func_54() // Position - 0x1AC0 (6848)
+ePedComponentType func_54() // Position - 0x1AC0 (6848)
 {
 	return Global_77342;
 }
 
-BOOL func_55(int iParam0) // Position - 0x1ACC (6860)
+ePedComponentType func_55(int iParam0) // Position - 0x1ACC (6860)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_56(int iParam0, int iParam1) // Position - 0x1B23 (6947)
@@ -1927,7 +1927,7 @@ BOOL func_69() // Position - 0x2470 (9328)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_70() // Position - 0x2481 (9345)
+ePedComponentType func_70() // Position - 0x2481 (9345)
 {
 	return Global_1575090;
 }
@@ -2283,7 +2283,7 @@ void func_90() // Position - 0x2A2A (10794)
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "hunting_ambient", 64);
 	iLocal_97 = 3;
 	echLocal_117 = CHAR_TREVOR;
-	sLocal_99 = "PLAY_HUNT" /*Press ~INPUT_CONTEXT~ to start hunting.*/;
+	sLocal_99 = "PLAY_HUNT" /*Pulsa ~INPUT_CONTEXT~ para iniciar la caza.*/;
 	iLocal_118 = 5;
 	iLocal_119 = 19;
 	fLocal_115 = 2f;

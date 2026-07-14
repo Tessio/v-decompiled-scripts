@@ -105,12 +105,12 @@ void main() // Position - 0x0 (0)
 	Global_21561 = { -89.8f, -14.7f, 0f };
 	Global_21587 = { -90f, 0f, 0f };
 	Global_21590 = { -90f, -100.4f, 0f };
-	Global_21594 = 27;
-	Global_21595 = 177;
+	Global_21594 = INPUT_PHONE;
+	Global_21595 = INPUT_CELLPHONE_CANCEL;
 	Global_21596 = INPUT_CELLPHONE_SELECT;
-	Global_21597 = 177;
-	Global_21598 = 179;
-	Global_21599 = 179;
+	Global_21597 = INPUT_CELLPHONE_CANCEL;
+	Global_21598 = INPUT_CELLPHONE_EXTRA_OPTION;
+	Global_21599 = INPUT_CELLPHONE_EXTRA_OPTION;
 	Global_21600 = INPUT_CELLPHONE_OPTION;
 	Global_21601 = INPUT_CELLPHONE_LEFT;
 	Global_21602 = INPUT_CELLPHONE_RIGHT;
@@ -140,7 +140,7 @@ void main() // Position - 0x0 (0)
 	Global_34057 = -10000;
 	Global_34058 = -1;
 	Global_34059 = -1;
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	Global_34171 = true;
 	TEXT_LABEL_ASSIGN_STRING(&Global_41181, "", 32);
 	Global_44848 = -2;
@@ -163,7 +163,7 @@ void main() // Position - 0x0 (0)
 	Global_55429 = -1;
 	Global_62200 = -1;
 	Global_62490 = 1;
-	Global_65011 = PV_COMP_BERD;
+	Global_65011 = true;
 	Global_65012 = true;
 	Global_65013 = true;
 	Global_65031 = -1;
@@ -184,7 +184,7 @@ void main() // Position - 0x0 (0)
 	Global_77479 = -1;
 	Global_77480 = -1;
 	Global_77481 = -1;
-	Global_77482 = 1;
+	Global_77482 = true;
 	Global_77483 = 11;
 	Global_77485 = true;
 	Global_77486 = -1;
@@ -198,8 +198,8 @@ void main() // Position - 0x0 (0)
 	Global_77521 = 0f;
 	Global_77522 = 0f;
 	Global_77523 = 0f;
-	Global_77531 = PV_COMP_INVALID;
-	Global_77532 = PV_COMP_INVALID;
+	Global_77531 = -1;
+	Global_77532 = -1;
 	Global_78623 = -1;
 	Global_78624 = -1;
 	Global_79058 = -1;
@@ -214,11 +214,11 @@ void main() // Position - 0x0 (0)
 	Global_80283 = -1;
 	Global_80284 = -1;
 	Global_80285 = -1;
-	Global_80286 = 1;
+	Global_80286 = true;
 	Global_80301 = -1;
 	Global_80302 = -1;
 	Global_80310 = -1;
-	TEXT_LABEL_ASSIGN_STRING(&Global_80311, "NONE" /*None*/, 24);
+	TEXT_LABEL_ASSIGN_STRING(&Global_80311, "NONE" /*-*/, 24);
 	Global_80321 = -1;
 	Global_80550 = -1;
 	Global_80560 = 6;
@@ -232,7 +232,7 @@ void main() // Position - 0x0 (0)
 	Global_96604 = -1;
 	Global_97431 = -1;
 	Global_97451 = 141;
-	Global_97452 = CHAR_MIKE_FRANK_CONF;
+	Global_97452 = 8;
 	Global_97453 = -1;
 	Global_98255 = 23;
 	Global_98256 = Global_98255;
@@ -268,7 +268,7 @@ void main() // Position - 0x0 (0)
 	Global_99360 = -1;
 	Global_99700 = 1;
 	Global_99735 = true;
-	Global_99736 = 1;
+	Global_99736 = true;
 	Global_99737 = true;
 	Global_99758 = -1;
 	Global_99759 = -1;
@@ -305,7 +305,7 @@ void main() // Position - 0x0 (0)
 	Global_114920 = -1;
 	Global_114930 = -1;
 	Global_153524 = true;
-	Global_153771 = PV_COMP_INVALID;
+	Global_153771 = -1;
 	Global_153772 = -1;
 	Global_153774 = 1000;
 	Global_153816 = 1;
@@ -2131,10 +2131,10 @@ void func_6(int iParam0, eBlipSprite ebsParam1) // Position - 0x5126 (20774)
 
 	Global_34172[num /*23*/].f_12[0] = ebsParam1;
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -2166,10 +2166,10 @@ void func_7(int iParam0, int iParam1) // Position - 0x5194 (20884)
 
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	return;
 }
 
@@ -2185,7 +2185,7 @@ void func_8(int iParam0, float fParam1, var uParam2, var uParam3) // Position - 
 	if (fParam1 == Global_34172[num /*23*/][0 /*3*/] && fParam1.f_1 == Global_34172[num /*23*/][0 /*3*/].f_1 && fParam1.f_2 == Global_34172[num /*23*/][0 /*3*/].f_2)
 		return;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	Global_34172[num /*23*/][0 /*3*/] = { fParam1 };
 	Global_40222 = 1;
@@ -2209,10 +2209,10 @@ void func_9(int iParam0, BOOL bParam1) // Position - 0x52C5 (21189)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 7);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -2239,10 +2239,10 @@ void func_10(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x5348 (2132
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 11);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -2264,10 +2264,10 @@ void func_11(int iParam0, BOOL bParam1) // Position - 0x53F1 (21489)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 5);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -2289,10 +2289,10 @@ void func_12(int iParam0, BOOL bParam1) // Position - 0x5474 (21620)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 4);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -2319,10 +2319,10 @@ void func_13(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x54F7 (2175
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == BLIP_LEVEL)
-			Global_34170 = BLIP_LEVEL;
+		if (Global_34169 == true)
+			Global_34170 = true;
 	
-		Global_34169 = BLIP_LEVEL;
+		Global_34169 = true;
 	}
 
 	if (bParam1)
@@ -2895,10 +2895,10 @@ void func_38() // Position - 0x6AB7 (27319)
 	func_42();
 	func_41();
 	func_40();
-	Global_102491 = false;
+	Global_102491 = 0;
 	Global_96604 = -1;
 	MISC::CLEAR_BIT(&(Global_102454.f_20), 17);
-	Global_102489 = false;
+	Global_102489 = 0;
 	MISC::PAUSE_DEATH_ARREST_RESTART(false);
 	MISC::IGNORE_NEXT_RESTART(false);
 	MISC::SET_FADE_IN_AFTER_DEATH_ARREST(true);
@@ -2939,7 +2939,7 @@ void func_42() // Position - 0x6B71 (27505)
 
 	for (i = 0; i <= 6; i = i + 1)
 	{
-		Global_102454.f_22[i] = PV_COMP_HEAD;
+		Global_102454.f_22[i] = 0;
 	}
 
 	return;
@@ -2970,13 +2970,13 @@ void func_44() // Position - 0x6BE5 (27621)
 
 void func_45() // Position - 0x6C05 (27653)
 {
-	if (Global_102454.f_16 != false)
+	if (Global_102454.f_16 != 0)
 	{
 		GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&(Global_102454.f_16));
 		Global_102454.f_16 = 0;
 	}
 
-	if (Global_102454.f_17 != false)
+	if (Global_102454.f_17 != 0)
 	{
 		GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&(Global_102454.f_17));
 		Global_102454.f_17 = 0;
@@ -3372,7 +3372,7 @@ void func_63(int iParam0) // Position - 0x7582 (30082)
 	if (iParam0 < 0 || iParam0 >= 5)
 		return;
 
-	if (!(Global_45866[iParam0 /*6*/].f_1 == PV_COMP_HEAD))
+	if (!(Global_45866[iParam0 /*6*/].f_1 == 0))
 		if (Global_45866[iParam0 /*6*/].f_1 == PLAYER::PLAYER_PED_ID())
 			Global_46109 = 0;
 
@@ -3515,10 +3515,10 @@ void func_67() // Position - 0x7F52 (32594)
 	func_71(162, -34.0914f, -1095.2202f, 25.4223f, "B_SIM" /*Simeon*/, BLIP_SIMEON_FAMILY);
 	func_71(163, -42.2568f, -1110.5834f, 25.4374f, "B_SIM" /*Simeon*/, BLIP_SIMEON_FAMILY);
 	func_71(164, -1508.8141f, -937.4672f, 8.5421f, "", BLIP_LESTER_FAMILY);
-	func_71(165, -700.1855f, -917.9558f, 18.2143f, "B_ASSA" /*Assassination*/, BLIP_LESTER_FAMILY);
-	func_71(166, 213.7994f, -853.9389f, 29.3929f, "B_ASSA" /*Assassination*/, BLIP_LESTER_FAMILY);
-	func_71(167, -26.1203f, -109.7468f, 56.0799f, "B_ASSA" /*Assassination*/, BLIP_LESTER_FAMILY);
-	func_71(168, 809.2905f, -1076.2192f, 27.6448f, "B_ASSA" /*Assassination*/, BLIP_LESTER_FAMILY);
+	func_71(165, -700.1855f, -917.9558f, 18.2143f, "B_ASSA" /*Asesinato*/, BLIP_LESTER_FAMILY);
+	func_71(166, 213.7994f, -853.9389f, 29.3929f, "B_ASSA" /*Asesinato*/, BLIP_LESTER_FAMILY);
+	func_71(167, -26.1203f, -109.7468f, 56.0799f, "B_ASSA" /*Asesinato*/, BLIP_LESTER_FAMILY);
+	func_71(168, 809.2905f, -1076.2192f, 27.6448f, "B_ASSA" /*Asesinato*/, BLIP_LESTER_FAMILY);
 	func_71(169, -829f, 171f, 70f, "", BLIP_BAND_STRAND);
 	func_71(170, 1370.9062f, 1148.0051f, 112.7591f, "", BLIP_BAND_STRAND);
 	func_71(171, 117.52641f, -400.60345f, 40.26341f, "", BLIP_DEVIN);
@@ -3540,8 +3540,8 @@ void func_67() // Position - 0x7F52 (32594)
 	func_71(193, -1335.3142f, -1277.9427f, 3.8649f, "B_FIB" /*Federal Investigation Bureau*/, BLIP_HEIST_PREP);
 	func_71(194, 16.6176f, -1116.3126f, 28.7968f, "B_FIB" /*Federal Investigation Bureau*/, BLIP_HEIST_PREP);
 	func_71(197, -1.9234f, 532.0394f, 174.3424f, "", BLIP_FRANKLIN_FAMILY);
-	func_71(198, 1330.4113f, -2553.661f, 45.7824f, "B_FINA" /*Confront Trevor*/, BLIP_TREVOR_FAMILY);
-	func_71(199, 2388.9f, 2607.2f, 45.6f, "B_FINB" /*Confront Michael*/, BLIP_MICHAEL_FAMILY);
+	func_71(198, 1330.4113f, -2553.661f, 45.7824f, "B_FINA" /*Enfrentarse a Trevor*/, BLIP_TREVOR_FAMILY);
+	func_71(199, 2388.9f, 2607.2f, 45.6f, "B_FINB" /*Enfrentarse a Michael*/, BLIP_MICHAEL_FAMILY);
 	func_71(200, 1274.9274f, -1710.5944f, 53.7715f, "", BLIP_LESTER_FAMILY);
 	func_71(201, -14.0834f, -1449.6732f, 29.6204f, "", BLIP_FRANKLIN_FAMILY);
 	func_71(203, 10.5183f, 528.8248f, 173.6514f, "", BLIP_FRANKLIN_FAMILY);
@@ -3560,12 +3560,12 @@ void func_67() // Position - 0x7F52 (32594)
 	func_71(220, 497.2134f, -2022.9719f, 25.9375f, "", BLIP_HEIST_PREP);
 	func_71(221, 711.7089f, -964.4872f, 29.3956f, "", BLIP_JEWELRY_HEIST);
 	func_71(222, -1158.687f, -1520.819f, 9.6336f, "", BLIP_TREVOR_FAMILY);
-	func_71(223, 1279.01f, -3033.8f, 24.36f, "B_DHP1" /*Minisub*/, BLIP_HEIST_PREP);
+	func_71(223, 1279.01f, -3033.8f, 24.36f, "B_DHP1" /*Minisubmarino*/, BLIP_HEIST_PREP);
 	func_71(224, -2145.4856f, 3018.2944f, 31.81f, "B_DP2B" /*Cargobob*/, BLIP_HEIST_PREP);
-	func_71(225, -1158.687f, -1520.819f, 9.6336f, "B_DH" /*The Merryweather Heist*/, BLIP_DOCKS_HEIST);
-	func_71(226, -1158.687f, -1520.819f, 9.6336f, "B_DH" /*The Merryweather Heist*/, BLIP_DOCKS_HEIST);
+	func_71(225, -1158.687f, -1520.819f, 9.6336f, "B_DH" /*El golpe de Merryweather*/, BLIP_DOCKS_HEIST);
+	func_71(226, -1158.687f, -1520.819f, 9.6336f, "B_DH" /*El golpe de Merryweather*/, BLIP_DOCKS_HEIST);
 	func_71(227, 1391.2333f, 3614.206f, 37.9419f, "", BLIP_RURAL_BANK_HEIST);
-	func_71(229, -89.9141f, 4302.0923f, 45.5607f, "B_RHP1" /*Military Equipment*/, BLIP_HEIST_PREP);
+	func_71(229, -89.9141f, 4302.0923f, 45.5607f, "B_RHP1" /*Equipo militar*/, BLIP_HEIST_PREP);
 	func_71(230, 717.5974f, -965.4876f, 29.3953f, "", BLIP_LESTER_FAMILY);
 	func_71(231, 209.0284f, -1647.3315f, 28.8031f, "", BLIP_HEIST_PREP);
 	func_71(232, 707.5697f, -964.8843f, 29.4135f, "", BLIP_FBI_HEIST);
@@ -3637,10 +3637,10 @@ void func_70(int iParam0, var uParam1, var uParam2, var uParam3, eBlipSprite ebs
 	if (num < 0 || num >= 263 || iParam0 == 263)
 		return;
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 19);
 	Global_34172[num /*23*/][0 /*3*/] = { uParam1 };
@@ -3673,12 +3673,12 @@ void func_71(int iParam0, float fParam1, float fParam2, float fParam3, char* sPa
 
 void func_72() // Position - 0x8BD0 (35792)
 {
-	func_85(65, 1967.042f, 3116.0051f, 45.8901f, "B_CRCE" /*Stock Car Race*/, 315, false, 7, 1);
+	func_85(65, 1967.042f, 3116.0051f, 45.8901f, "B_CRCE" /*Carrera de stock cars*/, 315, false, 7, 1);
 	func_85(66, -572.041f, 294.196f, 79.9374f, "", 103, true, 7, 1);
 	func_85(67, 1992.27f, 3050.6f, 47.89f, "", 103, true, 7, 0);
 	func_85(68, -1370.6245f, 56.1227f, 52.70337f, "", 109, true, 7, 1);
 	func_85(69, -1702.46f, 4666.36f, 22.1255f, "", 141, false, 4, 1);
-	func_85(76, -1154.1101f, -2715.2026f, 18.8824f, "B_FSCH" /*Flight School*/, 90, false, 7, 1);
+	func_85(76, -1154.1101f, -2715.2026f, 18.8824f, "B_FSCH" /*Escuela de vuelo*/, 90, false, 7, 1);
 	func_81(77, 908f, 3643.7f, 32.2f, "", 84, false, 4);
 	func_81(78, 454.2f, -1851.3f, 27.6f, "", 84, false, 4);
 	func_81(79, -161f, -1669.7f, 33f, "", 84, false, 4);
@@ -3697,7 +3697,7 @@ void func_72() // Position - 0x8BD0 (35792)
 	func_85(89, 791.59f, -1160.85f, 27.89f, "", 315, false, 2, 0);
 	func_85(90, -1062.9856f, -1153.3645f, 1.129525f, "", 315, false, 2, 0);
 	func_85(94, 130.1238f, -1300.2657f, 28.2811f, "", 121, true, 7, 1);
-	func_85(95, uLocal_48, "B_SPTT" /*Stunt Plane Time Trial*/, 314, false, 7, 1);
+	func_85(95, uLocal_48, "B_SPTT" /*Contrarreloj avión acrobático*/, 314, false, 7, 1);
 	func_85(96, -1166.5565f, -1614.499f, 3.1734f, "", 122, true, 5, 1);
 	func_85(97, -773.0469f, 162.0946f, 66.475f, "", 122, true, 5, 1);
 	func_85(98, 487.5186f, -217.7697f, 52.7864f, "", 122, true, 5, 1);
@@ -3715,25 +3715,25 @@ void func_72() // Position - 0x8BD0 (35792)
 	func_85(111, 2862.152f, 5945.49f, 357.119f, "", 197, false, 1, 1);
 	func_85(138, -11.1495f, -1425.5645f, 29.6737f, "", 273, false, 2, 1);
 	func_85(139, 18.1531f, 535.2469f, 170.6324f, "", 273, false, 2, 1);
-	func_85(70, func_21(0), "B_OFFM" /*Off-Road Moto/ATV Race*/, 127, false, 7, 1);
-	func_85(71, func_21(1), "B_OFFT" /*Off-Road Truck Race*/, 127, false, 7, 1);
-	func_85(73, func_21(3), "B_OFFM" /*Off-Road Moto/ATV Race*/, 127, false, 7, 1);
-	func_85(74, func_21(4), "B_OFFM" /*Off-Road Moto/ATV Race*/, 127, false, 7, 1);
-	func_85(75, func_21(5), "B_OFFT" /*Off-Road Truck Race*/, 127, false, 7, 1);
-	func_85(72, func_21(2), "B_OFFM" /*Off-Road Moto/ATV Race*/, 127, false, 7, 1);
-	func_85(125, func_20(0), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(126, func_20(1), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(127, func_20(2), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(128, func_20(3), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(129, func_20(4), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(130, func_20(5), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(131, func_20(6), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(132, func_20(7), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(133, func_20(8), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(134, func_20(9), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(135, func_20(10), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(136, func_20(11), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
-	func_85(137, func_20(12), "B_BJMP" /*Parachute Jump*/, 94, false, 7, 1);
+	func_85(70, func_21(0), "B_OFFM" /*Todoterreno: motos/quads*/, 127, false, 7, 1);
+	func_85(71, func_21(1), "B_OFFT" /*Todoterreno: coches*/, 127, false, 7, 1);
+	func_85(73, func_21(3), "B_OFFM" /*Todoterreno: motos/quads*/, 127, false, 7, 1);
+	func_85(74, func_21(4), "B_OFFM" /*Todoterreno: motos/quads*/, 127, false, 7, 1);
+	func_85(75, func_21(5), "B_OFFT" /*Todoterreno: coches*/, 127, false, 7, 1);
+	func_85(72, func_21(2), "B_OFFM" /*Todoterreno: motos/quads*/, 127, false, 7, 1);
+	func_85(125, func_20(0), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(126, func_20(1), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(127, func_20(2), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(128, func_20(3), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(129, func_20(4), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(130, func_20(5), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(131, func_20(6), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(132, func_20(7), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(133, func_20(8), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(134, func_20(9), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(135, func_20(10), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(136, func_20(11), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
+	func_85(137, func_20(12), "B_BJMP" /*Salto en paracaídas*/, 94, false, 7, 1);
 	func_73(140, func_79(0), "", 9, 0, 375, 7);
 	func_73(141, func_79(1), "", 9, 0, 375, 7);
 	func_73(142, func_79(2), "", 9, 0, 375, 7);
@@ -3764,8 +3764,8 @@ void func_72() // Position - 0x8BD0 (35792)
 	func_85(116, -564.9687f, 274.1781f, 82.0197f, "", 136, false, 7, 1);
 	func_85(156, 50.8179f, -1392.0188f, 28.4059f, "", 100, false, 7, 1);
 	func_85(157, -699.7f, -922.9f, 18.5f, "", 100, false, 7, 1);
-	func_85(158, -1664.4f, -1127f, 12f, "B_RIDE" /*Fairground Ride*/, 266, false, 7, 1);
-	func_85(159, -1651.5f, -1131.5f, 18.3f, "B_RIDE" /*Fairground Ride*/, 266, false, 7, 1);
+	func_85(158, -1664.4f, -1127f, 12f, "B_RIDE" /*Atracción de feria*/, 266, false, 7, 1);
+	func_85(159, -1651.5f, -1131.5f, 18.3f, "B_RIDE" /*Atracción de feria*/, 266, false, 7, 1);
 	func_85(160, 446.5f, 5571.2f, 781.2f, "", 36, false, 7, 1);
 	func_85(161, -742.1f, 5594.8f, 41.7f, "", 36, false, 7, 1);
 	return;
@@ -3903,10 +3903,10 @@ void func_77(int iParam0, int iParam1) // Position - 0x97E0 (38880)
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 16);
 	Global_34172[num /*23*/].f_22 = iParam1;
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -4027,10 +4027,10 @@ void func_82(int iParam0, BOOL bParam1) // Position - 0x9B06 (39686)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 20);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 20);
 	return;
 }
@@ -4163,7 +4163,7 @@ void func_87() // Position - 0x9C32 (39986)
 	DECORATOR::DECOR_REGISTER("Player_Submarine_Dinghy", INT);
 	DECORATOR::DECOR_REGISTER("Player_Moon_Pool", INT);
 	DECORATOR::DECOR_REGISTER("VehicleList", BOOL);
-	DECORATOR::DECOR_REGISTER("Company_SUV" /*Company SUV*/, INT);
+	DECORATOR::DECOR_REGISTER("Company_SUV" /*Todocamino de la empresa*/, INT);
 	DECORATOR::DECOR_REGISTER("TestDrive", BOOL);
 	DECORATOR::DECOR_REGISTER("Player_Thruster", INT);
 	DECORATOR::DECOR_REGISTER("Player_Owned_Veh", INT);
@@ -4172,10 +4172,11 @@ void func_87() // Position - 0x9C32 (39986)
 	DECORATOR::DECOR_REGISTER("Player_Field_Duster", INT);
 	DECORATOR::DECOR_REGISTER("Player_Mansion_Heli", INT);
 	DECORATOR::DECOR_REGISTER("Mansion_Spawned_Heli", BOOL);
+	DECORATOR::DECOR_REGISTER("Mansion_Carmod_Vehicle", BOOL);
 	return;
 }
 
-void func_88() // Position - 0x9F7F (40831)
+void func_88() // Position - 0x9F88 (40840)
 {
 	DECORATOR::DECOR_REGISTER("PHOTO_TAKEN", BOOL);
 	DECORATOR::DECOR_REGISTER("doe_elk", BOOL);
@@ -4197,7 +4198,7 @@ void func_88() // Position - 0x9F7F (40831)
 	return;
 }
 
-void func_89() // Position - 0xA020 (40992)
+void func_89() // Position - 0xA029 (41001)
 {
 	if (MISC::GET_INDEX_OF_CURRENT_LEVEL() == LEVEL_GTA5)
 	{

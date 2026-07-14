@@ -605,7 +605,7 @@ BOOL func_16(int iParam0, int iParam1) // Position - 0x1069 (4201)
 	return IS_BIT_SET(Global_1677542.f_1048, iParam0);
 }
 
-BOOL func_17() // Position - 0x10A1 (4257)
+ePedComponentType func_17() // Position - 0x10A1 (4257)
 {
 	return Global_1575090;
 }

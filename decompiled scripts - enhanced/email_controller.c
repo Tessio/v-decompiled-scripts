@@ -215,9 +215,9 @@ void main() // Position - 0x0 (0)
 		}
 	
 		BUILTIN::WAIT(ms);
-		Global_46122 = false;
-		Global_46123 = false;
-		Global_46124 = false;
+		Global_46122 = 0;
+		Global_46123 = 0;
+		Global_46124 = 0;
 		num8 = Global_55068[0 /*120*/];
 	
 		if (num8 > 16)
@@ -257,7 +257,7 @@ void main() // Position - 0x0 (0)
 	return;
 }
 
-void func_1(const char* sParam0) // Position - 0x439 (1081)
+void func_1(int iParam0) // Position - 0x439 (1081)
 {
 	int num;
 	int num2;
@@ -266,7 +266,7 @@ void func_1(const char* sParam0) // Position - 0x439 (1081)
 	int num4;
 	char* str;
 
-	num = func_14(sParam0);
+	num = func_14(iParam0);
 
 	if (num == -1)
 		return;
@@ -287,20 +287,20 @@ void func_1(const char* sParam0) // Position - 0x439 (1081)
 		unk = { Global_55430[num /*203*/].f_10[num3 /*48*/].f_2 };
 	}
 
-	if (sParam0 == 28)
+	if (iParam0 == 28)
 	{
 		switch (num2)
 		{
 			case 249:
-				str = "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/;
+				str = "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/;
 				break;
 		
 			case 269:
-				str = "PW_FEED_EM_3" /*Hello Franklin,~n~The Southern San Andreas Tourist Board Young Amateur Wildlife Photographer of the Year Competition is over.~n~Some of our photographers fell off cli...*/;
+				str = "PW_FEED_EM_3" /*Hola, Franklin:~n~La competición de fotógrafos amateur de animales de la oficina de turismo del sur de San Andreas ha terminado.~n~Algunos de nuestros fotógrafos cayeron por prec...*/;
 				break;
 		
 			default:
-				str = "PW_FEED_EM_2" /*Dear contestant,~n~Thank you for your recent photographic submission. Our image licensing department is already maximizing its profit-making potential. And you're a step clos...*/;
+				str = "PW_FEED_EM_2" /*Estimado participante,~n~Gracias por el envío de tu fotografía. Nuestro departamento de licencia de imágenes está aumentando el potencial de la foto para hacer dinero y tú estás un paso más...*/;
 				break;
 		}
 	
@@ -345,15 +345,15 @@ void func_2(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const
 		switch (iParam2)
 		{
 			case 72:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 73:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 74:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			default:
@@ -466,7 +466,7 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_12" /*Marnie*/;
 	
 		case 5:
-			return "EMSTR_29" /*Epsilon Store*/;
+			return "EMSTR_29" /*Tienda de Epsilon*/;
 	
 		case 6:
 			return "EMSTR_36" /*Maude*/;
@@ -484,10 +484,10 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_58" /*Bank of Liberty*/;
 	
 		case 11:
-			return "EMSTR_78" /*Legendary Motorsport Sales*/;
+			return "EMSTR_78" /*Legendary Motorsport*/;
 	
 		case 12:
-			return "EMSTR_81" /*Elitas Sales*/;
+			return "EMSTR_81" /*Ventas de Elitas*/;
 	
 		case 13:
 			return "EMSTR_84" /*Cache & Carry*/;
@@ -508,13 +508,13 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_145" /*Paige Harris*/;
 	
 		case 19:
-			return "EMSTR_152" /*Los Santos Tourist Info*/;
+			return "EMSTR_152" /*Turismo de Los Santos*/;
 	
 		case 20:
 			return "EMSTR_157" /*Rickie Luckens*/;
 	
 		case 21:
-			return "EMSTR_163" /*Minotaur Property Management*/;
+			return "EMSTR_163" /*Minotaur*/;
 	
 		case 22:
 			return "EMSTR_182" /*Saeeda Kadam*/;
@@ -523,10 +523,10 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_187" /*Vanilla Unicorn*/;
 	
 		case 24:
-			return "EMSTR_190" /*Dr Isiah Friedlander*/;
+			return "EMSTR_190" /*Dr. Isiah Friedlander*/;
 	
 		case 25:
-			return "EMSTR_206" /*TRACEYHEARTSTEALER*/;
+			return "EMSTR_206" /*TRACIROBACORAZONES*/;
 	
 		case 26:
 			return "EMSTR_219" /*Dave Norton*/;
@@ -571,34 +571,34 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_369" /*Hookies*/;
 	
 		case 40:
-			return "EMSTR_376" /*Towing Impound*/;
+			return "EMSTR_376" /*Depósito de coches*/;
 	
 		case 41:
-			return "EMSTR_379" /*Downtown Cab Co,*/;
+			return "EMSTR_379" /*Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_384" /*Sonar Collections Dock*/;
+			return "EMSTR_384" /*Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_387" /*Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_390" /*Cinema Doppler*/;
+			return "EMSTR_390" /*Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_393" /*Ten Cent Theater*/;
+			return "EMSTR_393" /*Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_396" /*Tivoli Cinema*/;
+			return "EMSTR_396" /*Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_399" /*Los Santos Golf Club*/;
+			return "EMSTR_399" /*Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_402" /*Car Scrap Yard*/;
+			return "EMSTR_402" /*Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_405" /*Smoke on the Water*/;
@@ -613,10 +613,10 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_414" /*The Hen House*/;
 	
 		case 54:
-			return "EMSTR_465" /*Pedal & Metal Sales*/;
+			return "EMSTR_465" /*Ventas de P&M*/;
 	
 		case 55:
-			return "EMSTR_468" /*SSA Super Autos Sales*/;
+			return "EMSTR_468" /*SSA Super Autos*/;
 	
 		case 56:
 			return "EMSTR_489" /*Hush Smush*/;
@@ -640,13 +640,13 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_507" /*Misscuddles*/;
 	
 		case 63:
-			return "EMSTR_640" /*Off-Road Events*/;
+			return "EMSTR_640" /*Eventos todoterreno*/;
 	
 		case 64:
 			return "EMSTR_643" /*DockTease*/;
 	
 		case 65:
-			return "EMSTR_652" /*Brother Adrian*/;
+			return "EMSTR_652" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -915,7 +915,7 @@ struct<16> func_13(int iParam0) // Position - 0x1283 (4739)
 	return unk17;
 }
 
-int func_14(const char* sParam0) // Position - 0x12B4 (4788)
+int func_14(int iParam0) // Position - 0x12B4 (4788)
 {
 	int i;
 	int num;
@@ -927,7 +927,7 @@ int func_14(const char* sParam0) // Position - 0x12B4 (4788)
 
 	for (i = 0; i < 7; i = i + 1)
 	{
-		if (Global_55430[i /*203*/].f_2 == sParam0)
+		if (Global_55430[i /*203*/].f_2 == iParam0)
 		{
 			if (Global_55430[i /*203*/].f_1 > num2)
 			{
@@ -943,12 +943,12 @@ int func_14(const char* sParam0) // Position - 0x12B4 (4788)
 	return -1;
 }
 
-void func_15(const char* sParam0, char* sParam1) // Position - 0x1318 (4888)
+void func_15(int iParam0, char* sParam1) // Position - 0x1318 (4888)
 {
 	int num;
 	int num2;
 
-	num = func_14(sParam0);
+	num = func_14(iParam0);
 
 	if (num == -1)
 		return;
@@ -965,11 +965,11 @@ void func_15(const char* sParam0, char* sParam1) // Position - 0x1318 (4888)
 	return;
 }
 
-void func_16(const char* sParam0, char* sParam1, BOOL bParam2) // Position - 0x13CD (5069)
+void func_16(int iParam0, char* sParam1, BOOL bParam2) // Position - 0x13CD (5069)
 {
 	int num;
 
-	num = func_14(sParam0);
+	num = func_14(iParam0);
 
 	if (num == -1)
 		return;
@@ -987,19 +987,19 @@ void func_16(const char* sParam0, char* sParam1, BOOL bParam2) // Position - 0x1
 	TEXT_LABEL_ASSIGN_STRING(&Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 - 1 /*48*/].f_7[4 /*4*/], "", 16);
 
 	if (bParam2)
-		func_1(sParam0);
+		func_1(iParam0);
 
 	return;
 }
 
-BOOL func_17(const char* sParam0, int iParam1, BOOL bParam2) // Position - 0x14F4 (5364)
+BOOL func_17(int iParam0, int iParam1, BOOL bParam2) // Position - 0x14F4 (5364)
 {
 	int num;
 	int i;
 	int num2;
 	int num3;
 
-	num = func_19(sParam0, true);
+	num = func_19(iParam0, true);
 
 	if (num == -1)
 		return false;
@@ -1007,7 +1007,7 @@ BOOL func_17(const char* sParam0, int iParam1, BOOL bParam2) // Position - 0x14F
 	if (Global_55430[num /*203*/].f_9 == 4)
 		return false;
 
-	Global_55430[num /*203*/].f_2 = sParam0;
+	Global_55430[num /*203*/].f_2 = iParam0;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/] = iParam1;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/].f_1 = 0;
 	Global_55430[num /*203*/].f_10[Global_55430[num /*203*/].f_9 /*48*/].f_6 = 0;
@@ -1123,22 +1123,22 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < false)
-							Global_46122 = false;
+						if (Global_46122 < 0)
+							Global_46122 = 0;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < false)
-							Global_46123 = false;
+						if (Global_46123 < 0)
+							Global_46123 = 0;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < false)
-							Global_46124 = false;
+						if (Global_46124 < 0)
+							Global_46124 = 0;
 						break;
 				}
 			}
@@ -1169,22 +1169,22 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 					case 0:
 						Global_46122 = Global_46122 - 1;
 					
-						if (Global_46122 < false)
-							Global_46122 = false;
+						if (Global_46122 < 0)
+							Global_46122 = 0;
 						break;
 				
 					case 1:
 						Global_46123 = Global_46123 - 1;
 					
-						if (Global_46123 < false)
-							Global_46123 = false;
+						if (Global_46123 < 0)
+							Global_46123 = 0;
 						break;
 				
 					case 2:
 						Global_46124 = Global_46124 - 1;
 					
-						if (Global_46124 < false)
-							Global_46124 = false;
+						if (Global_46124 < 0)
+							Global_46124 = 0;
 						break;
 				}
 			}
@@ -1231,7 +1231,7 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			
 				case 1:
 					if (num3 == 249)
-						func_2(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_2(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
 						func_2(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
@@ -1246,7 +1246,7 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 	return;
 }
 
-int func_19(const char* sParam0, BOOL bParam1) // Position - 0x1AC3 (6851)
+int func_19(int iParam0, BOOL bParam1) // Position - 0x1AC3 (6851)
 {
 	int num;
 	int i;
@@ -1258,7 +1258,7 @@ int func_19(const char* sParam0, BOOL bParam1) // Position - 0x1AC3 (6851)
 	int num4;
 	int k;
 
-	num = func_14(sParam0);
+	num = func_14(iParam0);
 
 	if (num > -1)
 		if (Global_55430[num /*203*/].f_9 < 4)
@@ -1349,7 +1349,7 @@ int func_19(const char* sParam0, BOOL bParam1) // Position - 0x1AC3 (6851)
 		}
 	}
 
-	Global_55430[num2 /*203*/].f_2 = sParam0;
+	Global_55430[num2 /*203*/].f_2 = iParam0;
 	Global_55430[num2 /*203*/].f_3 = 0;
 
 	if (!bParam1)
@@ -1677,7 +1677,7 @@ void func_32(int iParam0, BOOL bParam1) // Position - 0x2239 (8761)
 		if (num < 0)
 			return;
 	
-		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[num] /*12*/].f_4 == false)
+		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[num] /*12*/].f_4 == 0)
 			Global_49455[iParam0 /*46*/].f_1 = 1;
 	
 		return;
@@ -1702,7 +1702,7 @@ void func_32(int iParam0, BOOL bParam1) // Position - 0x2239 (8761)
 
 	if (Global_49455[iParam0 /*46*/].f_31 == Global_49455[iParam0 /*46*/].f_30)
 	{
-		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[Global_49455[iParam0 /*46*/].f_42 - 1] /*12*/].f_4 == false)
+		if (Global_46130[Global_49455[iParam0 /*46*/].f_32[Global_49455[iParam0 /*46*/].f_42 - 1] /*12*/].f_4 == 0)
 		{
 			Global_49455[iParam0 /*46*/].f_1 = 1;
 			return;
@@ -2281,7 +2281,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 5:
-			func_48(uParam1, "Barry3A", func_50(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Areas where you can find vehicles with a hidden stash have been marked on the map. Collect these vehicles for Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
+			func_48(uParam1, "Barry3A", func_50(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Las zonas en las que puedes encontrar vehículos con un alijo oculto aparecerán indicadas en el mapa. Recoge estos vehículos para Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
 			break;
 	
 		case 6:
@@ -2293,7 +2293,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 8:
-			func_48(uParam1, "Dreyfuss1", func_50(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*The killer's identity and location have been revealed.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_49(iParam0), 0, 0);
+			func_48(uParam1, "Dreyfuss1", func_50(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*Se ha revelado la identidad y el paradero del asesino.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_49(iParam0), 0, 0);
 			break;
 	
 		case 9:
@@ -2413,7 +2413,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 38:
-			func_48(uParam1, "Nigel1A", func_50(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Areas where you can find celebrity items have been marked on the map. Steal these items for Nigel and Mrs. Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_49(iParam0), 1, 1);
+			func_48(uParam1, "Nigel1A", func_50(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Se han marcado en el mapa las zonas en las que puedes encontrar objetos de famosos. Róbalos para Nigel y para la señora Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_49(iParam0), 1, 1);
 			break;
 	
 		case 39:
@@ -2457,7 +2457,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 49:
-			func_48(uParam1, "Paparazzo3A", func_50(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Areas where you can find celebrity photo opportunities have been marked on the map. Track down and photograph these celebrities for Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
+			func_48(uParam1, "Paparazzo3A", func_50(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Las zonas en las que puedes encontrar oportunidades para sacar fotos a famosos se han marcado en el mapa. Localiza y fotografía a estos famosos para Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
 			break;
 	
 		case 50:
@@ -2493,7 +2493,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 58:
-			func_48(uParam1, "Tonya1", func_50(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
+			func_48(uParam1, "Tonya1", func_50(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
 			break;
 	
 		case 59:
@@ -3073,22 +3073,22 @@ eCharacter _GET_CURRENT_PLAYER_CHARACTER_0() // Position - 0x4946 (18758)
 	return Global_114931.f_2370.f_539.f_4321;
 }
 
-BOOL func_56(ePedComponentType epctParam0) // Position - 0x495F (18783)
+BOOL func_56(Ped pedParam0) // Position - 0x495F (18783)
 {
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return false;
 
-	if (func_57(epctParam0) == -1)
+	if (func_57(pedParam0) == -1)
 		return false;
 
 	return true;
 }
 
-int func_57(ePedComponentType epctParam0) // Position - 0x4980 (18816)
+int func_57(Ped pedParam0) // Position - 0x4980 (18816)
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (pedParam0 == 0)
 		return -1;
 
 	i = 0;
@@ -3096,7 +3096,7 @@ int func_57(ePedComponentType epctParam0) // Position - 0x4980 (18816)
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!(Global_45897[i /*5*/] == -1))
-			if (epctParam0 == Global_45897[i /*5*/].f_1)
+			if (pedParam0 == Global_45897[i /*5*/].f_1)
 				return i;
 	}
 
@@ -3119,15 +3119,15 @@ BOOL func_59() // Position - 0x49DE (18910)
 	return false;
 }
 
-void func_60(const char* sParam0) // Position - 0x49F7 (18935)
+void func_60(int iParam0) // Position - 0x49F7 (18935)
 {
 	int num;
 
-	if (sParam0 == 26)
+	if (iParam0 == 26)
 		if (!IS_BIT_SET(Global_114931.f_24993, 4 - 1))
 			return;
 
-	num = func_14(sParam0);
+	num = func_14(iParam0);
 
 	if (num == -1)
 		return;

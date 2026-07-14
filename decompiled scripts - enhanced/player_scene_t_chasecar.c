@@ -618,7 +618,7 @@ void main() // Position - 0x0 (0)
 	func_90();
 	func_86();
 
-	while (iLocal_449 && func_82(4, PV_COMP_HEAD))
+	while (iLocal_449 && func_82(4, 0))
 	{
 		BUILTIN::WAIT(0);
 	
@@ -850,7 +850,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = false;
 	Global_23997 = 0;
@@ -874,9 +874,9 @@ BOOL func_8(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x534 (1332)
 					Global_21627.f_1 = 3;
 					Global_23000 = 0;
 					Global_23001 = 1;
-					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_23053 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -1498,9 +1498,9 @@ void func_41(var uParam0, Ped pedParam1, var uParam2, var uParam3, var uParam4, 
 
 	if (MISC::IS_STRING_NULL(string2))
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			string2 = "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/;
+			string2 = "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/;
 		else
-			string2 = "FM_IHELP_HNT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus.*/;
+			string2 = "FM_IHELP_HNT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para alternar la cámara.*/;
 
 	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(string2))
 		func_67();
@@ -1554,7 +1554,7 @@ void func_41(var uParam0, Ped pedParam1, var uParam2, var uParam3, var uParam4, 
 								_DISPLAY_HELP_TEXT(string2, -1);
 								uParam0->f_3 = string2;
 							
-								if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, string2))
+								if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, string2))
 									func_44(true);
 							}
 						}
@@ -1572,7 +1572,7 @@ void func_41(var uParam0, Ped pedParam1, var uParam2, var uParam3, var uParam4, 
 							_DISPLAY_HELP_TEXT(string2, -1);
 							uParam0->f_3 = string2;
 						
-							if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, string2))
+							if (MISC::ARE_STRINGS_EQUAL("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, string2))
 								func_44(true);
 						}
 					}
@@ -1657,7 +1657,7 @@ BOOL func_43(var uParam0) // Position - 0x13CF (5071)
 	return false;
 }
 
-BOOL func_44(BOOL bParam0) // Position - 0x13FA (5114)
+int func_44(BOOL bParam0) // Position - 0x13FA (5114)
 {
 	switch (Global_44886)
 	{
@@ -1699,7 +1699,7 @@ BOOL func_46(const char* sParam0) // Position - 0x14BB (5307)
 {
 	if (!func_47(true, true, false))
 	{
-		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam0) && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/))
+		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam0) && _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/))
 			HUD::CLEAR_HELP(true);
 	
 		return false;
@@ -1714,13 +1714,13 @@ BOOL func_46(const char* sParam0) // Position - 0x14BB (5307)
 			break;
 	
 		case 4:
-			if (func_44(false) < true)
+			if (func_44(false) < 1)
 				return true;
 			break;
 	
 		case 5:
 		case 15:
-			if (func_44(false) < true)
+			if (func_44(false) < 1)
 				return true;
 			break;
 	
@@ -2335,9 +2335,9 @@ void func_69(var uParam0, const char* sParam1, BOOL bParam2, BOOL bParam3) // Po
 
 	if (MISC::IS_STRING_NULL(str))
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-			str = "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/;
+			str = "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/;
 		else
-			str = "FM_IHELP_HNT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus.*/;
+			str = "FM_IHELP_HNT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para alternar la cámara.*/;
 
 	if (!MISC::IS_STRING_NULL(uParam0->f_3))
 		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(uParam0->f_3))
@@ -3019,7 +3019,7 @@ BOOL func_81() // Position - 0x2DC1 (11713)
 	return false;
 }
 
-int func_82(int iParam0, ePedComponentType epctParam1) // Position - 0x2E9E (11934)
+int func_82(int iParam0, Ped pedParam1) // Position - 0x2E9E (11934)
 {
 	Vector3 entityCoords;
 	float num;
@@ -3040,30 +3040,30 @@ int func_82(int iParam0, ePedComponentType epctParam1) // Position - 0x2E9E (119
 		if (!func_84(iParam0, func_85()))
 			return 0;
 	
-		if (ENTITY::DOES_ENTITY_EXIST(epctParam1))
+		if (ENTITY::DOES_ENTITY_EXIST(pedParam1))
 		{
-			entityCoords = { ENTITY::GET_ENTITY_COORDS(epctParam1, false) };
+			entityCoords = { ENTITY::GET_ENTITY_COORDS(pedParam1, false) };
 			num = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), entityCoords);
 		
 			if (num > 250f)
-				if (!ENTITY::IS_ENTITY_DEAD(epctParam1, false))
-					if (!ENTITY::IS_ENTITY_ON_SCREEN(epctParam1))
+				if (!ENTITY::IS_ENTITY_DEAD(pedParam1, false))
+					if (!ENTITY::IS_ENTITY_ON_SCREEN(pedParam1))
 						return 0;
 				else if (!CAM::IS_SPHERE_VISIBLE(entityCoords, 1.5f))
 					return 0;
 		}
-		else if (epctParam1 == func_83(Global_102175) && epctParam1 != PV_COMP_HEAD)
+		else if (pedParam1 == func_83(Global_102175) && pedParam1 != 0)
 		{
-			Global_102175 = PV_COMP_HEAD;
+			Global_102175 = 0;
 		}
 	}
 
 	return 1;
 }
 
-ePedComponentType func_83(ePedComponentType epctParam0) // Position - 0x2F82 (12162)
+Ped func_83(Ped pedParam0) // Position - 0x2F82 (12162)
 {
-	return epctParam0;
+	return pedParam0;
 }
 
 BOOL func_84(int iParam0, int iParam1) // Position - 0x2F8C (12172)
@@ -3259,7 +3259,7 @@ void func_91() // Position - 0x329C (12956)
 			uLocal_499[1] = -1;
 			uLocal_499[2] = -1;
 			uLocal_499[3] = -1;
-			TEXT_LABEL_ASSIGN_STRING(&uLocal_506, "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&uLocal_506, "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_510, "PST_CHSCRaR", 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_517, "PST_CHSCRaG", 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_521, "PST_CHSCRaK", 16);
@@ -3286,7 +3286,7 @@ void func_91() // Position - 0x329C (12956)
 			uLocal_499[1] = -1;
 			uLocal_499[2] = -1;
 			uLocal_499[3] = -1;
-			TEXT_LABEL_ASSIGN_STRING(&uLocal_506, "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&uLocal_506, "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_510, "PST_CHSCRbR", 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_517, "PST_CHSCRbG", 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_521, "PST_CHSCRbK", 16);
@@ -3316,7 +3316,7 @@ void func_91() // Position - 0x329C (12956)
 			uLocal_499[1] = 3;
 			uLocal_499[2] = 4;
 			uLocal_499[3] = -1;
-			TEXT_LABEL_ASSIGN_STRING(&uLocal_506, "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&uLocal_506, "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_510, "PST_CHSCRcR", 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_517, "", 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_521, "PST_CHSCRcK", 16);
@@ -3342,7 +3342,7 @@ void func_91() // Position - 0x329C (12956)
 			uLocal_499[1] = -1;
 			uLocal_499[2] = -1;
 			uLocal_499[3] = -1;
-			TEXT_LABEL_ASSIGN_STRING(&uLocal_506, "CMN_HINT" /*~s~Press ~INPUT_VEH_CIN_CAM~ to toggle focus on the target.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&uLocal_506, "CMN_HINT" /*~s~Pulsa ~INPUT_VEH_CIN_CAM~ para centrarte en el blanco.*/, 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_510, "PST_CHSCRdR", 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_517, "PST_CHSCRdG", 16);
 			TEXT_LABEL_ASSIGN_STRING(&uLocal_521, "PST_CHSCRdK", 16);

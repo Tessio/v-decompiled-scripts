@@ -986,7 +986,7 @@ BOOL func_18(var uParam0, var uParam1) // Position - 0xB49 (2889)
 	if (uParam0->f_11)
 	{
 		if (!Global_80566)
-			func_26(&(uParam0->f_11), &(uParam0->f_12), &(uParam0->f_9), 5, &iLocal_387, &uLocal_385, "DIVING_TITLE" /*Piece Collected~s~*/, "DIVING_COLLECT" /*~1~/30 submarine pieces collected.*/);
+			func_26(&(uParam0->f_11), &(uParam0->f_12), &(uParam0->f_9), 5, &iLocal_387, &uLocal_385, "DIVING_TITLE" /*Pieza recogida~s~*/, "DIVING_COLLECT" /*~1~ de 30 piezas del submarino recogidas.*/);
 	
 		if (!func_25(44))
 		{
@@ -996,7 +996,7 @@ BOOL func_18(var uParam0, var uParam1) // Position - 0xB49 (2889)
 			{
 				if (MISC::GET_DISTANCE_BETWEEN_COORDS(func_23(num), entityCoords2, false) > 200f)
 				{
-					func_20("DIVING_HELP4" /*Return to a Dinghy to continue hunting for the submarine pieces.*/, 1, 7500, -1, 10000, 7, 0, 0, 0);
+					func_20("DIVING_HELP4" /*Vuelve a una lancha para seguir buscando piezas del submarino.*/, 1, 7500, -1, 10000, 7, 0, 0, 0);
 					func_19(44);
 				}
 			}
@@ -2087,7 +2087,7 @@ void func_62() // Position - 0x22A1 (8865)
 			{
 				if (!func_25(41))
 				{
-					func_20("DIVING_HELP1" /*The nearest area where submarine pieces can be found is marked on the map when driving the Dinghy.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
+					func_20("DIVING_HELP1" /*La zona más cercana donde hay piezas de submarino se marca en el mapa cuando se pilota la lancha.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
 					func_19(41);
 				}
 			
@@ -2101,7 +2101,7 @@ void func_62() // Position - 0x22A1 (8865)
 					HUD::SET_BLIP_ALPHA(blLocal_388, 128);
 					HUD::SET_BLIP_COLOUR(blLocal_388, 2);
 					HUD::SET_BLIP_HIDDEN_ON_LEGEND(blLocal_388, false);
-					HUD::SET_BLIP_NAME_FROM_TEXT_FILE(blLocal_388, "B_WRE" /*Wreckage Site*/);
+					HUD::SET_BLIP_NAME_FROM_TEXT_FILE(blLocal_388, "B_WRE" /*Restos*/);
 					HUD::SHOW_HEIGHT_ON_BLIP(blLocal_388, false);
 					iLocal_389 = iLocal_386;
 				}
@@ -2117,7 +2117,7 @@ void func_62() // Position - 0x22A1 (8865)
 			{
 				if (!func_25(42))
 				{
-					func_20("DIVING_HELP2" /*When inside the green marker areas, your sonar will be in range and you can use it to help locate the missing submarine pieces.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
+					func_20("DIVING_HELP2" /*Cuando te encuentres en las zonas marcadas en verde, tu sónar estará en el rango y podrás usarlo para ayudarte a localizar las piezas restantes del submarino.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
 					func_19(42);
 				}
 			}
@@ -2128,7 +2128,7 @@ void func_62() // Position - 0x22A1 (8865)
 				{
 					if (ENTITY::IS_ENTITY_IN_WATER(PLAYER::PLAYER_PED_ID()) && !PED::IS_PED_SWIMMING_UNDER_WATER(PLAYER::PLAYER_PED_ID()))
 					{
-						func_20("DIVING_HELP3" /*Dive underwater to search for the submarine pieces.*/, 1, 2000, -1, 10000, 7, 0, 0, 0);
+						func_20("DIVING_HELP3" /*Sumérgete para buscar piezas del submarino.*/, 1, 2000, -1, 10000, 7, 0, 0, 0);
 						func_19(43);
 					}
 				}
@@ -2263,7 +2263,7 @@ void func_65() // Position - 0x267E (9854)
 		iLocal_409 = 0;
 
 	func_69();
-	func_68(&uLocal_40, 5, joaat("prop_sub_chunk_01"), "DIVING_COLLECT" /*~1~/30 submarine pieces collected.*/);
+	func_68(&uLocal_40, 5, joaat("prop_sub_chunk_01"), "DIVING_COLLECT" /*~1~ de 30 piezas del submarino recogidas.*/);
 	func_66(&uLocal_40, joaat("NUM_HIDDEN_PACKAGES_4") /* TUNEABLE: NUM_HIDDEN_PACKAGES_4, NUM_HIDDEN_PACKAGES_4 */, 845, 30);
 	func_2(1);
 	uLocal_396[0] = 0.25f;

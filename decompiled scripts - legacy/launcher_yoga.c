@@ -802,7 +802,7 @@ void func_7() // Position - 0xB3B (2875)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_8() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1562,29 +1562,29 @@ Hash func_50(eCharacter echParam0) // Position - 0x17FB (6139)
 	return Global_2339[echParam0 /*29*/];
 }
 
-BOOL func_51() // Position - 0x180A (6154)
+ePedComponentType func_51() // Position - 0x180A (6154)
 {
 	return Global_77342;
 }
 
-BOOL func_52(int iParam0) // Position - 0x1816 (6166)
+ePedComponentType func_52(int iParam0) // Position - 0x1816 (6166)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_53(int iParam0, int iParam1) // Position - 0x186D (6253)
@@ -1780,7 +1780,7 @@ BOOL func_66() // Position - 0x21BA (8634)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_67() // Position - 0x21CB (8651)
+ePedComponentType func_67() // Position - 0x21CB (8651)
 {
 	return Global_1575090;
 }
@@ -2119,7 +2119,7 @@ BOOL func_86(int iParam0, int iParam1) // Position - 0x270F (9999)
 void func_87() // Position - 0x271E (10014)
 {
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "Yoga", 64);
-	sLocal_99 = "PLAY_YOGA" /*Press ~INPUT_CONTEXT~ to do Yoga.*/;
+	sLocal_99 = "PLAY_YOGA" /*Pulsa ~INPUT_CONTEXT~ para hacer yoga.*/;
 	iLocal_97 = 18;
 	fLocal_115 = 2.5f;
 	fLocal_100 = 20f;

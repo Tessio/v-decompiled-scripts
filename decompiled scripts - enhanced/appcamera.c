@@ -204,7 +204,7 @@ void main() // Position - 0x0 (0)
 	else
 		fLocal_75 = 0.7f;
 
-	if (!func_203())
+	if (!func_205())
 	{
 		Global_4521263 = 99;
 		Global_4521264 = 99;
@@ -216,7 +216,7 @@ void main() // Position - 0x0 (0)
 		Global_4521264 = 0;
 	}
 
-	uLocal_17[0] = "No_Filter" /*No Filter*/;
+	uLocal_17[0] = "No_Filter" /*Sin filtro*/;
 	uLocal_17[1] = "phone_cam1";
 	uLocal_17[2] = "phone_cam2";
 	uLocal_17[3] = "phone_cam3";
@@ -249,12 +249,12 @@ void main() // Position - 0x0 (0)
 	uLocal_46[4] = "mood_Injured_1";
 	uLocal_46[5] = "mood_sulk_1";
 	uLocal_46[6] = "mood_Angry_1";
-	func_202();
+	func_204();
 
-	if (func_201(true, true, !bLocal_62, true))
+	if (func_203(true, true, !bLocal_62, true))
 		bLocal_62 = true;
 
-	func_200();
+	func_202();
 	iLocal_110 = AUDIO::GET_SOUND_ID();
 
 	if (Global_21572 == 0)
@@ -420,7 +420,7 @@ void main() // Position - 0x0 (0)
 						{
 							MISC::SET_BIT(&Global_4524844, 13);
 							Global_114931.f_14058.f_81 = 1;
-							_DISPLAY_HELP_TEXT("CELL_FOC_HLP" /*Hold ~INPUT_CELLPHONE_CAMERA_FOCUS_LOCK~ to initiate Focus Lock. This will lock the viewfinder's focus distance and allow you to recompose your shot.*/, -1);
+							_DISPLAY_HELP_TEXT("CELL_FOC_HLP" /*Mantén ~INPUT_CELLPHONE_CAMERA_FOCUS_LOCK~ para fijar el enfoque. Esto fijará la distancia de enfoque del visor y te permitirá recomponer la foto.*/, -1);
 						}
 					}
 				}
@@ -584,7 +584,7 @@ void main() // Position - 0x0 (0)
 										func_169();
 										iLocal_107 = iLocal_107 + 1;
 									
-										if (func_203())
+										if (func_205())
 											func_194(iLocal_138, "SET_REMAINING_PHOTOS", BUILTIN::TO_FLOAT(iLocal_107), BUILTIN::TO_FLOAT(iLocal_108), -1082130432, -1082130432, -1082130432);
 										else
 											func_194(iLocal_138, "SET_REMAINING_PHOTOS", BUILTIN::TO_FLOAT(iLocal_107), BUILTIN::TO_FLOAT(iLocal_108), -1082130432, -1082130432, -1082130432);
@@ -611,7 +611,7 @@ void main() // Position - 0x0 (0)
 										bLocal_125 = 0;
 										func_155();
 									
-										if (func_203())
+										if (func_205())
 											if (Global_4521264 == 0)
 												if (!IS_BIT_SET(Global_4524844, 2))
 													func_194(iLocal_138, "SHOW_PHOTO_FRAME", 1f, -1082130432, -1082130432, -1082130432, -1082130432);
@@ -781,7 +781,7 @@ void main() // Position - 0x0 (0)
 													}
 												}
 											
-												if (func_203())
+												if (func_205())
 													if (Global_4521264 == 0)
 														if (!IS_BIT_SET(Global_4524844, 2))
 															func_194(iLocal_138, "SHOW_PHOTO_FRAME", 1f, -1082130432, -1082130432, -1082130432, -1082130432);
@@ -847,31 +847,31 @@ void main() // Position - 0x0 (0)
 			else
 			{
 				if (iLocal_153 == 1)
-					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "CELL_CAM_FW_1" /*Camera storage device full.*/, iLocal_150, "CELL_CAM_FW_2" /*Access the Gallery from the Pause Menu to delete some photos.*/, false, -1, "", "", true, 0);
+					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "CELL_CAM_FW_1" /*Memoria de la cámara llena.*/, iLocal_150, "CELL_CAM_FW_2" /*Accede a la galería desde el menú de pausa para borrar fotos.*/, false, -1, "", "", true, 0);
 			
 				if (iLocal_153 == 2)
-					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "ERROR_NO_SC_CAMERAPHONE" /*Unable to save your Snapmatic photo as you are not signed up or logged in to ~HUD_COLOUR_SOCIAL_CLUB~Rockstar Games~s~.*/, iLocal_150, "", false, -1, "", "", true, 0);
+					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "ERROR_NO_SC_CAMERAPHONE" /*No es posible guardar la foto de Snapmatic, ya que no te has registrado o iniciado sesión en ~HUD_COLOUR_SOCIAL_CLUB~Rockstar Games~s~.*/, iLocal_150, "", false, -1, "", "", true, 0);
 			
 				if (iLocal_153 == 6)
-					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "SC_ERROR_BANNED" /*You have been banned from using Rockstar Games Services.~n~If you are a GTA+ Member, you will need to manually cancel your Membership.*/, iLocal_150, "", false, -1, "", "", true, 0);
+					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "SC_ERROR_BANNED" /*Tu cuenta ha sido suspendida de los servicios de  Rockstar Games.~n~Si eres miembro de GTA+, tendrás que cancelar manualmente la suscripción.*/, iLocal_150, "", false, -1, "", "", true, 0);
 			
 				if (iLocal_153 == 3)
-					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "ERROR_UPDATE_SC_CAMERAPHONE" /*Accept the latest Online Policies to save your Snapmatic photos to the Gallery. Log in or visit ~HUD_COLOUR_SOCIAL_CLUB~Rockstar Games~s~ for more information.*/, iLocal_150, "", false, -1, "", "", true, 0);
+					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "ERROR_UPDATE_SC_CAMERAPHONE" /*Acepta la política en línea más reciente para guardar fotos de Snapmatic en la galería. Inicia sesión o visita ~HUD_COLOUR_SOCIAL_CLUB~Rockstar Games~s~ para obtenerµmásµinformación.*/, iLocal_150, "", false, -1, "", "", true, 0);
 			
 				if (iLocal_153 == 7)
 				{
 					if (MISC::IS_XBOX360_VERSION() || func_5())
-						HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "CELL_CAM_TEMP_3X" /*To save Snapmatic phone app photos to the Gallery you must be signed in to Xbox LIVE*/, iLocal_150, "", false, -1, "", "", true, 0);
+						HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "CELL_CAM_TEMP_3X" /*Para guardar fotos de la aplicación para el móvil Snapmatic en la galería debes iniciar sesión en Xbox LIVE.*/, iLocal_150, "", false, -1, "", "", true, 0);
 				
 					if (MISC::IS_PS3_VERSION() || func_4())
-						HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "CELL_CAM_TEMP_3P" /*To save Snapmatic phone app photos to the Gallery you must be signed in to PSN℠*/, iLocal_150, "", false, -1, "", "", true, 0);
+						HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "CELL_CAM_TEMP_3P" /*Para guardar fotos de la aplicación para el móvil Snapmatic en la galería debes iniciar sesión en PSN℠.*/, iLocal_150, "", false, -1, "", "", true, 0);
 				
 					if (MISC::IS_PC_VERSION())
-						HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "CELL_CAM_TEMP_30" /*To save Snapmatic phone app photos to the Gallery you must be logged in.*/, iLocal_150, "", false, -1, "", "", true, 0);
+						HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "CELL_CAM_TEMP_30" /*Para guardar fotos de la aplicación para el móvil Snapmatic en la galería debes iniciar sesión.*/, iLocal_150, "", false, -1, "", "", true, 0);
 				}
 			
 				if (iLocal_153 == 4)
-					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "CELL_CAM_CCW_1" /*Unable to save photos as the cloud connection is unavailable.*/, iLocal_150, "CELL_CAM_CCW_2" /*Please try again later.*/, false, -1, "", "", true, 0);
+					HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "CELL_CAM_CCW_1" /*No se pueden guardar fotos al no estar disponible la conexión a la nube.*/, iLocal_150, "CELL_CAM_CCW_2" /*Vuelve a intentarlo más tarde.*/, false, -1, "", "", true, 0);
 			
 				if (iLocal_153 == 5)
 				{
@@ -880,23 +880,23 @@ void main() // Position - 0x0 (0)
 					switch (ageGroup)
 					{
 						case -1:
-							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "HUD_AGE_I" /*Snapmatic features are unavailable. An error occurred while validating your account's eligibility.*/, iLocal_150, "", false, -1, "", "", true, 0);
+							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "HUD_AGE_I" /*Las funciones de Snapmatic no están disponibles. Se ha producido un error mientras se comprobaba si tu cuenta es apta.*/, iLocal_150, "", false, -1, "", "", true, 0);
 							break;
 					
 						case 0:
-							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "HUD_AGE_P" /*Snapmatic features are temporarily unavailable. Please try again later.*/, iLocal_150, "", false, -1, "", "", true, 0);
+							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "HUD_AGE_P" /*Las funciones de Snapmatic no están disponibles temporalmente. Inténtalo de nuevo más tarde.*/, iLocal_150, "", false, -1, "", "", true, 0);
 							break;
 					
 						case 1:
-							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "HUD_AGE_C" /*Snapmatic features are disabled on this account due to eligibility restrictions.*/, iLocal_150, "", false, -1, "", "", true, 0);
+							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "HUD_AGE_C" /*Las funciones de Snapmatic están desactivadas en esta cuenta debido a restricciones de requisitos.*/, iLocal_150, "", false, -1, "", "", true, 0);
 							break;
 					
 						case 2:
-							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "HUD_AGE_T" /*Snapmatic features are currently disabled on this account due to eligibility restrictions.*/, iLocal_150, "", false, -1, "", "", true, 0);
+							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "HUD_AGE_T" /*Las funciones de Snapmatic están desactivadas actualmente en esta cuenta debido a restricciones de requisitos.*/, iLocal_150, "", false, -1, "", "", true, 0);
 							break;
 					
 						default:
-							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERT*/, "HUD_AGE_P" /*Snapmatic features are temporarily unavailable. Please try again later.*/, iLocal_150, "", false, -1, "", "", true, 0);
+							HUD::SET_WARNING_MESSAGE_WITH_HEADER("CELL_CAM_ALERT" /*ALERTA*/, "HUD_AGE_P" /*Las funciones de Snapmatic no están disponibles temporalmente. Inténtalo de nuevo más tarde.*/, iLocal_150, "", false, -1, "", "", true, 0);
 							break;
 					}
 				}
@@ -1035,7 +1035,7 @@ void main() // Position - 0x0 (0)
 			else
 				func_141(false, true);
 		
-			if (func_201(false, true, bLocal_62, true))
+			if (func_203(false, true, bLocal_62, true))
 				bLocal_62 = false;
 		
 			SCRIPT::TERMINATE_THIS_THREAD();
@@ -1082,7 +1082,7 @@ int func_3() // Position - 0x129A (4762)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return 1;
 	}
 
@@ -1116,7 +1116,7 @@ void func_6() // Position - 0x1309 (4873)
 				{
 					if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(iLocal_138))
 					{
-						if (func_203())
+						if (func_205())
 						{
 							if (Global_4521264 == 0)
 								if (!IS_BIT_SET(Global_4524844, 2))
@@ -1148,7 +1148,7 @@ void func_6() // Position - 0x1309 (4873)
 		case 1:
 			if (!HUD::BUSYSPINNER_IS_ON())
 			{
-				HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("CELL_SPINNER2" /*Scanning System Storage*/);
+				HUD::BEGIN_TEXT_COMMAND_BUSYSPINNER_ON("CELL_SPINNER2" /*Examinando almacenamiento del sistema*/);
 				HUD::END_TEXT_COMMAND_BUSYSPINNER_ON(1);
 			}
 			break;
@@ -1196,7 +1196,7 @@ void func_7() // Position - 0x149B (5275)
 		{
 			if (IS_BIT_SET(Global_9464, 14))
 			{
-				_DISPLAY_HELP_TEXT("CELL_299" /*Cannot save as last picture failed.*/, -1);
+				_DISPLAY_HELP_TEXT("CELL_299" /*No se puede guardar porque ha habido un fallo en la última foto.*/, -1);
 			}
 			else
 			{
@@ -1392,15 +1392,15 @@ void func_12() // Position - 0x175E (5982)
 			
 				if (IS_BIT_SET(Global_9463, 28))
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
 					func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_EXTRA_OPTION, true), func_66());
-					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_OPTION, true), "CELL_CAM_SELFIE_2" /*Reset Camera*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_OPTION, true), "CELL_CAM_SELFIE_2" /*Reiniciar cámara*/);
 				}
 				else
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Take Photo*/);
-					func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
-					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_OPTION, true), "CELL_CAM_SELFIE_2" /*Reset Camera*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Hacer foto*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_OPTION, true), "CELL_CAM_SELFIE_2" /*Reiniciar cámara*/);
 				}
 			
 				func_65();
@@ -1426,18 +1426,18 @@ void func_12() // Position - 0x175E (5982)
 			
 				if (IS_BIT_SET(Global_9463, 28))
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
 					func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_EXTRA_OPTION, true), func_66());
 				}
 				else if (!func_190())
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Take Photo*/);
-					func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Hacer foto*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
 				}
 				else
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Take Photo*/);
-					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Hacer foto*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
 				}
 			
 				func_64();
@@ -1507,7 +1507,7 @@ void func_12() // Position - 0x175E (5982)
 			bLocal_130 = false;
 			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_138, "SET_FOCUS_LOCK");
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(false);
-			func_63("CELL_FOCUS" /*Focus Lock (Hold)*/);
+			func_63("CELL_FOCUS" /*Fijar enfoque (mantener)*/);
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 		}
@@ -1520,7 +1520,7 @@ void func_12() // Position - 0x175E (5982)
 				{
 					GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_138, "SET_FOCUS_LOCK");
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
-					GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_ACTTL" /*Action: ~a~*/);
+					GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_ACTTL" /*Acción: ~a~*/);
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(&Global_4525829));
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(false);
@@ -1560,7 +1560,7 @@ void func_12() // Position - 0x175E (5982)
 			bLocal_130 = false;
 			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_138, "SET_FOCUS_LOCK");
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(false);
-			func_63("CELL_FOCUS" /*Focus Lock (Hold)*/);
+			func_63("CELL_FOCUS" /*Fijar enfoque (mantener)*/);
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 		}
@@ -1574,13 +1574,13 @@ void func_12() // Position - 0x175E (5982)
 		{
 			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_138, "SET_FOCUS_LOCK");
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
-			func_63("CELL_FOCUS" /*Focus Lock (Hold)*/);
+			func_63("CELL_FOCUS" /*Fijar enfoque (mantener)*/);
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
 			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 		}
 	}
 
-	if (func_203())
+	if (func_205())
 	{
 		if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_EXPRESSION) && iLocal_154 == 0 && !func_190())
 		{
@@ -1696,7 +1696,7 @@ void func_12() // Position - 0x175E (5982)
 	{
 		if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CELLPHONE_UP) && iLocal_154 == 0)
 		{
-			if (func_203())
+			if (func_205())
 			{
 				Global_4521264 = Global_4521264 + 1;
 				AUDIO::PLAY_SOUND_FRONTEND(-1, "Menu_Navigate", &Global_21616, true);
@@ -1759,7 +1759,7 @@ void func_12() // Position - 0x175E (5982)
 
 	if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CELLPHONE_DOWN) && iLocal_154 == 0 && !func_190())
 	{
-		if (func_203())
+		if (func_205())
 		{
 			func_143(false);
 			Global_4521263 = Global_4521263 + 1;
@@ -1770,7 +1770,7 @@ void func_12() // Position - 0x175E (5982)
 			Global_4521263 = 0;
 	
 		if (Global_4521263 == 0)
-			if (func_203())
+			if (func_205())
 				func_143(false);
 		else
 			func_153();
@@ -1830,7 +1830,7 @@ void func_12() // Position - 0x175E (5982)
 			
 				func_193(iLocal_138, "OPEN_SHUTTER");
 			
-				if (func_203())
+				if (func_205())
 					if (Global_4521264 == 0)
 						if (!IS_BIT_SET(Global_4524844, 2))
 							func_194(iLocal_138, "SHOW_PHOTO_FRAME", 1f, -1082130432, -1082130432, -1082130432, -1082130432);
@@ -1902,7 +1902,7 @@ void func_12() // Position - 0x175E (5982)
 		fLocal_82 = { -90.3f, 0f, 90f };
 		MOBILE::SET_MOBILE_PHONE_ROTATION(fLocal_82, 0);
 	
-		if (!func_203())
+		if (!func_205())
 			func_143(true);
 	
 		Global_24036 = true;
@@ -2099,7 +2099,7 @@ Hash func_18(eCharacter echParam0) // Position - 0x27EB (10219)
 	return Global_2339[echParam0 /*29*/];
 }
 
-void func_19(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x27FA (10234)
+void func_19(int iParam0, int iParam1, BOOL bParam2) // Position - 0x27FA (10234)
 {
 	int num;
 
@@ -2107,7 +2107,7 @@ void func_19(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x27FA (1023
 	{
 		num = func_20();
 		Global_2696872[num] = iParam1;
-		Global_2696883[num] = bParam0;
+		Global_2696883[num] = iParam0;
 	}
 
 	return;
@@ -2263,13 +2263,13 @@ void func_29() // Position - 0x2A1D (10781)
 	
 		if (!func_190())
 		{
-			func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
-			func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Take Photo*/);
+			func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
+			func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Hacer foto*/);
 		}
 		else
 		{
-			func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
-			func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Take Photo*/);
+			func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
+			func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Hacer foto*/);
 		}
 	
 		if (bLocal_129)
@@ -2279,9 +2279,9 @@ void func_29() // Position - 0x2A1D (10781)
 				if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false) || PED::GET_PED_PARACHUTE_STATE(PLAYER::PLAYER_PED_ID()) == 2)
 				{
 					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 					else
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 				}
 				else if (Global_80305 == false && SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("pi_menu")) > 0 && func_61())
 				{
@@ -2290,14 +2290,14 @@ void func_29() // Position - 0x2A1D (10781)
 				else
 				{
 					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 					else
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 				
-					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Grid*/);
-					func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Cuadrícula*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 				
-					if (func_203())
+					if (func_205())
 					{
 						func_51(5f);
 						func_50(6f);
@@ -2307,11 +2307,11 @@ void func_29() // Position - 0x2A1D (10781)
 							func_30(7f);
 						
 							if (bLocal_60)
-								func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+								func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 						}
 						else if (bLocal_60)
 						{
-							func_78(iLocal_139, "SET_DATA_SLOT", 7f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+							func_78(iLocal_139, "SET_DATA_SLOT", 7f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 						}
 					}
 				}
@@ -2325,13 +2325,13 @@ void func_29() // Position - 0x2A1D (10781)
 				{
 					if (!func_190())
 					{
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
-						func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Grid*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Cuadrícula*/);
 						func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_SNIPER_ZOOM, true), "CELL_284" /*Zoom*/);
 					}
 					else
 					{
-						func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 					
 						if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
 							func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_FRONTEND_RS, true), "CELL_284" /*Zoom*/);
@@ -2341,27 +2341,27 @@ void func_29() // Position - 0x2A1D (10781)
 				
 					if (!func_190())
 					{
-						if (func_203())
+						if (func_205())
 						{
 							func_51(6f);
 							func_50(7f);
 						
 							if (bLocal_61)
-								func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_FOCUS_LOCK, true), "CELL_FOCUS" /*Focus Lock (Hold)*/);
+								func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_FOCUS_LOCK, true), "CELL_FOCUS" /*Fijar enfoque (mantener)*/);
 						
-							func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+							func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 						}
 					}
 				}
 				else
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 				
-					if (func_203())
+					if (func_205())
 					{
 						func_51(3f);
 						func_50(4f);
-						func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 					}
 				}
 			}
@@ -2369,20 +2369,20 @@ void func_29() // Position - 0x2A1D (10781)
 			{
 				if (!func_190())
 					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Self Portrait (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Modo autorretrato (pulsar)*/);
 					else
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Self Portrait (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Modo autorretrato (pulsar)*/);
 			
 				if (!(PED::GET_PED_PARACHUTE_STATE(PLAYER::PLAYER_PED_ID()) == 2))
 				{
 					if (!func_190())
 					{
-						func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Grid*/);
-						func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Cuadrícula*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 					}
 					else
 					{
-						func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 					
 						if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
 							func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_FRONTEND_RS, true), "CELL_284" /*Zoom*/);
@@ -2395,27 +2395,27 @@ void func_29() // Position - 0x2A1D (10781)
 				
 					if (!func_190())
 					{
-						if (func_203())
+						if (func_205())
 						{
 							func_51(7f);
 							func_50(8f);
 						
 							if (bLocal_61)
-								func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_FOCUS_LOCK, true), "CELL_FOCUS" /*Focus Lock (Hold)*/);
+								func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_FOCUS_LOCK, true), "CELL_FOCUS" /*Fijar enfoque (mantener)*/);
 						
-							func_78(iLocal_139, "SET_DATA_SLOT", 9f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+							func_78(iLocal_139, "SET_DATA_SLOT", 9f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 						}
 					}
 				}
 				else
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 				
-					if (func_203())
+					if (func_205())
 					{
 						func_51(3f);
 						func_50(4f);
-						func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 					}
 				}
 			}
@@ -2432,7 +2432,7 @@ void func_29() // Position - 0x2A1D (10781)
 
 void func_30(float fParam0) // Position - 0x2F8F (12175)
 {
-	func_78(iLocal_139, "SET_DATA_SLOT", fParam0, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_LEFT, true), "CELL_ACTION" /*Play Action*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", fParam0, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_LEFT, true), "CELL_ACTION" /*Realizar acción*/);
 	return;
 }
 
@@ -2446,12 +2446,12 @@ BOOL func_31(int iParam0) // Position - 0x2FAF (12207)
 	return false;
 }
 
-BOOL func_32(ePedComponentType epctParam0, ePedComponentType epctParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4) // Position - 0x2FEF (12271)
+BOOL func_32(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4) // Position - 0x2FEF (12271)
 {
-	return func_33(PLAYER::PLAYER_PED_ID(), epctParam0, epctParam1, bParam2, bParam3, bParam4);
+	return func_33(PLAYER::PLAYER_PED_ID(), bParam0, bParam1, bParam2, bParam3, bParam4);
 }
 
-BOOL func_33(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5) // Position - 0x3009 (12297)
+BOOL func_33(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5) // Position - 0x3009 (12297)
 {
 	var unk;
 	var unk10;
@@ -2468,7 +2468,7 @@ BOOL func_33(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epct
 	unk10 = 8;
 	unk19 = 8;
 
-	if (epctParam1 == PV_COMP_HEAD)
+	if (bParam1 == false)
 		num4 = 3;
 	else if (bParam3)
 		num4 = 1;
@@ -2477,7 +2477,7 @@ BOOL func_33(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epct
 	else
 		num4 = 0;
 
-	func_41(epctParam1, epctParam2, &unk, &unk10, &unk19, num4, bParam5);
+	func_41(bParam1, bParam2, &unk, &unk10, &unk19, num4, bParam5);
 
 	if (!ENTITY::IS_ENTITY_DEAD(pedParam0, false))
 	{
@@ -2575,21 +2575,21 @@ int func_40(Ped pedParam0) // Position - 0x31A9 (12713)
 	return pedPropIndex;
 }
 
-void func_41(ePedComponentType epctParam0, ePedComponentType epctParam1, var uParam2, var uParam3, var uParam4, int iParam5, BOOL bParam6) // Position - 0x31BD (12733)
+void func_41(BOOL bParam0, BOOL bParam1, var uParam2, var uParam3, var uParam4, int iParam5, BOOL bParam6) // Position - 0x31BD (12733)
 {
 	func_47(uParam4, 91, true);
 
-	switch (epctParam0)
+	switch (bParam0)
 	{
-		case PV_COMP_BERD:
-		case PV_COMP_HEAD:
-			func_46(epctParam0, epctParam1, uParam2, uParam3, uParam4, iParam5, bParam6);
+		case true:
+		case false:
+			func_46(bParam0, bParam1, uParam2, uParam3, uParam4, iParam5, bParam6);
 			break;
 	
-		case PV_COMP_HAIR:
-			switch (epctParam1)
+		case 2:
+			switch (bParam1)
 			{
-				case PV_COMP_UPPR:
+				case 3:
 					switch (iParam5)
 					{
 						case 0:
@@ -2758,7 +2758,7 @@ void func_41(ePedComponentType epctParam0, ePedComponentType epctParam1, var uPa
 					}
 					break;
 			
-				case PV_COMP_HAND:
+				case 5:
 				case 24:
 					switch (iParam5)
 					{
@@ -3632,7 +3632,7 @@ void func_41(ePedComponentType epctParam0, ePedComponentType epctParam1, var uPa
 					}
 					break;
 			
-				case PV_COMP_DECL:
+				case 10:
 					switch (iParam5)
 					{
 						case 0:
@@ -5470,19 +5470,19 @@ void func_41(ePedComponentType epctParam0, ePedComponentType epctParam1, var uPa
 					}
 					break;
 			
-				case PV_COMP_HEAD:
+				case false:
 					break;
 			}
 			break;
 	
-		case PV_COMP_UPPR:
-			switch (epctParam1)
+		case 3:
+			switch (bParam1)
 			{
-				case PV_COMP_HEAD:
+				case false:
 					break;
 			
-				case PV_COMP_TASK:
-				case PV_COMP_JBIB:
+				case 9:
+				case 11:
 				case 13:
 				case 15:
 				case 19:
@@ -5492,11 +5492,11 @@ void func_41(ePedComponentType epctParam0, ePedComponentType epctParam1, var uPa
 				case 34:
 				case 20:
 				case 22:
-					func_41(PV_COMP_HAIR, 68, uParam2, uParam3, uParam4, 0, false);
+					func_41(2, 68, uParam2, uParam3, uParam4, 0, false);
 					break;
 			
 				case 32:
-					func_41(PV_COMP_HAIR, 69, uParam2, uParam3, uParam4, 0, false);
+					func_41(2, 69, uParam2, uParam3, uParam4, 0, false);
 					break;
 			
 				case 17:
@@ -5562,16 +5562,16 @@ void func_45(var uParam0, int iParam1, BOOL bParam2) // Position - 0x94F7 (38135
 	return;
 }
 
-void func_46(ePedComponentType epctParam0, ePedComponentType epctParam1, var uParam2, var uParam3, var uParam4, int iParam5, BOOL bParam6) // Position - 0x9509 (38153)
+void func_46(BOOL bParam0, BOOL bParam1, var uParam2, var uParam3, var uParam4, int iParam5, BOOL bParam6) // Position - 0x9509 (38153)
 {
 	func_47(uParam4, 91, true);
 
-	switch (epctParam0)
+	switch (bParam0)
 	{
-		case PV_COMP_BERD:
-			switch (epctParam1)
+		case true:
+			switch (bParam1)
 			{
-				case PV_COMP_HEAD:
+				case false:
 					switch (iParam5)
 					{
 						case 0:
@@ -5605,10 +5605,10 @@ void func_46(ePedComponentType epctParam0, ePedComponentType epctParam1, var uPa
 			}
 			break;
 	
-		case PV_COMP_HEAD:
-			switch (epctParam1)
+		case false:
+			switch (bParam1)
 			{
-				case PV_COMP_FEET:
+				case 6:
 				case 26:
 					if (bParam6)
 					{
@@ -5694,7 +5694,7 @@ void func_46(ePedComponentType epctParam0, ePedComponentType epctParam1, var uPa
 					func_47(uParam4, 116, true);
 					break;
 			
-				case PV_COMP_BERD:
+				case true:
 					if (bParam6)
 					{
 						func_45(uParam3, 16, true);
@@ -5773,11 +5773,11 @@ void func_46(ePedComponentType epctParam0, ePedComponentType epctParam1, var uPa
 					func_47(uParam4, 108, true);
 					break;
 			
-				case PV_COMP_DECL:
+				case 10:
 					func_47(uParam4, 28, true);
 					break;
 			
-				case PV_COMP_MAX:
+				case 12:
 					if (bParam6)
 					{
 						func_45(uParam3, 3, true);
@@ -6244,30 +6244,30 @@ BOOL func_48() // Position - 0xAA25 (43557)
 	return false;
 }
 
-BOOL func_49(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0xAA3D (43581)
+BOOL func_49(BOOL bParam0, BOOL bParam1) // Position - 0xAA3D (43581)
 {
-	switch (epctParam0)
+	switch (bParam0)
 	{
-		case PV_COMP_BERD:
-			switch (epctParam1)
+		case true:
+			switch (bParam1)
 			{
-				case PV_COMP_HEAD:
+				case false:
 					return true;
 			}
 			break;
 	
-		case PV_COMP_HAIR:
-			switch (epctParam1)
+		case 2:
+			switch (bParam1)
 			{
-				case PV_COMP_BERD:
-				case PV_COMP_HAIR:
-				case PV_COMP_UPPR:
-				case PV_COMP_LOWR:
-				case PV_COMP_TEEF:
-				case PV_COMP_HAND:
-				case PV_COMP_DECL:
-				case PV_COMP_JBIB:
-				case PV_COMP_MAX:
+				case true:
+				case 2:
+				case 3:
+				case 4:
+				case 7:
+				case 5:
+				case 10:
+				case 11:
+				case 12:
 				case 13:
 				case 15:
 				case 14:
@@ -6300,10 +6300,10 @@ BOOL func_49(ePedComponentType epctParam0, ePedComponentType epctParam1) // Posi
 			}
 			break;
 	
-		case PV_COMP_UPPR:
-			switch (epctParam1)
+		case 3:
+			switch (bParam1)
 			{
-				case PV_COMP_HEAD:
+				case false:
 					return true;
 			}
 			break;
@@ -6314,7 +6314,7 @@ BOOL func_49(ePedComponentType epctParam0, ePedComponentType epctParam1) // Posi
 
 void func_50(float fParam0) // Position - 0xAB7C (43900)
 {
-	func_78(iLocal_139, "SET_DATA_SLOT", fParam0, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_UP, true), "CELL_BORDER" /*Border*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", fParam0, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_UP, true), "CELL_BORDER" /*Borde*/);
 	return;
 }
 
@@ -6323,26 +6323,26 @@ void func_51(float fParam0) // Position - 0xAB9C (43932)
 	if (Global_1945926)
 		fParam0 = -1f;
 
-	func_78(iLocal_139, "SET_DATA_SLOT", fParam0, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_DOWN, true), "CELL_FILTER" /*Filter*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", fParam0, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_DOWN, true), "CELL_FILTER" /*Filtro*/);
 	return;
 }
 
 void func_52() // Position - 0xABC6 (43974)
 {
 	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 	else
-		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 
-	func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Grid*/);
-	func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Cuadrícula*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 	func_51(5f);
 	func_50(6f);
 	func_53(7f);
 	func_30(8f);
 
 	if (bLocal_60)
-		func_78(iLocal_139, "SET_DATA_SLOT", 9f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 9f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 
 	if (!func_62(14))
 	{
@@ -6350,7 +6350,7 @@ void func_52() // Position - 0xABC6 (43974)
 		{
 			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_138, "SET_FOCUS_LOCK");
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(true);
-			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_ACTTL" /*Action: ~a~*/);
+			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_ACTTL" /*Acción: ~a~*/);
 			HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(&Global_4525829));
 			GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_BOOL(false);
@@ -6363,7 +6363,7 @@ void func_52() // Position - 0xABC6 (43974)
 
 void func_53(float fParam0) // Position - 0xACD3 (44243)
 {
-	func_78(iLocal_139, "SET_DATA_SLOT", fParam0, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_RIGHT, true), "CELL_ACCYC" /*Cycle Action*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", fParam0, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_RIGHT, true), "CELL_ACCYC" /*Alternar acción*/);
 	return;
 }
 
@@ -6372,9 +6372,9 @@ void func_54() // Position - 0xACF3 (44275)
 	func_194(iLocal_139, "SET_CLEAR_SPACE", 200f, -1082130432, -1082130432, -1082130432, -1082130432);
 	func_194(iLocal_139, "SET_DATA_SLOT_EMPTY", 3f, -1082130432, -1082130432, -1082130432, -1082130432);
 	func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_SNIPER_ZOOM, true), "CELL_284" /*Zoom*/);
-	func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
-	func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
-	func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Take Photo*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_280" /*Hacer foto*/);
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_139, "SET_MAX_WIDTH");
 	GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_FLOAT(fLocal_75);
 	GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
@@ -6394,7 +6394,7 @@ void func_55() // Position - 0xADCC (44492)
 	{
 		func_194(iLocal_139, "SET_CLEAR_SPACE", 200f, -1082130432, -1082130432, -1082130432, -1082130432);
 		func_194(iLocal_139, "SET_DATA_SLOT_EMPTY", 3f, -1082130432, -1082130432, -1082130432, -1082130432);
-		func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
 		func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_EXTRA_OPTION, true), func_66());
 	
 		if (bLocal_129)
@@ -6404,11 +6404,11 @@ void func_55() // Position - 0xADCC (44492)
 				if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false) || PED::GET_PED_PARACHUTE_STATE(PLAYER::PLAYER_PED_ID()) == 2)
 				{
 					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 					else
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 				
-					if (func_203())
+					if (func_205())
 					{
 						func_51(3f);
 						func_50(4f);
@@ -6421,14 +6421,14 @@ void func_55() // Position - 0xADCC (44492)
 				else
 				{
 					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 					else
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 				
-					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Grid*/);
-					func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Cuadrícula*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 				
-					if (func_203())
+					if (func_205())
 					{
 						func_51(5f);
 						func_50(6f);
@@ -6438,11 +6438,11 @@ void func_55() // Position - 0xADCC (44492)
 							func_30(7f);
 						
 							if (bLocal_60)
-								func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+								func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 						}
 						else if (bLocal_60)
 						{
-							func_78(iLocal_139, "SET_DATA_SLOT", 7f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+							func_78(iLocal_139, "SET_DATA_SLOT", 7f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 						}
 					}
 				}
@@ -6454,26 +6454,26 @@ void func_55() // Position - 0xADCC (44492)
 			{
 				if (!(PED::GET_PED_PARACHUTE_STATE(PLAYER::PLAYER_PED_ID()) == 2))
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Grid*/);
-					func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Cuadrícula*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 					func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_SNIPER_ZOOM, true), "CELL_284" /*Zoom*/);
 				
-					if (func_203())
+					if (func_205())
 					{
 						func_51(6f);
 						func_50(7f);
-						func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 8f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 					}
 				}
 				else
 				{
-					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 				
-					if (func_203())
+					if (func_205())
 					{
 						func_51(3f);
 						func_50(4f);
-						func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 					}
 				}
 			}
@@ -6481,15 +6481,15 @@ void func_55() // Position - 0xADCC (44492)
 			{
 				if (!func_190())
 					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Self Portrait (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Modo autorretrato (pulsar)*/);
 					else
-						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Self Portrait (Press)*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Modo autorretrato (pulsar)*/);
 			
-				func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Grid*/);
-				func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+				func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_GRID, true), "CELL_GRID" /*Cuadrícula*/);
+				func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 				func_78(iLocal_139, "SET_DATA_SLOT", 6f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_SNIPER_ZOOM, true), "CELL_284" /*Zoom*/);
 			
-				if (func_203())
+				if (func_205())
 				{
 					if (!func_190())
 					{
@@ -6497,28 +6497,28 @@ void func_55() // Position - 0xADCC (44492)
 						func_50(8f);
 					
 						if (bLocal_61)
-							func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_FOCUS_LOCK, true), "CELL_FOCUS" /*Focus Lock (Hold)*/);
+							func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_FOCUS_LOCK, true), "CELL_FOCUS" /*Fijar enfoque (mantener)*/);
 					
-						func_78(iLocal_139, "SET_DATA_SLOT", 9f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+						func_78(iLocal_139, "SET_DATA_SLOT", 9f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 					}
 				}
 				else
 				{
 					if (!func_190())
 						if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-							func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Self Portrait (Press)*/);
+							func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Modo autorretrato (pulsar)*/);
 						else
-							func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Self Portrait (Press)*/);
+							func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_1NP_XB" /*Modo autorretrato (pulsar)*/);
 				
-					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+					func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 				
-					if (func_203())
+					if (func_205())
 					{
 						if (!func_190())
 						{
 							func_51(4f);
 							func_50(5f);
-							func_78(iLocal_139, "SET_DATA_SLOT", 6f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Depth Of Field*/);
+							func_78(iLocal_139, "SET_DATA_SLOT", 6f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_CAMERA_DOF, true), "CELL_DEPTH" /*Profundidad de campo*/);
 						}
 					}
 				}
@@ -6539,9 +6539,9 @@ void func_56() // Position - 0xB283 (45699)
 	func_194(iLocal_139, "SET_CLEAR_SPACE", 200f, -1082130432, -1082130432, -1082130432, -1082130432);
 	func_194(iLocal_139, "SET_DATA_SLOT_EMPTY", 3f, -1082130432, -1082130432, -1082130432, -1082130432);
 	func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_SNIPER_ZOOM, true), "CELL_284" /*Zoom*/);
-	func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Move*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_285" /*Mover*/);
 	func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_EXTRA_OPTION, true), func_66());
-	func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Exit*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CANCEL, true), "CELL_281" /*Salir*/);
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_139, "SET_MAX_WIDTH");
 	GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_FLOAT(fLocal_75);
 	GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
@@ -6602,7 +6602,7 @@ void func_60() // Position - 0xB3EB (46059)
 {
 	func_194(iLocal_138, "SHOW_REMAINING_PHOTOS", 1f, -1082130432, -1082130432, -1082130432, -1082130432);
 
-	if (!func_203())
+	if (!func_205())
 		if (!Global_1945926)
 			GRAPHICS::SET_TIMECYCLE_MODIFIER("phone_cam");
 
@@ -6638,19 +6638,19 @@ void func_63(char* sParam0) // Position - 0xB4B4 (46260)
 void func_64() // Position - 0xB4C6 (46278)
 {
 	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 	else
-		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 
 	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 	{
-		func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_MOVE_LR, true), "CELL_RT_RSTICK" /*Tilt Head*/);
-		func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, 1, true), "CELL_RT_LSTICK" /*Rotate Head*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_MOVE_LR, true), "CELL_RT_RSTICK" /*Inclinar cabeza*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, 1, true), "CELL_RT_LSTICK" /*Girar cabeza*/);
 	}
 	else
 	{
-		func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_LOOK_LR, true), "CELL_RT_RSTICK" /*Tilt Head*/);
-		func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, 0, true), "CELL_RT_LSTICK" /*Rotate Head*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_LOOK_LR, true), "CELL_RT_RSTICK" /*Inclinar cabeza*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, 0, true), "CELL_RT_LSTICK" /*Girar cabeza*/);
 	}
 
 	return;
@@ -6659,20 +6659,20 @@ void func_64() // Position - 0xB4C6 (46278)
 void func_65() // Position - 0xB575 (46453)
 {
 	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) || func_4())
-		func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 	else
-		func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Normal Mode (Press)*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 3f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_CAMERA_SELFIE, true), "CELL_SP_2NP_XB" /*Modo normal (pulsar)*/);
 
-	func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_LT_RSTICK" /*Pan Camera*/);
+	func_78(iLocal_139, "SET_DATA_SLOT", 4f, PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, 1, true), "CELL_LT_RSTICK" /*Desplazar cámara*/);
 
 	if (func_62(14))
 	{
-		func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_MOVE_LR, true), "CELL_LT_LSTICK" /*Rotate Camera*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_MOVE_LR, true), "CELL_LT_LSTICK" /*Girar cámara*/);
 	}
 	else
 	{
-		func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_SNIPER_ZOOM, true), "CELL_LT_LSTICKZ" /*Zoom Camera*/);
-		func_78(iLocal_139, "SET_DATA_SLOT", 6f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_MOVE_LR, true), "CELL_LT_LSTICK" /*Rotate Camera*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 5f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_SNIPER_ZOOM, true), "CELL_LT_LSTICKZ" /*Zoom de cámara*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 6f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_MOVE_LR, true), "CELL_LT_LSTICK" /*Girar cámara*/);
 	}
 
 	return;
@@ -6684,13 +6684,13 @@ const char* func_66() // Position - 0xB627 (46631)
 		return func_77(&Global_1971560);
 
 	if (func_76())
-		return "FHHUD_SENDLES" /*Send to Lester*/;
+		return "FHHUD_SENDLES" /*Enviar a Lester*/;
 
 	if (func_74())
-		return "CSH_PHONEC" /*Send to Pavel*/;
+		return "CSH_PHONEC" /*Enviar a Pavel*/;
 
 	if (func_73(PLAYER::PLAYER_ID(), 275) && Global_1971553)
-		return "RE_SS_SNDOMG" /*Send to Omega*/;
+		return "RE_SS_SNDOMG" /*Enviar a Omega*/;
 
 	switch (func_72(PLAYER::PLAYER_ID()))
 	{
@@ -6701,7 +6701,7 @@ const char* func_66() // Position - 0xB627 (46631)
 		case 12:
 		case 2:
 		case 15:
-			return "TR_SESS_PHTO" /*Send to Sessanta*/;
+			return "TR_SESS_PHTO" /*Enviar a Sessanta*/;
 	
 		default:
 		
@@ -6710,19 +6710,19 @@ const char* func_66() // Position - 0xB627 (46631)
 	switch (func_67(PLAYER::PLAYER_ID()))
 	{
 		case 3:
-			return "FXR_FRAN_PHTO" /*Send to Franklin*/;
+			return "FXR_FRAN_PHTO" /*Enviar a Franklin*/;
 	
 		case 2:
-			return "FXR_IMAN_PHTO" /*Send to Imani*/;
+			return "FXR_IMAN_PHTO" /*Enviar a Imani*/;
 	
 		default:
 		
 	}
 
 	if (IS_BIT_SET(Global_2709409.f_545, 3))
-		return "ANIMAPHOCELL_1" /*Send to LS Tourist Board*/;
+		return "ANIMAPHOCELL_1" /*Enviar a la oficina de turismo de LS*/;
 
-	return "CELL_287" /*Send Photo(s)*/;
+	return "CELL_287" /*Enviar foto(s)*/;
 }
 
 int func_67(Player plParam0) // Position - 0xB6FC (46844)
@@ -6744,7 +6744,7 @@ int func_68(Player plParam0) // Position - 0xB71A (46874)
 BOOL func_69(Player plParam0, BOOL bParam1) // Position - 0xB73D (46909)
 {
 	if (func_70(plParam0))
-		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID)
+		if (Global_1892798[plParam0 /*615*/].f_10.f_34 != -1 || bParam1 && Global_1892798[plParam0 /*615*/].f_10.f_33 != -1)
 			return true;
 
 	return false;
@@ -6765,13 +6765,13 @@ BOOL func_70(Player plParam0) // Position - 0xB781 (46977)
 	return true;
 }
 
-ePedComponentType func_71(Player plParam0) // Position - 0xB7A3 (47011)
+int func_71(Player plParam0) // Position - 0xB7A3 (47011)
 {
 	if (func_70(plParam0))
 		if (func_69(plParam0, false))
 			return Global_1892798[plParam0 /*615*/].f_10.f_34;
 
-	return PV_COMP_INVALID;
+	return -1;
 }
 
 int func_72(Player plParam0) // Position - 0xB7CF (47055)
@@ -6900,9 +6900,9 @@ void func_80() // Position - 0xB978 (47480)
 		{
 			case 0:
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-					_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_0_KM" /*Hold ~INPUT_CELLPHONE_EXTRA_OPTION~ and use ~INPUTGROUP_LOOK~ or ~INPUT_MOVE_LR~ to adjust your shot in Self Portrait mode.*/, -1);
+					_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_0_KM" /*Mantén pulsado ~INPUT_CELLPHONE_EXTRA_OPTION~ y usa ~INPUTGROUP_LOOK~ o ~INPUT_MOVE_LR~ para ajustar el plano en el modo autorretrato.*/, -1);
 				else
-					_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_0" /*Hold ~INPUT_SCRIPT_LT~ and use ~INPUTGROUP_LOOK~ or ~INPUTGROUP_MOVE~ to adjust your shot in Self Portrait mode.*/, -1);
+					_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_0" /*Mantén pulsado ~INPUT_SCRIPT_LT~ y usa ~INPUTGROUP_LOOK~ o ~INPUTGROUP_MOVE~ para ajustar el plano en el modo autorretrato.*/, -1);
 			
 				Global_24118 = Global_24118 + 1;
 				break;
@@ -6911,9 +6911,9 @@ void func_80() // Position - 0xB978 (47480)
 				if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 				{
 					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-						_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_1_KM" /*Hold ~INPUT_SPRINT~ and use ~INPUTGROUP_LOOK~ or ~INPUT_MOVE_LR~ to control head movement in Self Portrait mode.*/, -1);
+						_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_1_KM" /*Mantén pulsado ~INPUT_SPRINT~ y usa ~INPUTGROUP_LOOK~ o ~INPUT_MOVE_LR~ para controlar el movimiento de la cabeza en modo autorretrato.*/, -1);
 					else
-						_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_1" /*Hold ~INPUT_SCRIPT_RT~ and use ~INPUTGROUP_LOOK~ or ~INPUTGROUP_MOVE~ to control head movement in Self Portrait mode. Press ~INPUT_CELLPHONE_CAMERA_EXPRESSION~ to alter facial expression.*/, -1);
+						_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_1" /*Mantén pulsado ~INPUT_SCRIPT_RT~ y usa ~INPUTGROUP_LOOK~ o ~INPUTGROUP_MOVE~ para controlar el movimiento de la cabeza en modo autorretrato. Pulsa ~INPUT_CELLPHONE_CAMERA_EXPRESSION~ para cambiar tu expresión facial.*/, -1);
 				
 					Global_24118 = Global_24118 + 1;
 				}
@@ -6929,9 +6929,9 @@ void func_80() // Position - 0xB978 (47480)
 		{
 			case 0:
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-					_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_0_KM" /*Hold ~INPUT_CELLPHONE_EXTRA_OPTION~ and use ~INPUTGROUP_LOOK~ or ~INPUT_MOVE_LR~ to adjust your shot in Self Portrait mode.*/, -1);
+					_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_0_KM" /*Mantén pulsado ~INPUT_CELLPHONE_EXTRA_OPTION~ y usa ~INPUTGROUP_LOOK~ o ~INPUT_MOVE_LR~ para ajustar el plano en el modo autorretrato.*/, -1);
 				else
-					_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_0" /*Hold ~INPUT_SCRIPT_LT~ and use ~INPUTGROUP_LOOK~ or ~INPUTGROUP_MOVE~ to adjust your shot in Self Portrait mode.*/, -1);
+					_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_0" /*Mantén pulsado ~INPUT_SCRIPT_LT~ y usa ~INPUTGROUP_LOOK~ o ~INPUTGROUP_MOVE~ para ajustar el plano en el modo autorretrato.*/, -1);
 			
 				Global_24117 = Global_24117 + 1;
 				break;
@@ -6940,9 +6940,9 @@ void func_80() // Position - 0xB978 (47480)
 				if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 				{
 					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-						_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_1_KM" /*Hold ~INPUT_SPRINT~ and use ~INPUTGROUP_LOOK~ or ~INPUT_MOVE_LR~ to control head movement in Self Portrait mode.*/, -1);
+						_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_1_KM" /*Mantén pulsado ~INPUT_SPRINT~ y usa ~INPUTGROUP_LOOK~ o ~INPUT_MOVE_LR~ para controlar el movimiento de la cabeza en modo autorretrato.*/, -1);
 					else
-						_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_1" /*Hold ~INPUT_SCRIPT_RT~ and use ~INPUTGROUP_LOOK~ or ~INPUTGROUP_MOVE~ to control head movement in Self Portrait mode. Press ~INPUT_CELLPHONE_CAMERA_EXPRESSION~ to alter facial expression.*/, -1);
+						_DISPLAY_HELP_TEXT("CELL_CAM_SELFIE_1" /*Mantén pulsado ~INPUT_SCRIPT_RT~ y usa ~INPUTGROUP_LOOK~ o ~INPUTGROUP_MOVE~ para controlar el movimiento de la cabeza en modo autorretrato. Pulsa ~INPUT_CELLPHONE_CAMERA_EXPRESSION~ para cambiar tu expresión facial.*/, -1);
 				
 					Global_24117 = Global_24117 + 1;
 				}
@@ -7269,11 +7269,11 @@ void func_90() // Position - 0xC07F (49279)
 			func_92(255, 255, 255, 255);
 			func_91(0.059f, 0.644f, "CELL_284" /*Zoom*/, 0);
 			func_92(255, 255, 255, 255);
-			func_91(0.165f, 0.644f, "CELL_285" /*Move*/, 0);
+			func_91(0.165f, 0.644f, "CELL_285" /*Mover*/, 0);
 			func_92(255, 255, 255, 255);
-			func_91(0.275f, 0.75f, "CELL_280" /*Take Photo*/, 0);
+			func_91(0.275f, 0.75f, "CELL_280" /*Hacer foto*/, 0);
 			func_92(255, 255, 255, 255);
-			func_91(0.275f, 0.83f, "CELL_281" /*Exit*/, 0);
+			func_91(0.275f, 0.83f, "CELL_281" /*Salir*/, 0);
 		}
 	}
 	else if (Global_21569)
@@ -7284,9 +7284,9 @@ void func_90() // Position - 0xC07F (49279)
 		func_92(255, 255, 255, 255);
 		func_91(0.275f, 0.75f, func_66(), 0);
 		func_92(255, 255, 255, 255);
-		func_91(0.275f, 0.79f, "CELL_286" /*Continue*/, 0);
+		func_91(0.275f, 0.79f, "CELL_286" /*Continuar*/, 0);
 		func_92(255, 255, 255, 255);
-		func_91(0.275f, 0.83f, "CELL_281" /*Exit*/, 0);
+		func_91(0.275f, 0.83f, "CELL_281" /*Salir*/, 0);
 	}
 
 	return;
@@ -7442,12 +7442,12 @@ void func_96() // Position - 0xC48B (50315)
 		if (*Global_4718592.f_192546)
 			func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), func_97());
 		else
-			func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_286" /*Continue*/);
+			func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_286" /*Continuar*/);
 	}
 	else
 	{
-		func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_OPTION, true), "CELL_277" /*Delete*/);
-		func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_GALSAVE" /*Save to Gallery*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_OPTION, true), "CELL_277" /*Borrar*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_GALSAVE" /*Guardar en la galería*/);
 	}
 
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_139, "SET_MAX_WIDTH");
@@ -7460,11 +7460,11 @@ void func_96() // Position - 0xC48B (50315)
 char* func_97() // Position - 0xC581 (50561)
 {
 	if (func_101())
-		return "BH_SEND" /*Send to Jenette*/;
+		return "BH_SEND" /*Enviar a Jenette*/;
 	else if (func_98())
-		return "TYC_SEND" /*Send to Raf*/;
+		return "TYC_SEND" /*Enviar a Raf*/;
 
-	return "CELL_286" /*Continue*/;
+	return "CELL_286" /*Continuar*/;
 }
 
 BOOL func_98() // Position - 0xC5AC (50604)
@@ -7533,13 +7533,13 @@ void func_104() // Position - 0xC67E (50814)
 	if (IS_BIT_SET(Global_9464, 28))
 	{
 		func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_EXTRA_OPTION, true), func_66());
-		func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_286" /*Continue*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_286" /*Continuar*/);
 	}
 	else
 	{
 		func_78(iLocal_139, "SET_DATA_SLOT", 2f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_EXTRA_OPTION, true), func_66());
-		func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_OPTION, true), "CELL_277" /*Delete*/);
-		func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_GALSAVE" /*Save to Gallery*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 1f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_CELLPHONE_OPTION, true), "CELL_277" /*Borrar*/);
+		func_78(iLocal_139, "SET_DATA_SLOT", 0f, PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CELLPHONE_SELECT, true), "CELL_GALSAVE" /*Guardar en la galería*/);
 	}
 
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_139, "SET_MAX_WIDTH");
@@ -7560,7 +7560,7 @@ BOOL func_105() // Position - 0xC77B (51067)
 	{
 		if (Global_21627.f_1 == 10 || Global_21627.f_1 == 9)
 			if (Global_21570 == false)
-				if (Global_8778 != _CHAR_DETONATEBOMB_2)
+				if (Global_8778 != 128)
 					if (!PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false))
 						Global_23000 != 2;
 	
@@ -7785,7 +7785,7 @@ void func_107() // Position - 0xCCC8 (52424)
 	func_152(false);
 	iLocal_113 = 0;
 	func_143(true);
-	Global_21614 = true;
+	Global_21614 = 1;
 	Global_24036 = false;
 
 	if (Global_21627.f_1 > 4)
@@ -7837,7 +7837,7 @@ void func_107() // Position - 0xCCC8 (52424)
 
 	func_141(false, true);
 
-	if (func_201(false, true, bLocal_62, true))
+	if (func_203(false, true, bLocal_62, true))
 		bLocal_62 = false;
 
 	SCRIPT::TERMINATE_THIS_THREAD();
@@ -7848,7 +7848,7 @@ void func_108() // Position - 0xCE51 (52817)
 {
 	var unk;
 
-	if (Global_21610 == CHAR_FRANKLIN)
+	if (Global_21610 == 1)
 		return;
 
 	if (Global_21627.f_1 < 4)
@@ -7881,8 +7881,8 @@ void func_108() // Position - 0xCE51 (52817)
 		
 			if (Global_21615)
 			{
-				func_134(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+				func_134(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 			}
 			else
 			{
@@ -7904,11 +7904,11 @@ void func_108() // Position - 0xCE51 (52817)
 			{
 				if (Global_21860 == true)
 					if (Global_21615)
-						func_134(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, "CELL_225" /*NEXT*/, 0, 0, 0, 0);
+						func_134(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, "CELL_225" /*SIGUIENTE*/, 0, 0, 0, 0);
 					else
 						func_134(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 20f, -1f, -1f, 0, 0, 0, 0, 0);
 				else if (Global_21615)
-					func_134(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, "CELL_225" /*NEXT*/, 0, 0, 0, 0);
+					func_134(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, "CELL_225" /*SIGUIENTE*/, 0, 0, 0, 0);
 				else
 					func_134(Global_21608, "SET_SOFT_KEYS", 1f, 1f, 3f, -1f, -1f, 0, 0, 0, 0, 0);
 			
@@ -7942,7 +7942,7 @@ void func_108() // Position - 0xCE51 (52817)
 			}
 			else if (Global_21615)
 			{
-				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*END CALL*/, 0, 0, 0, 0);
+				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*COLGAR*/, 0, 0, 0, 0);
 			
 				if (Global_21570)
 					func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
@@ -7969,17 +7969,17 @@ void func_108() // Position - 0xCE51 (52817)
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&Global_23015);
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					func_63("CELL_300" /*CHAR_DEFAULT*/);
-					func_63("CELL_217" /*INCOMING CALL*/);
-					func_63("CELL_217" /*INCOMING CALL*/);
+					func_63("CELL_217" /*LLAMADA ENTRANTE*/);
+					func_63("CELL_217" /*LLAMADA ENTRANTE*/);
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 				}
 				else if (func_111(Global_8778, Global_21627) == 0)
 				{
-					func_134(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_217" /*INCOMING CALL*/, "CELL_195" /*Unknown*/, 0);
+					func_134(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, "CELL_217" /*LLAMADA ENTRANTE*/, "CELL_195" /*Desconocido*/, 0);
 				}
 				else
 				{
-					func_134(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_217" /*INCOMING CALL*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
+					func_134(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(2), -1f, -1f, &(Global_2339[Global_8778 /*29*/].f_3), &(Global_2339[Global_8778 /*29*/].f_7), "CELL_217" /*LLAMADA ENTRANTE*/, &(Global_2339[Global_8778 /*29*/].f_3), 0);
 				}
 			
 				func_194(Global_21608, "DISPLAY_VIEW", 4f, -1082130432, -1082130432, -1082130432, -1082130432);
@@ -7999,21 +7999,21 @@ void func_108() // Position - 0xCE51 (52817)
 					HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(&Global_23015);
 					GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 					func_63("CELL_300" /*CHAR_DEFAULT*/);
-					func_63("CELL_219" /*CONNECTED*/);
-					func_63("CELL_219" /*CONNECTED*/);
+					func_63("CELL_219" /*CONECTADO*/);
+					func_63("CELL_219" /*CONECTADO*/);
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 				}
 				else
 				{
 					if (Global_23258)
-						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_219" /*CONNECTED*/, 24);
+						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_219" /*CONECTADO*/, 24);
 					else
-						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_211" /*DIALING...*/, 24);
+						TEXT_LABEL_ASSIGN_STRING(&unk, "CELL_211" /*MARCANDO...*/, 24);
 				
 					if (func_111(Global_8778, Global_21627) == 0)
 					{
 						func_194(Global_21608, "SET_DATA_SLOT_EMPTY", 4f, -1082130432, -1082130432, -1082130432, -1082130432);
-						func_134(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, &unk, "CELL_195" /*Unknown*/, 0);
+						func_134(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(4), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(3), -1f, -1f, &(Global_118[Global_8778 /*10*/].f_4), "CELL_300" /*CHAR_DEFAULT*/, &unk, "CELL_195" /*Desconocido*/, 0);
 					}
 					else
 					{
@@ -8044,7 +8044,7 @@ void func_109() // Position - 0xD474 (54388)
 		if (Global_21626 == 1)
 		{
 			if (Global_21615)
-				func_134(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_203" /*ANSWER*/, 0, 0, 0, 0);
+				func_134(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, "CELL_203" /*RESPONDER*/, 0, 0, 0, 0);
 			else
 				func_134(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 5f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -8053,7 +8053,7 @@ void func_109() // Position - 0xD474 (54388)
 			else if (IS_BIT_SET(Global_9463, 20))
 				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 0f, 1f, -1f, -1f, 0, 0, 0, 0, 0);
 			else if (Global_21615)
-				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_204" /*REJECT*/, 0, 0, 0, 0);
+				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_204" /*RECHAZAR*/, 0, 0, 0, 0);
 			else
 				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -8072,7 +8072,7 @@ void func_109() // Position - 0xD474 (54388)
 			}
 			else if (Global_21615)
 			{
-				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*END CALL*/, 0, 0, 0, 0);
+				func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, "CELL_202" /*COLGAR*/, 0, 0, 0, 0);
 			
 				if (Global_21570)
 					func_134(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 6f, -1f, -1f, 0, 0, 0, 0, 0);
@@ -8098,12 +8098,12 @@ void func_110() // Position - 0xD602 (54786)
 	return;
 }
 
-int func_111(eCharacter echParam0, eCharacter echParam1) // Position - 0xD633 (54835)
+int func_111(int iParam0, eCharacter echParam1) // Position - 0xD633 (54835)
 {
 	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
 		return 0;
 
-	return Global_2339[echParam0 /*29*/].f_24[echParam1];
+	return Global_2339[iParam0 /*29*/].f_24[echParam1];
 }
 
 void func_112() // Position - 0xD65D (54877)
@@ -8282,16 +8282,16 @@ void func_113(BOOL bParam0) // Position - 0xD8D4 (55508)
 
 	if (func_128() && func_116())
 	{
-		func_114(21, "CELL_37" /*Quick Join*/, 0, "AppJIPMP", 14);
-		func_114(10, "CELL_16" /*Settings*/, 1, "appSettings", 24);
+		func_114(21, "CELL_37" /*Unirse rápidamente*/, 0, "AppJIPMP", 14);
+		func_114(10, "CELL_16" /*Ajustes*/, 1, "appSettings", 24);
 	}
 	else if (func_128() && !func_116())
 	{
-		func_114(21, "CELL_37" /*Quick Join*/, 0, "AppJIPMP", 14);
+		func_114(21, "CELL_37" /*Unirse rápidamente*/, 0, "AppJIPMP", 14);
 	}
 	else if (!func_128() && func_116())
 	{
-		func_114(10, "CELL_16" /*Settings*/, 0, "appSettings", 24);
+		func_114(10, "CELL_16" /*Ajustes*/, 0, "appSettings", 24);
 	}
 
 	if (bParam0)
@@ -8407,13 +8407,13 @@ BOOL func_125() // Position - 0xDC1F (56351)
 	return func_126(*Global_4718592.f_139000);
 }
 
-BOOL func_126(ePedComponentType epctParam0) // Position - 0xDC35 (56373)
+BOOL func_126(Hash hParam0) // Position - 0xDC35 (56373)
 {
 	int i;
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		if (Global_262145.f_31313[i] == epctParam0)
+		if (Global_262145.f_31313[i] == hParam0)
 			return 1;
 	}
 
@@ -8531,7 +8531,7 @@ void func_135(int iParam0) // Position - 0xDE3B (56891)
 	int j;
 	int value2;
 	int k;
-	BOOL value3;
+	int value3;
 	int value4;
 	int value5;
 	int value6;
@@ -8626,7 +8626,7 @@ void func_135(int iParam0) // Position - 0xDE3B (56891)
 									{
 										if (Global_4521275[k /*296*/].f_24 != 0)
 											if (Global_4521275[k /*296*/].f_28 == 0)
-												if (Global_4521275[k /*296*/].f_291[Global_21627] == true)
+												if (Global_4521275[k /*296*/].f_291[Global_21627] == 1)
 													value2 = value2 + 1;
 									}
 								
@@ -8811,9 +8811,9 @@ void func_137(BOOL bParam0) // Position - 0xE447 (58439)
 	return;
 }
 
-BOOL func_138(eControlType ectParam0, char* sParam1, int iParam2) // Position - 0xE47A (58490)
+BOOL func_138(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0xE47A (58490)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, sParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, sParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
@@ -8908,29 +8908,29 @@ BOOL func_144(Player plParam0) // Position - 0xE649 (58953)
 {
 	if (plParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(plParam0, true, true))
-			if (Global_2658294[plParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+			if (Global_2658294[plParam0 /*468*/].f_325.f_8 != -1)
 				return func_145(Global_2658294[plParam0 /*468*/].f_325.f_8) == 17;
 
 	return false;
 }
 
-int func_145(ePedComponentType epctParam0) // Position - 0xE690 (59024)
+int func_145(int iParam0) // Position - 0xE690 (59024)
 {
-	switch (epctParam0)
+	switch (iParam0)
 	{
-		case PV_COMP_HEAD:
-		case PV_COMP_BERD:
-		case PV_COMP_HAIR:
-		case PV_COMP_UPPR:
-		case PV_COMP_LOWR:
-		case PV_COMP_HAND:
-		case PV_COMP_FEET:
-		case PV_COMP_TEEF:
-		case PV_COMP_ACCS:
-		case PV_COMP_TASK:
-		case PV_COMP_DECL:
-		case PV_COMP_JBIB:
-		case PV_COMP_MAX:
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
 		case 13:
 		case 14:
 		case 15:
@@ -9176,13 +9176,13 @@ int func_145(ePedComponentType epctParam0) // Position - 0xE690 (59024)
 	return -1;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0xEBF9 (60409)
+BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0xEBF9 (60409)
 {
-	ePedComponentType type;
+	Player player;
 
-	type = player;
+	player = player;
 
-	if (type != PV_COMP_INVALID)
+	if (player != -1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -9191,9 +9191,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 					return false;
 		
 			if (bUnk)
-				if (type == Global_2673274.f_3)
+				if (player == Global_2673274.f_3)
 					return Global_2673274.f_2;
-				else if (Global_2658294[type /*468*/] != 4)
+				else if (Global_2658294[player /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -9387,7 +9387,7 @@ void func_151() // Position - 0xECBC (60604)
 
 void func_152(BOOL bParam0) // Position - 0xF031 (61489)
 {
-	if (func_203())
+	if (func_205())
 	{
 		if (bParam0)
 		{
@@ -9512,16 +9512,16 @@ BOOL func_160() // Position - 0xF23A (62010)
 	return func_161(*Global_4718592.f_139000);
 }
 
-BOOL func_161(BOOL bParam0) // Position - 0xF250 (62032)
+BOOL func_161(int iParam0) // Position - 0xF250 (62032)
 {
 	int i;
 
-	if (bParam0 == 0)
+	if (iParam0 == 0)
 		return 0;
 
 	for (i = 0; i < 6; i = i + 1)
 	{
-		if (Global_262145.f_31306[i] == bParam0)
+		if (Global_262145.f_31306[i] == iParam0)
 			return 1;
 	}
 
@@ -9533,23 +9533,23 @@ BOOL func_162() // Position - 0xF289 (62089)
 	return func_163(*Global_4718592.f_139000);
 }
 
-BOOL func_163(BOOL bParam0) // Position - 0xF29F (62111)
+BOOL func_163(int iParam0) // Position - 0xF29F (62111)
 {
 	int i;
 
-	if (bParam0 == 0)
+	if (iParam0 == 0)
 		return 0;
 
 	for (i = 0; i < 8; i = i + 1)
 	{
-		if (Global_262145.f_30473[i] == bParam0)
+		if (Global_262145.f_30473[i] == iParam0)
 			return 1;
 	}
 
 	return 0;
 }
 
-char* func_164() // Position - 0xF2D9 (62169)
+BOOL func_164() // Position - 0xF2D9 (62169)
 {
 	return Global_2685153.f_24;
 }
@@ -9929,7 +9929,7 @@ void func_191() // Position - 0xF8DA (63706)
 			{
 				if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(iLocal_138))
 				{
-					if (func_203())
+					if (func_205())
 					{
 						if (Global_4521264 == 0)
 							if (!IS_BIT_SET(Global_4524844, 2))
@@ -10072,11 +10072,33 @@ void func_197(int iParam0) // Position - 0xFBCD (64461)
 
 BOOL func_198(BOOL bParam0) // Position - 0xFBF0 (64496)
 {
-	bParam0;
+	if (bParam0 && Global_1575064)
+		if (func_199())
+			return false;
+		else
+			return true;
+
 	return Global_1575064;
 }
 
-int _GET_VEHICLE_SEAT_PED_IS_IN(Ped ped, BOOL includeLastVehicle) // Position - 0xFC01 (64513)
+BOOL func_199() // Position - 0xFC1C (64540)
+{
+	if (func_200())
+		return true;
+
+	return Global_1575067;
+}
+
+BOOL func_200() // Position - 0xFC37 (64567)
+{
+	if (Global_1575064 || Global_1575070)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
+}
+
+int _GET_VEHICLE_SEAT_PED_IS_IN(Ped ped, BOOL includeLastVehicle) // Position - 0xFC62 (64610)
 {
 	Vehicle vehiclePedIsIn;
 	int vehicleModelNumberOfSeats;
@@ -10114,12 +10136,12 @@ int _GET_VEHICLE_SEAT_PED_IS_IN(Ped ped, BOOL includeLastVehicle) // Position - 
 	return seatIndex;
 }
 
-void func_200() // Position - 0xFC86 (64646)
+void func_202() // Position - 0xFCE7 (64743)
 {
 	return;
 }
 
-BOOL func_201(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0xFC8E (64654)
+BOOL func_203(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0xFCEF (64751)
 {
 	BOOL num;
 
@@ -10137,7 +10159,7 @@ BOOL func_201(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	return num;
 }
 
-void func_202() // Position - 0xFCC1 (64705)
+void func_204() // Position - 0xFD22 (64802)
 {
 	if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 	{
@@ -10164,7 +10186,7 @@ void func_202() // Position - 0xFCC1 (64705)
 	return;
 }
 
-BOOL func_203() // Position - 0xFD2E (64814)
+BOOL func_205() // Position - 0xFD8F (64911)
 {
 	if (iLocal_54 == 0)
 		iLocal_54 = 1;

@@ -835,16 +835,16 @@ void main() // Position - 0x0 (0)
 				{
 					if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 					{
-						if (!func_4("SHOP_CLOSED" /*~a~ is closed. Please come back later.*/, func_5(iLocal_566)) && !_IS_PLAYER_IN_ANIMAL_FORM(PLAYER::PLAYER_ID()))
+						if (!func_4("SHOP_CLOSED" /*~a~ ha cerrado. Vuelve más tarde.*/, func_5(iLocal_566)) && !_IS_PLAYER_IN_ANIMAL_FORM(PLAYER::PLAYER_ID()))
 						{
 							HUD::ADD_NEXT_MESSAGE_TO_PREVIOUS_BRIEFS(false);
-							func_2("SHOP_CLOSED" /*~a~ is closed. Please come back later.*/, func_5(iLocal_566));
+							func_2("SHOP_CLOSED" /*~a~ ha cerrado. Vuelve más tarde.*/, func_5(iLocal_566));
 						}
 					}
 				}
 				else
 				{
-					if (func_4("SHOP_CLOSED" /*~a~ is closed. Please come back later.*/, func_5(iLocal_566)))
+					if (func_4("SHOP_CLOSED" /*~a~ ha cerrado. Vuelve más tarde.*/, func_5(iLocal_566)))
 						HUD::CLEAR_HELP(true);
 				
 					if (func_1(pedLocal_66.f_470, 512))
@@ -928,7 +928,7 @@ char* func_5(int iParam0) // Position - 0x41D (1053)
 		case 2:
 		case 3:
 		case 4:
-			return "SHR_GAS" /*LTD Gasoline*/;
+			return "SHR_GAS" /*Gasolina LTD*/;
 	
 		case 5:
 			return "SHR_LIQ1" /*Scoops Liquor Barn*/;
@@ -937,7 +937,7 @@ char* func_5(int iParam0) // Position - 0x41D (1053)
 		case 7:
 		case 8:
 		case 9:
-			return "SHR_LIQ2" /*Rob's Liquor*/;
+			return "SHR_LIQ2" /*Licorería Rob's*/;
 	
 		case 10:
 		case 11:
@@ -948,10 +948,10 @@ char* func_5(int iParam0) // Position - 0x41D (1053)
 		case 16:
 		case 17:
 		case 18:
-			return "SHR_CONV" /*24-7*/;
+			return "SHR_CONV" /*24 horas*/;
 	
 		case -2:
-			return "SHR_ACE" /*Liquor Ace*/;
+			return "SHR_ACE" /*Licorería Ace*/;
 	
 		default:
 		
@@ -1690,10 +1690,10 @@ void func_27() // Position - 0x14D5 (5333)
 				{
 					if (!func_1(Global_114931.f_20042.f_20, 1))
 					{
-						switch (func_36("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/))
+						switch (func_36("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/))
 						{
 							case 2:
-								func_34("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/, 2, 0, -1, 10000, 7, 0, 0, 0);
+								func_34("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/, 2, 0, -1, 10000, 7, 0, 0, 0);
 								break;
 						
 							case 1:
@@ -1704,9 +1704,9 @@ void func_27() // Position - 0x14D5 (5333)
 					
 						if (iLocal_63 > 0)
 						{
-							if (func_33("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/))
+							if (func_33("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/))
 							{
-								func_29("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/, true);
+								func_29("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/, true);
 								iLocal_50 = 4;
 							}
 						}
@@ -1718,9 +1718,9 @@ void func_27() // Position - 0x14D5 (5333)
 						iLocal_50 = 1;
 					}
 				}
-				else if (func_33("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/))
+				else if (func_33("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/))
 				{
-					func_29("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/, true);
+					func_29("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/, true);
 				}
 			}
 			break;
@@ -1732,10 +1732,10 @@ void func_27() // Position - 0x14D5 (5333)
 				{
 					if (!func_1(Global_114931.f_20042.f_20, 2))
 					{
-						switch (func_36("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/))
+						switch (func_36("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/))
 						{
 							case 2:
-								func_34("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/, 2, 0, -1, 10000, 7, 0, 0, 0);
+								func_34("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/, 2, 0, -1, 10000, 7, 0, 0, 0);
 								break;
 						
 							case 1:
@@ -1749,36 +1749,36 @@ void func_27() // Position - 0x14D5 (5333)
 						iLocal_50 = 4;
 					}
 				}
-				else if (func_33("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/))
+				else if (func_33("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/))
 				{
-					func_29("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/, true);
+					func_29("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/, true);
 				}
 			}
 			break;
 	
 		case 3:
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/))
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/))
 				HUD::CLEAR_HELP(true);
 		
-			if (func_33("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/) && !func_1(Global_114931.f_20042.f_20, 2))
-				func_29("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/, true);
+			if (func_33("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/) && !func_1(Global_114931.f_20042.f_20, 2))
+				func_29("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/, true);
 		
-			if (func_33("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/) && !func_1(Global_114931.f_20042.f_20, 1))
-				func_29("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/, true);
+			if (func_33("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/) && !func_1(Global_114931.f_20042.f_20, 1))
+				func_29("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/, true);
 		
 			iLocal_50 = 4;
 			break;
 	
 		case 4:
-			if (!func_320() && func_33("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/) && !func_1(Global_114931.f_20042.f_20, 1))
+			if (!func_320() && func_33("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/) && !func_1(Global_114931.f_20042.f_20, 1))
 			{
-				func_29("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/, true);
+				func_29("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/, true);
 				iLocal_50 = 2;
 			}
 		
-			if (!func_320() && func_33("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/) && !func_1(Global_114931.f_20042.f_20, 2))
+			if (!func_320() && func_33("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/) && !func_1(Global_114931.f_20042.f_20, 2))
 			{
-				func_29("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/, true);
+				func_29("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/, true);
 				iLocal_50 = 2;
 			}
 			break;
@@ -2023,14 +2023,14 @@ void func_37() // Position - 0x1CD9 (7385)
 	
 		case 7:
 			if (!ENTITY::IS_ENTITY_DEAD(pedLocal_66.f_2, false))
-				func_48(pedLocal_66.f_2, "SHOP_NO_ENTRY" /*Friendly*/, 3);
+				func_48(pedLocal_66.f_2, "SHOP_NO_ENTRY" /*Aliado*/, 3);
 		
 			iLocal_51 = 14;
 			break;
 	
 		case 8:
 			if (!ENTITY::IS_ENTITY_DEAD(pedLocal_66.f_2, false))
-				func_48(pedLocal_66.f_2, "SHOP_NO_ENTRY" /*Friendly*/, 3);
+				func_48(pedLocal_66.f_2, "SHOP_NO_ENTRY" /*Aliado*/, 3);
 		
 			iLocal_51 = 14;
 			break;
@@ -2891,11 +2891,11 @@ void func_57(BOOL bParam0, int iParam1) // Position - 0x2FBE (12222)
 	if (bParam0)
 	{
 		func_58(&Global_24546.f_6263[num /*10*/]);
-		Global_24546.f_6324[num] = PV_COMP_HEAD;
+		Global_24546.f_6324[num] = 0;
 	}
 	else
 	{
-		Global_24546.f_6324[num] = PV_COMP_HEAD;
+		Global_24546.f_6324[num] = 0;
 	}
 
 	GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("Shared");
@@ -2919,7 +2919,7 @@ void func_58(int iParam0) // Position - 0x3084 (12420)
 BOOL func_59(var uParam0, BOOL bParam1, int iParam2) // Position - 0x30B0 (12464)
 {
 	var unk;
-	ePedComponentType hashKey;
+	Hash hashKey;
 	int i;
 	int num;
 
@@ -2939,7 +2939,7 @@ BOOL func_59(var uParam0, BOOL bParam1, int iParam2) // Position - 0x30B0 (12464
 			*uParam0 = i;
 			return true;
 		}
-		else if (Global_24546.f_6324[i] == PV_COMP_HEAD)
+		else if (Global_24546.f_6324[i] == 0)
 		{
 			num = i;
 		}
@@ -3253,11 +3253,11 @@ void func_67() // Position - 0x35B4 (13748)
 								{
 									MISC::GET_GAME_TIMER() % 1000 < 50;
 								
-									if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/) && !func_50() && func_205())
-										func_204("SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/);
+									if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/) && !func_50() && func_205())
+										func_204("SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/);
 								
 									pedLocal_66.f_469 = -1;
-									_CONTEXT_ADD_HELP_TEXT(&(pedLocal_66.f_469), 4, "SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/, 0, 0, 0, 0);
+									_CONTEXT_ADD_HELP_TEXT(&(pedLocal_66.f_469), 4, "SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/, 0, 0, 0, 0);
 									MISC::CLEAR_BIT(&(pedLocal_66.f_162.f_18), 1);
 									MISC::CLEAR_BIT(&(pedLocal_66.f_162.f_18), 0);
 									iLocal_64 = 1;
@@ -3271,23 +3271,23 @@ void func_67() // Position - 0x35B4 (13748)
 			case 1:
 				if (!PED::IS_PED_HEADING_TOWARDS_POSITION(PLAYER::PLAYER_PED_ID(), pedLocal_66.f_102.f_33, 135f) || !(func_25(pedLocal_66) == joaat("WEAPON_UNARMED")))
 				{
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/))
 						HUD::CLEAR_HELP(true);
 				
 					pedLocal_66.f_102.f_22 = -1;
 					func_202(&(pedLocal_66.f_469));
 					iLocal_64 = 0;
 				}
-				else if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/) && func_205() && !_CONTEXT_IS_HELP_TEXT_BEING_DISPLAYED(pedLocal_66.f_469, 0))
+				else if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/) && func_205() && !_CONTEXT_IS_HELP_TEXT_BEING_DISPLAYED(pedLocal_66.f_469, 0))
 				{
-					func_204("SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/);
+					func_204("SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/);
 				}
 			
 				if (!TASK::IS_PED_RUNNING(PLAYER::PLAYER_PED_ID()) && !PED::IS_PED_RAGDOLL(PLAYER::PLAYER_PED_ID()) && !PED::IS_PED_JUMPING(PLAYER::PLAYER_PED_ID()))
 				{
 					if (func_199(pedLocal_66.f_469, true))
 					{
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/))
 							HUD::CLEAR_HELP(true);
 					
 						MISC::SET_BIT(&(pedLocal_66.f_162.f_18), 1);
@@ -3331,19 +3331,19 @@ void func_67() // Position - 0x35B4 (13748)
 				func_190(1, pedLocal_66.f_102.f_46, pedLocal_66.f_102.f_46);
 				func_189();
 				func_185(0, "SNK_ITEM1", 0, 1, 0, false, 0);
-				func_185(PV_COMP_HEAD, "ITEM_COST" /*$~1~*/, 1, true, false, false, false);
+				func_185(PV_COMP_HEAD, "ITEM_COST" /*~1~ $*/, 1, true, false, false, false);
 				func_181(func_184(0), false);
 				func_185(PV_COMP_BERD, "SNK_ITEM2", 0, true, false, false, false);
-				func_185(PV_COMP_BERD, "ITEM_COST" /*$~1~*/, 1, true, false, false, false);
+				func_185(PV_COMP_BERD, "ITEM_COST" /*~1~ $*/, 1, true, false, false, false);
 				func_181(func_184(1), false);
 				func_185(PV_COMP_HAIR, "SNK_ITEM3", 0, true, false, false, false);
-				func_185(PV_COMP_HAIR, "ITEM_COST" /*$~1~*/, 1, true, false, false, false);
+				func_185(PV_COMP_HAIR, "ITEM_COST" /*~1~ $*/, 1, true, false, false, false);
 				func_181(func_184(2), false);
 				func_180(0);
 				func_179(pedLocal_66.f_102.f_23, true, 1);
 				func_178("SNK_ITEM1_D", 0, 0);
-				func_177(INPUT_FRONTEND_ACCEPT, "ITEM_SELECT" /*Select*/, -1, false);
-				func_177(INPUT_FRONTEND_CANCEL, "ITEM_BACK" /*Back*/, -1, false);
+				func_177(INPUT_FRONTEND_ACCEPT, "ITEM_SELECT" /*Seleccionar*/, -1, false);
+				func_177(INPUT_FRONTEND_CANCEL, "ITEM_BACK" /*Volver*/, -1, false);
 				func_177(INPUT_FRONTEND_X, "SNK_LIFT", -1, false);
 				iLocal_64 = 3;
 				break;
@@ -3414,7 +3414,7 @@ void func_67() // Position - 0x35B4 (13748)
 				if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_X))
 				{
 					iLocal_64 = 6;
-					AUDIO::PLAY_SOUND_FRONTEND(-1, "SELECT" /*Filter List*/, "HUD_LIQUOR_STORE_SOUNDSET", true);
+					AUDIO::PLAY_SOUND_FRONTEND(-1, "SELECT" /*Filtrar lista*/, "HUD_LIQUOR_STORE_SOUNDSET", true);
 					func_116();
 				}
 			
@@ -3551,13 +3551,13 @@ void func_67() // Position - 0x35B4 (13748)
 			iLocal_64 = 8;
 		}
 	
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_SNACKS" /*Press ~INPUT_CONTEXT~ to buy a snack.~n~Hold ~INPUT_CONTEXT~ to steal a snack.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_SNACKS" /*Pulsa ~INPUT_CONTEXT~ para comprar un aperitivo.~n~Mantén pulsado ~INPUT_CONTEXT~ para robar un aperitivo.*/))
 		{
 			HUD::CLEAR_HELP(true);
 			func_202(&(pedLocal_66.f_469));
 		}
 	
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/))
 		{
 			HUD::CLEAR_HELP(true);
 			func_202(&(pedLocal_66.f_469));
@@ -4108,7 +4108,7 @@ void func_73(int iParam0) // Position - 0x48DB (18651)
 	if (flag)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&txdName, "CHAR_LIFEINVADER", 64);
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*You have redeemed your promotion for ~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*Has canjeado tu promoción de ~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(func_74(iParam0));
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, true, 0, "", 0);
 	}
@@ -4121,28 +4121,28 @@ char* func_74(int iParam0) // Position - 0x4AA6 (19110)
 	switch (iParam0)
 	{
 		case 0:
-			return "COUP_HAIRC" /*one free haircut.*/;
+			return "COUP_HAIRC" /*un corte de pelo gratis.*/;
 	
 		case 1:
-			return "COUP_TATTOO" /*one free tattoo.*/;
+			return "COUP_TATTOO" /*un tatuaje gratis.*/;
 	
 		case 2:
-			return "COUP_WARSTOCK" /*10% off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 3:
-			return "COUP_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 4:
-			return "COUP_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 5:
-			return "COUP_MEDSPENS" /*10 percent off your next medical expenses.*/;
+			return "COUP_MEDSPENS" /*10% de descuento en tus próximos gastos médicos.*/;
 	
 		case 6:
-			return "COUP_SPRUNK" /*one free can of Sprunk.*/;
+			return "COUP_SPRUNK" /*una lata gratis de Sprunk.*/;
 	
 		case 7:
-			return "COUP_RESPRAY" /*one free respray.*/;
+			return "COUP_RESPRAY" /*una pintura de vehículo gratis.*/;
 	
 		case 8:
 			return "COUP_XMAS2017";
@@ -4157,32 +4157,32 @@ char* func_74(int iParam0) // Position - 0x4AA6 (19110)
 			return "COUP_CAR2_XMAS2018";
 	
 		case 12:
-			return "COUP_CAS_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_CAS_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 13:
-			return "COUP_CAS_DOCKTEASE" /*10 percent off your next purchase at DockTease.com.*/;
+			return "COUP_CAS_DOCKTEASE" /*10% de descuento en tu próxima compra en DockTease.com.*/;
 	
 		case 14:
-			return "COUP_CAS_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_CAS_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 15:
-			return "COUP_CAS_SSASA" /*10 percent off your next purchase at southernsanandreassuperautos.com.*/;
+			return "COUP_CAS_SSASA" /*10% de descuento en tu próxima compra en southernsanandreassuperautos.com.*/;
 	
 		case 16:
-			return "COUP_CAS_WARSTOCK" /*10 percent off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_CAS_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 17:
-			return "COUP_CAS_PANDM" /*10 percent off your next purchase at pandmcycles.com.*/;
+			return "COUP_CAS_PANDM" /*10% de descuento en tu próxima compra en pandmcycles.com.*/;
 	
 		case 39:
 			return "COUPON_CAR_GEN9_MIGRATION";
 	
 		default:
 			if (func_81(iParam0))
-				return "HSW_COUP" /*One free respray, livery or spoiler.*/;
+				return "HSW_COUP" /*Una pintura, cubierta o alerón de vehículo gratis.*/;
 		
 			if (func_79(iParam0))
-				return "HSWU_COUP" /*One free Hao's Special Works upgrade.*/;
+				return "HSWU_COUP" /*Una mejora de Hao's Special Works gratis.*/;
 			break;
 	}
 
@@ -4365,43 +4365,43 @@ Hash func_83(int iParam0, int iParam1) // Position - 0x4E20 (20000)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_84(iParam1));
 }
 
-Interior func_84(Interior inParam0) // Position - 0x4E35 (20021)
+int func_84(int iParam0) // Position - 0x4E35 (20021)
 {
-	Interior interior;
-	Interior interior2;
+	int num;
+	int num2;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
+	if (num == -1)
 	{
-		interior2 = func_85();
+		num2 = func_85();
 	
-		if (interior2 > -1)
+		if (num2 > -1)
 		{
 			Global_2741524 = 0;
-			interior = interior2;
+			num = num2;
 		}
 		else
 		{
-			interior = 0;
+			num = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return interior;
+	return num;
 }
 
-Interior func_85() // Position - 0x4E69 (20073)
+int func_85() // Position - 0x4E69 (20073)
 {
 	return Global_1574927;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x4E75 (20085)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x4E75 (20085)
 {
-	if (inParam2 == -1)
-		inParam2 = func_85();
+	if (iParam2 == -1)
+		iParam2 = func_85();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
 	return;
 }
 
@@ -4555,12 +4555,12 @@ int func_89(int iParam0, int iParam1) // Position - 0x50BE (20670)
 	return 0;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, Interior inParam1) // Position - 0x50ED (20717)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0x50ED (20717)
 {
-	if (inParam1 == -1)
-		inParam1 = func_85();
+	if (iParam1 == -1)
+		iParam1 = func_85();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, inParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
 }
 
 int func_91(BOOL bParam0) // Position - 0x5109 (20745)
@@ -5143,10 +5143,10 @@ BOOL func_120() // Position - 0x5B17 (23319)
 void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, int iParam5, BOOL bParam6, BOOL bParam7, int iParam8) // Position - 0x5B96 (23446)
 {
 	int num;
-	BOOL r;
-	eHudColour g;
-	BOOL b;
-	BOOL a;
+	int r;
+	int g;
+	int b;
+	int a;
 	int i;
 	ePedComponentType numberOfLinesForString;
 	ePedComponentType j;
@@ -5187,42 +5187,42 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	float num29;
 	float num30;
 	float num31;
+	int num32;
+	int num33;
+	int num34;
+	int num35;
+	float num36;
 	BOOL flag4;
-	eHudColour color;
 	BOOL flag5;
 	BOOL flag6;
-	float num32;
 	BOOL flag7;
-	BOOL flag8;
-	BOOL flag9;
-	BOOL flag10;
-	float num33;
-	float num34;
-	float num35;
-	float num36;
+	float num37;
+	float num38;
+	float num39;
+	float num40;
 	var unk3;
 	var unk4;
-	float num37;
+	float num41;
 	var unk5;
 	var unk21;
-	float num38;
+	float num42;
 	float size;
 	float size2;
 	ePedComponentType type;
-	float num39;
-	float num40;
+	float num43;
+	float num44;
 	int m;
-	BOOL r2;
-	eHudColour g2;
-	BOOL b2;
-	BOOL a2;
-	int num41;
+	int r2;
+	int g2;
+	int b2;
+	int a2;
+	int num45;
 	var text;
 	float value;
 	float value2;
-	float num42;
-	float num43;
-	float num44;
+	float num46;
+	float num47;
+	float num48;
 
 	if (!func_59(&num, false, iParam1))
 		return;
@@ -5234,32 +5234,32 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 
 	GRAPHICS::SET_SCRIPT_GFX_ALIGN(76, 84);
 	GRAPHICS::SET_SCRIPT_GFX_ALIGN_PARAMS(-0.05f, -0.05f, 0f, 0f);
-	num34 = 0f;
+	num38 = 0f;
 
 	if (Global_24546)
 		if (func_166(30, true, true, &num26, &num27, bParam7))
-			num35 = num27 / num26;
+			num39 = num27 / num26;
 		else
 			Global_24546 = false;
 
 	if (iParam5 == -1f)
 		iParam5 = Global_24545;
 
-	num34 = iParam5 * num35;
+	num38 = iParam5 * num39;
 
 	if (MISC::GET_HASH_KEY(&(Global_24546.f_1)) == MISC::GET_HASH_KEY("HIDE"))
-		num36 = Global_24544;
+		num40 = Global_24544;
 	else
-		num36 = Global_24544 + num34 + 0.034722f + 0f;
+		num40 = Global_24544 + num38 + 0.034722f + 0f;
 
-	num37 = 1f;
-	func_164(bParam7, &unk3, &unk4, &num37);
+	num41 = 1f;
+	func_164(bParam7, &unk3, &unk4, &num41);
 
 	if (bParam3)
 	{
 		if (Global_24546.f_5821 <= PV_COMP_BERD)
 		{
-			func_185(Global_24546.f_5821 + 1, "DFLT_MNU_OPT" /*Exit*/, 0, true, false, false, false);
+			func_185(Global_24546.f_5821 + 1, "DFLT_MNU_OPT" /*Salir*/, 0, true, false, false, false);
 			Global_24546.f_6617 = 1;
 		}
 	}
@@ -5270,7 +5270,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		{
 			if (MISC::GET_HASH_KEY(&(Global_24546.f_1)) == MISC::GET_HASH_KEY("HIDE"))
 			{
-				num32 = Global_24544;
+				num36 = Global_24544;
 			}
 			else
 			{
@@ -5281,12 +5281,12 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				
 					if (MISC::GET_HASH_KEY(&Global_24546.f_7744[30 /*16*/]) == joaat("CREW_LOGO"))
 					{
-						func_159(Global_24543, Global_24544, iParam5, num34, 0, 0, 0, 255);
-						func_158(&unk5, &unk21, Global_24543 + (iParam5 * 0.5f), Global_24544 + (num34 * 0.5f), iParam5, num34, 0f, 255, 255, 255, 255, false, 0);
+						func_159(Global_24543, Global_24544, iParam5, num38, 0, 0, 0, 255);
+						func_158(&unk5, &unk21, Global_24543 + (iParam5 * 0.5f), Global_24544 + (num38 * 0.5f), iParam5, num38, 0f, 255, 255, 255, 255, false, 0);
 					}
 					else
 					{
-						func_158(&unk5, &unk21, Global_24543 + (iParam5 * 0.5f), Global_24544 + (num34 * 0.5f), iParam5, num34, 0f, 255, 255, 255, 255, false, 0);
+						func_158(&unk5, &unk21, Global_24543 + (iParam5 * 0.5f), Global_24544 + (num38 * 0.5f), iParam5, num38, 0f, 255, 255, 255, 255, false, 0);
 					}
 				}
 			
@@ -5299,14 +5299,14 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 				else
 				{
-					r = false;
-					g = HUD_COLOUR_PURE_WHITE;
-					b = false;
+					r = 0;
+					g = 0;
+					b = 0;
 					a = 255;
 				}
 			
-				func_159(Global_24543, Global_24544 + num34, iParam5, 0.034722f, r, g, b, a);
-				num32 = Global_24544 + num34 + 0.034722f + 0f;
+				func_159(Global_24543, Global_24544 + num38, iParam5, 0.034722f, r, g, b, a);
+				num36 = Global_24544 + num38 + 0.034722f + 0f;
 			
 				if (MISC::GET_HASH_KEY(&(Global_24546.f_1)) != 0)
 				{
@@ -5361,27 +5361,27 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 						}
 					}
 				
-					func_156(Global_24543 + 0.00390625f, Global_24544 + num34 + 0.00416664f, 0);
+					func_156(Global_24543 + 0.00390625f, Global_24544 + num38 + 0.00416664f, 0);
 				}
 			
 				if (Global_24546.f_6338)
 				{
 					func_157();
-					func_154((Global_24543 + iParam5) - 0.00390625f - func_155("CM_ITEM_COUNT" /*~1~ / ~1~*/, Global_24546.f_6339, Global_24546.f_6340), Global_24544 + num34 + 0.00416664f, "CM_ITEM_COUNT" /*~1~ / ~1~*/, Global_24546.f_6339, Global_24546.f_6340);
+					func_154((Global_24543 + iParam5) - 0.00390625f - func_155("CM_ITEM_COUNT" /*~1~/~1~*/, Global_24546.f_6339, Global_24546.f_6340), Global_24544 + num38 + 0.00416664f, "CM_ITEM_COUNT" /*~1~/~1~*/, Global_24546.f_6339, Global_24546.f_6340);
 				}
 				else if (Global_24546.f_6334 > Global_24546.f_5828)
 				{
 					if (Global_24546.f_6337 != 0)
 					{
 						func_157();
-						func_154((Global_24543 + iParam5) - 0.00390625f - func_155("CM_ITEM_COUNT" /*~1~ / ~1~*/, Global_24546.f_6337, Global_24546.f_6336), Global_24544 + num34 + 0.00416664f, "CM_ITEM_COUNT" /*~1~ / ~1~*/, Global_24546.f_6337, Global_24546.f_6336);
+						func_154((Global_24543 + iParam5) - 0.00390625f - func_155("CM_ITEM_COUNT" /*~1~/~1~*/, Global_24546.f_6337, Global_24546.f_6336), Global_24544 + num38 + 0.00416664f, "CM_ITEM_COUNT" /*~1~/~1~*/, Global_24546.f_6337, Global_24546.f_6336);
 					}
 				}
 			}
 		
 			numberOfLinesForString = Global_24546.f_6341;
 			num2 = 0;
-			num38 = num32;
+			num42 = num36;
 		
 			if (Global_24546.f_9224)
 			{
@@ -5402,14 +5402,14 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					if (Global_24546.f_6088[numberOfLinesForString])
 					{
 						if (Global_24546.f_5959[numberOfLinesForString] && numberOfLinesForString != Global_24546.f_6341)
-							num32 = num32 + 0.00277776f;
+							num36 = num36 + 0.00277776f;
 					
-						num33 = 0.034722f;
+						num37 = 0.034722f;
 					
 						if (Global_24546.f_6348[numberOfLinesForString] != 0f)
-							num33 = Global_24546.f_6348[numberOfLinesForString];
+							num37 = Global_24546.f_6348[numberOfLinesForString];
 					
-						num32 = num32 + num33;
+						num36 = num36 + num37;
 						num2 = num2 + 1;
 					}
 				}
@@ -5417,7 +5417,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				numberOfLinesForString = numberOfLinesForString + 1;
 			}
 		
-			func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num38 + ((num32 - num38) * 0.5f)) - 0.00138888f, iParam5, num32 - num38, 0f, 255, 255, 255, 255, false, 0);
+			func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num42 + ((num36 - num42) * 0.5f)) - 0.00138888f, iParam5, num36 - num42, 0f, 255, 255, 255, 255, false, 0);
 		
 			if (Global_24546.f_6334 > Global_24546.f_5828)
 			{
@@ -5430,22 +5430,22 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 				else
 				{
-					r = false;
-					g = HUD_COLOUR_PURE_WHITE;
-					b = false;
+					r = 0;
+					g = 0;
+					b = 0;
 					a = 204;
 				}
 			
-				func_159(Global_24543, num32 + 0f, iParam5, 0.034722f, r, g, b, a);
+				func_159(Global_24543, num36 + 0f, iParam5, 0.034722f, r, g, b, a);
 				textureResolution = { GRAPHICS::GET_TEXTURE_RESOLUTION("CommonMenu", "shop_arrows_upANDdown") };
-				textureResolution = textureResolution * (0.5f / num37);
-				textureResolution.f_1 = textureResolution.f_1 * (0.5f / num37);
+				textureResolution = textureResolution * (0.5f / num41);
+				textureResolution.f_1 = textureResolution.f_1 * (0.5f / num41);
 			
 				if (Global_24546.f_9242)
 				{
-					r = false;
-					g = HUD_COLOUR_PURE_WHITE;
-					b = false;
+					r = 0;
+					g = 0;
+					b = 0;
 					a = 255;
 				}
 				else
@@ -5453,13 +5453,13 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
 				}
 			
-				func_158("CommonMenu", "shop_arrows_upANDdown", Global_24543 + (iParam5 * 0.5f), num32 + 0f + (0.034722f * 0.5f), (textureResolution / 1280f) * num37, (textureResolution.f_1 / 720f) * num37, 0f, r, g, b, a, false, 0);
-				num32 = num32 + 0f + 0.034722f;
+				func_158("CommonMenu", "shop_arrows_upANDdown", Global_24543 + (iParam5 * 0.5f), num36 + 0f + (0.034722f * 0.5f), (textureResolution / 1280f) * num41, (textureResolution.f_1 / 720f) * num41, 0f, r, g, b, a, false, 0);
+				num36 = num36 + 0f + 0.034722f;
 			}
 		
 			if (MISC::GET_HASH_KEY(&(Global_24546.f_5241)) != 0 && Global_24546.f_5323 != -1)
 			{
-				num32 = num32 + (0.00277776f * 2f);
+				num36 = num36 + (0.00277776f * 2f);
 				x = Global_24543 + 0.0046875f;
 			
 				if (Global_24546.f_5325 != 0)
@@ -5513,9 +5513,9 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num32 + 0.00277776f);
+				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num36 + 0.00277776f);
 				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
-				func_159(Global_24543, num32 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
+				func_159(Global_24543, num36 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_24546.f_9234)
 				{
@@ -5529,7 +5529,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
 				}
 			
-				func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num32 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
+				func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num36 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
 				func_153(x);
 				HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&(Global_24546.f_5241));
 				num7 = 0;
@@ -5580,20 +5580,20 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				func_156(x, num32 + 0.00277776f, 0);
+				func_156(x, num36 + 0.00277776f, 0);
 			
 				if (Global_24546.f_5325 != 0)
 				{
 					func_166(Global_24546.f_5325, true, true, &num26, &num27, bParam7);
-					func_152(Global_24546.f_5325, true, &flag4, &color, &flag5, &flag6);
-					func_158(func_163(Global_24546.f_5325), func_160(Global_24546.f_5325, true), Global_24543 + (num26 * 0.5f) + (0.00078125f * 2f), (num32 + (num27 * 0.5f)) - (0.00138888f * 4f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+					func_152(Global_24546.f_5325, true, &num32, &num33, &num34, &num35);
+					func_158(func_163(Global_24546.f_5325), func_160(Global_24546.f_5325, true), Global_24543 + (num26 * 0.5f) + (0.00078125f * 2f), (num36 + (num27 * 0.5f)) - (0.00138888f * 4f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 				}
 			
-				num32 = num32 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
+				num36 = num36 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
 			
 				if (!MISC::IS_STRING_NULL_OR_EMPTY(&(Global_24546.f_5247)))
 				{
-					num32 = num32 + (0.00138888f * 6f);
+					num36 = num36 + (0.00138888f * 6f);
 					func_153(x);
 					size = 0.35f;
 				
@@ -5602,9 +5602,9 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				
 					HUD::SET_TEXT_SCALE(0f, size);
 					HUD::BEGIN_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(&(Global_24546.f_5247));
-					numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num32 + 0.00277776f);
+					numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num36 + 0.00277776f);
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
-					func_159(Global_24543, num32 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
+					func_159(Global_24543, num36 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 				
 					if (Global_24546.f_9234)
 					{
@@ -5618,12 +5618,12 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 						HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
 					}
 				
-					func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num32 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
+					func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num36 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
 					func_153(x);
 					HUD::SET_TEXT_SCALE(0f, size);
 					HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&(Global_24546.f_5247));
-					func_156(x, num32 + 0.00277776f, 0);
-					num32 = num32 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
+					func_156(x, num36 + 0.00277776f, 0);
+					num36 = num36 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
 				}
 			
 				if (Global_24546.f_5323 > 0)
@@ -5637,7 +5637,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 			}
 			else if (!MISC::IS_STRING_NULL_OR_EMPTY(&(Global_24546.f_5247)))
 			{
-				num32 = num32 + (0.00277776f * 2f);
+				num36 = num36 + (0.00277776f * 2f);
 				x = Global_24543 + 0.0046875f;
 				size2 = 0.35f;
 			
@@ -5690,9 +5690,9 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num32 + 0.00277776f);
+				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num36 + 0.00277776f);
 				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
-				func_159(Global_24543, num32 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
+				func_159(Global_24543, num36 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_24546.f_9234)
 				{
@@ -5706,16 +5706,16 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
 				}
 			
-				func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num32 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
+				func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num36 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
 				func_153(x);
 				HUD::SET_TEXT_SCALE(0f, size2);
 				HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&(Global_24546.f_5247));
-				func_156(x, num32 + 0.00277776f, 0);
+				func_156(x, num36 + 0.00277776f, 0);
 			}
 		
 			if (MISC::GET_HASH_KEY(&(Global_4521195.f_21)) != 0 && Global_4521195.f_65 != -1)
 			{
-				num32 = num32 + (0.00277776f * 2f);
+				num36 = num36 + (0.00277776f * 2f);
 				x = Global_24543 + 0.0046875f;
 			
 				if (Global_4521195.f_67 != 0)
@@ -5774,9 +5774,9 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num32 + 0.00277776f);
+				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num36 + 0.00277776f);
 				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
-				func_159(Global_24543, num32 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
+				func_159(Global_24543, num36 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_24546.f_9234)
 				{
@@ -5790,7 +5790,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
 				}
 			
-				func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num32 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
+				func_158("CommonMenu", "Gradient_Bgd", Global_24543 + (iParam5 * 0.5f), (num36 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
 				func_153(x);
 				HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&(Global_4521195.f_21));
 				num7 = 0;
@@ -5841,16 +5841,16 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 				}
 			
-				func_156(x, num32 + 0.00277776f, 0);
+				func_156(x, num36 + 0.00277776f, 0);
 			
 				if (Global_4521195.f_67 != 0)
 				{
 					func_166(Global_4521195.f_67, true, true, &num26, &num27, bParam7);
-					func_152(Global_4521195.f_67, true, &flag4, &color, &flag5, &flag6);
-					func_158(func_163(Global_4521195.f_67), func_160(Global_4521195.f_67, true), Global_24543 + (num26 * 0.5f) + (0.00078125f * 2f), (num32 + (num27 * 0.5f)) - (0.00138888f * 4f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+					func_152(Global_4521195.f_67, true, &num32, &num33, &num34, &num35);
+					func_158(func_163(Global_4521195.f_67), func_160(Global_4521195.f_67, true), Global_24543 + (num26 * 0.5f) + (0.00078125f * 2f), (num36 + (num27 * 0.5f)) - (0.00138888f * 4f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 				}
 			
-				num32 = num32 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
+				num36 = num36 + (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1);
 			
 				if (Global_4521195.f_65 > 0)
 				{
@@ -5884,15 +5884,15 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 			if (Global_24546.f_6332)
 				type = Global_24546.f_6335 - 1;
 		
-			num39 = 0f;
-			num40 = 0f;
+			num43 = 0f;
+			num44 = 0f;
 		
 			for (j = PV_COMP_HEAD; j <= type; j = j + 1)
 			{
-				num33 = 0.034722f;
+				num37 = 0.034722f;
 			
 				if (Global_24546.f_6348[numberOfLinesForString] != 0f)
-					num33 = Global_24546.f_6348[numberOfLinesForString];
+					num37 = Global_24546.f_6348[numberOfLinesForString];
 			
 				if (Global_24546.f_6332)
 					numberOfLinesForString = Global_24546.f_8865[j];
@@ -5907,12 +5907,12 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					flag2 = true;
 				
 					if (Global_24546.f_6342 == numberOfLinesForString)
-						num40 = num39;
+						num44 = num43;
 				
 					if (Global_24546.f_5959[numberOfLinesForString])
 						num5 = num5 + 1;
 				
-					num25 = num36 + num39 + (0.00277776f * (float)num5) + 0.00277776f;
+					num25 = num40 + num43 + (0.00277776f * (float)num5) + 0.00277776f;
 				}
 			
 				Global_24546.f_6482[numberOfLinesForString] = num25;
@@ -5932,7 +5932,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					else
 						HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r2, &g2, &b2, &a2);
 				
-					func_158("CommonMenu", "Gradient_Nav", Global_24543 + (iParam5 * 0.5f), num36 + num40 + (0.00277776f * (float)num5) + (num33 * 0.5f), iParam5, num33, 0f, r2, g2, b2, a2, false, 0);
+					func_158("CommonMenu", "Gradient_Nav", Global_24543 + (iParam5 * 0.5f), num40 + num44 + (0.00277776f * (float)num5) + (num37 * 0.5f), iParam5, num37, 0f, r2, g2, b2, a2, false, 0);
 					Global_24546.f_6480 = num25;
 				}
 			
@@ -5957,15 +5957,15 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 							Global_24546.f_9045[(num2 * Global_24546.f_5829) + k] = num15;
 						}
 					
-						num41 = 0;
-						flag10 = false;
+						num45 = 0;
+						flag7 = false;
 					
 						if (Global_24546.f_6614[0] != -1)
 						{
 							if ((numberOfLinesForString * 5) + k == Global_24546.f_6611[0])
 							{
-								flag10 = true;
-								num41 = 0;
+								flag7 = true;
+								num45 = 0;
 							}
 						}
 					
@@ -5973,8 +5973,8 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 						{
 							if ((numberOfLinesForString * 5) + k == Global_24546.f_6611[1])
 							{
-								flag10 = true;
-								num41 = 1;
+								flag7 = true;
+								num45 = 1;
 							}
 						}
 					
@@ -5987,9 +5987,9 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 							num31 = (Global_24543 + Global_24545) - 0.0046875f - num24;
 					
 						if (Global_24546.f_5678[k] && Global_24546.f_6477 && flag)
-							flag9 = true;
+							flag6 = true;
 						else
-							flag9 = false;
+							flag6 = false;
 					
 						switch (Global_24546.f_5659[k])
 						{
@@ -6013,21 +6013,21 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 									
 										if (MISC::GET_HASH_KEY(&Global_24546.f_79[num16 /*6*/]) != 0)
 										{
-											flag7 = false;
-											flag8 = false;
+											flag4 = false;
+											flag5 = false;
 										
 											for (l = 0; l < 4; l = l + 1)
 											{
 												if (Global_24546.f_2387[num16 /*5*/][l] == 5 || Global_24546.f_2387[num16 /*5*/][l] == 8)
-													flag8 = true;
+													flag5 = true;
 												else if (Global_24546.f_2387[num16 /*5*/][l] == 9)
-													flag7 = true;
+													flag4 = true;
 											}
 										
 											if (Global_24546.f_2130[num16])
-												flag8 = true;
+												flag5 = true;
 										
-											func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, num41, flag8, flag7);
+											func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, num45, flag5, flag4);
 											HUD::BEGIN_TEXT_COMMAND_GET_SCREEN_WIDTH_OF_DISPLAY_TEXT(&Global_24546.f_79[num16 /*6*/]);
 										}
 									
@@ -6142,7 +6142,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										num29 = Global_24546.f_9168[(num2 * Global_24546.f_5829) + k];
 									}
 								
-									if (flag9)
+									if (flag6)
 									{
 										if (func_166(27, true, false, &num26, &num27, bParam7))
 										{
@@ -6153,10 +6153,10 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_166(27, true, true, &num26, &num27, bParam7))
 											{
-												func_152(27, true, &flag4, &color, &flag5, &flag6);
+												func_152(27, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_158(func_163(27), func_160(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_158(func_163(27), func_160(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									
@@ -6167,10 +6167,10 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_166(28, true, true, &num26, &num27, bParam7))
 											{
-												func_152(28, true, &flag4, &color, &flag5, &flag6);
+												func_152(28, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_158(func_163(28), func_160(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_158(func_163(28), func_160(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									}
@@ -6184,21 +6184,21 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 								
 									if (MISC::GET_HASH_KEY(&Global_24546.f_79[num16 /*6*/]) != 0 && i == 1)
 									{
-										flag7 = false;
-										flag8 = false;
+										flag4 = false;
+										flag5 = false;
 									
 										for (l = 0; l < 4; l = l + 1)
 										{
 											if (Global_24546.f_2387[num16 /*5*/][l] == 5 || Global_24546.f_2387[num16 /*5*/][l] == 8)
-												flag8 = true;
+												flag5 = true;
 											else if (Global_24546.f_2387[num16 /*5*/][l] == 9)
-												flag7 = true;
+												flag4 = true;
 										}
 									
 										if (Global_24546.f_2130[num16])
-											flag8 = true;
+											flag5 = true;
 									
-										func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, flag8, flag7);
+										func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, flag5, flag4);
 									
 										if (Global_24546.f_9240 && Global_24546.f_9241 == numberOfLinesForString)
 											func_137(flag);
@@ -6284,13 +6284,13 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 												
 													if (func_166(Global_24546.f_4984[num14 + num20], flag, true, &num26, &num27, bParam7))
 													{
-														func_152(Global_24546.f_4984[num14 + num20], flag, &flag4, &color, &flag5, &flag6);
+														func_152(Global_24546.f_4984[num14 + num20], flag, &num32, &num33, &num34, &num35);
 													
 														if (i == 1)
 															if (Global_24546.f_5686[k] == 2)
-																func_158(func_163(Global_24546.f_4984[num14 + num20]), func_160(Global_24546.f_4984[num14 + num20], flag), ((num24 + x) - (0.00078125f * 8f)) + (0.00078125f * 4f), (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_158(func_163(Global_24546.f_4984[num14 + num20]), func_160(Global_24546.f_4984[num14 + num20], flag), ((num24 + x) - (0.00078125f * 8f)) + (0.00078125f * 4f), (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 															else
-																func_158(func_163(Global_24546.f_4984[num14 + num20]), func_160(Global_24546.f_4984[num14 + num20], flag), (num24 + x) - (0.00078125f * 8f), (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_158(func_163(Global_24546.f_4984[num14 + num20]), func_160(Global_24546.f_4984[num14 + num20], flag), (num24 + x) - (0.00078125f * 8f), (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 													
 														x = x + (0.00078125f * 3f);
 													}
@@ -6317,21 +6317,21 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 												if (k == 0)
 												{
 													if (Global_24546.f_2130[num16])
-														flag8 = true;
+														flag5 = true;
 												
-													func_141(false, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, flag8, flag7);
+													func_141(false, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, flag5, flag4);
 													TEXT_LABEL_ASSIGN_STRING(&text, "TEST_LABEL", 16);
 													value = 0f;
 													value2 = 55f;
-													num42 = 0.0185f;
-													num43 = 0.004f;
-													num44 = 0.02f;
+													num46 = 0.0185f;
+													num47 = 0.004f;
+													num48 = 0.02f;
 													HUD::SET_TEXT_SCALE(0f, 0.35f * 0.7f);
 													HUD::SET_TEXT_COLOUR(255, 255, 255, 150);
-													GRAPHICS::DRAW_RECT(num24 - (num44 * 0.6f), num25 + (num42 * 0.75f), 0.0175f, 0.035f, BUILTIN::FLOOR(value), BUILTIN::FLOOR(value), BUILTIN::FLOOR(value), BUILTIN::FLOOR(value2), false);
+													GRAPHICS::DRAW_RECT(num24 - (num48 * 0.6f), num25 + (num46 * 0.75f), 0.0175f, 0.035f, BUILTIN::FLOOR(value), BUILTIN::FLOOR(value), BUILTIN::FLOOR(value), BUILTIN::FLOOR(value2), false);
 													HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(&text);
 													HUD::ADD_TEXT_COMPONENT_INTEGER(Global_24546.f_6341 + num22);
-													func_156(num24 - num44, num25 + num43, 0);
+													func_156(num24 - num48, num25 + num47, 0);
 													num22 = num22 + 1;
 												}
 											}
@@ -6354,14 +6354,14 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 													{
 														if (func_166(Global_24546.f_4984[num14 + l], flag, true, &num26, &num27, bParam7))
 														{
-															func_152(Global_24546.f_4984[num14 + l], flag, &flag4, &color, &flag5, &flag6);
+															func_152(Global_24546.f_4984[num14 + l], flag, &num32, &num33, &num34, &num35);
 														
 															if (Global_24546.f_4984[num14 + l] == 31)
-																func_158(func_163(Global_24546.f_4984[num14 + l]), func_160(Global_24546.f_4984[num14 + l], flag), Global_24543 + (num26 * 0.5f), (num25 + 0.00277776f + (num27 * 0.5f)) - (0.00078125f * 11f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_158(func_163(Global_24546.f_4984[num14 + l]), func_160(Global_24546.f_4984[num14 + l], flag), Global_24543 + (num26 * 0.5f), (num25 + 0.00277776f + (num27 * 0.5f)) - (0.00078125f * 11f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 															else if (Global_24546.f_5686[k] == 2)
-																func_158(func_163(Global_24546.f_4984[num14 + l]), func_160(Global_24546.f_4984[num14 + l], flag), ((num24 + x + num28) - (0.00078125f * 8f)) + (0.00078125f * 4f), (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_158(func_163(Global_24546.f_4984[num14 + l]), func_160(Global_24546.f_4984[num14 + l], flag), ((num24 + x + num28) - (0.00078125f * 8f)) + (0.00078125f * 4f), (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 															else
-																func_158(func_163(Global_24546.f_4984[num14 + l]), func_160(Global_24546.f_4984[num14 + l], flag), (num24 + x + num28) - (0.00078125f * 12f), (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+																func_158(func_163(Global_24546.f_4984[num14 + l]), func_160(Global_24546.f_4984[num14 + l], flag), (num24 + x + num28) - (0.00078125f * 12f), (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 														}
 													}
 												
@@ -6403,7 +6403,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 								{
 									if (!Global_24546.f_6332)
 									{
-										func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, false, false);
+										func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, false, false);
 									
 										if (Global_24546.f_9240 && Global_24546.f_9241 == numberOfLinesForString)
 											func_137(flag);
@@ -6427,7 +6427,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										num28 = Global_24546.f_9127[(num2 * Global_24546.f_5829) + k];
 									}
 								
-									if (flag9)
+									if (flag6)
 									{
 										if (func_166(27, true, false, &num26, &num27, bParam7))
 										{
@@ -6438,10 +6438,10 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_166(27, true, true, &num26, &num27, bParam7))
 											{
-												func_152(27, true, &flag4, &color, &flag5, &flag6);
+												func_152(27, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_158(func_163(27), func_160(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_158(func_163(27), func_160(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									
@@ -6452,17 +6452,17 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_166(28, true, true, &num26, &num27, bParam7))
 											{
-												func_152(28, true, &flag4, &color, &flag5, &flag6);
+												func_152(28, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_158(func_163(28), func_160(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_158(func_163(28), func_160(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									}
 								
 									if (i == 1)
 									{
-										func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, false, false);
+										func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, false, false);
 										func_135(num24 + x, num25, "NUMBER" /*~1~*/, Global_24546.f_4469[num12], 0);
 									}
 								}
@@ -6476,7 +6476,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 								{
 									if (!Global_24546.f_6332)
 									{
-										func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, false, false);
+										func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, false, false);
 									
 										if (Global_24546.f_9240 && Global_24546.f_9241 == numberOfLinesForString)
 											func_137(flag);
@@ -6500,7 +6500,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										num28 = Global_24546.f_9127[(num2 * Global_24546.f_5829) + k];
 									}
 								
-									if (flag9)
+									if (flag6)
 									{
 										if (func_166(27, true, false, &num26, &num27, false))
 										{
@@ -6511,10 +6511,10 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_166(27, true, true, &num26, &num27, bParam7))
 											{
-												func_152(27, true, &flag4, &color, &flag5, &flag6);
+												func_152(27, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_158(func_163(27), func_160(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_158(func_163(27), func_160(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									
@@ -6525,15 +6525,15 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										
 											if (func_166(28, true, true, &num26, &num27, bParam7))
 											{
-												func_152(28, true, &flag4, &color, &flag5, &flag6);
+												func_152(28, true, &num32, &num33, &num34, &num35);
 											
 												if (i == 1)
-													func_158(func_163(28), func_160(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+													func_158(func_163(28), func_160(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									}
 								
-									func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag10, 0, false, false);
+									func_141(flag, Global_24546.f_1616[num16], Global_24546.f_1873[num16], flag7, 0, false, false);
 									func_131(num24 + x, num25, "NUMBER" /*~1~*/, Global_24546.f_4726[num13], Global_24546.f_4855[num13]);
 								}
 							
@@ -6565,7 +6565,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 											num29 = Global_24546.f_9168[(num2 * Global_24546.f_5829) + k];
 										}
 									
-										if (flag9)
+										if (flag6)
 										{
 											if (func_166(27, true, false, &num26, &num27, bParam7))
 											{
@@ -6576,10 +6576,10 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 											
 												if (func_166(27, true, true, &num26, &num27, bParam7))
 												{
-													func_152(27, true, &flag4, &color, &flag5, &flag6);
+													func_152(27, true, &num32, &num33, &num34, &num35);
 												
 													if (i == 1)
-														func_158(func_163(27), func_160(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+														func_158(func_163(27), func_160(27, true), num24 + x + num30, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 												}
 											}
 										
@@ -6590,10 +6590,10 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 											
 												if (func_166(28, true, true, &num26, &num27, bParam7))
 												{
-													func_152(28, true, &flag4, &color, &flag5, &flag6);
+													func_152(28, true, &num32, &num33, &num34, &num35);
 												
 													if (i == 1)
-														func_158(func_163(28), func_160(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num33 * 0.5f), num26, num27, 0f, flag4, color, flag5, flag6, false, 0);
+														func_158(func_163(28), func_160(28, true), num24 + x + num30 + num28 + num29, (num25 - 0.00277776f) + (num37 * 0.5f), num26, num27, 0f, num32, num33, num34, num35, false, 0);
 												}
 											}
 										}
@@ -6602,8 +6602,8 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 										{
 											if (func_166(Global_24546.f_4984[num14], flag, true, &num26, &num27, bParam7))
 											{
-												func_152(Global_24546.f_4984[num14], flag, &flag4, &color, &flag5, &flag6);
-												func_158(func_163(Global_24546.f_4984[num14]), func_160(Global_24546.f_4984[num14], flag), num24 + x + (num26 * 0.5f), (num25 - 0.00277776f) + (num33 * 0.5f), num26 * func_130(Global_24546.f_4984[num14]), num27 * func_130(Global_24546.f_4984[num14]), 0f, flag4, color, flag5, flag6, false, 0);
+												func_152(Global_24546.f_4984[num14], flag, &num32, &num33, &num34, &num35);
+												func_158(func_163(Global_24546.f_4984[num14]), func_160(Global_24546.f_4984[num14], flag), num24 + x + (num26 * 0.5f), (num25 - 0.00277776f) + (num37 * 0.5f), num26 * func_130(Global_24546.f_4984[num14]), num27 * func_130(Global_24546.f_4984[num14]), 0f, num32, num33, num34, num35, false, 0);
 											}
 										}
 									}
@@ -6652,9 +6652,9 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 							num6 = num6 + 1;
 					
 						if (Global_24546.f_6348[numberOfLinesForString] != 0f)
-							num39 = num39 + Global_24546.f_6348[numberOfLinesForString];
+							num43 = num43 + Global_24546.f_6348[numberOfLinesForString];
 						else
-							num39 = num39 + 0.034722f;
+							num43 = num43 + 0.034722f;
 					}
 				
 					if (!Global_24546.f_6331)
@@ -6681,7 +6681,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		
 			if (!Global_24546.f_6331)
 			{
-				Global_24546.f_6333 = num36 + num39 + (0.00277776f * (float)num5);
+				Global_24546.f_6333 = num40 + num43 + (0.00277776f * (float)num5);
 				Global_24546.f_6336 = num4;
 				Global_24546.f_6334 = num3;
 				Global_24546.f_6331 = 1;
@@ -6695,7 +6695,7 @@ void func_121(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		}
 	}
 
-	Global_24546.f_6479 = num32;
+	Global_24546.f_6479 = num36;
 	Global_24546.f_6481 = MISC::GET_GAME_TIMER();
 	HUD::THEFEED_SET_SCRIPTED_MENU_HEIGHT(Global_24546.f_6479);
 
@@ -7471,24 +7471,24 @@ BOOL func_147(Player plParam0, int iParam1) // Position - 0x9A1F (39455)
 	return flag;
 }
 
-eCharacter func_148(Interior inParam0, BOOL bParam1) // Position - 0x9A78 (39544)
+eCharacter func_148(int iParam0, BOOL bParam1) // Position - 0x9A78 (39544)
 {
 	eCharacter character;
-	Interior interior;
+	int num;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
-		interior = func_85();
+	if (num == -1)
+		num = func_85();
 
-	if (Global_1575072[interior] == true)
+	if (Global_1575072[num] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[interior];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
@@ -7667,8 +7667,8 @@ void func_157() // Position - 0x9D83 (40323)
 {
 	int r;
 	int g;
-	BOOL b;
-	eHudColour a;
+	int b;
+	int a;
 
 	HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
 
@@ -7690,15 +7690,15 @@ void func_157() // Position - 0x9D83 (40323)
 	return;
 }
 
-void func_158(char* sParam0, char* sParam1, float fParam2, float fParam3, float fParam4, float fParam5, float fParam6, BOOL bParam7, eHudColour ehcParam8, BOOL bParam9, BOOL bParam10, BOOL bParam11, int iParam12) // Position - 0x9E0D (40461)
+void func_158(char* sParam0, char* sParam1, float fParam2, float fParam3, float fParam4, float fParam5, float fParam6, int iParam7, int iParam8, int iParam9, int iParam10, BOOL bParam11, int iParam12) // Position - 0x9E0D (40461)
 {
-	GRAPHICS::DRAW_SPRITE(sParam0, sParam1, func_132(fParam2), fParam3, func_132(fParam4), fParam5, fParam6, bParam7, ehcParam8, bParam9, bParam10, bParam11, iParam12);
+	GRAPHICS::DRAW_SPRITE(sParam0, sParam1, func_132(fParam2), fParam3, func_132(fParam4), fParam5, fParam6, iParam7, iParam8, iParam9, iParam10, bParam11, iParam12);
 	return;
 }
 
-void func_159(float fParam0, float fParam1, int iParam2, float fParam3, BOOL bParam4, eHudColour ehcParam5, BOOL bParam6, BOOL bParam7) // Position - 0x9E3B (40507)
+void func_159(float fParam0, float fParam1, int iParam2, float fParam3, int iParam4, int iParam5, int iParam6, int iParam7) // Position - 0x9E3B (40507)
 {
-	GRAPHICS::DRAW_RECT(func_132(fParam0 + (iParam2 * 0.5f)), fParam1 + (fParam3 * 0.5f), func_132(iParam2), fParam3, bParam4, ehcParam5, bParam6, bParam7, false);
+	GRAPHICS::DRAW_RECT(func_132(fParam0 + (iParam2 * 0.5f)), fParam1 + (fParam3 * 0.5f), func_132(iParam2), fParam3, iParam4, iParam5, iParam6, iParam7, false);
 	return;
 }
 
@@ -9684,9 +9684,9 @@ void func_215() // Position - 0xCA16 (51734)
 			{
 				if (func_45() && !PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false) && !func_234(0))
 				{
-					_DISPLAY_HELP_TEXT("SHR_ROBTILL" /*Press ~INPUT_CONTEXT~ to take money.*/, -1);
+					_DISPLAY_HELP_TEXT("SHR_ROBTILL" /*Pulsa ~INPUT_CONTEXT~ para coger el dinero.*/, -1);
 					pedLocal_66.f_469 = -1;
-					_CONTEXT_ADD_HELP_TEXT(&(pedLocal_66.f_469), 4, "SHR_ROBTILL" /*Press ~INPUT_CONTEXT~ to take money.*/, 0, 0, 0, 0);
+					_CONTEXT_ADD_HELP_TEXT(&(pedLocal_66.f_469), 4, "SHR_ROBTILL" /*Pulsa ~INPUT_CONTEXT~ para coger el dinero.*/, 0, 0, 0, 0);
 					MISC::CLEAR_BIT(&(pedLocal_66.f_162.f_18), 1);
 					MISC::CLEAR_BIT(&(pedLocal_66.f_162.f_18), 0);
 					iLocal_622 = 1;
@@ -9722,7 +9722,7 @@ void func_215() // Position - 0xCA16 (51734)
 				
 					MISC::SET_BIT(&(pedLocal_66.f_162.f_18), 1);
 				
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_ROBTILL" /*Press ~INPUT_CONTEXT~ to take money.*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_ROBTILL" /*Pulsa ~INPUT_CONTEXT~ para coger el dinero.*/))
 						HUD::CLEAR_HELP(true);
 				
 					func_202(&(pedLocal_66.f_469));
@@ -9746,13 +9746,13 @@ void func_215() // Position - 0xCA16 (51734)
 					if (pedLocal_66.f_469 <= 0)
 					{
 						pedLocal_66.f_469 = -1;
-						_CONTEXT_ADD_HELP_TEXT(&(pedLocal_66.f_469), 4, "SHR_ROBTILL" /*Press ~INPUT_CONTEXT~ to take money.*/, 0, 0, 0, 0);
+						_CONTEXT_ADD_HELP_TEXT(&(pedLocal_66.f_469), 4, "SHR_ROBTILL" /*Pulsa ~INPUT_CONTEXT~ para coger el dinero.*/, 0, 0, 0, 0);
 					}
 				}
 			}
 			else
 			{
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_ROBTILL" /*Press ~INPUT_CONTEXT~ to take money.*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_ROBTILL" /*Pulsa ~INPUT_CONTEXT~ para coger el dinero.*/))
 					HUD::CLEAR_HELP(true);
 			
 				func_202(&(pedLocal_66.f_469));
@@ -10219,16 +10219,16 @@ void func_222(int iParam0) // Position - 0xD7AE (55214)
 	return;
 }
 
-void func_223(Ped pedParam0, int iParam1) // Position - 0xD871 (55409)
+void func_223(var uParam0, int iParam1) // Position - 0xD871 (55409)
 {
 	int i;
 
 	for (i = 0; i < iParam1; i = i + 1)
 	{
 		if (i < iParam1 - 1)
-			pedParam0->[i] = pedParam0->[i + 1];
+			uParam0->[i] = uParam0->[i + 1];
 		else
-			pedParam0->[i] = MISC::GET_GAME_TIMER();
+			uParam0->[i] = MISC::GET_GAME_TIMER();
 	}
 
 	return;
@@ -10351,7 +10351,7 @@ void func_227(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 		func_231(true, bParam3, bParam2, false);
 		Global_65033 = true;
 		Global_77362 = true;
-		Global_80303 = PV_COMP_BERD;
+		Global_80303 = true;
 	}
 	else
 	{
@@ -10372,7 +10372,7 @@ void func_227(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_229(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80303 = PV_COMP_HEAD;
+		Global_80303 = false;
 	}
 
 	return;
@@ -14891,10 +14891,10 @@ void func_338() // Position - 0x14DAF (85423)
 
 	PLAYER::SET_ALL_RANDOM_PEDS_FLEE(PLAYER::PLAYER_ID(), false);
 	PED::REMOVE_SCENARIO_BLOCKING_AREA(iLocal_565, false);
-	func_29("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/, 1);
-	func_29("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/, true);
+	func_29("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/, 1);
+	func_29("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/, true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Press ~INPUT_CONTEXT~ to shop.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_HOLDUP_1" /*Rob the cash register by pointing a weapon at the shop clerk.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_SNK_TUT" /*Buy snacks by walking up to the counter.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_MENU" /*Pulsa ~INPUT_CONTEXT~ para comprar.~n~*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_HOLDUP_1" /*Roba la caja registradora apuntando con un arma al dependiente.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SHR_SNK_TUT" /*Compra aperitivos andando hacia el mostrador.*/))
 		HUD::CLEAR_HELP(true);
 
 	if (func_1(pedLocal_66.f_470, 1024))
@@ -15161,7 +15161,7 @@ struct<8> func_347(var uParam0) // Position - 0x1538E (86926)
 		case 2:
 		case 3:
 		case 4:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SHR_GAS" /*LTD Gasoline*/, 32);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SHR_GAS" /*Gasolina LTD*/, 32);
 			break;
 	
 		case 5:
@@ -15172,7 +15172,7 @@ struct<8> func_347(var uParam0) // Position - 0x1538E (86926)
 		case 7:
 		case 8:
 		case 9:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SHR_LIQ2" /*Rob's Liquor*/, 32);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SHR_LIQ2" /*Licorería Rob's*/, 32);
 			break;
 	
 		case 10:
@@ -15184,7 +15184,7 @@ struct<8> func_347(var uParam0) // Position - 0x1538E (86926)
 		case 16:
 		case 17:
 		case 18:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "SHR_CONV" /*24-7*/, 32);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "SHR_CONV" /*24 horas*/, 32);
 			break;
 	
 		default:

@@ -2491,7 +2491,7 @@
 	var uLocal_2489 = 0;
 	var uLocal_2490 = 0;
 	var uLocal_2491 = 1;
-	var uScriptParam_0 = 0;
+	int iScriptParam_0 = 0;
 	var uScriptParam_1 = 0;
 #endregion
 
@@ -2517,7 +2517,7 @@ void main() // Position - 0x0 (0)
 	fLocal_29 = 140f;
 	fLocal_30 = 180f;
 	iLocal_33 = 3;
-	Global_1576964 = 1;
+	Global_1576964 = true;
 	func_46();
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
@@ -2526,7 +2526,7 @@ void main() // Position - 0x0 (0)
 		{
 			if (NETWORK::NETWORK_IS_HOST_OF_THIS_SCRIPT())
 			{
-				iLocal_38.f_1 = func_45(uScriptParam_0);
+				iLocal_38.f_1 = func_45(iScriptParam_0);
 				iLocal_38.f_2 = func_44();
 				iLocal_38 = 1;
 			}
@@ -2543,7 +2543,7 @@ void main() // Position - 0x0 (0)
 	{
 		func_37();
 	
-		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS() || _SHOULD_NETWORK_SCRIPT_TERMINATE() || Global_1576964 == 0 || func_28())
+		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS() || _SHOULD_NETWORK_SCRIPT_TERMINATE() || Global_1576964 == false || func_28())
 			func_25();
 	
 		func_3();
@@ -3748,7 +3748,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x14D3 (5331)
 {
 	switch (func_32())
 	{
-		case 0:
+		case false:
 			return func_31();
 	
 		case 2:
@@ -3772,7 +3772,7 @@ Hash func_31() // Position - 0x1506 (5382)
 	return joaat("freemode");
 }
 
-int func_32() // Position - 0x152A (5418)
+BOOL func_32() // Position - 0x152A (5418)
 {
 	return Global_33775;
 }
@@ -7109,15 +7109,15 @@ int func_44() // Position - 0x840E (33806)
 	return 0;
 }
 
-int func_45(var uParam0) // Position - 0x8422 (33826)
+int func_45(int iParam0) // Position - 0x8422 (33826)
 {
-	if (uParam0 >= Global_262145.f_26694)
+	if (iParam0 >= Global_262145.f_26694)
 		return 5;
-	else if (uParam0 >= Global_262145.f_26693)
+	else if (iParam0 >= Global_262145.f_26693)
 		return 4;
-	else if (uParam0 >= Global_262145.f_26692)
+	else if (iParam0 >= Global_262145.f_26692)
 		return 3;
-	else if (uParam0 >= Global_262145.f_26691)
+	else if (iParam0 >= Global_262145.f_26691)
 		return 2;
 
 	return 1;
@@ -7202,7 +7202,29 @@ int func_47(int iParam0, int iParam1, BOOL bParam2) // Position - 0x84AD (33965)
 
 BOOL func_48(BOOL bParam0) // Position - 0x85C3 (34243)
 {
-	bParam0;
+	if (bParam0 && Global_1575062)
+		if (func_49())
+			return false;
+		else
+			return true;
+
 	return Global_1575062;
+}
+
+BOOL func_49() // Position - 0x85EF (34287)
+{
+	if (func_50())
+		return true;
+
+	return Global_1575065;
+}
+
+BOOL func_50() // Position - 0x860A (34314)
+{
+	if (Global_1575062 || Global_1575068)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
 }
 

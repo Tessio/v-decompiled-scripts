@@ -71,12 +71,12 @@ void main() // Position - 0x0 (0)
 	fLocal_21 = 80f;
 	fLocal_22 = 140f;
 	fLocal_23 = 180f;
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_28, "CELL_212" /*YES*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_28, "CELL_212" /*SÍ*/, 16);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_32, "CELL_213" /*NO*/, 16);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_36, "CELL_39" /*Broadcast*/, 16);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_40, "CELL_MP_300" /*Activate?*/, 16);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_44, "CELL_MP_301" /*Deactivate?*/, 16);
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_48, "CELL_MP_302" /*Unavailable*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_36, "CELL_39" /*Transmisión*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_40, "CELL_MP_300" /*¿Activar?*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_44, "CELL_MP_301" /*¿Desactivar?*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_48, "CELL_MP_302" /*No disponible*/, 16);
 	MISC::NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();
 	func_55(&uLocal_26);
 	func_46();
@@ -111,7 +111,7 @@ BOOL func_1() // Position - 0xDE (222)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -122,7 +122,7 @@ BOOL func_2() // Position - 0x121 (289)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -273,64 +273,64 @@ int func_11(BOOL bParam0, BOOL bParam1) // Position - 0x386 (902)
 {
 	int address;
 	int i;
-	ePedComponentType type;
+	Player player;
 
 	for (i = 0; i < 32; i = i + 1)
 	{
-		type = PLAYER::INT_TO_PLAYERINDEX(i);
+		player = PLAYER::INT_TO_PLAYERINDEX(i);
 	
-		if (_NETWORK_IS_PLAYER_VALID(type, false, false))
-			if (type != PLAYER::PLAYER_ID() || bParam0)
+		if (_NETWORK_IS_PLAYER_VALID(player, false, false))
+			if (player != PLAYER::PLAYER_ID() || bParam0)
 				if (bParam1)
 					MISC::SET_BIT(&address, i);
-				else if (!func_12(type, 0))
+				else if (!func_12(player, 0))
 					MISC::SET_BIT(&address, i);
 	}
 
 	return address;
 }
 
-BOOL func_12(ePedComponentType epctParam0, int iParam1) // Position - 0x3EB (1003)
+BOOL func_12(Player plParam0, int iParam1) // Position - 0x3EB (1003)
 {
 	BOOL flag;
 
-	if (!func_15(epctParam0))
+	if (!func_15(plParam0))
 		return false;
 
-	if (epctParam0 == PLAYER::PLAYER_ID())
-		flag = func_13(-1, false) == CHAR_MIKE_FRANK_CONF;
+	if (plParam0 == PLAYER::PLAYER_ID())
+		flag = func_13(-1, false) == 8;
 	else
-		flag = Global_1845299[epctParam0 /*883*/].f_198 == 8;
+		flag = Global_1845299[plParam0 /*883*/].f_198 == 8;
 
 	if (iParam1 == 1)
-		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(epctParam0))
-			flag = PLAYER::GET_PLAYER_TEAM(epctParam0) == 8;
+		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(plParam0))
+			flag = PLAYER::GET_PLAYER_TEAM(plParam0) == 8;
 
 	return flag;
 }
 
-eCharacter func_13(int iParam0, BOOL bParam1) // Position - 0x444 (1092)
+int func_13(int iParam0, BOOL bParam1) // Position - 0x444 (1092)
 {
-	eCharacter character;
 	int num;
+	int num2;
 
-	num = iParam0;
+	num2 = iParam0;
 
-	if (num == -1)
-		num = func_14();
+	if (num2 == -1)
+		num2 = func_14();
 
-	if (Global_1575072[num] == 1)
+	if (Global_1575072[num2] == 1)
 	{
 		bParam1;
-		character = CHAR_MIKE_FRANK_CONF;
+		num = 8;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		num = Global_1574921[num2];
 		bParam1;
 	}
 
-	return character;
+	return num;
 }
 
 int func_14() // Position - 0x485 (1157)
@@ -338,28 +338,28 @@ int func_14() // Position - 0x485 (1157)
 	return Global_1574927;
 }
 
-BOOL func_15(ePedComponentType epctParam0) // Position - 0x491 (1169)
+BOOL func_15(Player plParam0) // Position - 0x491 (1169)
 {
-	ePedComponentType type;
+	Player player;
 
-	type = epctParam0;
+	player = plParam0;
 
-	if (type < PV_COMP_HEAD)
+	if (player < 0)
 		return false;
 
-	if (type >= 32)
+	if (player >= 32)
 		return false;
 
 	return true;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x4B3 (1203)
+BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x4B3 (1203)
 {
-	ePedComponentType type;
+	Player player;
 
-	type = player;
+	player = player;
 
-	if (type != PV_COMP_INVALID)
+	if (player != -1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -368,9 +368,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 					return false;
 		
 			if (bUnk)
-				if (type == Global_2673274.f_3)
+				if (player == Global_2673274.f_3)
 					return Global_2673274.f_2;
-				else if (Global_2658294[type /*468*/] != 4)
+				else if (Global_2658294[player /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -611,19 +611,19 @@ BOOL func_42() // Position - 0x812 (2066)
 {
 	eViewModeContext camActiveViewModeContext;
 	eViewMode camViewModeForContext;
-	BOOL flag;
+	int num;
 
 	if (Global_80305)
 		return false;
 
-	flag = 0;
+	num = 0;
 	camActiveViewModeContext = CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT();
 	camViewModeForContext = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(camActiveViewModeContext);
 
 	if (camViewModeForContext == FIRST_PERSON)
-		flag = 1;
+		num = 1;
 
-	if (Global_4525122 || flag)
+	if (Global_4525122 || num)
 		return true;
 
 	return true;

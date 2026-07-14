@@ -204,15 +204,15 @@ BOOL func_9(int* piParam0, int iParam1) // Position - 0x23E (574)
 BOOL func_10(int* piParam0) // Position - 0x24C (588)
 {
 	if (piParam0->f_2 != 0)
-		if (func_14("STEALTH_OFF" /*Press ~INPUT_VEH_ROOF~ to enter Stealth Mode when piloting the ~a~. All pilot and passenger weapons are unavailable in Stealth Mode as the ~a~ will not appear on enemy radars or maps.*/, func_15(piParam0->f_2), func_15(piParam0->f_2)) || func_13("STEALTH_ON_P" /*The Pilot has turned on Stealth Mode. All pilot and passenger weapons are unavailable as the ~a~ will not appear on enemy radars or maps.*/, func_15(piParam0->f_2)))
+		if (func_14("STEALTH_OFF" /*Pulsa ~INPUT_VEH_ROOF~ para activar el modo furtivo al pilotar el ~a~. En el modo furtivo ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/, func_15(piParam0->f_2), func_15(piParam0->f_2)) || func_13("STEALTH_ON_P" /*El piloto ha activado el modo furtivo. Ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/, func_15(piParam0->f_2)))
 			return true;
 
-	return _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("STEALTH_ON" /*Press ~INPUT_VEH_ROOF~ to disable Stealth Mode.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_11()) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("STEALTH_OFF_P" /*The Pilot has disabled Stealth Mode.*/);
+	return _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("STEALTH_ON" /*Pulsa ~INPUT_VEH_ROOF~ para desactivar el modo furtivo.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_11()) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("STEALTH_OFF_P" /*El piloto ha desactivado el modo furtivo.*/);
 }
 
 char* func_11() // Position - 0x2B0 (688)
 {
-	return "STEALTH_WARN" /*All pilot and passenger weapons are unavailable while the vehicle is in Stealth Mode.*/;
+	return "STEALTH_WARN" /*Ni el piloto ni el pasajero tendrán armas mientras el vehículo esté en el modo furtivo.*/;
 }
 
 BOOL _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(char* message) // Position - 0x2BB (699)
@@ -239,7 +239,7 @@ BOOL func_14(char* sParam0, char* sParam1, char* sParam2) // Position - 0x2E7 (7
 char* func_15(Hash hParam0) // Position - 0x306 (774)
 {
 	if (hParam0 == joaat("annihilator2"))
-		return "ANNIH_2_STEALTH" /*Stealth Annihilator*/;
+		return "ANNIH_2_STEALTH" /*Annihilator furtivo*/;
 
 	return VEHICLE::GET_DISPLAY_NAME_FROM_VEHICLE_MODEL(hParam0);
 }
@@ -362,11 +362,11 @@ char* func_22(int* piParam0) // Position - 0x5BB (1467)
 {
 	if (func_56(piParam0))
 		if (func_23(piParam0->f_2))
-			return "STEALTH_OFF_S" /*Press ~INPUT_VEH_ROOF~ to enable Stealth Mode. All weapons are unavailable in Stealth Mode as the ~a~ will not appear on enemy radars or maps.*/;
+			return "STEALTH_OFF_S" /*Pulsa ~INPUT_VEH_ROOF~ para activar el modo furtivo. Las armas no estarán disponibles en el modo furtivo ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
 		else
-			return "STEALTH_OFF" /*Press ~INPUT_VEH_ROOF~ to enter Stealth Mode when piloting the ~a~. All pilot and passenger weapons are unavailable in Stealth Mode as the ~a~ will not appear on enemy radars or maps.*/;
+			return "STEALTH_OFF" /*Pulsa ~INPUT_VEH_ROOF~ para activar el modo furtivo al pilotar el ~a~. En el modo furtivo ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
 
-	return "STEALTH_OFF_P" /*The Pilot has disabled Stealth Mode.*/;
+	return "STEALTH_OFF_P" /*El piloto ha desactivado el modo furtivo.*/;
 }
 
 BOOL func_23(int iParam0) // Position - 0x5EB (1515)
@@ -428,29 +428,29 @@ void func_26(int* piParam0, int iParam1) // Position - 0x62F (1583)
 	return;
 }
 
-void func_27(int iParam0, int iParam1, int iParam2) // Position - 0x69C (1692)
+void func_27(int iParam0, int iParam1, BOOL bParam2) // Position - 0x69C (1692)
 {
-	if (iParam2 == -1)
-		iParam2 = func_28();
+	if (bParam2 == -1)
+		bParam2 = func_28();
 
 	if (iParam1 < 0)
 		iParam1 = 255;
 
-	STATS::SET_PACKED_STAT_INT_CODE(iParam0, iParam1, iParam2);
+	STATS::SET_PACKED_STAT_INT_CODE(iParam0, iParam1, bParam2);
 	return;
 }
 
-int func_28() // Position - 0x6C4 (1732)
+BOOL func_28() // Position - 0x6C4 (1732)
 {
 	return Global_1574927;
 }
 
-int _STAT_GET_PACKED_INT(int iParam0, int iParam1) // Position - 0x6D0 (1744)
+int _STAT_GET_PACKED_INT(int iParam0, BOOL bParam1) // Position - 0x6D0 (1744)
 {
-	if (iParam1 == -1)
-		iParam1 = func_28();
+	if (bParam1 == -1)
+		bParam1 = func_28();
 
-	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, bParam1);
 }
 
 BOOL func_30() // Position - 0x6EC (1772)
@@ -472,29 +472,29 @@ BOOL func_31(BOOL bParam0) // Position - 0x710 (1808)
 	return false;
 }
 
-BOOL func_32() // Position - 0x760 (1888)
+ePedComponentType func_32() // Position - 0x760 (1888)
 {
 	return Global_77342;
 }
 
-BOOL func_33(int iParam0) // Position - 0x76C (1900)
+ePedComponentType func_33(int iParam0) // Position - 0x76C (1900)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_34(int* piParam0) // Position - 0x7C3 (1987)
@@ -527,9 +527,9 @@ void func_35(int* piParam0) // Position - 0x823 (2083)
 {
 	if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 		if (func_23(piParam0->f_2))
-			_DISPLAY_HELP_TEXT("STEALTH_WARN_S" /*All weapons are unavailable while the vehicle is in Stealth Mode.*/, 3000);
+			_DISPLAY_HELP_TEXT("STEALTH_WARN_S" /*Las armas no estarán disponibles mientras el vehículo esté en modo furtivo.*/, 3000);
 		else
-			_DISPLAY_HELP_TEXT("STEALTH_WARN" /*All pilot and passenger weapons are unavailable while the vehicle is in Stealth Mode.*/, 3000);
+			_DISPLAY_HELP_TEXT("STEALTH_WARN" /*Ni el piloto ni el pasajero tendrán armas mientras el vehículo esté en el modo furtivo.*/, 3000);
 
 	return;
 }
@@ -651,11 +651,11 @@ char* func_42(int* piParam0) // Position - 0xAB6 (2742)
 {
 	if (func_56(piParam0))
 		if (func_23(piParam0->f_2))
-			return "STEALTH_ON_S" /*Press ~INPUT_VEH_ROOF~ to disable Stealth Mode.*/;
+			return "STEALTH_ON_S" /*Pulsa ~INPUT_VEH_ROOF~ para desactivar el modo furtivo.*/;
 		else
-			return "STEALTH_ON" /*Press ~INPUT_VEH_ROOF~ to disable Stealth Mode.*/;
+			return "STEALTH_ON" /*Pulsa ~INPUT_VEH_ROOF~ para desactivar el modo furtivo.*/;
 
-	return "STEALTH_ON_P" /*The Pilot has turned on Stealth Mode. All pilot and passenger weapons are unavailable as the ~a~ will not appear on enemy radars or maps.*/;
+	return "STEALTH_ON_P" /*El piloto ha activado el modo furtivo. Ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
 }
 
 void func_43(int* piParam0, int iParam1) // Position - 0xAE7 (2791)
@@ -856,7 +856,7 @@ BOOL func_62(Player plParam0) // Position - 0xE60 (3680)
 {
 	if (plParam0 > -1)
 	{
-		if (Global_2658291[plParam0 /*468*/].f_250 > -1)
+		if (Global_2658291[plParam0 /*468*/].f_250 > PV_COMP_INVALID)
 			if (func_63(Global_2658291[plParam0 /*468*/].f_250) == 4)
 				return true;
 	
@@ -867,53 +867,53 @@ BOOL func_62(Player plParam0) // Position - 0xE60 (3680)
 	return false;
 }
 
-int func_63(int iParam0) // Position - 0xEA9 (3753)
+int func_63(ePedComponentType epctParam0) // Position - 0xEA9 (3753)
 {
-	switch (iParam0)
+	switch (epctParam0)
 	{
-		case -1:
+		case PV_COMP_INVALID:
 			return 6;
 	
-		case 0:
+		case PV_COMP_HEAD:
 			return 0;
 	
-		case 1:
+		case PV_COMP_BERD:
 			return 0;
 	
-		case 2:
+		case PV_COMP_HAIR:
 			return 0;
 	
-		case 3:
+		case PV_COMP_UPPR:
 			return 0;
 	
-		case 4:
+		case PV_COMP_LOWR:
 			return 0;
 	
-		case 5:
+		case PV_COMP_HAND:
 			return 0;
 	
-		case 6:
+		case PV_COMP_FEET:
 			return 0;
 	
 		case 50:
 			return 0;
 	
-		case 7:
+		case PV_COMP_TEEF:
 			return 1;
 	
-		case 8:
+		case PV_COMP_ACCS:
 			return 1;
 	
-		case 9:
+		case PV_COMP_TASK:
 			return 1;
 	
-		case 10:
+		case PV_COMP_DECL:
 			return 1;
 	
-		case 11:
+		case PV_COMP_JBIB:
 			return 1;
 	
-		case 12:
+		case PV_COMP_MAX:
 			return 1;
 	
 		case 13:
@@ -1081,7 +1081,7 @@ BOOL func_64(Player plParam0) // Position - 0x1213 (4627)
 	return false;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x1244 (4676)
+ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x1244 (4676)
 {
 	ePedComponentType type;
 
@@ -1093,19 +1093,19 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 		{
 			if (bIsPlaying)
 				if (!PLAYER::IS_PLAYER_PLAYING(player))
-					return false;
+					return PV_COMP_HEAD;
 		
 			if (bUnk)
 				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
 				else if (Global_2658291[type /*468*/] != 4)
-					return false;
+					return PV_COMP_HEAD;
 		
-			return true;
+			return PV_COMP_BERD;
 		}
 	}
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 Player _INVALID_PLAYER_INDEX() // Position - 0x12A4 (4772)
@@ -1416,10 +1416,10 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x1789 (6025)
 {
 	switch (func_87())
 	{
-		case 0:
+		case HUD_COLOUR_PURE_WHITE:
 			return func_86();
 	
-		case 2:
+		case HUD_COLOUR_BLACK:
 			return joaat("creator");
 	}
 
@@ -1440,7 +1440,7 @@ Hash func_86() // Position - 0x17BC (6076)
 	return joaat("freemode");
 }
 
-int func_87() // Position - 0x17E0 (6112)
+eHudColour func_87() // Position - 0x17E0 (6112)
 {
 	return Global_33775;
 }
@@ -1463,7 +1463,7 @@ BOOL func_90() // Position - 0x1811 (6161)
 	return Global_2696964;
 }
 
-BOOL func_91() // Position - 0x181D (6173)
+ePedComponentType func_91() // Position - 0x181D (6173)
 {
 	return Global_2685150.f_695;
 }

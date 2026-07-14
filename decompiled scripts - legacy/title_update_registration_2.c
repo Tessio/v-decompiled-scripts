@@ -33,7 +33,7 @@ void main() // Position - 0x0 (0)
 	Global_4520635 = -1;
 	Global_4520636 = true;
 	Global_4520863 = -1;
-	Global_4520963 = 1;
+	Global_4520963 = true;
 	Global_4520964 = true;
 	Global_4521274 = -1;
 	Global_4525120 = 1;

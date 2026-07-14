@@ -1462,7 +1462,7 @@ void func_2(var uParam0, BOOL bParam1, int iParam2) // Position - 0x121 (289)
 	return;
 }
 
-BOOL func_3() // Position - 0x4D1 (1233)
+ePedComponentType func_3() // Position - 0x4D1 (1233)
 {
 	return Global_77342;
 }
@@ -1602,35 +1602,35 @@ void func_7(var uParam0, BOOL bParam1, BOOL bParam2) // Position - 0x67E (1662)
 	return;
 }
 
-BOOL func_8(var uParam0, int iParam1, BOOL bParam2) // Position - 0x6BB (1723)
+BOOL func_8(var uParam0, ePedComponentType epctParam1, BOOL bParam2) // Position - 0x6BB (1723)
 {
-	if (iParam1 == -1)
+	if (epctParam1 == -1)
 		return true;
 
 	func_9(uParam0, bParam2, false);
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam2)
-		if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), *uParam0)) >= iParam1)
+		if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), *uParam0)) >= epctParam1)
 			return true;
-	else if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *uParam0)) >= iParam1)
+	else if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *uParam0)) >= epctParam1)
 		return true;
 
 	return false;
 }
 
-void func_9(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x719 (1817)
+void func_9(ePedComponentType epctParam0, BOOL bParam1, BOOL bParam2) // Position - 0x719 (1817)
 {
-	if (iParam0->f_1 == 0)
+	if (epctParam0->f_1 == 0)
 	{
 		if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam1)
 			if (!bParam2)
-				*iParam0 = NETWORK::GET_NETWORK_TIME();
+				*epctParam0 = NETWORK::GET_NETWORK_TIME();
 			else
-				*iParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
+				*epctParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
 		else
-			*iParam0 = MISC::GET_GAME_TIMER();
+			*epctParam0 = MISC::GET_GAME_TIMER();
 	
-		iParam0->f_1 = 1;
+		epctParam0->f_1 = 1;
 	}
 
 	return;
@@ -2004,7 +2004,7 @@ int _MPPLY_STAT_GET_INT(Hash hParam0) // Position - 0xE05 (3589)
 	return 0;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0xE23 (3619)
+ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0xE23 (3619)
 {
 	ePedComponentType type;
 
@@ -2016,19 +2016,19 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 		{
 			if (bIsPlaying)
 				if (!PLAYER::IS_PLAYER_PLAYING(player))
-					return false;
+					return PV_COMP_HEAD;
 		
 			if (bUnk)
 				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
 				else if (Global_2658291[type /*468*/] != 4)
-					return false;
+					return PV_COMP_HEAD;
 		
-			return true;
+			return PV_COMP_BERD;
 		}
 	}
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 void func_30(ePedComponentType epctParam0) // Position - 0xE83 (3715)
@@ -2095,57 +2095,57 @@ struct<13> GET_GAMER_HANDLE_PLAYER(ePedComponentType epctParam0) // Position - 0
 	return gamerHandle;
 }
 
-void func_34(ePedComponentType epctParam0, Hash hParam1, int iParam2) // Position - 0xFFD (4093)
+void func_34(eViewMode evmParam0, Hash hParam1, int iParam2) // Position - 0xFFD (4093)
 {
 	if (func_64())
 	{
-		if (epctParam0 >= 1787576850)
-			epctParam0 = 1787576850;
+		if (evmParam0 >= 1787576850)
+			evmParam0 = 1787576850;
 	
 		if (Global_262145.f_10184 == 0 && hParam1 != joaat("XPCATEGORY_KEYS_DEBUG"))
 		{
 			if (iParam2 == 0)
 			{
-				if (epctParam0 < func_47(640, -1))
+				if (evmParam0 < func_47(640, -1))
 				{
-					STATS::PLAYSTATS_AWARD_XP(epctParam0, joaat("XPTYPE_ERROR"), hParam1);
+					STATS::PLAYSTATS_AWARD_XP(evmParam0, joaat("XPTYPE_ERROR"), hParam1);
 					return;
 				}
-				else if (epctParam0 == func_47(640, -1))
+				else if (evmParam0 == func_47(640, -1))
 				{
 					return;
 				}
 			}
 		}
 	
-		if (Global_262145.f_10183 == 0)
+		if (Global_262145.f_10183 == PV_COMP_HEAD)
 		{
-			if (epctParam0 == PV_COMP_HEAD)
+			if (evmParam0 == THIRD_PERSON_NEAR)
 			{
-				STATS::PLAYSTATS_AWARD_XP(epctParam0, -1158693853, -1345423847);
+				STATS::PLAYSTATS_AWARD_XP(evmParam0, -1158693853, -1345423847);
 			
 				if (iParam2 == 0)
 					return;
 			}
 		}
 	
-		if (Global_262145.f_10183 == 0)
+		if (Global_262145.f_10183 == PV_COMP_HEAD)
 		{
-			if (epctParam0 < PV_COMP_HEAD)
+			if (evmParam0 < THIRD_PERSON_NEAR)
 			{
-				STATS::PLAYSTATS_AWARD_XP(epctParam0, joaat("XPTYPE_ERROR_NEGATIVE"), hParam1);
+				STATS::PLAYSTATS_AWARD_XP(evmParam0, joaat("XPTYPE_ERROR_NEGATIVE"), hParam1);
 				return;
 			}
 		}
 	
 		if (func_45(PLAYER::PLAYER_ID()))
 		{
-			Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_198.f_1 = epctParam0;
-			Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_198.f_6 = func_42(epctParam0, true);
+			Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_198.f_1 = evmParam0;
+			Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_198.f_6 = func_42(evmParam0, true);
 		}
 	
-		func_38(640, epctParam0, -1, true);
-		func_38(641, func_42(epctParam0, true), -1, true);
+		func_38(640, evmParam0, -1, true);
+		func_38(641, func_42(evmParam0, true), -1, true);
 		func_35(-1109644434, 7, false);
 	}
 
@@ -2201,16 +2201,16 @@ BOOL func_37(int iParam0, BOOL bParam1) // Position - 0x1171 (4465)
 	return true;
 }
 
-void func_38(int iParam0, ePedComponentType epctParam1, int iParam2, BOOL bParam3) // Position - 0x11F7 (4599)
+void func_38(int iParam0, eViewMode evmParam1, BOOL bParam2, BOOL bParam3) // Position - 0x11F7 (4599)
 {
 	Hash statName;
 
 	if (iParam0 != 16715)
 	{
-		statName = func_39(iParam0, iParam2);
+		statName = func_39(iParam0, bParam2);
 	
 		if (statName != 0)
-			STATS::STAT_SET_INT(statName, epctParam1, bParam3);
+			STATS::STAT_SET_INT(statName, evmParam1, bParam3);
 	}
 
 	return;
@@ -2221,44 +2221,44 @@ Hash func_39(int iParam0, int iParam1) // Position - 0x1225 (4645)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_40(iParam1));
 }
 
-int func_40(int iParam0) // Position - 0x123A (4666)
+BOOL func_40(BOOL bParam0) // Position - 0x123A (4666)
 {
-	int num;
-	int num2;
+	BOOL flag;
+	BOOL flag2;
 
-	num = iParam0;
+	flag = bParam0;
 
-	if (num == -1)
+	if (flag == -1)
 	{
-		num2 = func_41();
+		flag2 = func_41();
 	
-		if (num2 > -1)
+		if (flag2 > -1)
 		{
 			Global_2741298 = 0;
-			num = num2;
+			flag = flag2;
 		}
 		else
 		{
-			num = 0;
+			flag = false;
 			Global_2741298 = 1;
 		}
 	}
 
-	return num;
+	return flag;
 }
 
-int func_41() // Position - 0x126E (4718)
+BOOL func_41() // Position - 0x126E (4718)
 {
 	return Global_1574927;
 }
 
-ePedComponentType func_42(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x127A (4730)
+eViewMode func_42(eViewMode evmParam0, BOOL bParam1) // Position - 0x127A (4730)
 {
 	bParam1;
-	return func_43(epctParam0, 0);
+	return func_43(evmParam0, 0);
 }
 
-int func_43(ePedComponentType epctParam0, int iParam1) // Position - 0x128E (4750)
+int func_43(eViewMode evmParam0, int iParam1) // Position - 0x128E (4750)
 {
 	int i;
 	int value;
@@ -2283,12 +2283,12 @@ int func_43(ePedComponentType epctParam0, int iParam1) // Position - 0x128E (475
 			return num;
 		}
 	
-		if (func_44(num) == epctParam0)
+		if (func_44(num) == evmParam0)
 		{
 			value = num;
 			value2 = num;
 		}
-		else if (func_44(num) < epctParam0)
+		else if (func_44(num) < evmParam0)
 		{
 			if (value2 == num)
 				value2 = value2 + 1;
@@ -2311,7 +2311,7 @@ int func_43(ePedComponentType epctParam0, int iParam1) // Position - 0x128E (475
 	return 8000;
 }
 
-ePedComponentType func_44(int iParam0) // Position - 0x1349 (4937)
+eViewMode func_44(int iParam0) // Position - 0x1349 (4937)
 {
 	int num;
 	int num2;
@@ -2652,14 +2652,14 @@ BOOL func_46(ePedComponentType epctParam0) // Position - 0x18AC (6316)
 	return true;
 }
 
-ePedComponentType func_47(int iParam0, int iParam1) // Position - 0x18CE (6350)
+eViewMode func_47(int iParam0, BOOL bParam1) // Position - 0x18CE (6350)
 {
 	Hash statHash;
 	int outValue;
 
 	if (iParam0 != 16715)
 	{
-		statHash = func_39(iParam0, iParam1);
+		statHash = func_39(iParam0, bParam1);
 	
 		if (STATS::STAT_GET_INT(statHash, &outValue, -1))
 			return outValue;
@@ -2668,7 +2668,7 @@ ePedComponentType func_47(int iParam0, int iParam1) // Position - 0x18CE (6350)
 	return 0;
 }
 
-ePedComponentType func_48(ePedComponentType epctParam0) // Position - 0x18FD (6397)
+eViewMode func_48(ePedComponentType epctParam0) // Position - 0x18FD (6397)
 {
 	if (Global_1574634.f_9 == 0)
 		if (epctParam0 > PV_COMP_INVALID)
@@ -2679,16 +2679,16 @@ ePedComponentType func_48(ePedComponentType epctParam0) // Position - 0x18FD (63
 	else
 		return func_47(640, -1);
 
-	return PV_COMP_HEAD;
+	return THIRD_PERSON_NEAR;
 }
 
-void func_49(int iParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x1954 (6484)
+void func_49(int iParam0, ePedComponentType epctParam1, BOOL bParam2) // Position - 0x1954 (6484)
 {
-	ePedComponentType type;
+	eViewMode mode;
 
-	type = func_47(iParam0, func_40(iParam2));
-	type = type + epctParam1;
-	func_38(iParam0, type, iParam2, true);
+	mode = func_47(iParam0, func_40(bParam2));
+	mode = mode + epctParam1;
+	func_38(iParam0, mode, bParam2, true);
 	return;
 }
 
@@ -3004,24 +3004,24 @@ BOOL func_56(ePedComponentType epctParam0, int iParam1) // Position - 0x1F85 (80
 	return flag;
 }
 
-eCharacter func_57(int iParam0, BOOL bParam1) // Position - 0x1FDE (8158)
+eCharacter func_57(BOOL bParam0, BOOL bParam1) // Position - 0x1FDE (8158)
 {
 	eCharacter character;
-	int num;
+	BOOL flag;
 
-	num = iParam0;
+	flag = bParam0;
 
-	if (num == -1)
-		num = func_41();
+	if (flag == -1)
+		flag = func_41();
 
-	if (Global_1575070[num] == true)
+	if (Global_1575070[flag] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[num];
+		character = Global_1574921[flag];
 		bParam1;
 	}
 
@@ -3125,14 +3125,14 @@ ePedComponentType func_62(int iParam0) // Position - 0x219D (8605)
 		if (MISC::ABSI(iParam0) > func_48(PLAYER::PLAYER_ID()))
 			iParam0 = -func_48(PLAYER::PLAYER_ID());
 
-	if (func_63(8000, false, 0) > PV_COMP_HEAD)
+	if (func_63(8000, false, 0) > THIRD_PERSON_NEAR)
 		if (func_63(8000, false, 0) < iParam0 + func_48(PLAYER::PLAYER_ID()))
 			iParam0 = func_63(8000, false, 0) - func_48(PLAYER::PLAYER_ID());
 
 	return iParam0;
 }
 
-ePedComponentType func_63(int iParam0, BOOL bParam1, int iParam2) // Position - 0x2201 (8705)
+eViewMode func_63(int iParam0, BOOL bParam1, int iParam2) // Position - 0x2201 (8705)
 {
 	iParam2 == 0;
 	bParam1;
@@ -3190,7 +3190,7 @@ BOOL func_67(int iParam0) // Position - 0x2336 (9014)
 	return iParam0 == 89;
 }
 
-BOOL func_68(ePedComponentType epctParam0) // Position - 0x2343 (9027)
+ePedComponentType func_68(ePedComponentType epctParam0) // Position - 0x2343 (9027)
 {
 	return func_69(func_70(epctParam0));
 }
@@ -3227,7 +3227,7 @@ BOOL func_71(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x239B (9
 	return false;
 }
 
-BOOL func_72() // Position - 0x23DF (9183)
+ePedComponentType func_72() // Position - 0x23DF (9183)
 {
 	if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 		return func_74();
@@ -3235,7 +3235,7 @@ BOOL func_72() // Position - 0x23DF (9183)
 	return func_73(*Global_4718592.f_132500);
 }
 
-BOOL func_73(ePedComponentType epctParam0) // Position - 0x2403 (9219)
+ePedComponentType func_73(ePedComponentType epctParam0) // Position - 0x2403 (9219)
 {
 	int i;
 
@@ -3251,7 +3251,7 @@ BOOL func_73(ePedComponentType epctParam0) // Position - 0x2403 (9219)
 	return 0;
 }
 
-BOOL func_74() // Position - 0x243D (9277)
+ePedComponentType func_74() // Position - 0x243D (9277)
 {
 	return Global_2685150.f_19;
 }
@@ -3291,15 +3291,15 @@ void func_77(int iParam0) // Position - 0x2475 (9333)
 	return;
 }
 
-void func_78(int iParam0, int iParam1, int iParam2) // Position - 0x251B (9499)
+void func_78(int iParam0, int iParam1, BOOL bParam2) // Position - 0x251B (9499)
 {
-	if (iParam2 == -1)
-		iParam2 = func_41();
+	if (bParam2 == -1)
+		bParam2 = func_41();
 
 	if (iParam1 < 0)
 		iParam1 = 255;
 
-	STATS::SET_PACKED_STAT_INT_CODE(iParam0, iParam1, iParam2);
+	STATS::SET_PACKED_STAT_INT_CODE(iParam0, iParam1, bParam2);
 	return;
 }
 
@@ -3349,7 +3349,7 @@ int func_80(var uParam0, BOOL bParam1, BOOL bParam2) // Position - 0x25DB (9691)
 	return NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *uParam0);
 }
 
-BOOL func_81(int iParam0) // Position - 0x2622 (9762)
+BOOL func_81(ePedComponentType epctParam0) // Position - 0x2622 (9762)
 {
 	int num;
 	int num2;
@@ -3363,8 +3363,8 @@ BOOL func_81(int iParam0) // Position - 0x2622 (9762)
 		if (num >= Global_262145.f_32243 * 60)
 		{
 			MISC::CLEAR_BIT(&Global_1987936, 0);
-			_STOPWATCH_DESTROY(iParam0);
-			func_9(iParam0, false, false);
+			_STOPWATCH_DESTROY(epctParam0);
+			func_9(epctParam0, false, false);
 			Global_1987936.f_1 = 0;
 			Global_1987936.f_2 = 0;
 			return true;
@@ -3399,24 +3399,24 @@ BOOL func_81(int iParam0) // Position - 0x2622 (9762)
 	return true;
 }
 
-int _STAT_GET_PACKED_INT(int iParam0, int iParam1) // Position - 0x26F8 (9976)
+int _STAT_GET_PACKED_INT(int iParam0, BOOL bParam1) // Position - 0x26F8 (9976)
 {
-	if (iParam1 == -1)
-		iParam1 = func_41();
+	if (bParam1 == -1)
+		bParam1 = func_41();
 
-	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, bParam1);
 }
 
-void _STOPWATCH_DESTROY(int iParam0) // Position - 0x2714 (10004)
+void _STOPWATCH_DESTROY(ePedComponentType epctParam0) // Position - 0x2714 (10004)
 {
-	iParam0->f_1 = 0;
+	epctParam0->f_1 = 0;
 	return;
 }
 
 void func_84(var uParam0) // Position - 0x2721 (10017)
 {
-	ePedComponentType type;
-	ePedComponentType type2;
+	eViewMode mode;
+	eViewMode mode2;
 
 	if (func_8(&(uParam0->f_773.f_10), 45000, false))
 	{
@@ -3431,14 +3431,14 @@ void func_84(var uParam0) // Position - 0x2721 (10017)
 	{
 		if (uParam0->f_930 == 3)
 		{
-			type = 1 + func_47(7237, -1);
-			func_38(7237, type, -1, true);
+			mode = 1 + func_47(7237, -1);
+			func_38(7237, mode, -1, true);
 		}
 	
 		if (func_87(PLAYER::PLAYER_ID()))
 		{
-			type2 = 1 + func_47(12010, -1);
-			func_86(12010, type2, -1);
+			mode2 = 1 + func_47(12010, -1);
+			func_86(12010, mode2, -1);
 		}
 	
 		func_85(uParam0);
@@ -3455,9 +3455,9 @@ void func_85(var uParam0) // Position - 0x2838 (10296)
 	return;
 }
 
-void func_86(int iParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x2848 (10312)
+void func_86(int iParam0, eViewMode evmParam1, BOOL bParam2) // Position - 0x2848 (10312)
 {
-	func_38(iParam0, epctParam1, iParam2, true);
+	func_38(iParam0, evmParam1, bParam2, true);
 	return;
 }
 
@@ -3875,9 +3875,9 @@ float func_99(float fParam0, float fParam1, float fParam2) // Position - 0x3112 
 	return fParam0;
 }
 
-BOOL _STOPWATCH_IS_INITIALIZED(int iParam0) // Position - 0x3139 (12601)
+BOOL _STOPWATCH_IS_INITIALIZED(ePedComponentType epctParam0) // Position - 0x3139 (12601)
 {
-	return iParam0->f_1;
+	return epctParam0->f_1;
 }
 
 void func_101(var uParam0) // Position - 0x3145 (12613)
@@ -3960,7 +3960,7 @@ void func_107(int iParam0) // Position - 0x326D (12909)
 	if (func_113())
 		return;
 
-	if (!(Global_21610.f_1 == 1))
+	if (!(Global_21610.f_1 == true))
 	{
 		if (func_112(0))
 			func_108(iParam0);
@@ -4003,7 +4003,7 @@ void func_108(int iParam0) // Position - 0x32A0 (12960)
 
 BOOL func_109() // Position - 0x332A (13098)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -4274,11 +4274,11 @@ void func_125(var uParam0) // Position - 0x37B2 (14258)
 	if (func_131(&(uParam0->f_390), 3) && !HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && func_8(&(uParam0->f_639), 5000, false))
 	{
 		if (uParam0->f_930 == 0)
-			_DISPLAY_HELP_TEXT("DANCE_HINT" /*When off the dance floor you can still hold ~INPUT_CONTEXT~ to dance.*/, -1);
+			_DISPLAY_HELP_TEXT("DANCE_HINT" /*También puedes mantener pulsado ~INPUT_CONTEXT~ para bailar cuando no estés en la pista.*/, -1);
 		else if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-			_DISPLAY_HELP_TEXT("DANCE_HINT_K" /*When off the dance floor you can still press ~INPUT_CURSOR_CANCEL~ to dance.*/, -1);
+			_DISPLAY_HELP_TEXT("DANCE_HINT_K" /*También puedes pulsar ~INPUT_CURSOR_CANCEL~ para bailar cuando no estés en la pista.*/, -1);
 		else
-			_DISPLAY_HELP_TEXT("DANCE_HINT_ALT" /*When off the dance floor you can still hold ~INPUT_SCRIPT_LT~ to dance.*/, -1);
+			_DISPLAY_HELP_TEXT("DANCE_HINT_ALT" /*También puedes mantener pulsado ~INPUT_SCRIPT_LT~ para bailar cuando no estés en la pista.*/, -1);
 	
 		func_4(&(uParam0->f_390), 3);
 		MISC::SET_BIT(&(Global_1950198.f_3), 10);
@@ -4300,14 +4300,14 @@ void func_127(var uParam0) // Position - 0x38EC (14572)
 	if (func_131(&(uParam0->f_390), 15))
 	{
 		if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-			_DISPLAY_HELP_TEXT("DM_AREA_BLOCK" /*You cannot dance here.*/, -1);
+			_DISPLAY_HELP_TEXT("DM_AREA_BLOCK" /*No se puede bailar aquí.*/, -1);
 	
 		func_4(&(uParam0->f_390), 15);
 	}
 
 	if (func_131(&(uParam0->f_390), 31))
 	{
-		_DISPLAY_HELP_TEXT("DUAL_DANCE_BLOCK" /*No room to dance with another player here. Find an open space.*/, 5000);
+		_DISPLAY_HELP_TEXT("DUAL_DANCE_BLOCK" /*Aquí no hay sitio para bailar con otro jugador. Busca un espacio libre.*/, 5000);
 		func_4(&(uParam0->f_390), 31);
 	}
 
@@ -4358,9 +4358,9 @@ void func_130(int* piParam0, int iParam1) // Position - 0x39F6 (14838)
 	return;
 }
 
-BOOL func_131(int* piParam0, int iParam1) // Position - 0x3A06 (14854)
+BOOL func_131(int iParam0, int iParam1) // Position - 0x3A06 (14854)
 {
-	return IS_BIT_SET(*piParam0, iParam1);
+	return IS_BIT_SET(*iParam0, iParam1);
 }
 
 void func_132(var uParam0) // Position - 0x3A14 (14868)
@@ -4735,21 +4735,21 @@ void func_151(var uParam0, var uParam1, var uParam2, var uParam3) // Position - 
 	return;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x407F (16511)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x407F (16511)
 {
-	if (iParam2 == -1)
-		iParam2 = func_41();
+	if (bParam2 == -1)
+		bParam2 = func_41();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, bParam2);
 	return;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0x409D (16541)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, BOOL bParam1) // Position - 0x409D (16541)
 {
-	if (iParam1 == -1)
-		iParam1 = func_41();
+	if (bParam1 == -1)
+		bParam1 = func_41();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, bParam1);
 }
 
 void func_154(var uParam0) // Position - 0x40B9 (16569)
@@ -4951,7 +4951,7 @@ void func_173(var uParam0, int iParam1) // Position - 0x43F7 (17399)
 	return;
 }
 
-BOOL func_174(var uParam0, BOOL bParam1, int iParam2) // Position - 0x441F (17439)
+BOOL func_174(var uParam0, BOOL bParam1, ePedComponentType epctParam2) // Position - 0x441F (17439)
 {
 	ePedComponentType type;
 
@@ -4971,7 +4971,7 @@ BOOL func_174(var uParam0, BOOL bParam1, int iParam2) // Position - 0x441F (1743
 
 	if (!bParam1)
 	{
-		if (func_8(&(uParam0->f_657), iParam2, false))
+		if (func_8(&(uParam0->f_657), epctParam2, false))
 		{
 			_STOPWATCH_DESTROY(&(uParam0->f_657));
 			return true;
@@ -5052,7 +5052,7 @@ void func_180(var uParam0) // Position - 0x45AE (17838)
 {
 	float amplitude;
 
-	if (!_STOPWATCH_IS_INITIALIZED(&(uParam0->f_651)) || func_8(&(uParam0->f_651), 0, false))
+	if (!_STOPWATCH_IS_INITIALIZED(&(uParam0->f_651)) || func_8(&(uParam0->f_651), PV_COMP_HEAD, false))
 		return;
 
 	amplitude = func_96(uParam0->f_673, 0.3f, BUILTIN::TO_FLOAT(func_80(&(uParam0->f_651), false, false)) / BUILTIN::TO_FLOAT(0));
@@ -5324,7 +5324,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 	if (iParam1 == 0)
 		return false;
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DUAL_DANCE_BLOCK" /*No room to dance with another player here. Find an open space.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DUAL_DANCE_BLOCK" /*Aquí no hay sitio para bailar con otro jugador. Busca un espacio libre.*/))
 		return false;
 
 	unk = 4;
@@ -5370,7 +5370,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 
 	if (uParam0->f_908 != -1 && !MISC::IS_STRING_NULL_OR_EMPTY(unk.f_1))
 	{
-		if (!MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_0" /*Press ~INPUT_CONTEXT~ to dance.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "COMBO_STOP" /*You are unable to earn any more RP from dancing today.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_MIN" /*~INPUT_SCRIPT_PAD_LEFT~ Show dancing controls*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_ALT" /*Hold ~INPUT_SCRIPT_LT~ to dance.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_ALT_KB" /*Press ~INPUT_CURSOR_CANCEL~ to dance.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_MIN_ALT" /*~INPUT_SCRIPT_RLEFT~ Show dancing controls*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN" /*Press ~INPUT_CONTEXT~ to dance.~n~Press ~INPUT_CONTEXT_SECONDARY~ to dance with ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN_ALT" /*Hold ~INPUT_SCRIPT_LT~ to dance.~n~Press ~INPUT_CONTEXT_SECONDARY~ to dance with ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN_K" /*Press ~INPUT_CURSOR_CANCEL~ to dance.~n~Press ~INPUT_CONTEXT_SECONDARY~ to dance with ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_L_CTRL") && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_CTRL" /*~INPUT_CONTEXT~ Stop dancing.*/))
+		if (!MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_0" /*Pulsa ~INPUT_CONTEXT~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "COMBO_STOP" /*No puedes conseguir más RP bailando por hoy.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_MIN" /*Pulsa ~INPUT_SCRIPT_PAD_LEFT~ para mostrar las instrucciones de baile.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_ALT_KB" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_MIN_ALT" /*Pulsa ~INPUT_SCRIPT_RLEFT~ para mostrar las instrucciones de baile.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN" /*Pulsa ~INPUT_CONTEXT~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN_K" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_L_CTRL") && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_CTRL" /*~INPUT_CONTEXT~ Dejar de bailar.*/))
 		{
 			TEXT_LABEL_ASSIGN_STRING(&text, unk.f_1, 64);
 			TEXT_LABEL_APPEND_STRING(&text, "_", 64);
@@ -5547,7 +5547,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 		_STOPWATCH_DESTROY(&(uParam0->f_641));
 	}
 
-	if (!uParam0->f_668 && !unk.f_2 && !unk.f_5 && func_199(uParam0->f_392) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CLUB_SAFE_HT" /*Your Nightclub daily earnings are stored in the wall safe ~HUD_COLOUR_GREEN~~BLIP_FINANCIER_STRAND~~s~ in your office.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DM_AREA_BLOCK" /*You cannot dance here.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DUAL_DANCE_BLOCK" /*No room to dance with another player here. Find an open space.*/))
+	if (!uParam0->f_668 && !unk.f_2 && !unk.f_5 && func_199(uParam0->f_392) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CLUB_SAFE_HT" /*Las ganancias diarias de tu club nocturno se guardan en la caja fuerte~HUD_COLOUR_GREEN~~BLIP_FINANCIER_STRAND~~s~de la pared de tu oficina.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DM_AREA_BLOCK" /*No se puede bailar aquí.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DUAL_DANCE_BLOCK" /*Aquí no hay sitio para bailar con otro jugador. Busca un espacio libre.*/))
 	{
 		if (HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 			HUD::CLEAR_HELP(true);
@@ -5830,9 +5830,9 @@ BOOL func_206(const char* sParam0, char* sParam1, char* sParam2, char* sParam3) 
 char* func_207(var uParam0) // Position - 0x54EC (21740)
 {
 	if (uParam0->f_931)
-		return "DANCE_LOCK" /*Locked*/;
+		return "DANCE_LOCK" /*Bloqueado*/;
 
-	return "DANCE_UNLOCK" /*Unlocked*/;
+	return "DANCE_UNLOCK" /*Desbloqueado*/;
 }
 
 char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
@@ -5843,82 +5843,82 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 			switch (iParam1)
 			{
 				case 0:
-					return "IAP_NONE" /*None*/;
+					return "IAP_NONE" /*-*/;
 			
 				case 1:
-					return "IAPS_SMOK" /*Smoke*/;
+					return "IAPS_SMOK" /*Fumar*/;
 			
 				case 2:
-					return "IAPS_FING" /*The Bird*/;
+					return "IAPS_FING" /*Que te den*/;
 			
 				case 3:
-					return "IAPS_DANCE" /*Dance*/;
+					return "IAPS_DANCE" /*Baile*/;
 			
 				case 4:
-					return "IAPS_ROCK" /*Rock*/;
+					return "IAPS_ROCK" /*Cuernos*/;
 			
 				case 5:
-					return "IAPS_WANK" /*Jerk*/;
+					return "IAPS_WANK" /*Me la pela*/;
 			
 				case 7:
-					return "IAP_DLC37" /*Air Thrusting*/;
+					return "IAP_DLC37" /*Hasta el fondo*/;
 			
 				case 8:
-					return "IAP_DLC12" /*Dock*/;
+					return "IAP_DLC12" /*Acoplar*/;
 			
 				case 9:
-					return "IAP_DLC18" /*Knuckle Crunch*/;
+					return "IAP_DLC18" /*Nudillos*/;
 			
 				case 10:
-					return "IAP_DLC23" /*Salute*/;
+					return "IAP_DLC23" /*Saludo*/;
 			
 				case 6:
-					return "IAP_DLC1" /*Blow Kiss*/;
+					return "IAP_DLC1" /*Lanzar beso*/;
 			
 				case 11:
-					return "IAP_DLC42" /*Slow Clap*/;
+					return "IAP_DLC42" /*Aplauso*/;
 			
 				case 12:
-					return "IAP_DLC5" /*Face Palm*/;
+					return "IAP_DLC5" /*Vergüenza ajena*/;
 			
 				case 13:
-					return "IAP_DLC4" /*Thumbs Up*/;
+					return "IAP_DLC4" /*Cojonudo*/;
 			
 				case 14:
-					return "IAP_DLC35" /*Jazz Hands*/;
+					return "IAP_DLC35" /*¡Tachán!*/;
 			
 				case 15:
-					return "IAP_DLC2" /*Nose Pick*/;
+					return "IAP_DLC2" /*Hurgar en la nariz*/;
 			
 				case 17:
-					return "D_IAP_DLC44" /*Wave*/;
+					return "D_IAP_DLC44" /*Saludar con la mano*/;
 			
 				case 16:
-					return "D_IAP_DLC29" /*Air Guitar*/;
+					return "D_IAP_DLC29" /*Guitarra aérea*/;
 			
 				case 18:
-					return "D_IAP_DLC45" /*Surrender*/;
+					return "D_IAP_DLC45" /*Rendición*/;
 			
 				case 19:
-					return "D_IAP_DLC46" /*Shush*/;
+					return "D_IAP_DLC46" /*Chitón*/;
 			
 				case 20:
-					return "D_IAP_DLC47" /*Photography*/;
+					return "D_IAP_DLC47" /*Fotografía*/;
 			
 				case 21:
 					return "D_IAP_DLC48" /*DJ*/;
 			
 				case 22:
-					return "D_IAP_DLC49" /*Air Synth*/;
+					return "D_IAP_DLC49" /*Teclado aéreo*/;
 			
 				case 23:
-					return "D_IAP_DLC20" /*No Way*/;
+					return "D_IAP_DLC20" /*Ni hablar*/;
 			
 				case 25:
-					return "D_IAP_DLC9" /*Chin Brush*/;
+					return "D_IAP_DLC9" /*Paso de todo*/;
 			
 				case 24:
-					return "D_IAP_DLC30" /*Chicken Taunt*/;
+					return "D_IAP_DLC30" /*Gallina*/;
 			
 				case 28:
 					return "D_IAP_DLC28";
@@ -5930,46 +5930,46 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "D_IAP_DLC32";
 			
 				case 29:
-					return "D_IAP_DLC34" /*Freakout*/;
+					return "D_IAP_DLC34" /*Flipar*/;
 			
 				case 30:
-					return "D_IAP_DLC3" /*Thumb on Ears*/;
+					return "D_IAP_DLC3" /*Chincha rabiña*/;
 			
 				case 31:
-					return "D_IAP_CAS_2" /*Cry Baby*/;
+					return "D_IAP_CAS_2" /*Llorica*/;
 			
 				case 32:
-					return "D_IAP_CAS_3" /*Cut Throat*/;
+					return "D_IAP_CAS_3" /*Cortar el cuello*/;
 			
 				case 33:
-					return "D_IAP_CAS_4" /*Karate Chop*/;
+					return "D_IAP_CAS_4" /*Golpe de kárate*/;
 			
 				case 34:
-					return "D_IAP_CAS_6" /*Shadow Boxing*/;
+					return "D_IAP_CAS_6" /*Golpes al aire*/;
 			
 				case 35:
-					return "D_IAP_CAS_7" /*The Woogie*/;
+					return "D_IAP_CAS_7" /*Boogie-woogie*/;
 			
 				case 36:
-					return "D_IAP_CAS_5" /*Stinker*/;
+					return "D_IAP_CAS_5" /*Cómo huele*/;
 			
 				case 37:
-					return "IAP_CAS_H_1" /*Air Drums*/;
+					return "IAP_CAS_H_1" /*Batería invisible*/;
 			
 				case 38:
-					return "IAP_CAS_H_2" /*Call Me*/;
+					return "IAP_CAS_H_2" /*Llámame*/;
 			
 				case 39:
-					return "IAP_CAS_H_3" /*Coin Roll and Toss*/;
+					return "IAP_CAS_H_3" /*Lanzar moneda al aire*/;
 			
 				case 40:
-					return "IAP_CAS_H_4" /*Bang Bang*/;
+					return "IAP_CAS_H_4" /*Pium, pium*/;
 			
 				case 41:
-					return "IAP_CAS_H_5" /*Respect*/;
+					return "IAP_CAS_H_5" /*Respeto*/;
 			
 				case 42:
-					return "IAP_CAS_H_6" /*Mind Blown*/;
+					return "IAP_CAS_H_6" /*Alucinante*/;
 			
 				default:
 					break;
@@ -5980,16 +5980,16 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 			switch (iParam1)
 			{
 				case 0:
-					return "IAC_BROL" /*Crew: Bro Love*/;
+					return "IAC_BROL" /*Crew: amor de hermano*/;
 			
 				case 1:
-					return "IAC_FING" /*Crew: The Bird*/;
+					return "IAC_FING" /*Crew: que te den*/;
 			
 				case 2:
-					return "IAC_WANK" /*Crew: Jerk*/;
+					return "IAC_WANK" /*Crew: me la pela*/;
 			
 				case 3:
-					return "IAC_UPYO" /*Crew: Up Yours*/;
+					return "IAC_UPYO" /*Crew: corte de manga*/;
 			
 				default:
 					break;
@@ -6000,100 +6000,100 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 			switch (iParam1)
 			{
 				case 0:
-					return "IAP_NONE" /*None*/;
+					return "IAP_NONE" /*-*/;
 			
 				case 1:
-					return "IAP_FING" /*The Bird*/;
+					return "IAP_FING" /*Que te den*/;
 			
 				case 2:
-					return "IAP_ROCK" /*Rock*/;
+					return "IAP_ROCK" /*Cuernos*/;
 			
 				case 3:
-					return "IAP_SALU" /*Salute*/;
+					return "IAP_SALU" /*Saludo*/;
 			
 				case 4:
-					return "IAP_WANK" /*Jerk*/;
+					return "IAP_WANK" /*Me la pela*/;
 			
 				case 68:
-					return "IAP_SMOKE" /*Smoke*/;
+					return "IAP_SMOKE" /*Fumar*/;
 			
 				case 69:
-					return "IAP_DRINK1" /*Drink eCola*/;
+					return "IAP_DRINK1" /*Beber eCola*/;
 			
 				case 70:
-					return "IAP_DRINK2" /*Drink Pisswasser*/;
+					return "IAP_DRINK2" /*Beber Pisswasser*/;
 			
 				case 71:
-					return "IAP_DRINK3" /*Drink Blêuter'd Champagne*/;
+					return "IAP_DRINK3" /*Beber champán Blêuter'd*/;
 			
 				case 72:
-					return "IAP_DRINK4" /*Drink Sprunk*/;
+					return "IAP_DRINK4" /*Beber Sprunk*/;
 			
 				case 73:
-					return "IAP_EAT1" /*Eat Snack*/;
+					return "IAP_EAT1" /*Comer aperitivo*/;
 			
 				case 74:
-					return "IAP_EAT2" /*Eat EgoChaser*/;
+					return "IAP_EAT2" /*Comer EgoChaser*/;
 			
 				case 75:
-					return "IAP_EAT3" /*Eat Meteorite*/;
+					return "IAP_EAT3" /*Comer Meteorite*/;
 			
 				case 6:
-					return "IAP_DLC37" /*Air Thrusting*/;
+					return "IAP_DLC37" /*Hasta el fondo*/;
 			
 				case 7:
-					return "IAP_DLC12" /*Dock*/;
+					return "IAP_DLC12" /*Acoplar*/;
 			
 				case 8:
-					return "IAP_DLC18" /*Knuckle Crunch*/;
+					return "IAP_DLC18" /*Nudillos*/;
 			
 				case 5:
-					return "IAP_DLC1" /*Blow Kiss*/;
+					return "IAP_DLC1" /*Lanzar beso*/;
 			
 				case 9:
-					return "IAP_DLC42" /*Slow Clap*/;
+					return "IAP_DLC42" /*Aplauso*/;
 			
 				case 10:
-					return "IAP_DLC5" /*Face Palm*/;
+					return "IAP_DLC5" /*Vergüenza ajena*/;
 			
 				case 11:
-					return "IAP_DLC4" /*Thumbs Up*/;
+					return "IAP_DLC4" /*Cojonudo*/;
 			
 				case 12:
-					return "IAP_DLC35" /*Jazz Hands*/;
+					return "IAP_DLC35" /*¡Tachán!*/;
 			
 				case 13:
-					return "IAP_DLC2" /*Nose Pick*/;
+					return "IAP_DLC2" /*Hurgar en la nariz*/;
 			
 				case 15:
-					return "D_IAP_DLC44" /*Wave*/;
+					return "D_IAP_DLC44" /*Saludar con la mano*/;
 			
 				case 14:
-					return "D_IAP_DLC29" /*Air Guitar*/;
+					return "D_IAP_DLC29" /*Guitarra aérea*/;
 			
 				case 16:
-					return "D_IAP_DLC45" /*Surrender*/;
+					return "D_IAP_DLC45" /*Rendición*/;
 			
 				case 17:
-					return "D_IAP_DLC46" /*Shush*/;
+					return "D_IAP_DLC46" /*Chitón*/;
 			
 				case 18:
-					return "D_IAP_DLC47" /*Photography*/;
+					return "D_IAP_DLC47" /*Fotografía*/;
 			
 				case 19:
 					return "D_IAP_DLC48" /*DJ*/;
 			
 				case 20:
-					return "D_IAP_DLC49" /*Air Synth*/;
+					return "D_IAP_DLC49" /*Teclado aéreo*/;
 			
 				case 21:
-					return "D_IAP_DLC20" /*No Way*/;
+					return "D_IAP_DLC20" /*Ni hablar*/;
 			
 				case 23:
-					return "D_IAP_DLC9" /*Chin Brush*/;
+					return "D_IAP_DLC9" /*Paso de todo*/;
 			
 				case 22:
-					return "D_IAP_DLC30" /*Chicken Taunt*/;
+					return "D_IAP_DLC30" /*Gallina*/;
 			
 				case 24:
 					return "D_IAP_DLC32";
@@ -6105,127 +6105,127 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "D_IAP_DLC28";
 			
 				case 27:
-					return "D_IAP_DLC34" /*Freakout*/;
+					return "D_IAP_DLC34" /*Flipar*/;
 			
 				case 28:
-					return "D_IAP_DLC3" /*Thumb on Ears*/;
+					return "D_IAP_DLC3" /*Chincha rabiña*/;
 			
 				case 30:
-					return "D_IAP_BB_1" /*Banging Tunes*/;
+					return "D_IAP_BB_1" /*Temazo*/;
 			
 				case 29:
-					return "D_IAP_BB_1L" /*Banging Tunes Left*/;
+					return "D_IAP_BB_1L" /*Temazo izquierda*/;
 			
 				case 31:
-					return "D_IAP_BB_1R" /*Banging Tunes Right*/;
+					return "D_IAP_BB_1R" /*Temazo derecha*/;
 			
 				case 32:
-					return "D_IAP_BB_2" /*Oh Snap*/;
+					return "D_IAP_BB_2" /*Bu, chaval*/;
 			
 				case 33:
-					return "D_IAP_BB_3" /*Cats Cradle*/;
+					return "D_IAP_BB_3" /*Juego del cordel*/;
 			
 				case 34:
-					return "D_IAP_BB_4" /*Raise the Roof*/;
+					return "D_IAP_BB_4" /*Sube la capota*/;
 			
 				case 35:
-					return "D_IAP_BB_5" /*Find the Fish*/;
+					return "D_IAP_BB_5" /*Encuentra el pez*/;
 			
 				case 36:
-					return "D_IAP_BB_6" /*Salsa Roll*/;
+					return "D_IAP_BB_6" /*Rollito de salsa*/;
 			
 				case 37:
-					return "D_IAP_BB_7" /*Heart Pumping*/;
+					return "D_IAP_BB_7" /*Corazón a mil*/;
 			
 				case 38:
-					return "D_IAP_BB_8" /*Uncle Disco*/;
+					return "D_IAP_BB_8" /*Tío Disco*/;
 			
 				case 40:
-					return "D_IAP_CAS_2" /*Cry Baby*/;
+					return "D_IAP_CAS_2" /*Llorica*/;
 			
 				case 41:
-					return "D_IAP_CAS_3" /*Cut Throat*/;
+					return "D_IAP_CAS_3" /*Cortar el cuello*/;
 			
 				case 42:
-					return "D_IAP_CAS_4" /*Karate Chop*/;
+					return "D_IAP_CAS_4" /*Golpe de kárate*/;
 			
 				case 43:
-					return "D_IAP_CAS_6" /*Shadow Boxing*/;
+					return "D_IAP_CAS_6" /*Golpes al aire*/;
 			
 				case 44:
-					return "D_IAP_CAS_7" /*The Woogie*/;
+					return "D_IAP_CAS_7" /*Boogie-woogie*/;
 			
 				case 45:
-					return "D_IAP_CAS_5" /*Stinker*/;
+					return "D_IAP_CAS_5" /*Cómo huele*/;
 			
 				case 46:
-					return "IAP_CAS_H_1" /*Air Drums*/;
+					return "IAP_CAS_H_1" /*Batería invisible*/;
 			
 				case 47:
-					return "IAP_CAS_H_2" /*Call Me*/;
+					return "IAP_CAS_H_2" /*Llámame*/;
 			
 				case 48:
-					return "IAP_CAS_H_3" /*Coin Roll and Toss*/;
+					return "IAP_CAS_H_3" /*Lanzar moneda al aire*/;
 			
 				case 49:
-					return "IAP_CAS_H_4" /*Bang Bang*/;
+					return "IAP_CAS_H_4" /*Pium, pium*/;
 			
 				case 50:
-					return "IAP_CAS_H_5" /*Respect*/;
+					return "IAP_CAS_H_5" /*Respeto*/;
 			
 				case 51:
-					return "IAP_CAS_H_6" /*Mind Blown*/;
+					return "IAP_CAS_H_6" /*Alucinante*/;
 			
 				case 39:
-					return "D_IAP_AW_1" /*Make It Rain*/;
+					return "D_IAP_AW_1" /*Haz que llueva*/;
 			
 				case 58:
-					return "PIM_MASK_SFX_T" /*Mask Audio*/;
+					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
 			
 				case 59:
-					return "PIM_MASK_SFX_T" /*Mask Audio*/;
+					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
 			
 				case 60:
-					return "PIM_MASK_SFX_T" /*Mask Audio*/;
+					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
 			
 				case 61:
-					return "PIM_MASK_SFX_T" /*Mask Audio*/;
+					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
 			
 				case 62:
-					return "PIM_MASK_SFX_T" /*Mask Audio*/;
+					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
 			
 				case 63:
-					return "PIM_MASK_SFX_T" /*Mask Audio*/;
+					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
 			
 				case 52:
-					return "D_IAP_HI_1" /*Crowd Invitation*/;
+					return "D_IAP_HI_1" /*Que el ritmo no pare*/;
 			
 				case 53:
-					return "D_IAP_HI_2" /*Driver*/;
+					return "D_IAP_HI_2" /*Conducir*/;
 			
 				case 54:
-					return "D_IAP_HI_3" /*Runner*/;
+					return "D_IAP_HI_3" /*Correr*/;
 			
 				case 55:
-					return "D_IAP_HI_4" /*Shooting*/;
+					return "D_IAP_HI_4" /*Disparo*/;
 			
 				case 56:
-					return "D_IAP_HI_5" /*Suck It*/;
+					return "D_IAP_HI_5" /*Chúpamela*/;
 			
 				case 57:
-					return "D_IAP_HI_6" /*Take Selfie*/;
+					return "D_IAP_HI_6" /*Hacerse un selfie*/;
 			
 				case 65:
-					return "IAP_AVI_H_1";
+					return "IAP_AVI_H_1" /*Girar porra extensible*/;
 			
 				case 67:
-					return "IAP_AVI_H_2";
+					return "IAP_AVI_H_2" /*Enseñar la placa*/;
 			
 				case 64:
-					return "IAP_AVI_H_3";
+					return "IAP_AVI_H_3" /*Saludo militar*/;
 			
 				case 66:
-					return "IAP_AVI_H_4";
+					return "IAP_AVI_H_4" /*No he sido yo*/;
 			
 				default:
 					break;
@@ -6292,18 +6292,18 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 		case 1:
 			if (uParam0->f_930 == 0)
 			{
-				uParam2->f_1 = "DANCE_0" /*Press ~INPUT_CONTEXT~ to dance.*/;
+				uParam2->f_1 = "DANCE_0" /*Pulsa ~INPUT_CONTEXT~ para bailar.*/;
 			}
 			else
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
-					uParam2->f_1 = "DANCE_ALT_KB" /*Press ~INPUT_CURSOR_CANCEL~ to dance.*/;
+					uParam2->f_1 = "DANCE_ALT_KB" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.*/;
 					uParam2->f_10 = 1;
 				}
 				else
 				{
-					uParam2->f_1 = "DANCE_ALT" /*Hold ~INPUT_SCRIPT_LT~ to dance.*/;
+					uParam2->f_1 = "DANCE_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.*/;
 					uParam2->f_10 = 1;
 				}
 			
@@ -6313,7 +6313,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			return true;
 	
 		case 6:
-			uParam2->f_1 = "COMBO_STOP" /*You are unable to earn any more RP from dancing today.*/;
+			uParam2->f_1 = "COMBO_STOP" /*No puedes conseguir más RP bailando por hoy.*/;
 			uParam2->f_5 = 1;
 			uParam2->f_11 = 5000;
 			return true;
@@ -6327,13 +6327,13 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 					uParam2->f_6 = 1;
 			
-				uParam2->f_1 = "DANCE_MIN" /*~INPUT_SCRIPT_PAD_LEFT~ Show dancing controls*/;
+				uParam2->f_1 = "DANCE_MIN" /*Pulsa ~INPUT_SCRIPT_PAD_LEFT~ para mostrar las instrucciones de baile.*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 			}
 			else if (uParam0->f_930 == 2 || uParam0->f_930 == 3 || uParam0->f_930 == 4 || uParam0->f_930 == 5)
 			{
-				uParam2->f_1 = "DANCE_MIN_ALT" /*~INPUT_SCRIPT_RLEFT~ Show dancing controls*/;
+				uParam2->f_1 = "DANCE_MIN_ALT" /*Pulsa ~INPUT_SCRIPT_RLEFT~ para mostrar las instrucciones de baile.*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_10 = 1;
@@ -6346,12 +6346,12 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
-					uParam2->f_1 = "DANCE_S_K" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Drop intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/;
+					uParam2->f_1 = "DANCE_S_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/;
 					uParam2->f_6 = 1;
 				}
 				else
 				{
-					uParam2->f_1 = "DANCE_S" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Drop intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CONTEXT~ Stop dancing*/;
+					uParam2->f_1 = "DANCE_S" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/;
 				}
 			
 				uParam2->f_5 = 1;
@@ -6361,7 +6361,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 1)
 			{
-				uParam2->f_1 = "DANCE_PROP_S" /*~INPUTGROUP_LOOK~ Dance moves~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_CONTEXT~ Toggle lock: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls*/;
+				uParam2->f_1 = "DANCE_PROP_S" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_7 = 1;
@@ -6371,7 +6371,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 2)
 			{
-				uParam2->f_1 = "DANCE_ALTA_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+				uParam2->f_1 = "DANCE_ALTA_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RT~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_7 = 1;
@@ -6384,11 +6384,11 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
 					if (uParam0->f_915.f_9 && uParam0->f_674)
-						uParam2->f_1 = "DANCE_B_K_C_B" /*~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RDOWN~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUTGROUP_CELLPHONE_NAVIGATE_LR~ DJ camera~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CURSOR_CANCEL~ Stop dancing*/;
+						uParam2->f_1 = "DANCE_B_K_C_B" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUTGROUP_CELLPHONE_NAVIGATE_LR~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/;
 					else if (func_117(uParam0))
-						uParam2->f_1 = "DANCE_B_K_C" /*~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RDOWN~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CURSOR_CANCEL~ Stop dancing*/;
+						uParam2->f_1 = "DANCE_B_K_C" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/;
 					else
-						uParam2->f_1 = "DANCE_B_K" /*~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RDOWN~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CURSOR_CANCEL~ Stop dancing*/;
+						uParam2->f_1 = "DANCE_B_K" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/;
 				
 					uParam2->f_6 = 1;
 					uParam2->f_10 = 1;
@@ -6399,11 +6399,11 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 					uParam2->f_9 = 1;
 				
 					if (uParam0->f_915.f_9 && uParam0->f_674)
-						uParam2->f_1 = "DANCE_B_S_C_B" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ DJ camera~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+						uParam2->f_1 = "DANCE_B_S_C_B" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 					else if (func_117(uParam0))
-						uParam2->f_1 = "DANCE_B_S_C" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+						uParam2->f_1 = "DANCE_B_S_C" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 					else
-						uParam2->f_1 = "DANCE_B_S" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+						uParam2->f_1 = "DANCE_B_S" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				}
 			
 				uParam2->f_5 = 1;
@@ -6413,7 +6413,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 4)
 			{
-				uParam2->f_1 = "DANCE_ALTC_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+				uParam2->f_1 = "DANCE_ALTC_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_7 = 1;
@@ -6423,7 +6423,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 5)
 			{
-				uParam2->f_1 = "DANCE_ALTD_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+				uParam2->f_1 = "DANCE_ALTD_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_7 = 1;
@@ -6439,12 +6439,12 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
-					uParam2->f_1 = "DANCE_S_D_K" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/;
+					uParam2->f_1 = "DANCE_S_D_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/;
 					uParam2->f_6 = 1;
 				}
 				else
 				{
-					uParam2->f_1 = "DANCE_S_D" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CONTEXT~ Stop dancing*/;
+					uParam2->f_1 = "DANCE_S_D" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar. ~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/;
 				}
 			
 				uParam2->f_5 = 1;
@@ -6453,7 +6453,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 1)
 			{
-				uParam2->f_1 = "DANCE_PROP_D" /*~INPUTGROUP_LOOK~ Dance moves~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_CONTEXT~ Toggle lock: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls*/;
+				uParam2->f_1 = "DANCE_PROP_D" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_8 = 1;
@@ -6462,7 +6462,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 2)
 			{
-				uParam2->f_1 = "DANCE_ALTA_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+				uParam2->f_1 = "DANCE_ALTA_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_8 = 1;
@@ -6473,13 +6473,13 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
-					uParam2->f_1 = "DANCE_S_K" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Drop intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/;
+					uParam2->f_1 = "DANCE_S_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/;
 					uParam2->f_6 = 1;
 					uParam2->f_10 = 1;
 				}
 				else
 				{
-					uParam2->f_1 = "DANCE_ALTB_D" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+					uParam2->f_1 = "DANCE_ALTB_D" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 					uParam2->f_10 = 1;
 				}
 			
@@ -6490,7 +6490,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 4)
 			{
-				uParam2->f_1 = "DANCE_ALTC_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+				uParam2->f_1 = "DANCE_ALTC_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_8 = 1;
@@ -6499,7 +6499,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 5)
 			{
-				uParam2->f_1 = "DANCE_ALTD_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/;
+				uParam2->f_1 = "DANCE_ALTD_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_8 = 1;
@@ -6528,16 +6528,16 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 	
 		case 7:
 			if (uParam0->f_930 == 0)
-				uParam2->f_1 = "DM_DD_JOIN" /*Press ~INPUT_CONTEXT~ to dance.~n~Press ~INPUT_CONTEXT_SECONDARY~ to dance with ~a~.*/;
+				uParam2->f_1 = "DM_DD_JOIN" /*Pulsa ~INPUT_CONTEXT~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
 			else if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-				uParam2->f_1 = "DM_DD_JOIN_K" /*Press ~INPUT_CURSOR_CANCEL~ to dance.~n~Press ~INPUT_CONTEXT_SECONDARY~ to dance with ~a~.*/;
+				uParam2->f_1 = "DM_DD_JOIN_K" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
 			else
-				uParam2->f_1 = "DM_DD_JOIN_ALT" /*Hold ~INPUT_SCRIPT_LT~ to dance.~n~Press ~INPUT_CONTEXT_SECONDARY~ to dance with ~a~.*/;
+				uParam2->f_1 = "DM_DD_JOIN_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
 		
 			return true;
 	
 		case 8:
-			uParam2->f_1 = "DM_DD_CTRL" /*~INPUT_CONTEXT~ Stop dancing.*/;
+			uParam2->f_1 = "DM_DD_CTRL" /*~INPUT_CONTEXT~ Dejar de bailar.*/;
 			uParam2->f_5 = 1;
 			uParam2->f_3 = 1;
 			return true;
@@ -6581,28 +6581,28 @@ BOOL func_217(var uParam0, var uParam1) // Position - 0x6139 (24889)
 	char* str2;
 	char* str3;
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_0" /*Press ~INPUT_CONTEXT~ to dance.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_ALT" /*Hold ~INPUT_SCRIPT_LT~ to dance.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_ALT_KB" /*Press ~INPUT_CURSOR_CANCEL~ to dance.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("COMBO_STOP" /*You are unable to earn any more RP from dancing today.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_MIN" /*~INPUT_SCRIPT_PAD_LEFT~ Show dancing controls*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_0" /*Pulsa ~INPUT_CONTEXT~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_ALT_KB" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("COMBO_STOP" /*No puedes conseguir más RP bailando por hoy.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_MIN" /*Pulsa ~INPUT_SCRIPT_PAD_LEFT~ para mostrar las instrucciones de baile.*/))
 		return true;
 
 	str = func_209(uParam0, uParam1);
 
-	if (func_204("DANCE_S_D_K" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/, str) || func_204("DANCE_S_D" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CONTEXT~ Stop dancing*/, str) || func_204("DANCE_S_D_K_0" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/, str) || func_204("DANCE_S_D_K_1" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/, str) || func_204("DANCE_S_D_0" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_CONTEXT~ Stop dancing*/, str) || func_204("DANCE_S_D_1" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CONTEXT~ Stop dancing*/, str))
+	if (func_204("DANCE_S_D_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str) || func_204("DANCE_S_D" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar. ~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str) || func_204("DANCE_S_D_K_0" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str) || func_204("DANCE_S_D_K_1" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str) || func_204("DANCE_S_D_0" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str) || func_204("DANCE_S_D_1" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar. ~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str))
 		return true;
 
 	str2 = func_208(func_143(), func_144());
 
-	if (func_205("DANCE_S_K" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Drop intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/, str, str2) || func_205("DANCE_S" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Drop intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CONTEXT~ Stop dancing*/, str, str2) || func_205("DANCE_S_K_0" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Drop intensity~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/, str, str2) || func_205("DANCE_S_K_1" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Stop dancing*/, str, str2) || func_205("DANCE_S_0" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Hold intensity~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Drop intensity~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_CONTEXT~ Stop dancing*/, str, str2) || func_205("DANCE_S_1" /*Tap ~INPUT_SCRIPT_RDOWN~ in time to the beat to build intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CONTEXT~ Stop dancing*/, str, str2) || func_205("DANCE_B_K" /*~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RDOWN~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CURSOR_CANCEL~ Stop dancing*/, str, str2) || func_205("DANCE_B_K_C" /*~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RDOWN~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CURSOR_CANCEL~ Stop dancing*/, str, str2) || func_205("DANCE_B_K_C_B" /*~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RLEFT~ Boost intensity~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Rotate~n~~INPUT_SCRIPT_RDOWN~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUTGROUP_CELLPHONE_NAVIGATE_LR~ DJ camera~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls~n~~INPUT_CURSOR_CANCEL~ Stop dancing*/, str, str2))
+	if (func_205("DANCE_S_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S_K_0" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S_K_1" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S_0" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S_1" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str, str2) || func_205("DANCE_B_K" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/, str, str2) || func_205("DANCE_B_K_C" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/, str, str2) || func_205("DANCE_B_K_C_B" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUTGROUP_CELLPHONE_NAVIGATE_LR~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/, str, str2))
 		return true;
 
 	str3 = func_207(uParam0);
 
-	if (func_206("DANCE_PROP_S" /*~INPUTGROUP_LOOK~ Dance moves~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Switch action: ~a~~n~~INPUT_CONTEXT~ Toggle lock: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_ALTA_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RT~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_B_S" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_ALTC_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_ALTD_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_B_S_C" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_B_S_C_B" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ DJ camera~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3))
+	if (func_206("DANCE_PROP_S" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTA_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RT~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTC_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTD_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3))
 		return true;
 
-	if (func_205("DANCE_PROP_D" /*~INPUTGROUP_LOOK~ Dance moves~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_PAD_UP~ Dance style: ~a~~n~~INPUT_CONTEXT~ Toggle lock: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Hide controls*/, str, str3) || func_205("DANCE_ALTA_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str3) || func_205("DANCE_ALTB_D" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str3) || func_205("DANCE_ALTC_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str3) || func_205("DANCE_ALTD_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Dance style: ~a~~n~~INPUTGROUP_MOVE~ Dance moves~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str3))
+	if (func_205("DANCE_PROP_D" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTA_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTB_D" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTC_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTD_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3))
 		return true;
 
-	if (func_206("DANCE_B_S_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_B_S_C_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_B_S_C_B_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_B_S_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUTGROUP_MOVE~ Rotate~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Dance moves~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_B_S_C_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3) || func_206("DANCE_B_S_C_B_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Dance style: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Switch action: ~a~~n~~INPUT_SCRIPT_RB~ Perform action~n~~INPUT_SCRIPT_RDOWN~ Boost intensity~n~~INPUT_SCRIPT_RUP~ Toggle lock: ~a~~n~~INPUT_VEH_CIN_CAM~ Cinematic camera~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ DJ camera~n~~INPUT_SCRIPT_RLEFT~ Hide controls*/, str, str2, str3))
+	if (func_206("DANCE_B_S_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3))
 		return true;
 
 	return false;
@@ -10626,7 +10626,7 @@ void func_287(var uParam0) // Position - 0xCFC3 (53187)
 	return;
 }
 
-BOOL func_288() // Position - 0xCFF8 (53240)
+ePedComponentType func_288() // Position - 0xCFF8 (53240)
 {
 	return Global_1969491;
 }
@@ -11740,7 +11740,7 @@ void func_313(var uParam0) // Position - 0xE90D (59661)
 	int num3;
 	int num4;
 	int num5;
-	ePedComponentType type;
+	eViewMode mode;
 
 	num = func_316(uParam0);
 	unk = Global_262145.f_24005;
@@ -11774,8 +11774,8 @@ void func_313(var uParam0) // Position - 0xE90D (59661)
 	if (uParam0->f_773.f_6 < num5)
 	{
 		uParam0->f_773.f_6 = uParam0->f_773.f_6 + 1;
-		type = 1 + func_47(7237, -1);
-		func_38(7237, type, -1, true);
+		mode = 1 + func_47(7237, -1);
+		func_38(7237, mode, -1, true);
 		func_314(uParam0, uParam0->f_773.f_6);
 	}
 
@@ -13929,7 +13929,7 @@ BOOL func_405() // Position - 0x11286 (70278)
 
 	if (!func_410(482563055))
 		return 1;
-	else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB1") || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB2") || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB0"))
+	else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB1" /*Accede a los servicios de la mansión ~BLIP_MANSION_AI_M~ para celebrar una fiesta en tu mansión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB2" /*Accede a los servicios de la mansión ~BLIP_MANSION_AI_GANG~ para celebrar una fiesta en tu mansión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB0" /*Accede a los servicios de la mansión ~BLIP_MANSION_AI_F~ para celebrar una fiesta en tu mansión.*/))
 		return 1;
 
 	if (Global_2635562.f_2982 || PED::IS_PED_RAGDOLL(PLAYER::PLAYER_PED_ID()) || func_358(PLAYER::PLAYER_PED_ID()) >= 10)
@@ -13979,7 +13979,7 @@ BOOL func_408() // Position - 0x11469 (70761)
 
 BOOL func_409() // Position - 0x1147E (70782)
 {
-	if (Global_2673271.f_1023.f_5 == -1)
+	if (Global_2673271.f_1023.f_5 == PV_COMP_INVALID)
 		return false;
 
 	return true;
@@ -14056,10 +14056,10 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x11592 (71058)
 {
 	switch (func_416())
 	{
-		case 0:
+		case HUD_COLOUR_PURE_WHITE:
 			return func_415();
 	
-		case 2:
+		case HUD_COLOUR_BLACK:
 			return joaat("creator");
 	}
 
@@ -14080,7 +14080,7 @@ Hash func_415() // Position - 0x115C5 (71109)
 	return joaat("freemode");
 }
 
-int func_416() // Position - 0x115E9 (71145)
+eHudColour func_416() // Position - 0x115E9 (71145)
 {
 	return Global_33775;
 }
@@ -14279,13 +14279,13 @@ void func_428(var uParam0) // Position - 0x1185F (71775)
 
 void func_429(var uParam0) // Position - 0x1190E (71950)
 {
-	if (func_451() == -1)
+	if (func_453() == -1)
 		func_422();
 
 	if (uParam0->f_4 == -1)
 		func_422();
 
-	NETWORK::NETWORK_SET_THIS_SCRIPT_IS_NETWORK_SCRIPT(32, false, func_451());
+	NETWORK::NETWORK_SET_THIS_SCRIPT_IS_NETWORK_SCRIPT(32, false, func_453());
 	func_449(0, -1, false);
 	NETWORK::NETWORK_REGISTER_HOST_BROADCAST_VARIABLES(&uLocal_1175, 1, 0);
 	func_448(&(iLocal_142.f_1));
@@ -14482,61 +14482,61 @@ int func_441(int iParam0, var uParam1) // Position - 0x11D00 (72960)
 	switch (iParam0)
 	{
 		case 0:
-			*uParam1 = "PIMNCLDANSTY0" /*Getting Down*/;
+			*uParam1 = "PIMNCLDANSTY0" /*Meneo*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@FEMALE@VAR_A";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@FEMALE@VAR_A@";
 			break;
 	
 		case 1:
-			*uParam1 = "PIMNCLDANSTY1" /*Break It Up*/;
+			*uParam1 = "PIMNCLDANSTY1" /*Romperla*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@FEMALE@VAR_B";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@FEMALE@VAR_B@";
 			break;
 	
 		case 2:
-			*uParam1 = "PIMNCLDANSTY2" /*Give It Some*/;
+			*uParam1 = "PIMNCLDANSTY2" /*Repartiendo*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@MALE@VAR_B";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@MALE@VAR_B@";
 			break;
 	
 		case 3:
-			*uParam1 = "PIMNCLDANSTY3" /*Zoned In*/;
+			*uParam1 = "PIMNCLDANSTY3" /*En la zona*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@MALE@VAR_A";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@MALE@VAR_A@";
 			break;
 	
 		case 4:
-			*uParam1 = "PIMNCLDANSTY4" /*Slide*/;
+			*uParam1 = "PIMNCLDANSTY4" /*A tope*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@JUMPER";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@JUMPER@";
 			break;
 	
 		case 5:
-			*uParam1 = "PIMNCLDANSTY5" /*Loose*/;
+			*uParam1 = "PIMNCLDANSTY5" /*Tecnomono*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@TECHNO_MONKEY";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@TECHNO_MONKEY@";
 			break;
 	
 		case 6:
-			*uParam1 = "PIMNCLDANSTY6" /*Shuffle*/;
+			*uParam1 = "PIMNCLDANSTY6" /*Aleatorio*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@SHUFFLE";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@SHUFFLE@";
 			break;
 	
 		case 7:
-			*uParam1 = "PIMNCLDANSTY7" /*Into It*/;
+			*uParam1 = "PIMNCLDANSTY7" /*Tecnokárate*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@TECHNO_KARATE";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@TECHNO_KARATE@";
 			break;
 	
 		case 8:
-			*uParam1 = "PIMNCLDANSTY8" /*Sway*/;
+			*uParam1 = "PIMNCLDANSTY8" /*Recogiendo cable*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@BEACH_BOXING";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@BEACH_BOXING@";
 			break;
 	
 		case 9:
-			*uParam1 = "PIMNCLDANSTY9" /*Tight*/;
+			*uParam1 = "PIMNCLDANSTY9" /*De paseo*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@SAND_TRIP";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@SAND_TRIP@";
 			break;
@@ -14771,11 +14771,33 @@ int func_449(int iParam0, int iParam1, BOOL bParam2) // Position - 0x1217A (7410
 
 BOOL func_450(BOOL bParam0) // Position - 0x12290 (74384)
 {
-	bParam0;
+	if (bParam0 && Global_1575062)
+		if (func_451())
+			return false;
+		else
+			return true;
+
 	return Global_1575062;
 }
 
-Player func_451() // Position - 0x122A1 (74401)
+BOOL func_451() // Position - 0x122BC (74428)
+{
+	if (func_452())
+		return true;
+
+	return Global_1575065;
+}
+
+BOOL func_452() // Position - 0x122D7 (74455)
+{
+	if (Global_1575062 || Global_1575068)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
+}
+
+Player func_453() // Position - 0x12302 (74498)
 {
 	Player player;
 

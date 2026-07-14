@@ -1702,7 +1702,7 @@ void func_38(int* piParam0, var uParam1) // Position - 0xF72 (3954)
 	unk = { func_29(1) };
 	uParam1->f_4 = 0.145f;
 	uParam1->f_4.f_1 = 0.801f;
-	TEXT_LABEL_ASSIGN_STRING(&unk12, "WH_ATMPTS" /*ATTEMPTS*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&unk12, "WH_ATMPTS" /*INTENTOS*/, 16);
 	func_39(&(uParam1->f_4), &unk, unk12, 1);
 
 	for (i = 0; i <= piParam0->f_45 - 1; i = i + 1)
@@ -1825,7 +1825,7 @@ void func_49(var uParam0) // Position - 0x11D6 (4566)
 	func_28("MPWordHack_Sprites", "WM_Popup_Locked", 0.505f, 0.49f, 0.3861f, 0.2988f, 0f, *uParam0);
 	uParam0->f_4 = 0.5047f;
 	uParam0->f_4.f_1 = 0.558f;
-	TEXT_LABEL_ASSIGN_STRING(&unk11, "WH_FAIL" /*LOCKED OUT*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&unk11, "WH_FAIL" /*BLOQUEADO*/, 16);
 	func_39(&(uParam0->f_4), &font, unk11, 0);
 	func_28("MPWordHack_Sprites", "WM_Red_Text_Background", 0.5047f, 0.558f + (HUD::GET_RENDERED_CHARACTER_HEIGHT(font.f_2, font) / 1.56f), func_50(&unk11, font.f_1, font.f_2) + 0.005f, HUD::GET_RENDERED_CHARACTER_HEIGHT(font.f_2, font) + 0.005f, 0f, *uParam0);
 	return;
@@ -2060,7 +2060,7 @@ void func_60(var uParam0) // Position - 0x17E2 (6114)
 	func_28("MPWordHack_Sprites", "WM_Popup_Complete", 0.505f, 0.49f, 0.3861f, 0.2988f, 0f, *uParam0);
 	uParam0->f_4 = 0.5047f;
 	uParam0->f_4.f_1 = 0.558f;
-	TEXT_LABEL_ASSIGN_STRING(&unk11, "WH_PWDAQ" /*PASSWORD ACQUIRED*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&unk11, "WH_PWDAQ" /*CONTRASEÑA OBTENIDA*/, 16);
 	func_39(&(uParam0->f_4), &font, unk11, 0);
 	func_28("MPWordHack_Sprites", "WM_Green_Text_Background", 0.5047f, 0.558f + (HUD::GET_RENDERED_CHARACTER_HEIGHT(font.f_2, font) / 1.5f), func_50(&unk11, font.f_1, font.f_2) + 0.0035f, HUD::GET_RENDERED_CHARACTER_HEIGHT(font.f_2, font) + 0.0045f, 0f, *uParam0);
 	return;
@@ -2103,20 +2103,20 @@ void func_62(int* piParam0, var uParam1) // Position - 0x18DF (6367)
 			controlInstructionalButtonsString5 = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_FRONTEND_CANCEL, true);
 	
 		func_6(&(uParam1->f_18));
-		func_73(controlInstructionalButtonsString5, "BHSF_QT" /*Quit*/, &(uParam1->f_18), 0);
+		func_73(controlInstructionalButtonsString5, "BHSF_QT" /*Salir*/, &(uParam1->f_18), 0);
 	
 		if (piParam0->f_49 > 0 && piParam0->f_33[piParam0->f_51] != -1)
 			if (!IS_BIT_SET(piParam0->f_50, piParam0->f_51))
-				func_73(controlInstructionalButtonsString4, "WH_INSTR_D" /*Delete Placed Letter*/, &(uParam1->f_18), 0);
+				func_73(controlInstructionalButtonsString4, "WH_INSTR_D" /*Eliminar letra colocada*/, &(uParam1->f_18), 0);
 	
 		if (!IS_BIT_SET(piParam0->f_48, piParam0->f_52))
-			func_73(controlInstructionalButtonsString3, "WH_INSTR_A" /*Place Letter*/, &(uParam1->f_18), 0);
+			func_73(controlInstructionalButtonsString3, "WH_INSTR_A" /*Colocar letra*/, &(uParam1->f_18), 0);
 	
 		if (piParam0->f_52 < piParam0->f_1 - 1)
-			func_73(controlInstructionalButtonsString2, "WH_INSTR_R" /*Select Next Letter*/, &(uParam1->f_18), 0);
+			func_73(controlInstructionalButtonsString2, "WH_INSTR_R" /*Seleccionar letra siguiente*/, &(uParam1->f_18), 0);
 	
 		if (piParam0->f_52 > 0)
-			func_73(controlInstructionalButtonsString, "WH_INSTR_L" /*Select Previous Letter*/, &(uParam1->f_18), 0);
+			func_73(controlInstructionalButtonsString, "WH_INSTR_L" /*Seleccionar letra anterior*/, &(uParam1->f_18), 0);
 	
 		MISC::SET_BIT(piParam0, 2);
 	}
@@ -2350,9 +2350,9 @@ void func_68(const char* sParam0) // Position - 0x1E05 (7685)
 	return;
 }
 
-void func_69(BOOL bParam0) // Position - 0x1E13 (7699)
+void func_69(int iParam0) // Position - 0x1E13 (7699)
 {
-	Global_1576386 = bParam0;
+	Global_1576386 = iParam0;
 	return;
 }
 
@@ -2401,8 +2401,8 @@ void func_73(const char* sParam0, char* sParam1, var uParam2, char* sParam3) // 
 
 void func_74() // Position - 0x1EDF (7903)
 {
-	if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WH_HELP" /*Arrange the letters to guess the password. Press ~INPUT_FRONTEND_LEFT~ or ~INPUT_FRONTEND_RIGHT~ to select a letter. Press ~INPUT_FRONTEND_ACCEPT~ to place the selected letter in the answer box.*/))
-		func_75("WH_HELP" /*Arrange the letters to guess the password. Press ~INPUT_FRONTEND_LEFT~ or ~INPUT_FRONTEND_RIGHT~ to select a letter. Press ~INPUT_FRONTEND_ACCEPT~ to place the selected letter in the answer box.*/);
+	if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WH_HELP" /*Ordena las letras para adivinar la contraseña. Pulsa ~INPUT_FRONTEND_LEFT~ o ~INPUT_FRONTEND_RIGHT~ para seleccionar una. Pulsa ~INPUT_FRONTEND_ACCEPT~ para colocar la letra seleccionada en la casilla de respuesta.*/))
+		func_75("WH_HELP" /*Ordena las letras para adivinar la contraseña. Pulsa ~INPUT_FRONTEND_LEFT~ o ~INPUT_FRONTEND_RIGHT~ para seleccionar una. Pulsa ~INPUT_FRONTEND_ACCEPT~ para colocar la letra seleccionada en la casilla de respuesta.*/);
 
 	return;
 }
@@ -2429,7 +2429,7 @@ void func_77(var uParam0) // Position - 0x1F24 (7972)
 	func_28("MPWordHack_Sprites", "WM_Popup_Incorrect", 0.505f, 0.49f, 0.3861f, 0.2988f, 0f, *uParam0);
 	uParam0->f_4 = 0.5047f;
 	uParam0->f_4.f_1 = 0.558f;
-	TEXT_LABEL_ASSIGN_STRING(&unk11, "WH_PWDIN" /*INCORRECT PASSWORD*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&unk11, "WH_PWDIN" /*CONTRASEÑA INCORRECTA*/, 16);
 	func_39(&(uParam0->f_4), &font, unk11, 0);
 	func_28("MPWordHack_Sprites", "WM_Red_Text_Background", 0.5047f, 0.558f + (HUD::GET_RENDERED_CHARACTER_HEIGHT(font.f_2, font) / 1.56f), func_50(&unk11, font.f_1, font.f_2) + 0.005f, HUD::GET_RENDERED_CHARACTER_HEIGHT(font.f_2, font) + 0.005f, 0f, *uParam0);
 	return;

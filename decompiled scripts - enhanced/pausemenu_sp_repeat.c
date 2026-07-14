@@ -404,14 +404,14 @@ void main() // Position - 0x0 (0)
 	return;
 }
 
-void func_1(BOOL bParam0, int iParam1) // Position - 0x321 (801)
+void func_1(eCharacter echParam0, int iParam1) // Position - 0x321 (801)
 {
-	Global_80552 = bParam0;
+	Global_80552 = echParam0;
 	Global_80552.f_1 = iParam1;
 
 	if (iParam1 == 7)
-		if (bParam0 >= false && bParam0 < 63)
-			Global_114018[bParam0 /*10*/].f_3 = 1;
+		if (echParam0 >= CHAR_MICHAEL && echParam0 < CHAR_MRS_THORNHILL)
+			Global_114018[echParam0 /*10*/].f_3 = 1;
 
 	MISC::SET_BIT(&Global_80554, 0);
 	return;
@@ -628,33 +628,33 @@ Hash func_14(int iParam0, int iParam1) // Position - 0x6C3 (1731)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_15(iParam1));
 }
 
-Interior func_15(Interior inParam0) // Position - 0x6D8 (1752)
+int func_15(int iParam0) // Position - 0x6D8 (1752)
 {
-	Interior interior;
-	Interior interior2;
+	int num;
+	int num2;
 
-	interior = inParam0;
+	num = iParam0;
 
-	if (interior == -1)
+	if (num == -1)
 	{
-		interior2 = func_16();
+		num2 = func_16();
 	
-		if (interior2 > -1)
+		if (num2 > -1)
 		{
 			Global_2741524 = 0;
-			interior = interior2;
+			num = num2;
 		}
 		else
 		{
-			interior = 0;
+			num = 0;
 			Global_2741524 = 1;
 		}
 	}
 
-	return interior;
+	return num;
 }
 
-Interior func_16() // Position - 0x70C (1804)
+int func_16() // Position - 0x70C (1804)
 {
 	return Global_1574927;
 }
@@ -899,9 +899,9 @@ BOOL func_23() // Position - 0xB47 (2887)
 	return false;
 }
 
-BOOL func_24(BOOL bParam0, BOOL bParam1) // Position - 0xCBC (3260)
+BOOL func_24(int iParam0, int iParam1) // Position - 0xCBC (3260)
 {
-	return bParam0 && bParam1 != false;
+	return iParam0 && iParam1 != false;
 }
 
 BOOL func_25(BOOL bParam0) // Position - 0xCCB (3275)
@@ -957,34 +957,34 @@ void func_30(BOOL bParam0, int iParam1) // Position - 0xD53 (3411)
 	if (num != -1)
 	{
 		value = 1;
-		str2 = "PM_RP_HELPT" /*Replay*/;
+		str2 = "PM_RP_HELPT" /*Repetir*/;
 	
 		if (iParam1 == 1)
 		{
 			switch (num)
 			{
 				case 0:
-					str = "PM_RPB_SM_1" /*Replay is unavailable while on a Mission. Once you have passed the current Mission, you will be able to try it again and aim to reach the Gold standard.~n~~n~If you have a Rockstar Games account, Mission stats are recorded on the leaderboards on rockstargames.com where you can see how you stack up against friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ to view leaderboards and in-depth career stats.*/;
+					str = "PM_RPB_SM_1" /*No puedes repetir durante una misión. Cuando hayas terminado la misión actual, podrás probar de nuevo para intentar conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 2:
-					str = "PM_RPB_SM_2" /*Replay is unavailable while viewing a cutscene.~n~~n~If you have a Rockstar Games account, Mission stats are recorded on the leaderboards on rockstargames.com where you can see how you stack up against friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ to view leaderboards and in-depth career stats.*/;
+					str = "PM_RPB_SM_2" /*No puedes repetir misiones mientras ves una secuencia.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 3:
-					str = "PM_RPB_SM_3" /*Replay is unavailable while browsing in a shop.~n~~n~If you have a Rockstar Games account, Mission stats are recorded on the leaderboards on rockstargames.com where you can see how you stack up against friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ to view leaderboards and in-depth career stats.*/;
+					str = "PM_RPB_SM_3" /*No puedes repetir misiones mientras estás de compras.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 1:
-					str = "PM_RPB_SM_4" /*Replay is unavailable while the Creator is running.~n~~n~If you have a Rockstar Games account, Mission stats are recorded on the leaderboards on rockstargames.com where you can see how you stack up against friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ to view leaderboards and in-depth career stats.*/;
+					str = "PM_RPB_SM_4" /*No puedes repetir misiones mientras utilizas el creador.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 4:
-					str = "PM_RPB_SM_5" /*Replay is unavailable from this location.~n~~n~If you have a Rockstar Games account, Mission stats are recorded on the leaderboards on rockstargames.com where you can see how you stack up against friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ to view leaderboards and in-depth career stats.*/;
+					str = "PM_RPB_SM_5" /*No puedes repetir desde esta ubicación.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 5:
-					str = "PM_RPB_SM_6" /*Replay is unavailable while Director Mode is running. Once you have exited Director Mode, you will be able to replay missions and aim to reach the Gold standard.~n~~n~If you have a Rockstar Games account, Mission stats are recorded on the leaderboards on rockstargames.com where you can see how you stack up against friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ to view leaderboards and in-depth career stats.*/;
+					str = "PM_RPB_SM_6" /*No puedes repetir mientras el modo director esté en ejecución. Cuando hayas salido del modo director podrás volver a repetir misiones para intentar conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				default:
@@ -996,27 +996,27 @@ void func_30(BOOL bParam0, int iParam1) // Position - 0xD53 (3411)
 			switch (num)
 			{
 				case 0:
-					str = "PM_RPB_RC_1" /*Replay is unavailable while on a Mission. Once you have passed the current Mission, you will be able to try it again and aim to reach the Gold standard.~n~~n~If you have a Rockstar Games account, you can see which Strangers and Freaks you are yet to meet and see how you stack up against your friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ for more information and to view in-depth career stats.*/;
+					str = "PM_RPB_RC_1" /*No puedes repetir durante una misión. Cuando hayas terminado la misión actual, podrás probar de nuevo para intentar conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver qué "Extraños y locos" te quedan por encontrar, así como compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://rockstargames.com/es/~s~ para recibir más información y ver las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 2:
-					str = "PM_RPB_RC_2" /*Replay is unavailable while viewing a cutscene.~n~~n~If you have a Rockstar Games account, you can see which Strangers and Freaks you are yet to meet and see how you stack up against your friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ for more information and to view in-depth career stats.*/;
+					str = "PM_RPB_RC_2" /*No puedes repetir misiones mientras ves una secuencia.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver qué "Extraños y locos" te quedan por encontrar, así como compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para recibir más información y ver las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 3:
-					str = "PM_RPB_RC_3" /*Replay is unavailable while browsing in a shop.~n~~n~If you have a Rockstar Games account, you can see which Strangers and Freaks you are yet to meet and see how you stack up against your friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ for more information and to view in-depth career stats.*/;
+					str = "PM_RPB_RC_3" /*No puedes repetir misiones mientras estás de compras.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver qué "Extraños y locos" te quedan por encontrar, así como compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para recibir más información y ver las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 1:
-					str = "PM_RPB_RC_4" /*Replay is unavailable while the Creator is running.~n~~n~If you have a Rockstar Games account, you can see which Strangers and Freaks you are yet to meet and see how you stack up against your friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ for more information and to view in-depth career stats.*/;
+					str = "PM_RPB_RC_4" /*No puedes repetir misiones mientras utilizas el creador.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver qué "Extraños y locos" te quedan por encontrar, así como compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para recibir más información y ver las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 4:
-					str = "PM_RPB_RC_5" /*Replay is unavailable from this location.~n~~n~If you have a Rockstar Games account, you can see which Strangers and Freaks you are yet to meet and see how you stack up against your friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ for more information and to view in-depth career stats.*/;
+					str = "PM_RPB_RC_5" /*No puedes repetir desde esta ubicación.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				case 5:
-					str = "PM_RPB_RC_6" /*Replay is unavailable while Director Mode is running. Once you have exited Director Mode, you will be able to replay missions and aim to reach the Gold standard.~n~~n~If you have a Rockstar Games account, you can see which Strangers and Freaks you are yet to meet and see how you stack up against your friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ for more information and to view in-depth career stats.*/;
+					str = "PM_RPB_RC_6" /*No puedes repetir mientras el modo director esté en ejecución. Cuando hayas salido del modo director podrás volver a repetir misiones para intentar conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 					break;
 			
 				default:
@@ -1030,13 +1030,13 @@ void func_30(BOOL bParam0, int iParam1) // Position - 0xD53 (3411)
 	
 		if (iParam1 == 1)
 		{
-			str2 = "PM_RP_HELPT" /*Replay*/;
-			str = "PM_RP_HELP" /*Replay Missions you've passed and try to reach the Gold standard for each. Aim to reach Gold in a single attempt, or work towards it one objective at a time.~n~~n~If you have a Rockstar Games account, Mission stats are recorded on the leaderboards on rockstargames.com where you can see how you stack up against friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ to view leaderboards and in-depth career stats.*/;
+			str2 = "PM_RP_HELPT" /*Repetir*/;
+			str = "PM_RP_HELP" /*Repite misiones ya superadas e intenta conseguir el oro en cada una. Puedes probar a conseguirlo en un intento o también objetivo a objetivo.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 		}
 		else
 		{
-			str2 = "PM_RP_HELPT3" /*Replay*/;
-			str = "PM_RP_HELP3" /*Select an encounter with Strangers and Freaks to replay.~n~~n~If you have a Rockstar Games account, you can see which Strangers and Freaks you are yet to meet and see how you stack up against your friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ for more information and to view in-depth career stats.*/;
+			str2 = "PM_RP_HELPT3" /*Repetir*/;
+			str = "PM_RP_HELP3" /*Elige un encuentro con extraños y locos para repetirlo.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 		}
 	}
 	else
@@ -1045,13 +1045,13 @@ void func_30(BOOL bParam0, int iParam1) // Position - 0xD53 (3411)
 	
 		if (iParam1 == 1)
 		{
-			str2 = "PM_RP_HELPT1" /*Replay*/;
-			str = "PM_RP_HELP1" /*There are currently no Missions available to replay. Once you have played some Missions you will be able to try them again and aim to reach the Gold standard in each.~n~~n~If you have a Rockstar Games account, Mission stats are recorded on the leaderboards on rockstargames.com where you can see how you stack up against friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ to view leaderboards and in-depth career stats.*/;
+			str2 = "PM_RP_HELPT1" /*Repetir*/;
+			str = "PM_RP_HELP1" /*Actualmente no hay ninguna misión que puedas repetir. Cuando hayas jugado unas cuantas, podrás probar de nuevo e intentar conseguir el oro en cada una.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 		}
 		else
 		{
-			str2 = "PM_RP_HELPT3" /*Replay*/;
-			str = "PM_RP_HELP4" /*There are currently no encounters with Strangers and Freaks available to replay.~n~~n~If you have a Rockstar Games account, you can see which Strangers and Freaks you are yet to meet and see how you stack up against your friends and Crewmates. Visit ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ for more information and to view in-depth career stats.*/;
+			str2 = "PM_RP_HELPT3" /*Repetir*/;
+			str = "PM_RP_HELP4" /*Actualmente no hay ningún encuentro con extraños y locos que puedas repetir.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
 		}
 	}
 
@@ -1584,7 +1584,7 @@ void func_47(int iParam0) // Position - 0x16A7 (5799)
 	func_78(2);
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND("SET_COLUMN_TITLE");
 	GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(2);
-	func_31("MISSTA" /*Mission Stats*/);
+	func_31("MISSTA" /*Estadísticas de misión*/);
 	func_31(&uLocal_26);
 	GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 	num = -333;

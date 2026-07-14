@@ -260,10 +260,10 @@ void main() // Position - 0x0 (0)
 void func_1(int iParam0) // Position - 0x439 (1081)
 {
 	int num;
+	BOOL flag;
 	int num2;
-	int num3;
 	var unk;
-	int num4;
+	int num3;
 	char* str;
 
 	num = func_14(iParam0);
@@ -274,52 +274,52 @@ void func_1(int iParam0) // Position - 0x439 (1081)
 	if (Global_55413[num /*203*/].f_9 == 0)
 		return;
 
-	num2 = Global_55413[num /*203*/].f_10[Global_55413[num /*203*/].f_9 - 1 /*48*/];
-	num3 = Global_55413[num /*203*/].f_9 - 1;
+	flag = Global_55413[num /*203*/].f_10[Global_55413[num /*203*/].f_9 - 1 /*48*/];
+	num2 = Global_55413[num /*203*/].f_9 - 1;
 
-	if (!Global_55413[num /*203*/].f_10[num3 /*48*/].f_1)
+	if (!Global_55413[num /*203*/].f_10[num2 /*48*/].f_1)
 	{
-		num4 = Global_55413[num /*203*/].f_10[num3 /*48*/];
-		TEXT_LABEL_COPY(&unk, { func_13(Global_46113[num4 /*12*/].f_1) }, 4);
+		num3 = Global_55413[num /*203*/].f_10[num2 /*48*/];
+		TEXT_LABEL_COPY(&unk, { func_13(Global_46113[num3 /*12*/].f_1) }, 4);
 	}
 	else
 	{
-		unk = { Global_55413[num /*203*/].f_10[num3 /*48*/].f_2 };
+		unk = { Global_55413[num /*203*/].f_10[num2 /*48*/].f_2 };
 	}
 
 	if (iParam0 == 28)
 	{
-		switch (num2)
+		switch (flag)
 		{
 			case 249:
-				str = "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/;
+				str = "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/;
 				break;
 		
 			case 269:
-				str = "PW_FEED_EM_3" /*Hello Franklin,~n~The Southern San Andreas Tourist Board Young Amateur Wildlife Photographer of the Year Competition is over.~n~Some of our photographers fell off cli...*/;
+				str = "PW_FEED_EM_3" /*Hola, Franklin:~n~La competición de fotógrafos amateur de animales de la oficina de turismo del sur de San Andreas ha terminado.~n~Algunos de nuestros fotógrafos cayeron por prec...*/;
 				break;
 		
 			default:
-				str = "PW_FEED_EM_2" /*Dear contestant,~n~Thank you for your recent photographic submission. Our image licensing department is already maximizing its profit-making potential. And you're a step clos...*/;
+				str = "PW_FEED_EM_2" /*Estimado participante,~n~Gracias por el envío de tu fotografía. Nuestro departamento de licencia de imágenes está aumentando el potencial de la foto para hacer dinero y tú estás un paso más...*/;
 				break;
 		}
 	
-		func_2(CHAR_FRANKLIN, Global_46113[num2 /*12*/].f_2, num2, str, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		func_2(CHAR_FRANKLIN, Global_46113[flag /*12*/].f_2, flag, str, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 	}
 	else
 	{
-		switch (Global_46113[num2 /*12*/].f_3)
+		switch (Global_46113[flag /*12*/].f_3)
 		{
 			case 0:
-				func_2(CHAR_MICHAEL, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_2(CHAR_MICHAEL, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		
 			case 1:
-				func_2(CHAR_FRANKLIN, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_2(CHAR_FRANKLIN, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		
 			case 2:
-				func_2(CHAR_TREVOR, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_2(CHAR_TREVOR, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		}
 	}
@@ -327,7 +327,7 @@ void func_1(int iParam0) // Position - 0x439 (1081)
 	return;
 }
 
-void func_2(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const char* sParam4, const char* sParam5, const char* sParam6, const char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11, const char* sParam12, const char* sParam13) // Position - 0x7A5 (1957)
+void func_2(eCharacter echParam0, int iParam1, BOOL bParam2, char* sParam3, const char* sParam4, const char* sParam5, const char* sParam6, const char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11, const char* sParam12, const char* sParam13) // Position - 0x7A5 (1957)
 {
 	eCharacter character;
 	BOOL flag;
@@ -342,18 +342,18 @@ void func_2(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const
 
 	if (character == echParam0)
 	{
-		switch (iParam2)
+		switch (bParam2)
 		{
 			case 72:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 73:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 74:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			default:
@@ -466,7 +466,7 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_12" /*Marnie*/;
 	
 		case 5:
-			return "EMSTR_29" /*Epsilon Store*/;
+			return "EMSTR_29" /*Tienda de Epsilon*/;
 	
 		case 6:
 			return "EMSTR_36" /*Maude*/;
@@ -484,10 +484,10 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_58" /*Bank of Liberty*/;
 	
 		case 11:
-			return "EMSTR_78" /*Legendary Motorsport Sales*/;
+			return "EMSTR_78" /*Legendary Motorsport*/;
 	
 		case 12:
-			return "EMSTR_81" /*Elitas Sales*/;
+			return "EMSTR_81" /*Ventas de Elitas*/;
 	
 		case 13:
 			return "EMSTR_84" /*Cache & Carry*/;
@@ -508,13 +508,13 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_145" /*Paige Harris*/;
 	
 		case 19:
-			return "EMSTR_152" /*Los Santos Tourist Info*/;
+			return "EMSTR_152" /*Turismo de Los Santos*/;
 	
 		case 20:
 			return "EMSTR_157" /*Rickie Luckens*/;
 	
 		case 21:
-			return "EMSTR_163" /*Minotaur Property Management*/;
+			return "EMSTR_163" /*Minotaur*/;
 	
 		case 22:
 			return "EMSTR_182" /*Saeeda Kadam*/;
@@ -523,10 +523,10 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_187" /*Vanilla Unicorn*/;
 	
 		case 24:
-			return "EMSTR_190" /*Dr Isiah Friedlander*/;
+			return "EMSTR_190" /*Dr. Isiah Friedlander*/;
 	
 		case 25:
-			return "EMSTR_206" /*TRACEYHEARTSTEALER*/;
+			return "EMSTR_206" /*TRACIROBACORAZONES*/;
 	
 		case 26:
 			return "EMSTR_219" /*Dave Norton*/;
@@ -571,34 +571,34 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_369" /*Hookies*/;
 	
 		case 40:
-			return "EMSTR_376" /*Towing Impound*/;
+			return "EMSTR_376" /*Depósito de coches*/;
 	
 		case 41:
-			return "EMSTR_379" /*Downtown Cab Co,*/;
+			return "EMSTR_379" /*Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_384" /*Sonar Collections Dock*/;
+			return "EMSTR_384" /*Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_387" /*Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_390" /*Cinema Doppler*/;
+			return "EMSTR_390" /*Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_393" /*Ten Cent Theater*/;
+			return "EMSTR_393" /*Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_396" /*Tivoli Cinema*/;
+			return "EMSTR_396" /*Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_399" /*Los Santos Golf Club*/;
+			return "EMSTR_399" /*Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_402" /*Car Scrap Yard*/;
+			return "EMSTR_402" /*Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_405" /*Smoke on the Water*/;
@@ -613,10 +613,10 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_414" /*The Hen House*/;
 	
 		case 54:
-			return "EMSTR_465" /*Pedal & Metal Sales*/;
+			return "EMSTR_465" /*Ventas de P&M*/;
 	
 		case 55:
-			return "EMSTR_468" /*SSA Super Autos Sales*/;
+			return "EMSTR_468" /*SSA Super Autos*/;
 	
 		case 56:
 			return "EMSTR_489" /*Hush Smush*/;
@@ -640,13 +640,13 @@ char* func_4(int iParam0) // Position - 0x9B1 (2481)
 			return "EMSTR_507" /*Misscuddles*/;
 	
 		case 63:
-			return "EMSTR_640" /*Off-Road Events*/;
+			return "EMSTR_640" /*Eventos todoterreno*/;
 	
 		case 64:
 			return "EMSTR_643" /*DockTease*/;
 	
 		case 65:
-			return "EMSTR_652" /*Brother Adrian*/;
+			return "EMSTR_652" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -1075,16 +1075,16 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 {
 	int num;
 	int num2;
-	int num3;
+	BOOL flag;
 	var unk;
-	int num4;
-	int num5;
+	int num3;
+	BOOL flag2;
 	BOOL i;
 	BOOL j;
-	int num6;
+	int num4;
 	int k;
-	int num7;
-	int num8;
+	int num5;
+	BOOL flag3;
 
 	if (!(iParam0 < 3))
 		return;
@@ -1094,19 +1094,19 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 
 	if (!bParam2)
 	{
-		num4 = Global_49438[iParam1 /*46*/].f_42 - 1;
+		num3 = Global_49438[iParam1 /*46*/].f_42 - 1;
 	
-		if (num4 < 0)
+		if (num3 < 0)
 			return;
 	
-		num5 = Global_49438[iParam1 /*46*/].f_32[num4];
-		num3 = num5;
-		unk = { func_13(Global_46113[num5 /*12*/].f_1) };
+		flag2 = Global_49438[iParam1 /*46*/].f_32[num3];
+		flag = flag2;
+		unk = { func_13(Global_46113[flag2 /*12*/].f_1) };
 	
-		if (Global_46113[num5 /*12*/].f_2 == iParam0 && !(Global_46113[num5 /*12*/].f_3 == iParam0))
+		if (Global_46113[flag2 /*12*/].f_2 == iParam0 && !(Global_46113[flag2 /*12*/].f_3 == iParam0))
 			return;
 	
-		num2 = Global_46113[num5 /*12*/].f_2;
+		num2 = Global_46113[flag2 /*12*/].f_2;
 		num = Global_55051[iParam0 /*120*/];
 	
 		for (i = false; num >= 16; i = true)
@@ -1145,7 +1145,7 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 		}
 	
 		Global_55051[iParam0 /*120*/].f_18[num] = iParam1;
-		Global_55051[iParam0 /*120*/].f_1[num] = num4;
+		Global_55051[iParam0 /*120*/].f_1[num] = num3;
 		Global_55051[iParam0 /*120*/].f_35[num] = 0;
 		Global_55051[iParam0 /*120*/].f_86[num] = false;
 		Global_55051[iParam0 /*120*/].f_69[num] = false;
@@ -1190,33 +1190,33 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			}
 		}
 	
-		num6 = -1;
+		num4 = -1;
 		k = 0;
 	
 		for (k = 0; k < 7; k = k + 1)
 		{
 			if (Global_55413[k /*203*/].f_1 == iParam1 && Global_55413[k /*203*/].f_9 > 0)
-				num6 = k;
+				num4 = k;
 		}
 	
-		if (num6 == -1)
+		if (num4 == -1)
 			return;
 	
-		Global_55051[iParam0 /*120*/].f_18[num] = Global_55413[num6 /*203*/].f_1;
-		Global_55051[iParam0 /*120*/].f_1[num] = Global_55413[num6 /*203*/].f_9 - 1;
+		Global_55051[iParam0 /*120*/].f_18[num] = Global_55413[num4 /*203*/].f_1;
+		Global_55051[iParam0 /*120*/].f_1[num] = Global_55413[num4 /*203*/].f_9 - 1;
 		Global_55051[iParam0 /*120*/].f_35[num] = 0;
 		Global_55051[iParam0 /*120*/].f_86[num] = true;
 		Global_55051[iParam0 /*120*/].f_69[num] = false;
 		Global_55051[iParam0 /*120*/] = Global_55051[iParam0 /*120*/] + 1;
-		num7 = Global_55051[iParam0 /*120*/].f_1[num];
-		num8 = Global_55413[num6 /*203*/].f_10[num7 /*48*/];
-		num3 = num8;
-		num2 = Global_46113[num8 /*12*/].f_2;
+		num5 = Global_55051[iParam0 /*120*/].f_1[num];
+		flag3 = Global_55413[num4 /*203*/].f_10[num5 /*48*/];
+		flag = flag3;
+		num2 = Global_46113[flag3 /*12*/].f_2;
 	
-		if (Global_55413[num6 /*203*/].f_10[Global_55413[num6 /*203*/].f_9 - 1 /*48*/].f_1)
-			TEXT_LABEL_COPY(&unk, { Global_55413[num6 /*203*/].f_10[Global_55413[num6 /*203*/].f_9 - 1 /*48*/].f_2 }, 16);
+		if (Global_55413[num4 /*203*/].f_10[Global_55413[num4 /*203*/].f_9 - 1 /*48*/].f_1)
+			TEXT_LABEL_COPY(&unk, { Global_55413[num4 /*203*/].f_10[Global_55413[num4 /*203*/].f_9 - 1 /*48*/].f_2 }, 16);
 		else
-			unk = { func_13(Global_46113[num8 /*12*/].f_1) };
+			unk = { func_13(Global_46113[flag3 /*12*/].f_1) };
 	}
 
 	if (!bParam4)
@@ -1226,18 +1226,18 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			switch (iParam0)
 			{
 				case 0:
-					func_2(0, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_2(0, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 1:
-					if (num3 == 249)
-						func_2(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					if (flag == 249)
+						func_2(CHAR_FRANKLIN, num2, flag, "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
-						func_2(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_2(CHAR_FRANKLIN, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 2:
-					func_2(CHAR_TREVOR, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_2(CHAR_TREVOR, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			}
 		}
@@ -1663,8 +1663,8 @@ BOOL func_31(int iParam0) // Position - 0x215D (8541)
 void func_32(int iParam0, BOOL bParam1) // Position - 0x2239 (8761)
 {
 	int num;
+	BOOL flag;
 	int num2;
-	int num3;
 	int i;
 
 	if (!Global_49438[iParam0 /*46*/] && !Global_49438[iParam0 /*46*/].f_1)
@@ -1686,17 +1686,17 @@ void func_32(int iParam0, BOOL bParam1) // Position - 0x2239 (8761)
 	if (Global_49438[iParam0 /*46*/].f_1)
 		return;
 
-	num2 = Global_49438[iParam0 /*46*/].f_8[Global_49438[iParam0 /*46*/].f_31];
+	flag = Global_49438[iParam0 /*46*/].f_8[Global_49438[iParam0 /*46*/].f_31];
 	Global_49438[iParam0 /*46*/].f_31 = Global_49438[iParam0 /*46*/].f_31 + 1;
-	func_33(iParam0, num2);
-	Global_49438[iParam0 /*46*/].f_45 = Global_46113[num2 /*12*/].f_10;
-	Global_49438[iParam0 /*46*/].f_43 = Global_46113[num2 /*12*/].f_11;
-	num3 = Global_49438[iParam0 /*46*/].f_2;
-	func_18(Global_46113[num2 /*12*/].f_3, iParam0, false, false, bParam1);
+	func_33(iParam0, flag);
+	Global_49438[iParam0 /*46*/].f_45 = Global_46113[flag /*12*/].f_10;
+	Global_49438[iParam0 /*46*/].f_43 = Global_46113[flag /*12*/].f_11;
+	num2 = Global_49438[iParam0 /*46*/].f_2;
+	func_18(Global_46113[flag /*12*/].f_3, iParam0, false, false, bParam1);
 
-	for (i = 0; i < num3; i = i + 1)
+	for (i = 0; i < num2; i = i + 1)
 	{
-		if (Global_49438[iParam0 /*46*/].f_3[i] != Global_46113[num2 /*12*/].f_2 && Global_49438[iParam0 /*46*/].f_3[i] != Global_46113[num2 /*12*/].f_3)
+		if (Global_49438[iParam0 /*46*/].f_3[i] != Global_46113[flag /*12*/].f_2 && Global_49438[iParam0 /*46*/].f_3[i] != Global_46113[flag /*12*/].f_3)
 			func_18(Global_49438[iParam0 /*46*/].f_3[i], iParam0, false, false, bParam1);
 	}
 
@@ -1712,12 +1712,12 @@ void func_32(int iParam0, BOOL bParam1) // Position - 0x2239 (8761)
 	return;
 }
 
-int func_33(int iParam0, int iParam1) // Position - 0x23D5 (9173)
+int func_33(int iParam0, BOOL bParam1) // Position - 0x23D5 (9173)
 {
 	if (Global_49438[iParam0 /*46*/].f_42 >= 9)
 		return 0;
 
-	Global_49438[iParam0 /*46*/].f_32[Global_49438[iParam0 /*46*/].f_42] = iParam1;
+	Global_49438[iParam0 /*46*/].f_32[Global_49438[iParam0 /*46*/].f_42] = bParam1;
 	Global_49438[iParam0 /*46*/].f_42 = Global_49438[iParam0 /*46*/].f_42 + 1;
 	return 1;
 }
@@ -2201,7 +2201,7 @@ int func_44(eCharacter echParam0) // Position - 0x2D4C (11596)
 
 eCharacter func_45() // Position - 0x2D5D (11613)
 {
-	if (Global_33775 == 0 || Global_33775 == 2)
+	if (Global_33775 == false || Global_33775 == 2)
 		return 221;
 
 	return 161;
@@ -2281,7 +2281,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 5:
-			func_48(uParam1, "Barry3A", func_50(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Areas where you can find vehicles with a hidden stash have been marked on the map. Collect these vehicles for Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
+			func_48(uParam1, "Barry3A", func_50(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Las zonas en las que puedes encontrar vehículos con un alijo oculto aparecerán indicadas en el mapa. Recoge estos vehículos para Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
 			break;
 	
 		case 6:
@@ -2293,7 +2293,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 8:
-			func_48(uParam1, "Dreyfuss1", func_50(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*The killer's identity and location have been revealed.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_49(iParam0), 0, 0);
+			func_48(uParam1, "Dreyfuss1", func_50(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*Se ha revelado la identidad y el paradero del asesino.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_49(iParam0), 0, 0);
 			break;
 	
 		case 9:
@@ -2413,7 +2413,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 38:
-			func_48(uParam1, "Nigel1A", func_50(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Areas where you can find celebrity items have been marked on the map. Steal these items for Nigel and Mrs. Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_49(iParam0), 1, 1);
+			func_48(uParam1, "Nigel1A", func_50(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Se han marcado en el mapa las zonas en las que puedes encontrar objetos de famosos. Róbalos para Nigel y para la señora Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_49(iParam0), 1, 1);
 			break;
 	
 		case 39:
@@ -2457,7 +2457,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 49:
-			func_48(uParam1, "Paparazzo3A", func_50(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Areas where you can find celebrity photo opportunities have been marked on the map. Track down and photograph these celebrities for Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
+			func_48(uParam1, "Paparazzo3A", func_50(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Las zonas en las que puedes encontrar oportunidades para sacar fotos a famosos se han marcado en el mapa. Localiza y fotografía a estos famosos para Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
 			break;
 	
 		case 50:
@@ -2493,7 +2493,7 @@ void func_47(int iParam0, var uParam1) // Position - 0x2E25 (11813)
 			break;
 	
 		case 58:
-			func_48(uParam1, "Tonya1", func_50(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
+			func_48(uParam1, "Tonya1", func_50(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_49(iParam0), 0, 1);
 			break;
 	
 		case 59:
@@ -3113,7 +3113,7 @@ BOOL func_58() // Position - 0x49C9 (18889)
 
 BOOL func_59() // Position - 0x49DE (18910)
 {
-	if (Global_21610.f_1 == 1)
+	if (Global_21610.f_1 == true)
 		return true;
 
 	return false;
@@ -5564,8 +5564,8 @@ void func_69() // Position - 0x50B5 (20661)
 	Global_49438[0 /*46*/].f_3[0] = 0;
 	Global_49438[0 /*46*/].f_3[1] = 4;
 	Global_49438[0 /*46*/].f_30 = 8;
-	Global_49438[0 /*46*/].f_8[0] = 0;
-	Global_49438[0 /*46*/].f_8[1] = 1;
+	Global_49438[0 /*46*/].f_8[0] = false;
+	Global_49438[0 /*46*/].f_8[1] = true;
 	Global_49438[0 /*46*/].f_8[2] = 2;
 	Global_49438[0 /*46*/].f_8[3] = 3;
 	Global_49438[0 /*46*/].f_8[4] = 4;

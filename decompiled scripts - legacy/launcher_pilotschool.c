@@ -822,7 +822,7 @@ void func_9() // Position - 0xBA1 (2977)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_10() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1503,29 +1503,29 @@ BOOL func_47(var uParam0) // Position - 0x170A (5898)
 	return true;
 }
 
-BOOL func_48() // Position - 0x1713 (5907)
+ePedComponentType func_48() // Position - 0x1713 (5907)
 {
 	return Global_77342;
 }
 
-BOOL func_49(int iParam0) // Position - 0x171F (5919)
+ePedComponentType func_49(int iParam0) // Position - 0x171F (5919)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_50(int iParam0, int iParam1) // Position - 0x1776 (6006)
@@ -1721,7 +1721,7 @@ BOOL func_63() // Position - 0x20C3 (8387)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_64() // Position - 0x20D4 (8404)
+ePedComponentType func_64() // Position - 0x20D4 (8404)
 {
 	return Global_1575090;
 }
@@ -2117,7 +2117,7 @@ BOOL func_88(int iParam0, int iParam1) // Position - 0x2723 (10019)
 void func_89() // Position - 0x2732 (10034)
 {
 	iLocal_97 = 5;
-	sLocal_99 = "PLAY_PSCHOOL" /*Press ~INPUT_CONTEXT~ to enter Flight School.*/;
+	sLocal_99 = "PLAY_PSCHOOL" /*Pulsa ~INPUT_CONTEXT~ para entrar en la escuela de vuelo.*/;
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "Pilot_School", 64);
 	essLocal_95 = 64500;
 	return;

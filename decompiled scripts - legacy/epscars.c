@@ -391,7 +391,7 @@ void main() // Position - 0x0 (0)
 		
 			case 6:
 				func_55(2, 6, true);
-				func_54(2, "EPS_LSTEMAIL" /*Brother Brother,~n~~n~Cris and the senior thesis holders are very happy with the vehicles you sourced to further Kraff's work.  You are firmly on the path to enlightenment and divinity but it is a long and expensive path, and there are many more trials ahead.  Are you ready to understand the technology of your existence?  Are you everything you need and less and more?  Until next time, brother.  ~n~~n~Kraff be praised!*/, true);
+				func_54(2, "EPS_LSTEMAIL" /*Hermano-hermano,~n~~n~Cris y los poseedores de la tesis están contentos con los vehículos que nos has proporcionado para continuar con el trabajo de Kraff. Atraviesas firmemente el camino de la iluminación y la divinidad, aunque es un camino largo y caro, y tienes muchas pruebas por delante. ¿Estás listo para comprender la tecnología de tu existencia? ¿Eres todo lo que necesitas y menos, y más? Hasta la próxima, hermano.  ~n~~n~¡Alabado sea Kraff!*/, true);
 				func_53(2);
 				func_97();
 				break;
@@ -415,7 +415,7 @@ void main() // Position - 0x0 (0)
 				_CONVERSATION_INITIALIZE_ACTOR(&uLocal_117, 0, PLAYER::PLAYER_PED_ID(), "MICHAEL", 0, 1);
 				_CONVERSATION_ADD_LINE(&uLocal_117, "EPS3AUD", "EP3_MCS1", 6, 0, 0, 0);
 			
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("EPS_DROP_HELP" /*This vehicle is wanted by the Epsilon Program. Deliver it to the location marked ~HUD_COLOUR_MICHAEL~~BLIP_EPSILON~~s~*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("EPS_DROP_HELP" /*El Programa Epsilon desea obtener este vehículo. Entrégalo en la ubicación que aparece como ~HUD_COLOUR_MICHAEL~~BLIP_EPSILON~~s~*/))
 					HUD::CLEAR_HELP(true);
 			
 				func_19();
@@ -465,9 +465,9 @@ void func_1(int* piParam0, var uParam1, var uParam2) // Position - 0x3E7 (999)
 	
 		case 1:
 			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(*piParam0, "SHOW_SHARD_MIDSIZED_MESSAGE");
-			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("EPS_CAR_TITLE" /*Vehicle Delivered~s~*/);
+			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("EPS_CAR_TITLE" /*Vehículo entregado~s~*/);
 			GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
-			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("EPS_CAR_NOTE" /*~1~/5 Epsilon Vehicles Delivered*/);
+			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("EPS_CAR_NOTE" /*~1~/5 vehículos entregados a Epsilon*/);
 			HUD::ADD_TEXT_COMPONENT_INTEGER(func_3());
 			GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
@@ -575,10 +575,10 @@ void func_4(int iParam0) // Position - 0x596 (1430)
 void func_5(int iParam0) // Position - 0x632 (1586)
 {
 	int num;
+	BOOL flag;
 	int num2;
-	int num3;
 	var unk;
-	int num4;
+	int num3;
 	char* str;
 
 	num = func_11(iParam0);
@@ -589,52 +589,52 @@ void func_5(int iParam0) // Position - 0x632 (1586)
 	if (Global_55413[num /*203*/].f_9 == 0)
 		return;
 
-	num2 = Global_55413[num /*203*/].f_10[Global_55413[num /*203*/].f_9 - 1 /*48*/];
-	num3 = Global_55413[num /*203*/].f_9 - 1;
+	flag = Global_55413[num /*203*/].f_10[Global_55413[num /*203*/].f_9 - 1 /*48*/];
+	num2 = Global_55413[num /*203*/].f_9 - 1;
 
-	if (!Global_55413[num /*203*/].f_10[num3 /*48*/].f_1)
+	if (!Global_55413[num /*203*/].f_10[num2 /*48*/].f_1)
 	{
-		num4 = Global_55413[num /*203*/].f_10[num3 /*48*/];
-		TEXT_LABEL_COPY(&unk, { func_10(Global_46113[num4 /*12*/].f_1) }, 4);
+		num3 = Global_55413[num /*203*/].f_10[num2 /*48*/];
+		TEXT_LABEL_COPY(&unk, { func_10(Global_46113[num3 /*12*/].f_1) }, 4);
 	}
 	else
 	{
-		unk = { Global_55413[num /*203*/].f_10[num3 /*48*/].f_2 };
+		unk = { Global_55413[num /*203*/].f_10[num2 /*48*/].f_2 };
 	}
 
 	if (iParam0 == 28)
 	{
-		switch (num2)
+		switch (flag)
 		{
 			case 249:
-				str = "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/;
+				str = "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/;
 				break;
 		
 			case 269:
-				str = "PW_FEED_EM_3" /*Hello Franklin,~n~The Southern San Andreas Tourist Board Young Amateur Wildlife Photographer of the Year Competition is over.~n~Some of our photographers fell off cli...*/;
+				str = "PW_FEED_EM_3" /*Hola, Franklin:~n~La competición de fotógrafos amateur de animales de la oficina de turismo del sur de San Andreas ha terminado.~n~Algunos de nuestros fotógrafos cayeron por prec...*/;
 				break;
 		
 			default:
-				str = "PW_FEED_EM_2" /*Dear contestant,~n~Thank you for your recent photographic submission. Our image licensing department is already maximizing its profit-making potential. And you're a step clos...*/;
+				str = "PW_FEED_EM_2" /*Estimado participante,~n~Gracias por el envío de tu fotografía. Nuestro departamento de licencia de imágenes está aumentando el potencial de la foto para hacer dinero y tú estás un paso más...*/;
 				break;
 		}
 	
-		func_6(CHAR_FRANKLIN, Global_46113[num2 /*12*/].f_2, num2, str, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		func_6(CHAR_FRANKLIN, Global_46113[flag /*12*/].f_2, flag, str, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 	}
 	else
 	{
-		switch (Global_46113[num2 /*12*/].f_3)
+		switch (Global_46113[flag /*12*/].f_3)
 		{
 			case 0:
-				func_6(CHAR_MICHAEL, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_6(CHAR_MICHAEL, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		
 			case 1:
-				func_6(CHAR_FRANKLIN, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_6(CHAR_FRANKLIN, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		
 			case 2:
-				func_6(CHAR_TREVOR, Global_46113[num2 /*12*/].f_2, num2, &unk, &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_6(CHAR_TREVOR, Global_46113[flag /*12*/].f_2, flag, &unk, &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[0 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[1 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[2 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[3 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[4 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[5 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[6 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[7 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[8 /*4*/], &Global_55413[num /*203*/].f_10[num2 /*48*/].f_7[9 /*4*/]);
 				break;
 		}
 	}
@@ -642,7 +642,7 @@ void func_5(int iParam0) // Position - 0x632 (1586)
 	return;
 }
 
-void func_6(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const char* sParam4, const char* sParam5, const char* sParam6, const char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11, const char* sParam12, const char* sParam13) // Position - 0x99F (2463)
+void func_6(eCharacter echParam0, int iParam1, BOOL bParam2, char* sParam3, const char* sParam4, const char* sParam5, const char* sParam6, const char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11, const char* sParam12, const char* sParam13) // Position - 0x99F (2463)
 {
 	eCharacter character;
 	BOOL flag;
@@ -657,18 +657,18 @@ void func_6(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const
 
 	if (character == echParam0)
 	{
-		switch (iParam2)
+		switch (bParam2)
 		{
 			case 72:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 73:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 74:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			default:
@@ -781,7 +781,7 @@ char* func_8(int iParam0) // Position - 0xBB3 (2995)
 			return "EMSTR_12" /*Marnie*/;
 	
 		case 5:
-			return "EMSTR_29" /*Epsilon Store*/;
+			return "EMSTR_29" /*Tienda de Epsilon*/;
 	
 		case 6:
 			return "EMSTR_36" /*Maude*/;
@@ -799,10 +799,10 @@ char* func_8(int iParam0) // Position - 0xBB3 (2995)
 			return "EMSTR_58" /*Bank of Liberty*/;
 	
 		case 11:
-			return "EMSTR_78" /*Legendary Motorsport Sales*/;
+			return "EMSTR_78" /*Legendary Motorsport*/;
 	
 		case 12:
-			return "EMSTR_81" /*Elitas Sales*/;
+			return "EMSTR_81" /*Ventas de Elitas*/;
 	
 		case 13:
 			return "EMSTR_84" /*Cache & Carry*/;
@@ -823,13 +823,13 @@ char* func_8(int iParam0) // Position - 0xBB3 (2995)
 			return "EMSTR_145" /*Paige Harris*/;
 	
 		case 19:
-			return "EMSTR_152" /*Los Santos Tourist Info*/;
+			return "EMSTR_152" /*Turismo de Los Santos*/;
 	
 		case 20:
 			return "EMSTR_157" /*Rickie Luckens*/;
 	
 		case 21:
-			return "EMSTR_163" /*Minotaur Property Management*/;
+			return "EMSTR_163" /*Minotaur*/;
 	
 		case 22:
 			return "EMSTR_182" /*Saeeda Kadam*/;
@@ -838,10 +838,10 @@ char* func_8(int iParam0) // Position - 0xBB3 (2995)
 			return "EMSTR_187" /*Vanilla Unicorn*/;
 	
 		case 24:
-			return "EMSTR_190" /*Dr Isiah Friedlander*/;
+			return "EMSTR_190" /*Dr. Isiah Friedlander*/;
 	
 		case 25:
-			return "EMSTR_206" /*TRACEYHEARTSTEALER*/;
+			return "EMSTR_206" /*TRACIROBACORAZONES*/;
 	
 		case 26:
 			return "EMSTR_219" /*Dave Norton*/;
@@ -886,34 +886,34 @@ char* func_8(int iParam0) // Position - 0xBB3 (2995)
 			return "EMSTR_369" /*Hookies*/;
 	
 		case 40:
-			return "EMSTR_376" /*Towing Impound*/;
+			return "EMSTR_376" /*Depósito de coches*/;
 	
 		case 41:
-			return "EMSTR_379" /*Downtown Cab Co,*/;
+			return "EMSTR_379" /*Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_384" /*Sonar Collections Dock*/;
+			return "EMSTR_384" /*Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_387" /*Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_390" /*Cinema Doppler*/;
+			return "EMSTR_390" /*Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_393" /*Ten Cent Theater*/;
+			return "EMSTR_393" /*Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_396" /*Tivoli Cinema*/;
+			return "EMSTR_396" /*Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_399" /*Los Santos Golf Club*/;
+			return "EMSTR_399" /*Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_402" /*Car Scrap Yard*/;
+			return "EMSTR_402" /*Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_405" /*Smoke on the Water*/;
@@ -928,10 +928,10 @@ char* func_8(int iParam0) // Position - 0xBB3 (2995)
 			return "EMSTR_414" /*The Hen House*/;
 	
 		case 54:
-			return "EMSTR_465" /*Pedal & Metal Sales*/;
+			return "EMSTR_465" /*Ventas de P&M*/;
 	
 		case 55:
-			return "EMSTR_468" /*SSA Super Autos Sales*/;
+			return "EMSTR_468" /*SSA Super Autos*/;
 	
 		case 56:
 			return "EMSTR_489" /*Hush Smush*/;
@@ -955,13 +955,13 @@ char* func_8(int iParam0) // Position - 0xBB3 (2995)
 			return "EMSTR_507" /*Misscuddles*/;
 	
 		case 63:
-			return "EMSTR_640" /*Off-Road Events*/;
+			return "EMSTR_640" /*Eventos todoterreno*/;
 	
 		case 64:
 			return "EMSTR_643" /*DockTease*/;
 	
 		case 65:
-			return "EMSTR_652" /*Brother Adrian*/;
+			return "EMSTR_652" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -1372,7 +1372,7 @@ int func_23(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x16B5 (5813
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -1638,7 +1638,7 @@ void func_31() // Position - 0x1AB9 (6841)
 
 BOOL func_32() // Position - 0x1B4E (6990)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -1744,7 +1744,7 @@ void func_38() // Position - 0x1D4E (7502)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -2178,16 +2178,16 @@ void func_56(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 {
 	int num;
 	int num2;
-	int num3;
+	BOOL flag;
 	var unk;
-	int num4;
-	int num5;
+	int num3;
+	BOOL flag2;
 	BOOL i;
 	BOOL j;
-	int num6;
+	int num4;
 	int k;
-	int num7;
-	int num8;
+	int num5;
+	BOOL flag3;
 
 	if (!(iParam0 < 3))
 		return;
@@ -2197,19 +2197,19 @@ void func_56(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 
 	if (!bParam2)
 	{
-		num4 = Global_49438[iParam1 /*46*/].f_42 - 1;
+		num3 = Global_49438[iParam1 /*46*/].f_42 - 1;
 	
-		if (num4 < 0)
+		if (num3 < 0)
 			return;
 	
-		num5 = Global_49438[iParam1 /*46*/].f_32[num4];
-		num3 = num5;
-		unk = { func_10(Global_46113[num5 /*12*/].f_1) };
+		flag2 = Global_49438[iParam1 /*46*/].f_32[num3];
+		flag = flag2;
+		unk = { func_10(Global_46113[flag2 /*12*/].f_1) };
 	
-		if (Global_46113[num5 /*12*/].f_2 == iParam0 && !(Global_46113[num5 /*12*/].f_3 == iParam0))
+		if (Global_46113[flag2 /*12*/].f_2 == iParam0 && !(Global_46113[flag2 /*12*/].f_3 == iParam0))
 			return;
 	
-		num2 = Global_46113[num5 /*12*/].f_2;
+		num2 = Global_46113[flag2 /*12*/].f_2;
 		num = Global_55051[iParam0 /*120*/];
 	
 		for (i = false; num >= 16; i = true)
@@ -2248,7 +2248,7 @@ void func_56(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 		}
 	
 		Global_55051[iParam0 /*120*/].f_18[num] = iParam1;
-		Global_55051[iParam0 /*120*/].f_1[num] = num4;
+		Global_55051[iParam0 /*120*/].f_1[num] = num3;
 		Global_55051[iParam0 /*120*/].f_35[num] = 0;
 		Global_55051[iParam0 /*120*/].f_86[num] = false;
 		Global_55051[iParam0 /*120*/].f_69[num] = false;
@@ -2293,33 +2293,33 @@ void func_56(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			}
 		}
 	
-		num6 = -1;
+		num4 = -1;
 		k = 0;
 	
 		for (k = 0; k < 7; k = k + 1)
 		{
 			if (Global_55413[k /*203*/].f_1 == iParam1 && Global_55413[k /*203*/].f_9 > 0)
-				num6 = k;
+				num4 = k;
 		}
 	
-		if (num6 == -1)
+		if (num4 == -1)
 			return;
 	
-		Global_55051[iParam0 /*120*/].f_18[num] = Global_55413[num6 /*203*/].f_1;
-		Global_55051[iParam0 /*120*/].f_1[num] = Global_55413[num6 /*203*/].f_9 - 1;
+		Global_55051[iParam0 /*120*/].f_18[num] = Global_55413[num4 /*203*/].f_1;
+		Global_55051[iParam0 /*120*/].f_1[num] = Global_55413[num4 /*203*/].f_9 - 1;
 		Global_55051[iParam0 /*120*/].f_35[num] = 0;
 		Global_55051[iParam0 /*120*/].f_86[num] = true;
 		Global_55051[iParam0 /*120*/].f_69[num] = false;
 		Global_55051[iParam0 /*120*/] = Global_55051[iParam0 /*120*/] + 1;
-		num7 = Global_55051[iParam0 /*120*/].f_1[num];
-		num8 = Global_55413[num6 /*203*/].f_10[num7 /*48*/];
-		num3 = num8;
-		num2 = Global_46113[num8 /*12*/].f_2;
+		num5 = Global_55051[iParam0 /*120*/].f_1[num];
+		flag3 = Global_55413[num4 /*203*/].f_10[num5 /*48*/];
+		flag = flag3;
+		num2 = Global_46113[flag3 /*12*/].f_2;
 	
-		if (Global_55413[num6 /*203*/].f_10[Global_55413[num6 /*203*/].f_9 - 1 /*48*/].f_1)
-			TEXT_LABEL_COPY(&unk, { Global_55413[num6 /*203*/].f_10[Global_55413[num6 /*203*/].f_9 - 1 /*48*/].f_2 }, 16);
+		if (Global_55413[num4 /*203*/].f_10[Global_55413[num4 /*203*/].f_9 - 1 /*48*/].f_1)
+			TEXT_LABEL_COPY(&unk, { Global_55413[num4 /*203*/].f_10[Global_55413[num4 /*203*/].f_9 - 1 /*48*/].f_2 }, 16);
 		else
-			unk = { func_10(Global_46113[num8 /*12*/].f_1) };
+			unk = { func_10(Global_46113[flag3 /*12*/].f_1) };
 	}
 
 	if (!bParam4)
@@ -2329,18 +2329,18 @@ void func_56(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			switch (iParam0)
 			{
 				case 0:
-					func_6(0, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_6(0, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 1:
-					if (num3 == 249)
-						func_6(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					if (flag == 249)
+						func_6(CHAR_FRANKLIN, num2, flag, "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
-						func_6(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_6(CHAR_FRANKLIN, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 2:
-					func_6(CHAR_TREVOR, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_6(CHAR_TREVOR, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			}
 		}
@@ -2476,7 +2476,7 @@ void func_58(var uParam0) // Position - 0x2C75 (11381)
 	{
 		case 1:
 			func_61(&blLocal_90);
-			_DISPLAY_HELP_TEXT("EPS_DROP_PERSON" /*This vehicle can't be delivered while there are passengers in it.*/, -1);
+			_DISPLAY_HELP_TEXT("EPS_DROP_PERSON" /*No puedes entregar este vehículo mientras lleve pasajeros.*/, -1);
 			*uParam0 = 2;
 			break;
 	
@@ -2504,7 +2504,7 @@ void func_58(var uParam0) // Position - 0x2C75 (11381)
 			}
 			else
 			{
-				_DISPLAY_HELP_TEXT("EPS_DROP_ESCAPE" /*Deliver the vehicle to the location marked ~HUD_COLOUR_MICHAEL~~BLIP_EPSILON~~s~*/, -1);
+				_DISPLAY_HELP_TEXT("EPS_DROP_ESCAPE" /*Entrega el vehículo en la ubicación que aparece como ~HUD_COLOUR_MICHAEL~~BLIP_EPSILON~~s~*/, -1);
 				func_83(2);
 			}
 			break;
@@ -2544,7 +2544,7 @@ BOOL func_59() // Position - 0x2D10 (11536)
 				{
 					if (!bLocal_100)
 					{
-						_DISPLAY_HELP_TEXT("EPS_DROP_FAIL" /*The vehicle is too damaged for the Epsilon Program. Find another one or repair it.*/, -1);
+						_DISPLAY_HELP_TEXT("EPS_DROP_FAIL" /*El vehículo está demasiado dañado para el Programa Epsilon. Busca otro o repáralo.*/, -1);
 						bLocal_100 = true;
 					}
 				
@@ -2600,7 +2600,7 @@ void func_62(var uParam0) // Position - 0x2DDD (11741)
 			{
 				case 0:
 					if (iLocal_101 == 1 && !uLocal_41.f_26)
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("EPS_DROP_MESS" /*Clear obstructions away from the garage or park closer to the wall.*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("EPS_DROP_MESS" /*Despeja el garaje o aparca más cerca de la pared.*/))
 							HUD::CLEAR_HELP(true);
 				
 					if (PLAYER::GET_PLAYER_WANTED_LEVEL(PLAYER::PLAYER_ID()) > 0)
@@ -2629,7 +2629,7 @@ void func_62(var uParam0) // Position - 0x2DDD (11741)
 							{
 								if (ENTITY::IS_ENTITY_IN_ANGLED_AREA(vehiclePedIsIn, uLocal_41.f_6[0 /*3*/], uLocal_41.f_6[1 /*3*/], uLocal_41.f_6.f_7, false, true, 0))
 								{
-									_SHOW_SUBTITLE_CLEAR_EXISTING("EPS_DROP_EXIT" /*Exit the vehicle.*/, 7500, 1);
+									_SHOW_SUBTITLE_CLEAR_EXISTING("EPS_DROP_EXIT" /*Sal del vehículo.*/, 7500, 1);
 									iLocal_104 = 0;
 									iLocal_102 = 1;
 									iLocal_101 = 0;
@@ -2672,7 +2672,7 @@ void func_62(var uParam0) // Position - 0x2DDD (11741)
 							if (iLocal_101 == 0)
 							{
 								HUD::CLEAR_PRINTS();
-								_DISPLAY_HELP_TEXT("EPS_DROP_MESS" /*Clear obstructions away from the garage or park closer to the wall.*/, -1);
+								_DISPLAY_HELP_TEXT("EPS_DROP_MESS" /*Despeja el garaje o aparca más cerca de la pared.*/, -1);
 								iLocal_101 = 1;
 								iLocal_102 = 0;
 							}
@@ -2800,7 +2800,7 @@ void func_69(var uParam0) // Position - 0x31B0 (12720)
 			func_61(&blLocal_90);
 		
 			if (iLocal_103 == 0)
-				_DISPLAY_HELP_TEXT("EPS_DROP_WANTED" /*This vehicle can't be delivered while wanted. Lose your wanted rating.*/, -1);
+				_DISPLAY_HELP_TEXT("EPS_DROP_WANTED" /*Este vehículo no se puede entregar si estás en busca y captura. Líbrate del nivel de búsqueda.*/, -1);
 		
 			*uParam0 = 2;
 			break;
@@ -2818,7 +2818,7 @@ void func_69(var uParam0) // Position - 0x31B0 (12720)
 			else
 			{
 				if (iLocal_103 == 0)
-					_DISPLAY_HELP_TEXT("EPS_DROP_ESCAPE" /*Deliver the vehicle to the location marked ~HUD_COLOUR_MICHAEL~~BLIP_EPSILON~~s~*/, -1);
+					_DISPLAY_HELP_TEXT("EPS_DROP_ESCAPE" /*Entrega el vehículo en la ubicación que aparece como ~HUD_COLOUR_MICHAEL~~BLIP_EPSILON~~s~*/, -1);
 			
 				func_83(2);
 			}
@@ -2878,7 +2878,7 @@ void func_70(var uParam0) // Position - 0x322B (12843)
 				if (veLocal_115 != PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), true))
 				{
 					veLocal_115 = PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), true);
-					_DISPLAY_HELP_TEXT("EPS_DROP_HELP" /*This vehicle is wanted by the Epsilon Program. Deliver it to the location marked ~HUD_COLOUR_MICHAEL~~BLIP_EPSILON~~s~*/, -1);
+					_DISPLAY_HELP_TEXT("EPS_DROP_HELP" /*El Programa Epsilon desea obtener este vehículo. Entrégalo en la ubicación que aparece como ~HUD_COLOUR_MICHAEL~~BLIP_EPSILON~~s~*/, -1);
 					iLocal_99 = 1;
 				}
 			}
@@ -3088,7 +3088,7 @@ void func_85(int iParam0, BOOL bParam1) // Position - 0x36FC (14076)
 			func_86(iParam0, 3, false);
 			func_86(iParam0, 4, false);
 			func_86(iParam0, 0, true);
-			Global_79070[iParam0] = 1;
+			Global_79070[iParam0] = true;
 		}
 	}
 	else
@@ -3193,20 +3193,20 @@ void func_94() // Position - 0x38CD (14541)
 	iLocal_84[3] = joaat("superd");
 	iLocal_84[4] = joaat("double");
 	uLocal_68[0 /*3*/] = 1;
-	uLocal_68[0 /*3*/].f_1 = "EPS_GMAIL_G5" /*Brother,~n~~n~These are the vehicles that the higher beings require:~a~ ~a~ ~a~ ~a~ ~a~ ~n~Make sure these vehicles are delivered in a condition befitting the level of divine understanding that our thesis holders have reached.  Carry out this small task for us and you will be rewarded with knowledge of infinitely greater value.  Kraff be praised!*/;
-	uLocal_68[0 /*3*/].f_2 = "EPS_BMAIL_G5" /*Brother, ~n~~n~These are the vehicles that the higher beings require:~a~ ~a~ ~a~ ~a~ ~a~ ~n~Make sure these vehicles are delivered in a condition befitting the level of divine understanding that our thesis holders have reached.  Carry out this small task for us and you will be rewarded with knowledge of infinitely greater value.  Kraff be praised!*/;
+	uLocal_68[0 /*3*/].f_1 = "EPS_GMAIL_G5" /*Hermano,~n~~n~Estos son los vehículos que requieren los seres superiores:~a~ ~a~ ~a~ ~a~ ~a~ ~n~Asegúrate de que esos vehículos, al entregarlos, estén en una condición igualable al nivel de comprensión divina a la que han llegado nuestros poseedores de la tesis. Lleva a cabo esta pequeña tarea para nosotros y se te recompensará con conocimiento, infinitamente más valioso. Lleva a cabo esta pequeña tarea para nosotros y se te recompensará con conocimiento, infinitamente más valioso. ¡Alabado sea Kraff!*/;
+	uLocal_68[0 /*3*/].f_2 = "EPS_BMAIL_G5" /*Hermano:~n~~n~Estos son los vehículos que requieren los seres celestiales:~a~ ~a~ ~a~ ~a~ ~a~ ~n~Asegúrate de que esos vehículos, al entregarlos, estén en una condición igualable al nivel de comprensión divina a la que han llegado nuestros poseedores de la tesis. Lleva a cabo esta pequeña tarea para nosotros y se te recompensará con conocimiento, infinitamente más valioso. ¡Alabado sea Kraff!*/;
 	uLocal_68[1 /*3*/] = 2;
-	uLocal_68[1 /*3*/].f_1 = "EPS_GMAIL_G4" /*Kifflom Brother,~n~~n~The higher beings now require these vehicles:~a~ ~a~ ~a~ ~a~ ~n~The color is of no consequence.  We will judge you in many ways but none so superficial. ~n~~n~Kraff be praised!*/;
-	uLocal_68[1 /*3*/].f_2 = "EPS_BMAIL_G4" /*Very disappointing, Brother,~n~~n~The offering you made was not what we were expecting of you.  The higher beings have now requested these vehicles:~a~ ~a~ ~a~ ~a~ ~n~Accomplish this and you might still be Saveable.  Unlimit your limitations! ~n~~n~Kraff be praised!*/;
+	uLocal_68[1 /*3*/].f_1 = "EPS_GMAIL_G4" /*Kifflom, hermano:~n~~n~Los seres celestiales ahora requieren estos vehículos:~a~ ~a~ ~a~ ~a~ ~n~El color no es relevante. Te juzgaremos de muchas maneras, pero no de forma tan superficial.~n~~n~¡Alabado sea Kraff!*/;
+	uLocal_68[1 /*3*/].f_2 = "EPS_BMAIL_G4" /*Muy decepcionante, hermano:~n~~n~La ofrenda que has hecho no es lo que esperábamos de ti. Los seres superiores ahora han pedido estos vehículos:~a~ ~a~ ~a~ ~a~ ~n~Consigue esto y puede que aún seas Salvable. ¡Deslimita tus limitaciones!~n~~n~¡Alabado sea Kraff!*/;
 	uLocal_68[2 /*3*/] = 3;
-	uLocal_68[2 /*3*/].f_1 = "EPS_GMAIL_G3" /*Brother,~n~~n~Kraff desires these vehicles:~a~ ~a~ ~a~ ~n~Know that Cris and the other higher beings recognize your commitment to the divine truth.  Find these vehicles and you will be richly rewarded with powerful tools that you do not understand. ~n~~n~Kraff be praised!*/;
-	uLocal_68[2 /*3*/].f_2 = "EPS_BMAIL_G3" /*Have we over-estimated your capabilities? ~n~~n~Your last offering was not received well and the senior thesis holders now requested these vehicles:~a~ ~a~ ~a~ ~n~Carry out these wishes and prove that you are not an Objectionable Person.~n~~n~Kraff be praised!*/;
+	uLocal_68[2 /*3*/].f_1 = "EPS_GMAIL_G3" /*Hermano:~n~~n~Kraff desea estos vehículos:~a~ ~a~ ~a~ ~n~Debes saber que Cris y los otros seres celestiales reconocen tu compromiso con la verdad divina. Encuentra estos vehículos se te recompensará ampliamente, con herramientas poderosas que no comprendes.~n~~n~¡Alabado sea Kraff!*/;
+	uLocal_68[2 /*3*/].f_2 = "EPS_BMAIL_G3" /*¿Acaso hemos sobreestimado tus capacidades?~n~~n~Tu última ofrenda no ha sido bien recibida, y los veteranos poseedores de la tesis han pedido estos vehículos:~a~ ~a~ ~a~ ~n~Cumple con estos deseos y demuéstranos que no eres una persona indeseable.~n~~n~¡Alabado sea Kraff!*/;
 	uLocal_68[3 /*3*/] = 4;
-	uLocal_68[3 /*3*/].f_1 = "EPS_GMAIL_G2" /*Dear Brother,~n~~n~Cris has requested delivery of these vehicles as swiftly as possible:~a~ ~a~ ~n~Many are relying on you to fulfill these requirements.  Do not disappoint.~n~~n~Kraff be praised!*/;
-	uLocal_68[3 /*3*/].f_2 = "EPS_BMAIL_G2" /*Brother,~n~~n~All evidence points to you being an Unsaveable.  You have one more chance to prove us wrong by sourcing these vehicles:~a~ ~a~ ~n~Spare yourself the wrath of Kraff, for it will not spare you!*/;
+	uLocal_68[3 /*3*/].f_1 = "EPS_GMAIL_G2" /*Querido hermano:~n~~n~Cris ha pedido la entrega de estos vehículos tan rápido como sea posible:~a~ ~a~ ~n~Muchos dependen de ti para estos requerimientos. No nos decepciones.~n~~n~¡Alabado sea Kraff!*/;
+	uLocal_68[3 /*3*/].f_2 = "EPS_BMAIL_G2" /*Hermano:~n~~n~Todas las señales indican que eres un insalvable. Tienes una oportunidad más para demostrarnos que no es así. Consíguenos estos vehículos:~a~ ~a~ ~n~Evita la ira de Kraff, ¡ahora que todavía puedes!*/;
 	uLocal_68[4 /*3*/] = 5;
-	uLocal_68[4 /*3*/].f_1 = "EPS_GMAIL_G1" /*Kifflom Brother,~n~~n~One of our highest thesis holders has requested this vehicle:~a~ ~n~Prove to us that you are ready to understand the technology of your existence with this act of selflessness.~n~~n~Kraff be praised!*/;
-	uLocal_68[4 /*3*/].f_2 = "EPS_BMAIL_G1" /*Brother,~n~~n~Cris demands that you deliver this vehicle as a sign of your commitment to the divine truth:~a~ ~n~What would you rather do?  Carry out this simple task or die without ever knowing your eternal self?  The choice is yours.~n~~n~Kraff be praised!*/;
+	uLocal_68[4 /*3*/].f_1 = "EPS_GMAIL_G1" /*Kifflom, hermano:~n~~n~Uno de nuestros poseedores de la tesis más avanzados ha pedido este vehículo:~a~ ~n~Muéstranos que ya estás listo para comprender la tecnología de tu existencia con este acto desinteresado.~n~~n~¡Alabado sea Kraff!*/;
+	uLocal_68[4 /*3*/].f_2 = "EPS_BMAIL_G1" /*Hermano:~n~~n~Cris ha pedido la entrega de este vehículo como señal de tu dedicación a la verdad divina:~a~ ~n~¿Qué prefieres hacer? ¿Llevar a cabo una tarea simple, o morir sin conocer tu yo eterno? La decisión es tuya.~n~~n~¡Alabado sea Kraff!*/;
 	return;
 }
 

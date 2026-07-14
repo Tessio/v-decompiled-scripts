@@ -178,7 +178,7 @@ BOOL func_1() // Position - 0x1C6 (454)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -196,7 +196,7 @@ BOOL func_3() // Position - 0x218 (536)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -211,9 +211,9 @@ void func_4() // Position - 0x241 (577)
 	return;
 }
 
-BOOL func_5(eControlType ectParam0, BOOL bParam1, int iParam2) // Position - 0x262 (610)
+BOOL func_5(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x262 (610)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, bParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, bParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
@@ -233,7 +233,7 @@ void func_6() // Position - 0x2D4 (724)
 	if (BUILTIN::TIMERA() > 2200)
 	{
 		if (Global_21615)
-			func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+			func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 		else
 			func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, 0, 0, 0, 0, 0);
 	
@@ -299,7 +299,7 @@ void func_8() // Position - 0x3D7 (983)
 			
 				if (Global_21615)
 				{
-					func_7(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+					func_7(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 					func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 14f, -1f, -1f, "CELL_213" /*NO*/, 0, 0, 0, 0);
 				}
 				else
@@ -447,9 +447,9 @@ void func_14() // Position - 0x695 (1685)
 	if (Global_21615)
 	{
 		if (bLocal_58)
-			func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+			func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 		else
-			func_7(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*CALL*/, 0, 0, 0, 0);
+			func_7(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 13f, -1f, -1f, "CELL_201" /*LLAMAR*/, 0, 0, 0, 0);
 	
 		func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 14f, -1f, -1f, "CELL_213" /*NO*/, 0, 0, 0, 0);
 	}
@@ -480,12 +480,12 @@ void func_15() // Position - 0x7E5 (2021)
 	TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_25), AUDIO::GET_PLAYER_RADIO_STATION_NAME(), 24);
 
 	if (!HUD::DOES_TEXT_LABEL_EXIST(&uLocal_18))
-		TEXT_LABEL_ASSIGN_STRING(&uLocal_18, "CELL_195" /*Unknown*/, 64);
+		TEXT_LABEL_ASSIGN_STRING(&uLocal_18, "CELL_195" /*Desconocido*/, 64);
 
 	if (!HUD::DOES_TEXT_LABEL_EXIST(&(uLocal_18.f_16)))
 	{
-		TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_16), "CELL_195" /*Unknown*/, 32);
-		TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_25), "CELL_195" /*Unknown*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_16), "CELL_195" /*Desconocido*/, 32);
+		TEXT_LABEL_ASSIGN_STRING(&(uLocal_18.f_25), "CELL_195" /*Desconocido*/, 24);
 	}
 
 	return;

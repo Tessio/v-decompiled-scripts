@@ -63,7 +63,7 @@ void main() // Position - 0x0 (0)
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("stock_controller")) > 1)
 		func_99();
 
-	Global_64994 = true;
+	Global_64994 = 1;
 	iLocal_20 = BUILTIN::ROUND(BUILTIN::TO_FLOAT(480) / 16f);
 	func_98();
 	i = 0;
@@ -92,7 +92,7 @@ void main() // Position - 0x0 (0)
 	func_95();
 	func_94();
 	func_91();
-	Global_64994 = false;
+	Global_64994 = 0;
 	func_90(true);
 	func_87();
 	func_84();
@@ -233,7 +233,7 @@ void func_4() // Position - 0x2B1 (689)
 
 int func_5() // Position - 0x2FE (766)
 {
-	int i;
+	BOOL i;
 	int num;
 	Hash statHash;
 	float num2;
@@ -244,10 +244,10 @@ int func_5() // Position - 0x2FE (766)
 	if (!NETWORK::NETWORK_IS_SIGNED_ONLINE() || !NETWORK::NETWORK_HAS_VALID_ROS_CREDENTIALS())
 		return 1;
 
-	i = 0;
+	i = false;
 	num = 0;
 
-	for (i = 0; i < 80; i = i + 1)
+	for (i = false; i < 80; i = i + 1)
 	{
 		if (Global_57309[i /*36*/].f_8)
 		{
@@ -301,13 +301,13 @@ int func_5() // Position - 0x2FE (766)
 	return num;
 }
 
-float func_6(int iParam0) // Position - 0x497 (1175)
+float func_6(BOOL bParam0) // Position - 0x497 (1175)
 {
 	int num;
 	float num2;
 
-	num = iParam0;
-	num2 = Global_57309[iParam0 /*36*/].f_9 * func_7(num);
+	num = bParam0;
+	num2 = Global_57309[bParam0 /*36*/].f_9 * func_7(num);
 	return BUILTIN::TO_FLOAT(BUILTIN::FLOOR(num2 * 100f)) / 100f;
 }
 
@@ -1611,7 +1611,7 @@ float func_43(int iParam0) // Position - 0x1CD1 (7377)
 	return 1f - (num9 / num10);
 }
 
-int func_44(int iParam0, int iParam1) // Position - 0x1E26 (7718)
+BOOL func_44(int iParam0, int iParam1) // Position - 0x1E26 (7718)
 {
 	if (iParam1 < 0 || iParam1 > 9)
 		return 31;
@@ -3258,16 +3258,16 @@ void func_70(int iParam0) // Position - 0x43F1 (17393)
 	return;
 }
 
-void func_71(var uParam0, int iParam1) // Position - 0x44B4 (17588)
+void func_71(BOOL bParam0, int iParam1) // Position - 0x44B4 (17588)
 {
 	int i;
 
 	for (i = 0; i < iParam1; i = i + 1)
 	{
 		if (i < iParam1 - 1)
-			uParam0->[i] = uParam0->[i + 1];
+			bParam0->[i] = bParam0->[i + 1];
 		else
-			uParam0->[i] = MISC::GET_GAME_TIMER();
+			bParam0->[i] = MISC::GET_GAME_TIMER();
 	}
 
 	return;
@@ -3795,7 +3795,7 @@ BOOL _IS_PLAYER_IN_VEHICLE_SEAT(Player plParam0, int iParam1) // Position - 0x4D
 	return false;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x4D61 (19809)
+ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x4D61 (19809)
 {
 	ePedComponentType type;
 
@@ -3807,19 +3807,19 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 		{
 			if (bIsPlaying)
 				if (!PLAYER::IS_PLAYER_PLAYING(player))
-					return false;
+					return PV_COMP_HEAD;
 		
 			if (bUnk)
 				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
 				else if (Global_2658291[type /*468*/] != 4)
-					return false;
+					return PV_COMP_HEAD;
 		
-			return true;
+			return PV_COMP_BERD;
 		}
 	}
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 void func_84() // Position - 0x4DC1 (19905)
@@ -3857,7 +3857,7 @@ void func_85(int iParam0) // Position - 0x4DD8 (19928)
 	return;
 }
 
-int func_86(int iParam0, int iParam1) // Position - 0x4E40 (20032)
+int func_86(int iParam0, BOOL bParam1) // Position - 0x4E40 (20032)
 {
 	int i;
 
@@ -3866,19 +3866,19 @@ int func_86(int iParam0, int iParam1) // Position - 0x4E40 (20032)
 		switch (iParam0)
 		{
 			case 0:
-				if (Global_114904.f_20571[i] == iParam1)
+				if (Global_114904.f_20571[i] == bParam1)
 					if (Global_114904.f_20571.f_22[i] > 0)
 						return Global_114904.f_20571.f_22[i];
 				break;
 		
 			case 1:
-				if (Global_114904.f_20571.f_33[i] == iParam1)
+				if (Global_114904.f_20571.f_33[i] == bParam1)
 					if (Global_114904.f_20571.f_55[i] > 0)
 						return Global_114904.f_20571.f_55[i];
 				break;
 		
 			case 2:
-				if (Global_114904.f_20571.f_66[i] == iParam1)
+				if (Global_114904.f_20571.f_66[i] == bParam1)
 					if (Global_114904.f_20571.f_88[i] > 0)
 						return Global_114904.f_20571.f_88[i];
 				break;
@@ -4357,50 +4357,50 @@ void func_95() // Position - 0x5B64 (23396)
 		}
 	}
 
-	func_96(55, "ECL_P_SR_H" /*World gulping eCola in record volume, stocks up.*/, "ECL_P_SR_C", 0, 0);
-	func_96(55, "ECL_P_SF_H" /*Ecola 'sugar water' losing favour among investors.*/, "ECL_P_SF_C", 1, 0);
-	func_96(55, "ECL_P_RF_H" /*eCola stocks all over the place, sticky*/, "ECL_P_RF_C", 2, 0);
-	func_96(51, "BGR_P_SR_H" /*Burgershot stocks shoot up like cholesterol.*/, "BGR_P_SR_C", 0, 0);
-	func_96(51, "BGR_P_SF_H" /*Burgershot junk food stocks down.*/, "BGR_P_SF_C", 1, 0);
-	func_96(52, "CLK_P_SR_H" /*Cluckin' Bell stocks up on "Free Range is for Fairies" campaign.*/, "CLK_P_SR_C", 0, 0);
-	func_96(52, "CLK_P_SF_H" /*Cluckin' Bell chicken cruelty video brings stocks down.*/, "CLK_P_SF_C", 1, 0);
-	func_96(52, "CLK_P_RF_H" /*Investors don't know what to do with Cluckin' Bell fast food stocks.*/, "CLK_P_RF_C", 2, 0);
-	func_96(48, "BEN_P_SR_H" /*Bean Machine uses tax loopholes to win big.  Stocks rise.*/, "BEN_P_SR_C", 0, 0);
-	func_96(48, "BEN_P_SF_H" /*Fair trade coffee killing Bean Machine profits.  Stocks down.*/, "BEN_P_SF_C", 1, 0);
-	func_96(48, "BEN_P_RF_H" /*Coffee giant Bean Machine sees stocks moody, edgy.*/, "BEN_P_RF_C", 2, 0);
-	func_96(13, "FLC_P_SR_H" /*Credit card fees rack up huge profits says Fleeca.*/, "FLC_P_SR_C", 0, 0);
-	func_96(13, "FLC_P_SF_H" /*Cash is king - under the table deals killing Fleeca stock.*/, "FLC_P_SF_C", 1, 0);
-	func_96(13, "FLC_P_RF_H" /*Fleeca stock unsteady as market flails aimlessly.*/, "FLC_P_RF_C", 2, 0);
-	func_96(64, "PRO_P_SR_H" /*Prolaps shares up despite Bangladesh factory fire.*/, "PRO_P_SR_C", 0, 0);
-	func_96(64, "PRO_P_SF_H" /*Prolaps shares down as America goes more hipster.*/, "PRO_P_SF_C", 1, 0);
-	func_96(64, "PRO_P_RF_H" /*Prolaps unsteady after football player rampage.*/, "PRO_P_RF_C", 2, 0);
-	func_96(70, "UNI_P_SR_H" /*Vanilla Unicorn Strip Clubs are packed, stocks are up.*/, "UNI_P_SR_C", 0, 0);
-	func_96(70, "UNI_P_SF_H" /*Vanilla Unicorn strippers cry as stocks drop.*/, "UNI_P_SF_C", 1, 0);
-	func_96(70, "UNI_P_RF_H" /*Vanilla Unicorn Strip club stocks and clientele unpredictable.*/, "UNI_P_RF_C", 2, 0);
-	func_96(60, "KRP_P_SR_H" /*Krapea CEO announces new tax avoidance plan.  Stocks up.*/, "KRP_P_SR_C", 0, 0);
-	func_96(60, "KRP_P_SF_H" /*Krapea particle board furniture falling out of favour.*/, "KRP_P_SF_C", 1, 0);
-	func_96(60, "KRP_P_RF_H" /*Directions confusing for Krapea.*/, "KRP_P_RF_C", 2, 0);
-	func_96(56, "FUS_P_SR_H" /*No Strike! FlyUS stocks surge.*/, "FUS_P_SR_C", 0, 0);
-	func_96(56, "FUS_P_SF_H" /*Food poisoning on 154 FlyUS flights brings stock down.*/, "FUS_P_SF_C", 1, 0);
-	func_96(56, "FUS_P_RF_H" /*FlyUS stock hitting turbulence, bad headline.*/, "FUS_P_RF_C", 2, 0);
-	func_96(58, "GOP_P_SR_H" /*60% of shipments contain drugs says Go Postal CEO - stocks rise.*/, "GOP_P_SR_C", 0, 0);
-	func_96(58, "GOP_P_SF_H" /*Go Postal going profitless.*/, "GOP_P_SF_C", 1, 0);
-	func_96(58, "GOP_P_RF_H" /*Go Postal stocks unsteady as America ships less.*/, "GOP_P_RF_C", 2, 0);
-	func_96(53, "BAN_P_SR_H" /*Snotty coffee house Cool Beans stocks surge.*/, "BAN_P_SR_C", 0, 0);
-	func_96(53, "BAN_P_SF_H" /*Prices cool off for Cool Beans.*/, "BAN_P_SF_C", 1, 0);
-	func_96(53, "BAN_P_RF_H" /*Cool Beans stocks up, then down, then up.*/, "BAN_P_RF_C", 2, 0);
-	func_96(62, "MAX_P_SR_H" /*Female insecurity sends Max Renda stocks up.*/, "MAX_P_SR_C", 0, 0);
-	func_96(62, "MAX_P_SF_H" /*Max Renda stocks runny.*/, "MAX_P_SF_C", 1, 0);
-	func_96(62, "MAX_P_RF_H" /*Max Renda stocks bipolar.*/, "MAX_P_RF_C", 2, 0);
-	func_96(57, "GAS_P_SR_H" /*Surgery soars price of Gastro Band stock.*/, "GAS_P_SR_C", 0, 0);
-	func_96(57, "GAS_P_SF_H" /*Another Gastro Band stock brings price down.*/, "GAS_P_SF_C", 1, 0);
-	func_96(57, "GAS_P_RF_H" /*Gastro Band stock - feast then famine.*/, "GAS_P_RF_C", 2, 0);
-	func_96(59, "GRU_P_SR_H" /*GruppeSechs not all it's cracked up to be.*/, "GRU_P_SR_C", 0, 0);
-	func_96(59, "GRU_P_SF_H" /*GruppeSechs down after heist.*/, "GRU_P_SF_C", 1, 0);
-	func_96(59, "GRU_P_RF_H" /*GruppeSechs unsteady if investors decide whether to join in.*/, "GRU_P_RF_C", 2, 0);
-	func_96(44, "PMP_P_SR_H" /*Pump and Run franchise sees stock rise as abs harden.*/, "PMP_P_SR_C", 0, 0);
-	func_96(44, "PMP_P_SF_H" /*Americans not going to gym. Prefer binge eating. Pump and Run shares drop.*/, "PMP_P_SF_C", 1, 0);
-	func_96(44, "PMP_P_RF_H" /*PMP shares volatile as gym attendance murky.*/, "PMP_P_RF_C", 2, 0);
+	func_96(55, "ECL_P_SR_H" /*El mundo ingiere eCola en cantidades industriales. Sus acciones suben.*/, "ECL_P_SR_C", 0, 0);
+	func_96(55, "ECL_P_SF_H" /*Los inversores pierden el interés en el agua azucarada de eCola.*/, "ECL_P_SF_C", 1, 0);
+	func_96(55, "ECL_P_RF_H" /*Las acciones de eCola no saben hacia dónde ir y se muestran pegajosas.*/, "ECL_P_RF_C", 2, 0);
+	func_96(51, "BGR_P_SR_H" /*Las acciones de Burger Shot suben como el colesterol.*/, "BGR_P_SR_C", 0, 0);
+	func_96(51, "BGR_P_SF_H" /*Las acciones de la comida basura de Burger Shot bajan.*/, "BGR_P_SF_C", 1, 0);
+	func_96(52, "CLK_P_SR_H" /*Las acciones de Cluckin' Bell suben tras su campaña "los pollos de corral son para cobardes".*/, "CLK_P_SR_C", 0, 0);
+	func_96(52, "CLK_P_SF_H" /*Un vídeo sobre la crueldad con los pollos de Cluckin' Bell hace que sus acciones bajen.*/, "CLK_P_SF_C", 1, 0);
+	func_96(52, "CLK_P_RF_H" /*Los inversores no saben qué hacer con las acciones de la cadena de comida rápida Cluckin' Bell.*/, "CLK_P_RF_C", 2, 0);
+	func_96(48, "BEN_P_SR_H" /*Bean Machine usa lagunas fiscales para ahorrar mucho dinero. Las acciones suben.*/, "BEN_P_SR_C", 0, 0);
+	func_96(48, "BEN_P_SF_H" /*El café de comercio justo está acabando con los beneficios de Bean Machine. Las acciones bajan.*/, "BEN_P_SF_C", 1, 0);
+	func_96(48, "BEN_P_RF_H" /*Las acciones de Bean Machine, el gigante del café, se muestran ariscas.*/, "BEN_P_RF_C", 2, 0);
+	func_96(13, "FLC_P_SR_H" /*Fleeca anuncia que las cuotas de las tarjetas de crédito proporcionan enormes beneficios.*/, "FLC_P_SR_C", 0, 0);
+	func_96(13, "FLC_P_SF_H" /*El dinero en metálico es lo que cuenta: los acuerdos ilegales hacen caer las acciones de Fleeca.*/, "FLC_P_SF_C", 1, 0);
+	func_96(13, "FLC_P_RF_H" /*La cotización de Fleeca se muestra inestable mientras el mercado da bandazos.*/, "FLC_P_RF_C", 2, 0);
+	func_96(64, "PRO_P_SR_H" /*Las acciones de Prolaps suben a pesar del incendio en la fábrica de Bangladesh.*/, "PRO_P_SR_C", 0, 0);
+	func_96(64, "PRO_P_SF_H" /*Las acciones de Prolaps bajan mientras América se hace más gafapasta.*/, "PRO_P_SF_C", 1, 0);
+	func_96(64, "PRO_P_RF_H" /*Prolaps inestable después de la masacre del jugador de fútbol americano.*/, "PRO_P_RF_C", 2, 0);
+	func_96(70, "UNI_P_SR_H" /*Los clubs de striptease Vanilla Unicorn están a rebosar y sus acciones suben.*/, "UNI_P_SR_C", 0, 0);
+	func_96(70, "UNI_P_SF_H" /*Las strippers de Vanilla Unicorn lloran mientras su cotización baja.*/, "UNI_P_SF_C", 1, 0);
+	func_96(70, "UNI_P_RF_H" /*Las acciones de los clubs de striptease Vanilla Unicorn son tan impredecibles como su clientela.*/, "UNI_P_RF_C", 2, 0);
+	func_96(60, "KRP_P_SR_H" /*El director ejecutivo de Krapea anuncia un nuevo plan de evasión de impuestos. Las acciones suben.*/, "KRP_P_SR_C", 0, 0);
+	func_96(60, "KRP_P_SF_H" /*El mobiliario de aglomerado de Krapea empieza a pasarse de moda.*/, "KRP_P_SF_C", 1, 0);
+	func_96(60, "KRP_P_RF_H" /*La confusión reina en Krapea.*/, "KRP_P_RF_C", 2, 0);
+	func_96(56, "FUS_P_SR_H" /*¡No hay huelga! Las acciones de FlyUS suben.*/, "FUS_P_SR_C", 0, 0);
+	func_96(56, "FUS_P_SF_H" /*La intoxicación alimentaria masiva en 154 vuelos de FlyUS hace caer sus acciones.*/, "FUS_P_SF_C", 1, 0);
+	func_96(56, "FUS_P_RF_H" /*Las acciones de FlyUS sufren turbulencias.*/, "FUS_P_RF_C", 2, 0);
+	func_96(58, "GOP_P_SR_H" /*El 60% de los envíos contienen drogas, dice el director ejecutivo de Go Postal. Las acciones suben.*/, "GOP_P_SR_C", 0, 0);
+	func_96(58, "GOP_P_SF_H" /*Go Postal deja de tener beneficios.*/, "GOP_P_SF_C", 1, 0);
+	func_96(58, "GOP_P_RF_H" /*Las acciones de Go Postal se tambalean mientras América envía menos correspondencia.*/, "GOP_P_RF_C", 2, 0);
+	func_96(53, "BAN_P_SR_H" /*Las acciones de las cafeterías pijas Cool Beans suben.*/, "BAN_P_SR_C", 0, 0);
+	func_96(53, "BAN_P_SF_H" /*La cotización de Cool Beans se enfría.*/, "BAN_P_SF_C", 1, 0);
+	func_96(53, "BAN_P_RF_H" /*Las acciones de Cool Beans suben y bajan y suben.*/, "BAN_P_RF_C", 2, 0);
+	func_96(62, "MAX_P_SR_H" /*La inseguridad femenina hace subir la cotización de Max Renda.*/, "MAX_P_SR_C", 0, 0);
+	func_96(62, "MAX_P_SF_H" /*Las acciones de Max Renda chorrean.*/, "MAX_P_SF_C", 1, 0);
+	func_96(62, "MAX_P_RF_H" /*La cotización de Max Renda se comporta de forma bipolar.*/, "MAX_P_RF_C", 2, 0);
+	func_96(57, "GAS_P_SR_H" /*Las intervenciones se disparan y las acciones de Gastro Band también.*/, "GAS_P_SR_C", 0, 0);
+	func_96(57, "GAS_P_SF_H" /*Otro excedente de stock de Gastro Band hace caer su cotización.*/, "GAS_P_SF_C", 1, 0);
+	func_96(57, "GAS_P_RF_H" /*Las acciones de Gastro Band se dan un atracón y luego se ponen a dieta.*/, "GAS_P_RF_C", 2, 0);
+	func_96(59, "GRU_P_SR_H" /*GruppeSechs: no es oro todo lo que reluce.*/, "GRU_P_SR_C", 0, 0);
+	func_96(59, "GRU_P_SF_H" /*GruppeSechs baja después de un golpe.*/, "GRU_P_SF_C", 1, 0);
+	func_96(59, "GRU_P_RF_H" /*GruppeSechs se tambalea mientras los inversores deciden si compran o venden.*/, "GRU_P_RF_C", 2, 0);
+	func_96(44, "PMP_P_SR_H" /*Sube la cotización de la franquicia Pump and Run a medida que los abdominales se endurecen.*/, "PMP_P_SR_C", 0, 0);
+	func_96(44, "PMP_P_SF_H" /*Los estadounidenses no van al gimnasio y prefieren darse atracones. Caen las acciones de Pump and Run.*/, "PMP_P_SF_C", 1, 0);
+	func_96(44, "PMP_P_RF_H" /*Las grises cifras de asistencia a gimnasios provocan inestabilidad en las acciones de PMP.*/, "PMP_P_RF_C", 2, 0);
 	randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, Global_62471 - 1);
 
 	for (i = 0; i < 4; i = i + 1)
@@ -4524,7 +4524,7 @@ void func_98() // Position - 0x5F5F (24415)
 	TEXT_LABEL_ASSIGN_STRING(&(Global_57309[11 /*36*/].f_4), "BSS_BSTR_22" /*WAP*/, 16);
 	Global_57309[11 /*36*/].f_8 = 1;
 	Global_57309[11 /*36*/].f_35 = 10;
-	TEXT_LABEL_ASSIGN_STRING(&Global_57309[12 /*36*/], "BSS_BSTR_23" /*Facade*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&Global_57309[12 /*36*/], "BSS_BSTR_23" /*Façade*/, 16);
 	TEXT_LABEL_ASSIGN_STRING(&(Global_57309[12 /*36*/].f_4), "BSS_BSTR_24" /*FAC*/, 16);
 	Global_57309[12 /*36*/].f_8 = 1;
 	Global_57309[12 /*36*/].f_35 = 11;
@@ -4732,7 +4732,7 @@ void func_98() // Position - 0x5F5F (24415)
 	TEXT_LABEL_ASSIGN_STRING(&(Global_57309[63 /*36*/].f_4), "BSS_BSTR_126" /*POP*/, 16);
 	Global_57309[63 /*36*/].f_8 = 0;
 	Global_57309[63 /*36*/].f_35 = 27;
-	TEXT_LABEL_ASSIGN_STRING(&Global_57309[64 /*36*/], "BSS_BSTR_127" /*ProLaps*/, 16);
+	TEXT_LABEL_ASSIGN_STRING(&Global_57309[64 /*36*/], "BSS_BSTR_127" /*Prolaps*/, 16);
 	TEXT_LABEL_ASSIGN_STRING(&(Global_57309[64 /*36*/].f_4), "BSS_BSTR_128" /*PRO*/, 16);
 	Global_57309[64 /*36*/].f_8 = 0;
 	Global_57309[64 /*36*/].f_35 = 28;

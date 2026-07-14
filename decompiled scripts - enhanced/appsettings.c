@@ -131,15 +131,15 @@ void main() // Position - 0x0 (0)
 		TEXT_LABEL_ASSIGN_STRING(&(Global_10302[3 /*2811*/][0 /*281*/].f_2), "CELL_701" /*Snapmatic*/, 16);
 		Global_10302[3 /*2811*/][0 /*281*/].f_6 = 19;
 		Global_10302[3 /*2811*/][0 /*281*/].f_280 = 1;
-		TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][0 /*281*/].f_7[0 /*4*/], "CELL_704" /*Quick launch Off*/, 16);
+		TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][0 /*281*/].f_7[0 /*4*/], "CELL_704" /*Inicio rápido desactivado*/, 16);
 		Global_10302[3 /*2811*/][0 /*281*/].f_124[0] = 1;
 		Global_10302[3 /*2811*/][0 /*281*/].f_84[0] = 170;
 		Global_10302[3 /*2811*/][0 /*281*/].f_104[0] = 19;
-		TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][0 /*281*/].f_7[1 /*4*/], "CELL_703" /*Quick launch On*/, 16);
+		TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][0 /*281*/].f_7[1 /*4*/], "CELL_703" /*Inicio rápido activado*/, 16);
 		Global_10302[3 /*2811*/][0 /*281*/].f_124[1] = 1;
 		Global_10302[3 /*2811*/][0 /*281*/].f_84[1] = 175;
 		Global_10302[3 /*2811*/][0 /*281*/].f_104[1] = 19;
-		TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][0 /*281*/].f_7[2 /*4*/], "CELL_801" /*Sleep Mode*/, 16);
+		TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][0 /*281*/].f_7[2 /*4*/], "CELL_801" /*Modo suspensión*/, 16);
 		Global_10302[3 /*2811*/][0 /*281*/].f_124[2] = 0;
 		Global_10302[3 /*2811*/][0 /*281*/].f_84[2] = 190;
 		Global_10302[3 /*2811*/][0 /*281*/].f_104[2] = 26;
@@ -241,7 +241,7 @@ BOOL func_1() // Position - 0x449 (1097)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -436,7 +436,7 @@ BOOL func_8() // Position - 0x79F (1951)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -451,9 +451,9 @@ void func_9() // Position - 0x7C8 (1992)
 	return;
 }
 
-BOOL func_10(eControlType ectParam0, BOOL bParam1, int iParam2) // Position - 0x7E9 (2025)
+BOOL func_10(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x7E9 (2025)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, bParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, bParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
@@ -713,7 +713,7 @@ void func_12() // Position - 0x890 (2192)
 							if (Global_114931.f_14058.f_82 == 0)
 							{
 								HUD::CLEAR_HELP(true);
-								func_16("CELL_7050" /*If you select Sleep Mode you will not receive incoming calls. This can pause game story progression. ~n~Select Normal Mode from this menu or trigger an existing mission to leave Sleep Mode.*/);
+								func_16("CELL_7050" /*Si seleccionas el Modo suspensión no recibirás llamadas de teléfono. Esto puede pausar el avance de la historia del juego. ~n~Selecciona Modo normal desde este menú o activa una misión existente para abandonar el Modo suspensión.*/);
 								fLocal_61 == fLocal_62;
 								bLocal_54 = true;
 							}
@@ -726,7 +726,7 @@ void func_12() // Position - 0x890 (2192)
 								if (Global_114931.f_14058.f_83 == 0)
 								{
 									HUD::CLEAR_HELP(true);
-									_DISPLAY_HELP_TEXT("CELL_7051" /*When Sleep Mode is active, the Sleep symbol will be displayed near the Radar.*/, -1);
+									_DISPLAY_HELP_TEXT("CELL_7051" /*Cuando el Modo suspensión esté activo, el símbolo de suspensión se mostrará junto al radar.*/, -1);
 									Global_114931.f_14058.f_83 = 1;
 								}
 							}
@@ -1114,7 +1114,7 @@ void func_27() // Position - 0x1626 (5670)
 							if (Global_114931.f_14058.f_82 == 0)
 							{
 								HUD::CLEAR_HELP(true);
-								func_16("CELL_7050" /*If you select Sleep Mode you will not receive incoming calls. This can pause game story progression. ~n~Select Normal Mode from this menu or trigger an existing mission to leave Sleep Mode.*/);
+								func_16("CELL_7050" /*Si seleccionas el Modo suspensión no recibirás llamadas de teléfono. Esto puede pausar el avance de la historia del juego. ~n~Selecciona Modo normal desde este menú o activa una misión existente para abandonar el Modo suspensión.*/);
 								fLocal_61 == fLocal_62;
 								bLocal_54 = true;
 							}
@@ -1159,11 +1159,11 @@ void func_28() // Position - 0x16F8 (5880)
 
 	if (Global_80305)
 	{
-		TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][4 /*281*/].f_7[0 /*4*/], "CELL_CREWEMB" /*Crew Emblem*/, 16);
+		TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][4 /*281*/].f_7[0 /*4*/], "CELL_CREWEMB" /*Emblema de Crew*/, 16);
 		gamerHandle = { GET_GAMER_HANDLE_PLAYER(PLAYER::PLAYER_ID()) };
 	
 		if (!NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&gamerHandle))
-			TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][4 /*281*/].f_7[0 /*4*/], "CELL_840" /*Default*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&Global_10302[3 /*2811*/][4 /*281*/].f_7[0 /*4*/], "CELL_840" /*Predeterminado*/, 16);
 	}
 
 	while (value < 19)
@@ -1223,8 +1223,8 @@ void func_28() // Position - 0x16F8 (5880)
 
 	if (Global_21615)
 	{
-		func_18(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-		func_18(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+		func_18(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+		func_18(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 	}
 	else
 	{
@@ -1410,12 +1410,12 @@ void func_34() // Position - 0x1BAA (7082)
 	}
 
 	func_47(Global_21608, "DISPLAY_VIEW", 13f, BUILTIN::TO_FLOAT(iLocal_42), -1082130432, -1082130432, -1082130432);
-	func_13(Global_21608, "SET_HEADER", "CELL_16" /*Settings*/, 0, 0, 0, 0);
+	func_13(Global_21608, "SET_HEADER", "CELL_16" /*Ajustes*/, 0, 0, 0, 0);
 
 	if (Global_21615)
 	{
-		func_18(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-		func_18(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+		func_18(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+		func_18(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 	}
 	else
 	{

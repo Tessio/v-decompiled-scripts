@@ -740,7 +740,7 @@ void func_1() // Position - 0x211 (529)
 				MISC::SET_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_879), 6);
 				func_219(&uLocal_72, veLocal_367, 1, veLocal_367, hLocal_299, 1);
 				Global_2708820 = 0;
-				Global_2740205 = true;
+				Global_2740205 = PV_COMP_BERD;
 				func_217();
 				ENTITY::SET_ENTITY_ALWAYS_PRERENDER(veLocal_367, true);
 				func_241(2);
@@ -887,7 +887,7 @@ void func_1() // Position - 0x211 (529)
 			
 				uLocal_72.f_25 = 50f;
 			
-				if (Global_1579258 == 1)
+				if (Global_1579258 == true)
 					func_117(&uLocal_72, 0, 30f, -12f, -50f, 50f, 1041865114, false);
 				else if (Global_1579258 == 2)
 					func_117(&uLocal_72, 0, 30f, -55f, -85f, 140f, 1041865114, false);
@@ -1072,7 +1072,7 @@ void func_1() // Position - 0x211 (529)
 				{
 					switch (Global_1579264)
 					{
-						case 1:
+						case true:
 							uLocal_72.f_25 = 360f;
 							func_117(&uLocal_72, 0, 15f, -80f, -100f, 100f, fLocal_328, false);
 							break;
@@ -1102,12 +1102,12 @@ void func_1() // Position - 0x211 (529)
 				{
 					switch (Global_1579264)
 					{
-						case 1:
+						case true:
 							uLocal_72.f_25 = 360f;
 							func_117(&uLocal_72, 0, 13f, -80f, -50f, 50f, fLocal_328, false);
 							break;
 					
-						case 0:
+						case false:
 							uLocal_72.f_25 = 360f;
 							func_117(&uLocal_72, 0, 54f, -80f, -50f, 50f, fLocal_328, false);
 							break;
@@ -1127,12 +1127,12 @@ void func_1() // Position - 0x211 (529)
 				{
 					switch (Global_1579264)
 					{
-						case 1:
+						case true:
 							uLocal_72.f_25 = 360f;
 							func_117(&uLocal_72, 0, 88f, -80f, -100f, 100f, fLocal_328, false);
 							break;
 					
-						case 0:
+						case false:
 							uLocal_72.f_25 = 360f;
 							func_117(&uLocal_72, 0, 88f, -80f, -100f, 100f, fLocal_328, false);
 							break;
@@ -1152,12 +1152,12 @@ void func_1() // Position - 0x211 (529)
 				{
 					switch (Global_1579264)
 					{
-						case 1:
+						case true:
 							uLocal_72.f_25 = 360f;
 							func_117(&uLocal_72, 0, 13f, -80f, -50f, 50f, fLocal_328, false);
 							break;
 					
-						case 0:
+						case false:
 							uLocal_72.f_25 = 360f;
 							func_117(&uLocal_72, 0, 13f, -80f, -50f, 50f, fLocal_328, false);
 							break;
@@ -1300,7 +1300,7 @@ void func_1() // Position - 0x211 (529)
 					PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_CIN_CAM, true);
 				}
 			
-				if (PAD::IS_CONTROL_JUST_PRESSED(control, action) || !VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false) || func_63(veLocal_367, false) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_T_3" /*Turrets are disabled inside of the Bunker.*/) || func_44() || func_39())
+				if (PAD::IS_CONTROL_JUST_PRESSED(control, action) || !VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_367, false) || func_63(veLocal_367, false) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_T_3" /*Las torretas están desactivadas dentro del búnker.*/) || func_44() || func_39())
 				{
 					bLocal_301 = false;
 				
@@ -1386,7 +1386,7 @@ void func_1() // Position - 0x211 (529)
 				uLocal_72.f_188 = { -13.75f, 0f, 0f };
 				func_219(&uLocal_72, veLocal_367, 1, veLocal_367, hLocal_299, 1);
 				Global_2708820 = 0;
-				Global_2740205 = true;
+				Global_2740205 = PV_COMP_BERD;
 				func_217();
 				ENTITY::SET_ENTITY_ALWAYS_PRERENDER(veLocal_367, true);
 				func_117(&uLocal_72, 0, -13.75f, -13.75f, 0f, 0f, fLocal_328, true);
@@ -1771,7 +1771,7 @@ BOOL func_12() // Position - 0x20D0 (8400)
 	return false;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x2108 (8456)
+ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x2108 (8456)
 {
 	ePedComponentType type;
 
@@ -1783,19 +1783,19 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 		{
 			if (bIsPlaying)
 				if (!PLAYER::IS_PLAYER_PLAYING(player))
-					return false;
+					return PV_COMP_HEAD;
 		
 			if (bUnk)
 				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
 				else if (Global_2658291[type /*468*/] != 4)
-					return false;
+					return PV_COMP_HEAD;
 		
-			return true;
+			return PV_COMP_BERD;
 		}
 	}
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_14() // Position - 0x2168 (8552)
@@ -1869,33 +1869,33 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 	BOOL flag;
 	BOOL flag2;
 	BOOL flag3;
-	int num;
-	int num2;
-	int num3;
-	int num4;
+	BOOL flag4;
+	BOOL flag5;
+	BOOL flag6;
+	BOOL flag7;
 
 	if (Global_1579258 != -1)
 		if (func_64(Global_1845080) && !IS_BIT_SET(Global_4718592.f_26, 7))
-			return "HUNTGUN_T_3" /*Turrets are disabled inside of the Bunker.*/;
+			return "HUNTGUN_T_3" /*Las torretas están desactivadas dentro del búnker.*/;
 		else
-			return "HUNTGUN_T_2b" /*Mobile Operations Center Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+			return "HUNTGUN_T_2b" /*Torreta del Centro de Operaciones Móvil:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 
 	flag3 = func_38() && IS_BIT_SET(Global_1575012, 14);
 
 	if (func_208(3))
 	{
-		num = func_37(1);
+		flag4 = func_37(1);
 	
-		if (num != Global_1579264)
+		if (flag4 != Global_1579264)
 		{
-			flag = func_36(num);
+			flag = func_36(flag4);
 		
 			if (flag)
 			{
-				switch (num)
+				switch (flag4)
 				{
-					case 1:
-						if (!func_36(1))
+					case true:
+						if (!func_36(true))
 							flag = false;
 						break;
 				
@@ -1921,18 +1921,18 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 			flag = false;
 		}
 	
-		num2 = func_37(0);
+		flag5 = func_37(0);
 	
-		if (num2 != Global_1579264)
+		if (flag5 != Global_1579264)
 		{
-			flag2 = func_36(num2);
+			flag2 = func_36(flag5);
 		
 			if (flag2)
 			{
-				switch (num2)
+				switch (flag5)
 				{
-					case 1:
-						if (!func_36(1))
+					case true:
+						if (!func_36(true))
 							flag2 = false;
 						break;
 				
@@ -1964,48 +1964,48 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 	
 		switch (Global_1579264)
 		{
-			case 1:
+			case true:
 				if (flag && flag2)
-					return "IAA_T_2_OSM1" /*You are using the Entrance Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSM1" /*Estás utilizando la torreta de la entrada.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag2)
-					return "IAA_T_2_OSL1" /*You are using the Entrance Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSL1" /*Estás utilizando la torreta de la entrada.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag)
-					return "IAA_T_2_OSR1" /*You are using the Entrance Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ to switch cameras.*/;
+					return "IAA_T_2_OSR1" /*Estás utilizando la torreta de la entrada.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ para cambiar de cámara.*/;
 				else
-					return "IAA_T_2_OSN1" /*You are using the Entrance Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back.*/;
+					return "IAA_T_2_OSN1" /*Estás utilizando la torreta de la entrada.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver.*/;
 				break;
 		
 			case 2:
 				if (flag && flag2)
-					return "IAA_T_2_OSM2" /*You are using the South Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSM2" /*Estás utilizando la torreta sur.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~  para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag2)
-					return "IAA_T_2_OSL2" /*You are using the South Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSL2" /*Estás utilizando la torreta sur.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag)
-					return "IAA_T_2_OSR2" /*You are using the South Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ to switch cameras.*/;
+					return "IAA_T_2_OSR2" /*Estás utilizando la torreta sur.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ para cambiar de cámara.*/;
 				else
-					return "IAA_T_2_OSN2" /*You are using the South Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back.*/;
+					return "IAA_T_2_OSN2" /*Estás utilizando la torreta sur.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver.*/;
 				break;
 		
 			case 3:
 				if (flag && flag2)
-					return "IAA_T_2_OSM3" /*You are using the West Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSM3" /*Estás utilizando la torreta oeste.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag2)
-					return "IAA_T_2_OSL3" /*You are using the West Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSL3" /*Estás utilizando la torreta oeste.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag)
-					return "IAA_T_2_OSR3" /*You are using the West Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ to switch cameras.*/;
+					return "IAA_T_2_OSR3" /*Estás utilizando la torreta oeste.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ para cambiar de cámara.*/;
 				else
-					return "IAA_T_2_OSN3" /*You are using the West Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back.*/;
+					return "IAA_T_2_OSN3" /*Estás utilizando la torreta oeste.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver.*/;
 				break;
 		
 			case 4:
 				if (flag && flag2)
-					return "IAA_T_2_OSM4" /*You are using the East Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSM4" /*Estás utilizando la torreta este.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag2)
-					return "IAA_T_2_OSL4" /*You are using the East Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_RB~ to switch cameras.*/;
+					return "IAA_T_2_OSL4" /*Estás utilizando la torreta este.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_RB~ para cambiar de cámara.*/;
 				else if (flag)
-					return "IAA_T_2_OSR4" /*You are using the East Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back. ~n~Press ~INPUT_FRONTEND_LB~ to switch cameras.*/;
+					return "IAA_T_2_OSR4" /*Estás utilizando la torreta este.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver. ~n~Pulsa ~INPUT_FRONTEND_LB~ para cambiar de cámara.*/;
 				else
-					return "IAA_T_2_OSN4" /*You are using the East Turret.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Press ~INPUT_SCRIPT_LT~ to fire the machine gun. ~n~Press ~INPUT_SCRIPT_RRIGHT~ to go back.*/;
+					return "IAA_T_2_OSN4" /*Estás utilizando la torreta este.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Pulsa ~INPUT_SCRIPT_LT~ para disparar la ametralladora. ~n~Pulsa ~INPUT_SCRIPT_RRIGHT~ para volver.*/;
 				break;
 		}
 	}
@@ -2015,17 +2015,17 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 
 	if (func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()))
 	{
-		num3 = func_33(1);
+		flag6 = func_33(1);
 	
-		if (num3 != Global_1579264)
+		if (flag6 != Global_1579264)
 		{
-			flag = func_32(num3);
+			flag = func_32(flag6);
 		
 			if (flag)
 			{
-				switch (num3)
+				switch (flag6)
 				{
-					case 1:
+					case true:
 						if (!func_30())
 							flag = false;
 						break;
@@ -2052,17 +2052,17 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 			flag = false;
 		}
 	
-		num4 = func_33(0);
+		flag7 = func_33(0);
 	
-		if (num4 != Global_1579264)
+		if (flag7 != Global_1579264)
 		{
-			flag2 = func_32(num4);
+			flag2 = func_32(flag7);
 		
 			if (flag2)
 			{
 				switch (func_33(0))
 				{
-					case 1:
+					case true:
 						if (!func_30())
 							flag2 = false;
 						break;
@@ -2095,25 +2095,25 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 	
 		switch (Global_1579264)
 		{
-			case 1:
+			case true:
 				if (flag && flag2)
 				{
 					if (flag3)
-						return "HUNTGUN_T_2_OSMA1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Toggle Scanner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+						return "HUNTGUN_T_2_OSMA1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Cambiar de escáner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				
-					return "HUNTGUN_T_2_OSM1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSM1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag2)
 				{
-					return "HUNTGUN_T_2_OSL1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSL1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag)
 				{
-					return "HUNTGUN_T_2_OSR1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSR1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else
 				{
-					return "HUNTGUN_T_2_OSN1" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSN1" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				break;
 		
@@ -2121,21 +2121,21 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 				if (flag && flag2)
 				{
 					if (flag3)
-						return "HUNTGUN_T_2_OSMA3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Toggle Scanner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+						return "HUNTGUN_T_2_OSMA3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Cambiar de escáner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				
-					return "HUNTGUN_T_2_OSM3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSM3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag2)
 				{
-					return "HUNTGUN_T_2_OSL3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSL3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag)
 				{
-					return "HUNTGUN_T_2_OSR3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSR3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else
 				{
-					return "HUNTGUN_T_2_OSN3" /*Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSN3" /*Torreta superior:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				break;
 		
@@ -2143,21 +2143,21 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 				if (flag && flag2)
 				{
 					if (flag3)
-						return "HUNTGUN_T_2_OSMA2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Toggle Scanner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+						return "HUNTGUN_T_2_OSMA2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Cambiar de escáner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				
-					return "HUNTGUN_T_2_OSM2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSM2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag2)
 				{
-					return "HUNTGUN_T_2_OSL2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSL2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag)
 				{
-					return "HUNTGUN_T_2_OSR2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSR2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else
 				{
-					return "HUNTGUN_T_2_OSN2" /*Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSN2" /*Torreta trasera:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				break;
 		
@@ -2165,21 +2165,21 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 				if (flag && flag2)
 				{
 					if (flag3)
-						return "HUNTGUN_T_2_OSMA4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Toggle Scanner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+						return "HUNTGUN_T_2_OSMA4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_DPAD_LR~ Cambiar de escáner~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				
-					return "HUNTGUN_T_2_OSM4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSM4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUTGROUP_SCRIPT_BUMPERS~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag2)
 				{
-					return "HUNTGUN_T_2_OSL4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSL4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_RB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else if (flag)
 				{
-					return "HUNTGUN_T_2_OSR4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Switch Turrets~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSR4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ Cambiar de torreta~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				else
 				{
-					return "HUNTGUN_T_2_OSN4" /*Front Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+					return "HUNTGUN_T_2_OSN4" /*Torreta frontal:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 				}
 				break;
 		}
@@ -2191,13 +2191,13 @@ char* func_20(Vehicle veParam0) // Position - 0x225B (8795)
 		{
 			case joaat("bombushka"):
 			case 858355070:
-				return "BOMBGUN_T_2c" /*Bombushka Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+				return "BOMBGUN_T_2c" /*Torreta superior dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 		
 			case joaat("rhino"):
-				return "BOMBGUN_T_2c" /*Bombushka Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+				return "BOMBGUN_T_2c" /*Torreta superior dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 		
 			case joaat("akula"):
-				return "AKULAGUN_P2" /*Akula Mounted Gun:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/;
+				return "AKULAGUN_P2" /*Ametralladora montada del Akula:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/;
 		}
 	}
 
@@ -2246,18 +2246,18 @@ BOOL func_21() // Position - 0x277B (10107)
 
 BOOL func_22() // Position - 0x2855 (10325)
 {
-	Hash hash;
+	ePedComponentType type;
 	Vector3 vector;
 
 	if (_NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, true))
 	{
-		if (Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_276.f_22 != 0)
+		if (Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_276.f_22 != THIRD_PERSON_NEAR)
 		{
-			hash = func_25(PLAYER::PLAYER_ID());
+			type = func_25(PLAYER::PLAYER_ID());
 		
-			if (func_24(hash))
+			if (func_24(type))
 			{
-				vector = { func_23(hash) };
+				vector = { func_23(type) };
 			
 				if (ENTITY::DOES_ENTITY_EXIST(func_26(false, false)))
 					if (!ENTITY::IS_ENTITY_DEAD(func_26(false, false), false))
@@ -2270,20 +2270,20 @@ BOOL func_22() // Position - 0x2855 (10325)
 	return false;
 }
 
-Vector3 func_23(Hash hParam0) // Position - 0x28D9 (10457)
+Vector3 func_23(ePedComponentType epctParam0) // Position - 0x28D9 (10457)
 {
-	return Global_4280768[hParam0 /*45*/].f_4;
+	return Global_4280768[epctParam0 /*45*/].f_4;
 }
 
-BOOL func_24(Hash hParam0) // Position - 0x28ED (10477)
+BOOL func_24(ePedComponentType epctParam0) // Position - 0x28ED (10477)
 {
-	if (hParam0 > -1 && hParam0 < 42)
+	if (epctParam0 > PV_COMP_INVALID && epctParam0 < 42)
 		return true;
 
 	return false;
 }
 
-Hash func_25(Player plParam0) // Position - 0x290B (10507)
+ePedComponentType func_25(Player plParam0) // Position - 0x290B (10507)
 {
 	return Global_2652579[plParam0 /*3*/];
 }
@@ -2421,13 +2421,13 @@ BOOL func_31(ePedComponentType epctParam0) // Position - 0x2BAB (11179)
 	return false;
 }
 
-BOOL func_32(int iParam0) // Position - 0x2BD1 (11217)
+BOOL func_32(BOOL bParam0) // Position - 0x2BD1 (11217)
 {
 	Player player;
 	int i;
 	ePedComponentType type;
 
-	if (iParam0 == -1)
+	if (bParam0 == -1)
 		return 0;
 
 	player = Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_325.f_9;
@@ -2438,14 +2438,14 @@ BOOL func_32(int iParam0) // Position - 0x2BD1 (11217)
 	
 		if (_NETWORK_IS_PLAYER_VALID(type, true, true) && type != PLAYER::PLAYER_ID())
 			if (Global_2658291[type /*468*/].f_325.f_9 == player)
-				if (Global_1845250[type /*880*/].f_861 == iParam0)
+				if (Global_1845250[type /*880*/].f_861 == bParam0)
 					return 0;
 	}
 
 	return 1;
 }
 
-int func_33(int iParam0) // Position - 0x2C50 (11344)
+BOOL func_33(int iParam0) // Position - 0x2C50 (11344)
 {
 	int i;
 
@@ -2465,7 +2465,7 @@ int func_33(int iParam0) // Position - 0x2C50 (11344)
 		return i;
 	}
 
-	for (i = Global_1579264 == 1 ? 4 : Global_1579264 - 1; !func_35(i); i = i <= 1 ? 4 : i - 1)
+	for (i = Global_1579264 == true ? 4 : Global_1579264 - 1; !func_35(i); i = i <= 1 ? 4 : i - 1)
 	{
 	}
 
@@ -2511,13 +2511,13 @@ BOOL func_35(int iParam0) // Position - 0x2D16 (11542)
 	return false;
 }
 
-BOOL func_36(int iParam0) // Position - 0x2DA9 (11689)
+BOOL func_36(BOOL bParam0) // Position - 0x2DA9 (11689)
 {
 	Player player;
 	int i;
 	ePedComponentType type;
 
-	if (iParam0 == -1)
+	if (bParam0 == -1)
 		return false;
 
 	player = Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_325.f_9;
@@ -2528,14 +2528,14 @@ BOOL func_36(int iParam0) // Position - 0x2DA9 (11689)
 	
 		if (_NETWORK_IS_PLAYER_VALID(type, true, true) && type != PLAYER::PLAYER_ID())
 			if (Global_2658291[type /*468*/].f_325.f_9 == player)
-				if (Global_1845250[type /*880*/].f_861 == iParam0)
+				if (Global_1845250[type /*880*/].f_861 == bParam0)
 					return false;
 	}
 
 	return true;
 }
 
-int func_37(int iParam0) // Position - 0x2E28 (11816)
+BOOL func_37(int iParam0) // Position - 0x2E28 (11816)
 {
 	int i;
 
@@ -2551,7 +2551,7 @@ int func_37(int iParam0) // Position - 0x2E28 (11816)
 		return i;
 	}
 
-	for (i = Global_1579264 == 1 ? 4 : Global_1579264 - 1; !func_36(i); i = i <= 1 ? 4 : i - 1)
+	for (i = Global_1579264 == true ? 4 : Global_1579264 - 1; !func_36(i); i = i <= 1 ? 4 : i - 1)
 	{
 	}
 
@@ -2711,7 +2711,7 @@ BOOL func_44() // Position - 0x2FD0 (12240)
 	{
 		switch (Global_1579264)
 		{
-			case 1:
+			case true:
 				if (Global_262145.f_22829)
 					return 1;
 				break;
@@ -2838,9 +2838,9 @@ BOOL func_55() // Position - 0x3576 (13686)
 	return IS_BIT_SET(Global_1950198, 6);
 }
 
-BOOL func_56(Hash hParam0) // Position - 0x3584 (13700)
+BOOL func_56(ePedComponentType epctParam0) // Position - 0x3584 (13700)
 {
-	return Global_262145.f_4699[4] == hParam0;
+	return Global_262145.f_4699[4] == epctParam0;
 }
 
 BOOL func_57(Vehicle veParam0) // Position - 0x3599 (13721)
@@ -3278,9 +3278,9 @@ void func_68(float fParam0, float fParam1) // Position - 0x3DBA (15802)
 	func_70(&unk, &unk3, fParam0, fParam1);
 
 	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-		_DISPLAY_HELP_TEXT("HUNTGUN_5_KM" /*Press ~INPUT_AIM~ to tag.*/, -1);
+		_DISPLAY_HELP_TEXT("HUNTGUN_5_KM" /*Pulsa ~INPUT_AIM~ para etiquetar.*/, -1);
 	else
-		_DISPLAY_HELP_TEXT("HUNTGUN_5" /*Press ~INPUT_FRONTEND_ACCEPT~ to tag.~n~Press ~INPUT_FRONTEND_RIGHT~ to go back.*/, -1);
+		_DISPLAY_HELP_TEXT("HUNTGUN_5" /*Pulsa ~INPUT_FRONTEND_ACCEPT~ para etiquetar.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para volver atrás.*/, -1);
 
 	return;
 }
@@ -3786,11 +3786,11 @@ Vector3 func_83() // Position - 0x4766 (18278)
 		{
 			switch (Global_1579264)
 			{
-				case 0:
+				case false:
 					vector = { 0.0122f, 8.7349f, 0.7239f };
 					break;
 			
-				case 1:
+				case true:
 					vector = { 0.0082f, 1.1879f, 5.2393f };
 					break;
 			
@@ -3804,11 +3804,11 @@ Vector3 func_83() // Position - 0x4766 (18278)
 		{
 			switch (Global_1579264)
 			{
-				case 0:
+				case false:
 					vector = { 0.0122f, 8.7349f, 0.7239f };
 					break;
 			
-				case 1:
+				case true:
 					vector = { 0.0082f, 1.1879f, 5.2393f };
 					break;
 			
@@ -3829,7 +3829,7 @@ Vector3 func_83() // Position - 0x4766 (18278)
 	
 		switch (Global_1579264)
 		{
-			case 1:
+			case true:
 				vector = { unk7 - unk4 };
 				break;
 		
@@ -3851,7 +3851,7 @@ Vector3 func_83() // Position - 0x4766 (18278)
 	{
 		switch (Global_1579258)
 		{
-			case 1:
+			case true:
 				vector = { 0f, 9f, 0.92f };
 				break;
 		
@@ -3993,7 +3993,7 @@ BOOL func_86() // Position - 0x4D4D (19789)
 		case joaat("avenger3"):
 			switch (Global_1579264)
 			{
-				case 1:
+				case true:
 					if (VEHICLE::GET_VEHICLE_FLIGHT_NOZZLE_POSITION(veLocal_367) >= 0.4f)
 						if (num > 122.6f && num < 131.3f && uLocal_72.f_188 > 7.87f)
 							flag = false;
@@ -4102,7 +4102,7 @@ BOOL func_90(Player plParam0, ePedComponentType epctParam1) // Position - 0x5181
 {
 	Player player;
 
-	if (func_93() != 0)
+	if (func_93() != HUD_COLOUR_PURE_WHITE)
 		return false;
 
 	if (!func_91(plParam0))
@@ -4139,7 +4139,7 @@ BOOL func_92(Player plParam0) // Position - 0x51D9 (20953)
 	return true;
 }
 
-int func_93() // Position - 0x51FB (20987)
+eHudColour func_93() // Position - 0x51FB (20987)
 {
 	return Global_33775;
 }
@@ -4196,7 +4196,7 @@ void func_96() // Position - 0x52A8 (21160)
 
 	func_104();
 	func_219(&uLocal_72, vehicle, 0, veLocal_367, hLocal_299, 1);
-	Global_2740205 = false;
+	Global_2740205 = PV_COMP_HEAD;
 	MISC::CLEAR_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_879), 6);
 
 	if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
@@ -4317,46 +4317,46 @@ BOOL func_103() // Position - 0x54BC (21692)
 
 void func_104() // Position - 0x54D8 (21720)
 {
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2" /*You are using the helicopter's rocket launcher.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2" /*Estás usando el lanzacohetes del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2b" /*You are using the helicopter's mounted surveillance camera.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2b" /*Estás usando la cámara montada de vigilancia del helicóptero.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2c" /*You are using the helicopter's gun.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2c" /*Estás usando el arma del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar o alejar la vista.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4" /*You are viewing the co-pilot's rocket launcher. Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4" /*Estás viendo el lanzacohetes del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4b" /*You are viewing the co-pilot's mounted surveillance camera. Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4b" /*Estás viendo la cámara montada de vigilancia del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4c" /*You are viewing the co-pilot's gun. Press ~INPUT_CONTEXT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4c" /*Estás viendo el arma del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_5" /*Press ~INPUT_FRONTEND_ACCEPT~ to tag.~n~Press ~INPUT_FRONTEND_RIGHT~ to go back.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_5" /*Pulsa ~INPUT_FRONTEND_ACCEPT~ para etiquetar.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para volver atrás.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_6" /*You can tag other players for the pilot to see. To tag a player, target them with the camera and press ~INPUT_FRONTEND_ACCEPT~.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_6" /*Puedes etiquetar a otros jugadores para que los vea el piloto. Para ello, apúntalos con la cámara y pulsa ~INPUT_FRONTEND_ACCEPT~.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_P1" /*Akula Passenger Cam:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ Switch Camera Modes*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_P1" /*Cámara de pasajero del Akula:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ alternar modos de la cámara*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_P2" /*Akula Mounted Gun:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_P2" /*Ametralladora montada del Akula:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/))
 		HUD::CLEAR_HELP(true);
 
 	if (MISC::IS_PC_VERSION())
 	{
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_5_KM" /*Press ~INPUT_AIM~ to tag.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_5_KM" /*Pulsa ~INPUT_AIM~ para etiquetar.*/))
 			HUD::CLEAR_HELP(true);
 	
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_6_KM" /*You can tag other players for the pilot to see. To tag a player, target them with the camera and press ~INPUT_AIM~.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_6_KM" /*Puedes etiquetar a otros jugadores para que los vea el piloto. Para ello, apúntalos con la cámara y pulsa ~INPUT_AIM~.*/))
 			HUD::CLEAR_HELP(true);
 	}
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2b" /*Bombushka Dual .50 Cal Nose Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2c" /*Bombushka Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2d" /*Bombushka Dual .50 Cal Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_T_2b" /*Volatol Dual .50 Cal Nose Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_T_2c" /*Volatol Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2b" /*Torreta frontal dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2c" /*Torreta superior dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_T_2d" /*Torreta trasera dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_T_2b" /*Torreta frontal dual del calibre 50 del Volatol:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_T_2c" /*Torreta superior dual del calibre 50 del Volatol:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/))
 		HUD::CLEAR_HELP(true);
 
 	return;
@@ -4456,7 +4456,7 @@ int func_107() // Position - 0x58A8 (22696)
 	{
 		switch (Global_1579258)
 		{
-			case 1:
+			case true:
 			
 		
 			case 2:
@@ -4478,7 +4478,7 @@ int func_107() // Position - 0x58A8 (22696)
 	{
 		switch (Global_1579264)
 		{
-			case 1:
+			case true:
 			
 		
 			case 2:
@@ -5914,16 +5914,16 @@ char* func_139() // Position - 0x7AEB (31467)
 	switch (Global_1579263)
 	{
 		case 1:
-			return "TITAN2_WH40" /*40MM CANNON*/;
+			return "TITAN2_WH40" /*CAÑÓN: 40 MM*/;
 	
 		case 3:
-			return "TITAN2_WH105" /*105MM CANNON*/;
+			return "TITAN2_WH105" /*CAÑÓN: 105 MM*/;
 	
 		case 2:
-			return "TITAN2_WH25" /*25MM CANNON*/;
+			return "TITAN2_WH25" /*CAÑÓN: 25 MM*/;
 	
 		case 4:
-			return "TITAN2_WH40" /*40MM CANNON*/;
+			return "TITAN2_WH40" /*CAÑÓN: 40 MM*/;
 	
 		default:
 		
@@ -5997,7 +5997,7 @@ void func_142(var uParam0) // Position - 0x7BAA (31658)
 void func_143(int iParam0, int iParam1) // Position - 0x7BFA (31738)
 {
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_71, "SET_CANNON_LABEL");
-	GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CANNON_AMMO" /*AMMO: ~1~/~1~*/);
+	GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CANNON_AMMO" /*MUNICIÓN: ~1~/~1~*/);
 	HUD::ADD_TEXT_COMPONENT_INTEGER(iParam0);
 	HUD::ADD_TEXT_COMPONENT_INTEGER(iParam1);
 	GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
@@ -6240,7 +6240,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 								{
 									if (Global_1579258 != -1 || Global_1579264 != -1)
 									{
-										_DISPLAY_HELP_TEXT("TUR_WATER" /*Turret is underwater. You cannot use this turret while it is under water.*/, -1);
+										_DISPLAY_HELP_TEXT("TUR_WATER" /*La torreta está bajo el agua. No puedes utilizarla mientras esté ahí.*/, -1);
 										uParam0->f_34 = 1;
 									}
 								}
@@ -6251,7 +6251,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 								else
 								{
 									if (Global_1579264 != -1)
-										_DISPLAY_HELP_TEXT("TUR_GR" /*Turret is underground. You cannot use this turret while it is underground.*/, -1);
+										_DISPLAY_HELP_TEXT("TUR_GR" /*La torreta está bajo tierra. No puedes utilizarla mientras esté ahí.*/, -1);
 								
 									uParam0->f_34 = 1;
 									CAM::DO_SCREEN_FADE_OUT(0);
@@ -6314,7 +6314,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 								case joaat("trailerlarge"):
 									switch (Global_1579258)
 									{
-										case 1:
+										case true:
 											vector = { 0f, 8.4f, 1.3f };
 											break;
 									
@@ -6339,7 +6339,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 								
 									switch (Global_1579264)
 									{
-										case 1:
+										case true:
 											vector = { unk8 - unk5 };
 											break;
 									
@@ -6586,7 +6586,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 											case joaat("avenger3"):
 												switch (Global_1579264)
 												{
-													case 1:
+													case true:
 														num10 = (MISC::ABSF(uParam0->f_188.f_2) - 90f) / 90f;
 														break;
 												
@@ -6607,7 +6607,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 											default:
 												switch (Global_1579264)
 												{
-													case 1:
+													case true:
 														num10 = (MISC::ABSF(uParam0->f_188.f_2) - 90f) / 90f;
 														break;
 												
@@ -6939,7 +6939,7 @@ void func_155(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 								{
 									switch (Global_1579264)
 									{
-										case 1:
+										case true:
 											vector4 = { 0f, 9.8f, -2.315f };
 											unk32 = { 0f, 0f, 0f };
 											break;
@@ -7343,50 +7343,50 @@ void func_165() // Position - 0x9A8C (39564)
 				if (bLocal_309 || bLocal_308)
 				{
 					if (hLocal_299 == joaat("buzzard") && !Global_2740210 || hLocal_299 == joaat("savage") || hLocal_299 == -1659004814)
-						_DISPLAY_HELP_TEXT("HUNTGUN_2" /*You are using the helicopter's rocket launcher.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_2" /*Estás usando el lanzacohetes del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (hLocal_299 == joaat("valkyrie"))
-						_DISPLAY_HELP_TEXT("HUNTGUN_2c" /*You are using the helicopter's gun.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_2c" /*Estás usando el arma del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar o alejar la vista.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (hLocal_299 == joaat("hunter"))
-						_DISPLAY_HELP_TEXT("HUNTGUN_2c" /*You are using the helicopter's gun.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_2c" /*Estás usando el arma del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar o alejar la vista.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (func_323(veLocal_367))
 						_DISPLAY_HELP_TEXT(func_20(veLocal_367), -1);
 					else if (Global_1579258 != -1 || Global_1579264 != -1)
 						_DISPLAY_HELP_TEXT(func_20(veLocal_367), -1);
 					else
-						_DISPLAY_HELP_TEXT("HUNTGUN_2b" /*You are using the helicopter's mounted surveillance camera.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_2b" /*Estás usando la cámara montada de vigilancia del helicóptero.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 				}
 				else if (bLocal_310)
 				{
 					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("bombushka"))
-						_DISPLAY_HELP_TEXT("BOMBGUN_T_2b" /*Bombushka Dual .50 Cal Nose Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/, -1);
+						_DISPLAY_HELP_TEXT("BOMBGUN_T_2b" /*Torreta frontal dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/, -1);
 				
 					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula"))
-						_DISPLAY_HELP_TEXT("AKULAGUN_P1" /*Akula Passenger Cam:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ Switch Camera Modes*/, -1);
+						_DISPLAY_HELP_TEXT("AKULAGUN_P1" /*Cámara de pasajero del Akula:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ alternar modos de la cámara*/, -1);
 				
 					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
-						_DISPLAY_HELP_TEXT("VOLGUN_T_2b" /*Volatol Dual .50 Cal Nose Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/, -1);
+						_DISPLAY_HELP_TEXT("VOLGUN_T_2b" /*Torreta frontal dual del calibre 50 del Volatol:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/, -1);
 				}
 				else if (bLocal_311)
 				{
 					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("bombushka"))
-						_DISPLAY_HELP_TEXT("BOMBGUN_T_2d" /*Bombushka Dual .50 Cal Rear Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/, -1);
+						_DISPLAY_HELP_TEXT("BOMBGUN_T_2d" /*Torreta trasera dual del calibre 50 del Bombushka:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/, -1);
 				
 					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("akula"))
-						_DISPLAY_HELP_TEXT("AKULAGUN_P1" /*Akula Passenger Cam:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ or ~INPUT_FRONTEND_RB~ Switch Camera Modes*/, -1);
+						_DISPLAY_HELP_TEXT("AKULAGUN_P1" /*Cámara de pasajero del Akula:~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_FRONTEND_LB~ o ~INPUT_FRONTEND_RB~ alternar modos de la cámara*/, -1);
 				
 					if (ENTITY::GET_ENTITY_MODEL(veLocal_367) == joaat("volatol"))
-						_DISPLAY_HELP_TEXT("VOLGUN_T_2c" /*Volatol Dual .50 Cal Top Turret:~n~~INPUT_ATTACK~ Fire~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Exit*/, -1);
+						_DISPLAY_HELP_TEXT("VOLGUN_T_2c" /*Torreta superior dual del calibre 50 del Volatol:~n~~INPUT_ATTACK~ Disparar~n~~INPUT_SNIPER_ZOOM~ Zoom~n~~INPUT_SCRIPT_RRIGHT~ Salir*/, -1);
 				}
 				else if (!func_323(veLocal_367))
 				{
 					if (hLocal_299 == joaat("buzzard") || hLocal_299 == joaat("savage") || hLocal_299 == -1659004814)
-						_DISPLAY_HELP_TEXT("HUNTGUN_4" /*You are viewing the co-pilot's rocket launcher. Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_4" /*Estás viendo el lanzacohetes del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (hLocal_299 == joaat("valkyrie") || hLocal_299 == joaat("hunter"))
-						_DISPLAY_HELP_TEXT("HUNTGUN_4c" /*You are viewing the co-pilot's gun. Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_4c" /*Estás viendo el arma del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 					else if (func_208(3))
-						_DISPLAY_HELP_TEXT("IAAGUN_1" /*You are viewing the IAA turret camera. ~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out. ~n~Press ~INPUT_ATTACK~ to fire the cannon. ~n~Hold ~INPUT_AIM~ to fire the machine gun. ~n~Press ~INPUT_FRONTEND_CANCEL~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("IAAGUN_1" /*Estás viendo la cámara de la torreta de la IAA. ~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar y alejar el zoom. ~n~Pulsa ~INPUT_ATTACK~ para disparar el cañón. ~n~Mantén pulsado ~INPUT_AIM~ para disparar la ametralladora. ~n~Pulsa ~INPUT_FRONTEND_CANCEL~ para volver.*/, -1);
 					else
-						_DISPLAY_HELP_TEXT("HUNTGUN_4b" /*You are viewing the co-pilot's mounted surveillance camera. Press ~INPUT_CONTEXT~ to go back.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_4b" /*Estás viendo la cámara montada de vigilancia del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/, -1);
 				}
 			
 				iLocal_365 = iLocal_365 + 1;
@@ -7394,7 +7394,7 @@ void func_165() // Position - 0x9A8C (39564)
 			break;
 	
 		case 1:
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2" /*You are using the helicopter's rocket launcher.~n~Press ~INPUT_ATTACK~ to fire.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4" /*You are viewing the co-pilot's rocket launcher. Press ~INPUT_CONTEXT~ to go back.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2b" /*You are using the helicopter's mounted surveillance camera.~n~Use ~INPUT_SNIPER_ZOOM~ to zoom in/out.~n~Press ~INPUT_CONTEXT~ to go back.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4b" /*You are viewing the co-pilot's mounted surveillance camera. Press ~INPUT_CONTEXT~ to go back.*/) && Global_1579264 == -1)
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2" /*Estás usando el lanzacohetes del helicóptero.~n~Pulsa ~INPUT_ATTACK~ para disparar.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4" /*Estás viendo el lanzacohetes del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_2b" /*Estás usando la cámara montada de vigilancia del helicóptero.~n~Usa ~INPUT_SNIPER_ZOOM~ para acercar/alejar el zoom.~n~Pulsa ~INPUT_CONTEXT~ para volver atrás.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_4b" /*Estás viendo la cámara montada de vigilancia del copiloto. Pulsa ~INPUT_CONTEXT~ para volver atrás.*/) && Global_1579264 == -1)
 				iLocal_365 = iLocal_365 + 1;
 		
 			if (Global_1579258 != -1 || Global_1579264 != -1)
@@ -7424,9 +7424,9 @@ void func_165() // Position - 0x9A8C (39564)
 					if (func_167(PLAYER::PLAYER_ID(), 19))
 						if (!func_166())
 							if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-								_DISPLAY_HELP_TEXT("HUNTGUN_6_KM" /*You can tag other players for the pilot to see. To tag a player, target them with the camera and press ~INPUT_AIM~.*/, -1);
+								_DISPLAY_HELP_TEXT("HUNTGUN_6_KM" /*Puedes etiquetar a otros jugadores para que los vea el piloto. Para ello, apúntalos con la cámara y pulsa ~INPUT_AIM~.*/, -1);
 							else
-								_DISPLAY_HELP_TEXT("HUNTGUN_6" /*You can tag other players for the pilot to see. To tag a player, target them with the camera and press ~INPUT_FRONTEND_ACCEPT~.*/, -1);
+								_DISPLAY_HELP_TEXT("HUNTGUN_6" /*Puedes etiquetar a otros jugadores para que los vea el piloto. Para ello, apúntalos con la cámara y pulsa ~INPUT_FRONTEND_ACCEPT~.*/, -1);
 			
 				iLocal_365 = iLocal_365 + 1;
 			}
@@ -7468,13 +7468,13 @@ void func_169() // Position - 0x9E55 (40533)
 			isUsingKeyboardAndMouse = PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL);
 		
 			if (isUsingKeyboardAndMouse)
-				func_191(INPUT_VEH_EXIT, "MOVE_DRONE_RE" /*Exit*/, -1);
+				func_191(INPUT_VEH_EXIT, "MOVE_DRONE_RE" /*Salir*/, -1);
 			else
-				func_191(INPUT_VEH_CIN_CAM, "MOVE_DRONE_RE" /*Exit*/, -1);
+				func_191(INPUT_VEH_CIN_CAM, "MOVE_DRONE_RE" /*Salir*/, -1);
 		
 			if (func_184())
 			{
-				func_191(INPUT_CONTEXT, "SUB_H_MOD_L02" /*Countermeasures*/, -1);
+				func_191(INPUT_CONTEXT, "SUB_H_MOD_L02" /*Contramedidas*/, -1);
 				bLocal_327 = true;
 			}
 			else
@@ -7487,13 +7487,13 @@ void func_169() // Position - 0x9E55 (40533)
 			else
 				func_191(INPUT_FRONTEND_AXIS_Y, "CELL_284" /*Zoom*/, -1);
 		
-			func_183(1, "DRONE_POSITION" /*Move*/, -1);
+			func_183(1, "DRONE_POSITION" /*Mover*/, -1);
 		
 			if (func_41())
 			{
 				controlInstructionalButtonsString = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_VEH_FLY_YAW_LEFT, true);
 				controlInstructionalButtonsString2 = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_VEH_FLY_YAW_RIGHT, true);
-				func_182("TURRET_SWITCH" /*Switch Weapon*/, controlInstructionalButtonsString2, controlInstructionalButtonsString, 0, 0);
+				func_182("TURRET_SWITCH" /*Cambiar arma*/, controlInstructionalButtonsString2, controlInstructionalButtonsString, 0, 0);
 				bLocal_326 = true;
 			}
 			else
@@ -7503,11 +7503,11 @@ void func_169() // Position - 0x9E55 (40533)
 		
 			if (func_181())
 				if (isUsingKeyboardAndMouse)
-					func_191(INPUT_RELOAD, "INPUT_RELOAD" /*Reload*/, -1);
+					func_191(INPUT_RELOAD, "INPUT_RELOAD" /*Recargar*/, -1);
 				else
-					func_191(INPUT_FRONTEND_X, "INPUT_RELOAD" /*Reload*/, -1);
+					func_191(INPUT_FRONTEND_X, "INPUT_RELOAD" /*Recargar*/, -1);
 		
-			func_191(INPUT_ATTACK, "MO_ADB_OFF" /*Fire*/, -1);
+			func_191(INPUT_ATTACK, "MO_ADB_OFF" /*Disparar*/, -1);
 			bLocal_324 = true;
 			bLocal_325 = !isUsingKeyboardAndMouse;
 		}
@@ -7776,7 +7776,7 @@ BOOL func_172(Player plParam0, int iParam1) // Position - 0xA498 (42136)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_173(-1, false) == 8;
+		flag = func_173(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845250[plParam0 /*880*/].f_198 == 8;
 
@@ -7787,28 +7787,28 @@ BOOL func_172(Player plParam0, int iParam1) // Position - 0xA498 (42136)
 	return flag;
 }
 
-int func_173(int iParam0, BOOL bParam1) // Position - 0xA4F1 (42225)
+eCharacter func_173(int iParam0, BOOL bParam1) // Position - 0xA4F1 (42225)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_174();
+	if (num == -1)
+		num = func_174();
 
-	if (Global_1575070[num2] == true)
+	if (Global_1575070[num] == true)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_174() // Position - 0xA532 (42290)
@@ -8287,47 +8287,47 @@ BOOL func_193(char* sParam0, int iParam1, BOOL bParam2) // Position - 0xAE5A (44
 	return flag && flag2;
 }
 
-BOOL func_194(int* piParam0) // Position - 0xAF68 (44904)
+BOOL func_194(int iParam0) // Position - 0xAF68 (44904)
 {
-	switch (piParam0->f_9)
+	switch (iParam0->f_9)
 	{
 		case 0:
-			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
+			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
 			{
-				*piParam0 = GRAPHICS::REQUEST_SCALEFORM_MOVIE(&(piParam0->f_1));
-				piParam0->f_9 = 1;
+				*iParam0 = GRAPHICS::REQUEST_SCALEFORM_MOVIE(&(iParam0->f_1));
+				iParam0->f_9 = 1;
 			
-				if (piParam0->f_7)
+				if (iParam0->f_7)
 				{
-					if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
+					if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
 					{
-						piParam0->f_8 = MISC::GET_GAME_TIMER();
-						piParam0->f_9 = 2;
+						iParam0->f_8 = MISC::GET_GAME_TIMER();
+						iParam0->f_9 = 2;
 					}
 				}
 			}
 			else
 			{
-				piParam0->f_8 = MISC::GET_GAME_TIMER();
-				piParam0->f_9 = 2;
+				iParam0->f_8 = MISC::GET_GAME_TIMER();
+				iParam0->f_9 = 2;
 			}
 			break;
 	
 		case 1:
-			if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
+			if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
 			{
-				piParam0->f_8 = MISC::GET_GAME_TIMER();
-				piParam0->f_9 = 2;
+				iParam0->f_8 = MISC::GET_GAME_TIMER();
+				iParam0->f_9 = 2;
 			}
 			break;
 	
 		case 2:
-			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
-				piParam0->f_9 = 0;
+			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+				iParam0->f_9 = 0;
 			break;
 	}
 
-	return piParam0->f_9 == 2;
+	return iParam0->f_9 == 2;
 }
 
 BOOL func_195() // Position - 0xB00A (45066)
@@ -8374,7 +8374,7 @@ void func_198(int iParam0) // Position - 0xB0CD (45261)
 	if (func_203())
 		return;
 
-	if (!(Global_21610.f_1 == 1))
+	if (!(Global_21610.f_1 == true))
 	{
 		if (func_65(0))
 			func_199(iParam0);
@@ -8417,7 +8417,7 @@ void func_199(int iParam0) // Position - 0xB100 (45312)
 
 BOOL func_200() // Position - 0xB18A (45450)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -8467,25 +8467,25 @@ BOOL func_204() // Position - 0xB242 (45634)
 	return HUD::GET_PAUSE_MENU_STATE() != 0;
 }
 
-BOOL func_205(int iParam0, int iParam1, BOOL bParam2) // Position - 0xB250 (45648)
+BOOL func_205(ePedComponentType epctParam0, int iParam1, BOOL bParam2) // Position - 0xB250 (45648)
 {
 	if (iParam1 == -1)
 		return true;
 
-	func_233(iParam0, bParam2, false);
+	func_233(epctParam0, bParam2, false);
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam2)
-		if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), *iParam0)) >= iParam1)
+		if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), *epctParam0)) >= iParam1)
 			return true;
-	else if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *iParam0)) >= iParam1)
+	else if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(MISC::GET_GAME_TIMER(), *epctParam0)) >= iParam1)
 		return true;
 
 	return false;
 }
 
-BOOL _STOPWATCH_IS_INITIALIZED(int iParam0) // Position - 0xB2AE (45742)
+BOOL _STOPWATCH_IS_INITIALIZED(ePedComponentType epctParam0) // Position - 0xB2AE (45742)
 {
-	return iParam0->f_1;
+	return epctParam0->f_1;
 }
 
 BOOL _DOES_ENTITY_EXIST_AND_IS_ALIVE(Vehicle veParam0) // Position - 0xB2BA (45754)
@@ -8667,7 +8667,7 @@ void func_217() // Position - 0xB6AD (46765)
 		{
 			switch (Global_1579258)
 			{
-				case 1:
+				case true:
 					vector = { 0f, 50f, 1f };
 					break;
 			
@@ -8686,7 +8686,7 @@ void func_217() // Position - 0xB6AD (46765)
 		{
 			switch (Global_1579264)
 			{
-				case 1:
+				case true:
 					vector2 = { 0f, 50f, 1f };
 					break;
 			
@@ -9256,19 +9256,19 @@ char* func_232(Hash hParam0) // Position - 0xC2E9 (49897)
 	return "heli_cam";
 }
 
-void func_233(var uParam0, BOOL bParam1, BOOL bParam2) // Position - 0xC34E (49998)
+void func_233(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0xC34E (49998)
 {
-	if (uParam0->f_1 == 0)
+	if (iParam0->f_1 == 0)
 	{
 		if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam1)
 			if (!bParam2)
-				*uParam0 = NETWORK::GET_NETWORK_TIME();
+				*iParam0 = NETWORK::GET_NETWORK_TIME();
 			else
-				*uParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
+				*iParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
 		else
-			*uParam0 = MISC::GET_GAME_TIMER();
+			*iParam0 = MISC::GET_GAME_TIMER();
 	
-		uParam0->f_1 = 1;
+		iParam0->f_1 = 1;
 	}
 
 	return;
@@ -9332,15 +9332,15 @@ void func_235(BOOL bParam0, int iParam1) // Position - 0xC3AB (50091)
 	return;
 }
 
-void func_236(int* piParam0) // Position - 0xC471 (50289)
+void func_236(int iParam0) // Position - 0xC471 (50289)
 {
-	if (piParam0->f_9 != 0)
+	if (iParam0->f_9 != 0)
 	{
-		if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
-			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(piParam0);
+		if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(iParam0);
 	
-		*piParam0 = 0;
-		piParam0->f_9 = 0;
+		*iParam0 = 0;
+		iParam0->f_9 = 0;
 	}
 
 	return;
@@ -9377,28 +9377,28 @@ void func_237(BOOL bParam0) // Position - 0xC49D (50333)
 
 void func_238() // Position - 0xC519 (50457)
 {
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1" /*You are the co-pilot of a combat helicopter. Press ~INPUT_CONTEXT~ to use the rocket launcher.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1" /*Eres el copiloto de un helicóptero de combate. Pulsa ~INPUT_CONTEXT~ para usar el lanzacohetes.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1b" /*You are the co-pilot of a helicopter. Press ~INPUT_CONTEXT~ to use the mounted surveillance camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1b" /*Eres el copiloto de un helicóptero. Pulsa ~INPUT_CONTEXT~ para usar la cámara montada de vigilancia.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1c" /*You are the co-pilot of a Valkyrie helicopter. Press ~INPUT_CONTEXT~ to enter and exit the gun camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_1c" /*Eres el copiloto de un helicóptero Valkyrie. Pulsa ~INPUT_CONTEXT~ para mirar/dejar de mirar por la cámara de la ametralladora.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3" /*Your co-pilot is operating the helicopter's rocket launcher. Press ~INPUT_CONTEXT~ to view the camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3" /*Tu copiloto está manejando el lanzacohetes del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3b" /*Your co-pilot is operating the helicopter's mounted surveillance camera. Press ~INPUT_CONTEXT~ to view the camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3b" /*Tu copiloto está manejando la cámara de observación del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3c" /*Your co-pilot is operating the helicopter's gun. Press ~INPUT_CONTEXT~ to view the camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3c" /*Tu copiloto está manejando el arma del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c1" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera. ~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c2" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera. ~n~Hold ~INPUT_CONTEXT~ to move to the Rear Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c1" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c2" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Rear Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c1" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c2" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_BUSY" /*You cannot move to another seat or enter the turret camera while moving to another seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_2" /*You are a passenger of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the passenger camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_1" /*You are the co-pilot of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~The aircraft's other stations are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c1" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Co-Pilot seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c2" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~The aircraft's other stations are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c1" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c2" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Co-Pilot seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c" /*You are the Co-Pilot of a Volatol.~n~The aircraft's other stations are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c1" /*You are the Co-Pilot of a Volatol.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c2" /*You are the Co-Pilot of a Volatol.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c" /*Titan 250 D 40mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c1" /*Titan 250 D 40mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_2c" /*Titan 250 D 25mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_2c1" /*Titan 250 D 25mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_3c" /*Titan 250 D 105mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_3c1" /*Titan 250 D 105mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 40mm Cannon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c1" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 25mm Cannon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c2" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 105mm Cannon.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c1" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta frontal.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_1c2" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta trasera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c1" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta superior.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_2c2" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta trasera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c1" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta superior.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_3c2" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta frontal.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BOMBGUN_BUSY" /*No puedes moverte a otro asiento ni pasar a la cámara de la torreta mientras te cambias de asiento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_2" /*Eres el pasajero de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara de pasajero.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("AKULAGUN_1" /*Eres el copiloto de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c" /*Torreta frontal del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para entrar en la cámara del arma.~n~Las otras torretas porque se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c1" /*Torreta frontal del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento del copiloto.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_1c2" /*Torreta frontal del Volatol.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta superior.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para entrar en la cámara del arma.~n~Las otras torretas porque se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c1" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta frontal.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_2c2" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento del copiloto.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c" /*Eres el copiloto de un Volatol.~n~Las otras torretas porque se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c1" /*Eres el copiloto de un Volatol.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta frontal.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VOLGUN_3c2" /*Eres el copiloto de un Volatol.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta superior.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c" /*Cañón de 40 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c1" /*Cañón de 40 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_2c" /*Cañón de 25 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_2c1" /*Cañón de 25 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_3c" /*Cañón de 105 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_3c1" /*Cañón de 105 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 40µmm.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c1" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 25µmm.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_4c2" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 105µmm.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/))
 		HUD::CLEAR_HELP(true);
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUNH_1c" /*You are the co-pilot of a Hunter helicopter. Press ~INPUT_CONTEXT~ to enter and exit the gun camera.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUNH_1c" /*Eres el copiloto de un helicóptero Hunter. Pulsa ~INPUT_CONTEXT~ para entrar y salir de la cámara del arma.*/))
 		HUD::CLEAR_HELP(true);
 
 	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_20(veLocal_367)))
@@ -9407,9 +9407,9 @@ void func_238() // Position - 0xC519 (50457)
 	return;
 }
 
-void _STOPWATCH_DESTROY(int iParam0) // Position - 0xC79E (51102)
+void _STOPWATCH_DESTROY(ePedComponentType epctParam0) // Position - 0xC79E (51102)
 {
-	iParam0->f_1 = 0;
+	epctParam0->f_1 = 0;
 	return;
 }
 
@@ -9452,7 +9452,7 @@ BOOL func_242() // Position - 0xC811 (51217)
 	if (func_251())
 		return false;
 
-	if (func_250(PLAYER::PLAYER_ID()) || func_249(PLAYER::PLAYER_ID(), false))
+	if (func_250(PLAYER::PLAYER_ID()) || func_249(PLAYER::PLAYER_ID(), PV_COMP_HEAD))
 		return false;
 
 	if (func_108(PLAYER::PLAYER_ID()) || func_44())
@@ -9466,7 +9466,7 @@ BOOL func_242() // Position - 0xC811 (51217)
 	if (scriptTaskStatus == 1 || scriptTaskStatus == 0 || PED::GET_PED_RESET_FLAG(PLAYER::PLAYER_PED_ID(), 373))
 		return false;
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TUR_GR" /*Turret is underground. You cannot use this turret while it is underground.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TUR_WATER" /*Turret is underwater. You cannot use this turret while it is under water.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TUR_GR" /*La torreta está bajo tierra. No puedes utilizarla mientras esté ahí.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TUR_WATER" /*La torreta está bajo el agua. No puedes utilizarla mientras esté ahí.*/))
 	{
 		if (CAM::IS_SCREEN_FADED_OUT())
 			CAM::DO_SCREEN_FADE_IN(500);
@@ -9486,7 +9486,7 @@ BOOL func_242() // Position - 0xC811 (51217)
 			if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT) && iLocal_314 < 1)
 			{
 				func_238();
-				_DISPLAY_HELP_TEXT("BOMBGUN_BUSY" /*You cannot move to another seat or enter the turret camera while moving to another seat.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_BUSY" /*No puedes moverte a otro asiento ni pasar a la cámara de la torreta mientras te cambias de asiento.*/, -1);
 				iLocal_314 = iLocal_314 + 1;
 			}
 		}
@@ -9720,10 +9720,10 @@ BOOL func_248() // Position - 0xCF20 (53024)
 	return false;
 }
 
-BOOL func_249(ePedComponentType epctParam0, BOOL bParam1) // Position - 0xCF3C (53052)
+BOOL func_249(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0xCF3C (53052)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
-		if (bParam1 || _NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
+		if (epctParam1 || _NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
 			if (Global_2658291[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
 				return func_58(Global_2658291[epctParam0 /*468*/].f_325.f_8) == 33;
 
@@ -9744,7 +9744,7 @@ BOOL func_251() // Position - 0xCFD1 (53201)
 {
 	if (!func_254(PLAYER::PLAYER_ID()))
 	{
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BHH_LEFTRANGE" /*You are out of range of the Business Battle that is currently in progress. Press ~INPUT_CONTEXT~ to continue participating.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BHH_LEFTRANGE" /*Estás demasiado lejos de la batalla comercial que está en curso. Pulsa ~INPUT_CONTEXT~ para seguir participando.*/))
 			return true;
 	
 		if (func_252(PLAYER::PLAYER_ID()) == 239)
@@ -9826,7 +9826,7 @@ void func_256() // Position - 0xD13B (53563)
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
@@ -9844,7 +9844,7 @@ void func_256() // Position - 0xD13B (53563)
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
@@ -9862,7 +9862,7 @@ void func_256() // Position - 0xD13B (53563)
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
@@ -9885,15 +9885,15 @@ void func_256() // Position - 0xD13B (53563)
 				switch (iLocal_347)
 				{
 					case 0:
-						_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*There is a player already occupying the Top Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*Ya hay un jugador ocupando la torreta superior.*/, 1000);
 						break;
 				
 					case 1:
-						_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*There is a player already occupying the Nose Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*Ya hay un jugador ocupando la torreta frontal.*/, 1000);
 						break;
 				
 					case 2:
-						_DISPLAY_HELP_TEXT("BOMBGUN_3o" /*There is a player already occupying the Rear Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_3o" /*Ya hay un jugador ocupando la torreta trasera.*/, 1000);
 						break;
 				}
 			
@@ -9931,7 +9931,7 @@ void func_257() // Position - 0xD332 (54066)
 		{
 			if (!bLocal_309)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
@@ -10037,15 +10037,15 @@ void func_257() // Position - 0xD332 (54066)
 						switch (iLocal_347)
 						{
 							case 1:
-								_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*There is a player already occupying the Top Turret seat.*/, 1000);
+								_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*Ya hay un jugador ocupando la torreta superior.*/, 1000);
 								break;
 						
 							case 2:
-								_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*There is a player already occupying the Nose Turret seat.*/, 1000);
+								_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*Ya hay un jugador ocupando la torreta frontal.*/, 1000);
 								break;
 						
 							case 3:
-								_DISPLAY_HELP_TEXT("BOMBGUN_3o" /*There is a player already occupying the Rear Turret seat.*/, 1000);
+								_DISPLAY_HELP_TEXT("BOMBGUN_3o" /*Ya hay un jugador ocupando la torreta trasera.*/, 1000);
 								break;
 						}
 					
@@ -10101,7 +10101,7 @@ void func_261() // Position - 0xD6D1 (54993)
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
@@ -10114,7 +10114,7 @@ void func_261() // Position - 0xD6D1 (54993)
 			}
 			else if (iLocal_313 < 1)
 			{
-				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*That seat is taken. You cannot move to it.*/, -1);
+				_DISPLAY_HELP_TEXT("BOMBGUN_FULL" /*No puedes moverte a ese asiento porque ya está ocupado.*/, -1);
 				iLocal_313 = iLocal_313 + 1;
 			}
 		}
@@ -10137,11 +10137,11 @@ void func_261() // Position - 0xD6D1 (54993)
 				switch (iLocal_347)
 				{
 					case 1:
-						_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*There is a player already occupying the Nose Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_2o" /*Ya hay un jugador ocupando la torreta frontal.*/, 1000);
 						break;
 				
 					case 2:
-						_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*There is a player already occupying the Top Turret seat.*/, 1000);
+						_DISPLAY_HELP_TEXT("BOMBGUN_1o" /*Ya hay un jugador ocupando la torreta superior.*/, 1000);
 						break;
 				}
 			
@@ -10161,7 +10161,7 @@ void func_262() // Position - 0xD7F6 (55286)
 
 	if (bLocal_301 && HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 	{
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3" /*Your co-pilot is operating the helicopter's rocket launcher. Press ~INPUT_CONTEXT~ to view the camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3c" /*Your co-pilot is operating the helicopter's gun. Press ~INPUT_CONTEXT~ to view the camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3b" /*Your co-pilot is operating the helicopter's mounted surveillance camera. Press ~INPUT_CONTEXT~ to view the camera.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3" /*Tu copiloto está manejando el lanzacohetes del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3c" /*Tu copiloto está manejando el arma del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("HUNTGUN_3b" /*Tu copiloto está manejando la cámara de observación del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/))
 		{
 			if (!func_284())
 			{
@@ -10195,7 +10195,7 @@ void func_262() // Position - 0xD7F6 (55286)
 								flag = true;
 					
 						if (!flag)
-							_DISPLAY_HELP_TEXT("HUNTGUN_1" /*You are the co-pilot of a combat helicopter. Press ~INPUT_CONTEXT~ to use the rocket launcher.*/, -1);
+							_DISPLAY_HELP_TEXT("HUNTGUN_1" /*Eres el copiloto de un helicóptero de combate. Pulsa ~INPUT_CONTEXT~ para usar el lanzacohetes.*/, -1);
 					}
 					else if (hLocal_299 == joaat("valkyrie"))
 					{
@@ -10204,7 +10204,7 @@ void func_262() // Position - 0xD7F6 (55286)
 								flag = true;
 					
 						if (!flag)
-							_DISPLAY_HELP_TEXT("HUNTGUN_1c" /*You are the co-pilot of a Valkyrie helicopter. Press ~INPUT_CONTEXT~ to enter and exit the gun camera.*/, -1);
+							_DISPLAY_HELP_TEXT("HUNTGUN_1c" /*Eres el copiloto de un helicóptero Valkyrie. Pulsa ~INPUT_CONTEXT~ para mirar/dejar de mirar por la cámara de la ametralladora.*/, -1);
 					}
 					else if (hLocal_299 == joaat("hunter"))
 					{
@@ -10213,68 +10213,68 @@ void func_262() // Position - 0xD7F6 (55286)
 								flag = true;
 					
 						if (!flag)
-							_DISPLAY_HELP_TEXT("HUNTGUNH_1c" /*You are the co-pilot of a Hunter helicopter. Press ~INPUT_CONTEXT~ to enter and exit the gun camera.*/, -1);
+							_DISPLAY_HELP_TEXT("HUNTGUNH_1c" /*Eres el copiloto de un helicóptero Hunter. Pulsa ~INPUT_CONTEXT~ para entrar y salir de la cámara del arma.*/, -1);
 					}
 					else if (Global_1579258 != -1)
 					{
 					}
 					else if (func_323(veLocal_367))
 					{
-						if (!func_250(PLAYER::PLAYER_ID()) && !func_249(PLAYER::PLAYER_ID(), false))
+						if (!func_250(PLAYER::PLAYER_ID()) && !func_249(PLAYER::PLAYER_ID(), PV_COMP_HEAD))
 						{
 							if (hLocal_299 == joaat("akula"))
 							{
 								if (bLocal_309)
-									_DISPLAY_HELP_TEXT("AKULAGUN_1" /*You are the co-pilot of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/, -1);
+									_DISPLAY_HELP_TEXT("AKULAGUN_1" /*Eres el copiloto de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/, -1);
 								else if (bLocal_310)
-									_DISPLAY_HELP_TEXT("AKULAGUN_2" /*You are a passenger of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the passenger camera.*/, -1);
+									_DISPLAY_HELP_TEXT("AKULAGUN_2" /*Eres el pasajero de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara de pasajero.*/, -1);
 								else if (bLocal_311)
-									_DISPLAY_HELP_TEXT("AKULAGUN_2" /*You are a passenger of an Akula. ~n~Press ~INPUT_CONTEXT~ to enter the passenger camera.*/, -1);
+									_DISPLAY_HELP_TEXT("AKULAGUN_2" /*Eres el pasajero de un Akula. ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara de pasajero.*/, -1);
 							}
 							else if (hLocal_299 == joaat("volatol"))
 							{
 								if (bLocal_310)
 									if (!bLocal_334)
-										_DISPLAY_HELP_TEXT("VOLGUN_1c2" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/, -1);
+										_DISPLAY_HELP_TEXT("VOLGUN_1c2" /*Torreta frontal del Volatol.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta superior.*/, -1);
 									else
-										_DISPLAY_HELP_TEXT("VOLGUN_1c" /*Volatol Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~The aircraft's other stations are currently in use.*/, -1);
+										_DISPLAY_HELP_TEXT("VOLGUN_1c" /*Torreta frontal del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para entrar en la cámara del arma.~n~Las otras torretas porque se están usando en este momento.*/, -1);
 								else if (bLocal_311)
 									if (!bLocal_330)
-										_DISPLAY_HELP_TEXT("VOLGUN_2c1" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/, -1);
+										_DISPLAY_HELP_TEXT("VOLGUN_2c1" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar al asiento de la torreta frontal.*/, -1);
 									else
-										_DISPLAY_HELP_TEXT("VOLGUN_2c" /*Volatol Top Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~The aircraft's other stations are currently in use.*/, -1);
+										_DISPLAY_HELP_TEXT("VOLGUN_2c" /*Torreta superior del Volatol:~n~Pulsa ~INPUT_CONTEXT~ para entrar en la cámara del arma.~n~Las otras torretas porque se están usando en este momento.*/, -1);
 							}
 							else if (hLocal_299 == 858355070)
 							{
 								if (bLocal_310)
 								{
 									if (!bLocal_334 || !bLocal_338)
-										func_277("TITAN2_1c1" /*Titan 250 D 40mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/);
+										func_277("TITAN2_1c1" /*Cañón de 40 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/);
 									else
-										func_277("TITAN2_1c" /*Titan 250 D 40mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/);
+										func_277("TITAN2_1c" /*Cañón de 40 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/);
 								}
 								else if (bLocal_311)
 								{
 									if (!bLocal_338 || !bLocal_330 && !func_12())
-										func_277("TITAN2_2c1" /*Titan 250 D 25mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/);
+										func_277("TITAN2_2c1" /*Cañón de 25 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/);
 									else
-										func_277("TITAN2_2c" /*Titan 250 D 25mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/);
+										func_277("TITAN2_2c" /*Cañón de 25 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/);
 								}
 								else if (bLocal_312)
 								{
 									if (!bLocal_330 && !func_12() || !bLocal_334)
-										func_277("TITAN2_3c1" /*Titan 250 D 105mm Cannon:~n~~INPUT_CONTEXT~ Enter gun camera.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ Switch weapon.*/);
+										func_277("TITAN2_3c1" /*Cañón de 105 mm del Titan 250 D: ~n~~INPUT_CONTEXT~ para usar la cámara del arma.~n~~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para cambiar de arma.*/);
 									else
-										func_277("TITAN2_3c" /*Titan 250 D 105mm Cannon:~n~Press ~INPUT_CONTEXT~ to enter gun camera.~n~The aircraft's other weapons are currently in use.*/);
+										func_277("TITAN2_3c" /*Cañón de 105 mm del Titan 250 D: ~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma. ~n~Los otros cañones se están usando en este momento.*/);
 								}
 								else if (bLocal_309)
 								{
 									if (!bLocal_330 && !func_12())
-										func_277("TITAN2_4c" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 40mm Cannon.*/);
+										func_277("TITAN2_4c" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 40µmm.*/);
 									else if (!bLocal_334)
-										func_277("TITAN2_4c1" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 25mm Cannon.*/);
+										func_277("TITAN2_4c1" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 25µmm.*/);
 									else if (!bLocal_338)
-										func_277("TITAN2_4c2" /*Press ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ to move to 105mm Cannon.*/);
+										func_277("TITAN2_4c2" /*Pulsa ~INPUT_VEH_FLY_YAW_LEFT~/~INPUT_VEH_FLY_YAW_RIGHT~ para mover el cañón de 105µmm.*/);
 								}
 								else if (bLocal_308)
 								{
@@ -10283,15 +10283,15 @@ void func_262() // Position - 0xD7F6 (55286)
 										if (func_274())
 										{
 											if (func_184())
-												func_277("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+												func_277("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/);
 											else
-												func_277("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+												func_277("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/);
 										
 											bLocal_302 = true;
 										}
 										else
 										{
-											func_277("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+											func_277("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 											bLocal_302 = false;
 										}
 									
@@ -10300,9 +10300,9 @@ void func_262() // Position - 0xD7F6 (55286)
 									else
 									{
 										if (func_184())
-											func_277("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+											func_277("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 										else
-											func_277("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+											func_277("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 									
 										bLocal_304 = true;
 									}
@@ -10311,35 +10311,35 @@ void func_262() // Position - 0xD7F6 (55286)
 							else if (bLocal_309)
 							{
 								if (!bLocal_330)
-									_DISPLAY_HELP_TEXT("BOMBGUN_1c1" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera. ~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_1c1" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta frontal.*/, -1);
 								else if (!bLocal_334)
-									_DISPLAY_HELP_TEXT("BOMBGUN_1c2" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera. ~n~Hold ~INPUT_CONTEXT~ to move to the Rear Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_1c2" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta trasera.*/, -1);
 								else
-									_DISPLAY_HELP_TEXT("BOMBGUN_1c" /*You are the co-pilot of a Bombushka. ~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_1c" /*Eres el copiloto de un Bombushka.~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/, -1);
 							}
 							else if (bLocal_310)
 							{
 								if (!bLocal_334)
-									_DISPLAY_HELP_TEXT("BOMBGUN_2c2" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Rear Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_2c2" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta trasera.*/, -1);
 								else if (!bLocal_318)
-									_DISPLAY_HELP_TEXT("BOMBGUN_2c1" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_2c1" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta superior.*/, -1);
 								else
-									_DISPLAY_HELP_TEXT("BOMBGUN_2c" /*Bombushka Nose Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_2c" /*Torreta frontal del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/, -1);
 							}
 							else if (bLocal_311)
 							{
 								if (!bLocal_318)
-									_DISPLAY_HELP_TEXT("BOMBGUN_3c1" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Top Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_3c1" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta superior.*/, -1);
 								else if (!bLocal_330)
-									_DISPLAY_HELP_TEXT("BOMBGUN_3c2" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.~n~Hold ~INPUT_CONTEXT~ to move to the Nose Turret seat.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_3c2" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.~n~Mantén pulsado ~INPUT_CONTEXT~ para pasar a la torreta frontal.*/, -1);
 								else
-									_DISPLAY_HELP_TEXT("BOMBGUN_3c" /*Bombushka Rear Turret:~n~Press ~INPUT_CONTEXT~ to enter the gun camera.*/, -1);
+									_DISPLAY_HELP_TEXT("BOMBGUN_3c" /*Torreta trasera del Bombushka:~n~Pulsa ~INPUT_CONTEXT~ para usar la cámara del arma.*/, -1);
 							}
 						}
 					}
 					else
 					{
-						_DISPLAY_HELP_TEXT("HUNTGUN_1b" /*You are the co-pilot of a helicopter. Press ~INPUT_CONTEXT~ to use the mounted surveillance camera.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_1b" /*Eres el copiloto de un helicóptero. Pulsa ~INPUT_CONTEXT~ para usar la cámara montada de vigilancia.*/, -1);
 					}
 				
 					bLocal_301 = true;
@@ -10350,36 +10350,36 @@ void func_262() // Position - 0xD7F6 (55286)
 					{
 						if (func_273(PLAYER::PLAYER_ID()) == 2)
 						{
-							_DISPLAY_HELP_TEXT("TR_HT_VKCHCAM" /*Press ~INPUT_CONTEXT~ to use the helicopter's mounted surveillance camera to scan license plates and locate the bank manager's vehicle. ~INPUT_VEH_HORN~ can be used to make the helicopter hover in place.*/, -1);
+							_DISPLAY_HELP_TEXT("TR_HT_VKCHCAM" /*Pulsa ~INPUT_CONTEXT~ para usar la cámara de vigilancia del helicóptero para escanear matrículas y localizar el vehículo del gerente del banco. Puedes usar ~INPUT_VEH_HORN~ para mantener el helicóptero estable en una posición.*/, -1);
 						}
 						else if (func_270(PLAYER::PLAYER_ID()) == 7)
 						{
 						}
 						else
 						{
-							_DISPLAY_HELP_TEXT("TR_HT_HCAM" /*Press ~INPUT_CONTEXT~ to use the mounted surveillance camera.*/, -1);
+							_DISPLAY_HELP_TEXT("TR_HT_HCAM" /*Pulsa ~INPUT_CONTEXT~ para usar la cámara montada de vigilancia.*/, -1);
 						}
 					
 						bLocal_301 = true;
 						Global_2740207 = true;
 					}
 				
-					if (!func_250(PLAYER::PLAYER_ID()) && !func_249(PLAYER::PLAYER_ID(), false) && hLocal_299 == 858355070 && !bLocal_301 && func_268())
+					if (!func_250(PLAYER::PLAYER_ID()) && !func_249(PLAYER::PLAYER_ID(), PV_COMP_HEAD) && hLocal_299 == 858355070 && !bLocal_301 && func_268())
 					{
 						if (!bLocal_330)
 						{
 							if (func_274())
 							{
 								if (func_184())
-									func_277("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+									func_277("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/);
 								else
-									func_277("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+									func_277("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/);
 							
 								bLocal_302 = true;
 							}
 							else
 							{
-								func_277("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+								func_277("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 								bLocal_302 = false;
 							}
 						
@@ -10388,9 +10388,9 @@ void func_262() // Position - 0xD7F6 (55286)
 						else
 						{
 							if (func_184())
-								func_277("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+								func_277("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 							else
-								func_277("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/);
+								func_277("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/);
 						
 							bLocal_304 = true;
 						}
@@ -10401,16 +10401,16 @@ void func_262() // Position - 0xD7F6 (55286)
 				else if (func_284())
 				{
 					if (hLocal_299 == joaat("buzzard") && !Global_2740210 || hLocal_299 == joaat("savage") || hLocal_299 == -1659004814)
-						_DISPLAY_HELP_TEXT("HUNTGUN_3" /*Your co-pilot is operating the helicopter's rocket launcher. Press ~INPUT_CONTEXT~ to view the camera.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_3" /*Tu copiloto está manejando el lanzacohetes del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/, -1);
 					else if (hLocal_299 == joaat("valkyrie"))
-						_DISPLAY_HELP_TEXT("HUNTGUN_3c" /*Your co-pilot is operating the helicopter's gun. Press ~INPUT_CONTEXT~ to view the camera.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_3c" /*Tu copiloto está manejando el arma del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/, -1);
 					else
-						_DISPLAY_HELP_TEXT("HUNTGUN_3b" /*Your co-pilot is operating the helicopter's mounted surveillance camera. Press ~INPUT_CONTEXT~ to view the camera.*/, -1);
+						_DISPLAY_HELP_TEXT("HUNTGUN_3b" /*Tu copiloto está manejando la cámara de observación del helicóptero. Pulsa ~INPUT_CONTEXT~ para ver la cámara.*/, -1);
 				
 					bLocal_301 = true;
 				}
 			}
-			else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VEX_EYEHLPe" /*Enter the camera with ~INPUT_CONTEXT~ to access the vehicle scanner.*/))
+			else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("VEX_EYEHLPe" /*Activa la cámara con ~INPUT_CONTEXT~ para acceder al escáner de vehículos.*/))
 			{
 				bLocal_301 = true;
 			}
@@ -10501,7 +10501,7 @@ BOOL func_268() // Position - 0xDF3C (57148)
 	return true;
 }
 
-BOOL func_269() // Position - 0xDF79 (57209)
+ePedComponentType func_269() // Position - 0xDF79 (57209)
 {
 	return Global_77342;
 }
@@ -10629,7 +10629,7 @@ BOOL func_281() // Position - 0xE166 (57702)
 {
 	if (!func_254(PLAYER::PLAYER_ID()))
 	{
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BHH_LEFTRANGE" /*You are out of range of the Business Battle that is currently in progress. Press ~INPUT_CONTEXT~ to continue participating.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BHH_LEFTRANGE" /*Estás demasiado lejos de la batalla comercial que está en curso. Pulsa ~INPUT_CONTEXT~ para seguir participando.*/))
 			return true;
 	
 		if (func_252(PLAYER::PLAYER_ID()) == 239)
@@ -10641,7 +10641,7 @@ BOOL func_281() // Position - 0xE166 (57702)
 
 BOOL func_282() // Position - 0xE19B (57755)
 {
-	return !bLocal_301 && !func_250(PLAYER::PLAYER_ID()) && !func_249(PLAYER::PLAYER_ID(), false) && !CAM::IS_SCREEN_FADING_IN() && !CAM::IS_SCREEN_FADED_OUT() && !CAM::IS_SCREEN_FADING_OUT() && CAM::IS_SCREEN_FADED_IN() && !HUD::IS_RADAR_HIDDEN() && HUD::IS_MINIMAP_RENDERING() && !func_66() && !HUD::IS_PAUSE_MENU_ACTIVE() && !NETWORK::NETWORK_IS_IN_MP_CUTSCENE() && !func_283() && !func_60(PLAYER::PLAYER_ID());
+	return !bLocal_301 && !func_250(PLAYER::PLAYER_ID()) && !func_249(PLAYER::PLAYER_ID(), PV_COMP_HEAD) && !CAM::IS_SCREEN_FADING_IN() && !CAM::IS_SCREEN_FADED_OUT() && !CAM::IS_SCREEN_FADING_OUT() && CAM::IS_SCREEN_FADED_IN() && !HUD::IS_RADAR_HIDDEN() && HUD::IS_MINIMAP_RENDERING() && !func_66() && !HUD::IS_PAUSE_MENU_ACTIVE() && !NETWORK::NETWORK_IS_IN_MP_CUTSCENE() && !func_283() && !func_60(PLAYER::PLAYER_ID());
 }
 
 BOOL func_283() // Position - 0xE234 (57908)
@@ -10814,7 +10814,7 @@ void func_293() // Position - 0xE48A (58506)
 				{
 					if (!func_268())
 					{
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/))
 							HUD::CLEAR_HELP(true);
 					
 						if (!bLocal_303)
@@ -10834,13 +10834,13 @@ void func_293() // Position - 0xE48A (58506)
 							bLocal_302 = true;
 						}
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/))
 							HUD::CLEAR_HELP(true);
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) && !func_186())
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) && !func_186())
 							HUD::CLEAR_HELP(true);
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) && func_186())
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) && func_186())
 							HUD::CLEAR_HELP(true);
 					}
 					else
@@ -10851,7 +10851,7 @@ void func_293() // Position - 0xE48A (58506)
 							bLocal_302 = false;
 						}
 					
-						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/))
 							HUD::CLEAR_HELP(true);
 					}
 				
@@ -10861,7 +10861,7 @@ void func_293() // Position - 0xE48A (58506)
 						ENTITY::SET_ENTITY_HAS_GRAVITY(veLocal_367, true);
 					}
 				
-					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+					if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3d" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3e" /*Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/))
 						HUD::CLEAR_HELP(true);
 				
 					if (bLocal_304)
@@ -10879,7 +10879,7 @@ void func_293() // Position - 0xE48A (58506)
 					bLocal_304 = true;
 				}
 			
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Hold ~INPUT_CONTEXT~ to use the 40mm Cannon.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Press ~INPUT_CONTEXT~ to use countermeasures.~n~Hold ~INPUT_CONTEXT~ to use the 40mm Cannon and maintain your current altitude.~n~Hold ~INPUT_FRONTEND_X~ to view the gun camera.*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3b" /*Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40 mm.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para ver la cámara del arma.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TITAN2_1c3c" /*Pulsa ~INPUT_CONTEXT~ para usar las contramedidas.~n~Mantén pulsado ~INPUT_CONTEXT~ para usar el cañón de 40µmm y mantener la altitud actual.~n~Mantén pulsado ~INPUT_FRONTEND_X~ para usar la cámara del arma.*/))
 					HUD::CLEAR_HELP(true);
 			}
 		}
@@ -11074,7 +11074,7 @@ void func_299() // Position - 0xE927 (59687)
 			{
 				if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 				{
-					_DISPLAY_HELP_TEXT("HUNTGUN_8" /*Only the gun is available as your co-pilot is operating the helicopter's rocket launcher.*/, -1);
+					_DISPLAY_HELP_TEXT("HUNTGUN_8" /*El arma solo está disponible cuando tu copiloto esté utilizando el lanzacohetes del helicóptero.*/, -1);
 					bLocal_306 = true;
 				}
 			}
@@ -11433,33 +11433,33 @@ void func_319() // Position - 0xEF43 (61251)
 
 void func_320() // Position - 0xEFB8 (61368)
 {
-	int num;
+	BOOL flag;
 
-	num = -1;
+	flag = -1;
 
 	if (Global_1579264 != -1 && func_208(3))
 	{
 		if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_SCRIPT_LB))
 		{
-			num = func_37(1);
+			flag = func_37(1);
 			uLocal_72.f_188 = { 0f, 0f, 0f };
 		}
 		else if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_SCRIPT_RB))
 		{
-			num = func_37(0);
+			flag = func_37(0);
 			uLocal_72.f_188 = { 0f, 0f, 0f };
 		}
 	}
 
-	if (func_36(num))
-		func_321(num);
+	if (func_36(flag))
+		func_321(flag);
 
 	return;
 }
 
-void func_321(int iParam0) // Position - 0xF01C (61468)
+void func_321(BOOL bParam0) // Position - 0xF01C (61468)
 {
-	Global_1579264 = iParam0;
+	Global_1579264 = bParam0;
 	uLocal_72.f_35 = 0;
 	_STOPWATCH_DESTROY(&uLocal_296);
 	return;
@@ -11467,26 +11467,26 @@ void func_321(int iParam0) // Position - 0xF01C (61468)
 
 void func_322() // Position - 0xF036 (61494)
 {
-	int num;
+	BOOL flag;
 
-	num = -1;
+	flag = -1;
 
 	if (Global_1579264 != -1 && func_230(PLAYER::PLAYER_ID()) || func_229(PLAYER::PLAYER_ID()))
 	{
 		if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_SCRIPT_LB))
 		{
-			num = func_33(0);
+			flag = func_33(0);
 			uLocal_72.f_188 = { 0f, 0f, 0f };
 		}
 		else if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_SCRIPT_RB))
 		{
-			num = func_33(1);
+			flag = func_33(1);
 			uLocal_72.f_188 = { 0f, 0f, 0f };
 		}
 	}
 
-	if (func_32(num))
-		func_321(num);
+	if (func_32(flag))
+		func_321(flag);
 
 	return;
 }
@@ -11533,17 +11533,17 @@ BOOL func_325(ePedComponentType epctParam0) // Position - 0xF108 (61704)
 	return false;
 }
 
-void func_326(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0xF167 (61799)
+void func_326(ePedComponentType epctParam0, BOOL bParam1, BOOL bParam2) // Position - 0xF167 (61799)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam1)
 		if (!bParam2)
-			*iParam0 = NETWORK::GET_NETWORK_TIME();
+			*epctParam0 = NETWORK::GET_NETWORK_TIME();
 		else
-			*iParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
+			*epctParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
 	else
-		*iParam0 = MISC::GET_GAME_TIMER();
+		*epctParam0 = MISC::GET_GAME_TIMER();
 
-	iParam0->f_1 = 1;
+	epctParam0->f_1 = 1;
 	return;
 }
 
@@ -11617,7 +11617,7 @@ BOOL func_327() // Position - 0xF1A4 (61860)
 	return false;
 }
 
-BOOL func_328() // Position - 0xF32F (62255)
+ePedComponentType func_328() // Position - 0xF32F (62255)
 {
 	return Global_1575090;
 }
@@ -11728,7 +11728,7 @@ BOOL func_337() // Position - 0xF47D (62589)
 	return false;
 }
 
-BOOL func_338() // Position - 0xF494 (62612)
+ePedComponentType func_338() // Position - 0xF494 (62612)
 {
 	return Global_2673271.f_23;
 }
@@ -12031,7 +12031,7 @@ void func_343() // Position - 0xF93C (63804)
 		HUD::SET_BLIP_ALPHA(HUD::GET_MAIN_PLAYER_BLIP_ID(), 255);
 
 	func_219(&uLocal_72, entity, 0, veLocal_367, hLocal_299, 1);
-	Global_2740205 = false;
+	Global_2740205 = PV_COMP_HEAD;
 	Global_1579259 = false;
 	Global_1835484 = false;
 	MISC::CLEAR_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_879), 6);
@@ -12127,10 +12127,10 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0xFBA8 (64424)
 {
 	switch (func_93())
 	{
-		case 0:
+		case HUD_COLOUR_PURE_WHITE:
 			return func_349();
 	
-		case 2:
+		case HUD_COLOUR_BLACK:
 			return joaat("creator");
 	}
 
@@ -12182,7 +12182,7 @@ void func_354() // Position - 0xFC40 (64576)
 
 void func_355(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20) // Position - 0xFC4D (64589)
 {
-	func_359(func_360(uParam0), uParam0);
+	func_361(func_362(uParam0), uParam0);
 	func_357(0, -1, false);
 	NETWORK::NETWORK_REGISTER_HOST_BROADCAST_VARIABLES(&iLocal_377, 1, 0);
 	NETWORK::NETWORK_REGISTER_PLAYER_BROADCAST_VARIABLES(&uLocal_378, 5, 0);
@@ -12347,11 +12347,33 @@ int func_357(int iParam0, int iParam1, BOOL bParam2) // Position - 0xFE4B (65099
 
 BOOL func_358(BOOL bParam0) // Position - 0xFF61 (65377)
 {
-	bParam0;
+	if (bParam0 && Global_1575062)
+		if (func_359())
+			return false;
+		else
+			return true;
+
 	return Global_1575062;
 }
 
-void func_359(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20, var uParam21) // Position - 0xFF72 (65394)
+BOOL func_359() // Position - 0xFF8D (65421)
+{
+	if (func_360())
+		return true;
+
+	return Global_1575065;
+}
+
+BOOL func_360() // Position - 0xFFA8 (65448)
+{
+	if (Global_1575062 || Global_1575068)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
+}
+
+void func_361(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20, var uParam21) // Position - 0xFFD3 (65491)
 {
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 		func_344();
@@ -12360,7 +12382,7 @@ void func_359(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 	return;
 }
 
-int func_360(int iParam0) // Position - 0xFF91 (65425)
+int func_362(int iParam0) // Position - 0xFFF2 (65522)
 {
 	switch (iParam0)
 	{
@@ -12896,7 +12918,7 @@ int func_360(int iParam0) // Position - 0xFF91 (65425)
 		
 	}
 
-	switch (func_361(func_362(iParam0, true)))
+	switch (func_363(func_364(iParam0, true)))
 	{
 		case 0:
 			return 8;
@@ -12914,7 +12936,7 @@ int func_360(int iParam0) // Position - 0xFF91 (65425)
 	return 0;
 }
 
-int func_361(int iParam0) // Position - 0x107AF (67503)
+int func_363(int iParam0) // Position - 0x107AF (67503)
 {
 	switch (iParam0)
 	{
@@ -13204,7 +13226,7 @@ int func_361(int iParam0) // Position - 0x107AF (67503)
 	return -1;
 }
 
-int func_362(int iParam0, BOOL bParam1) // Position - 0x10B61 (68449)
+int func_364(int iParam0, BOOL bParam1) // Position - 0x10B61 (68449)
 {
 	switch (iParam0)
 	{

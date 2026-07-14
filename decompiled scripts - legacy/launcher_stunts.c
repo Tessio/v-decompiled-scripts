@@ -924,7 +924,7 @@ void func_9() // Position - 0xE59 (3673)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_10() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1996,7 +1996,7 @@ void func_58(int iParam0) // Position - 0x2491 (9361)
 	if (func_63())
 		return;
 
-	if (!(Global_21610.f_1 == 1))
+	if (!(Global_21610.f_1 == true))
 	{
 		if (func_71(0))
 			func_59(iParam0);
@@ -2039,7 +2039,7 @@ void func_59(int iParam0) // Position - 0x24C4 (9412)
 
 BOOL func_60() // Position - 0x254E (9550)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -2239,29 +2239,29 @@ BOOL func_69(Vehicle veParam0) // Position - 0x2891 (10385)
 	return false;
 }
 
-BOOL func_70() // Position - 0x289E (10398)
+ePedComponentType func_70() // Position - 0x289E (10398)
 {
 	return Global_77342;
 }
 
-BOOL func_71(int iParam0) // Position - 0x28AA (10410)
+ePedComponentType func_71(int iParam0) // Position - 0x28AA (10410)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_72(int iParam0, int iParam1) // Position - 0x2901 (10497)
@@ -2445,7 +2445,7 @@ BOOL func_83() // Position - 0x322D (12845)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_84() // Position - 0x323E (12862)
+ePedComponentType func_84() // Position - 0x323E (12862)
 {
 	return Global_1575090;
 }
@@ -2848,7 +2848,7 @@ void func_112() // Position - 0x37FC (14332)
 	iLocal_103 = 95;
 	MISC::CLEAR_AREA_OF_VEHICLES(uLocal_112, 10f, false, false, false, false, false, false, 0);
 	iLocal_97 = 10;
-	sLocal_99 = "PLAY_STUNT" /*Approach the plane and press ~INPUT_ENTER~ to begin stunt plane time trials.*/;
+	sLocal_99 = "PLAY_STUNT" /*Acércate al avión y pulsa ~INPUT_ENTER~ para iniciar las contrarrelojes en avión acrobático.*/;
 	fLocal_115 = 6f;
 	essLocal_95 = 64500;
 	return;

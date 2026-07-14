@@ -142,7 +142,7 @@ void main() // Position - 0x0 (0)
 	Global_1970079 = -1;
 	Global_1970080 = -1;
 	Global_1970117 = true;
-	Global_1970227 = -1;
+	Global_1970227 = PV_COMP_INVALID;
 	Global_1970302 = -1;
 	Global_1970869 = true;
 	Global_1970939 = -1;

@@ -90,7 +90,7 @@ BOOL func_1() // Position - 0xC9 (201)
 {
 	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 3 || Global_21610.f_1 == 0 || Global_21554 == 1)
 	{
-		Global_21597 = 1;
+		Global_21597 = INPUT_LOOK_LR;
 		return true;
 	}
 
@@ -107,7 +107,7 @@ BOOL func_3() // Position - 0x118 (280)
 {
 	if (Global_10086 == 1 || Global_21610.f_1 < 7)
 	{
-		Global_21597 = 1;
+		Global_21597 = INPUT_LOOK_LR;
 		return true;
 	}
 

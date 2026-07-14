@@ -436,7 +436,7 @@ void main() // Position - 0x0 (0)
 									{
 										if (!func_90(iLocal_92, 134217728))
 										{
-											func_55("MG_NA_TIME" /*This activity is not available at this time of day. Come back between ~1~:00 and ~1~:00 to participate in this activity.*/, iLocal_116, iLocal_117);
+											func_55("MG_NA_TIME" /*La actividad no está disponible en este momento. Vuelve de ~1~:00 a ~1~:00 para participar en ella.*/, iLocal_116, iLocal_117);
 											func_62(&iLocal_92, 134217728);
 										}
 									}
@@ -455,7 +455,7 @@ void main() // Position - 0x0 (0)
 								{
 									if (!func_90(iLocal_92, 134217728))
 									{
-										func_55("MG_NA_TIME" /*This activity is not available at this time of day. Come back between ~1~:00 and ~1~:00 to participate in this activity.*/, iLocal_116, iLocal_117);
+										func_55("MG_NA_TIME" /*La actividad no está disponible en este momento. Vuelve de ~1~:00 a ~1~:00 para participar en ella.*/, iLocal_116, iLocal_117);
 										func_62(&iLocal_92, 134217728);
 									}
 								}
@@ -472,7 +472,7 @@ void main() // Position - 0x0 (0)
 							
 								if (!func_90(iLocal_92, 33554432))
 								{
-									func_47("MG_YOU_IS_BROKE" /*Can't afford this activity. $~1~ needed to start.*/, iLocal_118, -1);
+									func_47("MG_YOU_IS_BROKE" /*No puedes permitirte esta actividad. Necesitas ~1~ $ para iniciarla.*/, iLocal_118, -1);
 									func_62(&iLocal_92, 33554432);
 								}
 							}
@@ -869,7 +869,7 @@ void func_7() // Position - 0xC98 (3224)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_8() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1422,7 +1422,7 @@ void func_39() // Position - 0x158F (5519)
 		if (func_40(8) == _GET_CURRENT_PLAYER_CHARACTER())
 		{
 			iLocal_118 = 0;
-			sLocal_99 = "PLAY_GOLF" /*Press ~INPUT_CONTEXT~ to play Golf.*/;
+			sLocal_99 = "PLAY_GOLF" /*Pulsa ~INPUT_CONTEXT~ para jugar al golf.*/;
 		}
 	}
 
@@ -1718,29 +1718,29 @@ void func_55(char* sParam0, int iParam1, int iParam2) // Position - 0x1AB8 (6840
 	return;
 }
 
-BOOL func_56() // Position - 0x1ADA (6874)
+ePedComponentType func_56() // Position - 0x1ADA (6874)
 {
 	return Global_77342;
 }
 
-BOOL func_57(int iParam0) // Position - 0x1AE6 (6886)
+ePedComponentType func_57(int iParam0) // Position - 0x1AE6 (6886)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_58(int iParam0, int iParam1) // Position - 0x1B3D (6973)
@@ -1939,7 +1939,7 @@ BOOL func_71() // Position - 0x24A6 (9382)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_72() // Position - 0x24B7 (9399)
+ePedComponentType func_72() // Position - 0x24B7 (9399)
 {
 	return Global_1575090;
 }
@@ -2256,7 +2256,7 @@ BOOL func_90(int iParam0, int iParam1) // Position - 0x2973 (10611)
 
 void func_91() // Position - 0x2982 (10626)
 {
-	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "golf" /*GWC and Golfing Society*/, 64);
+	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "golf" /*Club de campo y de golf GW*/, 64);
 	iLocal_97 = 2;
 	fLocal_115 = 7f;
 	func_79(&iLocal_92, 1);
@@ -2267,12 +2267,12 @@ void func_91() // Position - 0x2982 (10626)
 	if (func_40(8) == _GET_CURRENT_PLAYER_CHARACTER())
 	{
 		iLocal_118 = 0;
-		sLocal_99 = "PLAY_GOLF" /*Press ~INPUT_CONTEXT~ to play Golf.*/;
+		sLocal_99 = "PLAY_GOLF" /*Pulsa ~INPUT_CONTEXT~ para jugar al golf.*/;
 	}
 	else
 	{
 		iLocal_118 = func_93(ENTITY::DOES_ENTITY_EXIST(func_75()));
-		sLocal_99 = "PAY_PLAY_GOLF" /*Press ~INPUT_CONTEXT~ to play Golf. The entry fee is $~1~.*/;
+		sLocal_99 = "PAY_PLAY_GOLF" /*Pulsa ~INPUT_CONTEXT~ para jugar al golf. Precio de acceso: ~1~ $.*/;
 	}
 
 	iLocal_103 = 68;

@@ -324,281 +324,281 @@ int func_1(var uParam0) // Position - 0x18B (395)
 	
 		case 2:
 			func_37(&num, 2, true);
-			func_23(&num, "PM_UCON_T2" /*Stunt Jumps*/, func_25(21, false, false));
+			func_23(&num, "PM_UCON_T2" /*Saltos acrobáticos*/, func_25(21, false, false));
 			func_37(&num, 3, false);
-			func_23(&num, "PMCUR30" /*One On One Deathmatch*/, func_22(num2, 3));
-			func_23(&num, "PMCUR31" /*Shooting Range*/, func_22(num2, 3));
-			func_23(&num, "WT_NGTSTK" /*Nightstick*/, func_8(joaat("WEAPON_NIGHTSTICK"), -1, 0));
-			func_23(&num, "PMCUR32" /*Pistol Extended Clip*/, func_22(num2, 3));
+			func_23(&num, "PMCUR30" /*Partida a muerte individual*/, func_22(num2, 3));
+			func_23(&num, "PMCUR31" /*Galería de tiro*/, func_22(num2, 3));
+			func_23(&num, "WT_NGTSTK" /*Porra*/, func_8(joaat("WEAPON_NIGHTSTICK"), -1, 0));
+			func_23(&num, "PMCUR32" /*Pistola: cargador ampliado*/, func_22(num2, 3));
 			func_37(&num, 4, false);
-			func_23(&num, "PMCUR4" /*Pistol Flashlight*/, func_22(num2, 4));
+			func_23(&num, "PMCUR4" /*Pistola: linterna*/, func_22(num2, 4));
 			func_37(&num, 5, false);
-			func_23(&num, "PM_UCON_T11" /*Movies*/, func_25(23, false, false));
-			func_23(&num, "FM_RANK5_w_TICK" /*Micro SMG*/, func_8(joaat("WEAPON_MICROSMG"), -1, 0));
-			func_23(&num, "PMCUR5" /*Pistol Suppressor*/, func_22(num2, 5));
+			func_23(&num, "PM_UCON_T11" /*Cine*/, func_25(23, false, false));
+			func_23(&num, "FM_RANK5_w_TICK" /*Microsubfusil*/, func_8(joaat("WEAPON_MICROSMG"), -1, 0));
+			func_23(&num, "PMCUR5" /*Pistola: silenciador*/, func_22(num2, 5));
 			func_37(&num, 6, false);
-			func_23(&num, "PM_UCON_T15" /*Arm Wrestling*/, func_25(15, false, false));
-			func_23(&num, "PM_UCON_T14" /*Darts*/, func_25(14, false, false));
+			func_23(&num, "PM_UCON_T15" /*Pulso*/, func_25(15, false, false));
+			func_23(&num, "PM_UCON_T14" /*Dardos*/, func_25(14, false, false));
 			func_23(&num, "PM_UCON_T13" /*Golf*/, func_25(11, false, false));
-			func_23(&num, "PM_UCON_T38" /*San Andreas Flight School*/, func_25(122, false, false));
-			func_23(&num, "PM_UCON_T16" /*Strip Club*/, func_25(27, false, false));
-			func_23(&num, "PM_UCON_T12" /*Tennis*/, func_25(12, false, false));
-			func_23(&num, "PMCUR6" /*Micro SMG Extended Clip*/, func_22(num2, 6));
+			func_23(&num, "PM_UCON_T38" /*Escuela de vuelo de San Andreas*/, func_25(122, false, false));
+			func_23(&num, "PM_UCON_T16" /*Club de striptease*/, func_25(27, false, false));
+			func_23(&num, "PM_UCON_T12" /*Tenis*/, func_25(12, false, false));
+			func_23(&num, "PMCUR6" /*Microsubfusil: cargador ampliado*/, func_22(num2, 6));
 			func_37(&num, 7, false);
-			func_23(&num, "PMCUR74" /*Micro SMG Flashlight*/, func_22(num2, 7));
-			func_23(&num, "PMCUR71" /*Anthracite Black Paint*/, func_22(num2, 7));
-			func_23(&num, "PMCUR72" /*Black Steel Paint*/, func_22(num2, 7));
-			func_23(&num, "PMCUR70" /*Carbon Black Paint*/, func_22(num2, 7));
-			func_23(&num, "PMCUR73" /*Graphite Paint*/, func_22(num2, 7));
+			func_23(&num, "PMCUR74" /*Microsubfusil: linterna*/, func_22(num2, 7));
+			func_23(&num, "PMCUR71" /*Pintura: negro antracita*/, func_22(num2, 7));
+			func_23(&num, "PMCUR72" /*Pintura: acero negro*/, func_22(num2, 7));
+			func_23(&num, "PMCUR70" /*Pintura: negro carbón*/, func_22(num2, 7));
+			func_23(&num, "PMCUR73" /*Pintura: grafito*/, func_22(num2, 7));
 			func_37(&num, 8, false);
-			func_23(&num, "PMCUR83" /*Simeon's Export Requests*/, func_22(num2, 8));
-			func_23(&num, "WT_PIST_CBT" /*Combat Pistol*/, func_22(num2, 8));
-			func_23(&num, "PMCUR80" /*Light Smoke Windows Tint*/, func_22(num2, 8));
+			func_23(&num, "PMCUR83" /*Solicitudes de exportaciones para Simeon*/, func_22(num2, 8));
+			func_23(&num, "WT_PIST_CBT" /*Pistola de combate*/, func_22(num2, 8));
+			func_23(&num, "PMCUR80" /*Cristales tintados ahumado claro*/, func_22(num2, 8));
 			func_37(&num, 9, false);
-			func_23(&num, "PMCUR94" /*Combat Pistol Extended Clip*/, func_22(num2, 9));
-			func_23(&num, "PMCUR95" /*Micro SMG Scope*/, func_22(num2, 9));
-			func_23(&num, "PMCUR93" /*Bluish Silver Paint*/, func_22(num2, 9));
-			func_23(&num, "PMCUR90" /*Midnight Silver Paint*/, func_22(num2, 9));
-			func_23(&num, "PMCUR92" /*Rolled Steel Paint*/, func_22(num2, 9));
-			func_23(&num, "PMCUR91" /*Shadow Silver Paint*/, func_22(num2, 9));
+			func_23(&num, "PMCUR94" /*Vehículos: escape oval*/, func_22(num2, 9));
+			func_23(&num, "PMCUR95" /*Microsubfusil: mira*/, func_22(num2, 9));
+			func_23(&num, "PMCUR93" /*Pintura: plateado azulado*/, func_22(num2, 9));
+			func_23(&num, "PMCUR90" /*Pintura: plateado oscuro*/, func_22(num2, 9));
+			func_23(&num, "PMCUR92" /*Pintura: acero laminado*/, func_22(num2, 9));
+			func_23(&num, "PMCUR91" /*Pintura: plateado sombreado*/, func_22(num2, 9));
 			func_37(&num, 10, false);
-			func_23(&num, "PM_UCON_T18" /*Bounties*/, func_25(29, false, false));
-			func_23(&num, "PMCUR101" /*Vehicle Armor Upgrade 20%*/, func_22(num2, 10));
-			func_23(&num, "PMCUR100" /*Truck Horn*/, func_22(num2, 10));
+			func_23(&num, "PM_UCON_T18" /*Recompensas*/, func_25(29, false, false));
+			func_23(&num, "PMCUR101" /*Vehículos: mejora de blindaje del 20%*/, func_22(num2, 10));
+			func_23(&num, "PMCUR100" /*Claxon de camión*/, func_22(num2, 10));
 			func_37(&num, 11, false);
-			func_23(&num, "PM_UCON_T19" /*Parachuting*/, func_25(8, false, false));
-			func_23(&num, "PMCUR117" /*SMG*/, func_22(num2, 11));
-			func_23(&num, "PMCUR118" /*Combat Pistol Flashlight*/, func_22(num2, 11));
-			func_23(&num, "PMCUR116" /*Cop Horn*/, func_22(num2, 11));
-			func_23(&num, "PMCUR114" /*Blaze Red Paint*/, func_22(num2, 11));
-			func_23(&num, "PMCUR112" /*Formula Red Paint*/, func_22(num2, 11));
-			func_23(&num, "PMCUR113" /*Grace Red Paint*/, func_22(num2, 11));
-			func_23(&num, "PMCUR115" /*Torino Red Paint*/, func_22(num2, 11));
+			func_23(&num, "PM_UCON_T19" /*Paracaidismo*/, func_25(8, false, false));
+			func_23(&num, "PMCUR117" /*Subfusil*/, func_22(num2, 11));
+			func_23(&num, "PMCUR118" /*Pistola de combate: linterna*/, func_22(num2, 11));
+			func_23(&num, "PMCUR116" /*Claxon de policía*/, func_22(num2, 11));
+			func_23(&num, "PMCUR114" /*Pintura: rojo fuego*/, func_22(num2, 11));
+			func_23(&num, "PMCUR112" /*Pintura: rojo fórmula*/, func_22(num2, 11));
+			func_23(&num, "PMCUR113" /*Pintura: rojo teja*/, func_22(num2, 11));
+			func_23(&num, "PMCUR115" /*Pintura: rojo torino*/, func_22(num2, 11));
 			func_37(&num, 12, false);
-			func_23(&num, "PMCUR123" /*Ammo Drop*/, func_22(num2, 12));
-			func_23(&num, "PMCUR122" /*Cops Turn a Blind Eye*/, func_22(num2, 12));
-			func_23(&num, "PMCUR120" /*Combat Pistol Suppressor*/, func_22(num2, 12));
-			func_23(&num, "PMCUR124" /*SMG Extended Clip*/, func_22(num2, 12));
-			func_23(&num, "PMCUR121" /*Clown Horn*/, func_22(num2, 12));
+			func_23(&num, "PMCUR123" /*Entrega de munición*/, func_22(num2, 12));
+			func_23(&num, "PMCUR122" /*La poli hace la vista gorda*/, func_22(num2, 12));
+			func_23(&num, "PMCUR120" /*Pistola de combate: silenciador*/, func_22(num2, 12));
+			func_23(&num, "PMCUR124" /*Subfusil: cargador ampliado*/, func_22(num2, 12));
+			func_23(&num, "PMCUR121" /*Claxon de payaso*/, func_22(num2, 12));
 			func_37(&num, 13, false);
-			func_23(&num, "PMCUR136" /*SMG Flashlight*/, func_22(num2, 13));
-			func_23(&num, "PMCUR135" /*Musical Horn 1*/, func_22(num2, 13));
-			func_23(&num, "PMCUR134" /*Bright Orange Paint*/, func_22(num2, 13));
-			func_23(&num, "PMCUR132" /*Pfister Pink Paint*/, func_22(num2, 13));
-			func_23(&num, "PMCUR133" /*Salmon Pink Paint*/, func_22(num2, 13));
-			func_23(&num, "PMCUR131" /*Sunset Red Paint*/, func_22(num2, 13));
+			func_23(&num, "PMCUR136" /*Subfusil: linterna*/, func_22(num2, 13));
+			func_23(&num, "PMCUR135" /*Claxon musical 1*/, func_22(num2, 13));
+			func_23(&num, "PMCUR134" /*Pintura: naranja chillón*/, func_22(num2, 13));
+			func_23(&num, "PMCUR132" /*Pintura: rosa Pfister*/, func_22(num2, 13));
+			func_23(&num, "PMCUR133" /*Pintura: salmón*/, func_22(num2, 13));
+			func_23(&num, "PMCUR131" /*Pintura: rojo ocaso*/, func_22(num2, 13));
 			func_37(&num, 14, false);
-			func_23(&num, "PMCUR141" /*SMG Scope*/, func_22(num2, 14));
-			func_23(&num, "PMCUR140" /*Musical Horn 2*/, func_22(num2, 14));
+			func_23(&num, "PMCUR141" /*Subfusil: mira*/, func_22(num2, 14));
+			func_23(&num, "PMCUR140" /*Claxon musical 2*/, func_22(num2, 14));
 			func_37(&num, 15, false);
-			func_23(&num, "PMCUR152" /*Locate a Car*/, func_22(num2, 15));
-			func_23(&num, "PMCUR159" /*SMG Suppressor*/, func_22(num2, 15));
-			func_23(&num, "PMCUR1510" /*Vehicle EMS Upgrade Level 1*/, func_22(num2, 15));
-			func_23(&num, "PMCUR1514" /*Bronze Paint*/, func_22(num2, 15));
-			func_23(&num, "PMCUR1513" /*Dark Green Paint*/, func_22(num2, 15));
-			func_23(&num, "PMCUR1512" /*Sea Green Paint*/, func_22(num2, 15));
-			func_23(&num, "PMCUR1511" /*Yellow Paint*/, func_22(num2, 15));
-			func_23(&num, "PMCUR1515" /*Black Tire Smoke*/, func_22(num2, 15));
-			func_23(&num, "PMCUR1517" /*Black Smoke Trails*/, func_22(num2, 15));
+			func_23(&num, "PMCUR152" /*Localizar un coche*/, func_22(num2, 15));
+			func_23(&num, "PMCUR159" /*Subfusil: silenciador*/, func_22(num2, 15));
+			func_23(&num, "PMCUR1510" /*Vehículos: mejora de ECU, nivel 1*/, func_22(num2, 15));
+			func_23(&num, "PMCUR1514" /*Pintura: bronce*/, func_22(num2, 15));
+			func_23(&num, "PMCUR1513" /*Pintura: verde oscuro*/, func_22(num2, 15));
+			func_23(&num, "PMCUR1512" /*Pintura: verde mar*/, func_22(num2, 15));
+			func_23(&num, "PMCUR1511" /*Pintura: amarillo*/, func_22(num2, 15));
+			func_23(&num, "PMCUR1515" /*Neumáticos: humo negro*/, func_22(num2, 15));
+			func_23(&num, "PMCUR1517" /*Paracaídas: humo negro*/, func_22(num2, 15));
 			func_37(&num, 16, false);
-			func_23(&num, "PMCUR160" /*Musical Horn 3*/, func_22(num2, 16));
-			func_23(&num, "PMCUR161" /*Red Parachute*/, func_22(num2, 16));
+			func_23(&num, "PMCUR160" /*Claxon musical 3*/, func_22(num2, 16));
+			func_23(&num, "PMCUR161" /*Paracaídas rojo*/, func_22(num2, 16));
 			func_37(&num, 17, false);
-			func_23(&num, "PMCUR170" /*Bull Shark Testosterone*/, func_22(num2, 17));
-			func_23(&num, "PMCUR175" /*Pump Shotgun*/, func_22(num2, 17));
-			func_23(&num, "PMCUR176" /*Lowered Suspension*/, func_22(num2, 17));
-			func_23(&num, "PMCUR174" /*Dark Blue Paint*/, func_22(num2, 17));
-			func_23(&num, "PMCUR171" /*Galaxy Blue Paint*/, func_22(num2, 17));
-			func_23(&num, "PMCUR172" /*Mariner Blue Paint*/, func_22(num2, 17));
-			func_23(&num, "PMCUR173" /*Saxon Blue Paint*/, func_22(num2, 17));
+			func_23(&num, "PMCUR170" /*Testosterona Bull Shark*/, func_22(num2, 17));
+			func_23(&num, "PMCUR175" /*Escopeta de corredera*/, func_22(num2, 17));
+			func_23(&num, "PMCUR176" /*Suspensión de vehículo rebajada*/, func_22(num2, 17));
+			func_23(&num, "PMCUR174" /*Pintura: azul oscuro*/, func_22(num2, 17));
+			func_23(&num, "PMCUR171" /*Pintura: azul galáctico*/, func_22(num2, 17));
+			func_23(&num, "PMCUR172" /*Pintura: azul claro*/, func_22(num2, 17));
+			func_23(&num, "PMCUR173" /*Pintura: azul de Prusia*/, func_22(num2, 17));
 			func_37(&num, 18, false);
-			func_23(&num, "PMCUR180" /*Gang Attacks*/, func_22(num2, 18));
-			func_23(&num, "PMCUR183" /*Pump Shotgun Flashlight*/, func_22(num2, 18));
-			func_23(&num, "PMCUR181" /*Musical Horn 4*/, func_22(num2, 18));
-			func_23(&num, "PMCUR182" /*Blue Smoke Trails*/, func_22(num2, 18));
+			func_23(&num, "PMCUR180" /*Ataques a bandas*/, func_22(num2, 18));
+			func_23(&num, "PMCUR183" /*Escopeta de corredera: linterna*/, func_22(num2, 18));
+			func_23(&num, "PMCUR181" /*Claxon musical 4*/, func_22(num2, 18));
+			func_23(&num, "PMCUR182" /*Paracaídas: humo azul*/, func_22(num2, 18));
 			func_37(&num, 19, false);
-			func_23(&num, "PMCUR198" /*Pump Shotgun Suppressor*/, func_22(num2, 19));
-			func_23(&num, "PMCUR191" /*Musical Horn 5*/, func_22(num2, 19));
-			func_23(&num, "PMCUR196" /*Sad Trombone Horn*/, func_22(num2, 19));
-			func_23(&num, "PMCUR195" /*Diamond Blue Paint*/, func_22(num2, 19));
-			func_23(&num, "PMCUR194" /*Nautical Blue Paint*/, func_22(num2, 19));
-			func_23(&num, "PMCUR193" /*Racing Blue Paint*/, func_22(num2, 19));
-			func_23(&num, "PMCUR192" /*Surf Blue Paint*/, func_22(num2, 19));
+			func_23(&num, "PMCUR198" /*Escopeta de corredera: silenciador*/, func_22(num2, 19));
+			func_23(&num, "PMCUR191" /*Claxon musical 5*/, func_22(num2, 19));
+			func_23(&num, "PMCUR196" /*Trombón triste*/, func_22(num2, 19));
+			func_23(&num, "PMCUR195" /*Pintura: azul diamante*/, func_22(num2, 19));
+			func_23(&num, "PMCUR194" /*Pintura: azul náutico*/, func_22(num2, 19));
+			func_23(&num, "PMCUR193" /*Pintura: azul de carreras*/, func_22(num2, 19));
+			func_23(&num, "PMCUR192" /*Pintura: azul ola*/, func_22(num2, 19));
 			func_37(&num, 20, false);
-			func_23(&num, "PMCUR203" /*Maximum Health Increased*/, func_22(num2, 20));
-			func_23(&num, "PMCUR201" /*Health Regeneration Increased*/, func_22(num2, 20));
-			func_23(&num, "PMCUR200" /*Backup Buzzard Attack Chopper*/, func_22(num2, 20));
-			func_23(&num, "PMCUR204" /*Jerry Can*/, func_22(num2, 20));
-			func_23(&num, "CMOD_GBX_1" /*Street Transmission*/, func_22(num2, 20));
-			func_23(&num, "WAR_TRUCK_UP_2" /*Bulletproof Tires*/, func_22(num2, 20));
+			func_23(&num, "PMCUR203" /*Incremento de salud máxima*/, func_22(num2, 20));
+			func_23(&num, "PMCUR201" /*Incremento de regeneración de salud*/, func_22(num2, 20));
+			func_23(&num, "PMCUR200" /*Buzzard Attack de refuerzo*/, func_22(num2, 20));
+			func_23(&num, "PMCUR204" /*Bidón de gasolina*/, func_22(num2, 20));
+			func_23(&num, "CMOD_GBX_1" /*Transmisión de calle*/, func_22(num2, 20));
+			func_23(&num, "WAR_TRUCK_UP_2" /*Neumáticos antibalas*/, func_22(num2, 20));
 			func_37(&num, 21, false);
-			func_23(&num, "PMCUR210" /*Remove Wanted Level*/, func_22(num2, 21));
-			func_23(&num, "PMCUR211" /*Sniper Rifle*/, func_22(num2, 21));
-			func_23(&num, "PMCUR212" /*Xenon Lights*/, func_22(num2, 21));
-			func_23(&num, "PMCUR216" /*Chocolate Brown Paint*/, func_22(num2, 21));
-			func_23(&num, "PMCUR215" /*Feltzer Brown Paint*/, func_22(num2, 21));
-			func_23(&num, "PMCUR213" /*Maple Brown Paint*/, func_22(num2, 21));
-			func_23(&num, "PMCUR214" /*Sienna Brown Paint*/, func_22(num2, 21));
+			func_23(&num, "PMCUR210" /*Quitar nivel de búsqueda*/, func_22(num2, 21));
+			func_23(&num, "PMCUR211" /*Fusil de francotirador*/, func_22(num2, 21));
+			func_23(&num, "PMCUR212" /*Luces de xenón*/, func_22(num2, 21));
+			func_23(&num, "PMCUR216" /*Pintura: marrón chocolate*/, func_22(num2, 21));
+			func_23(&num, "PMCUR215" /*Pintura: marrón Feltzer*/, func_22(num2, 21));
+			func_23(&num, "PMCUR213" /*Pintura: café*/, func_22(num2, 21));
+			func_23(&num, "PMCUR214" /*Pintura: siena*/, func_22(num2, 21));
 			func_37(&num, 22, false);
-			func_23(&num, "PMCUR220" /*Sniper Rifle Suppressor*/, func_22(num2, 22));
-			func_23(&num, "PMCUR221" /*Yellow Smoke Trails*/, func_22(num2, 22));
+			func_23(&num, "PMCUR220" /*Fusil de francotirador: silenciador*/, func_22(num2, 22));
+			func_23(&num, "PMCUR221" /*Paracaídas: humo amarillo*/, func_22(num2, 22));
 			func_37(&num, 23, false);
-			func_23(&num, "PMCUR236" /*Sniper Rifle Advanced Scope*/, func_22(num2, 23));
-			func_23(&num, "PMCUR235" /*Moss Brown Paint*/, func_22(num2, 23));
-			func_23(&num, "PMCUR233" /*Sandy Brown Paint*/, func_22(num2, 23));
-			func_23(&num, "PMCUR234" /*Straw Brown Paint*/, func_22(num2, 23));
-			func_23(&num, "PMCUR232" /*Woodbeech Brown Paint*/, func_22(num2, 23));
-			func_23(&num, "PMCUR231" /*Seaside Stripes Parachute*/, func_22(num2, 23));
+			func_23(&num, "PMCUR236" /*Vehículos: capó con toma de aire de carbono*/, func_22(num2, 23));
+			func_23(&num, "PMCUR235" /*Pintura: marrón musgo*/, func_22(num2, 23));
+			func_23(&num, "PMCUR233" /*Pintura: marrón arena*/, func_22(num2, 23));
+			func_23(&num, "PMCUR234" /*Pintura: color paja*/, func_22(num2, 23));
+			func_23(&num, "PMCUR232" /*Pintura: color haya*/, func_22(num2, 23));
+			func_23(&num, "PMCUR231" /*Paracaídas estilo marinero*/, func_22(num2, 23));
 			func_37(&num, 24, false);
-			func_23(&num, "PMCUR240" /*Assault Rifle*/, func_22(num2, 24));
-			func_23(&num, "PMCUR241" /*Orange Smoke Trails*/, func_22(num2, 24));
+			func_23(&num, "PMCUR240" /*Fusil de asalto*/, func_22(num2, 24));
+			func_23(&num, "PMCUR241" /*Paracaídas: humo naranja*/, func_22(num2, 24));
 			func_37(&num, 25, false);
-			func_23(&num, "PMCUR250" /*Boat Pick-Up*/, func_22(num2, 25));
-			func_23(&num, "PMCUR258" /*Locate a Boat*/, func_22(num2, 25));
-			func_23(&num, "PMCUR259" /*Assault Rifle Extended Clip*/, func_22(num2, 25));
-			func_23(&num, "PMCUR252" /*Street Brakes*/, func_22(num2, 25));
-			func_23(&num, "PMCUR251" /*Ignition Bomb*/, func_22(num2, 25));
-			func_23(&num, "PMCUR255" /*Cream Paint*/, func_22(num2, 25));
-			func_23(&num, "PMCUR254" /*Frost White Paint*/, func_22(num2, 25));
-			func_23(&num, "PMCUR256" /*Midnight Purple Paint*/, func_22(num2, 25));
-			func_23(&num, "PMCUR257" /*Schafter Purple Paint*/, func_22(num2, 25));
-			func_23(&num, "PMCUR253" /*Blue Tire Smoke*/, func_22(num2, 25));
+			func_23(&num, "PMCUR250" /*Recogida en barco*/, func_22(num2, 25));
+			func_23(&num, "PMCUR258" /*Localizar un barco*/, func_22(num2, 25));
+			func_23(&num, "PMCUR259" /*Fusil de asalto: cargador ampliado*/, func_22(num2, 25));
+			func_23(&num, "PMCUR252" /*Frenos de calle*/, func_22(num2, 25));
+			func_23(&num, "PMCUR251" /*Bomba de arranque*/, func_22(num2, 25));
+			func_23(&num, "PMCUR255" /*Pintura: color crema*/, func_22(num2, 25));
+			func_23(&num, "PMCUR254" /*Pintura: blanco escarcha*/, func_22(num2, 25));
+			func_23(&num, "PMCUR256" /*Pintura: morado oscuro*/, func_22(num2, 25));
+			func_23(&num, "PMCUR257" /*Pintura: morado Schafter*/, func_22(num2, 25));
+			func_23(&num, "PMCUR253" /*Neumáticos: humo azul*/, func_22(num2, 25));
 			func_37(&num, 26, false);
-			func_23(&num, "PMCUR261" /*Assault Rifle Grip*/, func_22(num2, 26));
+			func_23(&num, "PMCUR261" /*Fusil de asalto: empuñadura*/, func_22(num2, 26));
 			func_37(&num, 27, false);
-			func_23(&num, "PMCUR270" /*Assault Rifle Flashlight*/, func_22(num2, 27));
-			func_23(&num, "PMCUR271" /*Red Smoke Trails*/, func_22(num2, 27));
+			func_23(&num, "PMCUR270" /*Fusil de asalto: linterna*/, func_22(num2, 27));
+			func_23(&num, "PMCUR271" /*Paracaídas: humo rojo*/, func_22(num2, 27));
 			func_37(&num, 28, false);
-			func_23(&num, "PMCUR280" /*Assault Rifle Scope*/, func_22(num2, 28));
-			func_23(&num, "PMCUR281" /*Hornet Parachute*/, func_22(num2, 28));
+			func_23(&num, "PMCUR280" /*Fusil de asalto: mira*/, func_22(num2, 28));
+			func_23(&num, "PMCUR281" /*Paracaídas estilo abeja*/, func_22(num2, 28));
 			func_37(&num, 29, false);
-			func_23(&num, "PMCUR290" /*Assault SMG*/, func_22(num2, 29));
-			func_23(&num, "PMCUR294" /*Assault Rifle Suppressor*/, func_22(num2, 29));
+			func_23(&num, "PMCUR290" /*Subfusil de asalto*/, func_22(num2, 29));
+			func_23(&num, "PMCUR294" /*Fusil de asalto: silenciador*/, func_22(num2, 29));
 			func_37(&num, 30, false);
-			func_23(&num, "PMCUR300" /*Helicopter Pickup*/, func_22(num2, 30));
-			func_23(&num, "PMCUR304" /*Assault SMG Extended Clip*/, func_22(num2, 30));
-			func_23(&num, "PMCUR303" /*Vehicle Armor Upgrade 40%*/, func_22(num2, 30));
-			func_23(&num, "PMCUR302" /*Vehicle EMS Upgrade Level 2*/, func_22(num2, 30));
+			func_23(&num, "PMCUR300" /*Recogida en helicóptero*/, func_22(num2, 30));
+			func_23(&num, "PMCUR304" /*Subfusil de asalto: cargador ampliado*/, func_22(num2, 30));
+			func_23(&num, "PMCUR303" /*Vehículos: mejora de blindaje del 40%*/, func_22(num2, 30));
+			func_23(&num, "PMCUR302" /*Vehículos: mejora de ECU, nivel 2*/, func_22(num2, 30));
 			func_37(&num, 31, false);
-			func_23(&num, "PMCUR311" /*Assault SMG Flashlight*/, func_22(num2, 31));
-			func_23(&num, "PMCUR310" /*Dark Smoke Windows*/, func_22(num2, 31));
+			func_23(&num, "PMCUR311" /*Subfusil de asalto: linterna*/, func_22(num2, 31));
+			func_23(&num, "PMCUR310" /*Cristales tintados ahumado oscuro*/, func_22(num2, 31));
 			func_37(&num, 32, false);
-			func_23(&num, "PMCUR321" /*Assault SMG Scope*/, func_22(num2, 32));
-			func_23(&num, "PMCUR320" /*Patriot Parachute*/, func_22(num2, 32));
+			func_23(&num, "PMCUR321" /*Subfusil de asalto: mira*/, func_22(num2, 32));
+			func_23(&num, "PMCUR320" /*Paracaídas estilo patriótico*/, func_22(num2, 32));
 			func_37(&num, 33, false);
-			func_23(&num, "PMCUR331" /*AP Pistol*/, func_22(num2, 33));
-			func_23(&num, "PMCUR332" /*Assault SMG Suppressor*/, func_22(num2, 33));
+			func_23(&num, "PMCUR331" /*Pistola perforante*/, func_22(num2, 33));
+			func_23(&num, "PMCUR332" /*Subfusil de asalto: silenciador*/, func_22(num2, 33));
 			func_37(&num, 34, false);
-			func_23(&num, "PMCUR340" /*AP Pistol Extended Clip*/, func_22(num2, 34));
+			func_23(&num, "PMCUR340" /*Pistola perforante: cargador ampliado*/, func_22(num2, 34));
 			func_37(&num, 35, false);
-			func_23(&num, "PMCUR350" /*Locate a Helicopter*/, func_22(num2, 35));
-			func_23(&num, "PMCUR351" /*Send Mercenaries*/, func_22(num2, 35));
-			func_23(&num, "PMCUR352" /*AP Pistol Flashlight*/, func_22(num2, 35));
+			func_23(&num, "PMCUR350" /*Localizar un helicóptero*/, func_22(num2, 35));
+			func_23(&num, "PMCUR351" /*Enviar mercenarios*/, func_22(num2, 35));
+			func_23(&num, "PMCUR352" /*Pistola perforante: linterna*/, func_22(num2, 35));
 			func_37(&num, 36, false);
-			func_23(&num, "PMCUR361" /*AP Pistol Suppressor*/, func_22(num2, 36));
-			func_23(&num, "PMCUR360" /*Street Suspension*/, func_22(num2, 36));
+			func_23(&num, "PMCUR361" /*Pistola perforante: silenciador*/, func_22(num2, 36));
+			func_23(&num, "PMCUR360" /*Suspensión callejera*/, func_22(num2, 36));
 			func_37(&num, 37, false);
-			func_23(&num, "PMCUR370" /*Assault Shotgun*/, func_22(num2, 37));
+			func_23(&num, "PMCUR370" /*Escopeta de asalto*/, func_22(num2, 37));
 			func_37(&num, 38, false);
-			func_23(&num, "PMCUR381" /*Assault Shotgun Extended Clip*/, func_22(num2, 38));
-			func_23(&num, "PMCUR380" /*Widowmaker Parachute*/, func_22(num2, 38));
+			func_23(&num, "PMCUR381" /*Escopeta de asalto: cargador ampliado*/, func_22(num2, 38));
+			func_23(&num, "PMCUR380" /*Paracaídas Aniquilador*/, func_22(num2, 38));
 			func_37(&num, 39, false);
-			func_23(&num, "PMCUR390" /*Assault Shotgun Grip*/, func_22(num2, 39));
+			func_23(&num, "PMCUR390" /*Escopeta de asalto: empuñadura*/, func_22(num2, 39));
 			func_37(&num, 40, false);
-			func_23(&num, "PMCUR403" /*Maximum Health Increased*/, func_22(num2, 40));
-			func_23(&num, "PMCUR402" /*Health Regeneration Increased*/, func_22(num2, 40));
-			func_23(&num, "PMCUR400" /*Off the Radar*/, func_22(num2, 40));
-			func_23(&num, "PMCUR401" /*Reveal Players*/, func_22(num2, 40));
-			func_23(&num, "PMCUR404" /*Assault Shotgun Flashlight*/, func_22(num2, 40));
-			func_23(&num, "CMOD_GBX_2" /*Sports Transmission*/, func_22(num2, 40));
+			func_23(&num, "PMCUR403" /*Incremento de salud máxima*/, func_22(num2, 40));
+			func_23(&num, "PMCUR402" /*Incremento de regeneración de salud*/, func_22(num2, 40));
+			func_23(&num, "PMCUR400" /*Fuera del radar*/, func_22(num2, 40));
+			func_23(&num, "PMCUR401" /*Mostrar jugadores*/, func_22(num2, 40));
+			func_23(&num, "PMCUR404" /*Escopeta de asalto: linterna*/, func_22(num2, 40));
+			func_23(&num, "CMOD_GBX_2" /*Transmisión deportiva*/, func_22(num2, 40));
 			func_37(&num, 41, false);
-			func_23(&num, "PMCUR41" /*Assault Shotgun Suppressor*/, func_22(num2, 41));
+			func_23(&num, "PMCUR41" /*Escopeta de asalto: silenciador*/, func_22(num2, 41));
 			func_37(&num, 42, false);
-			func_23(&num, "PMCUR420" /*Carbine Rifle*/, func_22(num2, 42));
+			func_23(&num, "PMCUR420" /*Carabina*/, func_22(num2, 42));
 			func_37(&num, 43, false);
-			func_23(&num, "PMCUR430" /*Carbine Rifle Extended Clip*/, func_22(num2, 43));
-			func_23(&num, "FM_RANK43_VM_TICK" /*Yellow Tire Smoke*/, func_22(num2, 43));
+			func_23(&num, "PMCUR430" /*Carabina: cargador ampliado*/, func_22(num2, 43));
+			func_23(&num, "FM_RANK43_VM_TICK" /*Humo amarillo*/, func_22(num2, 43));
 			func_37(&num, 44, false);
-			func_23(&num, "PMCUR441" /*Carbine Rifle Grip*/, func_22(num2, 44));
-			func_23(&num, "PMCUR440" /*Rainbow Parachute*/, func_22(num2, 44));
+			func_23(&num, "PMCUR441" /*Carabina: empuñadura*/, func_22(num2, 44));
+			func_23(&num, "PMCUR440" /*Paracaídas arcoíris*/, func_22(num2, 44));
 			func_37(&num, 45, false);
-			func_23(&num, "PMCUR453" /*Carbine Rifle Flashlight*/, func_22(num2, 45));
-			func_23(&num, "PMCUR451" /*Locate a Plane*/, func_22(num2, 45));
+			func_23(&num, "PMCUR453" /*Carabina: linterna*/, func_22(num2, 45));
+			func_23(&num, "PMCUR451" /*Localizar un avión*/, func_22(num2, 45));
 			func_37(&num, 46, false);
-			func_23(&num, "PMCUR460" /*Carbine Rifle Scope*/, func_22(num2, 46));
+			func_23(&num, "PMCUR460" /*Carabina: mira*/, func_22(num2, 46));
 			func_37(&num, 47, false);
-			func_23(&num, "PMCUR470" /*Carbine Rifle Suppressor*/, func_22(num2, 47));
+			func_23(&num, "PMCUR470" /*Carabina: silenciador*/, func_22(num2, 47));
 			func_37(&num, 49, false);
-			func_23(&num, "PMCUR490" /*Limo Windows Tint*/, func_22(num2, 49));
+			func_23(&num, "PMCUR490" /*Cristales de limusina tintados*/, func_22(num2, 49));
 			func_37(&num, 50, false);
-			func_23(&num, "PMCUR501" /*Airstrike*/, func_22(num2, 50));
-			func_23(&num, "PMCUR500" /*Mugger*/, func_22(num2, 50));
-			func_23(&num, "PMCUR504" /*MG*/, func_22(num2, 50));
-			func_23(&num, "PMCUR506" /*Pink Weapon Tint*/, func_22(num2, 50));
-			func_23(&num, "PMCUR502" /*Vehicle Armor Upgrade 60%*/, func_22(num2, 50));
-			func_23(&num, "PMCUR503" /*Sport Brakes*/, func_22(num2, 50));
-			func_23(&num, "PMCUR505" /*Remote Bomb*/, func_22(num2, 50));
+			func_23(&num, "PMCUR501" /*Ataque aéreo*/, func_22(num2, 50));
+			func_23(&num, "PMCUR500" /*Atracador*/, func_22(num2, 50));
+			func_23(&num, "PMCUR504" /*Ametralladora*/, func_22(num2, 50));
+			func_23(&num, "PMCUR506" /*Acabado para armas rosa*/, func_22(num2, 50));
+			func_23(&num, "PMCUR502" /*Vehículos: mejora de blindaje del 60%*/, func_22(num2, 50));
+			func_23(&num, "PMCUR503" /*Frenos deportivos*/, func_22(num2, 50));
+			func_23(&num, "PMCUR505" /*Bomba por control remoto*/, func_22(num2, 50));
 			func_37(&num, 51, false);
-			func_23(&num, "PMCUR511" /*MG Extended Magazine*/, func_22(num2, 51));
+			func_23(&num, "PMCUR511" /*Ametralladora: cargador ampliado*/, func_22(num2, 51));
 			func_37(&num, 52, false);
-			func_23(&num, "PMCUR522" /*MG Scope*/, func_22(num2, 52));
+			func_23(&num, "PMCUR522" /*Ametralladora: mira*/, func_22(num2, 52));
 			func_37(&num, 55, false);
-			func_23(&num, "CMOD_TYR_7" /*Orange Tire Smoke*/, func_22(num2, 55));
+			func_23(&num, "CMOD_TYR_7" /*Humo naranja*/, func_22(num2, 55));
 			func_37(&num, 56, false);
-			func_23(&num, "PMCUR560" /*Black Parachute*/, func_22(num2, 56));
-			func_23(&num, "PMCUR561" /*Sport Suspension*/, func_22(num2, 56));
+			func_23(&num, "PMCUR560" /*Paracaídas negro*/, func_22(num2, 56));
+			func_23(&num, "PMCUR561" /*Suspensión deportiva*/, func_22(num2, 56));
 			func_37(&num, 60, false);
-			func_23(&num, "PMCUR605" /*Maximum Health Increased*/, func_22(num2, 60));
-			func_23(&num, "PMCUR604" /*Health Regeneration Increased*/, func_22(num2, 60));
-			func_23(&num, "PMCUR600" /*Grenade Launcher*/, func_22(num2, 60));
-			func_23(&num, "PMCUR603" /*Vehicle EMS Upgrade Level 3*/, func_22(num2, 60));
+			func_23(&num, "PMCUR605" /*Incremento de salud máxima*/, func_22(num2, 60));
+			func_23(&num, "PMCUR604" /*Incremento de regeneración de salud*/, func_22(num2, 60));
+			func_23(&num, "PMCUR600" /*Lanzagranadas*/, func_22(num2, 60));
+			func_23(&num, "PMCUR603" /*Vehículos: mejora de ECU, nivel 3*/, func_22(num2, 60));
 			func_37(&num, 61, false);
-			func_23(&num, "PMCUR610" /*Grenade Launcher Grip*/, func_22(num2, 61));
+			func_23(&num, "PMCUR610" /*Lanzagranadas: empuñadura*/, func_22(num2, 61));
 			func_37(&num, 62, false);
-			func_23(&num, "PMCUR620" /*Grenade Launcher Flashlight*/, func_22(num2, 62));
+			func_23(&num, "PMCUR620" /*Lanzagranadas: linterna*/, func_22(num2, 62));
 			func_37(&num, 63, false);
-			func_23(&num, "PMCUR630" /*Grenade Launcher Scope*/, func_22(num2, 63));
+			func_23(&num, "PMCUR630" /*Lanzagranadas: mira*/, func_22(num2, 63));
 			func_37(&num, 65, false);
-			func_23(&num, "PMCUR650" /*Red Tire Smoke*/, func_22(num2, 65));
+			func_23(&num, "PMCUR650" /*Neumáticos: humo rojo*/, func_22(num2, 65));
 			func_37(&num, 70, false);
-			func_23(&num, "PMCUR700" /*Advanced Rifle*/, func_22(num2, 70));
-			func_23(&num, "CMOD_GBX_3" /*Race Transmission*/, func_22(num2, 70));
+			func_23(&num, "PMCUR700" /*Fusil avanzado*/, func_22(num2, 70));
+			func_23(&num, "CMOD_GBX_3" /*Transmisión de carreras*/, func_22(num2, 70));
 			func_37(&num, 71, false);
-			func_23(&num, "PMCUR711" /*Advanced Rifle Extended Clip*/, func_22(num2, 71));
-			func_23(&num, "PMCUR710" /*Competition Suspension*/, func_22(num2, 71));
+			func_23(&num, "PMCUR711" /*Fusil avanzado: cargador ampliado*/, func_22(num2, 71));
+			func_23(&num, "PMCUR710" /*Suspensión de competición*/, func_22(num2, 71));
 			func_37(&num, 72, false);
-			func_23(&num, "PMCUR721" /*Advanced Rifle Flashlight*/, func_22(num2, 72));
+			func_23(&num, "PMCUR721" /*Fusil avanzado: linterna*/, func_22(num2, 72));
 			func_37(&num, 73, false);
-			func_23(&num, "PMCUR730" /*Advanced Rifle Scope*/, func_22(num2, 73));
+			func_23(&num, "PMCUR730" /*Fusil avanzado: mira*/, func_22(num2, 73));
 			func_37(&num, 75, false);
-			func_23(&num, "PMCUR751" /*Gold Weapon Tint*/, func_22(num2, 75));
+			func_23(&num, "PMCUR751" /*Acabado para armas dorado*/, func_22(num2, 75));
 			func_37(&num, 80, false);
-			func_23(&num, "PMCUR804" /*Maximum Health Increased*/, func_22(num2, 80));
-			func_23(&num, "PMCUR803" /*Health Regeneration Increased*/, func_22(num2, 80));
-			func_23(&num, "PMCUR801" /*Combat MG*/, func_22(num2, 80));
-			func_23(&num, "PMCUR800" /*Vehicle Armor Upgrade 80%*/, func_22(num2, 80));
-			func_23(&num, "PMCUR802" /*Race Brakes*/, func_22(num2, 80));
+			func_23(&num, "PMCUR804" /*Incremento de salud máxima*/, func_22(num2, 80));
+			func_23(&num, "PMCUR803" /*Incremento de regeneración de salud*/, func_22(num2, 80));
+			func_23(&num, "PMCUR801" /*Ametralladora de combate*/, func_22(num2, 80));
+			func_23(&num, "PMCUR800" /*Vehículos: mejora de blindaje del 80%*/, func_22(num2, 80));
+			func_23(&num, "PMCUR802" /*Frenos de carreras*/, func_22(num2, 80));
 			func_37(&num, 81, false);
-			func_23(&num, "PMCUR811" /*Combat MG Extended Magazine*/, func_22(num2, 81));
+			func_23(&num, "PMCUR811" /*Ametralladora de combate: cargador ampliado*/, func_22(num2, 81));
 			func_37(&num, 82, false);
-			func_23(&num, "PMCUR820" /*Combat MG Grip*/, func_22(num2, 82));
+			func_23(&num, "PMCUR820" /*Ametralladora de combate: empuñadura*/, func_22(num2, 82));
 			func_37(&num, 83, false);
-			func_23(&num, "PMCUR830" /*Combat MG Scope*/, func_22(num2, 83));
+			func_23(&num, "PMCUR830" /*Ametralladora de combate: mira*/, func_22(num2, 83));
 			func_37(&num, 90, false);
-			func_23(&num, "PMCUR900" /*Heavy Sniper*/, func_22(num2, 90));
-			func_23(&num, "PMCUR901" /*Vehicle EMS Upgrade Level 4*/, func_22(num2, 90));
+			func_23(&num, "PMCUR900" /*Fusil de francotirador pesado*/, func_22(num2, 90));
+			func_23(&num, "PMCUR901" /*Vehículos: mejora de ECU, nivel 4*/, func_22(num2, 90));
 			func_37(&num, 91, false);
-			func_23(&num, "PMCUR910" /*Heavy Sniper Advanced Scope*/, func_22(num2, 91));
+			func_23(&num, "PMCUR910" /*Fusil de francotirador pesado: mira avanzada*/, func_22(num2, 91));
 			func_37(&num, 100, false);
-			func_23(&num, "PMCUR1009" /*Maximum Health Increased*/, func_22(num2, 100));
-			func_23(&num, "PMCUR1008" /*Health Regeneration Increased*/, func_22(num2, 100));
-			func_23(&num, "PMCUR1001" /*RPG*/, func_22(num2, 100));
-			func_23(&num, "PMCUR1002" /*Platinum Weapon Tint*/, func_22(num2, 100));
-			func_23(&num, "PMCUR1000" /*Vehicle Armor Upgrade 100%*/, func_22(num2, 100));
-			func_23(&num, "PMCUR1004" /*Brushed Gold Paint*/, func_22(num2, 100));
-			func_23(&num, "PMCUR1003" /*Pure Gold Paint*/, func_22(num2, 100));
+			func_23(&num, "PMCUR1009" /*Incremento de salud máxima*/, func_22(num2, 100));
+			func_23(&num, "PMCUR1008" /*Incremento de regeneración de salud*/, func_22(num2, 100));
+			func_23(&num, "PMCUR1001" /*Lanzacohetes*/, func_22(num2, 100));
+			func_23(&num, "PMCUR1002" /*Acabado para armas platino*/, func_22(num2, 100));
+			func_23(&num, "PMCUR1000" /*Vehículos: mejora de blindaje del 100%*/, func_22(num2, 100));
+			func_23(&num, "PMCUR1004" /*Pintura: oro pulido*/, func_22(num2, 100));
+			func_23(&num, "PMCUR1003" /*Pintura: oro puro*/, func_22(num2, 100));
 			func_37(&num, 120, false);
-			func_23(&num, "FM_RANK120_W_TICK" /*Minigun*/, func_22(num2, 120));
+			func_23(&num, "FM_RANK120_W_TICK" /*Ametralladora rotatoria*/, func_22(num2, 120));
 			break;
 	}
 
@@ -1113,33 +1113,33 @@ Hash func_14(int iParam0, int iParam1) // Position - 0x1B63 (7011)
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_15(iParam1));
 }
 
-int func_15(int iParam0) // Position - 0x1B78 (7032)
+BOOL func_15(BOOL bParam0) // Position - 0x1B78 (7032)
 {
-	int num;
-	int num2;
+	BOOL flag;
+	BOOL flag2;
 
-	num = iParam0;
+	flag = bParam0;
 
-	if (num == -1)
+	if (flag == -1)
 	{
-		num2 = func_16();
+		flag2 = func_16();
 	
-		if (num2 > -1)
+		if (flag2 > -1)
 		{
 			Global_2741298 = 0;
-			num = num2;
+			flag = flag2;
 		}
 		else
 		{
-			num = 0;
+			flag = false;
 			Global_2741298 = 1;
 		}
 	}
 
-	return num;
+	return flag;
 }
 
-int func_16() // Position - 0x1BAC (7084)
+BOOL func_16() // Position - 0x1BAC (7084)
 {
 	return Global_1574927;
 }
@@ -1152,7 +1152,7 @@ int func_17(int iParam0) // Position - 0x1BB8 (7096)
 	action = func_10(iParam0);
 	num = func_20(action);
 
-	if (func_19() == 0 || func_18() == 0 || func_19() == 999 && func_18() == 999 || func_19() == 1000 && func_18() == 1000)
+	if (func_19() == HUD_COLOUR_PURE_WHITE || func_18() == HUD_COLOUR_PURE_WHITE || func_19() == 999 && func_18() == 999 || func_19() == 1000 && func_18() == 1000)
 	{
 		switch (num)
 		{
@@ -1179,12 +1179,12 @@ int func_17(int iParam0) // Position - 0x1BB8 (7096)
 	return 16715;
 }
 
-int func_18() // Position - 0x1C82 (7298)
+eHudColour func_18() // Position - 0x1C82 (7298)
 {
 	return Global_33776;
 }
 
-int func_19() // Position - 0x1C8D (7309)
+eHudColour func_19() // Position - 0x1C8D (7309)
 {
 	return Global_33775;
 }
@@ -1229,13 +1229,13 @@ void func_24(int iParam0, int iParam1, int iParam2, int iParam3, char* sParam4, 
 	
 		if (bParam5 == true)
 			if (iParam6 == 0)
-				func_6("PM_UJOB_YES" /*Yes*/);
+				func_6("PM_UJOB_YES" /*Sí*/);
 			else
-				func_6("PM_UCON_ULK" /*Unlocked*/);
+				func_6("PM_UCON_ULK" /*Desbloqueado*/);
 		else if (iParam6 == 0)
 			func_6("PM_UJOB_NO" /*No*/);
 		else
-			func_6("PM_UCON_LCK" /*Locked*/);
+			func_6("PM_UCON_LCK" /*Bloqueado*/);
 	
 		GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 	}
@@ -1345,7 +1345,7 @@ BOOL func_29(Player plParam0, int iParam1) // Position - 0x1F51 (8017)
 	return func_30(&(Global_1845250[plParam0 /*880*/].f_821), func_31(iParam1));
 }
 
-BOOL func_30(var uParam0, int iParam1) // Position - 0x1F91 (8081)
+BOOL func_30(ePedComponentType epctParam0, int iParam1) // Position - 0x1F91 (8081)
 {
 	int num;
 	int num2;
@@ -1354,7 +1354,7 @@ BOOL func_30(var uParam0, int iParam1) // Position - 0x1F91 (8081)
 	num = iParam1;
 	num2 = num / 32;
 	num3 = num % 32;
-	return IS_BIT_SET(uParam0->[num2], num3);
+	return IS_BIT_SET(epctParam0->[num2], num3);
 }
 
 int func_31(int iParam0) // Position - 0x1FB4 (8116)
@@ -1527,12 +1527,12 @@ BOOL func_34() // Position - 0x21CC (8652)
 	return func_35(120, -1);
 }
 
-BOOL func_35(int iParam0, int iParam1) // Position - 0x21FC (8700)
+BOOL func_35(int iParam0, BOOL bParam1) // Position - 0x21FC (8700)
 {
 	Hash statHash;
 	BOOL outValue;
 
-	statHash = func_36(iParam0, iParam1);
+	statHash = func_36(iParam0, bParam1);
 
 	if (STATS::STAT_GET_BOOL(statHash, &outValue, -1))
 		return outValue;
@@ -1540,9 +1540,9 @@ BOOL func_35(int iParam0, int iParam1) // Position - 0x21FC (8700)
 	return false;
 }
 
-Hash func_36(int iParam0, int iParam1) // Position - 0x2220 (8736)
+Hash func_36(int iParam0, BOOL bParam1) // Position - 0x2220 (8736)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(2, iParam0, func_15(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(2, iParam0, func_15(bParam1));
 }
 
 void func_37(var uParam0, int iParam1, BOOL bParam2) // Position - 0x2235 (8757)
@@ -1555,7 +1555,7 @@ void func_37(var uParam0, int iParam1, BOOL bParam2) // Position - 0x2235 (8757)
 		*uParam0 = *uParam0 + 1;
 	}
 
-	str = "PAUSEUNLRANK" /*RANK ~1~*/;
+	str = "PAUSEUNLRANK" /*NIVEL ~1~*/;
 	func_38(1, *uParam0, iLocal_166, *uParam0, str, iParam1);
 	*uParam0 = *uParam0 + 1;
 	return;
@@ -1774,12 +1774,12 @@ int _MPPLY_STAT_GET_INT(Hash hParam0) // Position - 0x267B (9851)
 	return 0;
 }
 
-int func_43(int iParam0, int iParam1) // Position - 0x2699 (9881)
+int func_43(int iParam0, BOOL bParam1) // Position - 0x2699 (9881)
 {
 	Hash statHash;
 	int outValue;
 
-	statHash = func_44(iParam0, iParam1);
+	statHash = func_44(iParam0, bParam1);
 
 	if (STATS::STAT_GET_INT(statHash, &outValue, -1))
 		return outValue;
@@ -1787,9 +1787,9 @@ int func_43(int iParam0, int iParam1) // Position - 0x2699 (9881)
 	return 0;
 }
 
-Hash func_44(int iParam0, int iParam1) // Position - 0x26BD (9917)
+Hash func_44(int iParam0, BOOL bParam1) // Position - 0x26BD (9917)
 {
-	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_15(iParam1));
+	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_15(bParam1));
 }
 
 BOOL func_45() // Position - 0x26D3 (9939)
@@ -1804,12 +1804,12 @@ BOOL func_45() // Position - 0x26D3 (9939)
 	return num;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0x26EE (9966)
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, BOOL bParam1) // Position - 0x26EE (9966)
 {
-	if (iParam1 == -1)
-		iParam1 = func_16();
+	if (bParam1 == -1)
+		bParam1 = func_16();
 
-	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
+	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, bParam1);
 }
 
 void func_47(var uParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, BOOL bParam3) // Position - 0x270A (9994)
@@ -1879,7 +1879,7 @@ BOOL func_50(int iParam0) // Position - 0x280C (10252)
 	return false;
 }
 
-int func_51(int iParam0) // Position - 0x2852 (10322)
+ePedComponentType func_51(int iParam0) // Position - 0x2852 (10322)
 {
 	int num;
 
@@ -1952,10 +1952,10 @@ int func_51(int iParam0) // Position - 0x2852 (10322)
 			return 89 + iLocal_175;
 	
 		case 19:
-			return 10;
+			return PV_COMP_DECL;
 	}
 
-	return -1;
+	return PV_COMP_INVALID;
 }
 
 BOOL func_52() // Position - 0x29DE (10718)
@@ -2074,7 +2074,7 @@ ePedComponentType func_55() // Position - 0x2BE9 (11241)
 	return num;
 }
 
-int func_56(int iParam0) // Position - 0x2C06 (11270)
+int func_56(ePedComponentType epctParam0) // Position - 0x2C06 (11270)
 {
 	int num;
 	int i;
@@ -2084,7 +2084,7 @@ int func_56(int iParam0) // Position - 0x2C06 (11270)
 	for (i = 0; i < 1500; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_794954.f_4[i /*95*/].f_82, 14))
-			if (Global_794954.f_4[i /*95*/].f_71 < 13 && Global_794954.f_4[i /*95*/].f_76 <= 1000 && Global_794954.f_4[i /*95*/].f_74 == iParam0 && Global_794954.f_4[i /*95*/].f_71 == PV_COMP_HAIR)
+			if (Global_794954.f_4[i /*95*/].f_71 < 13 && Global_794954.f_4[i /*95*/].f_76 <= 1000 && Global_794954.f_4[i /*95*/].f_74 == epctParam0 && Global_794954.f_4[i /*95*/].f_71 == PV_COMP_HAIR)
 				num = num + 1;
 	}
 
@@ -2095,8 +2095,8 @@ ePedComponentType func_57() // Position - 0x2C8D (11405)
 {
 	int num;
 
-	num = func_56(6);
-	num = num + func_56(7);
+	num = func_56(PV_COMP_FEET);
+	num = num + func_56(PV_COMP_TEEF);
 	return num;
 }
 
@@ -2104,8 +2104,8 @@ ePedComponentType func_58() // Position - 0x2CA8 (11432)
 {
 	int num;
 
-	num = func_56(2);
-	num = num + func_56(3);
+	num = func_56(PV_COMP_HAIR);
+	num = num + func_56(PV_COMP_UPPR);
 	return num;
 }
 
@@ -2113,8 +2113,8 @@ ePedComponentType func_59() // Position - 0x2CC3 (11459)
 {
 	int num;
 
-	num = func_56(4);
-	num = num + func_56(5);
+	num = func_56(PV_COMP_LOWR);
+	num = num + func_56(PV_COMP_HAND);
 	return num;
 }
 
@@ -2122,7 +2122,7 @@ ePedComponentType func_60() // Position - 0x2CDE (11486)
 {
 	int num;
 
-	num = func_56(12);
+	num = func_56(PV_COMP_MAX);
 	num = num + func_56(13);
 	return num;
 }
@@ -2132,10 +2132,10 @@ ePedComponentType func_61() // Position - 0x2CFB (11515)
 	int num;
 
 	num = func_56(0);
-	num = num + func_56(1);
-	num = num + func_56(10);
-	num = num + func_56(11);
-	num = num + func_56(2);
+	num = num + func_56(PV_COMP_BERD);
+	num = num + func_56(PV_COMP_DECL);
+	num = num + func_56(PV_COMP_JBIB);
+	num = num + func_56(PV_COMP_HAIR);
 	return num;
 }
 
@@ -2595,8 +2595,8 @@ void func_71() // Position - 0x3449 (13385)
 	func_69(0);
 	iLocal_171 = 0;
 	func_73(0, 0, iLocal_165, 0, true, "PM_UL_D0" /*General*/, false, 0, false);
-	func_73(0, 1, iLocal_165, 1, true, "PM_UL_D1" /*Progress*/, false, 0, false);
-	func_73(0, 2, iLocal_165, 2, true, "PM_UL_D2" /*Content*/, false, 0, false);
+	func_73(0, 1, iLocal_165, 1, true, "PM_UL_D1" /*Progreso*/, false, 0, false);
+	func_73(0, 2, iLocal_165, 2, true, "PM_UL_D2" /*Contenido*/, false, 0, false);
 	func_2(0);
 	func_72(2);
 	func_72(3);
@@ -2659,7 +2659,7 @@ BOOL func_74() // Position - 0x355E (13662)
 
 	for (i = 0; i < 13; i = i + 1)
 	{
-		Global_794954.f_164009[i] = 0;
+		Global_794954.f_164009[i] = PV_COMP_HEAD;
 	}
 
 	for (i = 0; i < 1500; i = i + 1)

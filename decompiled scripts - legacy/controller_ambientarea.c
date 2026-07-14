@@ -186,13 +186,13 @@ void func_2(int iParam0, int iParam1) // Position - 0x24F (591)
 
 BOOL func_3() // Position - 0x260 (608)
 {
-	if (func_4() == 0)
+	if (func_4() == false)
 		return true;
 
 	return false;
 }
 
-int func_4() // Position - 0x275 (629)
+BOOL func_4() // Position - 0x275 (629)
 {
 	return Global_33775;
 }

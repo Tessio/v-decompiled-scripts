@@ -450,7 +450,7 @@ BOOL func_1(var uParam0, var uParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, 
 		
 			if (!uParam1->f_9)
 				if (MISC::GET_HASH_KEY(uParam0->[uParam1->f_12 /*24*/].f_5) == MISC::GET_HASH_KEY("Carwash1") && func_5(PLAYER::PLAYER_ID()))
-					func_24(uParam1, "CWASH_RIDEHLP2" /*Press ~INPUT_CONTEXT~ to use your Car Wash for free.*/);
+					func_24(uParam1, "CWASH_RIDEHLP2" /*Pulsa ~INPUT_CONTEXT~ para usar tu lavadero de coches gratis.*/);
 				else
 					func_15(uParam1, *uParam1, uParam0->[uParam1->f_12 /*24*/].f_9);
 		
@@ -1773,18 +1773,18 @@ BOOL func_62(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position -
 
 BOOL func_63() // Position - 0x2554 (9556)
 {
-	if (func_65() == -1 || func_65() == 999 && !(func_64() == 0))
+	if (func_65() == -1 || func_65() == 999 && !(func_64() == false))
 		return true;
 
 	return false;
 }
 
-int func_64() // Position - 0x2584 (9604)
+BOOL func_64() // Position - 0x2584 (9604)
 {
 	return Global_33776;
 }
 
-int func_65() // Position - 0x258F (9615)
+eHudColour func_65() // Position - 0x258F (9615)
 {
 	return Global_33775;
 }
@@ -3479,16 +3479,16 @@ void func_72() // Position - 0x5E8A (24202)
 		func_73(&uLocal_72[0 /*24*/], 0, "Rollercoaster", -1651.6411f, -1134.325f, 21.903982f, -1640.9845f, -1121.5903f, 16.503132f, 6.75f, 15, "", 0);
 	}
 
-	sLocal_38 = "LEV_RIDEHLP" /*Press ~INPUT_CONTEXT~ to ride the Leviathan. The cost is $~1~.*/;
-	sLocal_38.f_1 = "LEV_BROKEN" /*The Leviathan is closed. Come back later.*/;
-	sLocal_38.f_2 = "LEV_NOMONEY" /*You do not have enough money. It costs $~1~ to ride the Leviathan.*/;
-	sLocal_38.f_4 = "LEV_WANTED" /*You can't ride the Leviathan while Wanted.*/;
+	sLocal_38 = "LEV_RIDEHLP" /*Pulsa ~INPUT_CONTEXT~ para montar en el Leviathan. Cuestaµ~1~µ$.*/;
+	sLocal_38.f_1 = "LEV_BROKEN" /*El Leviathan ha cerrado. Vuelve más tarde.*/;
+	sLocal_38.f_2 = "LEV_NOMONEY" /*No tienes suficiente dinero. Cuesta ~1~ $ montar en el Leviathan.*/;
+	sLocal_38.f_4 = "LEV_WANTED" /*No puedes montar en el Leviathan si tienes un nivel de búsqueda.*/;
 	sLocal_38.f_3 = 0;
 	sLocal_38.f_16 = 1;
-	sLocal_55 = "BIGW_RIDEHLP" /*Press ~INPUT_CONTEXT~ to ride the Ferris Whale. The cost is $~1~.*/;
-	sLocal_55.f_1 = "BIGW_BROKEN" /*The Ferris Whale is closed. Come back later.*/;
-	sLocal_55.f_2 = "BIGW_NOMONEY" /*You do not have enough money. It costs $~1~ to ride the Ferris Whale.*/;
-	sLocal_55.f_4 = "BIGW_WANTED" /*You can't ride the Ferris Whale while Wanted.*/;
+	sLocal_55 = "BIGW_RIDEHLP" /*Pulsa ~INPUT_CONTEXT~ para montar en el Ferris Whale. Cuestaµ~1~µ$.*/;
+	sLocal_55.f_1 = "BIGW_BROKEN" /*El Ferris Whale ha cerrado. Vuelve más tarde.*/;
+	sLocal_55.f_2 = "BIGW_NOMONEY" /*No tienes suficiente dinero. Cuesta ~1~ $ montar en el Ferris Whale.*/;
+	sLocal_55.f_4 = "BIGW_WANTED" /*No puedes montar en el Ferris Whale si tienes un nivel de búsqueda.*/;
 	sLocal_55.f_3 = 0;
 	sLocal_38.f_16 = 1;
 	return;

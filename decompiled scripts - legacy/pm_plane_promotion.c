@@ -626,7 +626,7 @@ BOOL func_3(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x5B6 (1462)
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -892,7 +892,7 @@ void func_11() // Position - 0x9B9 (2489)
 
 BOOL func_12() // Position - 0xA4E (2638)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -1076,7 +1076,7 @@ void func_24() // Position - 0xDE0 (3552)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -1307,7 +1307,7 @@ BOOL func_33(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 			{
 				func_55(sParam24);
 				func_55(sParam27);
-				func_55("MORE_SEATS" /*A vehicle with more seats is needed.*/);
+				func_55("MORE_SEATS" /*Se necesita un vehículo con más plazas.*/);
 			
 				if (bParam26 && PLAYER::IS_PLAYER_WANTED_LEVEL_GREATER(PLAYER::PLAYER_ID(), 0))
 				{
@@ -1324,7 +1324,7 @@ BOOL func_33(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 					{
 						if (bParam30)
 						{
-							func_48(pblParam0, "LOSE_WANTED" /*Lose the Cops.*/, false);
+							func_48(pblParam0, "LOSE_WANTED" /*Líbrate de la poli.*/, false);
 						
 							if (!PED::IS_PED_INJURED(pblParam0->f_17[0]))
 								func_46(pblParam0->f_17[0], "VEHICLE_POLICE_PURSUIT", 3);
@@ -1338,7 +1338,7 @@ BOOL func_33(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 				{
 					if (IS_BIT_SET(pblParam0->f_13, 0))
 					{
-						func_55("LOSE_WANTED" /*Lose the Cops.*/);
+						func_55("LOSE_WANTED" /*Líbrate de la poli.*/);
 						MISC::CLEAR_BIT(&(pblParam0->f_13), 0);
 						MISC::SET_BIT(&(pblParam0->f_13), 1);
 					}
@@ -1449,8 +1449,8 @@ BOOL func_33(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 								func_55(sParam21);
 								func_55(sParam22);
 								func_55(sParam23);
-								func_55("LOSE_WANTED" /*Lose the Cops.*/);
-								func_55("MORE_SEATS" /*A vehicle with more seats is needed.*/);
+								func_55("LOSE_WANTED" /*Líbrate de la poli.*/);
+								func_55("MORE_SEATS" /*Se necesita un vehículo con más plazas.*/);
 								func_55(sParam27);
 								func_137(pblParam0, true, false);
 								return 1;
@@ -1477,7 +1477,7 @@ BOOL func_33(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 					{
 						if (bParam30)
 						{
-							func_48(pblParam0, "LOSE_WANTED" /*Lose the Cops.*/, false);
+							func_48(pblParam0, "LOSE_WANTED" /*Líbrate de la poli.*/, false);
 						
 							if (!PED::IS_PED_INJURED(pblParam0->f_17[0]))
 								func_46(pblParam0->f_17[0], "VEHICLE_POLICE_PURSUIT", 3);
@@ -1491,7 +1491,7 @@ BOOL func_33(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 				{
 					if (IS_BIT_SET(pblParam0->f_13, 0))
 					{
-						func_55("LOSE_WANTED" /*Lose the Cops.*/);
+						func_55("LOSE_WANTED" /*Líbrate de la poli.*/);
 						MISC::CLEAR_BIT(&(pblParam0->f_13), 0);
 						MISC::SET_BIT(&(pblParam0->f_13), 1);
 					}
@@ -1592,7 +1592,7 @@ BOOL func_33(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 									if (!PED::IS_PED_INJURED(pblParam0->f_17[randomIntInRange]))
 										func_46(pblParam0->f_17[randomIntInRange], "NEED_A_BIGGER_VEHICLE", 3);
 								
-									func_48(pblParam0, "MORE_SEATS" /*A vehicle with more seats is needed.*/, false);
+									func_48(pblParam0, "MORE_SEATS" /*Se necesita un vehículo con más plazas.*/, false);
 									MISC::SET_BIT(&(pblParam0->f_13), 13);
 								}
 							}
@@ -1650,7 +1650,7 @@ BOOL func_33(Blip* pblParam0, Vector3 vParam1, var uParam2, var uParam3, Vector3
 		func_55(sParam24);
 		func_55(sParam27);
 		func_55(sParam24);
-		func_55("LOSE_WANTED" /*Lose the Cops.*/);
+		func_55("LOSE_WANTED" /*Líbrate de la poli.*/);
 	
 		if (HUD::DOES_BLIP_EXIST(pblParam0->f_5))
 			HUD::REMOVE_BLIP(&(pblParam0->f_5));
@@ -2328,7 +2328,7 @@ BOOL func_56(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 						if (!PED::IS_PED_INJURED(pblParam0->f_17[randomIntInRange]))
 							func_46(pblParam0->f_17[randomIntInRange], "NEED_A_BIGGER_VEHICLE", 3);
 					
-						func_48(pblParam0, "MORE_SEATS" /*A vehicle with more seats is needed.*/, false);
+						func_48(pblParam0, "MORE_SEATS" /*Se necesita un vehículo con más plazas.*/, false);
 						MISC::SET_BIT(&(pblParam0->f_13), 13);
 					}
 				}
@@ -2340,7 +2340,7 @@ BOOL func_56(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 		{
 			flag3 = false;
 			MISC::CLEAR_BIT(&(pblParam0->f_13), 13);
-			func_55("MORE_SEATS" /*A vehicle with more seats is needed.*/);
+			func_55("MORE_SEATS" /*Se necesita un vehículo con más plazas.*/);
 		}
 	
 		if (!ENTITY::DOES_ENTITY_EXIST(veParam10))
@@ -2355,7 +2355,7 @@ BOOL func_56(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 					
 						if (func_68(vehiclePedIsIn, pblParam0))
 						{
-							func_48(pblParam0, "CMN_VEHSUIT" /*~s~Vehicle is not suitable.*/, false);
+							func_48(pblParam0, "CMN_VEHSUIT" /*~s~Este vehículo no es adecuado.*/, false);
 							MISC::SET_BIT(&(pblParam0->f_13), 31);
 						}
 					}
@@ -2363,7 +2363,7 @@ BOOL func_56(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 				else if (!PED::IS_PED_SITTING_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID()))
 				{
 					MISC::CLEAR_BIT(&(pblParam0->f_13), 31);
-					func_55("CMN_VEHSUIT" /*~s~Vehicle is not suitable.*/);
+					func_55("CMN_VEHSUIT" /*~s~Este vehículo no es adecuado.*/);
 				}
 			}
 		}
@@ -2743,7 +2743,7 @@ BOOL func_56(Blip* pblParam0, var uParam1, var uParam2, var uParam3, var uParam4
 				}
 			}
 		
-			func_55("MORE_SEATS" /*A vehicle with more seats is needed.*/);
+			func_55("MORE_SEATS" /*Se necesita un vehículo con más plazas.*/);
 			return true;
 		}
 	}
@@ -5085,7 +5085,7 @@ void func_120(int iParam0, BOOL bParam1) // Position - 0x68B9 (26809)
 			func_121(iParam0, 3, false);
 			func_121(iParam0, 4, false);
 			func_121(iParam0, 0, true);
-			Global_79070[iParam0] = 1;
+			Global_79070[iParam0] = true;
 		}
 	}
 	else

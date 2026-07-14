@@ -1515,7 +1515,7 @@ void func_15() // Position - 0x15F3 (5619)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -1888,7 +1888,7 @@ int func_35(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x1BCF (7119
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -2154,7 +2154,7 @@ void func_43() // Position - 0x1FD1 (8145)
 
 BOOL func_44() // Position - 0x2066 (8294)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -2560,7 +2560,7 @@ void func_70(int iParam0, BOOL bParam1) // Position - 0x270E (9998)
 					func_75(func_76(iParam0));
 				
 					if (!func_74(70))
-						func_71("DI_HLP_SPCL" /*Unique characters become available in Rockstar Editor's Director Mode as you meet them around Los Santos.*/, 2, 0, 20000, 10000, 7, 0, 210, 0);
+						func_71("DI_HLP_SPCL" /*Los personajes especiales estarán disponibles en el modo director del editor Rockstar a medida que los encuentres por Los Santos.*/, 2, 0, 20000, 10000, 7, 0, 210, 0);
 				}
 			}
 		}
@@ -2636,7 +2636,7 @@ void func_73() // Position - 0x2971 (10609)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -2678,7 +2678,7 @@ BOOL func_74(int iParam0) // Position - 0x2A88 (10888)
 void func_75(char* sParam0) // Position - 0x2AC8 (10952)
 {
 	HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
-	HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT_SUBTITLE_LABEL("CHAR_ACTING_UP", "CHAR_ACTING_UP", false, 0, "DI_FEED_CHAR" /*Director Mode Actor Unlock*/, sParam0);
+	HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT_SUBTITLE_LABEL("CHAR_ACTING_UP", "CHAR_ACTING_UP", false, 0, "DI_FEED_CHAR" /*Actor del modo director desbloqueado*/, sParam0);
 	return;
 }
 
@@ -2714,16 +2714,16 @@ char* func_76(int iParam0) // Position - 0x2AEB (10987)
 			return "CM_SPEMAN" /*Mani*/;
 	
 		case 9:
-			return "CM_SPEMIM" /*Mime*/;
+			return "CM_SPEMIM" /*Mimo*/;
 	
 		case 10:
 			return "CM_SPEPAM" /*Pamela Drake*/;
 	
 		case 11:
-			return "CM_SPEIMP" /*Impotent Rage*/;
+			return "CM_SPEIMP" /*Furia Impotente*/;
 	
 		case 12:
-			return "CM_SPEZOM" /*Zombie*/;
+			return "CM_SPEZOM" /*Zombi*/;
 	}
 
 	return "ERROR!";
@@ -3167,7 +3167,7 @@ void func_107() // Position - 0x327A (12922)
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_216, "Base", 64);
 	bLocal_434 = !Global_4;
 	iLocal_250 = 8;
-	sLocal_301 = "PBZB_INTERACT" /*Press ~INPUT_CONTEXT~ to talk to the Zombie.*/;
+	sLocal_301 = "PBZB_INTERACT" /*Pulsa ~INPUT_CONTEXT~ para hablar con el zombi.*/;
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_310, "PBZB_CONV_GM", 16);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_314, "PBZB_CONV_GT", 16);
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_318, "PBZB_CONV_GF", 16);

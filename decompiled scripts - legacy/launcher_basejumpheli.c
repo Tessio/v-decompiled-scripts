@@ -1162,7 +1162,7 @@ void func_8() // Position - 0xB39 (2873)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_9() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1840,18 +1840,18 @@ BOOL func_33(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position -
 
 BOOL func_34() // Position - 0x1B2A (6954)
 {
-	if (func_36() == -1 || func_36() == 999 && !(func_35() == 0))
+	if (func_36() == -1 || func_36() == 999 && !(func_35() == HUD_COLOUR_PURE_WHITE))
 		return true;
 
 	return false;
 }
 
-int func_35() // Position - 0x1B5A (7002)
+eHudColour func_35() // Position - 0x1B5A (7002)
 {
 	return Global_33776;
 }
 
-int func_36() // Position - 0x1B65 (7013)
+eHudColour func_36() // Position - 0x1B65 (7013)
 {
 	return Global_33775;
 }
@@ -3849,7 +3849,7 @@ void func_53() // Position - 0x5807 (22535)
 			veLocal_285 = 0;
 		}
 	
-		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/))
+		if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/))
 			HUD::CLEAR_HELP(true);
 	
 		return;
@@ -3956,7 +3956,7 @@ void func_53() // Position - 0x5807 (22535)
 		
 			if (bLocal_457)
 			{
-				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_B" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/))
+				if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_B" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/))
 					HUD::CLEAR_HELP(true);
 			
 				bLocal_457 = false;
@@ -4004,7 +4004,7 @@ void func_53() // Position - 0x5807 (22535)
 							if (ENTITY::DOES_ENTITY_EXIST(veLocal_285))
 								ENTITY::SET_VEHICLE_AS_NO_LONGER_NEEDED(&veLocal_285);
 						
-							if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/))
+							if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/))
 								HUD::CLEAR_HELP(true);
 						
 							CAM::RENDER_SCRIPT_CAMS(false, false, 3000, true, false, 0);
@@ -4070,20 +4070,20 @@ void func_53() // Position - 0x5807 (22535)
 	{
 		if (VEHICLE::IS_VEHICLE_DRIVEABLE(veLocal_285, false) && BUILTIN::VDIST2(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), ENTITY::GET_ENTITY_COORDS(veLocal_285, true)) < 225f && !PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), true))
 		{
-			if (!bLocal_457 || iLocal_119 == 3 && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_B" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/) || iLocal_119 != 3 && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/))
+			if (!bLocal_457 || iLocal_119 == 3 && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_B" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/) || iLocal_119 != 3 && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/))
 			{
 				if (iLocal_119 == 3)
 					if (!Global_77342)
-						func_54("PLAY_BASEJUMP_B" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/);
+						func_54("PLAY_BASEJUMP_B" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/);
 				else if (!Global_77342)
-					func_54("PLAY_BASEJUMP_S" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/);
+					func_54("PLAY_BASEJUMP_S" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/);
 			
 				bLocal_457 = true;
 			}
 		}
 		else if (bLocal_457)
 		{
-			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_B" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Approach the helicopter and press ~INPUT_ENTER~ to start parachuting.*/))
+			if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_B" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("PLAY_BASEJUMP_S" /*Acércate al helicóptero y pulsa ~INPUT_ENTER~ para empezar el paracaidismo.*/))
 				HUD::CLEAR_HELP(true);
 		
 			bLocal_457 = false;
@@ -4242,9 +4242,9 @@ void func_60(BOOL bParam0) // Position - 0x62EA (25322)
 		if (func_122(0))
 			func_61(0);
 	}
-	else if (Global_21610.f_1 == 1)
+	else if (Global_21610.f_1 == true)
 	{
-		if (!(Global_21610.f_1 == 0))
+		if (!(Global_21610.f_1 == false))
 			Global_21610.f_1 = 3;
 	}
 
@@ -4283,7 +4283,7 @@ void func_61(int iParam0) // Position - 0x634D (25421)
 
 BOOL func_62() // Position - 0x63D7 (25559)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -4388,15 +4388,15 @@ void func_69(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		}
 	
 		func_77(true, bParam3, bParam2, false);
-		Global_65016 = 1;
-		Global_77345 = true;
-		Global_80278 = true;
+		Global_65016 = true;
+		Global_77345 = PV_COMP_BERD;
+		Global_80278 = PV_COMP_BERD;
 	}
 	else
 	{
 		func_78(0);
 		HUD::THEFEED_RESUME();
-		Global_65016 = 0;
+		Global_65016 = false;
 	
 		if (bParam1)
 			GRAPHICS::CASCADE_SHADOWS_INIT_SESSION();
@@ -4411,7 +4411,7 @@ void func_69(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && !func_75(PLAYER::PLAYER_ID()) && !bParam4 && !bParam5)
 			ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false, false);
 	
-		Global_80278 = false;
+		Global_80278 = PV_COMP_HEAD;
 	}
 
 	return;
@@ -4430,7 +4430,7 @@ BOOL func_71(Player plParam0, int iParam1) // Position - 0x669C (26268)
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_72(-1, false) == 8;
+		flag = func_72(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845250[plParam0 /*880*/].f_198 == 8;
 
@@ -4441,28 +4441,28 @@ BOOL func_71(Player plParam0, int iParam1) // Position - 0x669C (26268)
 	return flag;
 }
 
-int func_72(int iParam0, BOOL bParam1) // Position - 0x66F5 (26357)
+eCharacter func_72(int iParam0, BOOL bParam1) // Position - 0x66F5 (26357)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_73();
+	if (num == -1)
+		num = func_73();
 
-	if (Global_1575070[num2] == true)
+	if (Global_1575070[num] == true)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_73() // Position - 0x6736 (26422)
@@ -4606,7 +4606,7 @@ int func_82(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x6924 (2691
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -5030,7 +5030,7 @@ void func_100() // Position - 0x70E1 (28897)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -5577,29 +5577,29 @@ BOOL func_120(Vehicle veParam0) // Position - 0x7B52 (31570)
 	return false;
 }
 
-BOOL func_121() // Position - 0x7B5F (31583)
+ePedComponentType func_121() // Position - 0x7B5F (31583)
 {
 	return Global_77342;
 }
 
-BOOL func_122(int iParam0) // Position - 0x7B6B (31595)
+ePedComponentType func_122(int iParam0) // Position - 0x7B6B (31595)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_123(int iParam0, int iParam1) // Position - 0x7BC2 (31682)
@@ -5795,7 +5795,7 @@ BOOL func_136() // Position - 0x8511 (34065)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_137() // Position - 0x8522 (34082)
+ePedComponentType func_137() // Position - 0x8522 (34082)
 {
 	return Global_1575090;
 }
@@ -6513,7 +6513,7 @@ BOOL func_166(int iParam0) // Position - 0x90EF (37103)
 	return Global_114904.f_9092.f_330[iParam0 /*6*/];
 }
 
-BOOL func_167(int iParam0) // Position - 0x911B (37147)
+char* func_167(int iParam0) // Position - 0x911B (37147)
 {
 	return Global_113991[iParam0 /*10*/].f_1;
 }

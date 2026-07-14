@@ -80,10 +80,10 @@ void main() // Position - 0x0 (0)
 	
 		if (!func_18(40))
 		{
-			switch (func_16("RAMP_NEW_ALL" /*All rampages are now unlocked.*/))
+			switch (func_16("RAMP_NEW_ALL" /*Se han desbloqueado todas lasµmasacres.*/))
 			{
 				case 2:
-					func_13("RAMP_NEW_ALL" /*All rampages are now unlocked.*/, 1, 0, 2000, 10000, 4, 0, 0, 0);
+					func_13("RAMP_NEW_ALL" /*Se han desbloqueado todas lasµmasacres.*/, 1, 0, 2000, 10000, 4, 0, 0, 0);
 					break;
 			
 				case 1:
@@ -526,10 +526,10 @@ void func_20(int iParam0, BOOL bParam1) // Position - 0x9A0 (2464)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 20);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 20);
 	return;
 }
@@ -556,10 +556,10 @@ void func_22(int iParam0, int iParam1) // Position - 0xA4D (2637)
 
 	MISC::SET_BITS_IN_RANGE(&(Global_34172[num /*23*/].f_11), 21, 26, iParam1);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -581,10 +581,10 @@ void func_23(int iParam0, BOOL bParam1) // Position - 0xAAB (2731)
 	else
 		MISC::CLEAR_BIT(&(Global_34172[num /*23*/].f_11), 7);
 
-	if (Global_34169 == BLIP_LEVEL)
-		Global_34170 = BLIP_LEVEL;
+	if (Global_34169 == true)
+		Global_34170 = true;
 
-	Global_34169 = BLIP_LEVEL;
+	Global_34169 = true;
 	MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	return;
 }
@@ -669,10 +669,10 @@ void func_26(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0xC81 (3201)
 	{
 		MISC::SET_BIT(&(Global_34172[num /*23*/].f_11), 18);
 	
-		if (Global_34169 == BLIP_LEVEL)
-			Global_34170 = BLIP_LEVEL;
+		if (Global_34169 == true)
+			Global_34170 = true;
 	
-		Global_34169 = BLIP_LEVEL;
+		Global_34169 = true;
 	}
 
 	if (bParam1)
@@ -962,16 +962,16 @@ BOOL func_32(int iParam0, int iParam1) // Position - 0x13A3 (5027)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, Interior inParam2) // Position - 0x13F4 (5108)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x13F4 (5108)
 {
-	if (inParam2 == -1)
-		inParam2 = func_34();
+	if (iParam2 == -1)
+		iParam2 = func_34();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, inParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
 	return;
 }
 
-Interior func_34() // Position - 0x1412 (5138)
+int func_34() // Position - 0x1412 (5138)
 {
 	return Global_1574927;
 }

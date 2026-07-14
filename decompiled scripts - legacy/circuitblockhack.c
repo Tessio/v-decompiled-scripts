@@ -1021,7 +1021,7 @@ void func_16() // Position - 0x39C (924)
 		HUD::SET_TEXT_COLOUR(237, 35, 54, 255);
 		HUD::SET_TEXT_DROPSHADOW(5, 0, 0, 0, 175);
 		HUD::SET_TEXT_JUSTIFICATION(0);
-		func_17(0.5f, 0.41f, "CBH_MV_FL" /*FAIL*/, 0);
+		func_17(0.5f, 0.41f, "CBH_MV_FL" /*NO SUPERADO*/, 0);
 	}
 
 	return;
@@ -2233,7 +2233,7 @@ void func_83() // Position - 0x1710 (5904)
 		HUD::SET_TEXT_COLOUR(13, 118, 94, 255);
 		HUD::SET_TEXT_DROPSHADOW(5, 0, 0, 0, 175);
 		HUD::SET_TEXT_JUSTIFICATION(0);
-		func_17(0.5f, 0.41f, "CBH_MV_PS" /*SUCCESS*/, 0);
+		func_17(0.5f, 0.41f, "CBH_MV_PS" /*SUPERADO*/, 0);
 	}
 
 	return;
@@ -2405,15 +2405,15 @@ void func_92() // Position - 0x1961 (6497)
 
 	if (uLocal_53.f_25.f_693 == 0)
 	{
-		func_104(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_FRONTEND_ACCEPT, true), "CBH_CONFI" /*Confirm*/, &(uLocal_53.f_25), 0);
+		func_104(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_FRONTEND_ACCEPT, true), "CBH_CONFI" /*Confirmar*/, &(uLocal_53.f_25), 0);
 	
 		if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-			func_104(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CURSOR_CANCEL, true), "CBH_QUIT" /*Quit*/, &(uLocal_53.f_25), 0);
+			func_104(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_CURSOR_CANCEL, true), "CBH_QUIT" /*Salir*/, &(uLocal_53.f_25), 0);
 		else
-			func_104(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_FRONTEND_CANCEL, true), "CBH_QUIT" /*Quit*/, &(uLocal_53.f_25), 0);
+			func_104(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(PLAYER_CONTROL, INPUT_FRONTEND_CANCEL, true), "CBH_QUIT" /*Salir*/, &(uLocal_53.f_25), 0);
 	
-		func_103(0, 4, "CBH_MV_UD" /*Move*/, &(uLocal_53.f_25));
-		func_103(0, 5, "CBH_MV_LR" /*Select*/, &(uLocal_53.f_25));
+		func_103(0, 4, "CBH_MV_UD" /*Mover*/, &(uLocal_53.f_25));
+		func_103(0, 5, "CBH_MV_LR" /*Seleccionar*/, &(uLocal_53.f_25));
 	}
 
 	unk = { func_102() };
@@ -2652,9 +2652,9 @@ void func_97(const char* sParam0) // Position - 0x1F4C (8012)
 	return;
 }
 
-void func_98(int iParam0) // Position - 0x1F5A (8026)
+void func_98(float fParam0) // Position - 0x1F5A (8026)
 {
-	Global_1576384 = iParam0;
+	Global_1576384 = fParam0;
 	return;
 }
 
@@ -2806,7 +2806,7 @@ void func_106() // Position - 0x2122 (8482)
 	if (!GRAPHICS::HAS_STREAMED_TEXTURE_DICT_LOADED(&textureDict))
 		return;
 
-	_DISPLAY_HELP_TEXT("CBH_MV_HELP" /*Arrange the circuit blocks to create a continuous line between the start and end points. Use ~INPUTGROUP_CELLPHONE_NAVIGATE~ to select and move each block. Press ~INPUT_FRONTEND_ACCEPT~ to test the circuit.*/, 10000);
+	_DISPLAY_HELP_TEXT("CBH_MV_HELP" /*Coloca los bloques del circuito para formar una línea continua entre los puntos de inicio y fin. Usa ~INPUTGROUP_CELLPHONE_NAVIGATE~ para seleccionar y mover los bloques. Pulsa ~INPUT_FRONTEND_ACCEPT~ para probar el circuito.*/, 10000);
 	AUDIO::START_AUDIO_SCENE("DLC_24-2_Hacking_Circuit_Scene");
 	uLocal_53.f_21 = AUDIO::GET_SOUND_ID();
 	AUDIO::PLAY_SOUND_FRONTEND(uLocal_53.f_21, "Background_Loop", "DLC_24-2_Hack_Circuit_Board", true);

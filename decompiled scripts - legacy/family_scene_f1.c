@@ -1045,7 +1045,7 @@ BOOL func_16(eCharacter echParam0, eCharacter echParam1) // Position - 0xCE1 (32
 	return false;
 }
 
-int func_17(int iParam0) // Position - 0xD51 (3409)
+Ped func_17(int iParam0) // Position - 0xD51 (3409)
 {
 	if (iParam0 < 9)
 		return Global_98260[iParam0 /*2*/];
@@ -1178,7 +1178,7 @@ int func_20(eCharacter echParam0) // Position - 0xF51 (3921)
 
 eCharacter func_21() // Position - 0xF62 (3938)
 {
-	if (Global_33775 == 0 || Global_33775 == 2)
+	if (Global_33775 == HUD_COLOUR_PURE_WHITE || Global_33775 == HUD_COLOUR_BLACK)
 		return 221;
 
 	return 161;
@@ -1407,7 +1407,7 @@ void func_36(var uParam0, int* piParam1, var uParam2, var uParam3, Vector3 vPara
 			{
 				if (!Global_114904.f_18521.f_17)
 				{
-					_DISPLAY_HELP_TEXT("FAM_WEAPDIS" /*A weapon cannot be equipped when in a safehouse.*/, -1);
+					_DISPLAY_HELP_TEXT("FAM_WEAPDIS" /*No se puede llevar un arma equipada en un piso franco.*/, -1);
 					Global_114904.f_18521.f_17 = 1;
 				}
 			

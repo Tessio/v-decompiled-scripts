@@ -629,10 +629,10 @@ void func_3() // Position - 0x654 (1620)
 	func_7();
 	func_6();
 	func_5();
-	Global_102491 = false;
+	Global_102491 = 0;
 	Global_96604 = -1;
 	MISC::CLEAR_BIT(&(Global_102454.f_20), 17);
-	Global_102489 = false;
+	Global_102489 = 0;
 	MISC::PAUSE_DEATH_ARREST_RESTART(false);
 	MISC::IGNORE_NEXT_RESTART(false);
 	MISC::SET_FADE_IN_AFTER_DEATH_ARREST(true);
@@ -704,13 +704,13 @@ void func_9() // Position - 0x782 (1922)
 
 void func_10() // Position - 0x7A2 (1954)
 {
-	if (Global_102454.f_16 != false)
+	if (Global_102454.f_16 != 0)
 	{
 		GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&(Global_102454.f_16));
 		Global_102454.f_16 = 0;
 	}
 
-	if (Global_102454.f_17 != false)
+	if (Global_102454.f_17 != 0)
 	{
 		GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&(Global_102454.f_17));
 		Global_102454.f_17 = 0;
@@ -5226,7 +5226,7 @@ BOOL func_83(float fParam0, var uParam1, var uParam2) // Position - 0x79AF (3115
 	return false;
 }
 
-ePedComponentType func_84() // Position - 0x79D9 (31193)
+BOOL func_84() // Position - 0x79D9 (31193)
 {
 	return Global_2658294[PLAYER::PLAYER_ID() /*468*/].f_325.f_8;
 }
@@ -5241,10 +5241,10 @@ Vector3 func_86() // Position - 0x7A06 (31238)
 	return -880f, -2770f, -50f;
 }
 
-BOOL func_87(ePedComponentType epctParam0) // Position - 0x7A1D (31261)
+BOOL func_87(Player plParam0) // Position - 0x7A1D (31261)
 {
-	if (epctParam0 != _INVALID_PLAYER_INDEX())
-		if (IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 0) || IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 1) || IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 2))
+	if (plParam0 != _INVALID_PLAYER_INDEX())
+		if (IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 0) || IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 1) || IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 2))
 			return true;
 
 	return false;
@@ -5763,10 +5763,10 @@ BOOL func_94(int iParam0, var uParam1) // Position - 0x8854 (34900)
 	return false;
 }
 
-BOOL func_95(ePedComponentType epctParam0) // Position - 0x88D6 (35030)
+BOOL func_95(Player plParam0) // Position - 0x88D6 (35030)
 {
-	if (epctParam0 != _INVALID_PLAYER_INDEX())
-		if (IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 3) || IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 4) || IS_BIT_SET(Global_1845299[epctParam0 /*883*/].f_260.f_299, 5))
+	if (plParam0 != _INVALID_PLAYER_INDEX())
+		if (IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 3) || IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 4) || IS_BIT_SET(Global_1845299[plParam0 /*883*/].f_260.f_299, 5))
 			return true;
 
 	return false;
@@ -6668,7 +6668,7 @@ void func_127() // Position - 0x9934 (39220)
 			if (func_146(&uLocal_60) >= 6f)
 			{
 				AUDIO::SET_FRONTEND_RADIO_ACTIVE(true);
-				_DISPLAY_HELP_TEXT("TOW_JOBOFFRD" /*~s~To accept towing jobs press ~INPUT_VEH_HORN~~s~*/, -1);
+				_DISPLAY_HELP_TEXT("TOW_JOBOFFRD" /*~s~Para aceptar trabajos en grúa, pulsa ~INPUT_VEH_HORN~.~s~*/, -1);
 				iLocal_72 = 4;
 			}
 			break;
@@ -6678,7 +6678,7 @@ void func_127() // Position - 0x9934 (39220)
 			{
 				if (!func_22(Global_114931.f_19980.f_1, 1024))
 				{
-					_DISPLAY_HELP_TEXT("TOW_MISSEDJOB" /*~s~The towing job has expired. There is only a short time to accept before dispatch takes silence as a no. However, more jobs can be accessed by pressing ~INPUT_VEH_HORN~~s~*/, -1);
+					_DISPLAY_HELP_TEXT("TOW_MISSEDJOB" /*~s~El trabajo en grúa ha caducado. Solo tienes un breve periodo para aceptarlo antes de que control interprete ese silencio como una negativa. Aun así, puedes acceder a más trabajos pulsando ~INPUT_VEH_HORN~.~s~*/, -1);
 					func_117(&(Global_114931.f_19980.f_1), 1024);
 				}
 			
@@ -6715,7 +6715,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 
 	Global_23007 = false;
 	Global_23009 = false;
-	Global_23014 = 0;
+	Global_23014 = false;
 	Global_23991 = 0;
 	Global_23993 = 0;
 	Global_23997 = 0;
@@ -6740,8 +6740,8 @@ BOOL func_130(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x9AE8 (39
 					Global_23000 = 0;
 					Global_23001 = 1;
 					Global_23053 = 0;
-					Global_22996 = false;
-					Global_22997 = false;
+					Global_22996 = 0;
+					Global_22997 = 0;
 					Global_23011 = false;
 					Global_23010 = false;
 					Global_21626 = 0;
@@ -7484,7 +7484,7 @@ BOOL func_160(var uParam0, BOOL bParam1, BOOL bParam2) // Position - 0xA7E3 (429
 	{
 		if (*uParam0 >= 16)
 			if (Global_114931.f_19980.f_3 >= 5)
-				_DISPLAY_HELP_TEXT("TOW_WANTED" /*~s~Towing jobs unavailable when Wanted. The towing job has ended.~s~*/, -1);
+				_DISPLAY_HELP_TEXT("TOW_WANTED" /*~s~Los trabajos en grúa no están disponibles si tienes un nivel de búsqueda. Este trabajo ha finalizado.~s~*/, -1);
 	
 		iLocal_250 = MISC::GET_GAME_TIMER();
 		iLocal_251 = 6000;

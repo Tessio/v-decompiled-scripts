@@ -55,15 +55,15 @@ void main() // Position - 0x0 (0)
 			case 0:
 				if (uLocal_16[0])
 				{
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[1 /*42*/], "CL_C1A" /*Killer photo*/, 16);
-					TEXT_LABEL_ASSIGN_STRING(&(Global_24103[1 /*42*/].f_4), "CL_C1A_BR" /*Kill some gang members and take a photo of the corpses.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[1 /*42*/], "CL_C1A" /*Una foto de morirse*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&(Global_24103[1 /*42*/].f_4), "CL_C1A_BR" /*Mata a varios miembros de las bandas y saca una foto de los cadáveres.*/, 16);
 					Global_24103[1 /*42*/].f_8 = 0;
 					Global_24103[1 /*42*/].f_9 = 2;
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[1 /*42*/].f_10[1 /*4*/], "CL_C1A_J1" /*Gang members killed ~1~/~1~*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[1 /*42*/].f_10[1 /*4*/], "CL_C1A_J1" /*Miembros de las bandas asesinados: ~1~/~1~*/, 16);
 					Global_24103[1 /*42*/].f_37[1] = false;
 					Global_24103[1 /*42*/].f_32[1] = 3;
 					Global_24103[1 /*42*/].f_27[1] = 0;
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[1 /*42*/].f_10[2 /*4*/], "CL_C1A_J2" /*Photos taken of dead gang members ~1~/~1~*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[1 /*42*/].f_10[2 /*4*/], "CL_C1A_J2" /*Fotos tomadas de los miembros de las bandas muertos: ~1~/~1~*/, 16);
 					Global_24103[1 /*42*/].f_37[2] = false;
 					Global_24103[1 /*42*/].f_32[2] = 3;
 					Global_24103[1 /*42*/].f_27[2] = 0;
@@ -75,7 +75,7 @@ void main() // Position - 0x0 (0)
 					}
 				
 					func_4(1, 1, true, 1);
-					func_3("CL_ADDED" /*Job ~a~ added to phone checklist*/, "CL_C1A" /*Killer photo*/, 3000, 1);
+					func_3("CL_ADDED" /*Trabajo ~a~ añadido a la lista del teléfono.*/, "CL_C1A" /*Una foto de morirse*/, 3000, 1);
 					iLocal_25 = 1;
 				}
 				break;
@@ -94,7 +94,7 @@ void main() // Position - 0x0 (0)
 									if (!Global_33826[iLocal_20])
 									{
 										Global_24103[1 /*42*/].f_27[1] = Global_24103[1 /*42*/].f_27[1] + 1;
-										func_2("CL_C1A_J1" /*Gang members killed ~1~/~1~*/, Global_24103[1 /*42*/].f_27[1], Global_24103[1 /*42*/].f_32[1], 2000, 1);
+										func_2("CL_C1A_J1" /*Miembros de las bandas asesinados: ~1~/~1~*/, Global_24103[1 /*42*/].f_27[1], Global_24103[1 /*42*/].f_32[1], 2000, 1);
 										Global_33826[iLocal_20] = true;
 									}
 								
@@ -105,7 +105,7 @@ void main() // Position - 0x0 (0)
 											if (MOBILE::CELL_CAM_IS_CHAR_VISIBLE_NO_FACE_CHECK(uLocal_21[iLocal_20]) && func_1())
 											{
 												Global_24103[1 /*42*/].f_27[2] = Global_24103[1 /*42*/].f_27[2] + 1;
-												func_2("CL_C1A_J2" /*Photos taken of dead gang members ~1~/~1~*/, Global_24103[1 /*42*/].f_27[2], Global_24103[1 /*42*/].f_32[2], 2000, 1);
+												func_2("CL_C1A_J2" /*Fotos tomadas de los miembros de las bandas muertos: ~1~/~1~*/, Global_24103[1 /*42*/].f_27[2], Global_24103[1 /*42*/].f_32[2], 2000, 1);
 												Global_33830[iLocal_20] = true;
 											}
 										}
@@ -113,7 +113,7 @@ void main() // Position - 0x0 (0)
 								
 									if (Global_24103[1 /*42*/].f_27[1] >= Global_24103[1 /*42*/].f_32[1] && Global_24103[1 /*42*/].f_27[2] >= Global_24103[1 /*42*/].f_32[2])
 									{
-										func_3("CL_COMPLETE" /*~a~ job complete.*/, "CL_C1A" /*Killer photo*/, 3000, 1);
+										func_3("CL_COMPLETE" /*Trabajo ~a~ completado.*/, "CL_C1A" /*Una foto de morirse*/, 3000, 1);
 										Global_24103[1 /*42*/].f_8 = 1;
 										iLocal_25 = 2;
 									}
@@ -135,24 +135,24 @@ void main() // Position - 0x0 (0)
 			case 0:
 				if (uLocal_16[1])
 				{
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[2 /*42*/], "CL_C1B" /*Bike Pro*/, 16);
-					TEXT_LABEL_ASSIGN_STRING(&(Global_24103[2 /*42*/].f_4), "CL_C1B_BR" /*Perform various bike stunts.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[2 /*42*/], "CL_C1B" /*Profesional de la moto*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&(Global_24103[2 /*42*/].f_4), "CL_C1B_BR" /*Realiza distintas acrobacias con la moto.*/, 16);
 					Global_24103[2 /*42*/].f_8 = 0;
 					Global_24103[2 /*42*/].f_9 = 3;
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[2 /*42*/].f_10[1 /*4*/], "CL_C1B_J1" /*Hold a wheelie for 200m without crashing.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[2 /*42*/].f_10[1 /*4*/], "CL_C1B_J1" /*Haz un caballito durante 200 m sin estrellarte.*/, 16);
 					Global_24103[2 /*42*/].f_37[1] = false;
 					Global_24103[2 /*42*/].f_32[1] = -1;
 					Global_24103[2 /*42*/].f_27[1] = -1;
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[2 /*42*/].f_10[2 /*4*/], "CL_C1B_J2" /*Successfully perform a stoppie.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[2 /*42*/].f_10[2 /*4*/], "CL_C1B_J2" /*Realiza con éxito un caballito invertido.*/, 16);
 					Global_24103[2 /*42*/].f_37[2] = false;
 					Global_24103[2 /*42*/].f_32[2] = -1;
 					Global_24103[2 /*42*/].f_27[2] = -1;
-					TEXT_LABEL_ASSIGN_STRING(&Global_24103[2 /*42*/].f_10[3 /*4*/], "CL_C1B_J3" /*Perform a 360 flip on a bike.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24103[2 /*42*/].f_10[3 /*4*/], "CL_C1B_J3" /*Realiza un mortal de 360° en moto.*/, 16);
 					Global_24103[2 /*42*/].f_37[3] = false;
 					Global_24103[2 /*42*/].f_32[3] = -1;
 					Global_24103[2 /*42*/].f_27[3] = -1;
 					func_4(136, 2, true, 1);
-					func_3("CL_ADDED" /*Job ~a~ added to phone checklist*/, "CL_C1B" /*Bike Pro*/, 3000, 1);
+					func_3("CL_ADDED" /*Trabajo ~a~ añadido a la lista del teléfono.*/, "CL_C1B" /*Profesional de la moto*/, 3000, 1);
 					iLocal_26 = 1;
 				}
 				break;
@@ -164,7 +164,7 @@ void main() // Position - 0x0 (0)
 			
 				if (Global_24103[2 /*42*/].f_37[1] == true && Global_24103[2 /*42*/].f_37[2] == true && Global_24103[2 /*42*/].f_37[3] == true)
 				{
-					func_3("CL_COMPLETE" /*~a~ job complete.*/, "CL_C1B" /*Bike Pro*/, 3000, 1);
+					func_3("CL_COMPLETE" /*Trabajo ~a~ completado.*/, "CL_C1B" /*Profesional de la moto*/, 3000, 1);
 					Global_24103[2 /*42*/].f_8 = 1;
 					iLocal_26 = 2;
 				}
@@ -186,11 +186,11 @@ BOOL func_1() // Position - 0x438 (1080)
 	return false;
 }
 
-void func_2(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4) // Position - 0x44E (1102)
+void func_2(char* sParam0, const char* sParam1, int iParam2, int iParam3, int iParam4) // Position - 0x44E (1102)
 {
 	iParam4 = iParam4;
 	HUD::BEGIN_TEXT_COMMAND_PRINT(sParam0);
-	HUD::ADD_TEXT_COMPONENT_INTEGER(iParam1);
+	HUD::ADD_TEXT_COMPONENT_INTEGER(sParam1);
 	HUD::ADD_TEXT_COMPONENT_INTEGER(iParam2);
 	HUD::END_TEXT_COMMAND_PRINT(iParam3, false);
 	return;
@@ -354,7 +354,7 @@ BOOL func_9(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, var
 
 BOOL func_10() // Position - 0x768 (1896)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;

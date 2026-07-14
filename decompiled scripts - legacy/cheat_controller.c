@@ -151,7 +151,7 @@ void main() // Position - 0x0 (0)
 	Global_34025 = 0;
 	Global_34024 = 0;
 	Global_34026 = 0;
-	Global_34027 = 0;
+	Global_34027 = false;
 	Global_34029 = 0;
 	Global_34028 = 0;
 	func_112();
@@ -160,7 +160,7 @@ void main() // Position - 0x0 (0)
 	{
 		func_2();
 	
-		if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && _NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, true) && !Global_1836480 && Global_33775 == 0)
+		if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && _NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, true) && !Global_1836480 && Global_33775 == false)
 			func_113();
 	
 		BUILTIN::WAIT(0);
@@ -169,13 +169,13 @@ void main() // Position - 0x0 (0)
 	return;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x127 (295)
+BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x127 (295)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = player;
+	type = player;
 
-	if (player != -1)
+	if (type != PV_COMP_INVALID)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -184,9 +184,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Posi
 					return false;
 		
 			if (bUnk)
-				if (player == Global_2673271.f_3)
+				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
-				else if (Global_2658291[player /*468*/] != 4)
+				else if (Global_2658291[type /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -218,7 +218,7 @@ void func_3(Hash hParam0) // Position - 0x1A1 (417)
 		case 2:
 			if (INTERIOR::IS_INTERIOR_SCENE())
 			{
-				func_21("CHEAT_VEHICLE_SPAWN_DENIED" /*Can't spawn that vehicle here.*/);
+				func_21("CHEAT_VEHICLE_SPAWN_DENIED" /*No puedes hacer aparecer ese vehículo aquí.*/);
 				iLocal_44 = 1;
 			}
 			else
@@ -290,7 +290,7 @@ void func_4(Hash hParam0) // Position - 0x1F6 (502)
 			else
 			{
 				STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(hParam0);
-				func_21("CHEAT_VEHICLE_SPAWN_DENIED" /*Can't spawn that vehicle here.*/);
+				func_21("CHEAT_VEHICLE_SPAWN_DENIED" /*No puedes hacer aparecer ese vehículo aquí.*/);
 			}
 		
 			iLocal_44 = 1;
@@ -430,10 +430,10 @@ BOOL func_14(char* sParam0) // Position - 0x570 (1392)
 	{
 		if (func_15(14) && CAM::IS_SCREEN_FADED_IN())
 		{
-			if (MISC::ARE_STRINGS_EQUAL(sParam0, "CHEAT_SUPER_JUMP" /*Super jump.*/) && INTERIOR::IS_INTERIOR_SCENE())
+			if (MISC::ARE_STRINGS_EQUAL(sParam0, "CHEAT_SUPER_JUMP" /*Supersalto*/) && INTERIOR::IS_INTERIOR_SCENE())
 				return false;
 		
-			if (MISC::ARE_STRINGS_EQUAL(sParam0, "CHEAT_GRAVITY_MOON" /*Moon gravity.*/) && !ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false) && ENTITY::IS_ENTITY_IN_WATER(PLAYER::PLAYER_PED_ID()))
+			if (MISC::ARE_STRINGS_EQUAL(sParam0, "CHEAT_GRAVITY_MOON" /*Gravedad lunar*/) && !ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false) && ENTITY::IS_ENTITY_IN_WATER(PLAYER::PLAYER_PED_ID()))
 				return false;
 		}
 	
@@ -455,7 +455,7 @@ void func_16(char* sParam0) // Position - 0x5E8 (1512)
 	}
 	else
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CHEAT_ACTIVATED" /*Cheat activated:~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CHEAT_ACTIVATED" /*Truco activado: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam0);
 		func_17(HUD::END_TEXT_COMMAND_THEFEED_POST_TICKER(false, true));
 		STATS::PLAYSTATS_CHEAT_APPLIED(sParam0);
@@ -578,7 +578,7 @@ void func_21(char* sParam0) // Position - 0x92C (2348)
 {
 	if (!func_15(14))
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CHEAT_DENIED" /*Cheat denied:~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CHEAT_DENIED" /*Truco rechazado: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam0);
 		func_17(HUD::END_TEXT_COMMAND_THEFEED_POST_TICKER(false, true));
 	}
@@ -623,7 +623,7 @@ void func_23() // Position - 0x984 (2436)
 			break;
 	
 		case 9:
-			func_24("CHEAT_AIM_SLOW_MO" /*Slow motion aim.*/);
+			func_24("CHEAT_AIM_SLOW_MO" /*Apuntar a cámara lenta*/);
 			func_31(19, false);
 			MISC::SET_TIME_SCALE(1f);
 			iLocal_75 = 0;
@@ -644,7 +644,7 @@ void func_24(char* sParam0) // Position - 0xA23 (2595)
 	}
 	else
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CHEAT_DEACTIVATED" /*Cheat deactivated:~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CHEAT_DEACTIVATED" /*Truco desactivado: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam0);
 		func_17(HUD::END_TEXT_COMMAND_THEFEED_POST_TICKER(false, true));
 	}
@@ -712,17 +712,17 @@ void func_30() // Position - 0xB62 (2914)
 	switch (iLocal_75)
 	{
 		case 1:
-			func_16("CHEAT_AIM_SLOW_MO1" /*Slow motion aim level 1.*/);
+			func_16("CHEAT_AIM_SLOW_MO1" /*Apuntar a cámara lenta nivel 1*/);
 			fLocal_76 = 0.6f;
 			break;
 	
 		case 2:
-			func_16("CHEAT_AIM_SLOW_MO2" /*Slow motion aim level 2.*/);
+			func_16("CHEAT_AIM_SLOW_MO2" /*Apuntar a cámara lenta nivelµ2*/);
 			fLocal_76 = 0.4f;
 			break;
 	
 		case 3:
-			func_16("CHEAT_AIM_SLOW_MO3" /*Slow motion aim level 3.*/);
+			func_16("CHEAT_AIM_SLOW_MO3" /*Apuntar a cámara lenta nivelµ3*/);
 			fLocal_76 = 0.2f;
 			break;
 	
@@ -772,7 +772,7 @@ void func_32() // Position - 0xBFA (3066)
 		case 9:
 			PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_SELECT_WEAPON, true);
 			PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CHARACTER_WHEEL, true);
-			func_24("CHEAT_SLOW_MO" /*Slow Motion.*/);
+			func_24("CHEAT_SLOW_MO" /*Cámara lenta*/);
 			func_31(16, false);
 			iLocal_74 = 0;
 			MISC::SET_TIME_SCALE(1f);
@@ -815,17 +815,17 @@ void func_35() // Position - 0xD26 (3366)
 	switch (iLocal_74)
 	{
 		case 1:
-			func_16("CHEAT_SLOW_MO1" /*Slow motion level 1.*/);
+			func_16("CHEAT_SLOW_MO1" /*Cámara lenta nivel 1*/);
 			MISC::SET_TIME_SCALE(0.6f);
 			break;
 	
 		case 2:
-			func_16("CHEAT_SLOW_MO2" /*Slow motion level 2.*/);
+			func_16("CHEAT_SLOW_MO2" /*Cámara lenta nivel 2*/);
 			MISC::SET_TIME_SCALE(0.4f);
 			break;
 	
 		case 3:
-			func_16("CHEAT_SLOW_MO3" /*Slow motion level 3.*/);
+			func_16("CHEAT_SLOW_MO3" /*Cámara lenta nivel 3*/);
 			MISC::SET_TIME_SCALE(0.2f);
 			break;
 	
@@ -888,7 +888,7 @@ void func_36() // Position - 0xD99 (3481)
 			
 				CAM::DO_SCREEN_FADE_IN(250);
 				iLocal_70 = MISC::GET_GAME_TIMER();
-				func_16("CHEAT_SKYFALL" /*Skyfall.*/);
+				func_16("CHEAT_SKYFALL" /*Caída del cielo*/);
 				MISC::SET_INSTANCE_PRIORITY_HINT(2);
 				iLocal_62 = 5;
 			}
@@ -919,7 +919,7 @@ void func_36() // Position - 0xD99 (3481)
 	
 		case 9:
 			func_37();
-			func_24("CHEAT_SKYFALL" /*Skyfall.*/);
+			func_24("CHEAT_SKYFALL" /*Caída del cielo*/);
 			func_31(17, false);
 			iLocal_62 = 1;
 			break;
@@ -970,7 +970,7 @@ void func_39() // Position - 0xFFF (4095)
 			break;
 	
 		case 4:
-			func_16("CHEAT_INVINCIBILITY" /*Invincible for 5 minutes.*/);
+			func_16("CHEAT_INVINCIBILITY" /*Invencible durante 5 minutos*/);
 			func_31(15, true);
 			iLocal_60 = 5;
 			iLocal_72 = MISC::GET_GAME_TIMER();
@@ -996,7 +996,7 @@ void func_39() // Position - 0xFFF (4095)
 			iLocal_73 = MISC::GET_GAME_TIMER() - iLocal_72;
 		
 			if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("appinternet")) == 0)
-				func_40(iLocal_71 - iLocal_73, "CHEAT_INV" /*INVINCIBILITY*/, 0, 0, 1000, 0, 2, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -1);
+				func_40(iLocal_71 - iLocal_73, "CHEAT_INV" /*INVENCIBILIDAD*/, 0, 0, 1000, 0, 2, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -1);
 		
 			if (iLocal_73 >= iLocal_71 - 1000)
 			{
@@ -1010,7 +1010,7 @@ void func_39() // Position - 0xFFF (4095)
 			break;
 	
 		case 9:
-			func_24("CHEAT_INVINCIBILITY_OFF" /*Invincibility*/);
+			func_24("CHEAT_INVINCIBILITY_OFF" /*Invencibilidad*/);
 			func_31(15, false);
 			iLocal_60 = 1;
 		
@@ -1088,7 +1088,7 @@ void func_43() // Position - 0x1306 (4870)
 			break;
 	
 		case 4:
-			func_16("CHEAT_FLAMING_BULLETS" /*Flaming bullets.*/);
+			func_16("CHEAT_FLAMING_BULLETS" /*Balas ardientes*/);
 			func_31(12, true);
 			iLocal_57 = 5;
 			break;
@@ -1110,7 +1110,7 @@ void func_43() // Position - 0x1306 (4870)
 			break;
 	
 		case 9:
-			func_24("CHEAT_FLAMING_BULLETS" /*Flaming bullets.*/);
+			func_24("CHEAT_FLAMING_BULLETS" /*Balas ardientes*/);
 			func_31(12, false);
 			iLocal_57 = 1;
 			break;
@@ -1130,7 +1130,7 @@ void func_44() // Position - 0x13AD (5037)
 			break;
 	
 		case 4:
-			func_16("CHEAT_EXPLOSIVE_MELEE" /*Explosive melee attacks.*/);
+			func_16("CHEAT_EXPLOSIVE_MELEE" /*Ataques cuerpo a cuerpo explosivos*/);
 			func_31(13, true);
 			iLocal_58 = 5;
 			break;
@@ -1146,7 +1146,7 @@ void func_44() // Position - 0x13AD (5037)
 			break;
 	
 		case 9:
-			func_24("CHEAT_EXPLOSIVE_MELEE" /*Explosive melee attacks.*/);
+			func_24("CHEAT_EXPLOSIVE_MELEE" /*Ataques cuerpo a cuerpo explosivos*/);
 			func_31(13, false);
 			iLocal_58 = 1;
 			break;
@@ -1166,7 +1166,7 @@ void func_45() // Position - 0x1450 (5200)
 			break;
 	
 		case 4:
-			func_16("CHEAT_DRUNK" /*Drunk mode.*/);
+			func_16("CHEAT_DRUNK" /*Modo borracho*/);
 			func_31(18, true);
 			func_60(PLAYER::PLAYER_PED_ID());
 			func_58(30000, 1050253722, 1065353216, 0);
@@ -1179,7 +1179,7 @@ void func_45() // Position - 0x1450 (5200)
 			break;
 	
 		case 9:
-			func_24("CHEAT_DRUNK" /*Drunk mode.*/);
+			func_24("CHEAT_DRUNK" /*Modo borracho*/);
 			func_31(18, false);
 			func_49(PLAYER::PLAYER_PED_ID());
 			func_48(1000);
@@ -1577,7 +1577,7 @@ void func_64() // Position - 0x1B03 (6915)
 			break;
 	
 		case 4:
-			func_16("CHEAT_BANG_BANG" /*Bang bang!*/);
+			func_16("CHEAT_BANG_BANG" /*¡Bang, bang!*/);
 			func_31(11, true);
 			iLocal_56 = 5;
 			break;
@@ -1599,7 +1599,7 @@ void func_64() // Position - 0x1B03 (6915)
 			break;
 	
 		case 9:
-			func_24("CHEAT_BANG_BANG" /*Bang bang!*/);
+			func_24("CHEAT_BANG_BANG" /*¡Bang, bang!*/);
 			func_31(11, false);
 			iLocal_56 = 1;
 			break;
@@ -1633,7 +1633,7 @@ void func_65() // Position - 0x1BAA (7082)
 			break;
 	
 		case 9:
-			func_24("CHEAT_GRAVITY_MOON" /*Moon gravity.*/);
+			func_24("CHEAT_GRAVITY_MOON" /*Gravedad lunar*/);
 			func_31(14, false);
 			MISC::SET_GRAVITY_LEVEL(0);
 			iLocal_77 = 0;
@@ -1668,7 +1668,7 @@ void func_67() // Position - 0x1C8B (7307)
 	switch (iLocal_77)
 	{
 		case 1:
-			func_16("CHEAT_GRAVITY_MOON" /*Moon gravity.*/);
+			func_16("CHEAT_GRAVITY_MOON" /*Gravedad lunar*/);
 			MISC::SET_GRAVITY_LEVEL(1);
 			break;
 	
@@ -1704,19 +1704,19 @@ void func_69() // Position - 0x1CFC (7420)
 	
 		if (func_27(23) || func_27(22) || func_27(10))
 		{
-			func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+			func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 			return;
 		}
 	
 		if (func_70())
 		{
-			func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+			func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 			return;
 		}
 	
 		if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 		{
-			func_16("CHEAT_GIVE_PARACHUTE" /*Parachute given.*/);
+			func_16("CHEAT_GIVE_PARACHUTE" /*Paracaídas recibido*/);
 			WEAPON::GIVE_WEAPON_TO_PED(PLAYER::PLAYER_PED_ID(), joaat("GADGET_PARACHUTE"), 1, true, true);
 			func_5(10);
 		}
@@ -1769,13 +1769,13 @@ void func_72() // Position - 0x1DEC (7660)
 	
 		if (func_27(23) || func_27(22) || func_27(9))
 		{
-			func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+			func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 			return;
 		}
 	
 		if (func_70())
 		{
-			func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+			func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 			return;
 		}
 	
@@ -1783,7 +1783,7 @@ void func_72() // Position - 0x1DEC (7660)
 		{
 			if (PLAYER::GET_MAX_WANTED_LEVEL() == 0)
 			{
-				func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+				func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 				return;
 			}
 		
@@ -1791,13 +1791,13 @@ void func_72() // Position - 0x1DEC (7660)
 		
 			if (playerWantedLevel > 0)
 			{
-				func_16("CHEAT_WANTED_DOWN" /*Wanted Level down.*/);
+				func_16("CHEAT_WANTED_DOWN" /*Bajar nivel de búsqueda*/);
 				PLAYER::SET_PLAYER_WANTED_LEVEL(PLAYER::PLAYER_ID(), playerWantedLevel - 1, false);
 				func_5(9);
 			}
 			else
 			{
-				func_21("CHEAT_WANTED_DOWN_DENIED" /*No Wanted Level active.*/);
+				func_21("CHEAT_WANTED_DOWN_DENIED" /*No tienes ningún nivel de búsqueda activo.*/);
 			}
 		}
 	}
@@ -1815,13 +1815,13 @@ void func_73() // Position - 0x1E8F (7823)
 	
 		if (func_27(23) || func_27(22) || func_27(8))
 		{
-			func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+			func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 			return;
 		}
 	
 		if (func_70())
 		{
-			func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+			func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 			return;
 		}
 	
@@ -1829,7 +1829,7 @@ void func_73() // Position - 0x1E8F (7823)
 		{
 			if (PLAYER::GET_MAX_WANTED_LEVEL() == 0)
 			{
-				func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+				func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 				return;
 			}
 		
@@ -1839,12 +1839,12 @@ void func_73() // Position - 0x1E8F (7823)
 			{
 				PLAYER::SET_PLAYER_WANTED_LEVEL(PLAYER::PLAYER_ID(), playerWantedLevel + 1, false);
 				PLAYER::SET_PLAYER_WANTED_LEVEL_NOW(PLAYER::PLAYER_ID(), false);
-				func_16("CHEAT_WANTED_UP" /*Wanted Level up.*/);
+				func_16("CHEAT_WANTED_UP" /*Subir nivel de búsqueda*/);
 				func_5(8);
 			}
 			else
 			{
-				func_21("CHEAT_WANTED_UP_DENIED" /*Current max Wanted Level reached.*/);
+				func_21("CHEAT_WANTED_UP_DENIED" /*Máximo nivel de búsqueda alcanzado.*/);
 			}
 		}
 	}
@@ -1860,20 +1860,20 @@ void func_74() // Position - 0x1F3E (7998)
 	
 		if (func_27(23) || func_27(22) || func_27(7) || func_15(9) || func_15(10) || !PLAYER::IS_SPECIAL_ABILITY_UNLOCKED(func_75()) || !PLAYER::IS_SPECIAL_ABILITY_ENABLED(PLAYER::PLAYER_ID(), 0))
 		{
-			func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+			func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 			return;
 		}
 	
 		if (func_70())
 		{
-			func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+			func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 			return;
 		}
 	
 		if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 		{
 			PLAYER::SPECIAL_ABILITY_FILL_METER(PLAYER::PLAYER_ID(), true, 0);
-			func_16("CHEAT_SPECIAL_ABILITY" /*Special ability recharged.*/);
+			func_16("CHEAT_SPECIAL_ABILITY" /*Habilidad especial recargada*/);
 			func_5(7);
 		}
 	}
@@ -1896,19 +1896,19 @@ void func_76() // Position - 0x1FF5 (8181)
 	
 		if (func_27(23) || func_27(22) || func_27(6) || func_15(9) || func_15(10))
 		{
-			func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+			func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 			return;
 		}
 	
 		if (func_70())
 		{
-			func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+			func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 			return;
 		}
 	
 		if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 		{
-			func_16("CHEAT_HEALTH_ARMOR" /*Max health and armor.*/);
+			func_16("CHEAT_HEALTH_ARMOR" /*Salud y blindaje al máximo*/);
 			func_5(6);
 			ENTITY::SET_ENTITY_HEALTH(PLAYER::PLAYER_PED_ID(), ENTITY::GET_ENTITY_MAX_HEALTH(PLAYER::PLAYER_PED_ID()), 0, 0);
 			PED::ADD_ARMOUR_TO_PED(PLAYER::PLAYER_PED_ID(), PLAYER::GET_PLAYER_MAX_ARMOUR(PLAYER::PLAYER_ID()) - PED::GET_PED_ARMOUR(PLAYER::PLAYER_PED_ID()));
@@ -1935,13 +1935,13 @@ void func_77() // Position - 0x20CE (8398)
 	
 		if (func_27(23) || func_27(22) || func_27(5))
 		{
-			func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+			func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 			return;
 		}
 	
 		if (func_70())
 		{
-			func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+			func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 			return;
 		}
 	
@@ -1956,42 +1956,42 @@ void func_77() // Position - 0x20CE (8398)
 			case 1:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("EXTRASUNNY");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_EXTRA_SUNNY" /*Extra sunny weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_EXTRA_SUNNY" /*Tiempo: muy soleado*/);
 				iLocal_69 = 2;
 				break;
 		
 			case 2:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("CLEAR");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_CLEAR" /*Clear weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_CLEAR" /*Tiempo: despejado*/);
 				iLocal_69 = 3;
 				break;
 		
 			case 3:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("CLOUDS");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_CLOUDY" /*Cloudy weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_CLOUDY" /*Tiempo: nublado*/);
 				iLocal_69 = 4;
 				break;
 		
 			case 4:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("SMOG");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_SMOGGY" /*Smoggy weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_SMOGGY" /*Tiempo: aire contaminado*/);
 				iLocal_69 = 6;
 				break;
 		
 			case 6:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("OVERCAST");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_OVERCAST" /*Overcast weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_OVERCAST" /*Tiempo: encapotado*/);
 				iLocal_69 = 7;
 				break;
 		
 			case 7:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("RAIN");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_RAIN" /*Rainy weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_RAIN" /*Tiempo: lluvioso*/);
 				func_31(5, true);
 				iLocal_69 = 8;
 				break;
@@ -1999,21 +1999,21 @@ void func_77() // Position - 0x20CE (8398)
 			case 8:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("THUNDER");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_THUNDER" /*Thundery weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_THUNDER" /*Tiempo: tormentoso*/);
 				iLocal_69 = 9;
 				break;
 		
 			case 9:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("CLEARING");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_CLEARING" /*Clearing weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_CLEARING" /*Tiempo: despejándose*/);
 				iLocal_69 = 11;
 				break;
 		
 			case 11:
 				MISC::SET_WEATHER_TYPE_NOW_PERSIST("XMAS");
 				MISC::CLEAR_WEATHER_TYPE_PERSIST();
-				func_16("CHEAT_ADVANCE_WEATHER_SNOW" /*Snowy weather.*/);
+				func_16("CHEAT_ADVANCE_WEATHER_SNOW" /*Tiempo: nevado*/);
 				iLocal_69 = 0;
 				break;
 		
@@ -2033,17 +2033,17 @@ void func_78() // Position - 0x225D (8797)
 	
 		if (func_27(23) || func_27(22) || func_27(4))
 		{
-			func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+			func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 			return;
 		}
 	
 		if (func_70())
 		{
-			func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+			func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 			return;
 		}
 	
-		func_16("CHEAT_GIVE_WEAPONS" /*Give weapons.*/);
+		func_16("CHEAT_GIVE_WEAPONS" /*Armas*/);
 		func_5(4);
 	
 		if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
@@ -2069,7 +2069,7 @@ void func_79() // Position - 0x2332 (9010)
 			break;
 	
 		case 4:
-			func_16("CHEAT_FAST_SWIM" /*Fast swim.*/);
+			func_16("CHEAT_FAST_SWIM" /*Nadar rápido*/);
 			func_31(3, true);
 			iLocal_48 = 5;
 			break;
@@ -2088,7 +2088,7 @@ void func_79() // Position - 0x2332 (9010)
 	
 		case 9:
 			PLAYER::SET_SWIM_MULTIPLIER_FOR_PLAYER(PLAYER::PLAYER_ID(), 1f);
-			func_24("CHEAT_FAST_SWIM" /*Fast swim.*/);
+			func_24("CHEAT_FAST_SWIM" /*Nadar rápido*/);
 			func_31(3, false);
 			iLocal_48 = 1;
 			break;
@@ -2108,7 +2108,7 @@ void func_80() // Position - 0x23DA (9178)
 			break;
 	
 		case 4:
-			func_16("CHEAT_FAST_RUN" /*Fast run.*/);
+			func_16("CHEAT_FAST_RUN" /*Correr rápido*/);
 			func_31(2, true);
 			iLocal_47 = 5;
 			break;
@@ -2131,7 +2131,7 @@ void func_80() // Position - 0x23DA (9178)
 	
 		case 9:
 			PLAYER::SET_RUN_SPRINT_MULTIPLIER_FOR_PLAYER(PLAYER::PLAYER_ID(), 1f);
-			func_24("CHEAT_FAST_RUN" /*Fast run.*/);
+			func_24("CHEAT_FAST_RUN" /*Correr rápido*/);
 			func_31(2, false);
 			iLocal_47 = 1;
 			break;
@@ -2153,7 +2153,7 @@ void func_81() // Position - 0x24C3 (9411)
 			break;
 	
 		case 4:
-			func_16("CHEAT_SLIDEY_CARS" /*Slidey cars.*/);
+			func_16("CHEAT_SLIDEY_CARS" /*Coches deslizantes*/);
 			func_31(1, true);
 			iLocal_46 = 5;
 			break;
@@ -2193,7 +2193,7 @@ void func_81() // Position - 0x24C3 (9411)
 			break;
 	
 		case 9:
-			func_24("CHEAT_SLIDEY_CARS" /*Slidey cars.*/);
+			func_24("CHEAT_SLIDEY_CARS" /*Coches deslizantes*/);
 			iLocal_46 = 10;
 			break;
 	
@@ -2527,7 +2527,7 @@ void func_87() // Position - 0x2BCF (11215)
 			break;
 	
 		case 4:
-			func_16("CHEAT_SUPER_JUMP" /*Super jump.*/);
+			func_16("CHEAT_SUPER_JUMP" /*Supersalto*/);
 			func_31(0, true);
 			iLocal_45 = 5;
 			break;
@@ -2544,7 +2544,7 @@ void func_87() // Position - 0x2BCF (11215)
 			break;
 	
 		case 9:
-			func_24("CHEAT_SUPER_JUMP" /*Super jump.*/);
+			func_24("CHEAT_SUPER_JUMP" /*Supersalto*/);
 			func_31(0, false);
 			iLocal_45 = 1;
 			break;
@@ -2593,48 +2593,48 @@ void func_88() // Position - 0x2C78 (11384)
 	bLocal_91 = false;
 
 	if (func_107(988027572, 12) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("buzzoff")) || func_106(20, joaat("buzzard")))
-		func_103(joaat("buzzard"), "CHEAT_SPAWN_VEH1" /*Spawn Buzzard.*/);
+		func_103(joaat("buzzard"), "CHEAT_SPAWN_VEH1" /*Hacer aparecer Buzzard*/);
 
 	if (func_107(-1134279030, 11) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("bandit")) || func_106(20, joaat("bmx")))
-		func_103(joaat("bmx"), "CHEAT_SPAWN_VEH2" /*Spawn BMX.*/);
+		func_103(joaat("bmx"), "CHEAT_SPAWN_VEH2" /*Hacer aparecer BMX*/);
 
 	if (func_107(971352167, 10) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("holein1")) || func_106(20, joaat("caddy")))
-		func_103(joaat("caddy"), "CHEAT_SPAWN_VEH3" /*Spawn Caddy.*/);
+		func_103(joaat("caddy"), "CHEAT_SPAWN_VEH3" /*Hacer aparecer Caddy*/);
 
 	if (func_107(-269863225, 10) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("comet")) || func_106(20, joaat("comet2")))
-		func_103(joaat("comet2"), "CHEAT_SPAWN_VEH4" /*Spawn Comet.*/);
+		func_103(joaat("comet2"), "CHEAT_SPAWN_VEH4" /*Hacer aparecer Comet*/);
 
 	if (func_107(458579068, 12) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("flyspray")) || func_106(20, joaat("duster")))
-		func_103(joaat("duster"), "CHEAT_SPAWN_VEH5" /*Spawn Duster.*/);
+		func_103(joaat("duster"), "CHEAT_SPAWN_VEH5" /*Hacer aparecer avioneta fumigadora*/);
 
 	if (func_107(-666513193, 12) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("rocket")) || func_106(20, joaat("pcj")))
-		func_103(joaat("pcj"), "CHEAT_SPAWN_VEH6" /*Spawn PCJ.*/);
+		func_103(joaat("pcj"), "CHEAT_SPAWN_VEH6" /*Hacer aparecer PCJ*/);
 
 	if (func_107(-1245984749, 10) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("rapidgt")) || func_106(20, joaat("rapidgt")))
-		func_103(joaat("rapidgt"), "CHEAT_SPAWN_VEH7" /*Spawn Rapid GT.*/);
+		func_103(joaat("rapidgt"), "CHEAT_SPAWN_VEH7" /*Hacer aparecer Rapid GT*/);
 
 	if (func_107(2076774618, 12) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("offroad")) || func_106(20, joaat("sanchez")))
-		func_103(joaat("sanchez"), "CHEAT_SPAWN_VEH8" /*Spawn Sanchez.*/);
+		func_103(joaat("sanchez"), "CHEAT_SPAWN_VEH8" /*Hacer aparecer Sanchez*/);
 
 	if (func_107(855685457, 9) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("vinewood")) || func_106(20, joaat("stretch")))
-		func_103(joaat("stretch"), "CHEAT_SPAWN_VEH9" /*Spawn Stretch Limo.*/);
+		func_103(joaat("stretch"), "CHEAT_SPAWN_VEH9" /*Hacer aparecer limusina*/);
 
 	if (func_107(-591395876, 12) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("barnstorm")) || func_106(20, joaat("stunt")))
-		func_103(joaat("stunt"), "CHEAT_SPAWN_VEH10" /*Spawn Stunt Plane.*/);
+		func_103(joaat("stunt"), "CHEAT_SPAWN_VEH10" /*Hacer aparecer avión acrobático*/);
 
 	if (func_107(-1399217582, 10) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("trashed")) || func_106(20, joaat("trash")))
-		func_103(joaat("trash"), "CHEAT_SPAWN_VEH11" /*Spawn Trashmaster.*/);
+		func_103(joaat("trash"), "CHEAT_SPAWN_VEH11" /*Hacer aparecer camión de la basura*/);
 
 	if (_IS_EXCLUSIVE_CONTENT_UNLOCKED())
 	{
 		if (func_107(-375917581, 10) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("extinct")) || func_106(20, joaat("dodo")))
-			func_103(joaat("dodo"), "CHEAT_SPAWN_VEH12" /*Spawn Dodo Sea Plane.*/);
+			func_103(joaat("dodo"), "CHEAT_SPAWN_VEH12" /*Hacer aparecer hidroavión Dodo.*/);
 	
 		if (func_107(-2124307881, 10) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("deathcar")) || func_106(20, joaat("dukes2")))
-			func_103(joaat("dukes2"), "CHEAT_SPAWN_VEH13" /*Spawn Duke O'Death.*/);
+			func_103(joaat("dukes2"), "CHEAT_SPAWN_VEH13" /*Hacer aparecer Duke O'Death.*/);
 	
 		if (func_107(1028964594, 9) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("bubbles")) || func_106(20, joaat("submersible2")))
-			func_103(joaat("submersible2"), "CHEAT_SPAWN_VEH14" /*Spawn Kraken submersible.*/);
+			func_103(joaat("submersible2"), "CHEAT_SPAWN_VEH14" /*Hacer aparecer minisubmarino Kraken.*/);
 	}
 
 	if (func_107(-393416581, 11) || MISC::HAS_PC_CHEAT_WITH_HASH_BEEN_ACTIVATED(joaat("hoptoit")) || func_106(0, 0))
@@ -2704,24 +2704,24 @@ void func_89() // Position - 0x33DC (13276)
 {
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(16))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
 	if (iLocal_61 != 1)
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 	else
 		iLocal_64 = 4;
 
@@ -2732,21 +2732,21 @@ void func_90() // Position - 0x3448 (13384)
 {
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		iLocal_63 = 1;
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		iLocal_63 = 1;
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(18))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		iLocal_63 = 1;
 		return;
 	}
@@ -2763,37 +2763,37 @@ void func_91() // Position - 0x34BF (13503)
 {
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
 	if (INTERIOR::IS_INTERIOR_SCENE())
 	{
-		func_21("CHEAT_NOT_HERE" /*Can't activate that cheat here.*/);
+		func_21("CHEAT_NOT_HERE" /*No se puede activar ese truco aquí.*/);
 		return;
 	}
 
 	if (iLocal_62 != 1)
 	{
-		func_21("CHEAT_ALREADY_ACTIVE" /*Cheat already active.*/);
+		func_21("CHEAT_ALREADY_ACTIVE" /*Truco ya activado.*/);
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(17) || func_66(0) || PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false) || !CAM::IS_GAMEPLAY_CAM_RENDERING())
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
 	if (PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || PLAYER::IS_PLAYER_BEING_ARRESTED(PLAYER::PLAYER_ID(), false) || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("respawn_controller")) > 0)
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
@@ -2805,24 +2805,24 @@ void func_92() // Position - 0x3598 (13720)
 {
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(16))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
 	if (iLocal_64 != 1)
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 	else
 		iLocal_61 = 4;
 
@@ -2837,19 +2837,19 @@ void func_93() // Position - 0x3604 (13828)
 
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(15) || unk.f_2 <= -170f)
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
@@ -2865,19 +2865,19 @@ void func_94() // Position - 0x368E (13966)
 {
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(14) || func_66(17) || ENTITY::IS_ENTITY_IN_WATER(PLAYER::PLAYER_PED_ID()))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
@@ -2889,21 +2889,21 @@ void func_95() // Position - 0x3703 (14083)
 {
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		iLocal_58 = 1;
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		iLocal_58 = 1;
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(13))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		iLocal_58 = 1;
 		return;
 	}
@@ -2920,21 +2920,21 @@ void func_96() // Position - 0x377A (14202)
 {
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		iLocal_57 = 1;
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		iLocal_57 = 1;
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(12))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		iLocal_57 = 1;
 		return;
 	}
@@ -2951,21 +2951,21 @@ void func_97() // Position - 0x37F1 (14321)
 {
 	if (func_28())
 	{
-		func_21("CHEAT_MISSION_DENIED" /*Not available on a mission or pastime.*/);
+		func_21("CHEAT_MISSION_DENIED" /*No disponible durante una misión o un pasatiempo.*/);
 		iLocal_56 = 1;
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		iLocal_56 = 1;
 		return;
 	}
 
 	if (func_27(23) || func_27(21) || func_27(11))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		iLocal_56 = 1;
 		return;
 	}
@@ -2982,13 +2982,13 @@ void func_98() // Position - 0x3868 (14440)
 {
 	if (func_27(23) || func_27(22) || func_27(3) || func_15(9) || func_15(10))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
@@ -3004,13 +3004,13 @@ void func_99() // Position - 0x38DB (14555)
 {
 	if (func_27(23) || func_27(22) || func_27(2) || func_15(9) || func_15(10))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
@@ -3026,13 +3026,13 @@ void func_100() // Position - 0x394E (14670)
 {
 	if (func_27(23) || func_27(22) || func_27(1))
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
@@ -3048,13 +3048,13 @@ void func_101() // Position - 0x39A9 (14761)
 {
 	if (func_27(23) || func_27(22) || func_27(0) || INTERIOR::IS_INTERIOR_SCENE())
 	{
-		func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+		func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 		return;
 	}
 
 	if (func_70())
 	{
-		func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+		func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 		return;
 	}
 
@@ -3115,19 +3115,19 @@ void func_103(int iParam0, char* sParam1) // Position - 0x3AC6 (15046)
 	{
 		if (func_15(9) || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("barry1")) > 0 || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("tennis")) > 0 || func_27(23) || func_27(22) || func_27(20))
 		{
-			func_21("CHEAT_NOT_NOW" /*Can't activate that cheat right now.*/);
+			func_21("CHEAT_NOT_NOW" /*No se puede activar ese truco en este momento.*/);
 			return;
 		}
 	
 		if (func_70())
 		{
-			func_21("CHEAT_PHONE_DENIED" /*Can't activate cheats while using the cellphone.*/);
+			func_21("CHEAT_PHONE_DENIED" /*No es posible activar trucos mientras se usa el móvil.*/);
 			return;
 		}
 	
 		if (!func_104(iParam0))
 		{
-			func_21("CHEAT_VEHICLE_LOCKED_DENIED" /*Vehicle is not unlocked yet.*/);
+			func_21("CHEAT_VEHICLE_LOCKED_DENIED" /*Este vehículo aún no se ha desbloqueado.*/);
 			return;
 		}
 	
@@ -3296,7 +3296,7 @@ void func_113() // Position - 0x3D51 (15697)
 	Global_34025 = 0;
 	Global_34024 = 0;
 	Global_34026 = 0;
-	Global_34027 = 0;
+	Global_34027 = false;
 	Global_34029 = 0;
 	Global_34028 = 0;
 	SCRIPT::TERMINATE_THIS_THREAD();

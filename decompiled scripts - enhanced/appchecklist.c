@@ -259,7 +259,7 @@ BOOL func_1() // Position - 0x16A (362)
 {
 	if (Global_21627.f_1 == 1 || Global_21627.f_1 == 3 || Global_21627.f_1 == 0 || Global_21571 == 1)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -276,7 +276,7 @@ BOOL func_3() // Position - 0x1B9 (441)
 {
 	if (Global_10103 == 1 || Global_21627.f_1 < 7)
 	{
-		Global_21614 = true;
+		Global_21614 = 1;
 		return true;
 	}
 
@@ -338,18 +338,18 @@ void func_4() // Position - 0x1E2 (482)
 	}
 
 	if (iLocal_113 == 0)
-		func_7(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(18), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(0), -1f, -1f, "CELL_3092" /*No progress made.*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(18), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(0), -1f, -1f, "CELL_3092" /*No ha habido progreso.*/, 0, 0, 0, 0);
 	else
 		bLocal_128 = true;
 
 	func_33(Global_21608, "DISPLAY_VIEW", 18f, -1082130432, -1082130432, -1082130432, -1082130432);
-	func_5(Global_21608, "SET_HEADER", "CELL_23" /*Check List*/, 0, 0, 0, 0);
+	func_5(Global_21608, "SET_HEADER", "CELL_23" /*Lista de control*/, 0, 0, 0, 0);
 
 	if (Global_21615)
 	{
-		func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-		func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
-		func_7(Global_21608, "SET_SOFT_KEYS", 1f, 0f, 15f, -1f, -1f, "CELL_227" /*SORT*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 1f, 0f, 15f, -1f, -1f, "CELL_227" /*ORDENAR*/, 0, 0, 0, 0);
 		MISC::SET_BIT(&Global_9463, 17);
 	}
 	else
@@ -436,9 +436,9 @@ void func_8() // Position - 0x520 (1312)
 	return;
 }
 
-BOOL func_9(eControlType ectParam0, BOOL bParam1, int iParam2) // Position - 0x541 (1345)
+BOOL func_9(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x541 (1345)
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, bParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, bParam1))
+	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
 			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
@@ -484,7 +484,7 @@ void func_10() // Position - 0x5B3 (1459)
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(18);
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
-			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_3206" /*- Total Available: ~1~*/);
+			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_3206" /*- Total disponible: ~1~*/);
 			HUD::ADD_TEXT_COMPONENT_INTEGER(iLocal_124);
 			GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
@@ -492,7 +492,7 @@ void func_10() // Position - 0x5B3 (1459)
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(18);
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(1);
 			GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(0);
-			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_3101" /*- Total Complete: ~1~*/);
+			GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("CELL_3101" /*- Total completado: ~1~*/);
 			HUD::ADD_TEXT_COMPONENT_INTEGER(iLocal_125);
 			GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 			GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
@@ -503,7 +503,7 @@ void func_10() // Position - 0x5B3 (1459)
 			MISC::CLEAR_BIT(&Global_9463, 17);
 		
 			if (Global_21615)
-				func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+				func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 			else
 				func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, 0, 0, 0, 0, 0);
 		
@@ -575,19 +575,19 @@ BOOL func_14() // Position - 0x811 (2065)
 {
 	eViewModeContext camActiveViewModeContext;
 	eViewMode camViewModeForContext;
-	BOOL flag;
+	int num;
 
 	if (Global_80305)
 		return false;
 
-	flag = 0;
+	num = 0;
 	camActiveViewModeContext = CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT();
 	camViewModeForContext = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(camActiveViewModeContext);
 
 	if (camViewModeForContext == FIRST_PERSON)
-		flag = 1;
+		num = 1;
 
-	if (Global_4525122 || flag)
+	if (Global_4525122 || num)
 		return true;
 
 	return true;
@@ -643,7 +643,7 @@ void func_16() // Position - 0x8CD (2253)
 
 	if (func_17(0))
 	{
-		func_7(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(18), BUILTIN::TO_FLOAT(value), BUILTIN::TO_FLOAT(0), -1f, -1f, "CELL_229" /*On Active Mission*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(18), BUILTIN::TO_FLOAT(value), BUILTIN::TO_FLOAT(0), -1f, -1f, "CELL_229" /*En una misión activa*/, 0, 0, 0, 0);
 	}
 	else
 	{
@@ -658,7 +658,7 @@ void func_16() // Position - 0x8CD (2253)
 
 	uLocal_18[1] == 99;
 	func_33(Global_21608, "DISPLAY_VIEW", 18f, -1082130432, -1082130432, -1082130432, -1082130432);
-	func_5(Global_21608, "SET_HEADER", "CELL_3301" /*Open Missions*/, 0, 0, 0, 0);
+	func_5(Global_21608, "SET_HEADER", "CELL_3301" /*Misiones abiertas*/, 0, 0, 0, 0);
 
 	if (func_17(0) || Global_97430 == 0)
 	{
@@ -668,15 +668,15 @@ void func_16() // Position - 0x8CD (2253)
 		MISC::CLEAR_BIT(&Global_9463, 17);
 	
 		if (Global_21615)
-			func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
+			func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
 		else
 			func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, 0, 0, 0, 0, 0);
 	}
 	else if (Global_21615)
 	{
-		func_7(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-		func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
-		func_7(Global_21608, "SET_SOFT_KEYS", 1f, 0f, 15f, -1f, -1f, "CELL_227" /*SORT*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 2f, 0f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 1f, 0f, 15f, -1f, -1f, "CELL_227" /*ORDENAR*/, 0, 0, 0, 0);
 	}
 	else
 	{
@@ -893,64 +893,64 @@ char* func_21(int iParam0) // Position - 0xE10 (3600)
 	switch (iParam0)
 	{
 		case 0:
-			return "MG_BJUM" /*Base Jumping*/;
+			return "MG_BJUM" /*Salto BASE*/;
 	
 		case 1:
-			return "MG_DART" /*Darts*/;
+			return "MG_DART" /*Dardos*/;
 	
 		case 2:
 			return "MG_GOLF" /*Golf*/;
 	
 		case 3:
-			return "MG_HUNT" /*Hunting*/;
+			return "MG_HUNT" /*Caza*/;
 	
 		case 4:
-			return "MG_OFFR" /*Off-Road Races*/;
+			return "MG_OFFR" /*Carreras todoterreno*/;
 	
 		case 5:
-			return "MG_PILO" /*Flight School*/;
+			return "MG_PILO" /*Escuela de vuelo*/;
 	
 		case 6:
-			return "MG_RMPG" /*Rampages*/;
+			return "MG_RMPG" /*Masacres*/;
 	
 		case 7:
-			return "MG_SERA" /*Sea Races*/;
+			return "MG_SERA" /*Carreras marítimas*/;
 	
 		case 8:
-			return "MG_SRAC" /*Street Races*/;
+			return "MG_SRAC" /*Carreras urbanas*/;
 	
 		case 9:
-			return "MG_STRP" /*Stripclub*/;
+			return "MG_STRP" /*Club de striptease*/;
 	
 		case 10:
-			return "MG_STNT" /*Stunt Planes*/;
+			return "MG_STNT" /*Aviones acrobáticos*/;
 	
 		case 11:
-			return "MG_SHTR" /*Shooting Range*/;
+			return "MG_SHTR" /*Galería de tiro*/;
 	
 		case 12:
-			return "MG_TAXI" /*Taxi Jobs*/;
+			return "MG_TAXI" /*Trabajos en taxi*/;
 	
 		case 13:
-			return "MG_TENN" /*Tennis*/;
+			return "MG_TENN" /*Tenis*/;
 	
 		case 14:
-			return "MG_TOWI" /*Towing*/;
+			return "MG_TOWI" /*Grúa*/;
 	
 		case 15:
-			return "MG_TRFA" /*Trafficking - Air*/;
+			return "MG_TRFA" /*Tráfico aéreo*/;
 	
 		case 16:
-			return "MG_TRFG" /*Trafficking - Ground*/;
+			return "MG_TRFG" /*Tráfico terrestre*/;
 	
 		case 17:
-			return "MG_TRIA" /*Triathlon*/;
+			return "MG_TRIA" /*Triatlón*/;
 	
 		case 18:
 			return "MG_YOGA" /*Yoga*/;
 	
 		case 19:
-			return "MG_CRCE" /*Stock Car Races*/;
+			return "MG_CRCE" /*Carreras de stock cars*/;
 	}
 
 	return "INVALID!";
@@ -1367,17 +1367,17 @@ void func_29() // Position - 0x1594 (5524)
 void func_30() // Position - 0x15B7 (5559)
 {
 	func_33(Global_21608, "SET_DATA_SLOT_EMPTY", 18f, -1082130432, -1082130432, -1082130432, -1082130432);
-	func_7(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(18), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(0), -1f, -1f, "CELL_3301" /*Open Missions*/, 0, 0, 0, 0);
-	func_7(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(18), BUILTIN::TO_FLOAT(1), BUILTIN::TO_FLOAT(0), -1f, -1f, "CELL_3302" /*Progress*/, 0, 0, 0, 0);
+	func_7(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(18), BUILTIN::TO_FLOAT(0), BUILTIN::TO_FLOAT(0), -1f, -1f, "CELL_3301" /*Misiones abiertas*/, 0, 0, 0, 0);
+	func_7(Global_21608, "SET_DATA_SLOT", BUILTIN::TO_FLOAT(18), BUILTIN::TO_FLOAT(1), BUILTIN::TO_FLOAT(0), -1f, -1f, "CELL_3302" /*Progreso*/, 0, 0, 0, 0);
 	iLocal_113 = 2;
 	func_33(Global_21608, "DISPLAY_VIEW", 18f, -1082130432, -1082130432, -1082130432, -1082130432);
-	func_5(Global_21608, "SET_HEADER", "CELL_23" /*Check List*/, 0, 0, 0, 0);
+	func_5(Global_21608, "SET_HEADER", "CELL_23" /*Lista de control*/, 0, 0, 0, 0);
 
 	if (Global_21615)
 	{
-		func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*SELECT*/, 0, 0, 0, 0);
-		func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*BACK*/, 0, 0, 0, 0);
-		func_7(Global_21608, "SET_SOFT_KEYS", 1f, 0f, 15f, -1f, -1f, "CELL_227" /*SORT*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 2f, 1f, 2f, -1f, -1f, "CELL_205" /*ENTRAR*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 3f, 1f, 4f, -1f, -1f, "CELL_206" /*VOLVER*/, 0, 0, 0, 0);
+		func_7(Global_21608, "SET_SOFT_KEYS", 1f, 0f, 15f, -1f, -1f, "CELL_227" /*ORDENAR*/, 0, 0, 0, 0);
 	}
 	else
 	{
@@ -1392,11 +1392,11 @@ void func_30() // Position - 0x15B7 (5559)
 
 void func_31() // Position - 0x16F1 (5873)
 {
-	func_32(0, "CELL_3001" /*Missions*/, 1, Global_114667);
-	func_32(1, "CELL_3008" /*Hobbies and Pastimes*/, 3, Global_114667);
-	func_32(2, "CELL_3004" /*Strangers and Freaks*/, 7, Global_114670);
-	func_32(3, "CELL_3005" /*Random Events*/, 9, Global_114671);
-	func_32(4, "CELL_3007" /*Miscellaneous*/, 11, Global_114672);
+	func_32(0, "CELL_3001" /*Misiones*/, 1, Global_114667);
+	func_32(1, "CELL_3008" /*Aficiones y pasatiempos*/, 3, Global_114667);
+	func_32(2, "CELL_3004" /*Extraños y locos*/, 7, Global_114670);
+	func_32(3, "CELL_3005" /*Eventos aleatorios*/, 9, Global_114671);
+	func_32(4, "CELL_3007" /*Varios*/, 11, Global_114672);
 	return;
 }
 

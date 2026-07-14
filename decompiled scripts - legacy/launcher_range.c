@@ -464,7 +464,7 @@ void main() // Position - 0x0 (0)
 							
 								if (!func_101(iLocal_92, 33554432))
 								{
-									func_56("MG_YOU_IS_BROKE" /*Can't afford this activity. $~1~ needed to start.*/, iLocal_117, -1);
+									func_56("MG_YOU_IS_BROKE" /*No puedes permitirte esta actividad. Necesitas ~1~ $ para iniciarla.*/, iLocal_117, -1);
 									func_71(&iLocal_92, 33554432);
 								}
 							}
@@ -876,7 +876,7 @@ void func_7() // Position - 0xBEA (3050)
 	}
 	else if (MISC::IS_PS3_VERSION() || func_8() || MISC::IS_PC_VERSION())
 	{
-		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*Playing story*/, 24);
+		TEXT_LABEL_ASSIGN_STRING(&textLabel, "PRESENCE_0_STR" /*En modo Individual*/, 24);
 		NETWORK::NETWORK_SET_RICH_PRESENCE_STRING(0, &textLabel);
 	}
 
@@ -1698,7 +1698,7 @@ BOOL func_43(int iParam0, int iParam1, BOOL bParam2) // Position - 0x1B3B (6971)
 	if (bParam2)
 		return IS_BIT_SET(Global_102481.f_1442[iParam0], iParam1);
 	else if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
-		if (func_49() == 0)
+		if (func_49() == HUD_COLOUR_PURE_WHITE)
 			return IS_BIT_SET(func_44(func_48(iParam0), -1), iParam1);
 	else
 		return IS_BIT_SET(Global_114904.f_668[iParam0], iParam1);
@@ -1964,7 +1964,7 @@ int func_48(int iParam0) // Position - 0x1C1F (7199)
 	return 16715;
 }
 
-int func_49() // Position - 0x2003 (8195)
+eHudColour func_49() // Position - 0x2003 (8195)
 {
 	return Global_33775;
 }
@@ -2236,29 +2236,29 @@ Hash func_63(eCharacter echParam0) // Position - 0x24A1 (9377)
 	return Global_2339[echParam0 /*29*/];
 }
 
-BOOL func_64() // Position - 0x24B0 (9392)
+ePedComponentType func_64() // Position - 0x24B0 (9392)
 {
 	return Global_77342;
 }
 
-BOOL func_65(int iParam0) // Position - 0x24BC (9404)
+ePedComponentType func_65(int iParam0) // Position - 0x24BC (9404)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return PV_COMP_BERD;
 			else
-				return false;
+				return PV_COMP_HEAD;
 		else
-			return false;
+			return PV_COMP_HEAD;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return PV_COMP_BERD;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return PV_COMP_BERD;
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_66(int iParam0, int iParam1) // Position - 0x2513 (9491)
@@ -2454,7 +2454,7 @@ BOOL func_79() // Position - 0x2E60 (11872)
 	return Global_102481.f_417 > 0;
 }
 
-BOOL func_80() // Position - 0x2E71 (11889)
+ePedComponentType func_80() // Position - 0x2E71 (11889)
 {
 	return Global_1575090;
 }
@@ -3032,7 +3032,7 @@ BOOL func_101(int iParam0, int iParam1) // Position - 0x3B96 (15254)
 void func_102() // Position - 0x3BA5 (15269)
 {
 	TEXT_LABEL_ASSIGN_STRING(&uLocal_51, "range_modern", 64);
-	sLocal_99 = "PLAY_RANGE" /*Press ~INPUT_CONTEXT~ to use the Shooting Range. The entry fee is $~1~.*/;
+	sLocal_99 = "PLAY_RANGE" /*Pulsa ~INPUT_CONTEXT~ para entrar en la galería de tiro. Tarifa de acceso: ~1~ $.*/;
 	fLocal_115 = 2f;
 	fLocal_100 = BUILTIN::TO_FLOAT(func_104(91)) + 5f;
 	iLocal_97 = 11;

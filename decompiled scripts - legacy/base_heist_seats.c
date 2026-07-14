@@ -577,7 +577,7 @@ void func_7(var uParam0, int iParam1, char* sParam2) // Position - 0x142 (322)
 	if (func_8(&(uParam0->f_421), 7))
 		uParam0->f_421.f_14(&uParam0->[iParam1 /*14*/], iParam1, sParam2);
 	else
-		TEXT_LABEL_ASSIGN_STRING(sParam2, "MPJAC_EXIT" /*Press ~INPUT_CONTEXT~ to stand up.*/, 16);
+		TEXT_LABEL_ASSIGN_STRING(sParam2, "MPJAC_EXIT" /*Pulsa ~INPUT_CONTEXT~ para levantarte.*/, 16);
 
 	return;
 }
@@ -692,29 +692,29 @@ void func_13(int* piParam0, int iParam1) // Position - 0x34B (843)
 	return;
 }
 
-BOOL func_14() // Position - 0x35B (859)
+char* func_14() // Position - 0x35B (859)
 {
 	return Global_77342;
 }
 
-BOOL func_15(int iParam0) // Position - 0x367 (871)
+char* func_15(int iParam0) // Position - 0x367 (871)
 {
 	if (iParam0 == 1)
 		if (Global_21610.f_1 > 3)
 			if (IS_BIT_SET(Global_9463, 14))
-				return true;
+				return 1;
 			else
-				return false;
+				return 0;
 		else
-			return false;
+			return 0;
 
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
-		return true;
+		return 1;
 
 	if (Global_21610.f_1 > 3)
-		return true;
+		return 1;
 
-	return false;
+	return 0;
 }
 
 BOOL func_16() // Position - 0x3BE (958)
@@ -779,7 +779,7 @@ void func_19(var uParam0) // Position - 0x42B (1067)
 				else if (uParam0->f_421.f_5 == -1)
 				{
 					if (MISC::GET_GAME_TIMER() - uParam0->f_421.f_6 > 150)
-						_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_421.f_5), 4, "MPJAC_SIT" /*Press ~INPUT_CONTEXT~ to sit down.*/, 0, 0, 0, 0);
+						_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_421.f_5), 4, "MPJAC_SIT" /*Pulsa ~INPUT_CONTEXT~ para sentarte.*/, 0, 0, 0, 0);
 				}
 				else if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT))
 				{
@@ -1054,7 +1054,7 @@ void func_26(var uParam0) // Position - 0xA5A (2650)
 			if (!HUD::IS_PAUSE_MENU_ACTIVE() && !func_8(&(uParam0->f_421), 0) && !func_8(&(uParam0->f_421), 4) && !func_16() && !func_27(true) && uParam0->f_421.f_8.f_2 != 3)
 			{
 				if (uParam0->f_421.f_5 == -1)
-					_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_421.f_5), 4, "MPJAC_EXIT" /*Press ~INPUT_CONTEXT~ to stand up.*/, 0, 0, 0, 0);
+					_CONTEXT_ADD_HELP_TEXT(&(uParam0->f_421.f_5), 4, "MPJAC_EXIT" /*Pulsa ~INPUT_CONTEXT~ para levantarte.*/, 0, 0, 0, 0);
 			
 				if (uParam0->f_421.f_4 == 6)
 					if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT))
@@ -1594,13 +1594,13 @@ BOOL func_52(var uParam0) // Position - 0x158F (5519)
 	return 0;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x15FB (5627)
+BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x15FB (5627)
 {
-	Player player;
+	ePedComponentType type;
 
-	player = player;
+	type = player;
 
-	if (player != -1)
+	if (type != PV_COMP_INVALID)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -1609,9 +1609,9 @@ BOOL _NETWORK_IS_PLAYER_VALID(Player player, BOOL bIsPlaying, BOOL bUnk) // Posi
 					return false;
 		
 			if (bUnk)
-				if (player == Global_2673271.f_3)
+				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
-				else if (Global_2658291[player /*468*/] != 4)
+				else if (Global_2658291[type /*468*/] != 4)
 					return false;
 		
 			return true;
@@ -1714,13 +1714,13 @@ void func_61(var uParam0) // Position - 0x17DB (6107)
 	return;
 }
 
-void func_62(int* piParam0, int iParam1, BOOL bParam2) // Position - 0x1838 (6200)
+void func_62(int* piParam0, int iParam1, char* sParam2) // Position - 0x1838 (6200)
 {
 	int offset;
 
 	offset = iParam1;
 
-	if (bParam2)
+	if (sParam2)
 		MISC::SET_BIT(piParam0, offset);
 	else
 		MISC::CLEAR_BIT(piParam0, offset);
@@ -1783,7 +1783,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x191C (6428)
 {
 	switch (func_68())
 	{
-		case 0:
+		case false:
 			return func_67();
 	
 		case 2:
@@ -1807,7 +1807,7 @@ Hash func_67() // Position - 0x194F (6479)
 	return joaat("freemode");
 }
 
-int func_68() // Position - 0x1973 (6515)
+BOOL func_68() // Position - 0x1973 (6515)
 {
 	return Global_33775;
 }
@@ -1961,11 +1961,11 @@ Vector3 func_79(float fParam0, var uParam1, var uParam2) // Position - 0x2032 (8
 	return fParam0;
 }
 
-BOOL func_80(Player plParam0) // Position - 0x2071 (8305)
+BOOL func_80(ePedComponentType epctParam0) // Position - 0x2071 (8305)
 {
-	if (plParam0 != _INVALID_PLAYER_INDEX())
-		if (_NETWORK_IS_PLAYER_VALID(plParam0, true, true))
-			if (IS_BIT_SET(Global_1882572[plParam0 /*315*/].f_43.f_27, 3))
+	if (epctParam0 != _INVALID_PLAYER_INDEX())
+		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
+			if (IS_BIT_SET(Global_1882572[epctParam0 /*315*/].f_43.f_27, 3))
 				return true;
 
 	return false;
@@ -2077,7 +2077,29 @@ int func_86(int iParam0, int iParam1, BOOL bParam2) // Position - 0x219C (8604)
 
 BOOL func_87(BOOL bParam0) // Position - 0x22B2 (8882)
 {
-	bParam0;
+	if (bParam0 && Global_1575062)
+		if (func_88())
+			return false;
+		else
+			return true;
+
 	return Global_1575062;
+}
+
+BOOL func_88() // Position - 0x22DE (8926)
+{
+	if (func_89())
+		return true;
+
+	return Global_1575065;
+}
+
+BOOL func_89() // Position - 0x22F9 (8953)
+{
+	if (Global_1575062 || Global_1575068)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
 }
 

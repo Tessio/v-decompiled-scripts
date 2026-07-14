@@ -1686,25 +1686,25 @@ char* func_48(int iParam0) // Position - 0x1CDF (7391)
 	switch (iParam0)
 	{
 		case 0:
-			return "SB_SAL" /*Barber Shop*/;
+			return "SB_SAL" /*Barbería*/;
 	
 		case 1:
-			return "SB_BAR" /*Barber Shop*/;
+			return "SB_BAR" /*Barbería*/;
 	
 		case 2:
-			return "SB_BAR" /*Barber Shop*/;
+			return "SB_BAR" /*Barbería*/;
 	
 		case 3:
-			return "SB_BAR" /*Barber Shop*/;
+			return "SB_BAR" /*Barbería*/;
 	
 		case 4:
-			return "SB_BAR" /*Barber Shop*/;
+			return "SB_BAR" /*Barbería*/;
 	
 		case 5:
-			return "SB_BAR" /*Barber Shop*/;
+			return "SB_BAR" /*Barbería*/;
 	
 		case 6:
-			return "SB_BAR" /*Barber Shop*/;
+			return "SB_BAR" /*Barbería*/;
 	
 		case 7:
 			return func_49(iParam0, 0, false);
@@ -1752,25 +1752,25 @@ char* func_48(int iParam0) // Position - 0x1CDF (7391)
 			return func_49(iParam0, 0, false);
 	
 		case 22:
-			return "SB_TAT" /*Tattoo Parlor*/;
+			return "SB_TAT" /*Salón de tatuajes*/;
 	
 		case 23:
-			return "SB_TAT" /*Tattoo Parlor*/;
+			return "SB_TAT" /*Salón de tatuajes*/;
 	
 		case 24:
-			return "SB_TAT" /*Tattoo Parlor*/;
+			return "SB_TAT" /*Salón de tatuajes*/;
 	
 		case 25:
-			return "SB_TAT" /*Tattoo Parlor*/;
+			return "SB_TAT" /*Salón de tatuajes*/;
 	
 		case 26:
-			return "SB_TAT" /*Tattoo Parlor*/;
+			return "SB_TAT" /*Salón de tatuajes*/;
 	
 		case 27:
-			return "SB_TAT" /*Tattoo Parlor*/;
+			return "SB_TAT" /*Salón de tatuajes*/;
 	
 		case 28:
-			return "SB_AMU2" /*Ammu-Nation with Range*/;
+			return "SB_AMU2" /*Ammu-Nation con galería de tiro*/;
 	
 		case 29:
 			return "SB_AMU" /*Ammu-Nation*/;
@@ -1800,7 +1800,7 @@ char* func_48(int iParam0) // Position - 0x1CDF (7391)
 			return "SB_AMU" /*Ammu-Nation*/;
 	
 		case 38:
-			return "SB_AMU2" /*Ammu-Nation with Range*/;
+			return "SB_AMU2" /*Ammu-Nation con galería de tiro*/;
 	
 		case 39:
 			return func_49(iParam0, 0, false);
@@ -1839,16 +1839,16 @@ char* func_48(int iParam0) // Position - 0x1CDF (7391)
 			return "SB_AMU" /*Ammu-Nation*/;
 	
 		case 50:
-			return "SB_BAR" /*Barber Shop*/;
+			return "SB_BAR" /*Barbería*/;
 	
 		case 51:
-			return "S_CL_BL" /*Casino Store*/;
+			return "S_CL_BL" /*Tienda del casino*/;
 	
 		case 53:
 			return "SB_AMU" /*Ammu-Nation*/;
 	
 		case 54:
-			return "SB_TAT" /*Tattoo Parlor*/;
+			return "SB_TAT" /*Salón de tatuajes*/;
 	
 		case 55:
 			return func_49(iParam0, 0, false);
@@ -1872,10 +1872,10 @@ char* func_48(int iParam0) // Position - 0x1CDF (7391)
 			return "SB_AMU" /*Ammu-Nation*/;
 	
 		case 62:
-			return "SB_BAR" /*Barber Shop*/;
+			return "SB_BAR" /*Barbería*/;
 	
 		case 63:
-			return "SB_TAT" /*Tattoo Parlor*/;
+			return "SB_TAT" /*Salón de tatuajes*/;
 	
 		case 64:
 			return "SB_AMU" /*Ammu-Nation*/;
@@ -1889,28 +1889,28 @@ char* func_49(int iParam0, int iParam1, BOOL bParam2) // Position - 0x2153 (8531
 	switch (iParam0)
 	{
 		case -1:
-			return "S_N_EM" /*Empty Shop*/;
+			return "S_N_EM" /*Tienda vacía*/;
 	
 		case 0:
-			return "S_H_01" /*Bob Mulét Hair & Beauty*/;
+			return "S_H_01" /*Salón de belleza Bob Mulét*/;
 	
 		case 1:
-			return "S_H_02" /*Herr Kutz Barber*/;
+			return "S_H_02" /*Peluquería Herr Kutz*/;
 	
 		case 2:
-			return "S_H_03" /*Beachcombover Barbers*/;
+			return "S_H_03" /*Barbería Beachcombover*/;
 	
 		case 3:
-			return "S_H_04" /*O'Sheas Barbers*/;
+			return "S_H_04" /*Barbería O'Sheas*/;
 	
 		case 4:
-			return "S_H_05" /*Herr Kutz Barber*/;
+			return "S_H_05" /*Peluquería Herr Kutz*/;
 	
 		case 5:
-			return "S_H_06" /*Hair On Hawick Barbers*/;
+			return "S_H_06" /*Peluquería Hair On Hawick*/;
 	
 		case 6:
-			return "S_H_07" /*Herr Kutz Barber*/;
+			return "S_H_07" /*Peluquería Herr Kutz*/;
 	
 		case 7:
 			return "S_CL_01" /*Discount Store*/;
@@ -1919,7 +1919,7 @@ char* func_49(int iParam0, int iParam1, BOOL bParam2) // Position - 0x2153 (8531
 			return "S_CL_02" /*Discount Store*/;
 	
 		case 9:
-			return "S_CL_03" /*Binco Clothing*/;
+			return "S_CL_03" /*Binco*/;
 	
 		case 10:
 			return "S_CL_04" /*Discount Store*/;
@@ -1928,7 +1928,7 @@ char* func_49(int iParam0, int iParam1, BOOL bParam2) // Position - 0x2153 (8531
 			return "S_CL_05" /*Discount Store*/;
 	
 		case 12:
-			return "S_CL_06" /*Binco Clothing*/;
+			return "S_CL_06" /*Binco*/;
 	
 		case 13:
 			return "S_CL_07" /*Discount Store*/;
@@ -1955,25 +1955,25 @@ char* func_49(int iParam0, int iParam1, BOOL bParam2) // Position - 0x2153 (8531
 			return "S_CH_03" /*Ponsonbys*/;
 	
 		case 21:
-			return "S_CA_01" /*Vespucci Movie Masks*/;
+			return "S_CA_01" /*Máscaras de cine Vespucci*/;
 	
 		case 22:
-			return "S_T_01" /*Blazing Tattoo*/;
+			return "S_T_01" /*Tatuajes Blazing*/;
 	
 		case 23:
-			return "S_T_02" /*Alamo Tattoo Studio*/;
+			return "S_T_02" /*Salón de tatuajes de Alamo*/;
 	
 		case 24:
-			return "S_T_03" /*Paleto Tattoo Studio*/;
+			return "S_T_03" /*Salón de tatuajes de Paleto*/;
 	
 		case 25:
 			return "S_T_04" /*The Pit*/;
 	
 		case 26:
-			return "S_T_05" /*Los Santos Tattoos*/;
+			return "S_T_05" /*Tatuajes Los Santos*/;
 	
 		case 27:
-			return "S_T_06" /*Ink Inc Tattoos*/;
+			return "S_T_06" /*Tatuajes Ink Inc*/;
 	
 		case 28:
 			return "S_G_01" /*Ammu-Nation*/;
@@ -2018,7 +2018,7 @@ char* func_49(int iParam0, int iParam1, BOOL bParam2) // Position - 0x2153 (8531
 			return "S_MO_06" /*Los Santos Customs*/;
 	
 		case 42:
-			return "S_MO_07" /*Beeker's Garage*/;
+			return "S_MO_07" /*Taller Beeker*/;
 	
 		case 43:
 			return "S_MO_08" /*Los Santos Customs*/;
@@ -2033,155 +2033,155 @@ char* func_49(int iParam0, int iParam1, BOOL bParam2) // Position - 0x2153 (8531
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_BIKER_ONE";
 					else
-						return "S_MO_10" /*Custom Mod Shop*/;
+						return "S_MO_10" /*Taller personal*/;
 					break;
 			
 				case 5:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_BIKER_TWO";
 					else
-						return "S_MO_10" /*Custom Mod Shop*/;
+						return "S_MO_10" /*Taller personal*/;
 					break;
 			
 				case 11:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_BUNKER";
 					else
-						return "S_MO_B" /*Bunker Vehicle Workshop*/;
+						return "S_MO_B" /*Taller de vehículos del búnker*/;
 					break;
 			
 				case 10:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_TRUCK";
 					else
-						return "S_MO_T" /*Weapon & Vehicle Workshop*/;
+						return "S_MO_T" /*Taller de armas y vehículos*/;
 					break;
 			
 				case 12:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_HANGAR";
 					else
-						return "S_MO_HA" /*Hangar Aircraft Workshop*/;
+						return "S_MO_HA" /*El taller de aeronaves del hangar*/;
 					break;
 			
 				case 13:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_AOC";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 14:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_BASE";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 15:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_BUSINESS_HUB";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 23:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_HACKER_DEN";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 16:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_HACKER_TRUCK";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 17:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_ARENA_WARS";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 18:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_CAR_MEET";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 19:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_TUNER_AUTO_SHOP";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 20:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_FIXER_HQ";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 24:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_MANSION";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			
 				case 21:
 					if (bParam2)
 						return "PERSONAL_CAR_MOD_VARIATION_JUGGALO_HIDEOUT";
 					else
-						return "S_MO_AOC" /*Vehicle Workshop*/;
+						return "S_MO_AOC" /*El taller de vehículos*/;
 					break;
 			}
 		
-			return "S_MO_11" /*Custom Auto Shop*/;
+			return "S_MO_11" /*Taller personal*/;
 	
 		case 46:
-			return "S_G_12" /*MOC Armory*/;
+			return "S_G_12" /*Taller de armas del COM*/;
 	
 		case 47:
-			return "S_G_13" /*Avenger Armory*/;
+			return "S_G_13" /*Blindaje del Avenger*/;
 	
 		case 48:
-			return "S_G_14" /*Terrorbyte Armory*/;
+			return "S_G_14" /*Taller del Terrorbyte*/;
 	
 		case 49:
-			return "S_G_15" /*Arena Armory*/;
+			return "S_G_15" /*Arsenal de la arena*/;
 	
 		case 52:
-			return "S_G_16" /*Arcade Armory*/;
+			return "S_G_16" /*Arsenal del salón recreativo*/;
 	
 		case 53:
-			return "S_G_17" /*Kosatka Armory*/;
+			return "S_G_17" /*Arsenal del Kosatka*/;
 	
 		case 50:
-			return "S_H_08" /*Penthouse Barber*/;
+			return "S_H_08" /*Peluquería del ático*/;
 	
 		case 51:
-			return "S_CL_09" /*Casino Store*/;
+			return "S_CL_09" /*La tienda del casino*/;
 	
 		case 54:
-			return "S_T_07" /*LS Car Meet Tattoos*/;
+			return "S_T_07" /*Tatuajes del club automovilístico de LS*/;
 	
 		case 55:
-			return "S_CL_10" /*Merch Shop*/;
+			return "S_CL_10" /*Tienda de artículos*/;
 	
 		case 56:
-			return "S_G_18" /*Fixer Armory*/;
+			return "S_G_18" /*Armería de la agencia*/;
 	
 		case 57:
 			return "S_CL_11" /*Record A Studios*/;
 	
 		case 58:
-			return "S_G_19" /*Gun Van*/;
+			return "S_G_19" /*Arsenal móvil*/;
 	
 		case 59:
 			return "S_G_20";
@@ -2193,10 +2193,10 @@ char* func_49(int iParam0, int iParam1, BOOL bParam2) // Position - 0x2153 (8531
 			return "S_G_22";
 	
 		case 62:
-			return "S_H_09";
+			return "S_H_09" /*Barbería de la mansión*/;
 	
 		case 63:
-			return "S_T_08";
+			return "S_T_08" /*Salón de tatuajes de la mansión*/;
 	
 		case 64:
 			return "S_G_23";

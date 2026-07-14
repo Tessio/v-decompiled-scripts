@@ -423,7 +423,7 @@ BOOL func_1(var uParam0, var uParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, 
 		
 			if (!uParam1->f_9)
 				if (MISC::GET_HASH_KEY(uParam0->[uParam1->f_12 /*24*/].f_5) == MISC::GET_HASH_KEY("Carwash1") && func_5(PLAYER::PLAYER_ID()))
-					func_26(uParam1, "CWASH_RIDEHLP2" /*Press ~INPUT_CONTEXT~ to use your Car Wash for free.*/);
+					func_26(uParam1, "CWASH_RIDEHLP2" /*Pulsa ~INPUT_CONTEXT~ para usar tu lavadero de coches gratis.*/);
 				else
 					func_17(uParam1, *uParam1, uParam0->[uParam1->f_12 /*24*/].f_9);
 		
@@ -1762,28 +1762,28 @@ void func_70() // Position - 0x2226 (8742)
 
 void func_71(var uParam0, int iParam1) // Position - 0x22B4 (8884)
 {
-	*uParam0 = "CWASH_RIDEHLP" /*Press ~INPUT_CONTEXT~ to use the Car Wash. The cost is $~1~.*/;
+	*uParam0 = "CWASH_RIDEHLP" /*Pulsa ~INPUT_CONTEXT~ para usar el autolavado. Cuestaµ~1~µ$.*/;
 	uParam0->f_1 = "";
-	uParam0->f_3 = "CWASH_NOWAY" /*This vehicle cannot be used with the Car Wash.*/;
-	uParam0->f_4 = "CWASH_WANTED" /*You can't use the Car Wash while Wanted.*/;
-	uParam0->f_5 = "CWASH_CARBROKE" /*This vehicle is too damaged to be used with the Car Wash.*/;
-	uParam0->f_6 = "CWASH_BLOCKED" /*The Car Wash is blocked. Please come back later.*/;
-	uParam0->f_7 = "CWASH_WRONGWAY" /*Your vehicle needs to be pointing towards the Car Wash.*/;
-	uParam0->f_8 = "CWASH_UPSIDEDO" /*Your vehicle needs to be upright to use the Car Wash.*/;
+	uParam0->f_3 = "CWASH_NOWAY" /*Con este vehículo no se puede usar el autolavado.*/;
+	uParam0->f_4 = "CWASH_WANTED" /*No puedes usar el autolavado si tienes un nivel de búsqueda.*/;
+	uParam0->f_5 = "CWASH_CARBROKE" /*Este vehículo está demasiado dañado para usar el autolavado.*/;
+	uParam0->f_6 = "CWASH_BLOCKED" /*El autolavado está bloqueado. Vuelve más tarde.*/;
+	uParam0->f_7 = "CWASH_WRONGWAY" /*El vehículo tiene que estar orientado hacia el autolavado.*/;
+	uParam0->f_8 = "CWASH_UPSIDEDO" /*El vehículo tiene que estar recto para usar el autolavado.*/;
 	uParam0->f_16 = iParam1;
 
 	if (!Global_80280)
 	{
-		uParam0->f_2 = "CWASH_NOMONEY" /*You do not have enough money. It costs $~1~ to use the Car Wash.*/;
+		uParam0->f_2 = "CWASH_NOMONEY" /*No tienes suficiente dinero. Cuesta ~1~ $ usar el autolavado.*/;
 		return;
 	}
 
 	if (MISC::IS_PS3_VERSION() || func_73())
-		uParam0->f_2 = "CWASH_POOR_PSN" /*It costs $~1~ to use the Car Wash.~n~You can buy additional GTA dollars from PlayStation®Store in the Pause Menu.*/;
+		uParam0->f_2 = "CWASH_POOR_PSN" /*Usar el autolavado cuesta ~1~µ$.~n~Puedes comprar más dólares GTA en PlayStation®Store, desde el menú de pausa.*/;
 	else if (MISC::IS_XBOX360_VERSION() || func_72())
-		uParam0->f_2 = "CWASH_POOR_XBX" /*It costs $~1~ to use the Car Wash.~n~You can buy additional GTA dollars from the Xbox Store in the Pause Menu.*/;
+		uParam0->f_2 = "CWASH_POOR_XBX" /*Cuesta ~1~µ$ usar el autolavado.~n~Puedes comprar más dólares GTA en la Tienda Xbox en el menú de pausa.*/;
 	else
-		uParam0->f_2 = "CWASH_POOR_STD" /*It costs $~1~ to use the Car Wash.~n~You can buy additional GTA dollars from the Store in the Pause Menu.*/;
+		uParam0->f_2 = "CWASH_POOR_STD" /*Cuesta ~1~µ$ usar el autolavado.~n~Puedes comprar más dólares GTA en la Tienda en el menú de pausa.*/;
 
 	return;
 }

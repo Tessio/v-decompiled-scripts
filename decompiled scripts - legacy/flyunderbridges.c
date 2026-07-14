@@ -781,21 +781,21 @@ void func_18() // Position - 0xA2A (2602)
 				
 					if (bLocal_36)
 					{
-						func_23("FU_KNIFE" /*Knife Flight~s~*/);
+						func_23("FU_KNIFE" /*Vuelo a cuchillo~s~*/);
 						GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(15);
 					}
 					else
 					{
-						func_23("FU_TITLE" /*Under the Bridge~s~*/);
+						func_23("FU_TITLE" /*Bajo el puente~s~*/);
 						GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(50);
 					}
 				
-					func_23("FU_PASS" /*Success!*/);
+					func_23("FU_PASS" /*¡Éxito!*/);
 				
 					if (bLocal_36)
-						func_23("FU_CHALL_KN" /*Flights completed*/);
+						func_23("FU_CHALL_KN" /*Vuelos completados*/);
 					else
-						func_23("FU_CHALLENGE" /*Bridges flown under*/);
+						func_23("FU_CHALLENGE" /*Volando bajo el puente*/);
 				
 					GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(func_31());
 					GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
@@ -2038,7 +2038,7 @@ void func_46() // Position - 0x31EF (12783)
 	{
 		if (!Global_80280)
 		{
-			if (func_47() == 2 == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
+			if (func_47() == HUD_COLOUR_BLACK == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			{
 				if (NETWORK::NETWORK_IS_CLOUD_AVAILABLE())
 					Global_114638 = false;
@@ -2052,7 +2052,7 @@ void func_46() // Position - 0x31EF (12783)
 	return;
 }
 
-int func_47() // Position - 0x36AD (13997)
+eHudColour func_47() // Position - 0x36AD (13997)
 {
 	return Global_33775;
 }

@@ -704,10 +704,10 @@ void func_1() // Position - 0xF8 (248)
 						{
 							bLocal_617 = false;
 							iLocal_611 = 0;
-							uLocal_612[0] = "LETTERS_PAGE_ONE" /*March 15th, 1975~n~~n~ATTN; David Richards~n~~n~My Dear David,~n~~n~Listen, I know you're a little offended by your discovery of my 'petit indiscretion' as the French would say, but I want you to understand – that's all it is – a little indiscretion. I agree whole heartedly with you – my actions were a little inhumane. But that's not a bad thing. Inhumanity is the very watchword, the very currency, the very life blood of the artist! My inhumanity makes me human. It's thanks to my inhumanity that I'm able to speak to people with the moral authority of the sinner and the creator, all at once. I had to kill her. And I had to do it in that way. The way that would hurt me most – by torturing her slowly and painfully, then sending momentos from our date to her family.*/;
-							uLocal_612[1] = "LETTERS_PAGE_TWO" /*And in the years since, I've had to, at times, goad her family into further suffering. Just to prove how very much I understand suffering and how I can represent it best as an artist – isn't it better that one family suffers so the world can be free to enjoy, to learn and to be cleansed by my masterpieces? Don't even bother answering that. The answer is obvious and if you get it wrong, well, then you're less of a man than I thought.~n~~n~But let us not concern ourselves with such trivialities – we are artists, my friend. The last of a dying breed. I dread the day when you finally retire and Solomon takes over – sure I love the kid but he's a remorseless hack with none of your passion, your creative zeal. He's a weak livered moralizer hiding in the body of a Vinewood decadent.*/;
-							uLocal_612[2] = "LETTERS_PAGE_THREE" /*He understands nothing about why we act as we do! Not because we can, but because we must. And that's the thing. Some people take advantage of their position in this town for pleasure – as if sleeping with multiple young girls, or torturing hitchhikers or eating dogs could ever be fun? It's awful. I only do it to experience it so my art is truer, deeper, more meaningful, and I believe you know that.~n~~n~I cannot wait for you to read my new draft of LEARED. I have really removed the cliches that ruined Shakespeare's plays and found the power, the moment, the thing we talked about that wonderful night in Mexico when we paid the hookers to stab each other.*/;
-							uLocal_612[3] = "LETTERS_PAGE_FOUR" /*Anyway, I hope you and Rachel have worked through your problems. I look forward to making Friday supper again soon.  You've always been an inspiration to me.~n~~n~Your dear friend~n~~n~Dreyfuss*/;
+							uLocal_612[0] = "LETTERS_PAGE_ONE" /*15 de marzo de 1975~n~~n~A/A: David Richards~n~~n~Querido David:~n~~n~Mira, sé que te ofendiste un poco al descubrir mi "petit indiscretion" como dirían los franceses, pero quiero que entiendas que solo es eso, una pequeña indiscreción. Estoy completamente de acuerdo contigo: mis actos fueron un tanto inhumanos. Pero eso no tiene por qué ser malo. ¡La inhumanidad es la consigna, la divisa, la sangre del artista! Mi inhumanidad me hace humano. Gracias a mi inhumanidad puedo hablarle a la gente con la autoridad moral del pecador y del creador, todo en uno. Tuve que matarla. Y tuve que hacerlo de aquel modo. El modo que más me dolería, torturándola lenta y dolorosamente y luego enviándole a su familia recuerdos de nuestra cita.*/;
+							uLocal_612[1] = "LETTERS_PAGE_TWO" /*Y en los años siguientes, en ocasiones me vi obligado a provocar más sufrimiento a su familia. Solo para demostrar cuánto entiendo el sufrimiento y cómo puedo representarlo mejor como artista... ¿No es mejor que sufra una familia para que el resto del mundo pueda disfrutar, aprender y ser purificado con mis obras maestras? Ni te molestes en responderme. La respuesta es evidente y si te equivocas, bueno, eres menos hombre de lo que creía.~n~~n~Pero dejémonos de trivialidades: somos artistas, amigo mío. Los últimos de una especie moribunda. Temo el día en que lo dejes y Solomon ocupe tu lugar: el chaval me cae bien, pero es un artista de pacotilla que no tiene tu pasión ni tu fervor creativo. Es un moralista pusilánime que se oculta en el cuerpo de un decadente de Vinewood.*/;
+							uLocal_612[2] = "LETTERS_PAGE_THREE" /*¡No comprende por qué nos comportamos así! No es porque podamos, sino porque debemos. Y esa es la cuestión. En esta ciudad hay gente que se aprovecha de su posición para obtener placer, como si acostarse con muchas chicas o torturar autoestopistas o comer perros fuera divertido. Es terrible. Solo lo hago para experimentarlo y para que mi arte sea más sincero, profundo y tenga más significado, y creo que lo sabes.~n~~n~Qué ganas tengo de que leas mi nuevo borrador de LEAREADO. He eliminado los lugares comunes que echaban a perder las obras de Shakespeare y he encontrado el poder, el impulso, aquello de lo que hablamos durante esa noche maravillosa en México, cuando pagamos a las prostitutas para que se apuñalaran.*/;
+							uLocal_612[3] = "LETTERS_PAGE_FOUR" /*En cualquier caso, espero que Rachel y tú hayáis solucionado vuestros problemas. Ojalá volvamos a cenar un viernes en breve. Siempre has sido una inspiración para mí. ~n~~n~Tu querido amigo.~n~~n~Dreyfuss*/;
 							iLocal_610 = GRAPHICS::REQUEST_SCALEFORM_MOVIE("LETTER_SCRAPS");
 						
 							while (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(iLocal_610))
@@ -721,7 +721,7 @@ void func_1() // Position - 0xF8 (248)
 							GRAPHICS::SET_SCRIPT_GFX_DRAW_BEHIND_PAUSEMENU(true);
 							func_7(1);
 							func_6(true, true, true, false);
-							HUD::DISPLAY_HELP_TEXT_THIS_FRAME("LETTERS_HELP2" /*Press ~INPUT_FRONTEND_RIGHT~ or ~INPUT_FRONTEND_LEFT~ to cycle between pages, or press ~INPUT_FRONTEND_CANCEL~ to stop reading.*/, false);
+							HUD::DISPLAY_HELP_TEXT_THIS_FRAME("LETTERS_HELP2" /*Pulsa ~INPUT_FRONTEND_RIGHT~ o ~INPUT_FRONTEND_LEFT~ para pasar página o pulsaµ~INPUT_FRONTEND_CANCEL~ para dejar de leer.*/, false);
 							MISC::SET_GAME_PAUSED(true);
 							HUD::DISPLAY_RADAR(false);
 							iLocal_41 = 1;
@@ -808,7 +808,7 @@ void func_3(int iParam0) // Position - 0x335 (821)
 	if (func_5())
 		return;
 
-	if (!(Global_21610.f_1 == 1))
+	if (!(Global_21610.f_1 == true))
 	{
 		if (func_4(0))
 			func_7(iParam0);
@@ -894,7 +894,7 @@ void func_7(int iParam0) // Position - 0x401 (1025)
 
 BOOL func_8() // Position - 0x48B (1163)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -941,7 +941,7 @@ void func_11(const char* sParam0) // Position - 0x534 (1332)
 	return;
 }
 
-BOOL func_12() // Position - 0x546 (1350)
+Ped* func_12() // Position - 0x546 (1350)
 {
 	return Global_1576308;
 }
@@ -949,7 +949,7 @@ BOOL func_12() // Position - 0x546 (1350)
 BOOL func_13() // Position - 0x552 (1362)
 {
 	BOOL num;
-	int i;
+	Ped i;
 
 	num = 0;
 
@@ -1043,7 +1043,7 @@ void func_21() // Position - 0x712 (1810)
 	{
 		case 0:
 			func_62();
-			func_61(&uLocal_42, 1, joaat("prop_ld_scrap"), "LETTERS_COLLECT" /*~1~/50 letter scraps collected.*/);
+			func_61(&uLocal_42, 1, joaat("prop_ld_scrap"), "LETTERS_COLLECT" /*~1~ de 50 fragmentos de la carta recogidos.*/);
 			func_59(&uLocal_42, joaat("NUM_HIDDEN_PACKAGES_0") /* TUNEABLE: NUM_HIDDEN_PACKAGES_0, NUM_HIDDEN_PACKAGES_0 */, 705, 50);
 			iLocal_41 = 1;
 			bLocal_619 = true;
@@ -1127,7 +1127,7 @@ BOOL func_23(var uParam0, var uParam1) // Position - 0x7DA (2010)
 				{
 					if (!func_37(33))
 					{
-						func_34("LETTERS_FIRST" /*Part of a confession has been found. Collect all letter scraps to solve the mystery of Leonora Johnson's murder.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
+						func_34("LETTERS_FIRST" /*Has encontrado parte de una confesión. Recoge todos los fragmentos de la carta para resolver el misterio del asesinato de Leonora Johnson.*/, 1, 0, -1, 10000, 7, 0, 0, 0);
 						func_33(33);
 					}
 				}
@@ -1142,7 +1142,7 @@ BOOL func_23(var uParam0, var uParam1) // Position - 0x7DA (2010)
 
 	if (uParam0->f_11)
 		if (!Global_80541)
-			func_24(&(uParam0->f_11), &(uParam0->f_12), &(uParam0->f_9), 1, &iLocal_608, &uLocal_609, "LETTERS_TITLE" /*Scrap Collected~s~*/, "LETTERS_COLLECT" /*~1~/50 letter scraps collected.*/);
+			func_24(&(uParam0->f_11), &(uParam0->f_12), &(uParam0->f_9), 1, &iLocal_608, &uLocal_609, "LETTERS_TITLE" /*Fragmento recogido~s~*/, "LETTERS_COLLECT" /*~1~ de 50 fragmentos de la carta recogidos.*/);
 
 	if (!uParam0->f_12 && !uParam0->f_11)
 		return uParam0->f_1.f_4 >= uParam0->f_1.f_3;
@@ -1441,7 +1441,7 @@ void func_36() // Position - 0xF5F (3935)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -2517,7 +2517,7 @@ void func_68() // Position - 0x26CB (9931)
 	{
 		if (!Global_80280)
 		{
-			if (func_69() == 2 == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
+			if (func_69() == HUD_COLOUR_BLACK == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			{
 				if (NETWORK::NETWORK_IS_CLOUD_AVAILABLE())
 					Global_114638 = false;
@@ -2531,7 +2531,7 @@ void func_68() // Position - 0x26CB (9931)
 	return;
 }
 
-int func_69() // Position - 0x2B89 (11145)
+eHudColour func_69() // Position - 0x2B89 (11145)
 {
 	return Global_33775;
 }

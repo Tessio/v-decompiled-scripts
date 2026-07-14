@@ -80,10 +80,10 @@ void main() // Position - 0x0 (0)
 	
 		if (!func_18(40))
 		{
-			switch (func_16("RAMP_NEW_ALL" /*All rampages are now unlocked.*/))
+			switch (func_16("RAMP_NEW_ALL" /*Se han desbloqueado todas lasµmasacres.*/))
 			{
 				case 2:
-					func_13("RAMP_NEW_ALL" /*All rampages are now unlocked.*/, 1, 0, 2000, 10000, 4, 0, 0, 0);
+					func_13("RAMP_NEW_ALL" /*Se han desbloqueado todas lasµmasacres.*/, 1, 0, 2000, 10000, 4, 0, 0, 0);
 					break;
 			
 				case 1:
@@ -426,7 +426,7 @@ void func_15() // Position - 0x75A (1882)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -899,7 +899,7 @@ void func_28() // Position - 0xE67 (3687)
 	{
 		if (!Global_80280)
 		{
-			if (func_31() == 2 == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
+			if (func_31() == HUD_COLOUR_BLACK == false && !NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			{
 				if (NETWORK::NETWORK_IS_CLOUD_AVAILABLE())
 					Global_114638 = false;
@@ -936,7 +936,7 @@ BOOL func_30(BOOL bParam0) // Position - 0x1370 (4976)
 	return IS_BIT_SET(Global_80529, 0);
 }
 
-int func_31() // Position - 0x1398 (5016)
+eHudColour func_31() // Position - 0x1398 (5016)
 {
 	return Global_33775;
 }
@@ -962,16 +962,16 @@ BOOL func_32(int iParam0, int iParam1) // Position - 0x13A3 (5027)
 	return false;
 }
 
-void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, int iParam2) // Position - 0x13F4 (5108)
+void _STAT_SET_PACKED_BOOL(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x13F4 (5108)
 {
-	if (iParam2 == -1)
-		iParam2 = func_34();
+	if (bParam2 == -1)
+		bParam2 = func_34();
 
-	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, iParam2);
+	STATS::SET_PACKED_STAT_BOOL_CODE(iParam0, bParam1, bParam2);
 	return;
 }
 
-int func_34() // Position - 0x1412 (5138)
+BOOL func_34() // Position - 0x1412 (5138)
 {
 	return Global_1574927;
 }

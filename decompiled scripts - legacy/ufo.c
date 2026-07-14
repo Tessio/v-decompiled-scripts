@@ -467,18 +467,18 @@ BOOL func_4(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position - 
 
 BOOL func_5() // Position - 0xB9F (2975)
 {
-	if (func_7() == -1 || func_7() == 999 && !(func_6() == 0))
+	if (func_7() == -1 || func_7() == 999 && !(func_6() == HUD_COLOUR_PURE_WHITE))
 		return true;
 
 	return false;
 }
 
-int func_6() // Position - 0xBCF (3023)
+eHudColour func_6() // Position - 0xBCF (3023)
 {
 	return Global_33776;
 }
 
-int func_7() // Position - 0xBDA (3034)
+eHudColour func_7() // Position - 0xBDA (3034)
 {
 	return Global_33775;
 }

@@ -45,7 +45,7 @@ void func_1() // Position - 0x1C (28)
 				}
 			
 				if (Global_113553[i /*28*/].f_24.f_2 != 9999f)
-					if (Global_113553[i /*28*/].f_23 != 0)
+					if (Global_113553[i /*28*/].f_23 != false)
 						if (!ENTITY::IS_ENTITY_DEAD(Global_113553[i /*28*/].f_23, false))
 							if (!IS_BIT_SET(Global_113553[i /*28*/].f_27, 3))
 								HUD::SET_FLOATING_HELP_TEXT_WORLD_POSITION(hudIndex, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Global_113553[i /*28*/].f_23, Global_113553[i /*28*/].f_24));

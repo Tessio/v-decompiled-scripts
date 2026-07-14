@@ -247,9 +247,9 @@ void main() // Position - 0x0 (0)
 							if (CAM::IS_SCREEN_FADED_IN())
 							{
 								if (bLocal_30)
-									_DISPLAY_HELP_TEXT("CITDENAL" /*Michael and Trevor have been exiled from the city. If they enter the city, Martin's henchmen will track them down.*/, -1);
+									_DISPLAY_HELP_TEXT("CITDENAL" /*Michael y Trevor han sido expulsados de la ciudad. Si vuelven a ella, los secuaces de Martín les darán caza.*/, -1);
 								else
-									_DISPLAY_HELP_TEXT("CITDENAL_R" /*Michael and Trevor have been exiled by Martin. Approaching his ranch will cause his henchmen to attack.*/, -1);
+									_DISPLAY_HELP_TEXT("CITDENAL_R" /*Michael y Trevor han sido expulsados por Martín. Si se acercan a su rancho, sus secuaces los atacarán.*/, -1);
 							
 								num = 120000;
 							}

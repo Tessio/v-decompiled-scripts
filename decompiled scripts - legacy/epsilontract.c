@@ -302,7 +302,7 @@ void func_1() // Position - 0xCE (206)
 			func_11();
 		}
 	
-		func_2(&bLocal_44, &bLocal_45, &uLocal_46, 4, &uLocal_42, &uLocal_43, "TRACT_TITLE" /*Tract Collected~s~*/, "TRACT_COLLECT" /*~1~/10 Epsilon tracts collected.*/);
+		func_2(&bLocal_44, &bLocal_45, &uLocal_46, 4, &uLocal_42, &uLocal_43, "TRACT_TITLE" /*Tratado recogido~s~*/, "TRACT_COLLECT" /*~1~/10 tratados de Epsilon recogidos.*/);
 	}
 
 	return;
@@ -631,16 +631,16 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 {
 	int num;
 	int num2;
-	int num3;
+	BOOL flag;
 	var unk;
-	int num4;
-	int num5;
+	int num3;
+	BOOL flag2;
 	BOOL i;
 	BOOL j;
-	int num6;
+	int num4;
 	int k;
-	int num7;
-	int num8;
+	int num5;
+	BOOL flag3;
 
 	if (!(iParam0 < 3))
 		return;
@@ -650,19 +650,19 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 
 	if (!bParam2)
 	{
-		num4 = Global_49438[iParam1 /*46*/].f_42 - 1;
+		num3 = Global_49438[iParam1 /*46*/].f_42 - 1;
 	
-		if (num4 < 0)
+		if (num3 < 0)
 			return;
 	
-		num5 = Global_49438[iParam1 /*46*/].f_32[num4];
-		num3 = num5;
-		unk = { func_25(Global_46113[num5 /*12*/].f_1) };
+		flag2 = Global_49438[iParam1 /*46*/].f_32[num3];
+		flag = flag2;
+		unk = { func_25(Global_46113[flag2 /*12*/].f_1) };
 	
-		if (Global_46113[num5 /*12*/].f_2 == iParam0 && !(Global_46113[num5 /*12*/].f_3 == iParam0))
+		if (Global_46113[flag2 /*12*/].f_2 == iParam0 && !(Global_46113[flag2 /*12*/].f_3 == iParam0))
 			return;
 	
-		num2 = Global_46113[num5 /*12*/].f_2;
+		num2 = Global_46113[flag2 /*12*/].f_2;
 		num = Global_55051[iParam0 /*120*/];
 	
 		for (i = false; num >= 16; i = true)
@@ -701,7 +701,7 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 		}
 	
 		Global_55051[iParam0 /*120*/].f_18[num] = iParam1;
-		Global_55051[iParam0 /*120*/].f_1[num] = num4;
+		Global_55051[iParam0 /*120*/].f_1[num] = num3;
 		Global_55051[iParam0 /*120*/].f_35[num] = 0;
 		Global_55051[iParam0 /*120*/].f_86[num] = false;
 		Global_55051[iParam0 /*120*/].f_69[num] = false;
@@ -746,33 +746,33 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			}
 		}
 	
-		num6 = -1;
+		num4 = -1;
 		k = 0;
 	
 		for (k = 0; k < 7; k = k + 1)
 		{
 			if (Global_55413[k /*203*/].f_1 == iParam1 && Global_55413[k /*203*/].f_9 > 0)
-				num6 = k;
+				num4 = k;
 		}
 	
-		if (num6 == -1)
+		if (num4 == -1)
 			return;
 	
-		Global_55051[iParam0 /*120*/].f_18[num] = Global_55413[num6 /*203*/].f_1;
-		Global_55051[iParam0 /*120*/].f_1[num] = Global_55413[num6 /*203*/].f_9 - 1;
+		Global_55051[iParam0 /*120*/].f_18[num] = Global_55413[num4 /*203*/].f_1;
+		Global_55051[iParam0 /*120*/].f_1[num] = Global_55413[num4 /*203*/].f_9 - 1;
 		Global_55051[iParam0 /*120*/].f_35[num] = 0;
 		Global_55051[iParam0 /*120*/].f_86[num] = true;
 		Global_55051[iParam0 /*120*/].f_69[num] = false;
 		Global_55051[iParam0 /*120*/] = Global_55051[iParam0 /*120*/] + 1;
-		num7 = Global_55051[iParam0 /*120*/].f_1[num];
-		num8 = Global_55413[num6 /*203*/].f_10[num7 /*48*/];
-		num3 = num8;
-		num2 = Global_46113[num8 /*12*/].f_2;
+		num5 = Global_55051[iParam0 /*120*/].f_1[num];
+		flag3 = Global_55413[num4 /*203*/].f_10[num5 /*48*/];
+		flag = flag3;
+		num2 = Global_46113[flag3 /*12*/].f_2;
 	
-		if (Global_55413[num6 /*203*/].f_10[Global_55413[num6 /*203*/].f_9 - 1 /*48*/].f_1)
-			TEXT_LABEL_COPY(&unk, { Global_55413[num6 /*203*/].f_10[Global_55413[num6 /*203*/].f_9 - 1 /*48*/].f_2 }, 16);
+		if (Global_55413[num4 /*203*/].f_10[Global_55413[num4 /*203*/].f_9 - 1 /*48*/].f_1)
+			TEXT_LABEL_COPY(&unk, { Global_55413[num4 /*203*/].f_10[Global_55413[num4 /*203*/].f_9 - 1 /*48*/].f_2 }, 16);
 		else
-			unk = { func_25(Global_46113[num8 /*12*/].f_1) };
+			unk = { func_25(Global_46113[flag3 /*12*/].f_1) };
 	}
 
 	if (!bParam4)
@@ -782,18 +782,18 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			switch (iParam0)
 			{
 				case 0:
-					func_15(0, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_15(0, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 1:
-					if (num3 == 249)
-						func_15(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					if (flag == 249)
+						func_15(CHAR_FRANKLIN, num2, flag, "PW_FEED_EM_1" /*Has sido elegido para participar en la primera competición de fotografía de animales para amateurs del sur de San Andreas. Competirás con cientos de jóvenes con talento...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
-						func_15(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_15(CHAR_FRANKLIN, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 2:
-					func_15(CHAR_TREVOR, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_15(CHAR_TREVOR, num2, flag, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			}
 		}
@@ -802,7 +802,7 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 	return;
 }
 
-void func_15(eCharacter echParam0, int iParam1, int iParam2, const char* sParam3, const char* sParam4, const char* sParam5, const char* sParam6, const char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11, const char* sParam12, const char* sParam13) // Position - 0xC4C (3148)
+void func_15(eCharacter echParam0, int iParam1, BOOL bParam2, const char* sParam3, const char* sParam4, const char* sParam5, const char* sParam6, const char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11, const char* sParam12, const char* sParam13) // Position - 0xC4C (3148)
 {
 	eCharacter character;
 	BOOL flag;
@@ -817,18 +817,18 @@ void func_15(eCharacter echParam0, int iParam1, int iParam2, const char* sParam3
 
 	if (character == echParam0)
 	{
-		switch (iParam2)
+		switch (bParam2)
 		{
 			case 72:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Dear Mr. De Santa, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL1" /*Estimado Sr. De Santa, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 73:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Dear Mr. Clinton, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL3" /*Estimado Sr. Clinton, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			case 74:
-				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Dear Mr. Philips, please find below your weekly income from owned properties:~n~*/);
+				HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("PROPR_INCEMAIL2" /*Estimado Sr. Philips, le adjuntamos el listado de ingresos semanales de sus propiedades:~n~*/);
 				break;
 		
 			default:
@@ -941,7 +941,7 @@ char* func_17(int iParam0) // Position - 0xE5A (3674)
 			return "EMSTR_12" /*Marnie*/;
 	
 		case 5:
-			return "EMSTR_29" /*Epsilon Store*/;
+			return "EMSTR_29" /*Tienda de Epsilon*/;
 	
 		case 6:
 			return "EMSTR_36" /*Maude*/;
@@ -959,10 +959,10 @@ char* func_17(int iParam0) // Position - 0xE5A (3674)
 			return "EMSTR_58" /*Bank of Liberty*/;
 	
 		case 11:
-			return "EMSTR_78" /*Legendary Motorsport Sales*/;
+			return "EMSTR_78" /*Legendary Motorsport*/;
 	
 		case 12:
-			return "EMSTR_81" /*Elitas Sales*/;
+			return "EMSTR_81" /*Ventas de Elitas*/;
 	
 		case 13:
 			return "EMSTR_84" /*Cache & Carry*/;
@@ -983,13 +983,13 @@ char* func_17(int iParam0) // Position - 0xE5A (3674)
 			return "EMSTR_145" /*Paige Harris*/;
 	
 		case 19:
-			return "EMSTR_152" /*Los Santos Tourist Info*/;
+			return "EMSTR_152" /*Turismo de Los Santos*/;
 	
 		case 20:
 			return "EMSTR_157" /*Rickie Luckens*/;
 	
 		case 21:
-			return "EMSTR_163" /*Minotaur Property Management*/;
+			return "EMSTR_163" /*Minotaur*/;
 	
 		case 22:
 			return "EMSTR_182" /*Saeeda Kadam*/;
@@ -998,10 +998,10 @@ char* func_17(int iParam0) // Position - 0xE5A (3674)
 			return "EMSTR_187" /*Vanilla Unicorn*/;
 	
 		case 24:
-			return "EMSTR_190" /*Dr Isiah Friedlander*/;
+			return "EMSTR_190" /*Dr. Isiah Friedlander*/;
 	
 		case 25:
-			return "EMSTR_206" /*TRACEYHEARTSTEALER*/;
+			return "EMSTR_206" /*TRACIROBACORAZONES*/;
 	
 		case 26:
 			return "EMSTR_219" /*Dave Norton*/;
@@ -1046,34 +1046,34 @@ char* func_17(int iParam0) // Position - 0xE5A (3674)
 			return "EMSTR_369" /*Hookies*/;
 	
 		case 40:
-			return "EMSTR_376" /*Towing Impound*/;
+			return "EMSTR_376" /*Depósito de coches*/;
 	
 		case 41:
-			return "EMSTR_379" /*Downtown Cab Co,*/;
+			return "EMSTR_379" /*Downtown Cab Co.*/;
 	
 		case 42:
-			return "EMSTR_382" /*McKenzie Field Hangar*/;
+			return "EMSTR_382" /*Hangar del aeródromo de McKenzie*/;
 	
 		case 43:
-			return "EMSTR_384" /*Sonar Collections Dock*/;
+			return "EMSTR_384" /*Muelle de búsquedas con sónar*/;
 	
 		case 44:
 			return "EMSTR_387" /*Los Santos Customs*/;
 	
 		case 45:
-			return "EMSTR_390" /*Cinema Doppler*/;
+			return "EMSTR_390" /*Cine Doppler*/;
 	
 		case 46:
-			return "EMSTR_393" /*Ten Cent Theater*/;
+			return "EMSTR_393" /*Cine Ten Cent*/;
 	
 		case 47:
-			return "EMSTR_396" /*Tivoli Cinema*/;
+			return "EMSTR_396" /*Cine Tivoli*/;
 	
 		case 48:
-			return "EMSTR_399" /*Los Santos Golf Club*/;
+			return "EMSTR_399" /*Club de golf de Los Santos*/;
 	
 		case 49:
-			return "EMSTR_402" /*Car Scrap Yard*/;
+			return "EMSTR_402" /*Desguace de coches*/;
 	
 		case 50:
 			return "EMSTR_405" /*Smoke on the Water*/;
@@ -1088,10 +1088,10 @@ char* func_17(int iParam0) // Position - 0xE5A (3674)
 			return "EMSTR_414" /*The Hen House*/;
 	
 		case 54:
-			return "EMSTR_465" /*Pedal & Metal Sales*/;
+			return "EMSTR_465" /*Ventas de P&M*/;
 	
 		case 55:
-			return "EMSTR_468" /*SSA Super Autos Sales*/;
+			return "EMSTR_468" /*SSA Super Autos*/;
 	
 		case 56:
 			return "EMSTR_489" /*Hush Smush*/;
@@ -1115,13 +1115,13 @@ char* func_17(int iParam0) // Position - 0xE5A (3674)
 			return "EMSTR_507" /*Misscuddles*/;
 	
 		case 63:
-			return "EMSTR_640" /*Off-Road Events*/;
+			return "EMSTR_640" /*Eventos todoterreno*/;
 	
 		case 64:
 			return "EMSTR_643" /*DockTease*/;
 	
 		case 65:
-			return "EMSTR_652" /*Brother Adrian*/;
+			return "EMSTR_652" /*Hermano Adrian*/;
 	
 		default:
 		
@@ -1837,34 +1837,34 @@ void func_46() // Position - 0x1F1E (7966)
 
 	if (Global_114904.f_18581.f_388)
 	{
-		uLocal_158[0] = "TRACT_HINT1B" /*Kifflom. The ingratitude and self-centeredness of your actions is unforgivable in my eyes but Kraff is not without mercy. To have a chance of redeeming yourself, you must write the tract, which has already been written...WE WORSHIP KRAFF WHERE THE EARTH REACHES OUT TO THE 9TH PARADIGM.*/;
+		uLocal_158[0] = "TRACT_HINT1B" /*Kifflom. La ingratitud y el egoísmo de tus actos me resultan imperdonables, pero Kraff no carece de misericordia. Si quieres redimirte, debes escribir el tratado, que ya ha sido escrito... ADORAMOS A KRAFF DONDE LA TIERRA SE EXTIENDE HACIA EL NOVENO PARADIGMA.*/;
 		iLocal_41 = 300000;
 	}
 	else
 	{
-		uLocal_158[0] = "TRACT_HINT1" /*Kifflom, brother. You are now truly one of us and are ready to write the tract, which has already been written...WE WORSHIP KRAFF WHERE THE EARTH REACHES OUT TO THE 9TH PARADIGM.*/;
+		uLocal_158[0] = "TRACT_HINT1" /*Kifflom, hermano. Ahora eres verdaderamente uno de los nuestros y estás listo para escribir el tratado, que ya ha sido escrito... ADORAMOS A KRAFF DONDE LA TIERRA SE EXTIENDE HACIA EL NOVENO PARADIGMA.*/;
 		iLocal_41 = 16000;
 	}
 
 	uLocal_47[0 /*11*/].f_3 = { 501.9415f, 5604.429f, 796.9146f };
 	uLocal_47[1 /*11*/].f_3 = { 2658.18f, -1361.14f, -21.63f };
-	uLocal_158[1] = "TRACT_HINT2" /*Where the first of the fleet succumbed to the waves, there the message is seeded.*/;
+	uLocal_158[1] = "TRACT_HINT2" /*Donde los primeros de la flota sucumbieron a las olas, allí arraiga el mensaje.*/;
 	uLocal_47[2 /*11*/].f_3 = { 24.7139f, 7644.334f, 18.0792f };
-	uLocal_158[2] = "TRACT_HINT3" /*When they sail from the North, they will find this offering.*/;
+	uLocal_158[2] = "TRACT_HINT3" /*Cuando naveguen desde el norte, encontrarán esta ofrenda.*/;
 	uLocal_47[3 /*11*/].f_3 = { -263.55f, 4729.6f, 137.37f };
-	uLocal_158[3] = "TRACT_HINT4" /*In the core of the mountain, where the blast is not felt, there you shall find it.*/;
+	uLocal_158[3] = "TRACT_HINT4" /*En el corazón de la montaña, donde no se siente el estallido, allí lo encontrarás.*/;
 	uLocal_47[4 /*11*/].f_3 = { -771.98f, -685.22f, 28.86f };
-	uLocal_158[4] = "TRACT_HINT5" /*In the rubble of the old religion, will be the basis for the new.*/;
+	uLocal_158[4] = "TRACT_HINT5" /*En los escombros de la vieja religión descansará la base de la nueva.*/;
 	uLocal_47[5 /*11*/].f_3 = { -1605.03f, 5256.55f, 1.08f };
-	uLocal_158[5] = "TRACT_HINT6" /*Where the first fleet sailed, the new fleet will find its map.*/;
+	uLocal_158[5] = "TRACT_HINT6" /*Donde la primera flota navegó, la nueva flota encontrará su mapa.*/;
 	uLocal_47[6 /*11*/].f_3 = { -1804.5464f, 403.9298f, 112.1966f };
-	uLocal_158[6] = "TRACT_HINT7" /*What dwelling is worthy of Kraff? He is humble, yet we exalt him.*/;
+	uLocal_158[6] = "TRACT_HINT7" /*¿Qué morada es digna de Kraff? Es humilde, y aun así lo glorificamos.*/;
 	uLocal_47[7 /*11*/].f_3 = { 484.2701f, 5617.175f, 787.4708f };
-	uLocal_158[7] = "TRACT_HINT8" /*We are not dinosaurs, nor plants, but a tree in the jet stream may hold Kraff's true word.*/;
+	uLocal_158[7] = "TRACT_HINT8" /*No somos dinosaurios ni plantas, pero un árbol en la corriente en chorro puede custodiar la verdadera palabra de Kraff.*/;
 	uLocal_47[8 /*11*/].f_3 = { -75.1004f, -819.0673f, 325.3656f };
-	uLocal_158[8] = "TRACT_HINT9" /*The tallest obelisk of glass and steel holds no comparison to the word of Kraff.*/;
+	uLocal_158[8] = "TRACT_HINT9" /*El obelisco más alto de cristal y acero no es comparable a la palabra de Kraff.*/;
 	uLocal_47[9 /*11*/].f_3 = { -1725.34f, -189.95f, 57.52f };
-	uLocal_158[9] = "TRACT_HINT10" /*Where they discard their earthly prisons, there you may find the germ of a higher civilization.*/;
+	uLocal_158[9] = "TRACT_HINT10" /*Donde se deshacen de sus prisiones terrenales, quizá puedas encontrar el germen de una civilización más elevada.*/;
 	iLocal_40 = MISC::GET_GAME_TIMER();
 
 	for (i = 0; i < 10; i = i + 1)

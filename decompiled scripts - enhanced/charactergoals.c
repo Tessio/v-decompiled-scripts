@@ -57,18 +57,18 @@ void main() // Position - 0x0 (0)
 						func_56(2, 32, Global_24120[3 /*42*/].f_27[0]);
 					}
 				
-					TEXT_LABEL_ASSIGN_STRING(&Global_24120[3 /*42*/], "PA_TREV1" /*Earn one million dollars.*/, 16);
-					TEXT_LABEL_ASSIGN_STRING(&(Global_24120[3 /*42*/].f_4), "PA_TREV1" /*Earn one million dollars.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24120[3 /*42*/], "PA_TREV1" /*Gana un millón de dólares.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&(Global_24120[3 /*42*/].f_4), "PA_TREV1" /*Gana un millón de dólares.*/, 16);
 					Global_24120[3 /*42*/].f_8 = 0;
 					Global_24120[3 /*42*/].f_9 = 1;
-					TEXT_LABEL_ASSIGN_STRING(&Global_24120[3 /*42*/].f_10[1 /*4*/], "PA_TREV1A" /*Current wealth $~1~.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_24120[3 /*42*/].f_10[1 /*4*/], "PA_TREV1A" /*Riqueza actual: ~1~ $.*/, 16);
 					Global_24120[3 /*42*/].f_37[1] = 0;
 				
 					if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 						Global_24120[3 /*42*/].f_27[1] = _GET_PLAYER_CASH(CHAR_TREVOR);
 				
 					func_49(2, 3, true, 1);
-					func_46("PA_TREV1A" /*Current wealth $~1~.*/, Global_24120[3 /*42*/].f_27[1]);
+					func_46("PA_TREV1A" /*Riqueza actual: ~1~ $.*/, Global_24120[3 /*42*/].f_27[1]);
 					iLocal_16 = 1;
 				}
 				break;
@@ -80,7 +80,7 @@ void main() // Position - 0x0 (0)
 				
 					if (func_45(CHAR_TREVOR, 999999))
 					{
-						func_44("PA_COMPLETE" /*Goal achieved ~a~*/, "PA_TREV1" /*Earn one million dollars.*/, 2000, 1);
+						func_44("PA_COMPLETE" /*Meta conseguida: ~a~*/, "PA_TREV1" /*Gana un millón de dólares.*/, 2000, 1);
 						Global_24120[3 /*42*/].f_37[1] = 1;
 						Global_24120[3 /*42*/].f_8 = 1;
 						iLocal_22 = MISC::GET_GAME_TIMER();
@@ -90,7 +90,7 @@ void main() // Position - 0x0 (0)
 					{
 						if (!bLocal_20)
 						{
-							_SHOW_SUBTITLE("PA_TREV1" /*Earn one million dollars.*/, 2000, 1);
+							_SHOW_SUBTITLE("PA_TREV1" /*Gana un millón de dólares.*/, 2000, 1);
 							bLocal_20 = true;
 						}
 					}
@@ -107,7 +107,7 @@ void main() // Position - 0x0 (0)
 				iLocal_21 = MISC::GET_GAME_TIMER();
 			
 				if (iLocal_21 - iLocal_22 < 5000)
-					func_46("PA_TREV1A" /*Current wealth $~1~.*/, Global_24120[3 /*42*/].f_27[1]);
+					func_46("PA_TREV1A" /*Riqueza actual: ~1~ $.*/, Global_24120[3 /*42*/].f_27[1]);
 				break;
 		}
 	}
@@ -682,7 +682,7 @@ void func_5(int iParam0) // Position - 0xB82 (2946)
 	if (flag)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&txdName, "CHAR_LIFEINVADER", 64);
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*You have redeemed your promotion for ~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*Has canjeado tu promoción de ~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(func_6(iParam0));
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, true, 0, "", 0);
 	}
@@ -695,28 +695,28 @@ char* func_6(int iParam0) // Position - 0xD4B (3403)
 	switch (iParam0)
 	{
 		case 0:
-			return "COUP_HAIRC" /*one free haircut.*/;
+			return "COUP_HAIRC" /*un corte de pelo gratis.*/;
 	
 		case 1:
-			return "COUP_TATTOO" /*one free tattoo.*/;
+			return "COUP_TATTOO" /*un tatuaje gratis.*/;
 	
 		case 2:
-			return "COUP_WARSTOCK" /*10% off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 3:
-			return "COUP_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 4:
-			return "COUP_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 5:
-			return "COUP_MEDSPENS" /*10 percent off your next medical expenses.*/;
+			return "COUP_MEDSPENS" /*10% de descuento en tus próximos gastos médicos.*/;
 	
 		case 6:
-			return "COUP_SPRUNK" /*one free can of Sprunk.*/;
+			return "COUP_SPRUNK" /*una lata gratis de Sprunk.*/;
 	
 		case 7:
-			return "COUP_RESPRAY" /*one free respray.*/;
+			return "COUP_RESPRAY" /*una pintura de vehículo gratis.*/;
 	
 		case 8:
 			return "COUP_XMAS2017";
@@ -731,32 +731,32 @@ char* func_6(int iParam0) // Position - 0xD4B (3403)
 			return "COUP_CAR2_XMAS2018";
 	
 		case 12:
-			return "COUP_CAS_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_CAS_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 13:
-			return "COUP_CAS_DOCKTEASE" /*10 percent off your next purchase at DockTease.com.*/;
+			return "COUP_CAS_DOCKTEASE" /*10% de descuento en tu próxima compra en DockTease.com.*/;
 	
 		case 14:
-			return "COUP_CAS_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_CAS_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 15:
-			return "COUP_CAS_SSASA" /*10 percent off your next purchase at southernsanandreassuperautos.com.*/;
+			return "COUP_CAS_SSASA" /*10% de descuento en tu próxima compra en southernsanandreassuperautos.com.*/;
 	
 		case 16:
-			return "COUP_CAS_WARSTOCK" /*10 percent off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_CAS_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 17:
-			return "COUP_CAS_PANDM" /*10 percent off your next purchase at pandmcycles.com.*/;
+			return "COUP_CAS_PANDM" /*10% de descuento en tu próxima compra en pandmcycles.com.*/;
 	
 		case 39:
 			return "COUPON_CAR_GEN9_MIGRATION";
 	
 		default:
 			if (func_13(iParam0))
-				return "HSW_COUP" /*One free respray, livery or spoiler.*/;
+				return "HSW_COUP" /*Una pintura, cubierta o alerón de vehículo gratis.*/;
 		
 			if (func_11(iParam0))
-				return "HSWU_COUP" /*One free Hao's Special Works upgrade.*/;
+				return "HSWU_COUP" /*Una mejora de Hao's Special Works gratis.*/;
 			break;
 	}
 

@@ -297,11 +297,11 @@ void func_4() // Position - 0x2CB (715)
 									switch (_GET_CURRENT_PLAYER_CHARACTER())
 									{
 										case CHAR_FRANKLIN:
-											func_6("AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, 2, 0, 1000, 10000, 7, 0, 0, 0);
+											func_6("AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, 2, 0, 1000, 10000, 7, 0, 0, 0);
 											break;
 									
 										case CHAR_MICHAEL:
-											func_6("AM_H_RCFS_M" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~ Switch to Franklin to play this mission.*/, 2, 0, 1000, 10000, 7, 0, 0, 0);
+											func_6("AM_H_RCFS_M" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~. Cambia a Franklin para empezar esta misión.*/, 2, 0, 1000, 10000, 7, 0, 0, 0);
 											break;
 									}
 								
@@ -415,7 +415,7 @@ void func_8() // Position - 0x635 (1589)
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		Global_114904.f_20417.f_146[i] = 0;
+		Global_114904.f_20417.f_146[i] = false;
 	}
 
 	for (i = 0; i < Global_114904.f_20417.f_145; i = i + 1)
@@ -564,7 +564,7 @@ void func_18(int iParam0, var uParam1) // Position - 0x972 (2418)
 			break;
 	
 		case 5:
-			func_19(uParam1, "Barry3A", func_21(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Areas where you can find vehicles with a hidden stash have been marked on the map. Collect these vehicles for Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_20(iParam0), 0, 1);
+			func_19(uParam1, "Barry3A", func_21(iParam0), 1, 1, 0, 1199.27f, -1255.63f, 34.23f, 381, "BARSTASH" /*Las zonas en las que puedes encontrar vehículos con un alijo oculto aparecerán indicadas en el mapa. Recoge estos vehículos para Barry.*/, 84, 0, "", 166, 0, 7, 4, 2, 0, 2359, func_20(iParam0), 0, 1);
 			break;
 	
 		case 6:
@@ -576,7 +576,7 @@ void func_18(int iParam0, var uParam1) // Position - 0x972 (2418)
 			break;
 	
 		case 8:
-			func_19(uParam1, "Dreyfuss1", func_21(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*The killer's identity and location have been revealed.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_20(iParam0), 0, 0);
+			func_19(uParam1, "Dreyfuss1", func_21(iParam0), 0, 2, 4, -1458.97f, 485.99f, 115.38f, 66, "LETTERS_HINT" /*Se ha revelado la identidad y el paradero del asesino.*/, 106, 0, "", 0, 0, -1, 4, 2, 0, 2359, func_20(iParam0), 0, 0);
 			break;
 	
 		case 9:
@@ -696,7 +696,7 @@ void func_18(int iParam0, var uParam1) // Position - 0x972 (2418)
 			break;
 	
 		case 38:
-			func_19(uParam1, "Nigel1A", func_21(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Areas where you can find celebrity items have been marked on the map. Steal these items for Nigel and Mrs. Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_20(iParam0), 1, 1);
+			func_19(uParam1, "Nigel1A", func_21(iParam0), 0, 12, 1, -558.65f, 284.49f, 90.86f, 149, "NIGITEMS" /*Se han marcado en el mapa las zonas en las que puedes encontrar objetos de famosos. Róbalos para Nigel y para la señora Thornhill.*/, 100, 0, "", 0, 0, 42, 4, 4, 0, 2359, func_20(iParam0), 1, 1);
 			break;
 	
 		case 39:
@@ -740,7 +740,7 @@ void func_18(int iParam0, var uParam1) // Position - 0x972 (2418)
 			break;
 	
 		case 49:
-			func_19(uParam1, "Paparazzo3A", func_21(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Areas where you can find celebrity photo opportunities have been marked on the map. Track down and photograph these celebrities for Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_20(iParam0), 0, 1);
+			func_19(uParam1, "Paparazzo3A", func_21(iParam0), 0, 14, 2, 305.52f, 157.19f, 102.94f, 389, "PAPPHOTO" /*Las zonas en las que puedes encontrar oportunidades para sacar fotos a famosos se han marcado en el mapa. Localiza y fotografía a estos famosos para Beverly.*/, 102, 0, "", 0, 0, 51, 4, 2, 0, 2359, func_20(iParam0), 0, 1);
 			break;
 	
 		case 50:
@@ -776,7 +776,7 @@ void func_18(int iParam0, var uParam1) // Position - 0x972 (2418)
 			break;
 	
 		case 58:
-			func_19(uParam1, "Tonya1", func_21(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Strangers and Freaks can be found throughout San Andreas at ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_20(iParam0), 0, 1);
+			func_19(uParam1, "Tonya1", func_21(iParam0), 0, 17, 4, -14.39f, -1472.69f, 29.58f, 66, "AM_H_RCFS" /*Puedes encontrarte con extraños y locos por todo San Andreas en ~HUD_COLOUR_FRANKLIN~~BLIP_RANDOM_CHARACTER~~s~.*/, -1, 0, "ambient_TonyaCall", 24, 1, 59, 4, 2, 0, 2359, func_20(iParam0), 0, 1);
 			break;
 	
 		case 59:
@@ -1714,9 +1714,9 @@ void func_46() // Position - 0x2AE3 (10979)
 {
 	if (!func_45(39))
 		if (IS_BIT_SET(Global_114904.f_18581[27 /*6*/], 3))
-			if (func_47("FS_HELP1" /*Find and destroy all of Lenny Avery's "For Sale" signs that are located around the northern area of the city.*/) == 2)
-				func_6("FS_HELP1" /*Find and destroy all of Lenny Avery's "For Sale" signs that are located around the northern area of the city.*/, 1, 0, 2000, 10000, 7, 0, 0, 0);
-			else if (func_47("FS_HELP1" /*Find and destroy all of Lenny Avery's "For Sale" signs that are located around the northern area of the city.*/) == 1)
+			if (func_47("FS_HELP1" /*Busca y destruye todos los letreros de "For Sale" (Se vende) de Lenny Avery situados en la zona norte de la ciudad.*/) == 2)
+				func_6("FS_HELP1" /*Busca y destruye todos los letreros de "For Sale" (Se vende) de Lenny Avery situados en la zona norte de la ciudad.*/, 1, 0, 2000, 10000, 7, 0, 0, 0);
+			else if (func_47("FS_HELP1" /*Busca y destruye todos los letreros de "For Sale" (Se vende) de Lenny Avery situados en la zona norte de la ciudad.*/) == 1)
 				func_5(39);
 
 	return;
@@ -1751,9 +1751,9 @@ void func_49() // Position - 0x2B9C (11164)
 	if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 		if (!func_45(55))
 			if (func_53(5) && func_51(PLAYER::PLAYER_PED_ID(), func_52(5), true) < func_50(5) || func_53(6) && func_51(PLAYER::PLAYER_PED_ID(), func_52(6), true) < func_50(6))
-				if (func_47("BARSTASH2" /*Areas where you can find vehicles with a hidden stash are marked on the map. Search them to find vehicles for Barry.*/) == 2)
-					func_6("BARSTASH2" /*Areas where you can find vehicles with a hidden stash are marked on the map. Search them to find vehicles for Barry.*/, 1, 0, 2000, 10000, 2, 0, 0, 0);
-				else if (func_47("BARSTASH2" /*Areas where you can find vehicles with a hidden stash are marked on the map. Search them to find vehicles for Barry.*/) == 1)
+				if (func_47("BARSTASH2" /*En el mapa están marcadas las zonas donde puedes encontrar vehículos con alijos ocultos. Búscalas para encontrarle vehículos a Barry.*/) == 2)
+					func_6("BARSTASH2" /*En el mapa están marcadas las zonas donde puedes encontrar vehículos con alijos ocultos. Búscalas para encontrarle vehículos a Barry.*/, 1, 0, 2000, 10000, 2, 0, 0, 0);
+				else if (func_47("BARSTASH2" /*En el mapa están marcadas las zonas donde puedes encontrar vehículos con alijos ocultos. Búscalas para encontrarle vehículos a Barry.*/) == 1)
 					func_5(55);
 
 	return;
@@ -1811,7 +1811,7 @@ Vector3 func_52(int iParam0) // Position - 0x2CF9 (11513)
 	return 0f, 0f, 0f;
 }
 
-BOOL func_53(int iParam0) // Position - 0x2DDF (11743)
+char* func_53(int iParam0) // Position - 0x2DDF (11743)
 {
 	return Global_113991[iParam0 /*10*/].f_1;
 }
@@ -2805,11 +2805,11 @@ void func_83(int iParam0) // Position - 0x3D0C (15628)
 						str = "";
 					
 						if (IS_BIT_SET(unk.f_26, 1))
-							str = "TRIG_RC_F" /*Return as Franklin to start this Strangers and Freaks mission.*/;
+							str = "TRIG_RC_F" /*Vuelve como Franklin para iniciar esta misión de extraños y locos.*/;
 						else if (IS_BIT_SET(unk.f_26, 0))
-							str = "TRIG_RC_M" /*Return as Michael to start this Strangers and Freaks mission.*/;
+							str = "TRIG_RC_M" /*Vuelve como Michael para iniciar esta misión de extraños y locos.*/;
 						else
-							str = "TRIG_RC_T" /*Return as Trevor to start this Strangers and Freaks mission.*/;
+							str = "TRIG_RC_T" /*Vuelve como Trevor para iniciar esta misión de extraños y locos.*/;
 					
 						if (!MISC::IS_STRING_NULL_OR_EMPTY(str))
 						{
@@ -3073,17 +3073,17 @@ void func_96(int iParam0, int iParam1) // Position - 0x4930 (18736)
 		}
 		else
 		{
-			func_97(iParam0, "BLIP_66" /*Strangers and Freaks*/);
+			func_97(iParam0, "BLIP_66" /*Extraños y locos*/);
 			func_99(iParam0, BLIP_RANDOM_CHARACTER);
 		}
 	}
 	else if (iParam1 == 5 || iParam1 == 6)
 	{
-		func_97(iParam0, "B_STA" /*Weed Stash*/);
+		func_97(iParam0, "B_STA" /*Alijo de hierba*/);
 	}
 	else if (iParam1 == 8)
 	{
-		func_97(iParam0, "B_DRE" /*Killer*/);
+		func_97(iParam0, "B_DRE" /*Asesino*/);
 	}
 	else if (iParam1 == 10 || iParam1 == 11 || iParam1 == 12 || iParam1 == 13 || iParam1 == 14 || iParam1 == 15 || iParam1 == 16)
 	{
@@ -3097,11 +3097,11 @@ void func_96(int iParam0, int iParam1) // Position - 0x4930 (18736)
 	{
 		if (IS_BIT_SET(Global_114904.f_18581[21 /*6*/], 3) || IS_BIT_SET(Global_114904.f_18581[22 /*6*/], 3) || IS_BIT_SET(Global_114904.f_18581[23 /*6*/], 3))
 		{
-			func_97(iParam0, "B_FAN" /*Mary-Ann*/);
+			func_97(iParam0, "B_FAN" /*Mary Ann*/);
 		}
 		else
 		{
-			func_97(iParam0, "BLIP_66" /*Strangers and Freaks*/);
+			func_97(iParam0, "BLIP_66" /*Extraños y locos*/);
 			func_99(iParam0, BLIP_RANDOM_CHARACTER);
 		}
 	}
@@ -3115,11 +3115,11 @@ void func_96(int iParam0, int iParam1) // Position - 0x4930 (18736)
 	}
 	else if (iParam1 == 33 || iParam1 == 34)
 	{
-		func_97(iParam0, "B_MIN" /*Minute Men*/);
+		func_97(iParam0, "B_MIN" /*Milicianos*/);
 	}
 	else if (iParam1 == 38 || iParam1 == 39 || iParam1 == 40 || iParam1 == 41)
 	{
-		func_97(iParam0, "B_CEL" /*Celebrity Item*/);
+		func_97(iParam0, "B_CEL" /*Artículo de famoso*/);
 	}
 	else if (iParam1 == 42 || iParam1 == 43)
 	{
@@ -3135,15 +3135,15 @@ void func_96(int iParam0, int iParam1) // Position - 0x4930 (18736)
 	}
 	else if (iParam1 == 49 || iParam1 == 50)
 	{
-		func_97(iParam0, "B_PHO" /*Photo Opportunity*/);
+		func_97(iParam0, "B_PHO" /*Oportunidad de foto*/);
 	}
 	else if (iParam1 == 52)
 	{
-		func_97(iParam0, "BLIP_66" /*Strangers and Freaks*/);
+		func_97(iParam0, "BLIP_66" /*Extraños y locos*/);
 	}
 	else if (iParam1 == 53 || iParam1 == 54 || iParam1 == 55 || iParam1 == 56)
 	{
-		func_97(iParam0, "BLIP_84" /*Rampage*/);
+		func_97(iParam0, "BLIP_84" /*Masacre*/);
 	}
 	else if (iParam1 == 59 || iParam1 == 60 || iParam1 == 61 || iParam1 == 62)
 	{
@@ -3151,7 +3151,7 @@ void func_96(int iParam0, int iParam1) // Position - 0x4930 (18736)
 	}
 	else
 	{
-		func_97(iParam0, "BLIP_66" /*Strangers and Freaks*/);
+		func_97(iParam0, "BLIP_66" /*Extraños y locos*/);
 	}
 
 	return;
@@ -5628,18 +5628,18 @@ struct<7> func_116(int iParam0) // Position - 0x6348 (25416)
 
 BOOL func_117() // Position - 0x8F54 (36692)
 {
-	if (func_119() == -1 || func_119() == 999 && !(func_118() == 0))
+	if (func_119() == -1 || func_119() == 999 && !(func_118() == HUD_COLOUR_PURE_WHITE))
 		return true;
 
 	return false;
 }
 
-int func_118() // Position - 0x8F84 (36740)
+eHudColour func_118() // Position - 0x8F84 (36740)
 {
 	return Global_33776;
 }
 
-int func_119() // Position - 0x8F8F (36751)
+eHudColour func_119() // Position - 0x8F8F (36751)
 {
 	return Global_33775;
 }

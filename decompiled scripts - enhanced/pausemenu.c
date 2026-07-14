@@ -24,8 +24,8 @@ void main() // Position - 0x0 (0)
 		case 1:
 			if (iScriptParam_0.f_1 == joaat("PM_REPLAY"))
 			{
-				func_2(1, 0, -1029819160, 0, true, "PM_PANE_AUD" /*Audio*/);
-				func_2(1, 1, -1029819160, 1, false, "PM_PANE_DIS" /*Display*/);
+				func_2(1, 0, -1029819160, 0, true, "PM_PANE_AUD" /*Sonido*/);
+				func_2(1, 1, -1029819160, 1, false, "PM_PANE_DIS" /*Pantalla*/);
 				func_1(1);
 			}
 		

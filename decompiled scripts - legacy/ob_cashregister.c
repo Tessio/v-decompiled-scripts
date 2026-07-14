@@ -42,7 +42,7 @@ void main() // Position - 0x0 (0)
 	{
 		if (IS_BIT_SET(Global_1690394, 1))
 		{
-			func_25();
+			func_27();
 		}
 		else
 		{
@@ -54,7 +54,7 @@ void main() // Position - 0x0 (0)
 	}
 	else if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(2))
 	{
-		func_25();
+		func_27();
 	}
 
 	while (true)
@@ -63,7 +63,7 @@ void main() // Position - 0x0 (0)
 	
 		if (iLocal_20 == 1)
 			if (_SHOULD_NETWORK_SCRIPT_TERMINATE())
-				func_25();
+				func_27();
 	
 		if (ENTITY::DOES_ENTITY_EXIST(obScriptParam_0))
 		{
@@ -93,12 +93,12 @@ void main() // Position - 0x0 (0)
 			}
 			else
 			{
-				func_25();
+				func_27();
 			}
 		}
 		else
 		{
-			func_25();
+			func_27();
 		}
 	}
 
@@ -383,10 +383,10 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x664 (1636)
 {
 	switch (func_17())
 	{
-		case 0:
+		case HUD_COLOUR_PURE_WHITE:
 			return func_16();
 	
-		case 2:
+		case HUD_COLOUR_BLACK:
 			return joaat("creator");
 	}
 
@@ -407,7 +407,7 @@ Hash func_16() // Position - 0x697 (1687)
 	return joaat("freemode");
 }
 
-int func_17() // Position - 0x6BB (1723)
+eHudColour func_17() // Position - 0x6BB (1723)
 {
 	return Global_33775;
 }
@@ -443,7 +443,7 @@ int func_22(int iParam0, int iParam1, BOOL bParam2) // Position - 0x707 (1799)
 	{
 		if (i == 3 || i == 4 || i == 5 || i == 6)
 			if (!bParam2)
-				func_24();
+				func_26();
 			else
 				return 0;
 	
@@ -453,26 +453,26 @@ int func_22(int iParam0, int iParam1, BOOL bParam2) // Position - 0x707 (1799)
 			{
 				if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 					if (!bParam2)
-						func_24();
+						func_26();
 					else
 						return 0;
 			
 				if (func_21())
 					if (!bParam2)
-						func_24();
+						func_26();
 					else
 						return 0;
 			
 				if (_DOES_EVENT_OF_TYPE_EXIST(157))
 					if (!bParam2)
-						func_24();
+						func_26();
 					else
 						return 0;
 			}
 			else if (!NETWORK::NETWORK_IS_IN_SESSION())
 			{
 				if (!bParam2)
-					func_24();
+					func_26();
 				else
 					return 0;
 			}
@@ -487,12 +487,12 @@ int func_22(int iParam0, int iParam1, BOOL bParam2) // Position - 0x707 (1799)
 	if (iParam0 == 0)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			if (!bParam2)
-				func_24();
+				func_26();
 			else
 				return 0;
 	else if (!NETWORK::NETWORK_IS_IN_SESSION())
 		if (!bParam2)
-			func_24();
+			func_26();
 		else
 			return 0;
 
@@ -501,17 +501,39 @@ int func_22(int iParam0, int iParam1, BOOL bParam2) // Position - 0x707 (1799)
 
 BOOL func_23(BOOL bParam0) // Position - 0x81D (2077)
 {
-	bParam0;
+	if (bParam0 && Global_1575062)
+		if (func_24())
+			return false;
+		else
+			return true;
+
 	return Global_1575062;
 }
 
-void func_24() // Position - 0x82E (2094)
+BOOL func_24() // Position - 0x849 (2121)
+{
+	if (func_25())
+		return true;
+
+	return Global_1575065;
+}
+
+BOOL func_25() // Position - 0x864 (2148)
+{
+	if (Global_1575062 || Global_1575068)
+		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
+			return true;
+
+	return false;
+}
+
+void func_26() // Position - 0x88F (2191)
 {
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;
 }
 
-void func_25() // Position - 0x83A (2106)
+void func_27() // Position - 0x89B (2203)
 {
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;

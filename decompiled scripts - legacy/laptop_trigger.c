@@ -347,7 +347,7 @@ void main() // Position - 0x0 (0)
 					
 						if (iLocal_138 == -1)
 							if (flag)
-								_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "MPLA_BILL" /*Unable to use the laptop until utility charge is paid.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "MPLA_BILL" /*No puedes usar el portátil hasta que pagues la tasa de consumo.*/, 0, 0, 0, 0);
 							else if (func_295())
 								func_264(flag4);
 							else if (func_261())
@@ -357,7 +357,7 @@ void main() // Position - 0x0 (0)
 							else if (func_292())
 								func_246(flag4);
 							else
-								_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "BROWSEINPUTTRIG" /*Press ~INPUT_CONTEXT~ to browse the internet on this computer.*/, 0, 0, 0, 0);
+								_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "BROWSEINPUTTRIG" /*Pulsa ~INPUT_CONTEXT~ para navegar por Internet desde este ordenador.*/, 0, 0, 0, 0);
 					}
 				
 					if (iLocal_138 != -1 && func_244(iLocal_138, true) && !TASK::IS_PED_RUNNING(PLAYER::PLAYER_PED_ID()) && func_243())
@@ -894,7 +894,7 @@ int func_9(ePedComponentType epctParam0) // Position - 0xB05 (2821)
 	return -1;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x1055 (4181)
+ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x1055 (4181)
 {
 	ePedComponentType type;
 
@@ -906,19 +906,19 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 		{
 			if (bIsPlaying)
 				if (!PLAYER::IS_PLAYER_PLAYING(player))
-					return false;
+					return PV_COMP_HEAD;
 		
 			if (bUnk)
 				if (type == Global_2673271.f_3)
 					return Global_2673271.f_2;
 				else if (Global_2658291[type /*468*/] != 4)
-					return false;
+					return PV_COMP_HEAD;
 		
-			return true;
+			return PV_COMP_BERD;
 		}
 	}
 
-	return false;
+	return PV_COMP_HEAD;
 }
 
 Player _INVALID_PLAYER_INDEX() // Position - 0x10B5 (4277)
@@ -962,10 +962,10 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x1142 (4418)
 {
 	switch (func_15())
 	{
-		case 0:
+		case HUD_COLOUR_PURE_WHITE:
 			return func_14();
 	
-		case 2:
+		case HUD_COLOUR_BLACK:
 			return joaat("creator");
 	}
 
@@ -986,7 +986,7 @@ Hash func_14() // Position - 0x1175 (4469)
 	return joaat("freemode");
 }
 
-int func_15() // Position - 0x1199 (4505)
+eHudColour func_15() // Position - 0x1199 (4505)
 {
 	return Global_33775;
 }
@@ -1014,22 +1014,22 @@ BOOL func_19() // Position - 0x11D6 (4566)
 	return Global_2685150.f_695;
 }
 
-BOOL func_20() // Position - 0x11E5 (4581)
+ePedComponentType func_20() // Position - 0x11E5 (4581)
 {
 	return Global_77342;
 }
 
-void func_21(int iParam0, BOOL bParam1, BOOL bParam2) // Position - 0x11F1 (4593)
+void func_21(ePedComponentType epctParam0, BOOL bParam1, BOOL bParam2) // Position - 0x11F1 (4593)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bParam1)
 		if (!bParam2)
-			*iParam0 = NETWORK::GET_NETWORK_TIME();
+			*epctParam0 = NETWORK::GET_NETWORK_TIME();
 		else
-			*iParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
+			*epctParam0 = NETWORK::GET_NETWORK_TIME_ACCURATE();
 	else
-		*iParam0 = MISC::GET_GAME_TIMER();
+		*epctParam0 = MISC::GET_GAME_TIMER();
 
-	iParam0->f_1 = 1;
+	epctParam0->f_1 = 1;
 	return;
 }
 
@@ -1052,7 +1052,7 @@ void func_23() // Position - 0x124F (4687)
 	return;
 }
 
-BOOL func_24() // Position - 0x127D (4733)
+ePedComponentType func_24() // Position - 0x127D (4733)
 {
 	return Global_2685150.f_693;
 }
@@ -1233,7 +1233,7 @@ void func_31(BOOL bParam0, int iParam1, int iParam2) // Position - 0x1502 (5378)
 		func_59();
 	
 		if (!func_115(PLAYER::PLAYER_ID()) && iParam1 != 1)
-			_SEND_TEXT_MESSAGE_FROM_CHARACTER_2(_CHAR_GANGAPP_SECUROSERV, "GB_TXTMSG_INIT2" /*Thank you for registering with SecuroServ as a VIP. Recruit your Protection Detail immediately to start feeling the benefits of having a troop of armed Bodyguards at your beck and call. But what now? Take your operation to the next level by getting an office on dynasty8realestate.com, of course! You'll become a CEO with access to Special Cargo, Vehicle Cargo, Special Vehicle Work and many other benefits.*/, 2, 0, 0, 0, 0, true, 0, 1);
+			_SEND_TEXT_MESSAGE_FROM_CHARACTER_2(_CHAR_GANGAPP_SECUROSERV, "GB_TXTMSG_INIT2" /*Gracias por registrarte como vip con SecuroServ. Recluta a tu grupo de seguridad inmediatamente para comenzar a disfrutar de los beneficios de tener una tropa armada de escoltas a tu disposición. ¿Y ahora qué? ¡Lleva la operación al siguiente nivel y compra una oficina en dynasty8realestate.com, cómo no! Te convertirás en jefe y podrás acceder a los trabajos de mercancía especial, exportación de vehículos y vehículos especiales, además de muchas otras ventajas.*/, 2, 0, 0, 0, 0, true, 0, 1);
 	}
 
 	return;
@@ -1606,7 +1606,7 @@ void func_41(int iParam0) // Position - 0x1C97 (7319)
 	int j;
 	int value2;
 	int k;
-	int value3;
+	char* value3;
 	int value4;
 	int value5;
 	int value6;
@@ -1905,7 +1905,7 @@ void func_45(int iParam0, char* sParam1, float fParam2, int iParam3, int iParam4
 	return;
 }
 
-BOOL func_46() // Position - 0x2369 (9065)
+ePedComponentType func_46() // Position - 0x2369 (9065)
 {
 	return Global_1575090;
 }
@@ -2192,9 +2192,9 @@ void func_59() // Position - 0x2979 (10617)
 {
 	if (!func_110() && func_74() && func_72(PLAYER::PLAYER_ID()))
 		if (func_69())
-			_THEFEED_SHOW_MESSAGE("GB_INFO_MC_L" /*There are players looking to join a MC in this session.*/, false);
+			_THEFEED_SHOW_MESSAGE("GB_INFO_MC_L" /*Hay jugadores que desean unirse a un club de moteros en esta sesión.*/, false);
 		else
-			_THEFEED_SHOW_MESSAGE("GB_INFO_LFG" /*There are players looking for work as Bodyguards in this session.*/, false);
+			_THEFEED_SHOW_MESSAGE("GB_INFO_LFG" /*Hay jugadores que buscan trabajo como escoltas en esta sesión.*/, false);
 
 	return;
 }
@@ -2216,7 +2216,7 @@ int _THEFEED_SHOW_MESSAGE(char* sParam0, BOOL bParam1) // Position - 0x29BD (106
 	return num;
 }
 
-void func_61(int iParam0, char* sParam1, int iParam2, char* sParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, char* sParam9, char* sParam10, char* sParam11) // Position - 0x29F5 (10741)
+void func_61(int iParam0, char* sParam1, int iParam2, char* sParam3, ePedComponentType epctParam4, ePedComponentType epctParam5, ePedComponentType epctParam6, int iParam7, int iParam8, char* sParam9, char* sParam10, char* sParam11) // Position - 0x29F5 (10741)
 {
 	int num;
 
@@ -2230,9 +2230,9 @@ void func_61(int iParam0, char* sParam1, int iParam2, char* sParam3, int iParam4
 		Global_1943908.f_5[num /*53*/] = iParam0;
 		Global_1943908.f_5[num /*53*/].f_1 = iParam2;
 		TEXT_LABEL_ASSIGN_STRING(&(Global_1943908.f_5[num /*53*/].f_8), sParam1, 16);
-		Global_1943908.f_5[num /*53*/].f_2[0] = iParam4;
-		Global_1943908.f_5[num /*53*/].f_2[1] = iParam5;
-		Global_1943908.f_5[num /*53*/].f_2[2] = iParam6;
+		Global_1943908.f_5[num /*53*/].f_2[0] = epctParam4;
+		Global_1943908.f_5[num /*53*/].f_2[1] = epctParam5;
+		Global_1943908.f_5[num /*53*/].f_2[2] = epctParam6;
 		Global_1943908.f_5[num /*53*/].f_7 = iParam7;
 		Global_1943908.f_5[num /*53*/].f_6 = iParam8;
 		TEXT_LABEL_ASSIGN_STRING(&(Global_1943908.f_5[num /*53*/].f_12), sParam3, 64);
@@ -2288,7 +2288,7 @@ BOOL func_64(ePedComponentType epctParam0, int iParam1) // Position - 0x2B98 (11
 		return false;
 
 	if (epctParam0 == PLAYER::PLAYER_ID())
-		flag = func_65(-1, false) == 8;
+		flag = func_65(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845250[epctParam0 /*880*/].f_198 == 8;
 
@@ -2299,28 +2299,28 @@ BOOL func_64(ePedComponentType epctParam0, int iParam1) // Position - 0x2B98 (11
 	return flag;
 }
 
-int func_65(int iParam0, BOOL bParam1) // Position - 0x2BF1 (11249)
+eCharacter func_65(int iParam0, BOOL bParam1) // Position - 0x2BF1 (11249)
 {
+	eCharacter character;
 	int num;
-	int num2;
 
-	num2 = iParam0;
+	num = iParam0;
 
-	if (num2 == -1)
-		num2 = func_66();
+	if (num == -1)
+		num = func_66();
 
-	if (Global_1575070[num2] == true)
+	if (Global_1575070[num] == true)
 	{
 		bParam1;
-		num = 8;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		num = Global_1574921[num2];
+		character = Global_1574921[num];
 		bParam1;
 	}
 
-	return num;
+	return character;
 }
 
 int func_66() // Position - 0x2C32 (11314)
@@ -3231,12 +3231,12 @@ const char* func_135(ePedComponentType epctParam0, BOOL bParam1) // Position - 0
 		if (func_101(epctParam0, true))
 			return func_136();
 
-	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACC" /*An Organization*/);
+	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACC" /*Organización*/);
 }
 
 const char* func_136() // Position - 0x3B23 (15139)
 {
-	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACCM" /*Motorcycle Club*/);
+	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACCM" /*Club de moteros*/);
 }
 
 struct<16> func_137(int iParam0, int iParam1, int iParam2) // Position - 0x3B33 (15155)
@@ -3514,12 +3514,12 @@ void func_146() // Position - 0x4066 (16486)
 	{
 		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("");
 		TEXT_LABEL_ASSIGN_STRING(&subject, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(&Global_10090[1 /*6*/]), 64);
-		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*New Contact*/);
+		filenameForAudioConversation = HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CELL_253" /*Nuevo contacto*/);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, filenameForAudioConversation, &subject);
 	}
 	else
 	{
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*New Contact: ~n~~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("CELL_255" /*Nuevo contacto: ~n~~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Global_10090[1 /*6*/]);
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, false, 3, "", 0);
 	}
@@ -3720,7 +3720,7 @@ void func_154() // Position - 0x4280 (17024)
 
 	for (k = 0; k < 9; k = k + 1)
 	{
-		Global_2686090.f_1.f_2813[k] = 0;
+		Global_2686090.f_1.f_2813[k] = PV_COMP_HEAD;
 	}
 
 	Global_2686090.f_1.f_2826 = num4;
@@ -3946,7 +3946,7 @@ void func_174(BOOL bParam0) // Position - 0x486A (18538)
 
 	for (i = 0; i < 9; i = i + 1)
 	{
-		Global_2686090.f_1.f_2813[i] = 0;
+		Global_2686090.f_1.f_2813[i] = PV_COMP_HEAD;
 	}
 
 	Global_2686090.f_1.f_2826 = -1;
@@ -4043,7 +4043,7 @@ BOOL func_184() // Position - 0x4A8E (19086)
 	return IS_BIT_SET(Global_2685150, 20);
 }
 
-BOOL func_185() // Position - 0x4A9D (19101)
+ePedComponentType func_185() // Position - 0x4A9D (19101)
 {
 	return IS_BIT_SET(Global_2686090.f_1.f_2810, 3);
 }
@@ -4132,7 +4132,7 @@ void func_192() // Position - 0x4BD0 (19408)
 	return;
 }
 
-BOOL func_193() // Position - 0x4C31 (19505)
+ePedComponentType func_193() // Position - 0x4C31 (19505)
 {
 	return Global_2685150.f_742;
 }
@@ -4254,7 +4254,7 @@ void func_202(BOOL bParam0) // Position - 0x4DE4 (19940)
 			NETWORK::NETWORK_SET_PLAYER_IS_PASSIVE(false);
 			NETWORK::NETWORK_SET_FRIENDLY_FIRE_OPTION(true);
 		
-			if (Global_1574582.f_1 == false || Global_1574582.f_2 == 1)
+			if (Global_1574582.f_1 == PV_COMP_HEAD || Global_1574582.f_2 == 1)
 			{
 				Global_1574582.f_2 = 0;
 			
@@ -4272,7 +4272,7 @@ void func_202(BOOL bParam0) // Position - 0x4DE4 (19940)
 				PED::SET_PED_CONFIG_FLAG(PLAYER::PLAYER_PED_ID(), 122, true);
 				PLAYER::SET_PLAYER_VEHICLE_DEFENSE_MODIFIER(PLAYER::PLAYER_ID(), 0.5f);
 			
-				if (Global_1574582.f_1 == false || Global_1574582.f_2 == 1)
+				if (Global_1574582.f_1 == PV_COMP_HEAD || Global_1574582.f_2 == 1)
 					NETWORK::SET_LOCAL_PLAYER_AS_GHOST(true, false);
 			}
 		
@@ -4600,7 +4600,7 @@ const char* func_224(int iParam0) // Position - 0x543C (21564)
 		
 	}
 
-	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACC" /*An Organization*/);
+	return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("GB_REST_ACC" /*Organización*/);
 }
 
 BOOL func_225() // Position - 0x5460 (21600)
@@ -4663,15 +4663,15 @@ int _MPPLY_STAT_GET_INT(Hash hParam0) // Position - 0x5514 (21780)
 	return 0;
 }
 
-int func_232() // Position - 0x5532 (21810)
+ePedComponentType func_232() // Position - 0x5532 (21810)
 {
 	return Global_262145.f_12910;
 }
 
-int func_233() // Position - 0x5541 (21825)
+ePedComponentType func_233() // Position - 0x5541 (21825)
 {
 	int i;
-	int num;
+	ePedComponentType num;
 	ePedComponentType type;
 
 	for (i = 0; i < 32; i = i + 1)
@@ -5077,7 +5077,7 @@ int func_245(int iParam0) // Position - 0x5EBA (24250)
 void func_246(BOOL bParam0) // Position - 0x5EF5 (24309)
 {
 	if (func_240() && !NETWORK::NETWORK_IS_PLAYER_IN_MP_CUTSCENE(PLAYER::PLAYER_ID()) && !func_247() && !Global_1950053)
-		_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 2, "ARENAWHINPUT" /*Press ~INPUT_CONTEXT~ to access arenawar.tv.~n~Press ~INPUT_CONTEXT_SECONDARY~ to view Sponsorship Tier Unlocks.*/, 0, 0, 0, 0);
+		_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 2, "ARENAWHINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder a arenawar.tv.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para ver los desbloqueos por nivel de patrocinio.*/, 0, 0, 0, 0);
 
 	return;
 }
@@ -5093,22 +5093,22 @@ void func_248(BOOL bParam0) // Position - 0x5F44 (24388)
 	{
 		if (func_252())
 		{
-			func_251("WHPRIVSESLAP" /*Join a public session to access the SecuroServ network.*/);
+			func_251("WHPRIVSESLAP" /*Únete a una sesión pública para acceder a la red de SecuroServ.*/);
 		}
 		else if (!bParam0)
 		{
 			if (func_233() >= func_232())
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "WHSECUROMAXVIP" /*This computer is unavailable. The maximum number of VIPs, CEOs and Club Presidents has been reached in this session.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "WHSECUROMAXVIP" /*Este ordenador no está disponible. Esta sesión ha alcanzado el máximo número de vips, jefes y presidentes de club de moteros.*/, 0, 0, 0, 0);
 			else if (func_228(PLAYER::PLAYER_ID()))
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "PIM_EXECH0x1" /*SecuroServ access is currently blocked due to your recent behavior.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "PIM_EXECH0x1" /*Se ha bloqueado el acceso a SecuroServ por tus últimas acciones.*/, 0, 0, 0, 0);
 			else if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
-				func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+				func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			else
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "SECINPUTTREGLAP" /*Press ~INPUT_CONTEXT~ to register as a SecuroServ CEO and access this computer.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "SECINPUTTREGLAP" /*Pulsa ~INPUT_CONTEXT~ para registrarte en SecuroServ como jefe y acceder a este ordenador.*/, 0, 0, 0, 0);
 		}
 		else if (func_70(PLAYER::PLAYER_ID()))
 		{
-			func_251("WHBIKERBLCK" /*You need to register as a SecuroServ CEO to access this computer.*/);
+			func_251("WHBIKERBLCK" /*Necesitas registrarte como jefe en SecuroServ para acceder a este ordenador.*/);
 		}
 		else if (_STOPWATCH_IS_INITIALIZED(&uLocal_143) && func_303(&uLocal_143, 10000, true) || !bLocal_140)
 		{
@@ -5117,7 +5117,7 @@ void func_248(BOOL bParam0) // Position - 0x5F44 (24388)
 				bLocal_140 = true;
 			
 				if (!Global_1950053)
-					func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+					func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			}
 			else
 			{
@@ -5126,13 +5126,13 @@ void func_248(BOOL bParam0) // Position - 0x5F44 (24388)
 			
 				bLocal_140 = false;
 				_STOPWATCH_DESTROY(&uLocal_143);
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "WHSECUROINPUT" /*Press ~INPUT_CONTEXT~ to access this laptop.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "WHSECUROINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder a este portátil.*/, 0, 0, 0, 0);
 			}
 		}
 		else if (bLocal_140)
 		{
 			if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-				func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+				func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 		
 			if (!func_249(PLAYER::PLAYER_ID()))
 			{
@@ -5253,14 +5253,14 @@ void func_258(BOOL bParam0) // Position - 0x6220 (25120)
 	{
 		if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 		{
-			func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+			func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 		}
 		else if (func_252())
 		{
 			if (func_269(PLAYER::PLAYER_ID()))
-				func_251("BIKERWHBLCKC" /*Join a public session to purchase a Business.*/);
+				func_251("BIKERWHBLCKC" /*Únete a una sesión pública para comprar un negocio.*/);
 			else
-				func_251("BIKERWHBLCKD" /*Join a public session to manage your Business*/);
+				func_251("BIKERWHBLCKD" /*Únete a una sesión pública para gestionar tu negocio.*/);
 		}
 		else if (func_70(PLAYER::PLAYER_ID()))
 		{
@@ -5271,7 +5271,7 @@ void func_258(BOOL bParam0) // Position - 0x6220 (25120)
 					bLocal_140 = true;
 				
 					if (!Global_1950053)
-						func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+						func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 				}
 				else
 				{
@@ -5280,13 +5280,13 @@ void func_258(BOOL bParam0) // Position - 0x6220 (25120)
 				
 					bLocal_140 = false;
 					_STOPWATCH_DESTROY(&uLocal_143);
-					_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "BIKERWHINPUT" /*Press ~INPUT_CONTEXT~ to securely access the Open Road website.*/, 0, 0, 0, 0);
+					_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "BIKERWHINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder al sitio web de Open Road de forma segura.*/, 0, 0, 0, 0);
 				}
 			}
 			else if (bLocal_140)
 			{
 				if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-					func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+					func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			
 				if (!func_259(PLAYER::PLAYER_ID()))
 				{
@@ -5297,11 +5297,11 @@ void func_258(BOOL bParam0) // Position - 0x6220 (25120)
 		}
 		else if (!bParam0 && func_233() < func_232())
 		{
-			_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "BIKERWHBLCKA" /*Press ~INPUT_CONTEXT~ to found a Motorcycle Club and access this computer.*/, 0, 0, 0, 0);
+			_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "BIKERWHBLCKA" /*Pulsa ~INPUT_CONTEXT~ para fundar un club de moteros y acceder a este ordenador.*/, 0, 0, 0, 0);
 		}
 		else
 		{
-			func_251("BIKERWHBLCKB" /*You need to be the President of a Motorcycle Club to access this computer.*/);
+			func_251("BIKERWHBLCKB" /*Debes ser el presidente de un club de moteros para acceder a este ordenador.*/);
 		}
 	}
 
@@ -5367,22 +5367,22 @@ void func_264(BOOL bParam0) // Position - 0x6488 (25736)
 	{
 		if (func_252())
 		{
-			func_251("WHPRIVSESLAP" /*Join a public session to access the SecuroServ network.*/);
+			func_251("WHPRIVSESLAP" /*Únete a una sesión pública para acceder a la red de SecuroServ.*/);
 		}
 		else if (!bParam0)
 		{
 			if (func_233() >= func_232())
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "WHSECUROMAXVIP" /*This computer is unavailable. The maximum number of VIPs, CEOs and Club Presidents has been reached in this session.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "WHSECUROMAXVIP" /*Este ordenador no está disponible. Esta sesión ha alcanzado el máximo número de vips, jefes y presidentes de club de moteros.*/, 0, 0, 0, 0);
 			else if (func_228(PLAYER::PLAYER_ID()))
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "PIM_EXECH0x1" /*SecuroServ access is currently blocked due to your recent behavior.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "PIM_EXECH0x1" /*Se ha bloqueado el acceso a SecuroServ por tus últimas acciones.*/, 0, 0, 0, 0);
 			else if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
-				func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+				func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			else
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "SECINPUTTREGLAP" /*Press ~INPUT_CONTEXT~ to register as a SecuroServ CEO and access this computer.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "SECINPUTTREGLAP" /*Pulsa ~INPUT_CONTEXT~ para registrarte en SecuroServ como jefe y acceder a este ordenador.*/, 0, 0, 0, 0);
 		}
 		else if (func_70(PLAYER::PLAYER_ID()))
 		{
-			func_251("WHBIKERBLCK" /*You need to register as a SecuroServ CEO to access this computer.*/);
+			func_251("WHBIKERBLCK" /*Necesitas registrarte como jefe en SecuroServ para acceder a este ordenador.*/);
 		}
 		else if (_STOPWATCH_IS_INITIALIZED(&uLocal_143) && func_303(&uLocal_143, 10000, true) || !bLocal_140)
 		{
@@ -5391,7 +5391,7 @@ void func_264(BOOL bParam0) // Position - 0x6488 (25736)
 				bLocal_140 = true;
 			
 				if (!Global_1950053)
-					func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+					func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 			}
 			else
 			{
@@ -5400,13 +5400,13 @@ void func_264(BOOL bParam0) // Position - 0x6488 (25736)
 			
 				bLocal_140 = false;
 				_STOPWATCH_DESTROY(&uLocal_143);
-				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "WHSECUROINPUT" /*Press ~INPUT_CONTEXT~ to access this laptop.*/, 0, 0, 0, 0);
+				_CONTEXT_ADD_HELP_TEXT(&iLocal_138, 1, "WHSECUROINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder a este portátil.*/, 0, 0, 0, 0);
 			}
 		}
 		else if (bLocal_140)
 		{
 			if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
-				func_251("WHSECUROBLCK" /*This computer is unavailable during a mission.*/);
+				func_251("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/);
 		
 			if (!func_308(PLAYER::PLAYER_ID()))
 			{
@@ -5477,7 +5477,7 @@ void _CONTEXT_ADD_HELP_TEXT(var uParam0, int iParam1, char* sParam2, int iParam3
 
 BOOL func_266() // Position - 0x670E (26382)
 {
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MP_OFF_LAP_1" /*Register as SecuroServ CEO to gain access to this computer. ~n~Press ~INPUT_FRONTEND_RIGHT~ to stand up.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHPRIVSESLAP" /*Join a public session to access the SecuroServ network.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHSECUROBLCK" /*This computer is unavailable during a mission.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SECINPUTTREGLAP" /*Press ~INPUT_CONTEXT~ to register as a SecuroServ CEO and access this computer.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHINPUT" /*Press ~INPUT_CONTEXT~ to securely access the Open Road website.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKA" /*Press ~INPUT_CONTEXT~ to found a Motorcycle Club and access this computer.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKB" /*You need to be the President of a Motorcycle Club to access this computer.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHBIKERBLCK" /*You need to register as a SecuroServ CEO to access this computer.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKC" /*Join a public session to purchase a Business.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKD" /*Join a public session to manage your Business*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("ARENAWHINPUT" /*Press ~INPUT_CONTEXT~ to access arenawar.tv.~n~Press ~INPUT_CONTEXT_SECONDARY~ to view Sponsorship Tier Unlocks.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MP_OFF_LAP_1" /*Regístrate en SecuroServ como jefe para acceder a este ordenador.~n~Pulsa ~INPUT_FRONTEND_RIGHT~ para levantarte.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHPRIVSESLAP" /*Únete a una sesión pública para acceder a la red de SecuroServ.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHSECUROBLCK" /*Este ordenador no está disponible durante una misión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("SECINPUTTREGLAP" /*Pulsa ~INPUT_CONTEXT~ para registrarte en SecuroServ como jefe y acceder a este ordenador.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder al sitio web de Open Road de forma segura.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKA" /*Pulsa ~INPUT_CONTEXT~ para fundar un club de moteros y acceder a este ordenador.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKB" /*Debes ser el presidente de un club de moteros para acceder a este ordenador.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("WHBIKERBLCK" /*Necesitas registrarte como jefe en SecuroServ para acceder a este ordenador.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKC" /*Únete a una sesión pública para comprar un negocio.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("BIKERWHBLCKD" /*Únete a una sesión pública para gestionar tu negocio.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("ARENAWHINPUT" /*Pulsa ~INPUT_CONTEXT~ para acceder a arenawar.tv.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para ver los desbloqueos por nivel de patrocinio.*/))
 		return true;
 
 	return false;
@@ -5824,7 +5824,7 @@ void func_296(int iParam0) // Position - 0x6E16 (28182)
 	if (func_301())
 		return;
 
-	if (!(Global_21610.f_1 == 1))
+	if (!(Global_21610.f_1 == true))
 	{
 		if (func_288(0))
 			func_297(iParam0);
@@ -5867,7 +5867,7 @@ void func_297(int iParam0) // Position - 0x6E49 (28233)
 
 BOOL func_298() // Position - 0x6ED3 (28371)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;

@@ -443,7 +443,7 @@ void func_1() // Position - 0xBF (191)
 				{
 					if (!bLocal_276)
 					{
-						_SHOW_SUBTITLE_CLEAR_EXISTING("LOSE_WANTED" /*Lose the Cops.*/, 7500, 1);
+						_SHOW_SUBTITLE_CLEAR_EXISTING("LOSE_WANTED" /*Líbrate de la poli.*/, 7500, 1);
 						bLocal_276 = true;
 					}
 				}
@@ -804,7 +804,7 @@ BOOL func_11(char* sParam0, int iParam1, BOOL bParam2) // Position - 0xA85 (2693
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -1070,7 +1070,7 @@ void func_19() // Position - 0xE88 (3720)
 
 BOOL func_20() // Position - 0xF1D (3869)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -1254,7 +1254,7 @@ void func_32() // Position - 0x12AF (4783)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;

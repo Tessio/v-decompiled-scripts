@@ -1350,7 +1350,7 @@ void main() // Position - 0x0 (0)
 						iLocal_46 = 2;
 					}
 				}
-				else if (func_76(iLocal_1259, &uLocal_72, CHAR_DR_FRIEDLANDER, "DrfAud", &uLocal_237, &uLocal_285, "SHRINK_CELL_Q" /*Accept advice?*/, 9, 1, 0, 0, false))
+				else if (func_76(iLocal_1259, &uLocal_72, CHAR_DR_FRIEDLANDER, "DrfAud", &uLocal_237, &uLocal_285, "SHRINK_CELL_Q" /*¿Aceptar consejo?*/, 9, 1, 0, 0, false))
 				{
 					func_75(iLocal_1260, iLocal_1261, &uLocal_711, &uLocal_739, &uLocal_985, &uLocal_1013);
 					iLocal_46 = 3;
@@ -1492,26 +1492,26 @@ BOOL func_2(int iParam0) // Position - 0x35B (859)
 void func_3(var uParam0, int iParam1) // Position - 0x46B (1131)
 {
 	int i;
-	int num;
+	BOOL flag;
 	var unk;
-	float num2;
+	float num;
 
 	if (iParam1 == 94)
 		return;
 
 	for (i = 0; i < 3; i = i + 1)
 	{
-		num = Global_114904.f_18540[i];
+		flag = Global_114904.f_18540[i];
 	
-		if (num == 8 || num == 9 || num == 10 || num == 11 || num == 34 || num == 72 || num == 73 && !IS_BIT_SET(Global_114904.f_9092.f_99.f_219[0], 9))
+		if (flag == 8 || flag == 9 || flag == 10 || flag == 11 || flag == 34 || flag == 72 || flag == 73 && !IS_BIT_SET(Global_114904.f_9092.f_99.f_219[0], 9))
 		{
 		}
 		else
 		{
 			unk = { 0f, 0f, 0f };
-			num2 = 0f;
+			num = 0f;
 		
-			if (!func_5(Global_114904.f_18540[i], &unk, &num2))
+			if (!func_5(Global_114904.f_18540[i], &unk, &num))
 			{
 				Global_114904.f_18540[i] = 318;
 				func_4(&uParam0->f_2296[i]);
@@ -1548,9 +1548,9 @@ void func_4(var uParam0) // Position - 0x631 (1585)
 	return;
 }
 
-BOOL func_5(int iParam0, var uParam1, var uParam2) // Position - 0x63F (1599)
+BOOL func_5(BOOL bParam0, var uParam1, var uParam2) // Position - 0x63F (1599)
 {
-	switch (iParam0)
+	switch (bParam0)
 	{
 		case 11:
 			*uParam1 = { 115.1569f, -1286.684f, 28.2613f };
@@ -1912,15 +1912,15 @@ void func_7() // Position - 0xFEC (4076)
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
 				case CHAR_MICHAEL:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_MARRE" /*~s~Michael was arrested.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_MARRE" /*~s~Michael ha sido detenido.*/, 16);
 					break;
 			
 				case CHAR_FRANKLIN:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_FARRE" /*~s~Franklin was arrested.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_FARRE" /*~s~Franklin ha sido detenido.*/, 16);
 					break;
 			
 				case CHAR_TREVOR:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_TARRE" /*~s~Trevor was arrested.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_TARRE" /*~s~Trevor ha sido detenido.*/, 16);
 					break;
 			}
 		
@@ -1936,15 +1936,15 @@ void func_7() // Position - 0xFEC (4076)
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
 				case CHAR_MICHAEL:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_MDIED" /*~s~Michael died.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_MDIED" /*~s~Michael ha muerto.*/, 16);
 					break;
 			
 				case CHAR_FRANKLIN:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_FDIED" /*~s~Franklin died.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_FDIED" /*~s~Franklin ha muerto.*/, 16);
 					break;
 			
 				case CHAR_TREVOR:
-					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_TDIED" /*~s~Trevor died.*/, 16);
+					TEXT_LABEL_ASSIGN_STRING(&Global_80513, "CMN_TDIED" /*~s~Trevor ha muerto.*/, 16);
 					break;
 			}
 		
@@ -2546,7 +2546,7 @@ void func_17(int iParam0) // Position - 0x1B5D (7005)
 	if (flag)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&txdName, "CHAR_LIFEINVADER", 64);
-		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*You have redeemed your promotion for ~a~*/);
+		HUD::BEGIN_TEXT_COMMAND_THEFEED_POST("COUP_RED" /*Has canjeado tu promoción de ~a~*/);
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(func_18(iParam0));
 		HUD::END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT(&txdName, &txdName, true, 0, "", 0);
 	}
@@ -2559,28 +2559,28 @@ char* func_18(int iParam0) // Position - 0x1CD4 (7380)
 	switch (iParam0)
 	{
 		case 0:
-			return "COUP_HAIRC" /*one free haircut.*/;
+			return "COUP_HAIRC" /*un corte de pelo gratis.*/;
 	
 		case 1:
-			return "COUP_TATTOO" /*one free tattoo.*/;
+			return "COUP_TATTOO" /*un tatuaje gratis.*/;
 	
 		case 2:
-			return "COUP_WARSTOCK" /*10% off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 3:
-			return "COUP_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 4:
-			return "COUP_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 5:
-			return "COUP_MEDSPENS" /*10 percent off your next medical expenses.*/;
+			return "COUP_MEDSPENS" /*10% de descuento en tus próximos gastos médicos.*/;
 	
 		case 6:
-			return "COUP_SPRUNK" /*one free can of Sprunk.*/;
+			return "COUP_SPRUNK" /*una lata gratis de Sprunk.*/;
 	
 		case 7:
-			return "COUP_RESPRAY" /*one free respray.*/;
+			return "COUP_RESPRAY" /*una pintura de vehículo gratis.*/;
 	
 		case 8:
 			return "COUP_XMAS2017";
@@ -2595,22 +2595,22 @@ char* func_18(int iParam0) // Position - 0x1CD4 (7380)
 			return "COUP_CAR2_XMAS2018";
 	
 		case 12:
-			return "COUP_CAS_ELITAS" /*10 percent off your next purchase at ElitasTravel.com.*/;
+			return "COUP_CAS_ELITAS" /*10% de descuento en tu próxima compra en ElitasTravel.com.*/;
 	
 		case 13:
-			return "COUP_CAS_DOCKTEASE" /*10 percent off your next purchase at DockTease.com.*/;
+			return "COUP_CAS_DOCKTEASE" /*10% de descuento en tu próxima compra en DockTease.com.*/;
 	
 		case 14:
-			return "COUP_CAS_MOSPORT" /*10 percent off your next purchase at LegendaryMotorsport.net.*/;
+			return "COUP_CAS_MOSPORT" /*10% de descuento en tu próxima compra en LegendaryMotorsport.net.*/;
 	
 		case 15:
-			return "COUP_CAS_SSASA" /*10 percent off your next purchase at southernsanandreassuperautos.com.*/;
+			return "COUP_CAS_SSASA" /*10% de descuento en tu próxima compra en southernsanandreassuperautos.com.*/;
 	
 		case 16:
-			return "COUP_CAS_WARSTOCK" /*10 percent off your next purchase at Warstock-Cache-and-Carry.com.*/;
+			return "COUP_CAS_WARSTOCK" /*10% de descuento en tu próxima compra en Warstock-Cache-and-Carry.com.*/;
 	
 		case 17:
-			return "COUP_CAS_PANDM" /*10 percent off your next purchase at pandmcycles.com.*/;
+			return "COUP_CAS_PANDM" /*10% de descuento en tu próxima compra en pandmcycles.com.*/;
 	
 		default:
 			break;
@@ -3254,7 +3254,7 @@ void func_56(int iParam0) // Position - 0x274A (10058)
 
 BOOL func_57() // Position - 0x27D4 (10196)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -3820,7 +3820,7 @@ void func_84() // Position - 0x3174 (12660)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -3852,7 +3852,7 @@ void func_85(int iParam0) // Position - 0x31CB (12747)
 
 void func_86() // Position - 0x31F1 (12785)
 {
-	Global_23031 = false;
+	Global_23031 = 0;
 	Global_22990 = true;
 	Global_22997 = false;
 	Global_22992 = false;
@@ -3860,7 +3860,7 @@ void func_86() // Position - 0x31F1 (12785)
 	Global_23976 = false;
 	Global_22997 = false;
 	Global_23980 = 0;
-	Global_22988 = 0;
+	Global_22988 = false;
 	Global_23035 = false;
 	Global_23037 = false;
 	Global_2883585 = 0;
@@ -4508,7 +4508,7 @@ int func_102() // Position - 0x3D18 (15640)
 
 	for (i = 0; i < 2; i = i + 1)
 	{
-		if (Global_98866[i] > 0)
+		if (Global_98866[i] > false)
 			num = num + 1;
 	}
 
@@ -4888,14 +4888,14 @@ int func_108(int iParam0) // Position - 0x43E3 (17379)
 	return 0;
 }
 
-int func_109(var uParam0, int iParam1) // Position - 0x44C5 (17605)
+int func_109(BOOL bParam0, int iParam1) // Position - 0x44C5 (17605)
 {
 	int i;
 	int num;
 
 	for (i = 0; i < iParam1; i = i + 1)
 	{
-		if (uParam0->[i] > 0)
+		if (bParam0->[i] > 0)
 			num = num + 1;
 	}
 
@@ -5355,7 +5355,7 @@ void func_134() // Position - 0x4DAE (19886)
 
 	for (i = 0; i < 2; i = i + 1)
 	{
-		Global_98866[i] = 0;
+		Global_98866[i] = false;
 	}
 
 	return;
@@ -5417,13 +5417,13 @@ void func_135() // Position - 0x4DEC (19948)
 	return;
 }
 
-void func_136(var uParam0, int iParam1) // Position - 0x4EC6 (20166)
+void func_136(BOOL bParam0, int iParam1) // Position - 0x4EC6 (20166)
 {
 	int i;
 
 	for (i = 0; i < iParam1; i = i + 1)
 	{
-		uParam0->[i] = 0;
+		bParam0->[i] = 0;
 	}
 
 	return;

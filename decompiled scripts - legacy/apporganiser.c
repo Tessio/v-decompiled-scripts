@@ -86,7 +86,7 @@ BOOL func_1() // Position - 0xDC (220)
 {
 	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 3 || Global_21610.f_1 == 0 || Global_21554 == 1)
 	{
-		Global_21597 = 1;
+		Global_21597 = INPUT_LOOK_LR;
 		return true;
 	}
 
@@ -97,7 +97,7 @@ BOOL func_2() // Position - 0x11F (287)
 {
 	if (Global_10086 == 1 || Global_21610.f_1 < 7)
 	{
-		Global_21597 = 1;
+		Global_21597 = INPUT_LOOK_LR;
 		return true;
 	}
 
@@ -201,31 +201,31 @@ void func_4(int iParam0, BOOL bParam1) // Position - 0x25C (604)
 				switch (num)
 				{
 					case 0:
-						str = "fSu" /*SUNDAY*/;
+						str = "fSu" /*DOMINGO*/;
 						break;
 				
 					case 1:
-						str = "fMo" /*MONDAY*/;
+						str = "fMo" /*LUNES*/;
 						break;
 				
 					case 2:
-						str = "fTu" /*TUESDAY*/;
+						str = "fTu" /*MARTES*/;
 						break;
 				
 					case 3:
-						str = "fWe" /*WEDNESDAY*/;
+						str = "fWe" /*MIÉRCOLES*/;
 						break;
 				
 					case 4:
-						str = "fTh" /*THURSDAY*/;
+						str = "fTh" /*JUEVES*/;
 						break;
 				
 					case 5:
-						str = "fFr" /*FRIDAY*/;
+						str = "fFr" /*VIERNES*/;
 						break;
 				
 					case 6:
-						str = "fSa" /*SATURDAY*/;
+						str = "fSa" /*SÁBADO*/;
 						break;
 				}
 			
@@ -269,13 +269,13 @@ char* func_5(int iParam0) // Position - 0x3D0 (976)
 	switch (iParam0)
 	{
 		case 0:
-			return "ORG_EV_0" /*NOT SET!*/;
+			return "ORG_EV_0" /*¡NO FIJADO!*/;
 	
 		case 1:
-			return "ORG_EV_1" /*House Viewing*/;
+			return "ORG_EV_1" /*Vista de casas*/;
 	}
 
-	return "ORG_EV_0" /*NOT SET!*/;
+	return "ORG_EV_0" /*¡NO FIJADO!*/;
 }
 
 void func_6(char* sParam0) // Position - 0x400 (1024)

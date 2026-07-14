@@ -365,7 +365,7 @@ void func_7() // Position - 0x191 (401)
 				{
 					if (func_32())
 					{
-						if (func_8(&uLocal_43, 130, "LOCAUD", "LOC_CALLQ", iLocal_215, "CELL_601" /*Which Service?*/, "LOC_CALLA", "LOC_CALLF", "LOC_CALLP", 0, 0, 0, false))
+						if (func_8(&uLocal_43, 130, "LOCAUD", "LOC_CALLQ", iLocal_215, "CELL_601" /*¿Qué servicio?*/, "LOC_CALLA", "LOC_CALLF", "LOC_CALLP", 0, 0, 0, false))
 						{
 							if (!func_6())
 							{
@@ -382,7 +382,7 @@ void func_7() // Position - 0x191 (401)
 							iLocal_42 = 1;
 						}
 					}
-					else if (func_8(&uLocal_43, 130, "LOCAUD", "LOC_CALLQ", iLocal_215, "CELL_601" /*Which Service?*/, "LOC_CALLA", "LOC_CALLF", "LOC_CALLP", 0, 0, 0, false))
+					else if (func_8(&uLocal_43, 130, "LOCAUD", "LOC_CALLQ", iLocal_215, "CELL_601" /*¿Qué servicio?*/, "LOC_CALLA", "LOC_CALLF", "LOC_CALLP", 0, 0, 0, false))
 					{
 						if (!func_6())
 						{
@@ -415,14 +415,14 @@ void func_7() // Position - 0x191 (401)
 BOOL func_8(var uParam0, int iParam1, char* sParam2, char* sParam3, int iParam4, char* sParam5, char* sParam6, char* sParam7, char* sParam8, int iParam9, int iParam10, int iParam11, BOOL bParam12) // Position - 0x300 (768)
 {
 	func_31(uParam0, iParam1, sParam2, iParam10, iParam11, 0);
-	Global_23031 = false;
+	Global_23031 = 0;
 	Global_22990 = true;
 	Global_22997 = false;
 	Global_22992 = false;
 	Global_23974 = 0;
 	Global_23976 = false;
 	Global_23980 = 0;
-	Global_22988 = 0;
+	Global_22988 = false;
 	Global_23035 = true;
 	Global_23037 = true;
 	Global_22997 = false;
@@ -461,7 +461,7 @@ BOOL func_9(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x37F (895)
 					Global_22980 = 0;
 					Global_22994 = false;
 					Global_22993 = false;
-					Global_21609 = 0;
+					Global_21609 = false;
 				}
 				else
 				{
@@ -727,7 +727,7 @@ void func_17() // Position - 0x782 (1922)
 
 BOOL func_18() // Position - 0x817 (2071)
 {
-	if (Global_21610.f_1 == 1 || Global_21610.f_1 == 0)
+	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
 		return true;
 
 	return false;
@@ -911,7 +911,7 @@ void func_30() // Position - 0xBA9 (2985)
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23994 = 0;
 
-	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == 1)
+	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_21610.f_1 == 9 || Global_21609 == true)
 	{
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_22983 = 6;
@@ -1002,7 +1002,7 @@ int func_35(Player plParam0) // Position - 0xCF3 (3315)
 
 BOOL func_36(Player plParam0, int iParam1, int iParam2) // Position - 0xD0D (3341)
 {
-	Player player;
+	ePedComponentType type;
 
 	if (func_41(plParam0) == iParam1)
 	{
@@ -1012,28 +1012,28 @@ BOOL func_36(Player plParam0, int iParam1, int iParam2) // Position - 0xD0D (334
 		}
 		else
 		{
-			player = func_40(plParam0);
+			type = func_40(plParam0);
 		
-			if (player != _INVALID_PLAYER_INDEX())
-				return func_37(player) == iParam2;
+			if (type != _INVALID_PLAYER_INDEX())
+				return func_37(type) == iParam2;
 		}
 	}
 
 	return false;
 }
 
-int func_37(Player plParam0) // Position - 0xD4B (3403)
+int func_37(ePedComponentType epctParam0) // Position - 0xD4B (3403)
 {
-	if (func_38(plParam0, false))
-		return Global_1892653[plParam0 /*615*/].f_10.f_183;
+	if (func_38(epctParam0, false))
+		return Global_1892653[epctParam0 /*615*/].f_10.f_183;
 
 	return -1;
 }
 
-BOOL func_38(Player plParam0, BOOL bParam1) // Position - 0xD6E (3438)
+BOOL func_38(ePedComponentType epctParam0, BOOL bParam1) // Position - 0xD6E (3438)
 {
-	if (func_39(plParam0))
-		if (Global_1892653[plParam0 /*615*/].f_10.f_34 != -1 || bParam1 && Global_1892653[plParam0 /*615*/].f_10.f_33 != -1)
+	if (func_39(epctParam0))
+		if (Global_1892653[epctParam0 /*615*/].f_10.f_34 != -1 || bParam1 && Global_1892653[epctParam0 /*615*/].f_10.f_33 != -1)
 			return true;
 
 	return false;
@@ -1054,7 +1054,7 @@ BOOL func_39(Player plParam0) // Position - 0xDB2 (3506)
 	return true;
 }
 
-Player func_40(Player plParam0) // Position - 0xDD4 (3540)
+ePedComponentType func_40(Player plParam0) // Position - 0xDD4 (3540)
 {
 	return Global_1892653[plParam0 /*615*/].f_10.f_36;
 }

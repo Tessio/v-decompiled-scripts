@@ -1,7 +1,7 @@
 // Program registers 155837 globals at index 7 starting from Global_1835008
 void main() // Position - 0x0 (0)
 {
-	Global_1835463 = PV_COMP_BERD;
+	Global_1835463 = true;
 	Global_1835464 = -1;
 	Global_1835465 = -1;
 	Global_1835466 = -1;
@@ -144,7 +144,7 @@ void main() // Position - 0x0 (0)
 	Global_1970650 = -1;
 	Global_1970651 = -1;
 	Global_1970688 = true;
-	Global_1970798 = PV_COMP_INVALID;
+	Global_1970798 = -1;
 	Global_1971581 = -1;
 	Global_1972148 = true;
 	Global_1972218 = -1;
@@ -223,11 +223,11 @@ void main() // Position - 0x0 (0)
 	Global_1990049 = 0.95f;
 	Global_1990803 = PV_COMP_INVALID;
 	Global_1990805 = -1;
-	Global_1990820 = PV_COMP_INVALID;
+	Global_1990820 = -1;
 	Global_1990821 = true;
 	Global_1990824 = true;
 	Global_1990825 = -1;
-	Global_1990826 = PV_COMP_INVALID;
+	Global_1990826 = -1;
 	Global_1990829 = true;
 	Global_1990834 = -1;
 	Global_1990835 = -1;
