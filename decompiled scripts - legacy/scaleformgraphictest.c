@@ -11,11 +11,30 @@
 	int iLocal_9 = 0;
 	int iLocal_10 = 0;
 	int iLocal_11 = 0;
-	float fLocal_12 = 0f;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	int iLocal_15 = 0;
-	int iLocal_16 = 0;
+	var uLocal_12 = 0;
+	var uLocal_13 = -2;
+	var uLocal_14 = -2;
+	var uLocal_15 = -2;
+	var uLocal_16 = 5;
+	var uLocal_17 = 0;
+	var uLocal_18 = 0;
+	var uLocal_19 = 0;
+	var uLocal_20 = 0;
+	var uLocal_21 = 0;
+	var uLocal_22 = 2;
+	var uLocal_23 = 0;
+	var uLocal_24 = 0;
+	var uLocal_25 = 2;
+	var uLocal_26 = 0;
+	var uLocal_27 = 0;
+	var uLocal_28 = 2;
+	var uLocal_29 = 0;
+	var uLocal_30 = 0;
+	float fLocal_31 = 0f;
+	var uLocal_32 = 0;
+	var uLocal_33 = 0;
+	int iLocal_34 = 0;
+	int iLocal_35 = 0;
 #endregion
 
 void main() // Position - 0x0 (0)
@@ -30,8 +49,8 @@ void main() // Position - 0x0 (0)
 	iLocal_9 = 1;
 	iLocal_10 = 12;
 	iLocal_11 = 12;
-	fLocal_12 = 0.001f;
-	iLocal_15 = -1;
+	fLocal_31 = 0.001f;
+	iLocal_34 = -1;
 
 	if (CAM::IS_SCREEN_FADED_OUT())
 		CAM::DO_SCREEN_FADE_IN(500);
@@ -39,17 +58,17 @@ void main() // Position - 0x0 (0)
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(3))
 		func_2();
 
-	iLocal_16 = GRAPHICS::REQUEST_SCALEFORM_MOVIE("graphic_design");
+	iLocal_35 = GRAPHICS::REQUEST_SCALEFORM_MOVIE("graphic_design");
 
-	while (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(iLocal_16))
+	while (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(iLocal_35))
 	{
 		BUILTIN::WAIT(0);
 	}
 
 	while (true)
 	{
-		GRAPHICS::DRAW_SCALEFORM_MOVIE(iLocal_16, 0.5f, 0.5f, 1f, 1f, 255, 255, 255, 0, 0);
-		func_1(iLocal_16);
+		GRAPHICS::DRAW_SCALEFORM_MOVIE(iLocal_35, 0.5f, 0.5f, 1f, 1f, 255, 255, 255, 0, 0);
+		func_1(iLocal_35);
 		BUILTIN::WAIT(0);
 	}
 
@@ -58,20 +77,20 @@ void main() // Position - 0x0 (0)
 
 void func_1(int iParam0) // Position - 0x93 (147)
 {
-	if (Global_21589 == false)
+	if (Global_21628 == false)
 	{
 		if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_UP) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_DOWN) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LB) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RB) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
 		{
-			Global_21589 = true;
+			Global_21628 = true;
 			BUILTIN::SETTIMERA(0);
 		}
 	}
 	else if (BUILTIN::TIMERA() > 50)
 	{
-		Global_21589 = false;
+		Global_21628 = false;
 	}
 
-	if (Global_21589 == false)
+	if (Global_21628 == false)
 	{
 		if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT))
 		{
@@ -137,7 +156,7 @@ void func_2() // Position - 0x215 (533)
 {
 	func_3(false);
 	MISC::SET_GAME_PAUSED(false);
-	GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&iLocal_16);
+	GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&iLocal_35);
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;
 }
@@ -148,18 +167,18 @@ void func_3(BOOL bParam0) // Position - 0x231 (561)
 	{
 		func_10();
 	
-		if (Global_21610.f_1 == 10 || Global_21610.f_1 == 9)
-			MISC::SET_BIT(&Global_9464, 16);
+		if (Global_21649.f_1 == 10 || Global_21649.f_1 == 9)
+			MISC::SET_BIT(&Global_9503, 16);
 	
-		Global_21610.f_1 = 1;
+		Global_21649.f_1 = 1;
 	
 		if (func_9(0))
 			func_4(0);
 	}
-	else if (Global_21610.f_1 == true)
+	else if (Global_21649.f_1 == true)
 	{
-		if (!(Global_21610.f_1 == false))
-			Global_21610.f_1 = 3;
+		if (!(Global_21649.f_1 == false))
+			Global_21649.f_1 = 3;
 	}
 
 	return;
@@ -170,34 +189,34 @@ void func_4(int iParam0) // Position - 0x294 (660)
 	if (func_8())
 		return;
 
-	if (Global_21842)
+	if (Global_21882)
 		if (func_7())
 			func_6(true, true);
 		else
 			func_6(false, false);
 
-	if (Global_21610.f_1 == 10 || Global_21610.f_1 == 9)
-		MISC::SET_BIT(&Global_9464, 16);
+	if (Global_21649.f_1 == 10 || Global_21649.f_1 == 9)
+		MISC::SET_BIT(&Global_9503, 16);
 
 	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 
-	Global_22983 = 5;
+	Global_23023 = 5;
 
 	if (iParam0 == 1)
-		MISC::SET_BIT(&Global_9463, 30);
+		MISC::SET_BIT(&Global_9502, 30);
 	else
-		MISC::CLEAR_BIT(&Global_9463, 30);
+		MISC::CLEAR_BIT(&Global_9502, 30);
 
 	if (!func_5())
-		Global_21610.f_1 = 3;
+		Global_21649.f_1 = 3;
 
 	return;
 }
 
 BOOL func_5() // Position - 0x31E (798)
 {
-	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
+	if (Global_21649.f_1 == true || Global_21649.f_1 == false)
 		return true;
 
 	return false;
@@ -209,24 +228,24 @@ void func_6(BOOL bParam0, BOOL bParam1) // Position - 0x345 (837)
 	{
 		if (func_9(0))
 		{
-			Global_21842 = true;
+			Global_21882 = true;
 		
 			if (bParam1)
-				MOBILE::GET_MOBILE_PHONE_POSITION(&Global_21547);
+				MOBILE::GET_MOBILE_PHONE_POSITION(&Global_21586);
 		
-			Global_21538 = { Global_21556[Global_21555 /*3*/] };
-			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21538);
+			Global_21577 = { Global_21595[Global_21594 /*3*/] };
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21577);
 		}
 	}
-	else if (Global_21842 == true)
+	else if (Global_21882 == true)
 	{
-		Global_21842 = false;
-		Global_21538 = { Global_21563[Global_21555 /*3*/] };
+		Global_21882 = false;
+		Global_21577 = { Global_21602[Global_21594 /*3*/] };
 	
 		if (bParam1)
-			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21547);
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21586);
 		else
-			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21538);
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21577);
 	}
 
 	return;
@@ -234,19 +253,19 @@ void func_6(BOOL bParam0, BOOL bParam1) // Position - 0x345 (837)
 
 BOOL func_7() // Position - 0x3B9 (953)
 {
-	return IS_BIT_SET(Global_1964145, 5);
+	return IS_BIT_SET(Global_1964670, 5);
 }
 
 BOOL func_8() // Position - 0x3C7 (967)
 {
-	return IS_BIT_SET(Global_1964145, 19);
+	return IS_BIT_SET(Global_1964670, 19);
 }
 
 BOOL func_9(int iParam0) // Position - 0x3D6 (982)
 {
 	if (iParam0 == 1)
-		if (Global_21610.f_1 > 3)
-			if (IS_BIT_SET(Global_9463, 14))
+		if (Global_21649.f_1 > 3)
+			if (IS_BIT_SET(Global_9502, 14))
 				return true;
 			else
 				return false;
@@ -256,7 +275,7 @@ BOOL func_9(int iParam0) // Position - 0x3D6 (982)
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
 		return true;
 
-	if (Global_21610.f_1 > 3)
+	if (Global_21649.f_1 > 3)
 		return true;
 
 	return false;
@@ -264,10 +283,10 @@ BOOL func_9(int iParam0) // Position - 0x3D6 (982)
 
 void func_10() // Position - 0x42D (1069)
 {
-	if (Global_21610.f_1 == 9 || Global_21610.f_1 == 10)
+	if (Global_21649.f_1 == 9 || Global_21649.f_1 == 10)
 	{
-		Global_23036 = false;
-		Global_23032 = 1;
+		Global_23076 = false;
+		Global_23072 = 1;
 	}
 
 	return;

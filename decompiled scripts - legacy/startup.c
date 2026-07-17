@@ -11,49 +11,68 @@
 	int iLocal_9 = 0;
 	int iLocal_10 = 0;
 	int iLocal_11 = 0;
-	float fLocal_12 = 0f;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	int iLocal_15 = 0;
-	var uLocal_16 = 0;
+	var uLocal_12 = 0;
+	var uLocal_13 = -2;
+	var uLocal_14 = -2;
+	var uLocal_15 = -2;
+	var uLocal_16 = 5;
 	var uLocal_17 = 0;
-	char* sLocal_18 = 0;
-	float fLocal_19 = 0f;
+	var uLocal_18 = 0;
+	var uLocal_19 = 0;
 	var uLocal_20 = 0;
 	var uLocal_21 = 0;
-	var uLocal_22 = 0;
-	float fLocal_23 = 0f;
-	float fLocal_24 = 0f;
-	var uLocal_25 = 0;
+	var uLocal_22 = 2;
+	var uLocal_23 = 0;
+	var uLocal_24 = 0;
+	var uLocal_25 = 2;
 	var uLocal_26 = 0;
 	var uLocal_27 = 0;
-	float fLocal_28 = 0f;
-	float fLocal_29 = 0f;
-	float fLocal_30 = 0f;
-	var uLocal_31 = 0;
+	var uLocal_28 = 2;
+	var uLocal_29 = 0;
+	var uLocal_30 = 0;
+	float fLocal_31 = 0f;
 	var uLocal_32 = 0;
 	var uLocal_33 = 0;
 	int iLocal_34 = 0;
 	var uLocal_35 = 0;
 	var uLocal_36 = 0;
-	var uLocal_37 = 0;
-	int iLocal_38 = 0;
-	int iLocal_39 = 0;
-	int iLocal_40 = 0;
-	int iLocal_41 = 0;
-	var uLocal_42 = 0;
-	var uLocal_43 = 0;
+	char* sLocal_37 = 0;
+	float fLocal_38 = 0f;
+	var uLocal_39 = 0;
+	var uLocal_40 = 0;
+	var uLocal_41 = 0;
+	float fLocal_42 = 0f;
+	float fLocal_43 = 0f;
 	var uLocal_44 = 0;
-	char* sLocal_45 = 0;
-	char* sLocal_46 = 0;
-	char* sLocal_47 = 0;
-	var uLocal_48 = 0;
-	var uLocal_49 = 0;
+	var uLocal_45 = 0;
+	var uLocal_46 = 0;
+	float fLocal_47 = 0f;
+	float fLocal_48 = 0f;
+	float fLocal_49 = 0f;
 	var uLocal_50 = 0;
 	var uLocal_51 = 0;
 	var uLocal_52 = 0;
-	var uLocal_53 = 0;
-	int iLocal_54 = 0;
+	int iLocal_53 = 0;
+	var uLocal_54 = 0;
+	var uLocal_55 = 0;
+	var uLocal_56 = 0;
+	int iLocal_57 = 0;
+	int iLocal_58 = 0;
+	int iLocal_59 = 0;
+	int iLocal_60 = 0;
+	var uLocal_61 = 0;
+	var uLocal_62 = 0;
+	var uLocal_63 = 0;
+	char* sLocal_64 = 0;
+	char* sLocal_65 = 0;
+	char* sLocal_66 = 0;
+	var uLocal_67 = 0;
+	var uLocal_68 = 0;
+	var uLocal_69 = 0;
+	var uLocal_70 = 0;
+	var uLocal_71 = 0;
+	var uLocal_72 = 0;
+	int iLocal_73 = 0;
 #endregion
 
 void main() // Position - 0x0 (0)
@@ -73,32 +92,32 @@ void main() // Position - 0x0 (0)
 	iLocal_9 = 1;
 	iLocal_10 = 12;
 	iLocal_11 = 12;
-	fLocal_12 = 0.001f;
-	iLocal_15 = -1;
-	sLocal_18 = "NULL";
-	fLocal_19 = 0f;
-	fLocal_23 = -0.0375f;
-	fLocal_24 = 0.17f;
-	fLocal_28 = 80f;
-	fLocal_29 = 140f;
-	fLocal_30 = 180f;
-	iLocal_34 = 3;
-	iLocal_38 = 1;
-	iLocal_39 = 65;
-	iLocal_40 = 49;
-	iLocal_41 = 64;
-	sLocal_45 = "CHECKPOINT_NORMAL";
-	sLocal_46 = "CHECKPOINT_MISSED";
-	sLocal_47 = "CHECKPOINT_PERFECT";
-	uLocal_48 = { 1694.7395f, 3276.5024f, 41.2796f };
-	uLocal_51 = { 8.79494f, 0.59893f, 154.8464f };
+	fLocal_31 = 0.001f;
+	iLocal_34 = -1;
+	sLocal_37 = "NULL";
+	fLocal_38 = 0f;
+	fLocal_42 = -0.0375f;
+	fLocal_43 = 0.17f;
+	fLocal_47 = 80f;
+	fLocal_48 = 140f;
+	fLocal_49 = 180f;
+	iLocal_53 = 3;
+	iLocal_57 = 1;
+	iLocal_58 = 65;
+	iLocal_59 = 49;
+	iLocal_60 = 64;
+	sLocal_64 = "CHECKPOINT_NORMAL";
+	sLocal_65 = "CHECKPOINT_MISSED";
+	sLocal_66 = "CHECKPOINT_PERFECT";
+	uLocal_67 = { 1694.7395f, 3276.5024f, 41.2796f };
+	uLocal_70 = { 8.79494f, 0.59893f, 154.8464f };
 	func_82(0);
 	MISC::NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();
 	HUD::SET_PLAYER_IS_IN_DIRECTOR_MODE(false);
 	MISC::SET_PLAYER_IS_IN_ANIMAL_FORM(false);
 	STREAMING::REMOVE_IPL("prologue_DistantLights");
 	STREAMING::REMOVE_IPL("prologue_LODLights");
-	iLocal_54 = 0;
+	iLocal_73 = 0;
 	flag = func_81();
 
 	if (MISC::IS_COMMANDLINE_END_USER_BENCHMARK() || MISC::LANDING_SCREEN_STARTED_END_USER_BENCHMARK())
@@ -109,9 +128,9 @@ void main() // Position - 0x0 (0)
 
 	MISC::SET_INSTANCE_PRIORITY_MODE(0);
 	func_77();
-	Global_4525702 = 0;
-	MISC::SET_BIT(&Global_4525702, 0);
-	MISC::SET_BIT(&Global_4525702, 1);
+	Global_4525781 = 0;
+	MISC::SET_BIT(&Global_4525781, 0);
+	MISC::SET_BIT(&Global_4525781, 1);
 
 	for (i = 0; i < 132; i = i + 1)
 	{
@@ -120,7 +139,7 @@ void main() // Position - 0x0 (0)
 
 	func_33();
 
-	switch (iLocal_54)
+	switch (iLocal_73)
 	{
 		case 0:
 			func_32(joaat("standard_global_init"), DEFAULT);
@@ -129,11 +148,11 @@ void main() // Position - 0x0 (0)
 	}
 
 	BUILTIN::WAIT(0);
-	Global_80282 = true;
+	Global_80339 = true;
 	Global_3 = flag;
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 
-	switch (iLocal_54)
+	switch (iLocal_73)
 	{
 		case 0:
 			Global_2883694 = false;
@@ -141,22 +160,22 @@ void main() // Position - 0x0 (0)
 			func_32(joaat("standard_global_reg"), DEFAULT);
 			SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("standard_global_reg");
 		
-			while (!IS_BIT_SET(Global_4525702, 0) || !IS_BIT_SET(Global_4525702, 1) || !IS_BIT_SET(Global_4525702, 2))
+			while (!IS_BIT_SET(Global_4525781, 0) || !IS_BIT_SET(Global_4525781, 1) || !IS_BIT_SET(Global_4525781, 2))
 			{
-				!IS_BIT_SET(Global_4525702, 0);
-				!IS_BIT_SET(Global_4525702, 1);
-				!IS_BIT_SET(Global_4525702, 2);
+				!IS_BIT_SET(Global_4525781, 0);
+				!IS_BIT_SET(Global_4525781, 1);
+				!IS_BIT_SET(Global_4525781, 2);
 				BUILTIN::WAIT(0);
 			}
 		
-			MISC::START_SAVE_DATA(&Global_114904, 1, true);
-			MISC::REGISTER_FLOAT_TO_SAVE(&Global_114904, "fSaveVersion");
+			MISC::START_SAVE_DATA(&Global_114963, 1, true);
+			MISC::REGISTER_FLOAT_TO_SAVE(&Global_114963, "fSaveVersion");
 			MISC::STOP_SAVE_DATA();
 		
 			if (Global_1)
-				Global_0 = Global_114904;
+				Global_0 = Global_114963;
 		
-			Global_114904 = 1.7f;
+			Global_114963 = 1.7f;
 		
 			if (Global_1)
 				if (Global_0 != 1.7f)
@@ -263,8 +282,8 @@ void func_1() // Position - 0x308 (776)
 
 void func_2() // Position - 0xA26 (2598)
 {
-	Global_153783 = 1;
-	Global_153784 = 1;
+	Global_153844 = 1;
+	Global_153845 = 1;
 	return;
 }
 
@@ -1414,7 +1433,7 @@ void func_21(float fParam0) // Position - 0x2BA8 (11176)
 
 void func_22() // Position - 0x2C0A (11274)
 {
-	Global_114904.f_26441.f_4 = 0;
+	Global_114963.f_26443.f_4 = 0;
 	return;
 }
 
@@ -1429,7 +1448,7 @@ void func_23() // Position - 0x2C1C (11292)
 	STATS::STAT_GET_INT(joaat("CONTENT_HELI_VEH") /* TUNEABLE: CONTENT_HELI_VEH */, &outValue3, -1);
 
 	if (outValue >= 0 && outValue2 >= 0 && outValue3 >= 0)
-		Global_114904.f_668.f_1319 = Global_114904.f_668.f_1319 - outValue;
+		Global_114963.f_668.f_1319 = Global_114963.f_668.f_1319 - outValue;
 
 	return;
 }
@@ -1444,11 +1463,11 @@ void func_24() // Position - 0x2C7B (11387)
 	{
 		for (j = 171; j <= 198; j = j + 1)
 		{
-			if (IS_BIT_SET(Global_114904.f_25189[j], i))
+			if (IS_BIT_SET(Global_114963.f_25191[j], i))
 			{
-				MISC::CLEAR_BIT(&Global_114904.f_25189[j], i);
+				MISC::CLEAR_BIT(&Global_114963.f_25191[j], i);
 				num = j + (198 - 171) + 1;
-				MISC::SET_BIT(&Global_114904.f_25189[num], i);
+				MISC::SET_BIT(&Global_114963.f_25191[num], i);
 			}
 		}
 	}
@@ -1459,7 +1478,7 @@ void func_24() // Position - 0x2C7B (11387)
 void func_25() // Position - 0x2CE7 (11495)
 {
 	if (func_26(54) || func_26(55) || func_26(56) || func_26(57) || func_26(58))
-		MISC::SET_BIT(&(Global_114904.f_10023.f_25), 6);
+		MISC::SET_BIT(&(Global_114963.f_10025.f_25), 6);
 
 	return;
 }
@@ -1469,7 +1488,7 @@ BOOL func_26(int iParam0) // Position - 0x2D36 (11574)
 	if (iParam0 == 94 || iParam0 == -1)
 		return false;
 
-	return Global_114904.f_9092.f_330[iParam0 /*6*/];
+	return Global_114963.f_9094.f_330[iParam0 /*6*/];
 }
 
 void func_27() // Position - 0x2D62 (11618)
@@ -1479,25 +1498,25 @@ void func_27() // Position - 0x2D62 (11618)
 
 void func_28() // Position - 0x2D6A (11626)
 {
-	if (Global_114904.f_9092.f_99.f_205[7] != 0)
-		if (!Global_114904.f_9092.f_330[86 /*6*/])
-			Global_114904.f_9092.f_330[86 /*6*/] = true;
+	if (Global_114963.f_9094.f_99.f_205[7] != 0)
+		if (!Global_114963.f_9094.f_330[86 /*6*/])
+			Global_114963.f_9094.f_330[86 /*6*/] = true;
 
-	if (Global_114904.f_9092.f_99.f_205[8] != 0)
-		if (!Global_114904.f_9092.f_330[71 /*6*/])
-			Global_114904.f_9092.f_330[71 /*6*/] = true;
+	if (Global_114963.f_9094.f_99.f_205[8] != 0)
+		if (!Global_114963.f_9094.f_330[71 /*6*/])
+			Global_114963.f_9094.f_330[71 /*6*/] = true;
 
-	if (Global_114904.f_9092.f_99.f_205[9] != 0)
-		if (!Global_114904.f_9092.f_330[91 /*6*/])
-			Global_114904.f_9092.f_330[91 /*6*/] = true;
+	if (Global_114963.f_9094.f_99.f_205[9] != 0)
+		if (!Global_114963.f_9094.f_330[91 /*6*/])
+			Global_114963.f_9094.f_330[91 /*6*/] = true;
 
-	if (Global_114904.f_9092.f_99.f_205[10] != 0)
-		if (!Global_114904.f_9092.f_330[67 /*6*/])
-			Global_114904.f_9092.f_330[67 /*6*/] = true;
+	if (Global_114963.f_9094.f_99.f_205[10] != 0)
+		if (!Global_114963.f_9094.f_330[67 /*6*/])
+			Global_114963.f_9094.f_330[67 /*6*/] = true;
 
-	if (Global_114904.f_9092.f_99.f_205[11] != 0)
-		if (!Global_114904.f_9092.f_330[77 /*6*/])
-			Global_114904.f_9092.f_330[77 /*6*/] = true;
+	if (Global_114963.f_9094.f_99.f_205[11] != 0)
+		if (!Global_114963.f_9094.f_330[77 /*6*/])
+			Global_114963.f_9094.f_330[77 /*6*/] = true;
 
 	func_29(195, 198);
 	func_29(195, 197);
@@ -1517,33 +1536,33 @@ void func_29(int iParam0, int iParam1) // Position - 0x2E8A (11914)
 	float num3;
 	BOOL flag3;
 
-	unk = { Global_114904.f_10201[iParam0 /*12*/] };
-	p_num = Global_114904.f_10201[iParam0 /*12*/].f_4;
-	flag = Global_114904.f_10201[iParam0 /*12*/].f_5;
-	num = Global_114904.f_10201[iParam0 /*12*/].f_6;
-	p_num2 = Global_114904.f_10201[iParam0 /*12*/].f_7;
-	flag2 = Global_114904.f_10201[iParam0 /*12*/].f_8;
-	num2 = Global_114904.f_10201[iParam0 /*12*/].f_9;
-	num3 = Global_114904.f_10201[iParam0 /*12*/].f_10;
-	flag3 = Global_114904.f_10201[iParam0 /*12*/].f_11;
-	Global_114904.f_10201[iParam0 /*12*/] = { Global_114904.f_10201[iParam1 /*12*/] };
-	Global_114904.f_10201[iParam0 /*12*/].f_4 = Global_114904.f_10201[iParam1 /*12*/].f_4;
-	Global_114904.f_10201[iParam0 /*12*/].f_5 = Global_114904.f_10201[iParam1 /*12*/].f_5;
-	Global_114904.f_10201[iParam0 /*12*/].f_6 = Global_114904.f_10201[iParam1 /*12*/].f_6;
-	Global_114904.f_10201[iParam0 /*12*/].f_7 = Global_114904.f_10201[iParam1 /*12*/].f_7;
-	Global_114904.f_10201[iParam0 /*12*/].f_8 = Global_114904.f_10201[iParam1 /*12*/].f_8;
-	Global_114904.f_10201[iParam0 /*12*/].f_9 = Global_114904.f_10201[iParam1 /*12*/].f_9;
-	Global_114904.f_10201[iParam0 /*12*/].f_10 = Global_114904.f_10201[iParam1 /*12*/].f_10;
-	Global_114904.f_10201[iParam0 /*12*/].f_11 = Global_114904.f_10201[iParam1 /*12*/].f_11;
-	Global_114904.f_10201[iParam1 /*12*/] = { unk };
-	Global_114904.f_10201[iParam1 /*12*/].f_4 = p_num;
-	Global_114904.f_10201[iParam1 /*12*/].f_5 = flag;
-	Global_114904.f_10201[iParam1 /*12*/].f_6 = num;
-	Global_114904.f_10201[iParam1 /*12*/].f_7 = p_num2;
-	Global_114904.f_10201[iParam1 /*12*/].f_8 = flag2;
-	Global_114904.f_10201[iParam1 /*12*/].f_9 = num2;
-	Global_114904.f_10201[iParam1 /*12*/].f_10 = num3;
-	Global_114904.f_10201[iParam1 /*12*/].f_11 = flag3;
+	unk = { Global_114963.f_10203[iParam0 /*12*/] };
+	p_num = Global_114963.f_10203[iParam0 /*12*/].f_4;
+	flag = Global_114963.f_10203[iParam0 /*12*/].f_5;
+	num = Global_114963.f_10203[iParam0 /*12*/].f_6;
+	p_num2 = Global_114963.f_10203[iParam0 /*12*/].f_7;
+	flag2 = Global_114963.f_10203[iParam0 /*12*/].f_8;
+	num2 = Global_114963.f_10203[iParam0 /*12*/].f_9;
+	num3 = Global_114963.f_10203[iParam0 /*12*/].f_10;
+	flag3 = Global_114963.f_10203[iParam0 /*12*/].f_11;
+	Global_114963.f_10203[iParam0 /*12*/] = { Global_114963.f_10203[iParam1 /*12*/] };
+	Global_114963.f_10203[iParam0 /*12*/].f_4 = Global_114963.f_10203[iParam1 /*12*/].f_4;
+	Global_114963.f_10203[iParam0 /*12*/].f_5 = Global_114963.f_10203[iParam1 /*12*/].f_5;
+	Global_114963.f_10203[iParam0 /*12*/].f_6 = Global_114963.f_10203[iParam1 /*12*/].f_6;
+	Global_114963.f_10203[iParam0 /*12*/].f_7 = Global_114963.f_10203[iParam1 /*12*/].f_7;
+	Global_114963.f_10203[iParam0 /*12*/].f_8 = Global_114963.f_10203[iParam1 /*12*/].f_8;
+	Global_114963.f_10203[iParam0 /*12*/].f_9 = Global_114963.f_10203[iParam1 /*12*/].f_9;
+	Global_114963.f_10203[iParam0 /*12*/].f_10 = Global_114963.f_10203[iParam1 /*12*/].f_10;
+	Global_114963.f_10203[iParam0 /*12*/].f_11 = Global_114963.f_10203[iParam1 /*12*/].f_11;
+	Global_114963.f_10203[iParam1 /*12*/] = { unk };
+	Global_114963.f_10203[iParam1 /*12*/].f_4 = p_num;
+	Global_114963.f_10203[iParam1 /*12*/].f_5 = flag;
+	Global_114963.f_10203[iParam1 /*12*/].f_6 = num;
+	Global_114963.f_10203[iParam1 /*12*/].f_7 = p_num2;
+	Global_114963.f_10203[iParam1 /*12*/].f_8 = flag2;
+	Global_114963.f_10203[iParam1 /*12*/].f_9 = num2;
+	Global_114963.f_10203[iParam1 /*12*/].f_10 = num3;
+	Global_114963.f_10203[iParam1 /*12*/].f_11 = flag3;
 	return;
 }
 
@@ -1553,9 +1572,9 @@ void func_30() // Position - 0x308E (12430)
 
 	for (i = 0; i < 16; i = i + 1)
 	{
-		if (!func_31(Global_114904.f_24911[i /*4*/]))
-			if (Global_114904.f_24911[i /*4*/] != _CHAR_NULL)
-				Global_114904.f_24911[i /*4*/] = _CHAR_NULL;
+		if (!func_31(Global_114963.f_24913[i /*4*/]))
+			if (Global_114963.f_24913[i /*4*/] != _CHAR_NULL)
+				Global_114963.f_24913[i /*4*/] = _CHAR_NULL;
 	}
 
 	return;
@@ -11697,343 +11716,343 @@ struct<4> func_65(int iParam0) // Position - 0x21584 (136580)
 	switch (iParam0)
 	{
 		case 1:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_1DES" /*¡Este tríplex de lujo está listo para entrar a vivir! El anterior dueño está tan forrado que se dejó los muebles. Ven y prepárate para tener un montón de nuevos amigos superficiales cuando la gente averigüe que vives en el Eclipse Boulevard de Rockford Hills. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_1DES" /*¡Este tríplex de lujo está listo para entrar a vivir! El dueño anterior tiene tanto dinero que dejó los muebles. Ven y prepárate para tener un montón de nuevos amigos superficiales cuando la gente averigüe que vives en Eclipse Boulevard de Rockford Hills.~n~Incluye garage para 10 coches.*/, 16);
 			break;
 	
 		case 2:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_2DES" /*¿Un enorme tríplex de lujo amueblado a este precio? ¡Menuda ganga! Aprovéchate ahora, antes de que el presidente Lawton pierda las próximas elecciones y te frían a impuestos. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_2DES" /*¿Un enorme tríplex de lujo amueblado a este precio? ¡Qué ganga! Aprovéchate ahora, antes de que el presidente Lawton pierda las próximas elecciones y suban los impuestos. Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 3:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_3DES" /*Eclipse Towers en Eclipse Boulevard... ¡La mejor dirección en todo Rockford Hills! Disfruta de las impresionantes vistas panorámicas a través de tu pared completamente acristalada, sírvete una copa y brinda por tu maravillosa vida mientras miras por encima del hombro al mundo entero. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_3DES" /*Eclipse Towers en Eclipse Boulevard... ¡La mejor dirección en todo Rockford Hills! Disfruta de las impresionantes vistas panorámicas a través de tu pared completamente acristalada, sírvete una copa y brinda por tu maravillosa vida mientras miras por encima del hombro al mundo entero. Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 4:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_4DES" /*¡Vida de alto standing a precios burgueses! Si eres un millonario que quiere vivir como un multimillonario, no encontrarás un piso de lujo mejor en todo Rockford Hills. Pero tienes que darte prisa, ¡esto no va a durar siempre! Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_4DES" /*¡Vida lujosa a precio de plebeyos! Si eres un millonario que quiere vivir como un multimillonario, no encontrarás un departamento de lujo mejor en todo Rockford Hills. Pero tienes que darte prisa, ¡esto no va a durar siempre! Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 5:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_5DES" /*Con su propio local de Bean Machine en la planta baja y muy cerca del centro financiero, este piso de lujo en Alta Street, en el centro de Los Santos, es el apartamento ideal para el banquero que nunca duerme porque disfruta demasiado jugando con el dinero de los demás. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_5DES" /*Con su propio local de Bean Machine en la planta baja y muy cerca del centro financiero, este departamento de lujo en Alta Street, en el centro de Los Santos, es ideal para el banquero que nunca duerme porque disfruta demasiado jugando con el dinero de los demás. Incluye garage para 10 coches.*/, 16);
 			break;
 	
 		case 6:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_6DES" /*En estos pisos de lujo situados en Alta Street, el epicentro de los distritos financiero, de negocios y comercial de Los Santos, nunca más tendrás que ver a un pobre si no quieres. Tendrás todo lo que necesitas a la vuelta de la esquina. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_6DES" /*En estos departamentos de lujo situados en Alta Street, el epicentro de los distritos financiero, de negocios y comercial de Los Santos, nunca más tendrás que ver a un pobre si no quieres. Tendrás todo lo que necesitas a la vuelta de la esquina. Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 7:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_7DES" /*Este piso de lujo en Marathon Avenue con Prosperity Street está en uno de los edificios de apartamentos más sofisticados de Del Perro, justo enfrente del club nocturno Bahama Mamas, y resulta ideal para relajarse al final de una dura jornada de trabajo. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_7DES" /*Este departamento de lujo en Marathon Avenue con Prosperity Street está en uno de los edificios más sofisticados de Del Perro, justo enfrente del club nocturno Bahama Mamas, y resulta ideal para relajarse al final de un duro día de trabajo. Incluye garage para 10 coches.*/, 16);
 			break;
 	
 		case 8:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_8DES" /*A unos pasos de un parque de skate, este coqueto y recogido estudio de un dormitorio en Hawick es perfecto para familias con adolescentes o gafapastas treintañeros con bicis sin marchas. Incluye un garaje de seis plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_8DES" /*A unos pasos de un parque de skate, este coqueto y compacto estudio de un dormitorio en Hawick es perfecto para familias con adolescentes o hipsters treintañeros con bicis sin velocidades. Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 9:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_9DES" /*¡Este apartamento de un dormitorio recién reformado en el centro de Vinewood es una ganga!~n~¡Corre porque no va a durar! ¡O sí!~n~¡Te rebajamos 10µ000µ$!~n~¡Menuda oferta!~n~¡Es un precio estupendo, así que múdate ya!~n~Todo es negociable. El vendedor es proclive.~n~¡Se vuelve a rebajar para que se venda deprisa!~n~¡Que alguien lo compre de una santa vez!~n~Incluye un garaje de seis plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_9DES" /*¡Este departamento de un dormitorio recién reformado en el centro de Vinewood es una gran oportunidad!~n~¡Corre porque no va a durar! ¡O sí!~n~¡Te rebajamos $10,000!~n~¡Qué ofertón!~n~¡Es un precio maravilloso, múdate ya!~n~Todo negociable. Vendedor motivado.~n~¡Se volvió a rebajar el precio!~n~¡Qué alguien lo compre de una santa vez! Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 10:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_10DES" /*El edificio ha visto días mejores y lo más parecido a un portero es el mendigo que a veces tienes que saltar para entrar de noche en el vestíbulo, pero no creo que encuentres otro apartamento en Vinewood que te puedas permitir. Espero que te guste el olor a orina.~n~Incluye un garaje de seis plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_10DES" /*El edificio ha vivido mejores días y lo más parecido a un portero es el mendigo que a veces tienes que saltar para entrar de noche en el vestíbulo, pero no creo que encuentres otro departamento en Vinewood que puedas pagar. Espero que te guste el olor a orines.~n~Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 11:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_11DES" /*¡Apartamento acogedor de un dormitorio en una manzana muy coqueta en Vinewood Oeste! El edificio tiene pocos pisos, con lo que terminarás aborreciendo a no muchos vecinos. Incluye un garaje de seis plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_11DES" /*¡Departamento acogedor de un dormitorio en una cuadra muy coqueta en Vinewood Oeste! El edificio tiene pocos pisos, así que no terminarás odiando a tantos vecinos. Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 12:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_12DES" /*El edificio de apartamentos Royale en Vinewood Oeste tal vez no tenga un aspecto regio, pero dentro vivirás como un príncipe. Nota: los príncipes son unos capullos.~n~Incluye un garaje de seis plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_12DES" /*El edificio de departamentos Royale en Vinewood Oeste tal vez no tenga un aspecto regio, pero vivirás como un príncipe. Nota: los príncipes son unos imbéciles.~n~Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 13:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_13DES" /*Este apartamento moderno y reformado de un dormitorio está en un edificio bien cuidado en un rincón estupendo de Vinewood Oeste. ¡Compra ahora que el mercado se ha desplomado! ¡Los precios no pueden bajar más! ¡Esta vez estamos completamente seguros! Incluye un garaje de 6 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_13DES" /*Este departamento moderno y reformado de un dormitorio está en un edificio bien cuidado en un rincón estupendo de Vinewood Oeste. ¡Compra ahora que el mercado se desplomó! ¡Los precios no pueden bajar más! ¡Esta vez estamos completamente seguros! Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 14:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_14DES" /*¡Hola, marinero! Este apartamento reformado y completamente amueblado está en el paseo marítimo de Puerto Del Sol. Ideal para ligar con otros marineros.~n~Incluye un garaje de seis plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_14DES" /*¡Hola, marinero! Este departamento reformado y completamente amueblado está en el paseo marítimo de Puerto del Sol. Ideal para ligar con otros marineros.~n~Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 15:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_15DES" /*¡La belleza de la ubicación depende del cristal con que se mire! Algunos lo consideran un cruce atascado, pero nosotros pensamos que está muy bien comunicado. Hay quien lo llama Little Seoul, pero nosotros lo llamamos Vespucci para subir el precio.~n~Incluye un garaje de seis plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_15DES" /*¡La belleza de la ubicación depende del cristal con que se mire! Algunos lo consideran un cruce con tráfico, pero nosotros pensamos que está muy bien comunicado. Hay quien lo llama Little Seoul, pero nosotros lo llamamos Vespucci para subir el precio.~n~Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 16:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_16DES" /*Únete a la gente creativa que acude a este barrio. Cerca de un cine y de una iglesia, este apartamento en la Dream Tower es ideal para los amantes de la ficción.~n~Incluye un garaje de seis plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_16DES" /*Únete a la gente creativa que acude a este barrio. Cerca de un cine y de una iglesia, este departamento en la Dream Tower es ideal para los amantes de la ficción.~n~Incluye garage para 6 coches.*/, 16);
 			break;
 	
 		case 17:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_17DES" /*Las carencias en cuanto a espacio y estado de este apartamento de Hawick se compensan por su cercanía a la licorería de la zona. Ahoga las penas mientras te ahogas con las deudas.~n~Incluye un garaje de dos plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_17DES" /*Las carencias en cuanto a espacio y estado de este departamento de Hawick se compensan por su cercanía a la licorería de la zona. Ahoga las penas mientras te ahogas con las deudas.~n~Incluye garage para 2 coches.*/, 16);
 			break;
 	
 		case 18:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_18DES" /*¡Con muebles clásicos! Este acogedor apartamento en Vinewood Oeste solo ha tenido un dueño y no tocó nada desde que se mudó 40 años atrás. Luego se murió y nadie se dio cuenta hasta pasados unos cuantos días. Incluye un garaje de dos plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_18DES" /*¡Con muebles clásicos! Este acogedor departamento en Vinewood Oeste solo ha tenido un dueño y no tocó nada desde que se mudó 40 años atrás. Luego se murió y nadie se dio cuenta hasta después de unos cuantos días. Incluye garage para 2 coches.*/, 16);
 			break;
 	
 		case 19:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_19DES" /*Este apartamento compacto está en un edificio de dos alturas y se mantiene en su estado original. ¡Hay vistas parciales al mar! Incluye un garaje de dos plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_19DES" /*Este departamento compacto está en un edificio de doble altura y se mantiene en su estado original. ¡Con vista parcial al mar! Incluye garage para 2 coches.*/, 16);
 			break;
 	
 		case 20:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_20DES" /*El edificio de apartamentos ha visto mejores días, pero este piso asequible aún tiene alma y mucho potencial. ¡Échale imaginación! Y llama a un fumigador.~n~Incluye un garaje de dos plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_20DES" /*El edificio de departamentos ha vivido mejores días, pero este depa barato aún tiene alma y mucho potencial. ¡Usa tu imaginación! Y llama a un exterminador.~n~Incluye garage para 2 coches.*/, 16);
 			break;
 	
 		case 21:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_21DES" /*Este apartamento a reformar tiene espectaculares vistas al cementerio que te recordarán tu mortalidad y te servirán para que te pongas las pilas y te compres un apartamento mejor en el futuro.~n~Incluye un garaje de dos plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_21DES" /*Este departamento para reformar tiene una vista espectacular al cementerio que te recordará tu mortalidad y te servirá para que te pongas las pilas y te compres un departamento mejor en el futuro.~n~Incluye garage para 2 coches.*/, 16);
 			break;
 	
 		case 22:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_22DES" /*Con Wigwam y Up-a-Atom en la puerta, a los fanáticos de las hamburguesas les costará decidirse en este apartamento situado en Del Perro o Morningwood, según el lado del edificio en el que estés. Incluye un garaje de dos plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_22DES" /*Con Wigwam y Up-n-Atom en la puerta, a los fanáticos de las hamburguesas les costará decidirse en este departamento ubicado en Del Perro o Morningwood, según el lado del edificio en el que estés. Incluye garage para 2 coches.*/, 16);
 			break;
 	
 		case 23:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_23DES" /*Con una peculiar decoración retro y moqueta por todas partes, se huele la historia de este apartamento de Del Perro, que casi tiene vistas despejadas al mar, por un precio prácticamente imbatible. Incluye un garaje de dos plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_23DES" /*Con una peculiar decoración retro y alfombras por todas partes, se puede oler la historia de este departamento de Del Perro, que casi tiene una vista despejada al mar, por un precio prácticamente imbatible. Incluye garage para 2 coches.*/, 16);
 			break;
 	
 		case 24:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_24DES" /*Garaje de diez plazas: situado junto a todas las carreteras importantes que entran y salen de Los Santos, este espacioso garaje es ideal para el hombre o mujer que tal vez deba largarse deprisa de la ciudad. O que tenga obsesión por los coches.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_24DES" /*Garage para 10 coches - Situado junto a todas las carreteras importantes que entran y salen de Los Santos, este espacioso garage es ideal para el hombre o mujer que tal vez deba largarse deprisa de la ciudad. O que tenga obsesión por los coches.*/, 16);
 			break;
 	
 		case 25:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_25DES" /*Garaje de diez plazas: si quieres conservar tu intimidad, este aislado garaje en Los Santos Este es ideal.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_25DES" /*Garage para 6 coches - Si quieres conservar tu intimidad, este aislado garage en Los Santos Este es ideal.*/, 16);
 			break;
 	
 		case 26:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_26DES" /*Garaje de diez plazas: espacioso garaje en el mejor rincón de Los Santos Este. Con vistas panorámicas al deterioro urbano y a tiro de piedra de los pandilleros.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_26DES" /*Garage para 10 coches - Espacioso garage en el mejor rincón de Los Santos Este. Con vista panorámica de las ruinas urbanas, a un paso de los pandilleros.*/, 16);
 			break;
 	
 		case 27:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_27DES" /*Garaje de diez plazas: garaje recién reformado con mucho espacio y acceso directo a la calle. ¿Qué mejor lugar para guardar coches nuevos en el barrio con mayor índice de criminalidad de Los Santos?*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_27DES" /*Garage para 10 coches - Recién reformado con mucho espacio y acceso directo a la calle. ¿Qué mejor lugar para guardar vehículos nuevos que el barrio con mayor índice de criminalidad de Los Santos?*/, 16);
 			break;
 	
 		case 28:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_28DES" /*Garaje de seis plazas: garaje de buen tamaño en un sitio tranquilo a tiro de piedra del tren para cuando te sientas culpable por la huella de carbono que dejan tus seis vehículos.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_28DES" /*Garage para 6 coches - De buen tamaño en un lugar tranquilo muy cerca del tren para cuando te sientas culpable por la huella de carbono que dejan tus seis coches.*/, 16);
 			break;
 	
 		case 29:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_29DES" /*Garaje de dos plazas: a unos pocos pasos de una nociva subestación eléctrica, si ocupas este garaje de dos plazas en Los Santos Este no tendrás que preocuparte de los apagones ni de llegar a viejo.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_29DES" /*Garage para 2 coches - A unos pocos pasos de una nociva subestación eléctrica, en este garage en Los Santos Este no tendrás que preocuparte de los apagones ni de llegar a viejo.*/, 16);
 			break;
 	
 		case 30:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_30DES" /*Garaje de dos plazas: ¡cómodo por dentro y con aguas residuales por fuera! Este garaje ofrece vistas panorámicas de los canales de los Santos.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_30DES" /*¡Cómodo por dentro y con aguas residuales por fuera! Este garage para dos coches ofrece vista panorámica de los canales de los Santos.*/, 16);
 			break;
 	
 		case 31:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_31DES" /*Garaje de dos plazas: ¡aviso para los cazadores de gangas! Con la economía actual, lo ideal son las propiedades deseables en las zonas indeseables. ¿Los Santos Este? ¡Preferimos llamarlo "sur de Vinewood"! ¡Y si la economía se sigue desplomando, podrás vivir en él!*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_31DES" /*Garage para 2 coches - ¡Aviso para los cazadores de gangas! Con la economía actual, lo ideal son las propiedades deseables en las zonas indeseables. ¿Los Santos Este? ¡Preferimos llamarlo "sur de Vinewood"! ¡Y si la economía se sigue desplomando, podrás vivir en él!*/, 16);
 			break;
 	
 		case 32:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_32DES" /*Garaje de seis plazas: este garaje está en una zona de muerte... ¡literalmente! ¡Sé el primero en aburguesar este barrio! ¡Dentro de 20 años se pondrá de moda!*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_32DES" /*Garage para 6 coches - Este garage está en una zona de muerte... ¡literalmente! ¡Sé el primero en aburguesar este barrio! ¡Dentro de 20 años se pondrá de moda!*/, 16);
 			break;
 	
 		case 33:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_33DES" /*Garaje de seis plazas: ¿exigente en el plano inmobiliario y poco exquisito con las mujeres? Termina el día cambiando el aceite en este garaje situado frente a un club de striptease.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_33DES" /*Garage para 6 coches - ¿Exigente en el plano inmobiliario pero no con las mujeres? Termina el día cambiando tu propio aceite en este garage ubicado frente a un club de striptease.*/, 16);
 			break;
 	
 		case 34:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_34DES" /*¡En el complejo de apartamentos de lujo Del Perro Heights! ¡Para disfrute de todo voyeur! Este espectacular piso es uno de los más bajos, por lo que no disfrutarás de las mejores vistas; sin embargo, todos los edificios de alrededor podrán ser testigos de tu maravillosa vida las veinticuatro horas del día. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_34DES" /*¡En el complejo de departamentos de lujo Del Perro Heights! ¡Para el disfrute de todo voyeur! Este espectacular departamento es uno de los más bajos, por lo que no disfrutarás de la mejor vista; sin embargo, todos los edificios de alrededor podrán ser testigos de tu maravillosa vida las veinticuatro horas del día. Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 35:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_35DES" /*¡Atención, actores! Esta es la oportunidad perfecta para vivir en la cotizada Movie Star Way, en lo mejorcito de Rockford Hills, justo enfrente de los legendarios estudios cinematográficos de Richards Majestic. ¡Id dando tumbos desde la puerta de casa hasta el plató! Incluye un garaje de 10 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_35DES" /*¡Atención, actores! Esta es la oportunidad perfecta para vivir en la cotizada Movie Star Way, en lo mejorcito de Rockford Hills, justo enfrente de los legendarios estudios cinematográficos de Richards Majestic. ¡Vayan tambaleándose desde la puerta de casa hasta el set! Incluye garage para 10 coches.*/, 16);
 			break;
 	
 		case 36:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_36DES" /*¡Movie Star Way! No pierdas esta oportunidad de vivir en uno de los complejos de apartamentos más exclusivos de Rockford Hills. Hasta el conserje gana un sueldo de seis cifras en este edificio.~n~Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_36DES" /*¡Movie Star Way! No pierdas esta oportunidad de vivir en uno de los complejos de departamentos más exclusivos de Rockford Hills. Hasta el conserje gana un sueldo de seis cifras en este edificio.~n~Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 37:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_37DES" /*¡Este espectacular piso en Star Way, en lo mejorcito de Rockford Hills, está para entrar a vivir! Si eres el típico filisteo rico de Los Santos sin ningún gusto, no te preocupes. Lo hemos elegido todo por ti: el mobiliario, los accesorios y las piezas de arte.~n~Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_37DES" /*¡Espectacular departamento en Star Way, en lo mejor de Rockford Hills, está para entrar a vivir! Si eres el típico filisteo rico de Los Santos con mal gusto, no te preocupes. Elegimos todo por ti: el mobiliario, los accesorios y las piezas de arte.~n~Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 38:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_38DES" /*¡Se acabaron las llamadas cortadas por falta de cobertura! Este piso de lujo está situado en el mismo edificio que la sede de Tinkle Mobile, en la nueva milla de oro inmobiliaria del centro de Los Santos. La zona está tan en alza que podrás ver las obras desde tu ventana.~n~Incluye un garaje de diez plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_38DES" /*¡Se acabaron las llamadas cortadas por falta de cobertura! Este departamento de lujo está situado en el mismo edificio que la sede de Tinkle Mobile, en la nueva milla de oro inmobiliaria del centro de Los Santos. La zona está tan en alza que podrás ver las obras desde tu ventana.~n~Incluye garage para 10 coches.*/, 16);
 			break;
 	
 		case 39:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_39DES" /*Este hermoso tríplex en el centro tiene unas vistas espectaculares de Los Santos y del icónico letrero de Vinewood, a lo lejos. ¡Observa a todos los que van en busca de sus sueños mientras tú vives el tuyo! Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_39DES" /*Este hermoso tríplex en el centro tiene vistas espectaculares de Los Santos y del icónico letrero de Vinewood. ¡Observa a todos los que van en busca de sus sueños mientras tú vives el tuyo! Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 40:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_40DES" /*Este impactante piso de lujo en Movie Star Way, en Rockford Hills, está a un tiro de piedra de los estudios cinematográficos de Richards Majestic, de AKAN Records y de una clínica de donación de esperma. ¡El triunvirato definitivo de industrias moribundas! Incluye un garaje de diez plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_40DES" /*Este impactante departamento de lujo en Movie Star Way, en Rockford Hills, está a unos pasos de los estudios cinematográficos de Richards Majestic, de AKAN Records y de una clínica de donación de esperma. ¡El triunvirato definitivo de industrias moribundas! Incluye garage para 10 coches.*/, 16);
 			break;
 	
 		case 41:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_41DES" /*¿Un piso de lujo en Movie Star Way, en Rockford Hills? ¡Es una de las zonas más de moda en Los Santos! ¿Te imaginas siendo vecino de gestores de fondos especulativos y famosos? Vamos, haz tu sueño realidad. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_41DES" /*¿Un departamento de lujo en Movie Star Way, en Rockford Hills? ¡Es una de las zonas más de moda en Los Santos! ¿Te imaginas siendo vecino de gestores de fondos especulativos y famosos? Vamos, haz tu sueño realidad. Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 42:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_42DES" /*Tu personalidad desdoblada estará muy cómoda en este edificio de apartamentos retro y ultramoderno en Boulevard Del Perro. Vuélvete loco con estilo. Incluye un garaje de diez plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_42DES" /*Tu personalidad desdoblada estará muy cómoda en este edificio de departamentos retro y ultramoderno en Boulevard Del Perro. Vuélvete loco con estilo. Incluye garage para 10 coches.*/, 16);
 			break;
 	
 		case 43:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_43DES" /*Suelos de tarima, encimeras de granito, chimenea elevada, insulso arte moderno, armario vestidor, calentadores para toallas, sala de billar... este piso de lujo de Tinsel Towers, en Boulevard Del Perro, cumple todos los requisitos del nuevo rico de hoy en día.~n~Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_43DES" /*Suelos de tarima, muebles de granito, chimenea elevada, insulso arte moderno, armario vestidor, calentadores para toallas, sala de billar... este departamento de lujo de Tinsel Towers, en Boulevard Del Perro, cumple todos los requisitos del nuevo rico de hoy en día.~n~Garage para 10 coches incluido.*/, 16);
 			break;
 	
 		case 44:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_44DES" /*Garaje de dos plazas: junto a una gasolinera y cerca de varios moteles baratos. Este garaje, en Paleto Boulevard, Paleto Bay, tiene todo lo necesario para la perfecta escapada de la ciudad.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_44DES" /*Garage para dos coches: junto a una gasolinera y cerca de varios moteles baratos. Este garage, en Paleto Boulevard, Paleto Bay, tiene todo lo necesario para la perfecta escapada de la ciudad.*/, 16);
 			break;
 	
 		case 45:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_45DES" /*Garaje de dos plazas: este garaje, cerca de Paleto Boulevard, en Paleto Bay, no pasa por su mejor momento, pero hay una barbería, un salón de tatuajes y una fábrica de Cluckin' Bell justo delante... ¿Qué más se puede pedir?*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_45DES" /*Garage para dos coches: este garage, cerca de Paleto Boulevard, en Paleto Bay, no pasa por su mejor momento, pero hay una peluquería, un estudio de tatuajes y una fábrica de Cluckin' Bell justo enfrente... ¿Qué más se puede pedir?*/, 16);
 			break;
 	
 		case 46:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_46DES" /*Garaje de dos plazas: la ciudad de Grapeseed ofrece una combinación única de industria pesada y de cultivos modificados genéticamente que explica por qué todos los nacidos allí durante los últimos 20 años tienen ese aspecto tan... peculiar. Este pequeño garaje, en Grapeseed Avenue, necesita unas reformas, pero está a muy buen precio.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_46DES" /*Garage para dos coches: el pueblo de Grapeseed ofrece una combinación única de industria pesada y de cultivos modificados genéticamente que explica por qué todos los nacidos ahí durante los últimos 20 años tienen ese aspecto tan... peculiar. Este pequeño garage, en Grapeseed Avenue, necesita unas reformas, pero está a muy buen precio.*/, 16);
 			break;
 	
 		case 47:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_48DES" /*Garaje de dos plazas: este garaje está situado en las instalaciones de Ron Alternates, en North Señora Way. ¿Hay algo mejor para contribuir a reducir tu huella de carbono que guardar tus devoradores de gasolina en una granja eólica?*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_48DES" /*Garage para dos coches: este garage está situado en las instalaciones de Ron Alternates, en North Senora Way. ¿Hay algo mejor para contribuir a reducir tu huella de carbono que guardar tus devoradores de gasolina en una granja eólica?*/, 16);
 			break;
 	
 		case 48:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_49DES" /*Garaje de dos plazas: delante de la playa, con vistas al océano, al lado de una marisquería exquisita... ¡Esta propiedad en la autopista de Great Ocean, en Chumash Norte, está en un lugar inmejorable! ¿La pega? Que es un garaje...*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_49DES" /*Garage para dos coches: frente a la playa, con vista al océano, al lado de una marisquería exquisita... ¡Esta propiedad en la autopista de Great Ocean, en North Chumash, está en un lugar inmejorable! ¿El pero? Que es un garage...*/, 16);
 			break;
 	
 		case 49:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_50DES" /*Garaje de dos plazas: pequeño garaje de una puerta en venta en la ruta 68, en Harmony. Con una tienda 24 horas, un garito para echar pulsos y un motel cutre bastante cerca, ¡no tienes más que aparcar y darte a la buena vida!*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_50DES" /*Garage para dos coches: pequeño garage de una puerta en venta en la ruta 68, en Harmony. Con una tienda 24 horas, un lugar para vencidas y un motel sórdido bastante cerca, ¡solo tienes que estacionarte y vivir el sueño!*/, 16);
 			break;
 	
 		case 50:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_51DES" /*Garaje de seis plazas: se vende garaje con necesidad de reformas en Señora Road, en el desierto de Grand Señora. No hay nada destacable en los alrededores. Es un garaje. En un desierto.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_51DES" /*Garage para seis coches: se vende garage con necesidad de reformas en Senora Road, en el desierto de Grand Senora. No hay nada destacable en los alrededores. Es un garage. En un desierto.*/, 16);
 			break;
 	
 		case 51:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_52DES" /*Garaje de dos plazas: a escasos metros de una licorería, de una farmacia Dollar Pills, de una tienda Suburban y de una tienda de mascotas Animal Ark. Este garaje de la ruta 68, en Harmony, es el sueño de cualquier gafapasta. ¡Bebida, tabaco, ropa falsamente vintage y comida orgánica para perros, todo en uno!*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_52DES" /*Garage para dos coches: a escasos metros de una licorería, de una farmacia Dollar Pills, de una tienda Suburban y de una tienda de mascotas Animal Ark. Este garage de la ruta 68, en Harmony, es el sueño de cualquier hipster. ¡Bebida, tabaco, ropa falsamente vintage y comida orgánica para perros, todo en uno!*/, 16);
 			break;
 	
 		case 52:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_57DES" /*Garaje de seis plazas: situado detrás de una tienda de Ammu-Nation y cerca de la base militar de Fort Zancudo. En este garaje de la ruta 68 no tendrás que preocuparte por la seguridad.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_57DES" /*Garage para seis coches: situado detrás de una tienda de Ammu-Nation y cerca de la base militar de Fort Zancudo. En este garage de la ruta 68 no tendrás que preocuparte por la seguridad.*/, 16);
 			break;
 	
 		case 53:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_59DES" /*Garaje de seis plazas: ¡atentos todos los fans de Los Santos Panic! Este garaje, en Crusade Road, está en una ubicación privilegiada, ¡justo al lado del Maze Bank Arena!*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_59DES" /*Garage para seis coches: ¡atención, fans de Los Santos Panic! Este garage, en Crusade Road, está en una ubicación privilegiada, ¡justo al lado del Maze Bank Arena!*/, 16);
 			break;
 	
 		case 54:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_60DES" /*Garaje de diez plazas: ¿necesitas un lugar discreto en el que la gente no haga demasiadas preguntas? Deja de buscar. Este garaje, en South Shambles, Cypress Flats, es para ti.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_60DES" /*Garage para diez coches: ¿necesitas un lugar discreto en el que la gente no haga demasiadas preguntas? Deja de buscar. Este garage, en South Shambles, Cypress Flats, es para ti.*/, 16);
 			break;
 	
 		case 55:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_61DES" /*Garaje de seis plazas: si buscas un lugar industrial desolado, lejos de miradas curiosas, este garaje, en Dry Dock Street, Cypress Flats, es lo que buscas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_61DES" /*Garage para seis coches: si buscas un lugar industrial desolado, lejos de miradas curiosas, este garage, en Dry Dock Street, Cypress Flats, es lo que buscas.*/, 16);
 			break;
 	
 		case 56:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_62DES" /*Garaje de diez plazas: garaje en venta en Exceptionalists Way. ¿Para qué necesitas un almacén espacioso, anónimo y discreto cerca del aeropuerto? Si tú no dices nada, nosotros tampoco.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_62DES" /*Garage para diez coches: garage en venta en Exceptionalists Way. ¿Para qué necesitas un almacén espacioso, anónimo y discreto cerca del aeropuerto? Si tú no dices nada, nosotros tampoco.*/, 16);
 			break;
 	
 		case 57:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_63DES" /*Garaje de diez plazas: en un lugar privilegiado, cerca de Greenwich Parkway, en el Aeropuerto Internacional de Los Santos, junto a Bilgeco Shipping Services. Este garaje resulta perfecto para cualquiera que necesite transportar algo de repente, o salir de la ciudad a toda pastilla.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_63DES" /*Garage para diez coches: en un lugar privilegiado, cerca de Greenwich Parkway, en el Aeropuerto Internacional de Los Santos, junto a Bilgeco Shipping Services. Este garage resulta perfecto para cualquiera que necesite transportar algo de repente, o salir de la ciudad urgentemente.*/, 16);
 			break;
 	
 		case 58:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_64DES" /*Garaje de dos plazas: garaje en venta en Innocence Boulevard, en La Puerta. ¿Cómo puede haber tantos garajes a la venta en Los Santos? Estamos tan sorprendidos como tú por este boom inmobiliario.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_64DES" /*Garage para dos coches: garage en venta en Innocence Boulevard, en La Puerta. ¿Cómo puede haber tantos garages a la venta en Los Santos? Estamos tan sorprendidos como tú por este boom inmobiliario.*/, 16);
 			break;
 	
 		case 59:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_65DES" /*Garaje de dos plazas: si estás sufriendo la crisis económica, pero necesitas desesperadamente una dirección de categoría en Rockford Hills, ¡este garaje en Boulevard Del Perro podría ser justo lo que buscas!*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_65DES" /*Garage para dos coches: si estás sufriendo la crisis económica, pero necesitas desesperadamente una dirección de categoría en Rockford Hills, ¡este garage en Boulevard Del Perro podría ser justo lo que buscas!*/, 16);
 			break;
 	
 		case 60:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_66DES" /*Garaje de dos plazas: garaje en venta en Mirror Park Boulevard, en Vinewood Este. Si estás buscando un garaje en Los Santos, ¡no esperes más! Ahora mismo es muy buen momento para los compradores. ¡Hay por todas partes!*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_66DES" /*Garage para dos coches: garage en venta en Mirror Park Boulevard, en East Vinewood. Si estás buscando un garage en Los Santos, ¡no esperes más! Ahora mismo es muy buen momento para los compradores. ¡Hay por todas partes!*/, 16);
 			break;
 	
 		case 61:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_67DES" /*Parte de la actualización La gran vida. Vivienda de proporciones perfectas en una sola planta en el exquisito Eclipse Boulevard. Este apartamento es tan exclusivo como los nuevos pómulos que te ha puesto tu cirujano... O sea, que los verás por todas partes. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_67DES" /*Parte de la actualización Alta sociedad. Vivienda de proporciones perfectas de un solo piso en el exquisito Eclipse Boulevard. Este departamento es tan exclusivo como los nuevos pómulos que te puso tu cirujano... Por cierto, los verás por todas partes. Garage para diez coches incluido.*/, 16);
 			break;
 	
 		case 62:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_68DES" /*Parte de la actualización La gran vida. Disfruta de las vistas al mar sin que te molesten los turistas ni los vagabundos en esta vivienda de una sola planta para ricachones en Del Perro Beach. Si podemos comprar algo por más de lo que valga, lo haremos y te pasaremos la factura. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_68DES" /*Parte de la actualización Alta sociedad. Disfruta de la vista al mar sin que te molesten los turistas ni los vagabundos en esta vivienda de un solo piso para ricachones en Del Perro Beach. Si podemos comprar algo por más de lo que valga, lo haremos y te pasaremos la factura. Garage para diez coches incluido.*/, 16);
 			break;
 	
 		case 63:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_69DES" /*Parte de la actualización La gran vida. Disfruta de un trocito del glamour de Vinewood, un trocito muy pequeño y muy caro que parece igual que el resto de lugares de los ricachones de Los Santos. Vivienda contemporánea de una sola planta con un pie en el pasado. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_69DES" /*Parte de la actualización Alta sociedad. Disfruta de un trocito del glamour de Vinewood, un trocito muy pequeño y muy caro, que es igual que el resto de lugares de los ricachones de Los Santos. Vivienda contemporánea de un solo piso con un pie en el pasado. Garage para diez coches incluido.*/, 16);
 			break;
 	
 		case 64:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_70DES" /*Parte de la actualización La gran vida. Una vivienda de revista de una sola planta en uno de los edificios más de moda de Los Santos. Estos impresionantes apartamentos solo están en el mercado cuando uno de sus propietarios sufre un ataque al corazón por consumir drogas o es arrestado por asesinar a una prostituta. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_70DES" /*Parte de la actualización Alta sociedad. Una vivienda como de revista de un solo piso en uno de los edificios más de moda de Los Santos. Estos impresionantes departamentos solo están en el mercado cuando uno de sus propietarios sufre un ataque al corazón por consumir drogas o es arrestado por asesinar a una prostituta. Garage para diez coches incluido.*/, 16);
 			break;
 	
 		case 65:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_71DES" /*Parte de la actualización La gran vida. Vive en las nubes mientras el saldo de tu cuenta bancaria está por los suelos. Queda tan claro que este apartamento es carísimo, que tus amigos sabrán al instante cuánto has pagado por él. Vivienda de una sola planta en el centro para aquellos que, en el fondo, quieren vivir en Liberty City. Garaje de diez plazas incluido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_71DES" /*Parte de la actualización Alta sociedad. Vive en las nubes mientras el saldo de tu cuenta bancaria está por los suelos. Queda tan claro que este departamento es carísimo, que tus amigos sabrán al instante cuánto te costó. Vivienda de un solo piso en el centro para aquellos que, en el fondo, quieren vivir en Liberty City. Garage para diez coches incluido.*/, 16);
 			break;
 	
 		case 66:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_72DES" /*Parte del especial Día de la Independencia. Un director chiflado como vecino, un precio astronómicamente alto, más espacio para tu coche que para ti... Si buscas la experiencia Vinewood Hills al completo, esta modesta casa cumple todos los requisitos. Incluye un garaje de 6 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_72DES" /*Parte de Día de la Independencia. ¿Un director chiflado como vecino? Presente. ¿Propiedad astronómicamente sobrevalorada en la que tu coche tiene más espacio que tú? Presente. Si buscas la experiencia Vinewood Hills completa, esta casa modesta estilo rancho cumple con todos los requisitos.  Incluye garage para 6 vehículos.*/, 16);
 			break;
 	
 		case 67:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_73DES" /*Parte del especial Día de la Independencia. Aviso a todos los aburguesados: ¡El Burro Heights está preparado para una invasión hostil! ¡Recoge tu máquina de expreso, a tu labrador y a tu deliberadamente enmarañado niño, y sal de tu propiedad antes de que sea tarde! ¡Actúa ahora o el año que viene no podrás pagar este vecindario! Incluye un garaje de 6 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_73DES" /*Parte de Día de la Independencia. Aviso a todos los burgueses: ¡El Burro Heights está preparado para una invasión hostil! ¡Recoge tu cafetera de expreso, a tu labrador y a tu deliberadamente despeinado niño, y sal de tu propiedad antes de que sea tarde! ¡Actúa ahora o el año que viene no podrás pagar este vecindario! Incluye garage para 6 vehículos.*/, 16);
 			break;
 	
 		case 68:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_74DES" /*Parte del especial Día de la Independencia. ¡Mira qué vistas desde el porche delantero! Esta es la vida provincial de la costa en todo su esplendor. ¿Te falta sombra? ¿Quieres fácil acceso a supermercados? ¿Qué tal dos por el precio de uno? Esta casa tiene a su espalda un supermercado que bloquea toda luz solar. Incluye un garaje de 6 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_74DES" /*Parte de Día de la Independencia. ¡Mira qué vista desde el porche delantero! Esta es la vida provincial de la costa en todo su esplendor. ¿Te falta sombra? ¿Quieres fácil acceso a supermercados? ¿Qué tal dos por el precio de uno? Esta casa tiene detrás un supermercado que bloquea toda la luz solar. Incluye garage para 6 vehículos.*/, 16);
 			break;
 	
 		case 69:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_75DES" /*Parte del especial Día de la Independencia. ¡Vistas increíbles de la subida del nivel del mar! ¡Por no hablar del equipamiento! Esta preciosidad de Paleto Bay está al lado de una tasca de barrio, de un hospital, de una funeraria, de un crematorio y de una tienda de armas, para que te des una vuelta sabiendo que, de una manera u otra, tienes todas las necesidades cubiertas. Incluye un garaje de 6 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_75DES" /*Parte de Día de la Independencia. ¡Increíble vista de la subida del nivel del mar! ¡Por no hablar del equipamiento! Esta preciosidad de Paleto Bay está al lado de un bar de tercera, de un hospital, de una funeraria, de un crematorio y de una tienda de armas, para que te des una vuelta sabiendo que, de una forma o de otra, tienes todas las necesidades cubiertas. Incluye garage para 6 vehiculos.*/, 16);
 			break;
 	
 		case 70:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_76DES" /*Parte del especial Día de la Independencia. Duérmete con el sonido del océano y de los "sin techo" del aparcamiento de fondo. Esta adorable propiedad está ubicada en la calle principal de Paleto Bay, a distancia de paseo de la costa y del supermercado. Incluye un garaje de 2 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_76DES" /*Parte de Día de la Independencia. Duérmete con el sonido de fondo del océano y de los vagabundos del estacionamiento. Esta propiedad está ubicada en la calle principal de Paleto Bay, a un paso de la costa y del supermercado. Incluye garage para 2 vehículos.*/, 16);
 			break;
 	
 		case 71:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_77DES" /*Parte del especial Día de la Independencia. ¡Los mendigos también eligen! ¡Vive en el paseo marítimo a un precio de risa! Esta casa de Sandy Shores, ubicada junto a un restaurante chino y un salón de tatuajes, ofrece en abundancia opciones de último momento de la noche de las que arrepentirse por la mañana. Incluye un garaje de 2 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_77DES" /*Parte de Día de la Independencia. ¡Los pobres también eligen! ¡Vive en el paseo marítimo a un precio de risa! Esta casa de Sandy Shores, ubicada junto a un restaurante chino y un estudio de tatuajes, ofrece variadas opciones nocturnas de las que puedes arrepentirte por la mañana. Incluye garage para 2 vehículos.*/, 16);
 			break;
 	
 		case 72:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_78DES" /*Parte del especial Día de la Independencia. ¡El lugar, el sitio, los alrededores! Justo enfrente de una tienda de comestibles, una tienda y un outlet de ropa; esta casa está en el centro del meollo en la principal calle comercial de Grapeseed. ¡Vive en el sitio de mayor confluencia de tiendas en un entorno rural! Incluye un garaje de 2 plazas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_78DES" /*Parte de Día de la Independencia. ¡La mejor ubicación! Justo enfrente de una tienda de comestibles, un minisuper y una tienda de descuento; esta casa está en el centro de la acción en la principal calle comercial de Grapeseed. ¡Vive en el lugar más transitado en un entorno rural! Incluye garage para 2 vehículos.*/, 16);
 			break;
 	
 		case 83:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_79DES" /*¿Sientes que empieza a haber demasiada gente en el 1%? ¿Estás harto de que el ascensor se llene de millonarios de poca monta que toquetean al portero? ¿Necesitas una nueva forma de expresar tu profundo desprecio por el prójimo? No busques más. La suite del ático del mejor edificio de la ciudad es lo suficientemente cara como para mantener alejada a la chusma, al menos hasta el próximo rescate federal. El precio incluye el servicio de redecoración en un día. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_79DES" /*¿Sientes que empieza a haber demasiada gente en el 1% más rico? ¿Estás harto de que el elevador se llene de millonarios que toquetean al botones? ¿Necesitas una nueva forma de expresar tu profundo desprecio por el prójimo? No busques más. La suite del penthouse del mejor edificio de la ciudad es lo suficientemente cara como para mantener alejada a la chusma, al menos hasta el próximo rescate financiero. El precio incluye el servicio de redecoración en un día. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 84:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_80DES" /*Vivir en un ático no es solo una cuestión de lujo absurdo. Es saber que cuando cagas y tiras de la cadena, te estás cagando, literalmente, en todas las casuchas de medio millón de dólares que hay debajo, y eso es algo que solo se puede comprar con dinero. El precio incluye el servicio de redecoración en un día. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_80DES" /*Vivir en un penthouse no es solo una cuestión de lujo absurdo. Es saber que cuando cagas y le jalas al baño, te estás cagando, literalmente, en todas las casuchas de medio millón de dólares que hay debajo, y eso es algo que solo el dinero puede comprar. El precio incluye el servicio de redecoración en un día. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 85:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_81DES" /*Seamos claros: el precio te ha convencido. No importa que sea una de las viviendas más decadentes en kilómetros a la redonda. Al igual que su nuevo propietario, algo tan caro no tiene por qué ser "bonito" o "práctico". Es perfecto para ti. ¿A qué estás esperando? El precio incluye el servicio de redecoración en un día. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_81DES" /*Seamos claros: el precio te convenció. No importa que sea una de las viviendas más decadentes en kilómetros a la redonda. Al igual que su nuevo propietario, algo tan caro no tiene por qué ser "bonito" o "práctico". Es perfecto para ti. ¿Qué estás esperando? El precio incluye el servicio de redecoración en un día. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 73:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_83DES" /*Bienvenido a las alturas de Vinewood Hills, donde el comprador medio de primera vivienda tiene 24 años y el número de empresarios de compañías de Internet solo es superado por el de estrellas del pop adolescentes en decadencia. Compra ahora que todavía es absurdamente caro. ¿O qué pasa, eres prudente? Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_83DES" /*Bienvenido a las alturas de Vinewood Hills, donde la edad promedio para comprar una casa por primera vez es 24 años y el número de empresarios de compañías de Internet solo es superado por el de estrellas del pop adolescentes en decadencia. Compra ahora que todavía es absurdamente caro. ¿O qué pasa, eres prudente? Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 74:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_84DES" /*San Andreas es un lugar en el que el precio de la vivienda siempre está en alza y nunca hay terremotos de gran magnitud. ¿Qué mejor sitio para construir un apartamento de lujo sobre pilotes en una ladera inclinada de una zona residencial abarrotada? La primera vez que notes cómo se mueve todo cuando haya una ligera brisa, te sorprenderá lo bueno que parecía antes de comprarlo. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_84DES" /*San Andreas es un lugar en el que el precio de la vivienda siempre está al alza y nunca hay terremotos de gran magnitud. ¿Qué mejor lugar para construir un departamento de lujo sobre soportes en una ladera inclinada de una zona residencial abarrotada? La primera vez que notes cómo se mueve todo cuando haya una ligera brisa, te sorprenderá lo bueno que parecía antes de comprarlo. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 75:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_85DES" /*El anterior propietario de esta mansión sobre un acantilado murió al apoyarse en la barandilla de la terraza mientras hacía yoga... pero al menos alguien sacó una foto de Snapmatic. No será fácil estar a su altura, pero si eres tan rico y tan tonto como para comprar una casa en este barrio, ya tienes mucho ganado. Sigue lo que te dicte tu frágil corazón. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_85DES" /*El anterior propietario de esta mansión sobre un acantilado murió al recargarse en el barandal de la terraza mientras hacía yoga... pero al menos alguien tomó una foto para Snapmatic. No será fácil estar a su altura, pero si eres tan rico y tan estúpido como para comprar una casa en este barrio, ya estás del otro lado. Sigue lo que te dicte tu frágil corazón. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 76:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_86DES" /*Esta mansión de tres pisos se aferra a la ladera de Vinewood Hills como un magnate del petróleo decrépito a su jovencísima sexta esposa; además, su ostentoso diseño interior compensa con creces los defectos estructurales. Cocina diáfana, mobiliario minimalista y vértigo siempre presente. Lo tiene todo. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_86DES" /*Esta mansión de tres pisos se aferra a la ladera de Vinewood Hills como un magnate petrolero decrépito a su enfermera y sexta esposa; además, su ostentoso diseño interior compensa con creces los defectos estructurales. Cocina abierta, mobiliario minimalista y vértigo siempre presente. Lo tiene todo. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 77:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_87DES" /*Los idiotas que atraviesan el centro de Vinewood por las mañanas de camino al trabajo necesitan tener algo a lo que aspirar. No quieren contemplar solo colinas verdes mientras conducen, quieren mirar hacia tus ventanales y verte con un taparrabos de piel de serpiente mientras te metes un zumo de berza con tu monitor de yoga tántrico. Y esta vida no es precisamente barata, así que cúrratelo. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_87DES" /*Los idiotas que atraviesan el centro de Vinewood por las mañanas de camino al trabajo necesitan tener algo a lo que aspirar. No quieren contemplar solo colinas verdes mientras manejan, quieren mirar hacia tus ventanales y verte con una tanga de piel de serpiente mientras te tomas un jugo de kale con tu instructor de yoga tántrico. Y esta vida no es precisamente barata, así que trabájale. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 78:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_89DES" /*Date prisa si quieres vivir en una de las calles más tranquilas y exclusivas de la ciudad. El resto de casas de la calle fueron compradas en los 90 por inversores extranjeros decentes que necesitaban gastar el capital adquirido de manera legal, y han estado vacías desde entonces. Tendrás la sensación de estar viviendo en una cartera de inversión, pero de eso se trata, ¿no? Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_89DES" /*Apúrate si quieres vivir en una de las calles más tranquilas y exclusivas de la ciudad. Todas las otras casas de la calle fueron compradas en los 90 por inversionistas extranjeros íntegros que necesitaban gastar grandes cantidades de dinero obtenido de forma completamente legal, y han estado vacías desde entonces. Tendrás la sensación de estar viviendo en una cartera de inversión, pero de eso se trata, ¿no? Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 79:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_90DES" /*El año pasado se llevaban las casas de una sola planta con vistas de rascacielos. Da una vuelta de tuerca contemporánea a tu complejo de superioridad y obliga a tu mayordomo a subir y bajar por las tres plantas de este palacio en la colina. Mientras, tú puedes sacarte autorretratos en los que se vean las miles de viviendas, más cómodas y más baratas, que tienes detrás. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_90DES" /*El año pasado las casas de una sola planta con vistas de rascacielos eran la representación de la vanidad. Da un toque más contemporáneo a tu complejo de superioridad y obliga a tu mayordomo a subir y bajar por las tres plantas de este palacio en la colina. Mientras, tú puedes sacarte selfies en las que se vean las miles de viviendas más cómodas y baratas que tienes atrás. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 80:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_92DES" /*Los pitidos en los oídos y la tos de fumador te están diciendo que llevas demasiado tiempo viviendo en la ciudad, y nosotros te decimos que este apartamento tan caro en el frondoso Vinewood es la solución a décadas de autodestrucción. Desde aquí, puedes ver toda la ciudad por las mañanas mientras desayunas siguiendo tu dieta paleolítica. Y no dejes de decirte a ti mismo que te alegras de vivir aislado de todo. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_92DES" /*El zumbido en los oídos y la tos de fumador te están diciendo que llevas demasiado tiempo viviendo en la ciudad, y nosotros te decimos que este departamento tan caro en el frondoso Vinewood es la solución a décadas de autodestrucción. Desde aquí, puedes ver toda la ciudad por las mañanas mientras te tomas tu jugo verde y desayunas tu burrito paleolítico. Y no dejes de decirte a ti mismo que te alegras de vivir aislado de todo. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 81:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_94DES" /*Esta vivienda, construida en los 60 y aún en pie para sorpresa de todo el mundo, no parece gran cosa a juzgar por el exterior. Pero no te preocupes, por dentro es idéntica a todas las casas de yuppies descerebrados que quieren vivir en un espacio diáfano de diseño. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_94DES" /*Esta vivienda, construida en los 60 y todavía en pie para sorpresa de todo el mundo, no parece gran cosa a juzgar por el exterior. Pero no te preocupes, por dentro es idéntica a todas las casas de yuppies descerebrados que quieren vivir en un espacio abierto de diseñador. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 82:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_95DES" /*Este apartamento de lujo, diseñado y construido infringiendo todas las leyes estatales de edificación, es un claro ejemplo del poder de una actitud "por narices" y de ignorar las normas sanitarias, de seguridad y el sentido común. Ponte una copa, olvídate de esos 12 metros de caída y felicítate por conservar el espíritu pionero. Parte de Ejecutivos y otros criminales.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_PROP_95DES" /*Este departamento de lujo, diseñado y edificado infringiendo todas las leyes estatales de construcción, es un claro ejemplo del poder de una actitud proactiva y de despreciar las normas de salud, seguridad y sentido común. Tómate una copa, olvídate de esos 12 metros de caída y felicítate por conservar el espíritu pionero. Parte de Ejecutivos y otros criminales.*/, 16);
 			break;
 	
 		case 87:
@@ -12053,51 +12072,51 @@ struct<4> func_65(int iParam0) // Position - 0x21584 (136580)
 			break;
 	
 		case 91:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH1DES" /*Esta joyita se encuentra tan cómodamente anclada en el corazón de la miseria urbana más añeja que hasta habíamos olvidado que la teníamos en nuestros libros. Por lo que parece, no consta en ningún registro de la propiedad, así que danos la pasta y hazla desaparecer.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH1DES" /*Esta joyita se encuentra tan cómodamente anclada en el corazón de un cinturón de miseria urbana que ya hasta se nos había olvidado que existía. Por lo visto, no aparece en ningún registro de la propiedad, así que danos la lana y será toda tuya.*/, 16);
 			break;
 	
 		case 92:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH2DES" /*Este inmueble funcional de una sola planta era un comedor social, y apropiarnos de este ataque a los valores americanos no es solo un negocio para nosotros, es un placer. Este lugar, que está disponible de nuevo para que lo compre un cerebro criminal o un empresario patriótico, volverá a servir a la comunidad en menos que canta un gallo.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH2DES" /*Este inmueble funcional de un piso era un comedor comunitario, y apropiarnos de este ataque a los valores estadounidenses no es solo un negocio para nosotros, es un placer. Este lugar, que está disponible de nuevo para que lo compre un cerebro criminal o un empresario patriótico, volverá a servir a la comunidad en menos de lo que canta un gallo.*/, 16);
 			break;
 	
 		case 93:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH3DES" /*Los tíos del embargo que asaltaron este lugar murieron de viruela tres días después, lo cual casi seguro que es una casualidad y no ha afectado en modo alguno a la tasación del inmueble. Y, oye, en el peor de los casos, no encontrarás un sistema de seguridad más sólido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH3DES" /*Los embargadores que se llevaron todo de este lugar murieron de viruela tres días después, lo cual casi seguro que es una coincidencia y no afecta en lo más mínimo al valor del inmueble. Y, oye, en el peor de los casos, no encontrarás un sistema de seguridad más sólido.*/, 16);
 			break;
 	
 		case 94:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH4DES" /*Todos creíamos que era un chollazo, pero no, resulta que el precio de un lugar así no para de bajar. Entra ahí antes de que lo quememos solo por el placer de hacerlo. Las autoridades quieren olvidar que existe, así que desfasa lo que quieras.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH4DES" /*Todos creíamos que era una ganga, pero no, resulta que el precio de un lugar así no deja de bajar. Lánzate antes de que lo quememos solo por el gusto de hacerlo. Las autoridades solo quieren olvidar que existe, así que aprovecha.*/, 16);
 			break;
 	
 		case 95:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH5DES" /*Puede que asumas que aquí se suele ver el vaso medio vacío, pero en Paleto la gente cree que en realidad el vaso está medio lleno de inmuebles tirados de precio, trabajadores explotados y oportunidades en bruto. Este almacén es un paso hacia un futuro más brillante para todos nosotros.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH5DES" /*Podrías pensar que es un lugar donde se ve el vaso medio vacío, pero la gente de Paleto sabe que el vaso está medio lleno de inmuebles regalados, trabajadores esclavizados y oportunidades sin explotar. Así es, este mugroso almacén es el primer paso hacia un futuro más brillante para todos.*/, 16);
 			break;
 	
 		case 96:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH6DES" /*¿Estás hecho un manitas? ¿Eres capaz de compartir los atardeceres del desierto con manadas de perros salvajes y parejas abiertamente incestuosas? Si es así, este proyecto es para ti. No tiene nada más que potencial.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH6DES" /*¿Te gustan los inmuebles para remodelar? ¿Eres capaz de compartir los atardeceres del desierto con manadas de perros salvajes y parejas abiertamente incestuosas? Si es así, este proyecto es para ti. Es potencial puro.*/, 16);
 			break;
 	
 		case 97:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH7DES" /*Los lugareños creían que este almacén espacioso estaba abandonado, pero, de hecho, fue el alma de la industria de pelis "snuff" durante años. Ahora, las subidas de impuestos obligan a estos pioneros del séptimo arte a chapar el chiringuito, así que esta es tu oportunidad de desaparecer del mapa y quedarte ahí para siempre.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH7DES" /*Los lugareños creían que este almacén espacioso estaba abandonado, pero, de hecho, fue el alma de la industria de películas snuff durante años. Ahora, las subidas de impuestos dejan a estos pioneros del séptimo arte sin chamba, así que esta es tu oportunidad de desaparecer del mapa y quedarte ahí para siempre.*/, 16);
 			break;
 	
 		case 98:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH8DES" /*No te quedes sentado, atracándote de bienestar y compasión. Expresa lo que piensas de la economía del goteo hoy mismo. Inyecta capital en tu comunidad, compra todos los locales abandonados y conviértelos en una colmena viva, que respira, un hervidero de fugitivos y adictos a las anfetas.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH8DES" /*No te quedes sentado exprimiendo la asistencia social y la compasión. Expresa lo que piensas de la economía liberal hoy mismo. Inyecta capital en tu comunidad, compra todos los locales abandonados y conviértelos en una colmena viva que respira, un hervidero de fugitivos y adictos a las anfetas. Es hora del cambio.*/, 16);
 			break;
 	
 		case 99:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH9DES" /*Sabes que una propiedad debe ser algo especial cuando los ocupantes anteriores lo pasaron tan mal para desprenderse de él. No puedes falsificar esta clase de desesperación y rabia impotentes y, en un mundo tan cínico como este, esta es la mejor crítica que puede hacerse.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH9DES" /*Uno sabe que una propiedad es algo especial cuando a los ocupantes anteriores les costó tanto desprenderse del lugar. No puedes disimular esta clase de desesperación y rabia impotentes y, en un mundo tan cínico como este, es la mejor crítica que puede hacerse.*/, 16);
 			break;
 	
 		case 100:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH10DES" /*Si buscas un lugar muy poco frecuentado, lo acabas de encontrar: se halla a kilómetros de cualquier parte, la Oficina de estándares de construcción de Los Santos lo calificó de peligroso y sus últimos ocupantes murieron en un suicidio colectivo. ¿Qué más garantías necesitas de que aquí no te va a molestar ni Dios?*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH10DES" /*Si buscas un lugar muy poco frecuentado, lo acabas de encontrar: está a kilómetros de cualquier parte, la Oficina de estándares de construcción de Los Santos lo calificó de peligroso y sus últimos ocupantes murieron en un suicidio colectivo. ¿Qué más garantías necesitas de que aquí tendrás toda la privacidad del mundo?*/, 16);
 			break;
 	
 		case 101:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH11DES" /*Sí, los pueblecitos costeros estadounidenses tienen un kilómetro tras otro de tiendas cerradas a veinte metros de una iglesia y de una tienda de armas, así que para qué quedarse con este. Bueno, hazte esta pregunta: ¿se te ocurre una manera mejor de fundirte con el entorno y desaparecer? Actúa ya mismo, antes de que esto deje de tener sentido.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH11DES" /*Sí, los pueblitos costeros estadounidenses tienen un kilómetro tras otro de tiendas cerradas a veinte metros de una iglesia y de una tienda de armas. ¿Por qué elegir este? Bueno, hazte esta pregunta: ¿se te ocurre una manera mejor de fundirte con el entorno y desaparecer? Actúa ya mismo, antes de que esto deje de tener sentido.*/, 16);
 			break;
 	
 		case 102:
-			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH12DES" /*Sabes que pintan bastos cuando ni un millón de hipsters tatuándose una golondrina que huye volando de la deshonra pueden salvar este lugar. Son malas noticias para los que querían repetir con este diseño del triángulo audaz a la par que sencillo, pero es una buena noticia que este lugar esté tirado de precio.*/, 16);
+			TEXT_LABEL_ASSIGN_STRING(&unk, "MP_CLUBH12DES" /*Sabes que son tiempos difíciles cuando ni un millón de hipsters tatuándose una golondrina en el perineo pueden salvar este lugar. Son malas noticias para los que querían un diseño triangular audaz y sencillo, pero el precio tan económico es una buena noticia para ti.*/, 16);
 			break;
 	}
 
@@ -12111,95 +12130,95 @@ char* func_66(int iParam0) // Position - 0x21C4C (138316)
 	switch (iParam0)
 	{
 		case 1:
-			str = "MP_PROP_1" /*Eclipse Towers, apto. 31*/;
+			str = "MP_PROP_1" /*Eclipse Towers, depto. 31*/;
 			break;
 	
 		case 2:
-			str = "MP_PROP_2" /*Eclipse Towers, apto. 9*/;
+			str = "MP_PROP_2" /*Eclipse Towers, depto. 9*/;
 			break;
 	
 		case 3:
-			str = "MP_PROP_3" /*Eclipse Towers, apto. 40*/;
+			str = "MP_PROP_3" /*Eclipse Towers, depto. 40*/;
 			break;
 	
 		case 4:
-			str = "MP_PROP_4" /*Eclipse Towers, apto. 5*/;
+			str = "MP_PROP_4" /*Eclipse Towers, depto. 5*/;
 			break;
 	
 		case 5:
-			str = "MP_PROP_5" /*3 Alta St, apto. 10*/;
+			str = "MP_PROP_5" /*3 Alta St. depto. 10*/;
 			break;
 	
 		case 6:
-			str = "MP_PROP_6" /*3 Alta St, apto. 57*/;
+			str = "MP_PROP_6" /*3 Alta St. depto. 57*/;
 			break;
 	
 		case 7:
-			str = "MP_PROP_7" /*Del Perro Heights, apto. 20*/;
+			str = "MP_PROP_7" /*Del Perro Heights, depto. 20*/;
 			break;
 	
 		case 8:
-			str = "MP_PROP_8" /*1162 Power St, apto. 3*/;
+			str = "MP_PROP_8" /*1162 Power St. depto. 3*/;
 			break;
 	
 		case 9:
-			str = "MP_PROP_9" /*0605 Spanish Ave, apto. 1*/;
+			str = "MP_PROP_9" /*0605 Spanish Ave. depto. 1*/;
 			break;
 	
 		case 10:
-			str = "MP_PROP_10" /*0604 Las Lagunas Blvd, 4*/;
+			str = "MP_PROP_10" /*0604 Las Lagunas, depto. 4*/;
 			break;
 	
 		case 11:
-			str = "MP_PROP_11" /*0184 Milton Rd, apto. 13*/;
+			str = "MP_PROP_11" /*0184 Milton Rd. depto. 13*/;
 			break;
 	
 		case 12:
-			str = "MP_PROP_12" /*The Royale, apartamento 19*/;
+			str = "MP_PROP_12" /*The Royale, depto. 19*/;
 			break;
 	
 		case 13:
-			str = "MP_PROP_13" /*0504 S Mo Milton Dr*/;
+			str = "MP_PROP_13" /*0504 S Mo Milton Dr.*/;
 			break;
 	
 		case 14:
-			str = "MP_PROP_14" /*0115 Bay City Ave, apto. 45*/;
+			str = "MP_PROP_14" /*0115 Bay City Av. depto. 45*/;
 			break;
 	
 		case 15:
-			str = "MP_PROP_15" /*0325 South Rockford Dr*/;
+			str = "MP_PROP_15" /*0325 South Rockford Dr.*/;
 			break;
 	
 		case 16:
-			str = "MP_PROP_16" /*Dream Tower, apartamento 15*/;
+			str = "MP_PROP_16" /*Dream Tower, depto. 15*/;
 			break;
 	
 		case 17:
-			str = "MP_PROP_17" /*2143 Las Lagunas Blvd, apto. 9*/;
+			str = "MP_PROP_17" /*2143 Las Lagunas, depto. 9*/;
 			break;
 	
 		case 18:
-			str = "MP_PROP_18" /*1561 San Vitas St, apto. 2*/;
+			str = "MP_PROP_18" /*1561 San Vitas St. depto. 2*/;
 			break;
 	
 		case 19:
-			str = "MP_PROP_19" /*0112 S Rockford Dr, apto. 13*/;
+			str = "MP_PROP_19" /*0112 S. Rockford Dr. depto. 13*/;
 			break;
 	
 		case 20:
-			str = "MP_PROP_20" /*2057 Vespucci Blvd, apto. 1*/;
+			str = "MP_PROP_20" /*2057 Vespucci Blvd. depto. 1*/;
 			break;
 	
 		case 21:
-			str = "MP_PROP_21" /*0069 Cougar Ave, apto. 19*/;
+			str = "MP_PROP_21" /*0069 Cougar Ave. depto. 19*/;
 			break;
 	
 		case 22:
-			str = "MP_PROP_22" /*1237 Prosperity St, apto. 21*/;
+			str = "MP_PROP_22" /*1237 Prosperity St. depto. 21*/;
 			break;
 	
 		case 23:
-			str = "MP_PROP_23" /*1115 Blvd Del Perro, apto. 18*/;
+			str = "MP_PROP_23" /*1115 Blvd. Del Perro, depto. 18*/;
 			break;
 	
 		case 24:
@@ -12207,23 +12226,23 @@ char* func_66(int iParam0) // Position - 0x21C4C (138316)
 			break;
 	
 		case 25:
-			str = "MP_PROP_25" /*Unidad 14 Popular St*/;
+			str = "MP_PROP_25" /*Unidad 14 Popular St.*/;
 			break;
 	
 		case 26:
-			str = "MP_PROP_26" /*Unidad 2 Popular St*/;
+			str = "MP_PROP_26" /*Unidad 2 Popular St.*/;
 			break;
 	
 		case 27:
-			str = "MP_PROP_27" /*331 Supply St*/;
+			str = "MP_PROP_27" /*331 Supply St.*/;
 			break;
 	
 		case 28:
-			str = "MP_PROP_28" /*Unidad 1 Olympic Fwy*/;
+			str = "MP_PROP_28" /*Unidad 1 Olympic Freeway*/;
 			break;
 	
 		case 29:
-			str = "MP_PROP_29" /*0754 Roy Lowenstein Blvd*/;
+			str = "MP_PROP_29" /*0754 Roy Lowenstein Blvd.*/;
 			break;
 	
 		case 30:
@@ -12231,11 +12250,11 @@ char* func_66(int iParam0) // Position - 0x21C4C (138316)
 			break;
 	
 		case 31:
-			str = "MP_PROP_31" /*Unidad 124 Popular St*/;
+			str = "MP_PROP_31" /*Unidad 124 Popular St.*/;
 			break;
 	
 		case 32:
-			str = "MP_PROP_32" /*0552 Roy Lowenstein Blvd*/;
+			str = "MP_PROP_32" /*0552 Roy Lowenstein Blvd.*/;
 			break;
 	
 		case 33:
@@ -12243,91 +12262,91 @@ char* func_66(int iParam0) // Position - 0x21C4C (138316)
 			break;
 	
 		case 34:
-			str = "MP_PROP_34" /*Del Perro Heights, apto. 7*/;
+			str = "MP_PROP_34" /*Del Perro Heights, depto. 7*/;
 			break;
 	
 		case 35:
-			str = "MP_PROP_35" /*Weazel Plaza, apto. 101*/;
+			str = "MP_PROP_35" /*Weazel Plaza, depto. 101*/;
 			break;
 	
 		case 36:
-			str = "MP_PROP_36" /*Weazel Plaza, apto. 70*/;
+			str = "MP_PROP_36" /*Weazel Plaza, depto. 70*/;
 			break;
 	
 		case 37:
-			str = "MP_PROP_37" /*Weazel Plaza, apto. 26*/;
+			str = "MP_PROP_37" /*Weazel Plaza, depto. 26*/;
 			break;
 	
 		case 38:
-			str = "MP_PROP_38" /*4 Integrity Way, apto. 30*/;
+			str = "MP_PROP_38" /*4 Integrity Way, depto. 30*/;
 			break;
 	
 		case 39:
-			str = "MP_PROP_39" /*4 Integrity Way, apto. 35*/;
+			str = "MP_PROP_39" /*4 Integrity Way, depto. 35*/;
 			break;
 	
 		case 40:
-			str = "MP_PROP_40" /*Richards Majestic, apto. 4*/;
+			str = "MP_PROP_40" /*Richards Majestic, depto. 4*/;
 			break;
 	
 		case 41:
-			str = "MP_PROP_41" /*Richards Majestic, apto. 51*/;
+			str = "MP_PROP_41" /*Richards Majestic, depto. 51*/;
 			break;
 	
 		case 42:
-			str = "MP_PROP_42" /*Tinsel Towers, apto. 45*/;
+			str = "MP_PROP_42" /*Tinsel Towers, depto. 45*/;
 			break;
 	
 		case 43:
-			str = "MP_PROP_43" /*Tinsel Towers, apto. 29*/;
+			str = "MP_PROP_43" /*Tinsel Towers, depto. 29*/;
 			break;
 	
 		case 44:
-			str = "MP_PROP_44" /*142 Paleto Blvd*/;
+			str = "MP_PROP_44" /*142 Paleto Blvd.*/;
 			break;
 	
 		case 45:
-			str = "MP_PROP_45" /*1 Strawberry Ave*/;
+			str = "MP_PROP_45" /*1 Strawberry Ave.*/;
 			break;
 	
 		case 46:
-			str = "MP_PROP_46" /*1932 Grapeseed Ave*/;
+			str = "MP_PROP_46" /*1932 Grapeseed Ave.*/;
 			break;
 	
 		case 47:
-			str = "MP_PROP_48" /*1920 Señora Way*/;
+			str = "MP_PROP_48" /*1920 Senora Way*/;
 			break;
 	
 		case 48:
-			str = "MP_PROP_49" /*2000 Autop. de Great Ocean*/;
+			str = "MP_PROP_49" /*2000 Great Ocean Highway*/;
 			break;
 	
 		case 49:
-			str = "MP_PROP_50" /*197 Ruta 68*/;
+			str = "MP_PROP_50" /*197 Route 68*/;
 			break;
 	
 		case 50:
-			str = "MP_PROP_51" /*870 Acceso a la ruta 68*/;
+			str = "MP_PROP_51" /*870 Route 68 Approach*/;
 			break;
 	
 		case 51:
-			str = "MP_PROP_52" /*1200 Ruta 68*/;
+			str = "MP_PROP_52" /*1200 Route 68*/;
 			break;
 	
 		case 52:
-			str = "MP_PROP_57" /*8754 Ruta 68*/;
+			str = "MP_PROP_57" /*8754 Route 68*/;
 			break;
 	
 		case 53:
-			str = "MP_PROP_59" /*1905 Davis Ave*/;
+			str = "MP_PROP_59" /*1905 Davis Ave.*/;
 			break;
 	
 		case 54:
-			str = "MP_PROP_60" /*1623 South Shambles St*/;
+			str = "MP_PROP_60" /*1623 South Shambles St.*/;
 			break;
 	
 		case 55:
-			str = "MP_PROP_61" /*4531 Dry Dock St*/;
+			str = "MP_PROP_61" /*4531 Dry Dock St.*/;
 			break;
 	
 		case 56:
@@ -12335,79 +12354,79 @@ char* func_66(int iParam0) // Position - 0x21C4C (138316)
 			break;
 	
 		case 57:
-			str = "MP_PROP_63" /*Ud. 76 Greenwich Parkway*/;
+			str = "MP_PROP_63" /*Unidad 76 Greenwich Parkway*/;
 			break;
 	
 		case 58:
-			str = "MP_PROP_64" /*Garaje de Innocence Blvd.*/;
+			str = "MP_PROP_64" /*Garage Innocence Boulevard*/;
 			break;
 	
 		case 59:
-			str = "MP_PROP_65" /*634 Blvd Del Perro*/;
+			str = "MP_PROP_65" /*634 Blvd. Del Perro*/;
 			break;
 	
 		case 60:
-			str = "MP_PROP_66" /*0897 Mirror Park Blvd*/;
+			str = "MP_PROP_66" /*0897 Mirror Park Blvd.*/;
 			break;
 	
 		case 61:
-			str = "MP_PROP_67" /*Eclipse Towers, apto. 3*/;
+			str = "MP_PROP_67" /*Eclipse Towers, 3*/;
 			break;
 	
 		case 62:
-			str = "MP_PROP_68" /*Del Perro Heights, apto. 4*/;
+			str = "MP_PROP_68" /*Del Perro Heights, 4*/;
 			break;
 	
 		case 63:
-			str = "MP_PROP_69" /*Richards Majestic, apto. 2*/;
+			str = "MP_PROP_69" /*Richard Majestic, 2*/;
 			break;
 	
 		case 64:
-			str = "MP_PROP_70" /*Tinsel Towers, apto. 42*/;
+			str = "MP_PROP_70" /*Tinsel Towers, 42*/;
 			break;
 	
 		case 65:
-			str = "MP_PROP_71" /*4 Integrity Way, apto. 28*/;
+			str = "MP_PROP_71" /*4 Integrity Way, 28*/;
 			break;
 	
 		case 66:
-			str = "MP_PROP_72" /*4 Hangman Ave*/;
+			str = "MP_PROP_72" /*Hangman Ave 4*/;
 			break;
 	
 		case 67:
-			str = "MP_PROP_73" /*12 Sustancia Rd*/;
+			str = "MP_PROP_73" /*Sustancia Rd. 12*/;
 			break;
 	
 		case 68:
-			str = "MP_PROP_74" /*4584 Procopio Dr*/;
+			str = "MP_PROP_74" /*Procopio Dr. 4584*/;
 			break;
 	
 		case 69:
-			str = "MP_PROP_75" /*4401 Procopio Dr*/;
+			str = "MP_PROP_75" /*Procopio Dr. 4401*/;
 			break;
 	
 		case 70:
-			str = "MP_PROP_76" /*0232 Paleto Blvd*/;
+			str = "MP_PROP_76" /*Paleto Blvd. 0232*/;
 			break;
 	
 		case 71:
-			str = "MP_PROP_77" /*140 Zancudo Ave*/;
+			str = "MP_PROP_77" /*Zancudo Ave. 140*/;
 			break;
 	
 		case 72:
-			str = "MP_PROP_78" /*1893 Grapeseed Ave*/;
+			str = "MP_PROP_78" /*Grapeseed Ave. 1893*/;
 			break;
 	
 		case 83:
-			str = "MP_PROP_79" /*Eclipse Towers, suite en el ático 1*/;
+			str = "MP_PROP_79" /*Eclipse Towers, suite en el penthouse 1*/;
 			break;
 	
 		case 84:
-			str = "MP_PROP_80" /*Eclipse Towers, suite en el ático 2*/;
+			str = "MP_PROP_80" /*Eclipse Towers, suite en el penthouse 2*/;
 			break;
 	
 		case 85:
-			str = "MP_PROP_81" /*Eclipse Towers, suite en el ático 3*/;
+			str = "MP_PROP_81" /*Eclipse Towers, suite en el penthouse 3*/;
 			break;
 	
 		case 73:
@@ -12463,7 +12482,7 @@ char* func_66(int iParam0) // Position - 0x21C4C (138316)
 			break;
 	
 		case 89:
-			str = "MP_PROP_OFF3" /*Centro Arcadius*/;
+			str = "MP_PROP_OFF3" /*Arcadius Business Center*/;
 			break;
 	
 		case 90:
@@ -12471,76 +12490,76 @@ char* func_66(int iParam0) // Position - 0x21C4C (138316)
 			break;
 	
 		case 91:
-			str = "MP_PROP_CLUBH1" /*Sede de Rancho*/;
+			str = "MP_PROP_CLUBH1" /*Sede de club de Rancho*/;
 			break;
 	
 		case 92:
-			str = "MP_PROP_CLUBH2" /*Sede de Del Perro Beach*/;
+			str = "MP_PROP_CLUBH2" /*Sede de club de Del Perro Beach*/;
 			break;
 	
 		case 93:
-			str = "MP_PROP_CLUBH3" /*Sede de Pillbox Hill*/;
+			str = "MP_PROP_CLUBH3" /*Sede de club de Pillbox Hill*/;
 			break;
 	
 		case 94:
-			str = "MP_PROP_CLUBH4" /*Sede de Great Chaparral*/;
+			str = "MP_PROP_CLUBH4" /*Sede de club de Great Chaparral*/;
 			break;
 	
 		case 95:
-			str = "MP_PROP_CLUBH5" /*Sede de Paleto Bay*/;
+			str = "MP_PROP_CLUBH5" /*Sede de club de Paleto Bay*/;
 			break;
 	
 		case 96:
-			str = "MP_PROP_CLUBH6" /*Sede de Sandy Shores*/;
+			str = "MP_PROP_CLUBH6" /*Sede de club de Sandy Shores*/;
 			break;
 	
 		case 97:
-			str = "MP_PROP_CLUBH7" /*Sede de La Mesa*/;
+			str = "MP_PROP_CLUBH7" /*Sede de club de La Mesa*/;
 			break;
 	
 		case 98:
-			str = "MP_PROP_CLUBH8" /*Sede del centro de Vinewood*/;
+			str = "MP_PROP_CLUBH8" /*Sede de club de Vinewood*/;
 			break;
 	
 		case 99:
-			str = "MP_PROP_CLUBH9" /*Sede de Hawick*/;
+			str = "MP_PROP_CLUBH9" /*Sede de club de Hawick*/;
 			break;
 	
 		case 100:
-			str = "MP_PROP_CLUBH10" /*Sede de Grapeseed*/;
+			str = "MP_PROP_CLUBH10" /*Sede de club de Grapeseed*/;
 			break;
 	
 		case 101:
-			str = "MP_PROP_CLUBH11" /*Sede de Paleto Bay*/;
+			str = "MP_PROP_CLUBH11" /*Sede de club de Paleto Bay*/;
 			break;
 	
 		case 102:
-			str = "MP_PROP_CLUBH12" /*Sede de Vespucci Beach*/;
+			str = "MP_PROP_CLUBH12" /*Sede de club de Vespucci Beach*/;
 			break;
 	
 		case 103:
 		case 106:
 		case 109:
 		case 112:
-			str = "MP_PROP_OFFG1" /*Garaje de oficina 1*/;
+			str = "MP_PROP_OFFG1" /*Garage de oficina 1*/;
 			break;
 	
 		case 104:
 		case 107:
 		case 110:
 		case 113:
-			str = "MP_PROP_OFFG2" /*Garaje de oficina 2*/;
+			str = "MP_PROP_OFFG2" /*Garage de oficina 2*/;
 			break;
 	
 		case 105:
 		case 108:
 		case 111:
 		case 114:
-			str = "MP_PROP_OFFG3" /*Garaje de oficina 3*/;
+			str = "MP_PROP_OFFG3" /*Garage de oficina 3*/;
 			break;
 	
 		case 115:
-			str = "IE_WARE_1" /*Almacén de exportación*/;
+			str = "IE_WARE_1" /*Almacén de vehículos*/;
 			break;
 	}
 
@@ -13035,7 +13054,7 @@ int func_74() // Position - 0x22C8E (142478)
 
 	if (STATS::STAT_SLOT_IS_LOADED(0))
 	{
-		if (Global_153789.f_3)
+		if (Global_153850.f_3)
 		{
 			statHash = joaat("MPPLY_PLAT_UP_LB_CHECK") /* TUNEABLE: MPPLY_PLAT_UP_LB_CHECK */;
 		
@@ -13088,9 +13107,9 @@ int _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0x22DC7 (142791)
 {
 	int profileSetting;
 
-	if (Global_153787 == 2)
+	if (Global_153848 == 2)
 		return 1;
-	else if (Global_153787 == 3)
+	else if (Global_153848 == 3)
 		return 0;
 
 	if (NETWORK::NETWORK_IS_SIGNED_IN())

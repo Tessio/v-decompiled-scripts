@@ -1,4 +1,4 @@
-// Program registers 232541 globals at index 18 starting from Global_4718592
+// Program registers 237529 globals at index 18 starting from Global_4718592
 void main() // Position - 0x0 (0)
 {
 	return;

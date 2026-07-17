@@ -11,18 +11,37 @@
 	int iLocal_9 = 0;
 	int iLocal_10 = 0;
 	int iLocal_11 = 0;
-	float fLocal_12 = 0f;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	int iLocal_15 = 0;
-	var uLocal_16 = 0;
+	var uLocal_12 = 0;
+	var uLocal_13 = -2;
+	var uLocal_14 = -2;
+	var uLocal_15 = -2;
+	var uLocal_16 = 5;
 	var uLocal_17 = 0;
-	char* sLocal_18 = 0;
+	var uLocal_18 = 0;
 	var uLocal_19 = 0;
 	var uLocal_20 = 0;
 	var uLocal_21 = 0;
-	var uLocal_22 = 0;
+	var uLocal_22 = 2;
 	var uLocal_23 = 0;
+	var uLocal_24 = 0;
+	var uLocal_25 = 2;
+	var uLocal_26 = 0;
+	var uLocal_27 = 0;
+	var uLocal_28 = 2;
+	var uLocal_29 = 0;
+	var uLocal_30 = 0;
+	float fLocal_31 = 0f;
+	var uLocal_32 = 0;
+	var uLocal_33 = 0;
+	int iLocal_34 = 0;
+	var uLocal_35 = 0;
+	var uLocal_36 = 0;
+	char* sLocal_37 = 0;
+	var uLocal_38 = 0;
+	var uLocal_39 = 0;
+	var uLocal_40 = 0;
+	var uLocal_41 = 0;
+	var uLocal_42 = 0;
 #endregion
 
 void main() // Position - 0x0 (0)
@@ -37,16 +56,16 @@ void main() // Position - 0x0 (0)
 	iLocal_9 = 1;
 	iLocal_10 = 12;
 	iLocal_11 = 12;
-	fLocal_12 = 0.001f;
-	iLocal_15 = -1;
-	sLocal_18 = "NULL";
+	fLocal_31 = 0.001f;
+	iLocal_34 = -1;
+	sLocal_37 = "NULL";
 
 	while (true)
 	{
-		if (_SHOULD_NETWORK_SCRIPT_TERMINATE() || Global_1963151 == 1)
+		if (_SHOULD_NETWORK_SCRIPT_TERMINATE() || Global_1963676 == 1)
 			func_6();
 	
-		if (func_1(&uLocal_19, &Global_299580))
+		if (func_1(&uLocal_38, &Global_299937))
 			func_6();
 	
 		BUILTIN::WAIT(0);
@@ -21385,10 +21404,10 @@ void func_2(int iParam0, var uParam1) // Position - 0x1CD (461)
 
 int func_3() // Position - 0x1D086 (118918)
 {
-	if (Global_2693290)
+	if (Global_2693398)
 		return 32;
 
-	return 32 - Global_2693291;
+	return 32 - Global_2693399;
 }
 
 Hash func_4(int iParam0) // Position - 0x1D0A1 (118945)
@@ -21516,14 +21535,14 @@ void func_6() // Position - 0x1D33F (119615)
 
 BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x1D34B (119627)
 {
-	if (Global_1575062 == false)
+	if (Global_1575066 == false)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			return true;
 
 	if (func_14())
 		return true;
 
-	if (Global_2699567)
+	if (Global_2699678)
 		return true;
 
 	if (func_13())
@@ -21562,7 +21581,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x1D3CF (119759)
 
 Hash func_9() // Position - 0x1D402 (119810)
 {
-	switch (Global_2699676)
+	switch (Global_2699787)
 	{
 		case 0:
 			return joaat("freemode");
@@ -21576,12 +21595,12 @@ Hash func_9() // Position - 0x1D402 (119810)
 
 eHudColour func_10() // Position - 0x1D426 (119846)
 {
-	return Global_33775;
+	return Global_33815;
 }
 
 BOOL func_11() // Position - 0x1D431 (119857)
 {
-	return Global_2685150.f_700;
+	return Global_2685152.f_726;
 }
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x1D440 (119872)
@@ -21594,11 +21613,11 @@ BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x1D440 (119872)
 
 BOOL func_13() // Position - 0x1D457 (119895)
 {
-	return Global_2696964;
+	return Global_2697072;
 }
 
 BOOL func_14() // Position - 0x1D463 (119907)
 {
-	return Global_2685150.f_695;
+	return Global_2685152.f_721;
 }
 

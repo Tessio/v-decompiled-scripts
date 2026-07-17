@@ -11,62 +11,62 @@
 	int iLocal_9 = 0;
 	int iLocal_10 = 0;
 	int iLocal_11 = 0;
-	float fLocal_12 = 0f;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	int iLocal_15 = 0;
-	char* sLocal_16 = 0;
+	var uLocal_12 = 0;
+	var uLocal_13 = -2;
+	var uLocal_14 = -2;
+	var uLocal_15 = -2;
+	var uLocal_16 = 5;
 	var uLocal_17 = 0;
 	var uLocal_18 = 0;
-	float fLocal_19 = 0f;
+	var uLocal_19 = 0;
 	var uLocal_20 = 0;
 	var uLocal_21 = 0;
-	var uLocal_22 = 0;
-	float fLocal_23 = 0f;
-	float fLocal_24 = 0f;
-	var uLocal_25 = 0;
+	var uLocal_22 = 2;
+	var uLocal_23 = 0;
+	var uLocal_24 = 0;
+	var uLocal_25 = 2;
 	var uLocal_26 = 0;
 	var uLocal_27 = 0;
-	float fLocal_28 = 0f;
-	float fLocal_29 = 0f;
-	float fLocal_30 = 0f;
-	var uLocal_31 = 0;
+	var uLocal_28 = 2;
+	var uLocal_29 = 0;
+	var uLocal_30 = 0;
+	float fLocal_31 = 0f;
 	var uLocal_32 = 0;
-	int iLocal_33 = 0;
-	var uLocal_34 = 0;
-	var uLocal_35 = 0;
+	var uLocal_33 = 0;
+	int iLocal_34 = 0;
+	char* sLocal_35 = 0;
 	var uLocal_36 = 0;
 	var uLocal_37 = 0;
-	var uLocal_38 = 0;
-	int iLocal_39 = 0;
-	int iLocal_40 = 0;
-	int iLocal_41 = 0;
-	int iLocal_42 = 0;
-	var uLocal_43 = 0;
+	float fLocal_38 = 0f;
+	var uLocal_39 = 0;
+	var uLocal_40 = 0;
+	var uLocal_41 = 0;
+	float fLocal_42 = 0f;
+	float fLocal_43 = 0f;
 	var uLocal_44 = 0;
 	var uLocal_45 = 0;
 	var uLocal_46 = 0;
-	var uLocal_47 = 0;
-	var uLocal_48 = 0;
-	var uLocal_49 = 0;
+	float fLocal_47 = 0f;
+	float fLocal_48 = 0f;
+	float fLocal_49 = 0f;
 	var uLocal_50 = 0;
 	var uLocal_51 = 0;
-	var uLocal_52 = 0;
+	int iLocal_52 = 0;
 	var uLocal_53 = 0;
 	var uLocal_54 = 0;
 	var uLocal_55 = 0;
 	var uLocal_56 = 0;
 	var uLocal_57 = 0;
-	var uLocal_58 = 0;
-	var uLocal_59 = 0;
-	var uLocal_60 = 0;
-	var uLocal_61 = 0;
+	int iLocal_58 = 0;
+	int iLocal_59 = 0;
+	int iLocal_60 = 0;
+	int iLocal_61 = 0;
 	var uLocal_62 = 0;
 	var uLocal_63 = 0;
 	var uLocal_64 = 0;
-	float fLocal_65 = 0f;
+	var uLocal_65 = 0;
 	var uLocal_66 = 0;
-	float fLocal_67 = 0f;
+	var uLocal_67 = 0;
 	var uLocal_68 = 0;
 	var uLocal_69 = 0;
 	var uLocal_70 = 0;
@@ -83,9 +83,9 @@
 	var uLocal_81 = 0;
 	var uLocal_82 = 0;
 	var uLocal_83 = 0;
-	var uLocal_84 = 0;
+	float fLocal_84 = 0f;
 	var uLocal_85 = 0;
-	var uLocal_86 = 0;
+	float fLocal_86 = 0f;
 	var uLocal_87 = 0;
 	var uLocal_88 = 0;
 	var uLocal_89 = 0;
@@ -101,7 +101,7 @@
 	var uLocal_99 = 0;
 	var uLocal_100 = 0;
 	var uLocal_101 = 0;
-	var uLocal_102 = -1;
+	var uLocal_102 = 0;
 	var uLocal_103 = 0;
 	var uLocal_104 = 0;
 	var uLocal_105 = 0;
@@ -110,21 +110,21 @@
 	var uLocal_108 = 0;
 	var uLocal_109 = 0;
 	var uLocal_110 = 0;
-	var uLocal_111 = -2;
-	var uLocal_112 = -2;
-	var uLocal_113 = -2;
-	var uLocal_114 = 5;
+	var uLocal_111 = 0;
+	var uLocal_112 = 0;
+	var uLocal_113 = 0;
+	var uLocal_114 = 0;
 	var uLocal_115 = 0;
 	var uLocal_116 = 0;
 	var uLocal_117 = 0;
 	var uLocal_118 = 0;
 	var uLocal_119 = 0;
-	var uLocal_120 = 2;
+	var uLocal_120 = 0;
 	var uLocal_121 = 0;
 	var uLocal_122 = 0;
-	var uLocal_123 = 2;
+	var uLocal_123 = 0;
 	var uLocal_124 = 0;
-	var uLocal_125 = 0;
+	var uLocal_125 = -1;
 	var uLocal_126 = 0;
 	var uLocal_127 = 0;
 	var uLocal_128 = 0;
@@ -141,395 +141,395 @@
 	var uLocal_139 = 0;
 	var uLocal_140 = 0;
 	var uLocal_141 = 0;
-	int iLocal_142 = 0;
+	var uLocal_142 = 0;
 	var uLocal_143 = 0;
 	var uLocal_144 = 0;
 	var uLocal_145 = 0;
 	var uLocal_146 = 0;
-	var uLocal_147 = 32;
+	var uLocal_147 = 0;
 	var uLocal_148 = 0;
-	var uLocal_149 = 0;
+	int iLocal_149 = 0;
 	var uLocal_150 = 0;
-	var uLocal_151 = -1;
+	var uLocal_151 = 0;
 	var uLocal_152 = 0;
 	var uLocal_153 = 0;
-	var uLocal_154 = 0;
+	var uLocal_154 = 32;
 	var uLocal_155 = 0;
 	var uLocal_156 = 0;
 	var uLocal_157 = 0;
-	var uLocal_158 = 0;
+	var uLocal_158 = -1;
 	var uLocal_159 = 0;
 	var uLocal_160 = 0;
 	var uLocal_161 = 0;
 	var uLocal_162 = 0;
-	var uLocal_163 = -1;
+	var uLocal_163 = 0;
 	var uLocal_164 = 0;
 	var uLocal_165 = 0;
 	var uLocal_166 = 0;
 	var uLocal_167 = 0;
 	var uLocal_168 = 0;
 	var uLocal_169 = 0;
-	var uLocal_170 = 0;
+	var uLocal_170 = -1;
 	var uLocal_171 = 0;
 	var uLocal_172 = 0;
 	var uLocal_173 = 0;
 	var uLocal_174 = 0;
-	var uLocal_175 = -1;
+	var uLocal_175 = 0;
 	var uLocal_176 = 0;
 	var uLocal_177 = 0;
 	var uLocal_178 = 0;
 	var uLocal_179 = 0;
 	var uLocal_180 = 0;
 	var uLocal_181 = 0;
-	var uLocal_182 = 0;
+	var uLocal_182 = -1;
 	var uLocal_183 = 0;
 	var uLocal_184 = 0;
 	var uLocal_185 = 0;
 	var uLocal_186 = 0;
-	var uLocal_187 = -1;
+	var uLocal_187 = 0;
 	var uLocal_188 = 0;
 	var uLocal_189 = 0;
 	var uLocal_190 = 0;
 	var uLocal_191 = 0;
 	var uLocal_192 = 0;
 	var uLocal_193 = 0;
-	var uLocal_194 = 0;
+	var uLocal_194 = -1;
 	var uLocal_195 = 0;
 	var uLocal_196 = 0;
 	var uLocal_197 = 0;
 	var uLocal_198 = 0;
-	var uLocal_199 = -1;
+	var uLocal_199 = 0;
 	var uLocal_200 = 0;
 	var uLocal_201 = 0;
 	var uLocal_202 = 0;
 	var uLocal_203 = 0;
 	var uLocal_204 = 0;
 	var uLocal_205 = 0;
-	var uLocal_206 = 0;
+	var uLocal_206 = -1;
 	var uLocal_207 = 0;
 	var uLocal_208 = 0;
 	var uLocal_209 = 0;
 	var uLocal_210 = 0;
-	var uLocal_211 = -1;
+	var uLocal_211 = 0;
 	var uLocal_212 = 0;
 	var uLocal_213 = 0;
 	var uLocal_214 = 0;
 	var uLocal_215 = 0;
 	var uLocal_216 = 0;
 	var uLocal_217 = 0;
-	var uLocal_218 = 0;
+	var uLocal_218 = -1;
 	var uLocal_219 = 0;
 	var uLocal_220 = 0;
 	var uLocal_221 = 0;
 	var uLocal_222 = 0;
-	var uLocal_223 = -1;
+	var uLocal_223 = 0;
 	var uLocal_224 = 0;
 	var uLocal_225 = 0;
 	var uLocal_226 = 0;
 	var uLocal_227 = 0;
 	var uLocal_228 = 0;
 	var uLocal_229 = 0;
-	var uLocal_230 = 0;
+	var uLocal_230 = -1;
 	var uLocal_231 = 0;
 	var uLocal_232 = 0;
 	var uLocal_233 = 0;
 	var uLocal_234 = 0;
-	var uLocal_235 = -1;
+	var uLocal_235 = 0;
 	var uLocal_236 = 0;
 	var uLocal_237 = 0;
 	var uLocal_238 = 0;
 	var uLocal_239 = 0;
 	var uLocal_240 = 0;
 	var uLocal_241 = 0;
-	var uLocal_242 = 0;
+	var uLocal_242 = -1;
 	var uLocal_243 = 0;
 	var uLocal_244 = 0;
 	var uLocal_245 = 0;
 	var uLocal_246 = 0;
-	var uLocal_247 = -1;
+	var uLocal_247 = 0;
 	var uLocal_248 = 0;
 	var uLocal_249 = 0;
 	var uLocal_250 = 0;
 	var uLocal_251 = 0;
 	var uLocal_252 = 0;
 	var uLocal_253 = 0;
-	var uLocal_254 = 0;
+	var uLocal_254 = -1;
 	var uLocal_255 = 0;
 	var uLocal_256 = 0;
 	var uLocal_257 = 0;
 	var uLocal_258 = 0;
-	var uLocal_259 = -1;
+	var uLocal_259 = 0;
 	var uLocal_260 = 0;
 	var uLocal_261 = 0;
 	var uLocal_262 = 0;
 	var uLocal_263 = 0;
 	var uLocal_264 = 0;
 	var uLocal_265 = 0;
-	var uLocal_266 = 0;
+	var uLocal_266 = -1;
 	var uLocal_267 = 0;
 	var uLocal_268 = 0;
 	var uLocal_269 = 0;
 	var uLocal_270 = 0;
-	var uLocal_271 = -1;
+	var uLocal_271 = 0;
 	var uLocal_272 = 0;
 	var uLocal_273 = 0;
 	var uLocal_274 = 0;
 	var uLocal_275 = 0;
 	var uLocal_276 = 0;
 	var uLocal_277 = 0;
-	var uLocal_278 = 0;
+	var uLocal_278 = -1;
 	var uLocal_279 = 0;
 	var uLocal_280 = 0;
 	var uLocal_281 = 0;
 	var uLocal_282 = 0;
-	var uLocal_283 = -1;
+	var uLocal_283 = 0;
 	var uLocal_284 = 0;
 	var uLocal_285 = 0;
 	var uLocal_286 = 0;
 	var uLocal_287 = 0;
 	var uLocal_288 = 0;
 	var uLocal_289 = 0;
-	var uLocal_290 = 0;
+	var uLocal_290 = -1;
 	var uLocal_291 = 0;
 	var uLocal_292 = 0;
 	var uLocal_293 = 0;
 	var uLocal_294 = 0;
-	var uLocal_295 = -1;
+	var uLocal_295 = 0;
 	var uLocal_296 = 0;
 	var uLocal_297 = 0;
 	var uLocal_298 = 0;
 	var uLocal_299 = 0;
 	var uLocal_300 = 0;
 	var uLocal_301 = 0;
-	var uLocal_302 = 0;
+	var uLocal_302 = -1;
 	var uLocal_303 = 0;
 	var uLocal_304 = 0;
 	var uLocal_305 = 0;
 	var uLocal_306 = 0;
-	var uLocal_307 = -1;
+	var uLocal_307 = 0;
 	var uLocal_308 = 0;
 	var uLocal_309 = 0;
 	var uLocal_310 = 0;
 	var uLocal_311 = 0;
 	var uLocal_312 = 0;
 	var uLocal_313 = 0;
-	var uLocal_314 = 0;
+	var uLocal_314 = -1;
 	var uLocal_315 = 0;
 	var uLocal_316 = 0;
 	var uLocal_317 = 0;
 	var uLocal_318 = 0;
-	var uLocal_319 = -1;
+	var uLocal_319 = 0;
 	var uLocal_320 = 0;
 	var uLocal_321 = 0;
 	var uLocal_322 = 0;
 	var uLocal_323 = 0;
 	var uLocal_324 = 0;
 	var uLocal_325 = 0;
-	var uLocal_326 = 0;
+	var uLocal_326 = -1;
 	var uLocal_327 = 0;
 	var uLocal_328 = 0;
 	var uLocal_329 = 0;
 	var uLocal_330 = 0;
-	var uLocal_331 = -1;
+	var uLocal_331 = 0;
 	var uLocal_332 = 0;
 	var uLocal_333 = 0;
 	var uLocal_334 = 0;
 	var uLocal_335 = 0;
 	var uLocal_336 = 0;
 	var uLocal_337 = 0;
-	var uLocal_338 = 0;
+	var uLocal_338 = -1;
 	var uLocal_339 = 0;
 	var uLocal_340 = 0;
 	var uLocal_341 = 0;
 	var uLocal_342 = 0;
-	var uLocal_343 = -1;
+	var uLocal_343 = 0;
 	var uLocal_344 = 0;
 	var uLocal_345 = 0;
 	var uLocal_346 = 0;
 	var uLocal_347 = 0;
 	var uLocal_348 = 0;
 	var uLocal_349 = 0;
-	var uLocal_350 = 0;
+	var uLocal_350 = -1;
 	var uLocal_351 = 0;
 	var uLocal_352 = 0;
 	var uLocal_353 = 0;
 	var uLocal_354 = 0;
-	var uLocal_355 = -1;
+	var uLocal_355 = 0;
 	var uLocal_356 = 0;
 	var uLocal_357 = 0;
 	var uLocal_358 = 0;
 	var uLocal_359 = 0;
 	var uLocal_360 = 0;
 	var uLocal_361 = 0;
-	var uLocal_362 = 0;
+	var uLocal_362 = -1;
 	var uLocal_363 = 0;
 	var uLocal_364 = 0;
 	var uLocal_365 = 0;
 	var uLocal_366 = 0;
-	var uLocal_367 = -1;
+	var uLocal_367 = 0;
 	var uLocal_368 = 0;
 	var uLocal_369 = 0;
 	var uLocal_370 = 0;
 	var uLocal_371 = 0;
 	var uLocal_372 = 0;
 	var uLocal_373 = 0;
-	var uLocal_374 = 0;
+	var uLocal_374 = -1;
 	var uLocal_375 = 0;
 	var uLocal_376 = 0;
 	var uLocal_377 = 0;
 	var uLocal_378 = 0;
-	var uLocal_379 = -1;
+	var uLocal_379 = 0;
 	var uLocal_380 = 0;
 	var uLocal_381 = 0;
 	var uLocal_382 = 0;
 	var uLocal_383 = 0;
 	var uLocal_384 = 0;
 	var uLocal_385 = 0;
-	var uLocal_386 = 0;
+	var uLocal_386 = -1;
 	var uLocal_387 = 0;
 	var uLocal_388 = 0;
 	var uLocal_389 = 0;
 	var uLocal_390 = 0;
-	var uLocal_391 = -1;
+	var uLocal_391 = 0;
 	var uLocal_392 = 0;
 	var uLocal_393 = 0;
 	var uLocal_394 = 0;
 	var uLocal_395 = 0;
 	var uLocal_396 = 0;
 	var uLocal_397 = 0;
-	var uLocal_398 = 0;
+	var uLocal_398 = -1;
 	var uLocal_399 = 0;
 	var uLocal_400 = 0;
 	var uLocal_401 = 0;
 	var uLocal_402 = 0;
-	var uLocal_403 = -1;
+	var uLocal_403 = 0;
 	var uLocal_404 = 0;
 	var uLocal_405 = 0;
 	var uLocal_406 = 0;
 	var uLocal_407 = 0;
 	var uLocal_408 = 0;
 	var uLocal_409 = 0;
-	var uLocal_410 = 0;
+	var uLocal_410 = -1;
 	var uLocal_411 = 0;
 	var uLocal_412 = 0;
 	var uLocal_413 = 0;
 	var uLocal_414 = 0;
-	var uLocal_415 = -1;
+	var uLocal_415 = 0;
 	var uLocal_416 = 0;
 	var uLocal_417 = 0;
 	var uLocal_418 = 0;
 	var uLocal_419 = 0;
 	var uLocal_420 = 0;
 	var uLocal_421 = 0;
-	var uLocal_422 = 0;
+	var uLocal_422 = -1;
 	var uLocal_423 = 0;
 	var uLocal_424 = 0;
 	var uLocal_425 = 0;
 	var uLocal_426 = 0;
-	var uLocal_427 = -1;
+	var uLocal_427 = 0;
 	var uLocal_428 = 0;
 	var uLocal_429 = 0;
 	var uLocal_430 = 0;
 	var uLocal_431 = 0;
 	var uLocal_432 = 0;
 	var uLocal_433 = 0;
-	var uLocal_434 = 0;
+	var uLocal_434 = -1;
 	var uLocal_435 = 0;
 	var uLocal_436 = 0;
 	var uLocal_437 = 0;
 	var uLocal_438 = 0;
-	var uLocal_439 = -1;
+	var uLocal_439 = 0;
 	var uLocal_440 = 0;
 	var uLocal_441 = 0;
 	var uLocal_442 = 0;
 	var uLocal_443 = 0;
 	var uLocal_444 = 0;
 	var uLocal_445 = 0;
-	var uLocal_446 = 0;
+	var uLocal_446 = -1;
 	var uLocal_447 = 0;
 	var uLocal_448 = 0;
 	var uLocal_449 = 0;
 	var uLocal_450 = 0;
-	var uLocal_451 = -1;
+	var uLocal_451 = 0;
 	var uLocal_452 = 0;
 	var uLocal_453 = 0;
 	var uLocal_454 = 0;
 	var uLocal_455 = 0;
 	var uLocal_456 = 0;
 	var uLocal_457 = 0;
-	var uLocal_458 = 0;
+	var uLocal_458 = -1;
 	var uLocal_459 = 0;
 	var uLocal_460 = 0;
 	var uLocal_461 = 0;
 	var uLocal_462 = 0;
-	var uLocal_463 = -1;
+	var uLocal_463 = 0;
 	var uLocal_464 = 0;
 	var uLocal_465 = 0;
 	var uLocal_466 = 0;
 	var uLocal_467 = 0;
 	var uLocal_468 = 0;
 	var uLocal_469 = 0;
-	var uLocal_470 = 0;
+	var uLocal_470 = -1;
 	var uLocal_471 = 0;
 	var uLocal_472 = 0;
 	var uLocal_473 = 0;
 	var uLocal_474 = 0;
-	var uLocal_475 = -1;
+	var uLocal_475 = 0;
 	var uLocal_476 = 0;
 	var uLocal_477 = 0;
 	var uLocal_478 = 0;
 	var uLocal_479 = 0;
 	var uLocal_480 = 0;
 	var uLocal_481 = 0;
-	var uLocal_482 = 0;
+	var uLocal_482 = -1;
 	var uLocal_483 = 0;
 	var uLocal_484 = 0;
 	var uLocal_485 = 0;
 	var uLocal_486 = 0;
-	var uLocal_487 = -1;
+	var uLocal_487 = 0;
 	var uLocal_488 = 0;
 	var uLocal_489 = 0;
 	var uLocal_490 = 0;
 	var uLocal_491 = 0;
 	var uLocal_492 = 0;
 	var uLocal_493 = 0;
-	var uLocal_494 = 0;
+	var uLocal_494 = -1;
 	var uLocal_495 = 0;
 	var uLocal_496 = 0;
 	var uLocal_497 = 0;
 	var uLocal_498 = 0;
-	var uLocal_499 = -1;
+	var uLocal_499 = 0;
 	var uLocal_500 = 0;
 	var uLocal_501 = 0;
 	var uLocal_502 = 0;
 	var uLocal_503 = 0;
 	var uLocal_504 = 0;
 	var uLocal_505 = 0;
-	var uLocal_506 = 0;
+	var uLocal_506 = -1;
 	var uLocal_507 = 0;
 	var uLocal_508 = 0;
 	var uLocal_509 = 0;
 	var uLocal_510 = 0;
-	var uLocal_511 = -1;
+	var uLocal_511 = 0;
 	var uLocal_512 = 0;
 	var uLocal_513 = 0;
 	var uLocal_514 = 0;
 	var uLocal_515 = 0;
 	var uLocal_516 = 0;
 	var uLocal_517 = 0;
-	var uLocal_518 = 0;
+	var uLocal_518 = -1;
 	var uLocal_519 = 0;
 	var uLocal_520 = 0;
 	var uLocal_521 = 0;
 	var uLocal_522 = 0;
-	var uLocal_523 = -1;
+	var uLocal_523 = 0;
 	var uLocal_524 = 0;
 	var uLocal_525 = 0;
 	var uLocal_526 = 0;
 	var uLocal_527 = 0;
 	var uLocal_528 = 0;
 	var uLocal_529 = 0;
-	var uLocal_530 = 0;
+	var uLocal_530 = -1;
 	var uLocal_531 = 0;
 	var uLocal_532 = 0;
 	var uLocal_533 = 0;
@@ -539,14 +539,14 @@
 	var uLocal_537 = 0;
 	var uLocal_538 = 0;
 	var uLocal_539 = 0;
-	var uLocal_540 = 75;
+	var uLocal_540 = 0;
 	var uLocal_541 = 0;
 	var uLocal_542 = 0;
 	var uLocal_543 = 0;
 	var uLocal_544 = 0;
 	var uLocal_545 = 0;
 	var uLocal_546 = 0;
-	var uLocal_547 = 0;
+	var uLocal_547 = 75;
 	var uLocal_548 = 0;
 	var uLocal_549 = 0;
 	var uLocal_550 = 0;
@@ -690,14 +690,14 @@
 	var uLocal_688 = 0;
 	var uLocal_689 = 0;
 	var uLocal_690 = 0;
-	var uLocal_691 = 75;
+	var uLocal_691 = 0;
 	var uLocal_692 = 0;
 	var uLocal_693 = 0;
 	var uLocal_694 = 0;
 	var uLocal_695 = 0;
 	var uLocal_696 = 0;
 	var uLocal_697 = 0;
-	var uLocal_698 = 0;
+	var uLocal_698 = 75;
 	var uLocal_699 = 0;
 	var uLocal_700 = 0;
 	var uLocal_701 = 0;
@@ -812,22 +812,22 @@
 	var uLocal_810 = 0;
 	var uLocal_811 = 0;
 	var uLocal_812 = 0;
-	var uLocal_813 = 1;
+	var uLocal_813 = 0;
 	var uLocal_814 = 0;
 	var uLocal_815 = 0;
 	var uLocal_816 = 0;
 	var uLocal_817 = 0;
 	var uLocal_818 = 0;
 	var uLocal_819 = 0;
-	var uLocal_820 = 0;
-	var uLocal_821 = 27;
+	var uLocal_820 = 1;
+	var uLocal_821 = 0;
 	var uLocal_822 = 0;
 	var uLocal_823 = 0;
 	var uLocal_824 = 0;
 	var uLocal_825 = 0;
 	var uLocal_826 = 0;
 	var uLocal_827 = 0;
-	var uLocal_828 = 0;
+	var uLocal_828 = 27;
 	var uLocal_829 = 0;
 	var uLocal_830 = 0;
 	var uLocal_831 = 0;
@@ -938,14 +938,14 @@
 	var uLocal_936 = 0;
 	var uLocal_937 = 0;
 	var uLocal_938 = 0;
-	var uLocal_939 = 2;
+	var uLocal_939 = 0;
 	var uLocal_940 = 0;
 	var uLocal_941 = 0;
 	var uLocal_942 = 0;
 	var uLocal_943 = 0;
 	var uLocal_944 = 0;
 	var uLocal_945 = 0;
-	var uLocal_946 = 0;
+	var uLocal_946 = 2;
 	var uLocal_947 = 0;
 	var uLocal_948 = 0;
 	var uLocal_949 = 0;
@@ -972,14 +972,14 @@
 	var uLocal_970 = 0;
 	var uLocal_971 = 0;
 	var uLocal_972 = 0;
-	var uLocal_973 = 2;
+	var uLocal_973 = 0;
 	var uLocal_974 = 0;
 	var uLocal_975 = 0;
 	var uLocal_976 = 0;
 	var uLocal_977 = 0;
 	var uLocal_978 = 0;
 	var uLocal_979 = 0;
-	var uLocal_980 = 0;
+	var uLocal_980 = 2;
 	var uLocal_981 = 0;
 	var uLocal_982 = 0;
 	var uLocal_983 = 0;
@@ -1016,14 +1016,14 @@
 	var uLocal_1014 = 0;
 	var uLocal_1015 = 0;
 	var uLocal_1016 = 0;
-	var uLocal_1017 = 32;
+	var uLocal_1017 = 0;
 	var uLocal_1018 = 0;
 	var uLocal_1019 = 0;
 	var uLocal_1020 = 0;
 	var uLocal_1021 = 0;
 	var uLocal_1022 = 0;
 	var uLocal_1023 = 0;
-	var uLocal_1024 = 0;
+	var uLocal_1024 = 32;
 	var uLocal_1025 = 0;
 	var uLocal_1026 = 0;
 	var uLocal_1027 = 0;
@@ -1050,14 +1050,14 @@
 	var uLocal_1048 = 0;
 	var uLocal_1049 = 0;
 	var uLocal_1050 = 0;
-	var uLocal_1051 = -1;
+	var uLocal_1051 = 0;
 	var uLocal_1052 = 0;
 	var uLocal_1053 = 0;
 	var uLocal_1054 = 0;
 	var uLocal_1055 = 0;
 	var uLocal_1056 = 0;
 	var uLocal_1057 = 0;
-	var uLocal_1058 = 0;
+	var uLocal_1058 = -1;
 	var uLocal_1059 = 0;
 	var uLocal_1060 = 0;
 	var uLocal_1061 = 0;
@@ -1076,27 +1076,27 @@
 	var uLocal_1074 = 0;
 	var uLocal_1075 = 0;
 	var uLocal_1076 = 0;
-	var uLocal_1077 = 1;
+	var uLocal_1077 = 0;
 	var uLocal_1078 = 0;
 	var uLocal_1079 = 0;
 	var uLocal_1080 = 0;
 	var uLocal_1081 = 0;
 	var uLocal_1082 = 0;
 	var uLocal_1083 = 0;
-	var uLocal_1084 = 0;
+	var uLocal_1084 = 1;
 	var uLocal_1085 = 0;
-	var uLocal_1086 = 1036831949;
-	var uLocal_1087 = 1051931443;
-	var uLocal_1088 = 1058642330;
-	var uLocal_1089 = 1062836634;
-	var uLocal_1090 = 1065353216;
+	var uLocal_1086 = 0;
+	var uLocal_1087 = 0;
+	var uLocal_1088 = 0;
+	var uLocal_1089 = 0;
+	var uLocal_1090 = 0;
 	var uLocal_1091 = 0;
 	var uLocal_1092 = 0;
-	var uLocal_1093 = 0;
-	var uLocal_1094 = 0;
-	var uLocal_1095 = 0;
-	var uLocal_1096 = 0;
-	var uLocal_1097 = 0;
+	var uLocal_1093 = 1036831949;
+	var uLocal_1094 = 1051931443;
+	var uLocal_1095 = 1058642330;
+	var uLocal_1096 = 1062836634;
+	var uLocal_1097 = 1065353216;
 	var uLocal_1098 = 0;
 	var uLocal_1099 = 0;
 	var uLocal_1100 = 0;
@@ -1111,29 +1111,29 @@
 	var uLocal_1109 = 0;
 	var uLocal_1110 = 0;
 	var uLocal_1111 = 0;
-	var uLocal_1112 = 1115815936;
-	var uLocal_1113 = 1120403456;
+	var uLocal_1112 = 0;
+	var uLocal_1113 = 0;
 	var uLocal_1114 = 0;
 	var uLocal_1115 = 0;
 	var uLocal_1116 = 0;
 	var uLocal_1117 = 0;
 	var uLocal_1118 = 0;
-	var uLocal_1119 = 0;
-	var uLocal_1120 = 0;
-	var uLocal_1121 = -1;
+	var uLocal_1119 = 1115815936;
+	var uLocal_1120 = 1120403456;
+	var uLocal_1121 = 0;
 	var uLocal_1122 = 0;
 	var uLocal_1123 = 0;
 	var uLocal_1124 = 0;
-	var uLocal_1125 = 1115815936;
+	var uLocal_1125 = 0;
 	var uLocal_1126 = 0;
-	var uLocal_1127 = -1;
-	var uLocal_1128 = 0;
+	var uLocal_1127 = 0;
+	var uLocal_1128 = -1;
 	var uLocal_1129 = 0;
 	var uLocal_1130 = 0;
 	var uLocal_1131 = 0;
-	var uLocal_1132 = 0;
+	var uLocal_1132 = 1115815936;
 	var uLocal_1133 = 0;
-	var uLocal_1134 = 0;
+	var uLocal_1134 = -1;
 	var uLocal_1135 = 0;
 	var uLocal_1136 = 0;
 	var uLocal_1137 = 0;
@@ -1168,13 +1168,20 @@
 	var uLocal_1166 = 0;
 	var uLocal_1167 = 0;
 	var uLocal_1168 = 0;
-	var uLocal_1169 = 1;
+	var uLocal_1169 = 0;
 	var uLocal_1170 = 0;
 	var uLocal_1171 = 0;
 	var uLocal_1172 = 0;
 	var uLocal_1173 = 0;
 	var uLocal_1174 = 0;
 	var uLocal_1175 = 0;
+	var uLocal_1176 = 1;
+	var uLocal_1177 = 0;
+	var uLocal_1178 = 0;
+	var uLocal_1179 = 0;
+	var uLocal_1180 = 0;
+	var uLocal_1181 = 0;
+	var uLocal_1182 = 0;
 	var uScriptParam_0 = 1;
 	var uScriptParam_1 = 1;
 	var uScriptParam_2 = 1;
@@ -1198,22 +1205,22 @@ void main() // Position - 0x0 (0)
 	iLocal_9 = 1;
 	iLocal_10 = 12;
 	iLocal_11 = 12;
-	fLocal_12 = 0.001f;
-	iLocal_15 = -1;
-	sLocal_16 = "NULL";
-	fLocal_19 = 0f;
-	fLocal_23 = -0.0375f;
-	fLocal_24 = 0.17f;
-	fLocal_28 = 80f;
-	fLocal_29 = 140f;
-	fLocal_30 = 180f;
-	iLocal_33 = 3;
-	iLocal_39 = 1;
-	iLocal_40 = 65;
-	iLocal_41 = 49;
-	iLocal_42 = 64;
-	fLocal_65 = (0.05f + 0.275f) - 0.01f;
-	fLocal_67 = 0f;
+	fLocal_31 = 0.001f;
+	iLocal_34 = -1;
+	sLocal_35 = "NULL";
+	fLocal_38 = 0f;
+	fLocal_42 = -0.0375f;
+	fLocal_43 = 0.17f;
+	fLocal_47 = 80f;
+	fLocal_48 = 140f;
+	fLocal_49 = 180f;
+	iLocal_52 = 3;
+	iLocal_58 = 1;
+	iLocal_59 = 65;
+	iLocal_60 = 49;
+	iLocal_61 = 64;
+	fLocal_84 = (0.05f + 0.275f) - 0.01f;
+	fLocal_86 = 0f;
 
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 		func_429(&uScriptParam_0);
@@ -1230,16 +1237,16 @@ void main() // Position - 0x0 (0)
 		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(uScriptParam_0.f_4) == 0)
 			func_422();
 	
-		iLocal_142.f_1031();
+		iLocal_149.f_1031();
 	
 		if (StackVal)
 			func_422();
 	
-		switch (iLocal_142)
+		switch (iLocal_149)
 		{
 			case 0:
-				if (func_412(&(iLocal_142.f_1)))
-					iLocal_142 = 1;
+				if (func_412(&(iLocal_149.f_1)))
+					iLocal_149 = 1;
 				break;
 		
 			case 1:
@@ -1255,12 +1262,12 @@ void func_1() // Position - 0xFB (251)
 {
 	BOOL flag;
 
-	iLocal_142.f_1030();
+	iLocal_149.f_1030();
 
 	if (StackVal)
 	{
 		flag = func_405();
-		func_2(&(iLocal_142.f_1), flag, iLocal_142.f_1029);
+		func_2(&(iLocal_149.f_1), flag, iLocal_149.f_1029);
 	}
 
 	return;
@@ -1464,7 +1471,7 @@ void func_2(var uParam0, BOOL bParam1, int iParam2) // Position - 0x121 (289)
 
 ePedComponentType func_3() // Position - 0x4D1 (1233)
 {
-	return Global_77342;
+	return Global_77397;
 }
 
 void func_4(int* piParam0, int iParam1) // Position - 0x4DD (1245)
@@ -1475,7 +1482,7 @@ void func_4(int* piParam0, int iParam1) // Position - 0x4DD (1245)
 
 void func_5() // Position - 0x4ED (1261)
 {
-	Global_24390.f_134 = 1;
+	Global_24430.f_134 = 1;
 	return;
 }
 
@@ -1671,7 +1678,7 @@ ePedComponentType func_12(int iParam0, Ped pedParam1, char* sParam2, Hash hParam
 
 	type = func_23(iParam0, sParam2, hParam3, hParam4, iParam5, iParam6, iParam7, bParam9);
 
-	if (NETWORK::NETWORK_IS_ACTIVITY_SESSION() && IS_BIT_SET(Global_4718592.f_40, 19) || func_22(*Global_4718592.f_192777, true))
+	if (NETWORK::NETWORK_IS_ACTIVITY_SESSION() && IS_BIT_SET(Global_4718592.f_40, 19) || func_22(*Global_4718592.f_197291, true))
 		return type;
 
 	if (hParam4 == joaat("XPCATEGORY_COMPLETED_SHOWER") || hParam4 == joaat("XPCATEGORY_COMPLETED_ROLLERCOASTER"))
@@ -1708,7 +1715,7 @@ void func_13(Ped pedParam0, ePedComponentType epctParam1, char* sParam2, int iPa
 
 void func_14(int iParam0) // Position - 0x8D2 (2258)
 {
-	Global_2673271.f_1759 = iParam0;
+	Global_2673273.f_1759 = iParam0;
 	return;
 }
 
@@ -1771,7 +1778,7 @@ void func_18(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam3
 	
 		for (i = 0; i < 20; i = i + 1)
 		{
-			if (Global_2673271.f_1158[i /*30*/].f_6 == 0 || Global_2673271.f_1158[i /*30*/].f_6 == 7)
+			if (Global_2673273.f_1158[i /*30*/].f_6 == 0 || Global_2673273.f_1158[i /*30*/].f_6 == 7)
 			{
 				num = i;
 				i = 20;
@@ -1780,16 +1787,16 @@ void func_18(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam3
 	
 		if (num != -1)
 		{
-			Global_2673271.f_1158[num /*30*/] = { uParam0 };
-			Global_2673271.f_1158[num /*30*/].f_6 = 1;
-			Global_2673271.f_1158[num /*30*/].f_4 = func_21(Global_2673271.f_1158[num /*30*/], &Global_1574479, &Global_1574480);
-			Global_2673271.f_1158[num /*30*/].f_7 = NETWORK::GET_NETWORK_TIME();
-			Global_2673271.f_1158[num /*30*/].f_3 = epctParam3;
-			Global_2673271.f_1158[num /*30*/].f_8 = iParam4;
-			Global_2673271.f_1158[num /*30*/].f_9 = func_20();
-			Global_2673271.f_1158[num /*30*/].f_10 = func_19();
-			TEXT_LABEL_ASSIGN_STRING(&(Global_2673271.f_1158[num /*30*/].f_22), sParam5, 16);
-			Global_2673271.f_1158[num /*30*/].f_26 = NETWORK::GET_TIME_OFFSET(NETWORK::GET_NETWORK_TIME(), iParam6);
+			Global_2673273.f_1158[num /*30*/] = { uParam0 };
+			Global_2673273.f_1158[num /*30*/].f_6 = 1;
+			Global_2673273.f_1158[num /*30*/].f_4 = func_21(Global_2673273.f_1158[num /*30*/], &Global_1574479, &Global_1574480);
+			Global_2673273.f_1158[num /*30*/].f_7 = NETWORK::GET_NETWORK_TIME();
+			Global_2673273.f_1158[num /*30*/].f_3 = epctParam3;
+			Global_2673273.f_1158[num /*30*/].f_8 = iParam4;
+			Global_2673273.f_1158[num /*30*/].f_9 = func_20();
+			Global_2673273.f_1158[num /*30*/].f_10 = func_19();
+			TEXT_LABEL_ASSIGN_STRING(&(Global_2673273.f_1158[num /*30*/].f_22), sParam5, 16);
+			Global_2673273.f_1158[num /*30*/].f_26 = NETWORK::GET_TIME_OFFSET(NETWORK::GET_NETWORK_TIME(), iParam6);
 		}
 	}
 
@@ -1798,13 +1805,13 @@ void func_18(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam3
 
 int func_19() // Position - 0xAD2 (2770)
 {
-	if (Global_2673271.f_1759)
+	if (Global_2673273.f_1759)
 	{
-		Global_2673271.f_1759 = 0;
+		Global_2673273.f_1759 = 0;
 		return 1;
 	}
 
-	Global_2673271.f_1759 = 0;
+	Global_2673273.f_1759 = 0;
 	return 0;
 }
 
@@ -1812,8 +1819,8 @@ var func_20() // Position - 0xAFC (2812)
 {
 	var unk;
 
-	unk = Global_2673271.f_1761;
-	Global_2673271.f_1761 = 1;
+	unk = Global_2673273.f_1761;
+	Global_2673273.f_1761 = 1;
 	return unk;
 }
 
@@ -1935,7 +1942,7 @@ ePedComponentType func_24(int iParam0, int iParam1, char* sParam2, int iParam3, 
 				hParam9 == 0;
 				STATS::PLAYSTATS_AWARD_XP(value, hParam8, hParam9);
 			
-				if (Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_36.f_2 != -1)
+				if (Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_36.f_2 != -1)
 					func_49(1166, value, -1);
 			
 				func_30(value);
@@ -1958,7 +1965,7 @@ void func_25(int iParam0) // Position - 0xD6D (3437)
 {
 	if (func_64())
 	{
-		Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_198.f_5 = iParam0;
+		Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_198.f_5 = iParam0;
 		_MPPLY_STAT_SET_INT(joaat("MPPLY_GLOBALXP") /* TUNEABLE: MPPLY_GLOBALXP, MPPLY_GLOBALXP */, iParam0);
 	}
 
@@ -1984,7 +1991,7 @@ int func_27(ePedComponentType epctParam0) // Position - 0xDB4 (3508)
 			if (epctParam0 == PLAYER::PLAYER_ID())
 				return _MPPLY_STAT_GET_INT(joaat("MPPLY_GLOBALXP") /* TUNEABLE: MPPLY_GLOBALXP, MPPLY_GLOBALXP */);
 			else
-				return Global_1845250[epctParam0 /*880*/].f_198.f_5;
+				return Global_1845298[epctParam0 /*881*/].f_198.f_5;
 		else
 			return _MPPLY_STAT_GET_INT(joaat("MPPLY_GLOBALXP") /* TUNEABLE: MPPLY_GLOBALXP, MPPLY_GLOBALXP */);
 
@@ -2019,9 +2026,9 @@ ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPla
 					return PV_COMP_HEAD;
 		
 			if (bUnk)
-				if (type == Global_2673271.f_3)
-					return Global_2673271.f_2;
-				else if (Global_2658291[type /*468*/] != 4)
+				if (type == Global_2673273.f_3)
+					return Global_2673273.f_2;
+				else if (Global_2658293[type /*468*/] != 4)
 					return PV_COMP_HEAD;
 		
 			return PV_COMP_BERD;
@@ -2082,9 +2089,9 @@ int func_32(Any* panParam0) // Position - 0xFC3 (4035)
 {
 	if (NETWORK::NETWORK_CLAN_SERVICE_IS_VALID())
 		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(panParam0))
-			return Global_2696906;
+			return Global_2697014;
 
-	return Global_2696906;
+	return Global_2697014;
 }
 
 struct<13> GET_GAMER_HANDLE_PLAYER(ePedComponentType epctParam0) // Position - 0xFE6 (4070)
@@ -2095,23 +2102,23 @@ struct<13> GET_GAMER_HANDLE_PLAYER(ePedComponentType epctParam0) // Position - 0
 	return gamerHandle;
 }
 
-void func_34(eViewMode evmParam0, Hash hParam1, int iParam2) // Position - 0xFFD (4093)
+void func_34(ePedComponentType epctParam0, Hash hParam1, int iParam2) // Position - 0xFFD (4093)
 {
 	if (func_64())
 	{
-		if (evmParam0 >= 1787576850)
-			evmParam0 = 1787576850;
+		if (epctParam0 >= 1787576850)
+			epctParam0 = 1787576850;
 	
 		if (Global_262145.f_10184 == 0 && hParam1 != joaat("XPCATEGORY_KEYS_DEBUG"))
 		{
 			if (iParam2 == 0)
 			{
-				if (evmParam0 < func_47(640, -1))
+				if (epctParam0 < func_47(640, -1))
 				{
-					STATS::PLAYSTATS_AWARD_XP(evmParam0, joaat("XPTYPE_ERROR"), hParam1);
+					STATS::PLAYSTATS_AWARD_XP(epctParam0, joaat("XPTYPE_ERROR"), hParam1);
 					return;
 				}
-				else if (evmParam0 == func_47(640, -1))
+				else if (epctParam0 == func_47(640, -1))
 				{
 					return;
 				}
@@ -2120,9 +2127,9 @@ void func_34(eViewMode evmParam0, Hash hParam1, int iParam2) // Position - 0xFFD
 	
 		if (Global_262145.f_10183 == PV_COMP_HEAD)
 		{
-			if (evmParam0 == THIRD_PERSON_NEAR)
+			if (epctParam0 == PV_COMP_HEAD)
 			{
-				STATS::PLAYSTATS_AWARD_XP(evmParam0, -1158693853, -1345423847);
+				STATS::PLAYSTATS_AWARD_XP(epctParam0, -1158693853, -1345423847);
 			
 				if (iParam2 == 0)
 					return;
@@ -2131,21 +2138,21 @@ void func_34(eViewMode evmParam0, Hash hParam1, int iParam2) // Position - 0xFFD
 	
 		if (Global_262145.f_10183 == PV_COMP_HEAD)
 		{
-			if (evmParam0 < THIRD_PERSON_NEAR)
+			if (epctParam0 < PV_COMP_HEAD)
 			{
-				STATS::PLAYSTATS_AWARD_XP(evmParam0, joaat("XPTYPE_ERROR_NEGATIVE"), hParam1);
+				STATS::PLAYSTATS_AWARD_XP(epctParam0, joaat("XPTYPE_ERROR_NEGATIVE"), hParam1);
 				return;
 			}
 		}
 	
 		if (func_45(PLAYER::PLAYER_ID()))
 		{
-			Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_198.f_1 = evmParam0;
-			Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_198.f_6 = func_42(evmParam0, true);
+			Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_198.f_1 = epctParam0;
+			Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_198.f_6 = func_42(epctParam0, true);
 		}
 	
-		func_38(640, evmParam0, -1, true);
-		func_38(641, func_42(evmParam0, true), -1, true);
+		func_38(640, epctParam0, -1, true);
+		func_38(641, func_42(epctParam0, true), -1, true);
 		func_35(-1109644434, 7, false);
 	}
 
@@ -2159,8 +2166,8 @@ void func_35(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x110F (4367
 	if (func_37(iParam1, bParam2))
 	{
 		num = func_36();
-		Global_2696856[num] = iParam1;
-		Global_2696867[num] = bParam0;
+		Global_2696964[num] = iParam1;
+		Global_2696975[num] = bParam0;
 	}
 
 	return;
@@ -2175,7 +2182,7 @@ int func_36() // Position - 0x113C (4412)
 
 	for (i = 0; i <= 9; i = i + 1)
 	{
-		if (Global_2696856[i] == 0)
+		if (Global_2696964[i] == 0)
 		{
 			num = i;
 			i = 10;
@@ -2187,13 +2194,13 @@ int func_36() // Position - 0x113C (4412)
 
 BOOL func_37(int iParam0, BOOL bParam1) // Position - 0x1171 (4465)
 {
-	if (Global_1575078)
+	if (Global_1575083)
 		return false;
 
 	if (iParam0 == 22)
 		return true;
 
-	if (bParam1 || !Global_1575090 || iParam0 == 3 || iParam0 == 10 || iParam0 == 11 || iParam0 == 27 || iParam0 == 28 || iParam0 == 29 || iParam0 == 30)
+	if (bParam1 || !Global_1575095 || iParam0 == 3 || iParam0 == 10 || iParam0 == 11 || iParam0 == 27 || iParam0 == 28 || iParam0 == 29 || iParam0 == 30)
 		return true;
 	else
 		return false;
@@ -2201,16 +2208,16 @@ BOOL func_37(int iParam0, BOOL bParam1) // Position - 0x1171 (4465)
 	return true;
 }
 
-void func_38(int iParam0, eViewMode evmParam1, BOOL bParam2, BOOL bParam3) // Position - 0x11F7 (4599)
+void func_38(int iParam0, ePedComponentType epctParam1, BOOL bParam2, BOOL bParam3) // Position - 0x11F7 (4599)
 {
 	Hash statName;
 
-	if (iParam0 != 16715)
+	if (iParam0 != 16764)
 	{
 		statName = func_39(iParam0, bParam2);
 	
 		if (statName != 0)
-			STATS::STAT_SET_INT(statName, evmParam1, bParam3);
+			STATS::STAT_SET_INT(statName, epctParam1, bParam3);
 	}
 
 	return;
@@ -2234,13 +2241,13 @@ BOOL func_40(BOOL bParam0) // Position - 0x123A (4666)
 	
 		if (flag2 > -1)
 		{
-			Global_2741298 = 0;
+			Global_2741491 = 0;
 			flag = flag2;
 		}
 		else
 		{
 			flag = false;
-			Global_2741298 = 1;
+			Global_2741491 = 1;
 		}
 	}
 
@@ -2249,16 +2256,16 @@ BOOL func_40(BOOL bParam0) // Position - 0x123A (4666)
 
 BOOL func_41() // Position - 0x126E (4718)
 {
-	return Global_1574927;
+	return Global_1574928;
 }
 
-eViewMode func_42(eViewMode evmParam0, BOOL bParam1) // Position - 0x127A (4730)
+ePedComponentType func_42(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x127A (4730)
 {
 	bParam1;
-	return func_43(evmParam0, 0);
+	return func_43(epctParam0, 0);
 }
 
-int func_43(eViewMode evmParam0, int iParam1) // Position - 0x128E (4750)
+int func_43(ePedComponentType epctParam0, int iParam1) // Position - 0x128E (4750)
 {
 	int i;
 	int value;
@@ -2283,12 +2290,12 @@ int func_43(eViewMode evmParam0, int iParam1) // Position - 0x128E (4750)
 			return num;
 		}
 	
-		if (func_44(num) == evmParam0)
+		if (func_44(num) == epctParam0)
 		{
 			value = num;
 			value2 = num;
 		}
-		else if (func_44(num) < evmParam0)
+		else if (func_44(num) < epctParam0)
 		{
 			if (value2 == num)
 				value2 = value2 + 1;
@@ -2311,7 +2318,7 @@ int func_43(eViewMode evmParam0, int iParam1) // Position - 0x128E (4750)
 	return 8000;
 }
 
-eViewMode func_44(int iParam0) // Position - 0x1349 (4937)
+ePedComponentType func_44(int iParam0) // Position - 0x1349 (4937)
 {
 	int num;
 	int num2;
@@ -2634,7 +2641,7 @@ BOOL func_45(ePedComponentType epctParam0) // Position - 0x188D (6285)
 	if (!func_46(epctParam0))
 		return false;
 
-	return IS_BIT_SET(Global_2673271.f_1, epctParam0);
+	return IS_BIT_SET(Global_2673273.f_1, epctParam0);
 }
 
 BOOL func_46(ePedComponentType epctParam0) // Position - 0x18AC (6316)
@@ -2652,12 +2659,12 @@ BOOL func_46(ePedComponentType epctParam0) // Position - 0x18AC (6316)
 	return true;
 }
 
-eViewMode func_47(int iParam0, BOOL bParam1) // Position - 0x18CE (6350)
+ePedComponentType func_47(int iParam0, BOOL bParam1) // Position - 0x18CE (6350)
 {
 	Hash statHash;
 	int outValue;
 
-	if (iParam0 != 16715)
+	if (iParam0 != 16764)
 	{
 		statHash = func_39(iParam0, bParam1);
 	
@@ -2668,27 +2675,27 @@ eViewMode func_47(int iParam0, BOOL bParam1) // Position - 0x18CE (6350)
 	return 0;
 }
 
-eViewMode func_48(ePedComponentType epctParam0) // Position - 0x18FD (6397)
+ePedComponentType func_48(ePedComponentType epctParam0) // Position - 0x18FD (6397)
 {
-	if (Global_1574634.f_9 == 0)
+	if (Global_1574635.f_9 == 0)
 		if (epctParam0 > PV_COMP_INVALID)
 			if (epctParam0 == PLAYER::PLAYER_ID())
 				return func_47(640, -1);
 			else if (func_45(epctParam0))
-				return Global_1845250[epctParam0 /*880*/].f_198.f_1;
+				return Global_1845298[epctParam0 /*881*/].f_198.f_1;
 	else
 		return func_47(640, -1);
 
-	return THIRD_PERSON_NEAR;
+	return PV_COMP_HEAD;
 }
 
 void func_49(int iParam0, ePedComponentType epctParam1, BOOL bParam2) // Position - 0x1954 (6484)
 {
-	eViewMode mode;
+	ePedComponentType type;
 
-	mode = func_47(iParam0, func_40(bParam2));
-	mode = mode + epctParam1;
-	func_38(iParam0, mode, bParam2, true);
+	type = func_47(iParam0, func_40(bParam2));
+	type = type + epctParam1;
+	func_38(iParam0, type, bParam2, true);
 	return;
 }
 
@@ -2757,17 +2764,17 @@ BOOL func_52(ePedComponentType epctParam0, ePedComponentType epctParam1) // Posi
 {
 	if (NETWORK::NETWORK_CLAN_SERVICE_IS_VALID())
 	{
-		Global_2708504 = { GET_GAMER_HANDLE_PLAYER(epctParam0) };
-		Global_2708517 = { GET_GAMER_HANDLE_PLAYER(epctParam1) };
+		Global_2708615 = { GET_GAMER_HANDLE_PLAYER(epctParam0) };
+		Global_2708628 = { GET_GAMER_HANDLE_PLAYER(epctParam1) };
 	
-		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2708504))
+		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2708615))
 		{
-			if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2708517))
+			if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2708628))
 			{
-				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2708434, 35, &Global_2708504);
-				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2708469, 35, &Global_2708517);
+				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2708545, 35, &Global_2708615);
+				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2708580, 35, &Global_2708628);
 			
-				if (Global_2708434 == Global_2708469)
+				if (Global_2708545 == Global_2708580)
 					return true;
 			}
 		}
@@ -2794,16 +2801,16 @@ BOOL func_53(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 
 	if (iParam0 > -1 && iParam0 < 4 && iParam1 > -1 && iParam1 < 4)
 	{
-		num = Global_1058124.f_14[iParam0];
+		num = Global_1058150.f_14[iParam0];
 	
 		if (iParam3 != -1)
 			num = iParam3;
 	
 		if (num < 17 && num > -1)
 		{
-			if (IS_BIT_SET(Global_4718592.f_3605[iParam0 /*26968*/].f_26699, num))
+			if (IS_BIT_SET(Global_4718592.f_3838[iParam0 /*26988*/].f_26719, num))
 			{
-				num2 = Global_1058124.f_14[iParam1];
+				num2 = Global_1058150.f_14[iParam1];
 			
 				if (num2 < 17 && num2 > -1)
 				{
@@ -2811,22 +2818,22 @@ BOOL func_53(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 					{
 						case 0:
 							if (!func_54(iParam0, num, iParam1, num2) || !func_54(iParam1, num2, iParam0, num))
-								return IS_BIT_SET(Global_4718592.f_3605[iParam0 /*26968*/].f_26701[num], 0 + iParam1);
+								return IS_BIT_SET(Global_4718592.f_3838[iParam0 /*26988*/].f_26721[num], 0 + iParam1);
 							break;
 					
 						case 1:
 							if (!func_54(iParam0, num, iParam1, num2) || !func_54(iParam1, num2, iParam0, num))
-								return IS_BIT_SET(Global_4718592.f_3605[iParam0 /*26968*/].f_26701[num], 4 + iParam1);
+								return IS_BIT_SET(Global_4718592.f_3838[iParam0 /*26988*/].f_26721[num], 4 + iParam1);
 							break;
 					
 						case 2:
 							if (!func_54(iParam0, num, iParam1, num2) || !func_54(iParam1, num2, iParam0, num))
-								return IS_BIT_SET(Global_4718592.f_3605[iParam0 /*26968*/].f_26701[num], 8 + iParam1);
+								return IS_BIT_SET(Global_4718592.f_3838[iParam0 /*26988*/].f_26721[num], 8 + iParam1);
 							break;
 					
 						case 3:
 							if (!func_54(iParam0, num, iParam1, num2) || !func_54(iParam1, num2, iParam0, num))
-								return IS_BIT_SET(Global_4718592.f_3605[iParam0 /*26968*/].f_26701[num], 12 + iParam1);
+								return IS_BIT_SET(Global_4718592.f_3838[iParam0 /*26988*/].f_26721[num], 12 + iParam1);
 							break;
 					}
 				}
@@ -2840,16 +2847,16 @@ BOOL func_53(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 			switch (iParam1)
 			{
 				case 0:
-					return IS_BIT_SET(Global_4718592.f_3554, 0);
+					return IS_BIT_SET(Global_4718592.f_3787, 0);
 			
 				case 1:
-					return IS_BIT_SET(Global_4718592.f_3554, 1);
+					return IS_BIT_SET(Global_4718592.f_3787, 1);
 			
 				case 2:
-					return IS_BIT_SET(Global_4718592.f_3554, 2);
+					return IS_BIT_SET(Global_4718592.f_3787, 2);
 			
 				case 3:
-					return IS_BIT_SET(Global_4718592.f_3554, 3);
+					return IS_BIT_SET(Global_4718592.f_3787, 3);
 			
 				default:
 					break;
@@ -2860,16 +2867,16 @@ BOOL func_53(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 			switch (iParam1)
 			{
 				case 0:
-					return IS_BIT_SET(Global_4718592.f_3554, 4);
+					return IS_BIT_SET(Global_4718592.f_3787, 4);
 			
 				case 1:
-					return IS_BIT_SET(Global_4718592.f_3554, 5);
+					return IS_BIT_SET(Global_4718592.f_3787, 5);
 			
 				case 2:
-					return IS_BIT_SET(Global_4718592.f_3554, 6);
+					return IS_BIT_SET(Global_4718592.f_3787, 6);
 			
 				case 3:
-					return IS_BIT_SET(Global_4718592.f_3554, 7);
+					return IS_BIT_SET(Global_4718592.f_3787, 7);
 			
 				default:
 					break;
@@ -2880,16 +2887,16 @@ BOOL func_53(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 			switch (iParam1)
 			{
 				case 0:
-					return IS_BIT_SET(Global_4718592.f_3554, 8);
+					return IS_BIT_SET(Global_4718592.f_3787, 8);
 			
 				case 1:
-					return IS_BIT_SET(Global_4718592.f_3554, 9);
+					return IS_BIT_SET(Global_4718592.f_3787, 9);
 			
 				case 2:
-					return IS_BIT_SET(Global_4718592.f_3554, 10);
+					return IS_BIT_SET(Global_4718592.f_3787, 10);
 			
 				case 3:
-					return IS_BIT_SET(Global_4718592.f_3554, 11);
+					return IS_BIT_SET(Global_4718592.f_3787, 11);
 			
 				default:
 					break;
@@ -2900,16 +2907,16 @@ BOOL func_53(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 			switch (iParam1)
 			{
 				case 0:
-					return IS_BIT_SET(Global_4718592.f_3554, 12);
+					return IS_BIT_SET(Global_4718592.f_3787, 12);
 			
 				case 1:
-					return IS_BIT_SET(Global_4718592.f_3554, 13);
+					return IS_BIT_SET(Global_4718592.f_3787, 13);
 			
 				case 2:
-					return IS_BIT_SET(Global_4718592.f_3554, 14);
+					return IS_BIT_SET(Global_4718592.f_3787, 14);
 			
 				case 3:
-					return IS_BIT_SET(Global_4718592.f_3554, 15);
+					return IS_BIT_SET(Global_4718592.f_3787, 15);
 			
 				default:
 					break;
@@ -2932,10 +2939,10 @@ BOOL func_54(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 	if (iParam0 == iParam2)
 		return true;
 
-	if (!IS_BIT_SET(Global_4718592.f_3605[iParam0 /*26968*/].f_26700, iParam1))
+	if (!IS_BIT_SET(Global_4718592.f_3838[iParam0 /*26988*/].f_26720, iParam1))
 		return false;
 
-	if (!IS_BIT_SET(Global_4718592.f_3605[iParam2 /*26968*/].f_26700, iParam3))
+	if (!IS_BIT_SET(Global_4718592.f_3838[iParam2 /*26988*/].f_26720, iParam3))
 		return false;
 
 	num = 1;
@@ -2949,7 +2956,7 @@ BOOL func_54(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 	{
 		type = i;
 	
-		if (!_NETWORK_IS_PLAYER_VALID(type, true, true) || func_56(type, 0) || IS_BIT_SET(Global_2658291[type /*468*/].f_203, 2) || func_55(type))
+		if (!_NETWORK_IS_PLAYER_VALID(type, true, true) || func_56(type, 0) || IS_BIT_SET(Global_2658293[type /*468*/].f_203, 2) || func_55(type))
 		{
 		}
 		else if (PLAYER::GET_PLAYER_TEAM(type) != iParam2)
@@ -2982,7 +2989,7 @@ BOOL func_54(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 
 BOOL func_55(ePedComponentType epctParam0) // Position - 0x1F6D (8045)
 {
-	return IS_BIT_SET(Global_1845250[epctParam0 /*880*/].f_36.f_18, 14);
+	return IS_BIT_SET(Global_1845298[epctParam0 /*881*/].f_36.f_18, 14);
 }
 
 BOOL func_56(ePedComponentType epctParam0, int iParam1) // Position - 0x1F85 (8069)
@@ -2995,7 +3002,7 @@ BOOL func_56(ePedComponentType epctParam0, int iParam1) // Position - 0x1F85 (80
 	if (epctParam0 == PLAYER::PLAYER_ID())
 		flag = func_57(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
-		flag = Global_1845250[epctParam0 /*880*/].f_198 == 8;
+		flag = Global_1845298[epctParam0 /*881*/].f_198 == 8;
 
 	if (iParam1 == 1)
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(epctParam0))
@@ -3014,14 +3021,14 @@ eCharacter func_57(BOOL bParam0, BOOL bParam1) // Position - 0x1FDE (8158)
 	if (flag == -1)
 		flag = func_41();
 
-	if (Global_1575070[flag] == true)
+	if (Global_1575075[flag] == true)
 	{
 		bParam1;
 		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{
-		character = Global_1574921[flag];
+		character = Global_1574922[flag];
 		bParam1;
 	}
 
@@ -3125,14 +3132,14 @@ ePedComponentType func_62(int iParam0) // Position - 0x219D (8605)
 		if (MISC::ABSI(iParam0) > func_48(PLAYER::PLAYER_ID()))
 			iParam0 = -func_48(PLAYER::PLAYER_ID());
 
-	if (func_63(8000, false, 0) > THIRD_PERSON_NEAR)
+	if (func_63(8000, false, 0) > PV_COMP_HEAD)
 		if (func_63(8000, false, 0) < iParam0 + func_48(PLAYER::PLAYER_ID()))
 			iParam0 = func_63(8000, false, 0) - func_48(PLAYER::PLAYER_ID());
 
 	return iParam0;
 }
 
-eViewMode func_63(int iParam0, BOOL bParam1, int iParam2) // Position - 0x2201 (8705)
+ePedComponentType func_63(int iParam0, BOOL bParam1, int iParam2) // Position - 0x2201 (8705)
 {
 	iParam2 == 0;
 	bParam1;
@@ -3172,7 +3179,7 @@ int func_66() // Position - 0x2268 (8808)
 			num = 16000;
 		else
 			num = Global_262145.f_23019;
-	else if (func_67(*Global_4718592.f_192777))
+	else if (func_67(*Global_4718592.f_197291))
 		if (Global_262145.f_7252 > 36000)
 			num = 36000;
 		else
@@ -3190,7 +3197,7 @@ BOOL func_67(int iParam0) // Position - 0x2336 (9014)
 	return iParam0 == 89;
 }
 
-ePedComponentType func_68(ePedComponentType epctParam0) // Position - 0x2343 (9027)
+BOOL func_68(ePedComponentType epctParam0) // Position - 0x2343 (9027)
 {
 	return func_69(func_70(epctParam0));
 }
@@ -3213,7 +3220,7 @@ ePedComponentType func_70(ePedComponentType epctParam0) // Position - 0x236F (90
 {
 	if (func_46(epctParam0))
 		if (func_71(epctParam0, false))
-			return Global_1892653[epctParam0 /*615*/].f_10.f_34;
+			return Global_1892925[epctParam0 /*615*/].f_10.f_34;
 
 	return PV_COMP_INVALID;
 }
@@ -3221,21 +3228,21 @@ ePedComponentType func_70(ePedComponentType epctParam0) // Position - 0x236F (90
 BOOL func_71(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x239B (9115)
 {
 	if (func_46(epctParam0))
-		if (Global_1892653[epctParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID || bParam1 && Global_1892653[epctParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID)
+		if (Global_1892925[epctParam0 /*615*/].f_10.f_34 != PV_COMP_INVALID || bParam1 && Global_1892925[epctParam0 /*615*/].f_10.f_33 != PV_COMP_INVALID)
 			return true;
 
 	return false;
 }
 
-ePedComponentType func_72() // Position - 0x23DF (9183)
+BOOL func_72() // Position - 0x23DF (9183)
 {
 	if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 		return func_74();
 
-	return func_73(*Global_4718592.f_132500);
+	return func_73(*Global_4718592.f_132931);
 }
 
-ePedComponentType func_73(ePedComponentType epctParam0) // Position - 0x2403 (9219)
+BOOL func_73(ePedComponentType epctParam0) // Position - 0x2403 (9219)
 {
 	int i;
 
@@ -3251,41 +3258,41 @@ ePedComponentType func_73(ePedComponentType epctParam0) // Position - 0x2403 (92
 	return 0;
 }
 
-ePedComponentType func_74() // Position - 0x243D (9277)
+BOOL func_74() // Position - 0x243D (9277)
 {
-	return Global_2685150.f_19;
+	return Global_2685152.f_20;
 }
 
 BOOL func_75(Player plParam0) // Position - 0x244B (9291)
 {
-	return Global_2658291[plParam0 /*468*/].f_124 == 2;
+	return Global_2658293[plParam0 /*468*/].f_124 == 2;
 }
 
 BOOL func_76(Player plParam0) // Position - 0x2460 (9312)
 {
-	return Global_2658291[plParam0 /*468*/].f_124 == 7;
+	return Global_2658293[plParam0 /*468*/].f_124 == 7;
 }
 
 void func_77(int iParam0) // Position - 0x2475 (9333)
 {
 	int num;
 
-	Global_1987936.f_2 = Global_1987936.f_2 + iParam0;
+	Global_1988499.f_2 = Global_1988499.f_2 + iParam0;
 
-	if (Global_1987936.f_1 == 0)
-		Global_1987936.f_1 = NETWORK::GET_CLOUD_TIME_AS_INT();
+	if (Global_1988499.f_1 == 0)
+		Global_1988499.f_1 = NETWORK::GET_CLOUD_TIME_AS_INT();
 
-	if (Global_1987936.f_2 >= Global_262145.f_32242 && !IS_BIT_SET(Global_1987936, 0))
+	if (Global_1988499.f_2 >= Global_262145.f_32243 && !IS_BIT_SET(Global_1988499, 0))
 	{
-		num = (Global_1987936.f_1 % 86400) / 60 / 10;
+		num = (Global_1988499.f_1 % 86400) / 60 / 10;
 		func_78(34120, num, -1);
-		MISC::SET_BIT(&Global_1987936, 0);
+		MISC::SET_BIT(&Global_1988499, 0);
 	}
 
-	if (Global_1987936.f_1 != 0 && NETWORK::GET_CLOUD_TIME_AS_INT() - Global_1987936.f_1 >= Global_262145.f_32243 * 60)
+	if (Global_1988499.f_1 != 0 && NETWORK::GET_CLOUD_TIME_AS_INT() - Global_1988499.f_1 >= Global_262145.f_32244 * 60)
 	{
-		Global_1987936.f_1 = NETWORK::GET_CLOUD_TIME_AS_INT();
-		Global_1987936.f_2 = iParam0;
+		Global_1988499.f_1 = NETWORK::GET_CLOUD_TIME_AS_INT();
+		Global_1988499.f_2 = iParam0;
 	}
 
 	return;
@@ -3356,25 +3363,25 @@ BOOL func_81(ePedComponentType epctParam0) // Position - 0x2622 (9762)
 	int num3;
 	int num4;
 
-	if (IS_BIT_SET(Global_1987936, 0))
+	if (IS_BIT_SET(Global_1988499, 0))
 	{
-		num = NETWORK::GET_CLOUD_TIME_AS_INT() - Global_1987936.f_1;
+		num = NETWORK::GET_CLOUD_TIME_AS_INT() - Global_1988499.f_1;
 	
-		if (num >= Global_262145.f_32243 * 60)
+		if (num >= Global_262145.f_32244 * 60)
 		{
-			MISC::CLEAR_BIT(&Global_1987936, 0);
+			MISC::CLEAR_BIT(&Global_1988499, 0);
 			_STOPWATCH_DESTROY(epctParam0);
 			func_9(epctParam0, false, false);
-			Global_1987936.f_1 = 0;
-			Global_1987936.f_2 = 0;
+			Global_1988499.f_1 = 0;
+			Global_1988499.f_2 = 0;
 			return true;
 		}
 	
 		return false;
 	}
-	else if (!IS_BIT_SET(Global_1987936, 1))
+	else if (!IS_BIT_SET(Global_1988499, 1))
 	{
-		if (Global_1987936.f_1 == 0)
+		if (Global_1988499.f_1 == 0)
 		{
 			num2 = _STAT_GET_PACKED_INT(34120, -1) * 10;
 			num3 = (NETWORK::GET_CLOUD_TIME_AS_INT() % 86400) / 60;
@@ -3383,17 +3390,17 @@ BOOL func_81(ePedComponentType epctParam0) // Position - 0x2622 (9762)
 			{
 				num4 = num3 - num2;
 			
-				if (num4 < Global_262145.f_32243)
+				if (num4 < Global_262145.f_32244)
 				{
-					MISC::SET_BIT(&Global_1987936, 0);
-					Global_1987936.f_1 = NETWORK::GET_CLOUD_TIME_AS_INT() - (num4 * 60);
-					MISC::SET_BIT(&Global_1987936, 1);
+					MISC::SET_BIT(&Global_1988499, 0);
+					Global_1988499.f_1 = NETWORK::GET_CLOUD_TIME_AS_INT() - (num4 * 60);
+					MISC::SET_BIT(&Global_1988499, 1);
 					return false;
 				}
 			}
 		}
 	
-		MISC::SET_BIT(&Global_1987936, 1);
+		MISC::SET_BIT(&Global_1988499, 1);
 	}
 
 	return true;
@@ -3415,8 +3422,8 @@ void _STOPWATCH_DESTROY(ePedComponentType epctParam0) // Position - 0x2714 (1000
 
 void func_84(var uParam0) // Position - 0x2721 (10017)
 {
-	eViewMode mode;
-	eViewMode mode2;
+	ePedComponentType type;
+	ePedComponentType type2;
 
 	if (func_8(&(uParam0->f_773.f_10), 45000, false))
 	{
@@ -3431,14 +3438,14 @@ void func_84(var uParam0) // Position - 0x2721 (10017)
 	{
 		if (uParam0->f_930 == 3)
 		{
-			mode = 1 + func_47(7237, -1);
-			func_38(7237, mode, -1, true);
+			type = 1 + func_47(7237, -1);
+			func_38(7237, type, -1, true);
 		}
 	
 		if (func_87(PLAYER::PLAYER_ID()))
 		{
-			mode2 = 1 + func_47(12010, -1);
-			func_86(12010, mode2, -1);
+			type2 = 1 + func_47(12010, -1);
+			func_86(12010, type2, -1);
 		}
 	
 		func_85(uParam0);
@@ -3455,9 +3462,9 @@ void func_85(var uParam0) // Position - 0x2838 (10296)
 	return;
 }
 
-void func_86(int iParam0, eViewMode evmParam1, BOOL bParam2) // Position - 0x2848 (10312)
+void func_86(int iParam0, ePedComponentType epctParam1, BOOL bParam2) // Position - 0x2848 (10312)
 {
-	func_38(iParam0, evmParam1, bParam2, true);
+	func_38(iParam0, epctParam1, bParam2, true);
 	return;
 }
 
@@ -3465,8 +3472,8 @@ BOOL func_87(ePedComponentType epctParam0) // Position - 0x285B (10331)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2658291[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
-				return func_88(Global_2658291[epctParam0 /*468*/].f_325.f_8) == 11;
+			if (Global_2658293[epctParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+				return func_88(Global_2658293[epctParam0 /*468*/].f_325.f_8) == 11;
 
 	return false;
 }
@@ -3930,12 +3937,12 @@ BOOL func_102() // Position - 0x3200 (12800)
 
 BOOL func_103(Player plParam0) // Position - 0x3210 (12816)
 {
-	return func_131(&(Global_2658291[plParam0 /*468*/].f_447), 0);
+	return func_131(&(Global_2658293[plParam0 /*468*/].f_447), 0);
 }
 
 void func_104() // Position - 0x3229 (12841)
 {
-	Global_24390.f_6 = 1;
+	Global_24430.f_6 = 1;
 	return;
 }
 
@@ -3943,16 +3950,16 @@ void func_105(BOOL bParam0) // Position - 0x3237 (12855)
 {
 	if (bParam0)
 		if (func_106())
-			Global_2685150.f_41 = 1;
+			Global_2685152.f_44 = 1;
 	else
-		Global_2685150.f_41 = 0;
+		Global_2685152.f_44 = 0;
 
 	return;
 }
 
 BOOL func_106() // Position - 0x325C (12892)
 {
-	return IS_BIT_SET(Global_2685150.f_2, 11);
+	return IS_BIT_SET(Global_2685152.f_2, 11);
 }
 
 void func_107(int iParam0) // Position - 0x326D (12909)
@@ -3960,12 +3967,12 @@ void func_107(int iParam0) // Position - 0x326D (12909)
 	if (func_113())
 		return;
 
-	if (!(Global_21610.f_1 == true))
+	if (!(Global_21649.f_1 == true))
 	{
 		if (func_112(0))
 			func_108(iParam0);
 	
-		MISC::SET_BIT(&Global_9464, 2);
+		MISC::SET_BIT(&Global_9503, 2);
 	}
 
 	return;
@@ -3976,34 +3983,34 @@ void func_108(int iParam0) // Position - 0x32A0 (12960)
 	if (func_113())
 		return;
 
-	if (Global_21842)
+	if (Global_21882)
 		if (func_111())
 			func_110(true, true);
 		else
 			func_110(false, false);
 
-	if (Global_21610.f_1 == 10 || Global_21610.f_1 == 9)
-		MISC::SET_BIT(&Global_9464, 16);
+	if (Global_21649.f_1 == 10 || Global_21649.f_1 == 9)
+		MISC::SET_BIT(&Global_9503, 16);
 
 	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
 		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 
-	Global_22983 = 5;
+	Global_23023 = 5;
 
 	if (iParam0 == 1)
-		MISC::SET_BIT(&Global_9463, 30);
+		MISC::SET_BIT(&Global_9502, 30);
 	else
-		MISC::CLEAR_BIT(&Global_9463, 30);
+		MISC::CLEAR_BIT(&Global_9502, 30);
 
 	if (!func_109())
-		Global_21610.f_1 = 3;
+		Global_21649.f_1 = 3;
 
 	return;
 }
 
 BOOL func_109() // Position - 0x332A (13098)
 {
-	if (Global_21610.f_1 == true || Global_21610.f_1 == false)
+	if (Global_21649.f_1 == true || Global_21649.f_1 == false)
 		return true;
 
 	return false;
@@ -4015,24 +4022,24 @@ void func_110(BOOL bParam0, BOOL bParam1) // Position - 0x3351 (13137)
 	{
 		if (func_112(0))
 		{
-			Global_21842 = true;
+			Global_21882 = true;
 		
 			if (bParam1)
-				MOBILE::GET_MOBILE_PHONE_POSITION(&Global_21547);
+				MOBILE::GET_MOBILE_PHONE_POSITION(&Global_21586);
 		
-			Global_21538 = { Global_21556[Global_21555 /*3*/] };
-			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21538);
+			Global_21577 = { Global_21595[Global_21594 /*3*/] };
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21577);
 		}
 	}
-	else if (Global_21842 == true)
+	else if (Global_21882 == true)
 	{
-		Global_21842 = false;
-		Global_21538 = { Global_21563[Global_21555 /*3*/] };
+		Global_21882 = false;
+		Global_21577 = { Global_21602[Global_21594 /*3*/] };
 	
 		if (bParam1)
-			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21547);
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21586);
 		else
-			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21538);
+			MOBILE::SET_MOBILE_PHONE_POSITION(Global_21577);
 	}
 
 	return;
@@ -4040,14 +4047,14 @@ void func_110(BOOL bParam0, BOOL bParam1) // Position - 0x3351 (13137)
 
 BOOL func_111() // Position - 0x33C5 (13253)
 {
-	return IS_BIT_SET(Global_1964145, 5);
+	return IS_BIT_SET(Global_1964670, 5);
 }
 
 BOOL func_112(int iParam0) // Position - 0x33D3 (13267)
 {
 	if (iParam0 == 1)
-		if (Global_21610.f_1 > 3)
-			if (IS_BIT_SET(Global_9463, 14))
+		if (Global_21649.f_1 > 3)
+			if (IS_BIT_SET(Global_9502, 14))
 				return true;
 			else
 				return false;
@@ -4057,7 +4064,7 @@ BOOL func_112(int iParam0) // Position - 0x33D3 (13267)
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
 		return true;
 
-	if (Global_21610.f_1 > 3)
+	if (Global_21649.f_1 > 3)
 		return true;
 
 	return false;
@@ -4065,12 +4072,12 @@ BOOL func_112(int iParam0) // Position - 0x33D3 (13267)
 
 BOOL func_113() // Position - 0x342A (13354)
 {
-	return IS_BIT_SET(Global_1964145, 19);
+	return IS_BIT_SET(Global_1964670, 19);
 }
 
 void func_114() // Position - 0x3439 (13369)
 {
-	MISC::SET_BIT(&Global_9464, 4);
+	MISC::SET_BIT(&Global_9503, 4);
 	return;
 }
 
@@ -4087,19 +4094,19 @@ BOOL func_116(var uParam0) // Position - 0x3461 (13409)
 
 	if (func_118(uParam0))
 	{
-		MISC::SET_BIT(&(Global_2658291[uParam0->f_949 /*468*/].f_325.f_3), 13);
+		MISC::SET_BIT(&(Global_2658293[uParam0->f_949 /*468*/].f_325.f_3), 13);
 		flag = true;
 	}
 	else
 	{
-		MISC::CLEAR_BIT(&(Global_2658291[uParam0->f_949 /*468*/].f_325.f_3), 13);
+		MISC::CLEAR_BIT(&(Global_2658293[uParam0->f_949 /*468*/].f_325.f_3), 13);
 		flag = false;
 	}
 
 	if (flag && func_117(uParam0))
-		MISC::SET_BIT(&(Global_1950198.f_3), 7);
+		MISC::SET_BIT(&(Global_1950702.f_3), 7);
 	else
-		MISC::CLEAR_BIT(&(Global_1950198.f_3), 7);
+		MISC::CLEAR_BIT(&(Global_1950702.f_3), 7);
 
 	return flag;
 }
@@ -4217,16 +4224,16 @@ void func_121(var uParam0, BOOL bParam1) // Position - 0x36FC (14076)
 
 void func_122() // Position - 0x3747 (14151)
 {
-	if (!Global_2673271.f_1023.f_10)
-		Global_2673271.f_1023.f_10 = 1;
+	if (!Global_2673273.f_1023.f_10)
+		Global_2673273.f_1023.f_10 = 1;
 
 	return;
 }
 
 void func_123() // Position - 0x3766 (14182)
 {
-	if (Global_2673271.f_1023.f_10)
-		Global_2673271.f_1023.f_10 = 0;
+	if (Global_2673273.f_1023.f_10)
+		Global_2673273.f_1023.f_10 = 0;
 
 	return;
 }
@@ -4257,7 +4264,7 @@ void func_125(var uParam0) // Position - 0x37B2 (14258)
 
 	num = _STAT_GET_PACKED_INT(uParam0->f_915.f_7, -1);
 
-	if (IS_BIT_SET(Global_1950198.f_3, 10) || num >= 3)
+	if (IS_BIT_SET(Global_1950702.f_3, 10) || num >= 3)
 		return;
 
 	if (func_131(&(uParam0->f_390), 2) && !func_131(&(uParam0->f_390), 1))
@@ -4274,14 +4281,14 @@ void func_125(var uParam0) // Position - 0x37B2 (14258)
 	if (func_131(&(uParam0->f_390), 3) && !HUD::IS_HELP_MESSAGE_BEING_DISPLAYED() && func_8(&(uParam0->f_639), 5000, false))
 	{
 		if (uParam0->f_930 == 0)
-			_DISPLAY_HELP_TEXT("DANCE_HINT" /*También puedes mantener pulsado ~INPUT_CONTEXT~ para bailar cuando no estés en la pista.*/, -1);
+			_DISPLAY_HELP_TEXT("DANCE_HINT" /*También puedes mantener presionado ~INPUT_CONTEXT~ para bailar cuando no estés en la pista.*/, -1);
 		else if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-			_DISPLAY_HELP_TEXT("DANCE_HINT_K" /*También puedes pulsar ~INPUT_CURSOR_CANCEL~ para bailar cuando no estés en la pista.*/, -1);
+			_DISPLAY_HELP_TEXT("DANCE_HINT_K" /*También puedes presionar ~INPUT_CURSOR_CANCEL~ para bailar cuando no estés en la pista.*/, -1);
 		else
-			_DISPLAY_HELP_TEXT("DANCE_HINT_ALT" /*También puedes mantener pulsado ~INPUT_SCRIPT_LT~ para bailar cuando no estés en la pista.*/, -1);
+			_DISPLAY_HELP_TEXT("DANCE_HINT_ALT" /*También puedes mantener presionado ~INPUT_SCRIPT_LT~ para bailar cuando no estés en la pista.*/, -1);
 	
 		func_4(&(uParam0->f_390), 3);
-		MISC::SET_BIT(&(Global_1950198.f_3), 10);
+		MISC::SET_BIT(&(Global_1950702.f_3), 10);
 		func_78(uParam0->f_915.f_7, num + 1, -1);
 	}
 
@@ -4307,7 +4314,7 @@ void func_127(var uParam0) // Position - 0x38EC (14572)
 
 	if (func_131(&(uParam0->f_390), 31))
 	{
-		_DISPLAY_HELP_TEXT("DUAL_DANCE_BLOCK" /*Aquí no hay sitio para bailar con otro jugador. Busca un espacio libre.*/, 5000);
+		_DISPLAY_HELP_TEXT("DUAL_DANCE_BLOCK" /*Aquí no hay lugar para bailar con otro jugador. Busca un espacio libre.*/, 5000);
 		func_4(&(uParam0->f_390), 31);
 	}
 
@@ -4963,7 +4970,7 @@ BOOL func_174(var uParam0, BOOL bParam1, ePedComponentType epctParam2) // Positi
 	if (!func_179(uParam0->f_948))
 		return true;
 
-	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("spawn_activities")) > 0 || Global_2640098.f_16)
+	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("spawn_activities")) > 0 || Global_2640100.f_16)
 		return true;
 
 	if (func_176(uParam0) && !func_175(uParam0))
@@ -5324,7 +5331,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 	if (iParam1 == 0)
 		return false;
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DUAL_DANCE_BLOCK" /*Aquí no hay sitio para bailar con otro jugador. Busca un espacio libre.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DUAL_DANCE_BLOCK" /*Aquí no hay lugar para bailar con otro jugador. Busca un espacio libre.*/))
 		return false;
 
 	unk = 4;
@@ -5370,7 +5377,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 
 	if (uParam0->f_908 != -1 && !MISC::IS_STRING_NULL_OR_EMPTY(unk.f_1))
 	{
-		if (!MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_0" /*Pulsa ~INPUT_CONTEXT~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "COMBO_STOP" /*No puedes conseguir más RP bailando por hoy.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_MIN" /*Pulsa ~INPUT_SCRIPT_PAD_LEFT~ para mostrar las instrucciones de baile.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_ALT_KB" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_MIN_ALT" /*Pulsa ~INPUT_SCRIPT_RLEFT~ para mostrar las instrucciones de baile.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN" /*Pulsa ~INPUT_CONTEXT~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN_K" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_L_CTRL") && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_CTRL" /*~INPUT_CONTEXT~ Dejar de bailar.*/))
+		if (!MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_0" /*Presiona ~INPUT_CONTEXT~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "COMBO_STOP" /*No puedes conseguir más RP bailando por hoy.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_MIN" /*Presiona ~INPUT_SCRIPT_PAD_LEFT~ para mostrar los controles de baile.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_ALT" /*Mantén presionado ~INPUT_SCRIPT_LT~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_ALT_KB" /*Presiona ~INPUT_CURSOR_CANCEL~ para bailar.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DANCE_MIN_ALT" /*Presiona ~INPUT_SCRIPT_RLEFT~ para mostrar los controles de baile.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN" /*Presiona ~INPUT_CONTEXT~ para bailar.~n~Presiona ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN_ALT" /*Mantén presionado ~INPUT_SCRIPT_LT~ para bailar.~n~Presiona ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_JOIN_K" /*Presiona ~INPUT_CURSOR_CANCEL~ para bailar.~n~Presiona ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/) && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_L_CTRL") && !MISC::ARE_STRINGS_EQUAL(unk.f_1, "DM_DD_CTRL" /*~INPUT_CONTEXT~ Dejar de bailar.*/))
 		{
 			TEXT_LABEL_ASSIGN_STRING(&text, unk.f_1, 64);
 			TEXT_LABEL_APPEND_STRING(&text, "_", 64);
@@ -5407,7 +5414,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 				num = 1;
 			}
 		}
-		else if (PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_FRONTEND_LT) >= Global_2712102)
+		else if (PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_FRONTEND_LT) >= Global_2712214)
 		{
 			if (bParam2)
 				func_216(uParam0);
@@ -5434,7 +5441,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 						num = 1;
 					}
 				}
-				else if (PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_FRONTEND_LT) >= Global_2712102)
+				else if (PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_FRONTEND_LT) >= Global_2712214)
 				{
 					if (bParam2)
 						func_216(uParam0);
@@ -5452,7 +5459,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 					num = 1;
 				}
 			}
-			else if (PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_FRONTEND_LT) < Global_2712102 && !uParam0->f_931 && !bParam4)
+			else if (PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_FRONTEND_LT) < Global_2712214 && !uParam0->f_931 && !bParam4)
 			{
 				if (bParam2)
 					func_216(uParam0);
@@ -5547,7 +5554,7 @@ BOOL func_197(var uParam0, int iParam1, BOOL bParam2, Player plParam3, BOOL bPar
 		_STOPWATCH_DESTROY(&(uParam0->f_641));
 	}
 
-	if (!uParam0->f_668 && !unk.f_2 && !unk.f_5 && func_199(uParam0->f_392) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CLUB_SAFE_HT" /*Las ganancias diarias de tu club nocturno se guardan en la caja fuerte~HUD_COLOUR_GREEN~~BLIP_FINANCIER_STRAND~~s~de la pared de tu oficina.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DM_AREA_BLOCK" /*No se puede bailar aquí.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DUAL_DANCE_BLOCK" /*Aquí no hay sitio para bailar con otro jugador. Busca un espacio libre.*/))
+	if (!uParam0->f_668 && !unk.f_2 && !unk.f_5 && func_199(uParam0->f_392) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("CLUB_SAFE_HT" /*Las ganancias diarias de tu club nocturno se guardan en la caja fuerte ~HUD_COLOUR_GREEN~~BLIP_FINANCIER_STRAND~~s~ de tu oficina.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DM_AREA_BLOCK" /*No se puede bailar aquí.*/) && !_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DUAL_DANCE_BLOCK" /*Aquí no hay lugar para bailar con otro jugador. Busca un espacio libre.*/))
 	{
 		if (HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 			HUD::CLEAR_HELP(true);
@@ -5578,20 +5585,20 @@ BOOL func_198(int iParam0, BOOL bParam1) // Position - 0x5083 (20611)
 
 	if (num > -1 && num < 6)
 	{
-		if (Global_45643[num /*32*/] == true && Global_45643[num /*32*/].f_4 == true)
+		if (Global_45696[num /*32*/] == true && Global_45696[num /*32*/].f_4 == true)
 		{
 			if (bParam1)
-				if (Global_45643[num /*32*/].f_29)
+				if (Global_45696[num /*32*/].f_29)
 					return false;
 		
-			Global_45643[num /*32*/].f_5 = 1;
-			Global_45643[num /*32*/].f_29 = 1;
+			Global_45696[num /*32*/].f_5 = 1;
+			Global_45696[num /*32*/].f_29 = 1;
 			return true;
 		}
 		else
 		{
-			Global_45643[num /*32*/] == false;
-			Global_45643[num /*32*/].f_7;
+			Global_45696[num /*32*/] == false;
+			Global_45696[num /*32*/].f_7;
 		}
 	}
 
@@ -5619,8 +5626,8 @@ BOOL func_199(int iParam0) // Position - 0x513B (20795)
 
 	for (i = 0; i < 6; i = i + 1)
 	{
-		if (Global_45643[i /*32*/])
-			if (Global_45643[i /*32*/].f_2 > num2)
+		if (Global_45696[i /*32*/])
+			if (Global_45696[i /*32*/].f_2 > num2)
 				num3 = i;
 	}
 
@@ -5641,7 +5648,7 @@ int func_200(int iParam0) // Position - 0x51A2 (20898)
 
 	for (i = 0; i < 6; i = i + 1)
 	{
-		if (Global_45643[i /*32*/].f_1 == iParam0)
+		if (Global_45696[i /*32*/].f_1 == iParam0)
 			return i;
 	}
 
@@ -5669,34 +5676,34 @@ void _CONTEXT_ADD_HELP_TEXT(var uParam0, var uParam1, char* sParam2, var uParam3
 
 	for (i = 0; i < 6; i = i + 1)
 	{
-		if (!Global_45643[i /*32*/])
+		if (!Global_45696[i /*32*/])
 		{
-			Global_45643[i /*32*/] = true;
-			Global_45643[i /*32*/].f_1 = Global_45844;
-			Global_45844 = Global_45844 + 1;
-			Global_45643[i /*32*/].f_4 = 0;
-			Global_45643[i /*32*/].f_29 = 0;
-			Global_45643[i /*32*/].f_5 = 0;
-			Global_45643[i /*32*/].f_2 = uParam1;
-			TEXT_LABEL_ASSIGN_STRING(&(Global_45643[i /*32*/].f_8), sParam2, 16);
-			Global_45643[i /*32*/].f_6 = uParam3;
-			Global_45643[i /*32*/].f_31 = SCRIPT::GET_ID_OF_THIS_THREAD();
-			Global_45643[i /*32*/].f_7 = 0;
-			Global_45643[i /*32*/].f_3 = iParam5;
+			Global_45696[i /*32*/] = true;
+			Global_45696[i /*32*/].f_1 = Global_45897;
+			Global_45897 = Global_45897 + 1;
+			Global_45696[i /*32*/].f_4 = 0;
+			Global_45696[i /*32*/].f_29 = 0;
+			Global_45696[i /*32*/].f_5 = 0;
+			Global_45696[i /*32*/].f_2 = uParam1;
+			TEXT_LABEL_ASSIGN_STRING(&(Global_45696[i /*32*/].f_8), sParam2, 16);
+			Global_45696[i /*32*/].f_6 = uParam3;
+			Global_45696[i /*32*/].f_31 = SCRIPT::GET_ID_OF_THIS_THREAD();
+			Global_45696[i /*32*/].f_7 = 0;
+			Global_45696[i /*32*/].f_3 = iParam5;
 		
 			if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam4))
 			{
-				Global_45643[i /*32*/].f_12 = 1;
-				TEXT_LABEL_ASSIGN_STRING(&(Global_45643[i /*32*/].f_13), sParam4, 64);
-				Global_45643[i /*32*/].f_30 = iParam6;
+				Global_45696[i /*32*/].f_12 = 1;
+				TEXT_LABEL_ASSIGN_STRING(&(Global_45696[i /*32*/].f_13), sParam4, 64);
+				Global_45696[i /*32*/].f_30 = iParam6;
 			}
 			else
 			{
-				Global_45643[i /*32*/].f_12 = 0;
-				Global_45643[i /*32*/].f_30 = 0;
+				Global_45696[i /*32*/].f_12 = 0;
+				Global_45696[i /*32*/].f_30 = 0;
 			}
 		
-			*uParam0 = Global_45643[i /*32*/].f_1;
+			*uParam0 = Global_45696[i /*32*/].f_1;
 			return;
 		}
 	}
@@ -5721,9 +5728,9 @@ void func_202(var uParam0) // Position - 0x5308 (21256)
 
 	if (num > -1 && num < 6)
 	{
-		if (Global_45643[num /*32*/])
+		if (Global_45696[num /*32*/])
 		{
-			Global_45643[num /*32*/].f_7 = 1;
+			Global_45696[num /*32*/].f_7 = 1;
 			*uParam0 = -1;
 			return;
 		}
@@ -5843,64 +5850,64 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 			switch (iParam1)
 			{
 				case 0:
-					return "IAP_NONE" /*-*/;
+					return "IAP_NONE" /*Ninguna*/;
 			
 				case 1:
 					return "IAPS_SMOK" /*Fumar*/;
 			
 				case 2:
-					return "IAPS_FING" /*Que te den*/;
+					return "IAPS_FING" /*El dedo*/;
 			
 				case 3:
 					return "IAPS_DANCE" /*Baile*/;
 			
 				case 4:
-					return "IAPS_ROCK" /*Cuernos*/;
+					return "IAPS_ROCK" /*Rock*/;
 			
 				case 5:
-					return "IAPS_WANK" /*Me la pela*/;
+					return "IAPS_WANK" /*Me la pelas*/;
 			
 				case 7:
-					return "IAP_DLC37" /*Hasta el fondo*/;
+					return "IAP_DLC37" /*Te cogí*/;
 			
 				case 8:
-					return "IAP_DLC12" /*Acoplar*/;
+					return "IAP_DLC12" /*Dedear*/;
 			
 				case 9:
-					return "IAP_DLC18" /*Nudillos*/;
+					return "IAP_DLC18" /*Tronar nudillos*/;
 			
 				case 10:
 					return "IAP_DLC23" /*Saludo*/;
 			
 				case 6:
-					return "IAP_DLC1" /*Lanzar beso*/;
+					return "IAP_DLC1" /*Mandar beso*/;
 			
 				case 11:
-					return "IAP_DLC42" /*Aplauso*/;
+					return "IAP_DLC42" /*Aplauso lento*/;
 			
 				case 12:
-					return "IAP_DLC5" /*Vergüenza ajena*/;
+					return "IAP_DLC5" /*Face Palm*/;
 			
 				case 13:
-					return "IAP_DLC4" /*Cojonudo*/;
+					return "IAP_DLC4" /*Pulgares arriba*/;
 			
 				case 14:
-					return "IAP_DLC35" /*¡Tachán!*/;
+					return "IAP_DLC35" /*Manos Jazz*/;
 			
 				case 15:
-					return "IAP_DLC2" /*Hurgar en la nariz*/;
+					return "IAP_DLC2" /*Rascar nariz*/;
 			
 				case 17:
-					return "D_IAP_DLC44" /*Saludar con la mano*/;
+					return "D_IAP_DLC44" /*Saludar*/;
 			
 				case 16:
-					return "D_IAP_DLC29" /*Guitarra aérea*/;
+					return "D_IAP_DLC29" /*Air Guitar*/;
 			
 				case 18:
-					return "D_IAP_DLC45" /*Rendición*/;
+					return "D_IAP_DLC45" /*Me rindo*/;
 			
 				case 19:
-					return "D_IAP_DLC46" /*Chitón*/;
+					return "D_IAP_DLC46" /*Calladito*/;
 			
 				case 20:
 					return "D_IAP_DLC47" /*Fotografía*/;
@@ -5912,13 +5919,13 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "D_IAP_DLC49" /*Teclado aéreo*/;
 			
 				case 23:
-					return "D_IAP_DLC20" /*Ni hablar*/;
+					return "D_IAP_DLC20" /*Ni de pedo*/;
 			
 				case 25:
-					return "D_IAP_DLC9" /*Paso de todo*/;
+					return "D_IAP_DLC9" /*Me vale madres*/;
 			
 				case 24:
-					return "D_IAP_DLC30" /*Gallina*/;
+					return "D_IAP_DLC30" /*¿Eres gallina?*/;
 			
 				case 28:
 					return "D_IAP_DLC28";
@@ -5930,28 +5937,28 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "D_IAP_DLC32";
 			
 				case 29:
-					return "D_IAP_DLC34" /*Flipar*/;
+					return "D_IAP_DLC34" /*Histeria*/;
 			
 				case 30:
-					return "D_IAP_DLC3" /*Chincha rabiña*/;
+					return "D_IAP_DLC3" /*Pulgar en el oído*/;
 			
 				case 31:
-					return "D_IAP_CAS_2" /*Llorica*/;
+					return "D_IAP_CAS_2" /*Llorón*/;
 			
 				case 32:
 					return "D_IAP_CAS_3" /*Cortar el cuello*/;
 			
 				case 33:
-					return "D_IAP_CAS_4" /*Golpe de kárate*/;
+					return "D_IAP_CAS_4" /*Golpe de karate*/;
 			
 				case 34:
 					return "D_IAP_CAS_6" /*Golpes al aire*/;
 			
 				case 35:
-					return "D_IAP_CAS_7" /*Boogie-woogie*/;
+					return "D_IAP_CAS_7" /*Bailongo*/;
 			
 				case 36:
-					return "D_IAP_CAS_5" /*Cómo huele*/;
+					return "D_IAP_CAS_5" /*Apestoso*/;
 			
 				case 37:
 					return "IAP_CAS_H_1" /*Batería invisible*/;
@@ -5963,13 +5970,13 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "IAP_CAS_H_3" /*Lanzar moneda al aire*/;
 			
 				case 40:
-					return "IAP_CAS_H_4" /*Pium, pium*/;
+					return "IAP_CAS_H_4" /*Bang, bang*/;
 			
 				case 41:
 					return "IAP_CAS_H_5" /*Respeto*/;
 			
 				case 42:
-					return "IAP_CAS_H_6" /*Alucinante*/;
+					return "IAP_CAS_H_6" /*Alucine*/;
 			
 				default:
 					break;
@@ -5980,16 +5987,16 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 			switch (iParam1)
 			{
 				case 0:
-					return "IAC_BROL" /*Crew: amor de hermano*/;
+					return "IAC_BROL" /*Crew: Saludo*/;
 			
 				case 1:
-					return "IAC_FING" /*Crew: que te den*/;
+					return "IAC_FING" /*Crew: El dedo*/;
 			
 				case 2:
-					return "IAC_WANK" /*Crew: me la pela*/;
+					return "IAC_WANK" /*Crew: Me la pelas*/;
 			
 				case 3:
-					return "IAC_UPYO" /*Crew: corte de manga*/;
+					return "IAC_UPYO" /*Crew: A la verga*/;
 			
 				default:
 					break;
@@ -6000,19 +6007,19 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 			switch (iParam1)
 			{
 				case 0:
-					return "IAP_NONE" /*-*/;
+					return "IAP_NONE" /*Ninguna*/;
 			
 				case 1:
-					return "IAP_FING" /*Que te den*/;
+					return "IAP_FING" /*Dedos*/;
 			
 				case 2:
-					return "IAP_ROCK" /*Cuernos*/;
+					return "IAP_ROCK" /*Rock*/;
 			
 				case 3:
 					return "IAP_SALU" /*Saludo*/;
 			
 				case 4:
-					return "IAP_WANK" /*Me la pela*/;
+					return "IAP_WANK" /*Me la pelas*/;
 			
 				case 68:
 					return "IAP_SMOKE" /*Fumar*/;
@@ -6024,13 +6031,13 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "IAP_DRINK2" /*Beber Pisswasser*/;
 			
 				case 71:
-					return "IAP_DRINK3" /*Beber champán Blêuter'd*/;
+					return "IAP_DRINK3" /*Beber champaña Blêuter'd*/;
 			
 				case 72:
 					return "IAP_DRINK4" /*Beber Sprunk*/;
 			
 				case 73:
-					return "IAP_EAT1" /*Comer aperitivo*/;
+					return "IAP_EAT1" /*Comer snack*/;
 			
 				case 74:
 					return "IAP_EAT2" /*Comer EgoChaser*/;
@@ -6039,43 +6046,43 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "IAP_EAT3" /*Comer Meteorite*/;
 			
 				case 6:
-					return "IAP_DLC37" /*Hasta el fondo*/;
+					return "IAP_DLC37" /*Te cogí*/;
 			
 				case 7:
-					return "IAP_DLC12" /*Acoplar*/;
+					return "IAP_DLC12" /*Dedear*/;
 			
 				case 8:
-					return "IAP_DLC18" /*Nudillos*/;
+					return "IAP_DLC18" /*Tronar nudillos*/;
 			
 				case 5:
-					return "IAP_DLC1" /*Lanzar beso*/;
+					return "IAP_DLC1" /*Mandar beso*/;
 			
 				case 9:
-					return "IAP_DLC42" /*Aplauso*/;
+					return "IAP_DLC42" /*Aplauso lento*/;
 			
 				case 10:
-					return "IAP_DLC5" /*Vergüenza ajena*/;
+					return "IAP_DLC5" /*Face Palm*/;
 			
 				case 11:
-					return "IAP_DLC4" /*Cojonudo*/;
+					return "IAP_DLC4" /*Pulgares arriba*/;
 			
 				case 12:
-					return "IAP_DLC35" /*¡Tachán!*/;
+					return "IAP_DLC35" /*Manos Jazz*/;
 			
 				case 13:
-					return "IAP_DLC2" /*Hurgar en la nariz*/;
+					return "IAP_DLC2" /*Rascar nariz*/;
 			
 				case 15:
-					return "D_IAP_DLC44" /*Saludar con la mano*/;
+					return "D_IAP_DLC44" /*Saludar*/;
 			
 				case 14:
-					return "D_IAP_DLC29" /*Guitarra aérea*/;
+					return "D_IAP_DLC29" /*Air Guitar*/;
 			
 				case 16:
-					return "D_IAP_DLC45" /*Rendición*/;
+					return "D_IAP_DLC45" /*Me rindo*/;
 			
 				case 17:
-					return "D_IAP_DLC46" /*Chitón*/;
+					return "D_IAP_DLC46" /*Calladito*/;
 			
 				case 18:
 					return "D_IAP_DLC47" /*Fotografía*/;
@@ -6087,13 +6094,13 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "D_IAP_DLC49" /*Teclado aéreo*/;
 			
 				case 21:
-					return "D_IAP_DLC20" /*Ni hablar*/;
+					return "D_IAP_DLC20" /*Ni de pedo*/;
 			
 				case 23:
-					return "D_IAP_DLC9" /*Paso de todo*/;
+					return "D_IAP_DLC9" /*Me vale madres*/;
 			
 				case 22:
-					return "D_IAP_DLC30" /*Gallina*/;
+					return "D_IAP_DLC30" /*¿Eres gallina?*/;
 			
 				case 24:
 					return "D_IAP_DLC32";
@@ -6105,58 +6112,58 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "D_IAP_DLC28";
 			
 				case 27:
-					return "D_IAP_DLC34" /*Flipar*/;
+					return "D_IAP_DLC34" /*Histeria*/;
 			
 				case 28:
-					return "D_IAP_DLC3" /*Chincha rabiña*/;
+					return "D_IAP_DLC3" /*Pulgar en el oído*/;
 			
 				case 30:
-					return "D_IAP_BB_1" /*Temazo*/;
+					return "D_IAP_BB_1" /*Súper rola*/;
 			
 				case 29:
-					return "D_IAP_BB_1L" /*Temazo izquierda*/;
+					return "D_IAP_BB_1L" /*Súper rola izq*/;
 			
 				case 31:
-					return "D_IAP_BB_1R" /*Temazo derecha*/;
+					return "D_IAP_BB_1R" /*Súper rola der*/;
 			
 				case 32:
-					return "D_IAP_BB_2" /*Bu, chaval*/;
+					return "D_IAP_BB_2" /*No te ardas*/;
 			
 				case 33:
-					return "D_IAP_BB_3" /*Juego del cordel*/;
+					return "D_IAP_BB_3" /*Sigue el hilo*/;
 			
 				case 34:
-					return "D_IAP_BB_4" /*Sube la capota*/;
+					return "D_IAP_BB_4" /*Arriba las manos*/;
 			
 				case 35:
-					return "D_IAP_BB_5" /*Encuentra el pez*/;
+					return "D_IAP_BB_5" /*Pachanguero*/;
 			
 				case 36:
-					return "D_IAP_BB_6" /*Rollito de salsa*/;
+					return "D_IAP_BB_6" /*Salsero*/;
 			
 				case 37:
-					return "D_IAP_BB_7" /*Corazón a mil*/;
+					return "D_IAP_BB_7" /*Me late*/;
 			
 				case 38:
-					return "D_IAP_BB_8" /*Tío Disco*/;
+					return "D_IAP_BB_8" /*Disco*/;
 			
 				case 40:
-					return "D_IAP_CAS_2" /*Llorica*/;
+					return "D_IAP_CAS_2" /*Llorón*/;
 			
 				case 41:
 					return "D_IAP_CAS_3" /*Cortar el cuello*/;
 			
 				case 42:
-					return "D_IAP_CAS_4" /*Golpe de kárate*/;
+					return "D_IAP_CAS_4" /*Golpe de karate*/;
 			
 				case 43:
 					return "D_IAP_CAS_6" /*Golpes al aire*/;
 			
 				case 44:
-					return "D_IAP_CAS_7" /*Boogie-woogie*/;
+					return "D_IAP_CAS_7" /*Bailongo*/;
 			
 				case 45:
-					return "D_IAP_CAS_5" /*Cómo huele*/;
+					return "D_IAP_CAS_5" /*Apestoso*/;
 			
 				case 46:
 					return "IAP_CAS_H_1" /*Batería invisible*/;
@@ -6168,64 +6175,64 @@ char* func_208(int iParam0, int iParam1) // Position - 0x5507 (21767)
 					return "IAP_CAS_H_3" /*Lanzar moneda al aire*/;
 			
 				case 49:
-					return "IAP_CAS_H_4" /*Pium, pium*/;
+					return "IAP_CAS_H_4" /*Bang, bang*/;
 			
 				case 50:
 					return "IAP_CAS_H_5" /*Respeto*/;
 			
 				case 51:
-					return "IAP_CAS_H_6" /*Alucinante*/;
+					return "IAP_CAS_H_6" /*Alucine*/;
 			
 				case 39:
-					return "D_IAP_AW_1" /*Haz que llueva*/;
+					return "D_IAP_AW_1" /*Que llueva el dinero*/;
 			
 				case 58:
-					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
+					return "PIM_MASK_SFX_T" /*Máscara musical*/;
 			
 				case 59:
-					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
+					return "PIM_MASK_SFX_T" /*Máscara musical*/;
 			
 				case 60:
-					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
+					return "PIM_MASK_SFX_T" /*Máscara musical*/;
 			
 				case 61:
-					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
+					return "PIM_MASK_SFX_T" /*Máscara musical*/;
 			
 				case 62:
-					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
+					return "PIM_MASK_SFX_T" /*Máscara musical*/;
 			
 				case 63:
-					return "PIM_MASK_SFX_T" /*Sonido de máscara*/;
+					return "PIM_MASK_SFX_T" /*Máscara musical*/;
 			
 				case 52:
-					return "D_IAP_HI_1" /*Que el ritmo no pare*/;
+					return "D_IAP_HI_1" /*Invitar al público*/;
 			
 				case 53:
-					return "D_IAP_HI_2" /*Conducir*/;
+					return "D_IAP_HI_2" /*Conductor*/;
 			
 				case 54:
-					return "D_IAP_HI_3" /*Correr*/;
+					return "D_IAP_HI_3" /*Corredor*/;
 			
 				case 55:
-					return "D_IAP_HI_4" /*Disparo*/;
+					return "D_IAP_HI_4" /*Disparar*/;
 			
 				case 56:
-					return "D_IAP_HI_5" /*Chúpamela*/;
+					return "D_IAP_HI_5" /*Chíngate*/;
 			
 				case 57:
-					return "D_IAP_HI_6" /*Hacerse un selfie*/;
+					return "D_IAP_HI_6" /*Tomar selfie*/;
 			
 				case 65:
-					return "IAP_AVI_H_1" /*Girar porra extensible*/;
+					return "IAP_AVI_H_1" /*Girar el garrote*/;
 			
 				case 67:
-					return "IAP_AVI_H_2" /*Enseñar la placa*/;
+					return "IAP_AVI_H_2" /*Mostrar la placa*/;
 			
 				case 64:
-					return "IAP_AVI_H_3" /*Saludo militar*/;
+					return "IAP_AVI_H_3" /*Saludo táctico*/;
 			
 				case 66:
-					return "IAP_AVI_H_4" /*No he sido yo*/;
+					return "IAP_AVI_H_4" /*Yo no fui*/;
 			
 				default:
 					break;
@@ -6259,7 +6266,7 @@ BOOL func_211() // Position - 0x5BBB (23483)
 
 BOOL func_212() // Position - 0x5BC9 (23497)
 {
-	if (Global_2708758)
+	if (Global_2708869)
 		return true;
 
 	switch (LOCALIZATION::GET_CURRENT_LANGUAGE())
@@ -6292,18 +6299,18 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 		case 1:
 			if (uParam0->f_930 == 0)
 			{
-				uParam2->f_1 = "DANCE_0" /*Pulsa ~INPUT_CONTEXT~ para bailar.*/;
+				uParam2->f_1 = "DANCE_0" /*Presiona ~INPUT_CONTEXT~ para bailar.*/;
 			}
 			else
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
-					uParam2->f_1 = "DANCE_ALT_KB" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.*/;
+					uParam2->f_1 = "DANCE_ALT_KB" /*Presiona ~INPUT_CURSOR_CANCEL~ para bailar.*/;
 					uParam2->f_10 = 1;
 				}
 				else
 				{
-					uParam2->f_1 = "DANCE_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.*/;
+					uParam2->f_1 = "DANCE_ALT" /*Mantén presionado ~INPUT_SCRIPT_LT~ para bailar.*/;
 					uParam2->f_10 = 1;
 				}
 			
@@ -6327,13 +6334,13 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 					uParam2->f_6 = 1;
 			
-				uParam2->f_1 = "DANCE_MIN" /*Pulsa ~INPUT_SCRIPT_PAD_LEFT~ para mostrar las instrucciones de baile.*/;
+				uParam2->f_1 = "DANCE_MIN" /*Presiona ~INPUT_SCRIPT_PAD_LEFT~ para mostrar los controles de baile.*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 			}
 			else if (uParam0->f_930 == 2 || uParam0->f_930 == 3 || uParam0->f_930 == 4 || uParam0->f_930 == 5)
 			{
-				uParam2->f_1 = "DANCE_MIN_ALT" /*Pulsa ~INPUT_SCRIPT_RLEFT~ para mostrar las instrucciones de baile.*/;
+				uParam2->f_1 = "DANCE_MIN_ALT" /*Presiona ~INPUT_SCRIPT_RLEFT~ para mostrar los controles de baile.*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_10 = 1;
@@ -6346,12 +6353,12 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
-					uParam2->f_1 = "DANCE_S_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/;
+					uParam2->f_1 = "DANCE_S_K" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad.~n~~INPUT_SCRIPT_RUP~ Disminuir intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar acción.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/;
 					uParam2->f_6 = 1;
 				}
 				else
 				{
-					uParam2->f_1 = "DANCE_S" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/;
+					uParam2->f_1 = "DANCE_S" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad.~n~~INPUT_SCRIPT_RUP~ Disminuir intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar acción.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_CONTEXT~ Salir.*/;
 				}
 			
 				uParam2->f_5 = 1;
@@ -6361,7 +6368,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 1)
 			{
-				uParam2->f_1 = "DANCE_PROP_S" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/;
+				uParam2->f_1 = "DANCE_PROP_S" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~ Realizar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar movimiento: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_7 = 1;
@@ -6371,7 +6378,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 2)
 			{
-				uParam2->f_1 = "DANCE_ALTA_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RT~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+				uParam2->f_1 = "DANCE_ALTA_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RT~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_7 = 1;
@@ -6384,11 +6391,11 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
 					if (uParam0->f_915.f_9 && uParam0->f_674)
-						uParam2->f_1 = "DANCE_B_K_C_B" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUTGROUP_CELLPHONE_NAVIGATE_LR~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/;
+						uParam2->f_1 = "DANCE_B_K_C_B" /*~INPUTGROUP_MOVE~ Cambiar movimiento~n~~INPUT_SCRIPT_RLEFT~ Intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Realizar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUTGROUP_CELLPHONE_NAVIGATE_LR~ Cámara de DJ~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar~n~~INPUT_CURSOR_CANCEL~ Salir*/;
 					else if (func_117(uParam0))
-						uParam2->f_1 = "DANCE_B_K_C" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/;
+						uParam2->f_1 = "DANCE_B_K_C" /*~INPUTGROUP_MOVE~ Cambiar movimiento~n~~INPUT_SCRIPT_RLEFT~ Intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Realizar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar~n~~INPUT_CURSOR_CANCEL~ Salir*/;
 					else
-						uParam2->f_1 = "DANCE_B_K" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/;
+						uParam2->f_1 = "DANCE_B_K" /*~INPUTGROUP_MOVE~ Cambiar movimiento~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Realizar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar~n~~INPUT_CURSOR_CANCEL~ Salir*/;
 				
 					uParam2->f_6 = 1;
 					uParam2->f_10 = 1;
@@ -6399,11 +6406,11 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 					uParam2->f_9 = 1;
 				
 					if (uParam0->f_915.f_9 && uParam0->f_674)
-						uParam2->f_1 = "DANCE_B_S_C_B" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+						uParam2->f_1 = "DANCE_B_S_C_B" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 					else if (func_117(uParam0))
-						uParam2->f_1 = "DANCE_B_S_C" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+						uParam2->f_1 = "DANCE_B_S_C" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 					else
-						uParam2->f_1 = "DANCE_B_S" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+						uParam2->f_1 = "DANCE_B_S" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				}
 			
 				uParam2->f_5 = 1;
@@ -6413,7 +6420,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 4)
 			{
-				uParam2->f_1 = "DANCE_ALTC_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+				uParam2->f_1 = "DANCE_ALTC_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_7 = 1;
@@ -6423,7 +6430,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 5)
 			{
-				uParam2->f_1 = "DANCE_ALTD_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+				uParam2->f_1 = "DANCE_ALTD_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_7 = 1;
@@ -6439,12 +6446,12 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
-					uParam2->f_1 = "DANCE_S_D_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/;
+					uParam2->f_1 = "DANCE_S_D_K" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/;
 					uParam2->f_6 = 1;
 				}
 				else
 				{
-					uParam2->f_1 = "DANCE_S_D" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar. ~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/;
+					uParam2->f_1 = "DANCE_S_D" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_CONTEXT~ Salir.*/;
 				}
 			
 				uParam2->f_5 = 1;
@@ -6453,7 +6460,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 1)
 			{
-				uParam2->f_1 = "DANCE_PROP_D" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/;
+				uParam2->f_1 = "DANCE_PROP_D" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_8 = 1;
@@ -6462,7 +6469,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 2)
 			{
-				uParam2->f_1 = "DANCE_ALTA_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+				uParam2->f_1 = "DANCE_ALTA_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_8 = 1;
@@ -6473,13 +6480,13 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			{
 				if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				{
-					uParam2->f_1 = "DANCE_S_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/;
+					uParam2->f_1 = "DANCE_S_K" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad.~n~~INPUT_SCRIPT_RUP~ Disminuir intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar acción.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/;
 					uParam2->f_6 = 1;
 					uParam2->f_10 = 1;
 				}
 				else
 				{
-					uParam2->f_1 = "DANCE_ALTB_D" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+					uParam2->f_1 = "DANCE_ALTB_D" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 					uParam2->f_10 = 1;
 				}
 			
@@ -6490,7 +6497,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 4)
 			{
-				uParam2->f_1 = "DANCE_ALTC_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+				uParam2->f_1 = "DANCE_ALTC_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_8 = 1;
@@ -6499,7 +6506,7 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 			}
 			else if (uParam0->f_930 == 5)
 			{
-				uParam2->f_1 = "DANCE_ALTD_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
+				uParam2->f_1 = "DANCE_ALTD_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/;
 				uParam2->f_5 = 1;
 				uParam2->f_3 = 1;
 				uParam2->f_8 = 1;
@@ -6528,11 +6535,11 @@ BOOL func_214(var uParam0, int iParam1, var uParam2) // Position - 0x5C17 (23575
 	
 		case 7:
 			if (uParam0->f_930 == 0)
-				uParam2->f_1 = "DM_DD_JOIN" /*Pulsa ~INPUT_CONTEXT~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
+				uParam2->f_1 = "DM_DD_JOIN" /*Presiona ~INPUT_CONTEXT~ para bailar.~n~Presiona ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
 			else if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
-				uParam2->f_1 = "DM_DD_JOIN_K" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
+				uParam2->f_1 = "DM_DD_JOIN_K" /*Presiona ~INPUT_CURSOR_CANCEL~ para bailar.~n~Presiona ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
 			else
-				uParam2->f_1 = "DM_DD_JOIN_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.~n~Pulsa ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
+				uParam2->f_1 = "DM_DD_JOIN_ALT" /*Mantén presionado ~INPUT_SCRIPT_LT~ para bailar.~n~Presiona ~INPUT_CONTEXT_SECONDARY~ para bailar con ~a~.*/;
 		
 			return true;
 	
@@ -6581,28 +6588,28 @@ BOOL func_217(var uParam0, var uParam1) // Position - 0x6139 (24889)
 	char* str2;
 	char* str3;
 
-	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_0" /*Pulsa ~INPUT_CONTEXT~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_ALT" /*Mantén pulsado ~INPUT_SCRIPT_LT~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_ALT_KB" /*Pulsa ~INPUT_CURSOR_CANCEL~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("COMBO_STOP" /*No puedes conseguir más RP bailando por hoy.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_MIN" /*Pulsa ~INPUT_SCRIPT_PAD_LEFT~ para mostrar las instrucciones de baile.*/))
+	if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_0" /*Presiona ~INPUT_CONTEXT~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_ALT" /*Mantén presionado ~INPUT_SCRIPT_LT~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_ALT_KB" /*Presiona ~INPUT_CURSOR_CANCEL~ para bailar.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("COMBO_STOP" /*No puedes conseguir más RP bailando por hoy.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("DANCE_MIN" /*Presiona ~INPUT_SCRIPT_PAD_LEFT~ para mostrar los controles de baile.*/))
 		return true;
 
 	str = func_209(uParam0, uParam1);
 
-	if (func_204("DANCE_S_D_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str) || func_204("DANCE_S_D" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar. ~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str) || func_204("DANCE_S_D_K_0" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str) || func_204("DANCE_S_D_K_1" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str) || func_204("DANCE_S_D_0" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str) || func_204("DANCE_S_D_1" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar. ~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str))
+	if (func_204("DANCE_S_D_K" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/, str) || func_204("DANCE_S_D" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_CONTEXT~ Salir.*/, str) || func_204("DANCE_S_D_K_0" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/, str) || func_204("DANCE_S_D_K_1" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/, str) || func_204("DANCE_S_D_0" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_CONTEXT~ Salir.*/, str) || func_204("DANCE_S_D_1" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_CONTEXT~ Salir.*/, str))
 		return true;
 
 	str2 = func_208(func_143(), func_144());
 
-	if (func_205("DANCE_S_K" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S_K_0" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S_K_1" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S_0" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUTGROUP_MOVE~ Cambiar el movimiento.~n~~INPUT_SCRIPT_RDOWN~ / ~INPUT_SCRIPT_LT~ Mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar la intensidad.~n~~INPUT_SCRIPT_RUP~ Bajar la intensidad.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str, str2) || func_205("DANCE_S_1" /*Pulsa ~INPUT_SCRIPT_RDOWN~ con la música para darle intensidad.~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar una acción.~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~.~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar la acción: ~a~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar las instrucciones.~n~~INPUT_CONTEXT~ Dejar de bailar.*/, str, str2) || func_205("DANCE_B_K" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/, str, str2) || func_205("DANCE_B_K_C" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/, str, str2) || func_205("DANCE_B_K_C_B" /*~INPUTGROUP_MOVE~ Estilo de baile~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Pasos de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUTGROUP_CELLPHONE_NAVIGATE_LR~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles~n~~INPUT_CURSOR_CANCEL~ Dejar de bailar*/, str, str2))
+	if (func_205("DANCE_S_K" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad.~n~~INPUT_SCRIPT_RUP~ Disminuir intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar acción.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/, str, str2) || func_205("DANCE_S" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad.~n~~INPUT_SCRIPT_RUP~ Disminuir intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar acción.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_CONTEXT~ Salir.*/, str, str2) || func_205("DANCE_S_K_0" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad.~n~~INPUT_SCRIPT_RUP~ Disminuir intensidad.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/, str, str2) || func_205("DANCE_S_K_1" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar acción.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_FRONTEND_PAUSE_ALTERNATE~ Salir.*/, str, str2) || func_205("DANCE_S_0" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUTGROUP_MOVE~ Cambiar movimiento.~n~Mantén presionado ~INPUT_SCRIPT_RDOWN~ o ~INPUT_SCRIPT_LT~ para mantener la intensidad.~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad.~n~~INPUT_SCRIPT_RUP~ Disminuir intensidad.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_CONTEXT~ Salir.*/, str, str2) || func_205("DANCE_S_1" /*Presiona repetidamente ~INPUT_SCRIPT_RDOWN~ al ritmo de la música para generar intensidad.~n~~INPUT_SCRIPT_LB~ o ~INPUT_SCRIPT_RB~ Girar.~n~~INPUT_SCRIPT_RT~ Realizar acción.~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a_1~.~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a_0~.~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar.~n~~INPUT_CONTEXT~ Salir.*/, str, str2) || func_205("DANCE_B_K" /*~INPUTGROUP_MOVE~ Cambiar movimiento~n~~INPUT_SCRIPT_RLEFT~ Aumentar intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Realizar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar~n~~INPUT_CURSOR_CANCEL~ Salir*/, str, str2) || func_205("DANCE_B_K_C" /*~INPUTGROUP_MOVE~ Cambiar movimiento~n~~INPUT_SCRIPT_RLEFT~ Intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Realizar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar~n~~INPUT_CURSOR_CANCEL~ Salir*/, str, str2) || func_205("DANCE_B_K_C_B" /*~INPUTGROUP_MOVE~ Cambiar movimiento~n~~INPUT_SCRIPT_RLEFT~ Intensidad~n~~INPUT_SCRIPT_LB~ / ~INPUT_SCRIPT_RB~ Girar~n~~INPUT_SCRIPT_RDOWN~ Realizar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Acción: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUTGROUP_CELLPHONE_NAVIGATE_LR~ Cámara de DJ~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar~n~~INPUT_CURSOR_CANCEL~ Salir*/, str, str2))
 		return true;
 
 	str3 = func_207(uParam0);
 
-	if (func_206("DANCE_PROP_S" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~ Ejecutar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar acción: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTA_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RT~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTC_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTD_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3))
+	if (func_206("DANCE_PROP_S" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~ Realizar acción~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_SCRIPT_PAD_DOWN~ Cambiar movimiento: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTA_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RT~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTC_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_ALTD_S" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_UD~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3))
 		return true;
 
-	if (func_205("DANCE_PROP_D" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_PAD_UP~ Estilo de baile: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTA_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTB_D" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTC_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTD_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo de baile: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3))
+	if (func_205("DANCE_PROP_D" /*~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_PAD_UP~ Estilo: ~a~~n~~INPUT_CONTEXT~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_PAD_LEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTA_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RB~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTB_D" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTC_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3) || func_205("DANCE_ALTD_D" /*~INPUTGROUP_FRONTEND_DPAD_LR~ Estilo: ~a~~n~~INPUTGROUP_MOVE~ Pasos de baile~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str3))
 		return true;
 
-	if (func_206("DANCE_B_S_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo de baile: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_RB~ Ejecutar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de la cabina del DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3))
+	if (func_206("DANCE_B_S_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B_0" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar movimiento: ~a~~n~~INPUTGROUP_MOVE~ Girar~n~~INPUT_SCRIPT_RT~+~INPUTGROUP_LOOK~ Pasos de baile~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3) || func_206("DANCE_B_S_C_B_1" /*~INPUTGROUP_FRONTEND_DPAD_UD~ Estilo: ~a~~n~~INPUTGROUP_FRONTEND_DPAD_LR~ Cambiar acción: ~a~~n~~INPUT_SCRIPT_RB~ Realizar acción~n~~INPUT_SCRIPT_RDOWN~ Aumentar intensidad~n~~INPUT_SCRIPT_RUP~ Habilitar bloqueo: ~a~~n~~INPUT_VEH_CIN_CAM~ Cámara cinematográfica~n~~INPUT_SCRIPT_RIGHT_AXIS_X~ Cámara de DJ~n~~INPUT_SCRIPT_RLEFT~ Ocultar controles*/, str, str2, str3))
 		return true;
 
 	return false;
@@ -7387,12 +7394,12 @@ void func_244(var uParam0, var uParam1, int iParam2, BOOL bParam3, int iParam4, 
 	Global_4502481.f_981 = iParam8;
 	Global_4502481.f_17 = bParam11;
 
-	if (IS_BIT_SET(Global_9465, 3))
+	if (IS_BIT_SET(Global_9504, 3))
 		Global_4502481.f_5 = 1;
 
 	if (bParam11)
 		if (func_245(uParam0, uParam1))
-			_STOPWATCH_DESTROY(&Global_2709126);
+			_STOPWATCH_DESTROY(&Global_2709237);
 
 	return;
 }
@@ -7405,7 +7412,7 @@ BOOL func_245(int iParam0, int iParam1) // Position - 0x747F (29823)
 			switch (iParam1)
 			{
 				case 71:
-					if (_STOPWATCH_IS_INITIALIZED(&Global_2709126))
+					if (_STOPWATCH_IS_INITIALIZED(&Global_2709237))
 						return true;
 					break;
 			}
@@ -10408,7 +10415,7 @@ void func_273(var uParam0, int iParam1) // Position - 0xCB67 (52071)
 
 BOOL func_274() // Position - 0xCBB0 (52144)
 {
-	return Global_46059 && !MISC::IS_STRING_NULL_OR_EMPTY(&Global_46068);
+	return Global_46112 && !MISC::IS_STRING_NULL_OR_EMPTY(&Global_46121);
 }
 
 BOOL func_275(var uParam0) // Position - 0xCBC8 (52168)
@@ -10562,7 +10569,7 @@ void func_285(var uParam0, var uParam1) // Position - 0xCDB8 (52664)
 		
 			if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, action))
 			{
-				if (!_STOPWATCH_IS_INITIALIZED(&(uParam0->f_935)) || func_8(&(uParam0->f_935), Global_262145.f_29736, false))
+				if (!_STOPWATCH_IS_INITIALIZED(&(uParam0->f_935)) || func_8(&(uParam0->f_935), Global_262145.f_29737, false))
 				{
 					if (func_131(&(uParam0->f_390), 24))
 					{
@@ -10628,7 +10635,7 @@ void func_287(var uParam0) // Position - 0xCFC3 (53187)
 
 ePedComponentType func_288() // Position - 0xCFF8 (53240)
 {
-	return Global_1969491;
+	return Global_1970019;
 }
 
 void func_289(var uParam0) // Position - 0xD004 (53252)
@@ -11287,13 +11294,13 @@ void func_312(var uParam0, int iParam1) // Position - 0xDD67 (56679)
 		{
 			if (_STOPWATCH_IS_INITIALIZED(&(uParam0->f_935)))
 			{
-				if (func_8(&(uParam0->f_935), Global_262145.f_29736, false))
+				if (func_8(&(uParam0->f_935), Global_262145.f_29737, false))
 				{
 					if (!_STOPWATCH_IS_INITIALIZED(&(uParam0->f_937)))
 					{
 						func_9(&(uParam0->f_937), false, false);
 					}
-					else if (func_8(&(uParam0->f_937), Global_262145.f_29737, false))
+					else if (func_8(&(uParam0->f_937), Global_262145.f_29738, false))
 					{
 						func_4(&(uParam0->f_390), 23);
 						func_4(&(uParam0->f_390), 24);
@@ -11302,7 +11309,7 @@ void func_312(var uParam0, int iParam1) // Position - 0xDD67 (56679)
 						{
 							func_9(&(uParam0->f_939), false, false);
 						}
-						else if (func_8(&(uParam0->f_939), Global_262145.f_29738, false))
+						else if (func_8(&(uParam0->f_939), Global_262145.f_29739, false))
 						{
 							_STOPWATCH_DESTROY(&(uParam0->f_935));
 							_STOPWATCH_DESTROY(&(uParam0->f_937));
@@ -11740,7 +11747,7 @@ void func_313(var uParam0) // Position - 0xE90D (59661)
 	int num3;
 	int num4;
 	int num5;
-	eViewMode mode;
+	ePedComponentType type;
 
 	num = func_316(uParam0);
 	unk = Global_262145.f_24005;
@@ -11774,8 +11781,8 @@ void func_313(var uParam0) // Position - 0xE90D (59661)
 	if (uParam0->f_773.f_6 < num5)
 	{
 		uParam0->f_773.f_6 = uParam0->f_773.f_6 + 1;
-		mode = 1 + func_47(7237, -1);
-		func_38(7237, mode, -1, true);
+		type = 1 + func_47(7237, -1);
+		func_38(7237, type, -1, true);
 		func_314(uParam0, uParam0->f_773.f_6);
 	}
 
@@ -11894,13 +11901,13 @@ void func_317(var uParam0, int iParam1) // Position - 0xEAA9 (60073)
 					{
 						if (_STOPWATCH_IS_INITIALIZED(&(uParam0->f_939)))
 						{
-							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_939), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29738);
+							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_939), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29739);
 							num5 = uParam0->f_944 - uParam0->f_943;
 							uParam0->f_628 = uParam0->f_944 - (num5 * num4);
 						}
 						else if (_STOPWATCH_IS_INITIALIZED(&(uParam0->f_937)))
 						{
-							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_937), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29737);
+							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_937), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29738);
 							num5 = uParam0->f_945 - uParam0->f_944;
 							uParam0->f_628 = uParam0->f_945 - (num5 * num4);
 						}
@@ -11928,13 +11935,13 @@ void func_317(var uParam0, int iParam1) // Position - 0xEAA9 (60073)
 					{
 						if (_STOPWATCH_IS_INITIALIZED(&(uParam0->f_939)))
 						{
-							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_939), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29738);
+							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_939), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29739);
 							num5 = uParam0->f_945 - uParam0->f_944;
 							uParam0->f_628 = uParam0->f_945 - (num5 * num4);
 						}
 						else if (_STOPWATCH_IS_INITIALIZED(&(uParam0->f_937)))
 						{
-							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_937), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29737);
+							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_937), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29738);
 							num5 = uParam0->f_946 - uParam0->f_945;
 							uParam0->f_628 = uParam0->f_946 - (num5 * num4);
 						}
@@ -11962,13 +11969,13 @@ void func_317(var uParam0, int iParam1) // Position - 0xEAA9 (60073)
 					{
 						if (_STOPWATCH_IS_INITIALIZED(&(uParam0->f_939)))
 						{
-							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_939), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29738);
+							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_939), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29739);
 							num5 = uParam0->f_946 - uParam0->f_945;
 							uParam0->f_628 = uParam0->f_946 - (num5 * num4);
 						}
 						else if (_STOPWATCH_IS_INITIALIZED(&(uParam0->f_937)))
 						{
-							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_937), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29737);
+							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_937), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29738);
 							num5 = uParam0->f_947 - uParam0->f_946;
 							uParam0->f_628 = uParam0->f_947 - (num5 * num4);
 						}
@@ -11996,7 +12003,7 @@ void func_317(var uParam0, int iParam1) // Position - 0xEAA9 (60073)
 					{
 						if (_STOPWATCH_IS_INITIALIZED(&(uParam0->f_939)))
 						{
-							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_939), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29738);
+							num4 = BUILTIN::TO_FLOAT(func_80(&(uParam0->f_939), false, false)) / BUILTIN::TO_FLOAT(Global_262145.f_29739);
 							num5 = uParam0->f_947 - uParam0->f_946;
 							uParam0->f_628 = uParam0->f_947 - (num5 * num4);
 						}
@@ -12811,10 +12818,10 @@ BOOL func_357(var uParam0) // Position - 0xFF14 (65300)
 	if (uParam0->f_915.f_14 == 0 && !uParam0->f_915.f_8)
 		return false;
 
-	if (Global_2635562.f_2982 || PED::IS_PED_RAGDOLL(uParam0->f_950) || func_358(uParam0->f_950) >= 10 || IS_BIT_SET(Global_1950198.f_4, 2))
+	if (Global_2635562.f_2984 || PED::IS_PED_RAGDOLL(uParam0->f_950) || func_358(uParam0->f_950) >= 10 || IS_BIT_SET(Global_1950702.f_4, 2))
 		return false;
 
-	if (IS_BIT_SET(Global_2658291[uParam0->f_949 /*468*/].f_325.f_4, 13))
+	if (IS_BIT_SET(Global_2658293[uParam0->f_949 /*468*/].f_325.f_4, 13))
 		return false;
 
 	return true;
@@ -12837,7 +12844,7 @@ int func_358(Ped pedParam0) // Position - 0xFFA1 (65441)
 	if (num2 == -1)
 		return -1;
 
-	return Global_45880[num2 /*5*/].f_3;
+	return Global_45933[num2 /*5*/].f_3;
 }
 
 int func_359(int iParam0) // Position - 0xFFE4 (65508)
@@ -12848,7 +12855,7 @@ int func_359(int iParam0) // Position - 0xFFE4 (65508)
 
 	for (i = 0; i < 16; i = i + 1)
 	{
-		if (Global_45880[i /*5*/] == iParam0)
+		if (Global_45933[i /*5*/] == iParam0)
 			return i;
 	}
 
@@ -12866,8 +12873,8 @@ int func_360(Ped pedParam0) // Position - 0x10015 (65557)
 
 	for (i = 0; i < 16; i = i + 1)
 	{
-		if (pedParam0 == Global_45880[i /*5*/].f_1)
-			return Global_45880[i /*5*/];
+		if (pedParam0 == Global_45933[i /*5*/].f_1)
+			return Global_45933[i /*5*/];
 	}
 
 	return -1;
@@ -13053,9 +13060,9 @@ BOOL func_367(var uParam0) // Position - 0x1030C (66316)
 	int scriptTaskStatus;
 	var unk;
 
-	if (IS_BIT_SET(Global_1950198.f_3, 16))
+	if (IS_BIT_SET(Global_1950702.f_3, 16))
 	{
-		MISC::CLEAR_BIT(&(Global_1950198.f_3), 16);
+		MISC::CLEAR_BIT(&(Global_1950702.f_3), 16);
 		return true;
 	}
 
@@ -13068,7 +13075,7 @@ BOOL func_367(var uParam0) // Position - 0x1030C (66316)
 	if (scriptTaskStatus == 0 || scriptTaskStatus == 1)
 		return true;
 
-	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("spawn_activities")) > 0 || Global_2640098.f_16)
+	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("spawn_activities")) > 0 || Global_2640100.f_16)
 		return true;
 
 	if (func_131(&(uParam0->f_390), 4))
@@ -13101,7 +13108,7 @@ BOOL func_367(var uParam0) // Position - 0x1030C (66316)
 BOOL func_368(ePedComponentType epctParam0) // Position - 0x10444 (66628)
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX() && _NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-		return IS_BIT_SET(Global_2658291[epctParam0 /*468*/].f_325, 3);
+		return IS_BIT_SET(Global_2658293[epctParam0 /*468*/].f_325, 3);
 
 	return false;
 }
@@ -13133,7 +13140,7 @@ BOOL func_369(var uParam0) // Position - 0x10475 (66677)
 			return true;
 		}
 	}
-	else if (PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_FRONTEND_LT) >= Global_2712102)
+	else if (PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_FRONTEND_LT) >= Global_2712214)
 	{
 		func_140(uParam0);
 		func_133(&(uParam0->f_390), 1, func_135(uParam0, &(uParam0->f_795)));
@@ -13358,7 +13365,7 @@ BOOL func_378(ePedComponentType epctParam0) // Position - 0x108E6 (67814)
 	int num3;
 	BOOL flag;
 
-	num = Global_2658291[epctParam0 /*468*/].f_446;
+	num = Global_2658293[epctParam0 /*468*/].f_446;
 	num2 = func_383();
 	unk = { GET_GAMER_HANDLE_PLAYER(epctParam0) };
 	num3 = func_382(&unk);
@@ -13404,14 +13411,14 @@ BOOL func_379(Player plParam0, ePedComponentType epctParam1) // Position - 0x109
 ePedComponentType func_380(ePedComponentType epctParam0) // Position - 0x1099A (67994)
 {
 	if (func_46(epctParam0))
-		return Global_1892653[epctParam0 /*615*/].f_10;
+		return Global_1892925[epctParam0 /*615*/].f_10;
 
 	return _INVALID_PLAYER_INDEX();
 }
 
 BOOL func_381(Player plParam0, ePedComponentType epctParam1) // Position - 0x109BD (68029)
 {
-	if (IS_BIT_SET(Global_2658291[plParam0 /*468*/].f_395, epctParam1) || IS_BIT_SET(Global_2658291[epctParam1 /*468*/].f_395, plParam0))
+	if (IS_BIT_SET(Global_2658293[plParam0 /*468*/].f_395, epctParam1) || IS_BIT_SET(Global_2658293[epctParam1 /*468*/].f_395, plParam0))
 		return true;
 
 	return false;
@@ -13820,7 +13827,7 @@ void func_400(var uParam0, BOOL bParam1) // Position - 0x110DA (69850)
 
 BOOL func_401(ePedComponentType epctParam0) // Position - 0x110FE (69886)
 {
-	return IS_BIT_SET(Global_2658291[epctParam0 /*468*/].f_325.f_3, 13);
+	return IS_BIT_SET(Global_2658293[epctParam0 /*468*/].f_325.f_3, 13);
 }
 
 void func_402(float* pfParam0) // Position - 0x11117 (69911)
@@ -13854,25 +13861,25 @@ void func_403(var uParam0) // Position - 0x1115A (69978)
 
 	variableClipSet = func_243();
 
-	for (i = 0; i < Global_1955708; i = i + 1)
+	for (i = 0; i < Global_1956215; i = i + 1)
 	{
-		if (Global_1955708[i] != 0)
+		if (Global_1956215[i] != 0)
 		{
 			playerPed = PLAYER::GET_PLAYER_PED(i);
 		
 			if (!ENTITY::DOES_ENTITY_EXIST(playerPed) || ENTITY::IS_ENTITY_DEAD(playerPed, false) || !TASK::IS_TASK_MOVE_NETWORK_ACTIVE(playerPed))
 			{
-				Global_1955708[i] = 0;
+				Global_1956215[i] = 0;
 				uParam0->[i] = 0;
 			}
-			else if (Global_1955708[i] != uParam0->[i])
+			else if (Global_1956215[i] != uParam0->[i])
 			{
 				playerPed2 = PLAYER::GET_PLAYER_PED(i);
 			
 				if (ENTITY::DOES_ENTITY_EXIST(playerPed2) && !ENTITY::IS_ENTITY_DEAD(playerPed2, false) && TASK::IS_TASK_MOVE_NETWORK_ACTIVE(playerPed2))
 				{
-					uParam0->[i] = Global_1955708[i];
-					clipSet = func_142(Global_1955708[i]);
+					uParam0->[i] = Global_1956215[i];
+					clipSet = func_142(Global_1956215[i]);
 				
 					if (clipSet == 0)
 						return;
@@ -13881,20 +13888,20 @@ void func_403(var uParam0) // Position - 0x1115A (69978)
 				}
 				else
 				{
-					Global_1955708[i] = 0;
+					Global_1956215[i] = 0;
 					uParam0->[i] = 0;
 				}
 			}
 		}
 	
-		if (Global_1955708[i] != uParam0->[i])
+		if (Global_1956215[i] != uParam0->[i])
 		{
 			playerPed2 = PLAYER::GET_PLAYER_PED(i);
 		
 			if (ENTITY::DOES_ENTITY_EXIST(playerPed2) && !ENTITY::IS_ENTITY_DEAD(playerPed2, false) && TASK::IS_TASK_MOVE_NETWORK_ACTIVE(playerPed2))
 			{
-				uParam0->[i] = Global_1955708[i];
-				clipSet = func_142(Global_1955708[i]);
+				uParam0->[i] = Global_1956215[i];
+				clipSet = func_142(Global_1956215[i]);
 			
 				if (clipSet == 0)
 					return;
@@ -13903,7 +13910,7 @@ void func_403(var uParam0) // Position - 0x1115A (69978)
 			}
 			else
 			{
-				Global_1955708[i] = 0;
+				Global_1956215[i] = 0;
 				uParam0->[i] = 0;
 			}
 		}
@@ -13924,18 +13931,18 @@ void func_404(var uParam0) // Position - 0x11244 (70212)
 
 BOOL func_405() // Position - 0x11286 (70278)
 {
-	if (CAM::IS_SCREEN_FADING_OUT() || CAM::IS_SCREEN_FADED_OUT() || !func_411(Global_2673271.f_4.f_15) || TASK::IS_PED_RUNNING(Global_2673271.f_4.f_15))
+	if (CAM::IS_SCREEN_FADING_OUT() || CAM::IS_SCREEN_FADED_OUT() || !func_411(Global_2673273.f_4.f_15) || TASK::IS_PED_RUNNING(Global_2673273.f_4.f_15))
 		return 1;
 
 	if (!func_410(482563055))
 		return 1;
-	else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB1" /*Accede a los servicios de la mansión ~BLIP_MANSION_AI_M~ para celebrar una fiesta en tu mansión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB2" /*Accede a los servicios de la mansión ~BLIP_MANSION_AI_GANG~ para celebrar una fiesta en tu mansión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB0" /*Accede a los servicios de la mansión ~BLIP_MANSION_AI_F~ para celebrar una fiesta en tu mansión.*/))
+	else if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB1" /*Usa la opción "Servicios de la mansión" ~BLIP_MANSION_AI_M~ para celebrar una fiesta en tu mansión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB2" /*Usa la opción "Servicios de la mansión" ~BLIP_MANSION_AI_GANG~ para celebrar una fiesta en tu mansión.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("MAN_FIRST_CLB0" /*Usa la opción "Servicios de la mansión" ~BLIP_MANSION_AI_F~ para celebrar una fiesta en tu mansión.*/))
 		return 1;
 
-	if (Global_2635562.f_2982 || PED::IS_PED_RAGDOLL(PLAYER::PLAYER_PED_ID()) || func_358(PLAYER::PLAYER_PED_ID()) >= 10)
+	if (Global_2635562.f_2984 || PED::IS_PED_RAGDOLL(PLAYER::PLAYER_PED_ID()) || func_358(PLAYER::PLAYER_PED_ID()) >= 10)
 		return 1;
 
-	if (IS_BIT_SET(Global_1950198.f_4, 2))
+	if (IS_BIT_SET(Global_1950702.f_4, 2))
 		return 1;
 
 	if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), true))
@@ -13950,10 +13957,10 @@ BOOL func_405() // Position - 0x11286 (70278)
 	if (func_112(0) || func_407())
 		return 1;
 
-	if (!func_401(PLAYER::PLAYER_ID()) && !func_124(&(iLocal_142.f_1)) && TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD) == 0 || TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD) == 1)
+	if (!func_401(PLAYER::PLAYER_ID()) && !func_124(&(iLocal_149.f_1)) && TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD) == 0 || TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD) == 1)
 		return 1;
 
-	if (Global_1950181 || Global_1935197 || Global_1970300)
+	if (Global_1950685 || Global_1935589 || Global_1970831)
 		return 1;
 
 	return func_406();
@@ -13974,12 +13981,12 @@ BOOL func_407() // Position - 0x1144C (70732)
 
 BOOL func_408() // Position - 0x11469 (70761)
 {
-	return MISC::GET_GAME_TIMER() <= Global_24529.f_6481 + 100;
+	return MISC::GET_GAME_TIMER() <= Global_24569.f_6481 + 100;
 }
 
 BOOL func_409() // Position - 0x1147E (70782)
 {
-	if (Global_2673271.f_1023.f_5 == PV_COMP_INVALID)
+	if (Global_2673273.f_1023.f_5 == PV_COMP_INVALID)
 		return false;
 
 	return true;
@@ -13987,7 +13994,7 @@ BOOL func_409() // Position - 0x1147E (70782)
 
 BOOL func_410(int iParam0) // Position - 0x11498 (70808)
 {
-	return Global_1882572[PLAYER::PLAYER_ID() /*315*/].f_158.f_43.f_6 == iParam0;
+	return Global_1882652[PLAYER::PLAYER_ID() /*321*/].f_158.f_43.f_6 == iParam0;
 }
 
 BOOL func_411(Ped pedParam0) // Position - 0x114B4 (70836)
@@ -14022,14 +14029,14 @@ BOOL func_412(var uParam0) // Position - 0x114D2 (70866)
 
 BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x1150E (70926)
 {
-	if (Global_1575062 == false)
+	if (Global_1575066 == false)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			return true;
 
 	if (func_420())
 		return true;
 
-	if (Global_2699567)
+	if (Global_2699678)
 		return true;
 
 	if (func_419())
@@ -14068,7 +14075,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x11592 (71058)
 
 Hash func_415() // Position - 0x115C5 (71109)
 {
-	switch (Global_2699676)
+	switch (Global_2699787)
 	{
 		case 0:
 			return joaat("freemode");
@@ -14082,12 +14089,12 @@ Hash func_415() // Position - 0x115C5 (71109)
 
 eHudColour func_416() // Position - 0x115E9 (71145)
 {
-	return Global_33775;
+	return Global_33815;
 }
 
 BOOL func_417() // Position - 0x115F4 (71156)
 {
-	return Global_2685150.f_700;
+	return Global_2685152.f_726;
 }
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x11603 (71171)
@@ -14100,12 +14107,12 @@ BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x11603 (71171)
 
 BOOL func_419() // Position - 0x1161A (71194)
 {
-	return Global_2696964;
+	return Global_2697072;
 }
 
 BOOL func_420() // Position - 0x11626 (71206)
 {
-	return Global_2685150.f_695;
+	return Global_2685152.f_721;
 }
 
 void func_421() // Position - 0x11635 (71221)
@@ -14129,7 +14136,7 @@ void func_423() // Position - 0x11652 (71250)
 
 void func_424() // Position - 0x1165E (71262)
 {
-	func_425(&(iLocal_142.f_1), !PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false));
+	func_425(&(iLocal_149.f_1), !PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false));
 	return;
 }
 
@@ -14287,8 +14294,8 @@ void func_429(var uParam0) // Position - 0x1190E (71950)
 
 	NETWORK::NETWORK_SET_THIS_SCRIPT_IS_NETWORK_SCRIPT(32, false, func_453());
 	func_449(0, -1, false);
-	NETWORK::NETWORK_REGISTER_HOST_BROADCAST_VARIABLES(&uLocal_1175, 1, 0);
-	func_448(&(iLocal_142.f_1));
+	NETWORK::NETWORK_REGISTER_HOST_BROADCAST_VARIABLES(&uLocal_1182, 1, 0);
+	func_448(&(iLocal_149.f_1));
 
 	if (!_NETWORK_WAIT_FOR_HOST_BROADCAST_DATA())
 		func_422();
@@ -14310,7 +14317,7 @@ void func_430(var uParam0) // Position - 0x11972 (72050)
 	var unk;
 
 	func_432(&unk, uParam0);
-	func_431(&(iLocal_142.f_1), &unk);
+	func_431(&(iLocal_149.f_1), &unk);
 	return;
 }
 
@@ -14337,7 +14344,7 @@ void func_432(var uParam0, var uParam1) // Position - 0x119B1 (72113)
 	uParam0->f_11 = uParam1->f_7;
 	uParam0->f_12 = uParam1->f_2;
 	uParam0->f_13 = 72375;
-	iLocal_142.f_1029 = uParam1->f_8;
+	iLocal_149.f_1029 = uParam1->f_8;
 	func_433(uParam0);
 	return;
 }
@@ -14345,8 +14352,8 @@ void func_432(var uParam0, var uParam1) // Position - 0x119B1 (72113)
 void func_433(var uParam0) // Position - 0x11A2F (72239)
 {
 	*uParam0 = 72330;
-	iLocal_142.f_1030 = 72313;
-	iLocal_142.f_1031 = 72272;
+	iLocal_149.f_1030 = 72313;
+	iLocal_149.f_1031 = 72272;
 	return;
 }
 
@@ -14482,37 +14489,37 @@ int func_441(int iParam0, var uParam1) // Position - 0x11D00 (72960)
 	switch (iParam0)
 	{
 		case 0:
-			*uParam1 = "PIMNCLDANSTY0" /*Meneo*/;
+			*uParam1 = "PIMNCLDANSTY0" /*Despacito*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@FEMALE@VAR_A";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@FEMALE@VAR_A@";
 			break;
 	
 		case 1:
-			*uParam1 = "PIMNCLDANSTY1" /*Romperla*/;
+			*uParam1 = "PIMNCLDANSTY1" /*Con sabor*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@FEMALE@VAR_B";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@FEMALE@VAR_B@";
 			break;
 	
 		case 2:
-			*uParam1 = "PIMNCLDANSTY2" /*Repartiendo*/;
+			*uParam1 = "PIMNCLDANSTY2" /*Inspirado*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@MALE@VAR_B";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@MALE@VAR_B@";
 			break;
 	
 		case 3:
-			*uParam1 = "PIMNCLDANSTY3" /*En la zona*/;
+			*uParam1 = "PIMNCLDANSTY3" /*En la onda*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@MALE@VAR_A";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@MALE@VAR_A@";
 			break;
 	
 		case 4:
-			*uParam1 = "PIMNCLDANSTY4" /*A tope*/;
+			*uParam1 = "PIMNCLDANSTY4" /*Motivado*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@JUMPER";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@JUMPER@";
 			break;
 	
 		case 5:
-			*uParam1 = "PIMNCLDANSTY5" /*Tecnomono*/;
+			*uParam1 = "PIMNCLDANSTY5" /*Suelto*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@TECHNO_MONKEY";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@TECHNO_MONKEY@";
 			break;
@@ -14524,19 +14531,19 @@ int func_441(int iParam0, var uParam1) // Position - 0x11D00 (72960)
 			break;
 	
 		case 7:
-			*uParam1 = "PIMNCLDANSTY7" /*Tecnokárate*/;
+			*uParam1 = "PIMNCLDANSTY7" /*Extasiado*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@TECHNO_KARATE";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@TECHNO_KARATE@";
 			break;
 	
 		case 8:
-			*uParam1 = "PIMNCLDANSTY8" /*Recogiendo cable*/;
+			*uParam1 = "PIMNCLDANSTY8" /*Seductor*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@BEACH_BOXING";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@BEACH_BOXING@";
 			break;
 	
 		case 9:
-			*uParam1 = "PIMNCLDANSTY9" /*De paseo*/;
+			*uParam1 = "PIMNCLDANSTY9" /*Suavecito*/;
 			uParam1->f_1 = "NIGHTCLUB@DANCE_MINIGAME@DANCE_SOLO@SAND_TRIP";
 			uParam1->f_2 = "ANIM@AMB@NIGHTCLUB@MINI@DANCE@DANCE_SOLO@SAND_TRIP@";
 			break;
@@ -14645,6 +14652,9 @@ Vector3 func_445(ePedComponentType epctParam0, int iParam1) // Position - 0x11F6
 			}
 			break;
 	
+		case 3:
+			return 2588.177f, 5959.916f, -47.935f;
+	
 		default:
 			switch (epctParam0)
 			{
@@ -14663,12 +14673,12 @@ Vector3 func_445(ePedComponentType epctParam0, int iParam1) // Position - 0x11F6
 	return 0f, 0f, 0f;
 }
 
-ePedComponentType func_446() // Position - 0x120F5 (73973)
+ePedComponentType func_446() // Position - 0x12110 (74000)
 {
-	return Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_325.f_8;
+	return Global_2658293[PLAYER::PLAYER_ID() /*468*/].f_325.f_8;
 }
 
-BOOL _NETWORK_WAIT_FOR_HOST_BROADCAST_DATA() // Position - 0x1210D (73997)
+BOOL _NETWORK_WAIT_FOR_HOST_BROADCAST_DATA() // Position - 0x12128 (74024)
 {
 	int num;
 
@@ -14699,13 +14709,13 @@ BOOL _NETWORK_WAIT_FOR_HOST_BROADCAST_DATA() // Position - 0x1210D (73997)
 	return false;
 }
 
-void func_448(var uParam0) // Position - 0x12166 (74086)
+void func_448(var uParam0) // Position - 0x12181 (74113)
 {
 	NETWORK::NETWORK_REGISTER_PLAYER_BROADCAST_VARIABLES(&(uParam0->f_4), 385, 0);
 	return;
 }
 
-int func_449(int iParam0, int iParam1, BOOL bParam2) // Position - 0x1217A (74106)
+int func_449(int iParam0, int iParam1, BOOL bParam2) // Position - 0x12195 (74133)
 {
 	int i;
 
@@ -14752,7 +14762,7 @@ int func_449(int iParam0, int iParam1, BOOL bParam2) // Position - 0x1217A (7410
 	}
 
 	if (iParam1 > -1)
-		Global_1574668 = i;
+		Global_1574669 = i;
 
 	if (iParam0 == 0)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
@@ -14769,39 +14779,39 @@ int func_449(int iParam0, int iParam1, BOOL bParam2) // Position - 0x1217A (7410
 	return 1;
 }
 
-BOOL func_450(BOOL bParam0) // Position - 0x12290 (74384)
+BOOL func_450(BOOL bParam0) // Position - 0x122AB (74411)
 {
-	if (bParam0 && Global_1575062)
+	if (bParam0 && Global_1575066)
 		if (func_451())
 			return false;
 		else
 			return true;
 
-	return Global_1575062;
+	return Global_1575066;
 }
 
-BOOL func_451() // Position - 0x122BC (74428)
+BOOL func_451() // Position - 0x122D7 (74455)
 {
 	if (func_452())
 		return true;
 
-	return Global_1575065;
+	return Global_1575069;
 }
 
-BOOL func_452() // Position - 0x122D7 (74455)
+BOOL func_452() // Position - 0x122F2 (74482)
 {
-	if (Global_1575062 || Global_1575068)
+	if (Global_1575066 || Global_1575073)
 		if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_controler")) != 0)
 			return true;
 
 	return false;
 }
 
-Player func_453() // Position - 0x12302 (74498)
+Player func_453() // Position - 0x1231D (74525)
 {
 	Player player;
 
-	player = Global_2658291[Global_2673271.f_4.f_16 /*468*/].f_325.f_9;
+	player = Global_2658293[Global_2673273.f_4.f_16 /*468*/].f_325.f_9;
 	return player;
 }
 

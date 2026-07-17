@@ -11,48 +11,67 @@
 	int iLocal_9 = 0;
 	int iLocal_10 = 0;
 	int iLocal_11 = 0;
-	float fLocal_12 = 0f;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	int iLocal_15 = 0;
-	char* sLocal_16 = 0;
+	var uLocal_12 = 0;
+	var uLocal_13 = -2;
+	var uLocal_14 = -2;
+	var uLocal_15 = -2;
+	var uLocal_16 = 5;
 	var uLocal_17 = 0;
 	var uLocal_18 = 0;
 	var uLocal_19 = 0;
 	var uLocal_20 = 0;
-	float fLocal_21 = 0f;
-	float fLocal_22 = 0f;
-	float fLocal_23 = 0f;
+	var uLocal_21 = 0;
+	var uLocal_22 = 2;
+	var uLocal_23 = 0;
 	var uLocal_24 = 0;
-	var uLocal_25 = 0;
-	int iLocal_26 = 0;
-	float fLocal_27 = 0f;
-	var uLocal_28 = 0;
+	var uLocal_25 = 2;
+	var uLocal_26 = 0;
+	var uLocal_27 = 0;
+	var uLocal_28 = 2;
 	var uLocal_29 = 0;
 	var uLocal_30 = 0;
 	float fLocal_31 = 0f;
-	float fLocal_32 = 0f;
+	var uLocal_32 = 0;
 	var uLocal_33 = 0;
-	var uLocal_34 = 0;
-	var uLocal_35 = 0;
+	int iLocal_34 = 0;
+	char* sLocal_35 = 0;
 	var uLocal_36 = 0;
-	int iLocal_37 = 0;
-	int iLocal_38 = 0;
-	int iLocal_39 = 0;
-	int iLocal_40 = 0;
-	var uLocal_41 = 0;
-	var uLocal_42 = 0;
+	var uLocal_37 = 0;
+	var uLocal_38 = 0;
+	var uLocal_39 = 0;
+	float fLocal_40 = 0f;
+	float fLocal_41 = 0f;
+	float fLocal_42 = 0f;
 	var uLocal_43 = 0;
 	var uLocal_44 = 0;
-	var uLocal_45 = 0;
-	var uLocal_46 = 0;
+	int iLocal_45 = 0;
+	float fLocal_46 = 0f;
 	var uLocal_47 = 0;
 	var uLocal_48 = 0;
 	var uLocal_49 = 0;
-	var uLocal_50 = 0;
-	var uLocal_51 = 0;
+	float fLocal_50 = 0f;
+	float fLocal_51 = 0f;
 	var uLocal_52 = 0;
 	var uLocal_53 = 0;
+	var uLocal_54 = 0;
+	var uLocal_55 = 0;
+	int iLocal_56 = 0;
+	int iLocal_57 = 0;
+	int iLocal_58 = 0;
+	int iLocal_59 = 0;
+	var uLocal_60 = 0;
+	var uLocal_61 = 0;
+	var uLocal_62 = 0;
+	var uLocal_63 = 0;
+	var uLocal_64 = 0;
+	var uLocal_65 = 0;
+	var uLocal_66 = 0;
+	var uLocal_67 = 0;
+	var uLocal_68 = 0;
+	var uLocal_69 = 0;
+	var uLocal_70 = 0;
+	var uLocal_71 = 0;
+	var uLocal_72 = 0;
 #endregion
 
 void main() // Position - 0x0 (0)
@@ -67,36 +86,36 @@ void main() // Position - 0x0 (0)
 	iLocal_9 = 1;
 	iLocal_10 = 12;
 	iLocal_11 = 12;
-	fLocal_12 = 0.001f;
-	iLocal_15 = -1;
-	sLocal_16 = "NULL";
-	fLocal_21 = 80f;
-	fLocal_22 = 140f;
-	fLocal_23 = 180f;
-	iLocal_26 = 3;
-	fLocal_27 = 0f;
-	fLocal_31 = -0.0375f;
-	fLocal_32 = 0.17f;
-	iLocal_37 = 1;
-	iLocal_38 = 65;
-	iLocal_39 = 49;
-	iLocal_40 = 64;
+	fLocal_31 = 0.001f;
+	iLocal_34 = -1;
+	sLocal_35 = "NULL";
+	fLocal_40 = 80f;
+	fLocal_41 = 140f;
+	fLocal_42 = 180f;
+	iLocal_45 = 3;
+	fLocal_46 = 0f;
+	fLocal_50 = -0.0375f;
+	fLocal_51 = 0.17f;
+	iLocal_56 = 1;
+	iLocal_57 = 65;
+	iLocal_58 = 49;
+	iLocal_59 = 64;
 
-	if (func_92(&uLocal_44))
+	if (func_92(&uLocal_63))
 	{
 		while (!func_83())
 		{
-			func_71(&uLocal_44);
+			func_71(&uLocal_63);
 		
-			if (func_61(&uLocal_44))
+			if (func_61(&uLocal_63))
 				break;
 		
-			func_17(&uLocal_44);
+			func_17(&uLocal_63);
 			BUILTIN::WAIT(0);
 		}
 	}
 
-	func_1(&uLocal_44);
+	func_1(&uLocal_63);
 	return;
 }
 
@@ -107,8 +126,8 @@ void func_1(int* piParam0) // Position - 0xA8 (168)
 	if (func_10(piParam0))
 		HUD::CLEAR_HELP(true);
 
-	if (func_8(&uLocal_44))
-		func_4(&uLocal_44);
+	if (func_8(&uLocal_63))
+		func_4(&uLocal_63);
 
 	PLAYER::SET_MAX_WANTED_LEVEL(5);
 	func_3();
@@ -125,7 +144,7 @@ void func_2() // Position - 0xE7 (231)
 
 void func_3() // Position - 0xF3 (243)
 {
-	MISC::CLEAR_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867), 3);
+	MISC::CLEAR_BIT(&(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867), 3);
 	return;
 }
 
@@ -145,20 +164,20 @@ void func_5(int* piParam0, int iParam1) // Position - 0x12C (300)
 
 void func_6(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x13C (316)
 {
-	if (!SCRIPT::IS_THREAD_ACTIVE(Global_2647282.f_1582) || Global_2647282.f_1582 == SCRIPT::GET_ID_OF_THIS_THREAD() || bParam2)
+	if (!SCRIPT::IS_THREAD_ACTIVE(Global_2647284.f_1582) || Global_2647284.f_1582 == SCRIPT::GET_ID_OF_THIS_THREAD() || bParam2)
 	{
 		if (bParam0)
 		{
-			Global_2647282.f_1582 = SCRIPT::GET_ID_OF_THIS_THREAD();
-			Global_2647282.f_1583 = NETWORK::GET_NETWORK_TIME();
+			Global_2647284.f_1582 = SCRIPT::GET_ID_OF_THIS_THREAD();
+			Global_2647284.f_1583 = NETWORK::GET_NETWORK_TIME();
 		}
 		else
 		{
-			Global_2647282.f_1582 = -1;
+			Global_2647284.f_1582 = -1;
 		}
 	
-		Global_2647282.f_1585 = iParam1;
-		Global_2647282.f_1587 = bParam0;
+		Global_2647284.f_1585 = iParam1;
+		Global_2647284.f_1587 = bParam0;
 	}
 	else
 	{
@@ -170,17 +189,17 @@ void func_6(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x13C (316)
 
 void func_7(BOOL bParam0, BOOL bParam1) // Position - 0x1AE (430)
 {
-	if (!SCRIPT::IS_THREAD_ACTIVE(Global_2647282.f_1598) || Global_2647282.f_1598 == SCRIPT::GET_ID_OF_THIS_THREAD() || bParam1)
+	if (!SCRIPT::IS_THREAD_ACTIVE(Global_2647284.f_1598) || Global_2647284.f_1598 == SCRIPT::GET_ID_OF_THIS_THREAD() || bParam1)
 	{
 		if (bParam0)
 		{
-			Global_2647282.f_1598 = SCRIPT::GET_ID_OF_THIS_THREAD();
-			MISC::SET_BIT(&(Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_76.f_2), 23);
+			Global_2647284.f_1598 = SCRIPT::GET_ID_OF_THIS_THREAD();
+			MISC::SET_BIT(&(Global_2658293[PLAYER::PLAYER_ID() /*468*/].f_76.f_2), 23);
 		}
 		else
 		{
-			Global_2647282.f_1598 = -1;
-			MISC::CLEAR_BIT(&(Global_2658291[PLAYER::PLAYER_ID() /*468*/].f_76.f_2), 23);
+			Global_2647284.f_1598 = -1;
+			MISC::CLEAR_BIT(&(Global_2658293[PLAYER::PLAYER_ID() /*468*/].f_76.f_2), 23);
 		}
 	}
 	else
@@ -204,15 +223,15 @@ BOOL func_9(int* piParam0, int iParam1) // Position - 0x23E (574)
 BOOL func_10(int* piParam0) // Position - 0x24C (588)
 {
 	if (piParam0->f_2 != 0)
-		if (func_14("STEALTH_OFF" /*Pulsa ~INPUT_VEH_ROOF~ para activar el modo furtivo al pilotar el ~a~. En el modo furtivo ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/, func_15(piParam0->f_2), func_15(piParam0->f_2)) || func_13("STEALTH_ON_P" /*El piloto ha activado el modo furtivo. Ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/, func_15(piParam0->f_2)))
+		if (func_14("STEALTH_OFF" /*Presiona ~INPUT_VEH_ROOF~ para activar el modo sigiloso al pilotear el ~a~. En el modo sigiloso, ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/, func_15(piParam0->f_2), func_15(piParam0->f_2)) || func_13("STEALTH_ON_P" /*El piloto activó el modo sigiloso. Ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/, func_15(piParam0->f_2)))
 			return true;
 
-	return _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("STEALTH_ON" /*Pulsa ~INPUT_VEH_ROOF~ para desactivar el modo furtivo.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_11()) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("STEALTH_OFF_P" /*El piloto ha desactivado el modo furtivo.*/);
+	return _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("STEALTH_ON" /*Presiona ~INPUT_VEH_ROOF~ para desactivar el modo sigiloso.*/) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(func_11()) || _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("STEALTH_OFF_P" /*El piloto desactivó el modo sigiloso.*/);
 }
 
 char* func_11() // Position - 0x2B0 (688)
 {
-	return "STEALTH_WARN" /*Ni el piloto ni el pasajero tendrán armas mientras el vehículo esté en el modo furtivo.*/;
+	return "STEALTH_WARN" /*Ni el piloto ni el pasajero tendrán armas mientras el vehículo esté en el modo sigiloso.*/;
 }
 
 BOOL _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(char* message) // Position - 0x2BB (699)
@@ -246,7 +265,7 @@ char* func_15(Hash hParam0) // Position - 0x306 (774)
 
 void func_16() // Position - 0x324 (804)
 {
-	MISC::CLEAR_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867), 1);
+	MISC::CLEAR_BIT(&(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867), 1);
 	return;
 }
 
@@ -308,7 +327,7 @@ void func_17(int* piParam0) // Position - 0x33F (831)
 	}
 
 	func_3();
-	MISC::CLEAR_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867), 4);
+	MISC::CLEAR_BIT(&(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867), 4);
 	return;
 }
 
@@ -362,11 +381,11 @@ char* func_22(int* piParam0) // Position - 0x5BB (1467)
 {
 	if (func_56(piParam0))
 		if (func_23(piParam0->f_2))
-			return "STEALTH_OFF_S" /*Pulsa ~INPUT_VEH_ROOF~ para activar el modo furtivo. Las armas no estarán disponibles en el modo furtivo ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
+			return "STEALTH_OFF_S" /*Presiona ~INPUT_VEH_ROOF~ para activar el modo sigiloso. Mientres estás en este modo, las armas estarán deshabilitadas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
 		else
-			return "STEALTH_OFF" /*Pulsa ~INPUT_VEH_ROOF~ para activar el modo furtivo al pilotar el ~a~. En el modo furtivo ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
+			return "STEALTH_OFF" /*Presiona ~INPUT_VEH_ROOF~ para activar el modo sigiloso al pilotear el ~a~. En el modo sigiloso, ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
 
-	return "STEALTH_OFF_P" /*El piloto ha desactivado el modo furtivo.*/;
+	return "STEALTH_OFF_P" /*El piloto desactivó el modo sigiloso.*/;
 }
 
 BOOL func_23(int iParam0) // Position - 0x5EB (1515)
@@ -442,7 +461,7 @@ void func_27(int iParam0, int iParam1, BOOL bParam2) // Position - 0x69C (1692)
 
 BOOL func_28() // Position - 0x6C4 (1732)
 {
-	return Global_1574927;
+	return Global_1574928;
 }
 
 int _STAT_GET_PACKED_INT(int iParam0, BOOL bParam1) // Position - 0x6D0 (1744)
@@ -455,12 +474,12 @@ int _STAT_GET_PACKED_INT(int iParam0, BOOL bParam1) // Position - 0x6D0 (1744)
 
 BOOL func_30() // Position - 0x6EC (1772)
 {
-	return !IS_BIT_SET(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867, 4) && !func_31(true);
+	return !IS_BIT_SET(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867, 4) && !func_31(true);
 }
 
 BOOL func_31(BOOL bParam0) // Position - 0x710 (1808)
 {
-	if (*Global_4718592.f_121628 == 6 || *Global_4718592.f_121628 == 7)
+	if (*Global_4718592.f_121958 == 6 || *Global_4718592.f_121958 == 7)
 	{
 		if (Global_4718592.f_2 == 20)
 			return true;
@@ -474,14 +493,14 @@ BOOL func_31(BOOL bParam0) // Position - 0x710 (1808)
 
 ePedComponentType func_32() // Position - 0x760 (1888)
 {
-	return Global_77342;
+	return Global_77397;
 }
 
 ePedComponentType func_33(int iParam0) // Position - 0x76C (1900)
 {
 	if (iParam0 == 1)
-		if (Global_21610.f_1 > 3)
-			if (IS_BIT_SET(Global_9463, 14))
+		if (Global_21649.f_1 > 3)
+			if (IS_BIT_SET(Global_9502, 14))
 				return PV_COMP_BERD;
 			else
 				return PV_COMP_HEAD;
@@ -491,7 +510,7 @@ ePedComponentType func_33(int iParam0) // Position - 0x76C (1900)
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("cellphone_flashhand")) > 0)
 		return PV_COMP_BERD;
 
-	if (Global_21610.f_1 > 3)
+	if (Global_21649.f_1 > 3)
 		return PV_COMP_BERD;
 
 	return PV_COMP_HEAD;
@@ -527,9 +546,9 @@ void func_35(int* piParam0) // Position - 0x823 (2083)
 {
 	if (!HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 		if (func_23(piParam0->f_2))
-			_DISPLAY_HELP_TEXT("STEALTH_WARN_S" /*Las armas no estarán disponibles mientras el vehículo esté en modo furtivo.*/, 3000);
+			_DISPLAY_HELP_TEXT("STEALTH_WARN_S" /*El armamento estará deshabilitado mientras el modo sigiloso esté activado en el vehículo.*/, 3000);
 		else
-			_DISPLAY_HELP_TEXT("STEALTH_WARN" /*Ni el piloto ni el pasajero tendrán armas mientras el vehículo esté en el modo furtivo.*/, 3000);
+			_DISPLAY_HELP_TEXT("STEALTH_WARN" /*Ni el piloto ni el pasajero tendrán armas mientras el vehículo esté en el modo sigiloso.*/, 3000);
 
 	return;
 }
@@ -651,11 +670,11 @@ char* func_42(int* piParam0) // Position - 0xAB6 (2742)
 {
 	if (func_56(piParam0))
 		if (func_23(piParam0->f_2))
-			return "STEALTH_ON_S" /*Pulsa ~INPUT_VEH_ROOF~ para desactivar el modo furtivo.*/;
+			return "STEALTH_ON_S" /*Presiona ~INPUT_VEH_ROOF~ para desactivar el modo sigiloso.*/;
 		else
-			return "STEALTH_ON" /*Pulsa ~INPUT_VEH_ROOF~ para desactivar el modo furtivo.*/;
+			return "STEALTH_ON" /*Presiona ~INPUT_VEH_ROOF~ para desactivar el modo sigiloso.*/;
 
-	return "STEALTH_ON_P" /*El piloto ha activado el modo furtivo. Ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
+	return "STEALTH_ON_P" /*El piloto activó el modo sigiloso. Ni el piloto ni el pasajero tendrán armas, ya que el ~a~ no aparecerá en los radares del enemigo ni en los mapas.*/;
 }
 
 void func_43(int* piParam0, int iParam1) // Position - 0xAE7 (2791)
@@ -680,19 +699,19 @@ BOOL func_44(int* piParam0) // Position - 0xB22 (2850)
 void func_45(BOOL bParam0) // Position - 0xB3E (2878)
 {
 	if (bParam0)
-		MISC::SET_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867), 6);
+		MISC::SET_BIT(&(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867), 6);
 	else
-		MISC::CLEAR_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867), 6);
+		MISC::CLEAR_BIT(&(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867), 6);
 
 	return;
 }
 
 BOOL func_46() // Position - 0xB74 (2932)
 {
-	if (Global_1845104)
+	if (Global_1845152)
 		return false;
 
-	return IS_BIT_SET(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867, 5);
+	return IS_BIT_SET(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867, 5);
 }
 
 void func_47(int* piParam0) // Position - 0xB97 (2967)
@@ -713,7 +732,7 @@ void func_47(int* piParam0) // Position - 0xB97 (2967)
 
 void func_48() // Position - 0xBDE (3038)
 {
-	MISC::SET_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867), 1);
+	MISC::SET_BIT(&(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867), 1);
 	return;
 }
 
@@ -756,7 +775,7 @@ void func_52(Vehicle veParam0, BOOL bParam1) // Position - 0xC38 (3128)
 
 BOOL func_53() // Position - 0xC8B (3211)
 {
-	return IS_BIT_SET(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867, 3);
+	return IS_BIT_SET(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867, 3);
 }
 
 BOOL func_54(int* piParam0) // Position - 0xCA3 (3235)
@@ -809,7 +828,7 @@ void func_58(int* piParam0) // Position - 0xD5A (3418)
 	else if (func_8(piParam0))
 		func_4(piParam0);
 
-	MISC::CLEAR_BIT(&(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867), 2);
+	MISC::CLEAR_BIT(&(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867), 2);
 	return;
 }
 
@@ -823,7 +842,7 @@ void func_59(int* piParam0) // Position - 0xDB7 (3511)
 
 BOOL func_60() // Position - 0xDD5 (3541)
 {
-	return IS_BIT_SET(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867, 2);
+	return IS_BIT_SET(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867, 2);
 }
 
 BOOL func_61(int* piParam0) // Position - 0xDED (3565)
@@ -856,11 +875,11 @@ BOOL func_62(Player plParam0) // Position - 0xE60 (3680)
 {
 	if (plParam0 > -1)
 	{
-		if (Global_2658291[plParam0 /*468*/].f_250 > PV_COMP_INVALID)
-			if (func_63(Global_2658291[plParam0 /*468*/].f_250) == 4)
+		if (Global_2658293[plParam0 /*468*/].f_250 > PV_COMP_INVALID)
+			if (func_63(Global_2658293[plParam0 /*468*/].f_250) == 4)
 				return true;
 	
-		if (IS_BIT_SET(Global_2658291[plParam0 /*468*/].f_203, 4))
+		if (IS_BIT_SET(Global_2658293[plParam0 /*468*/].f_203, 4))
 			return true;
 	}
 
@@ -1076,7 +1095,7 @@ int func_63(ePedComponentType epctParam0) // Position - 0xEA9 (3753)
 BOOL func_64(Player plParam0) // Position - 0x1213 (4627)
 {
 	if (plParam0 != _INVALID_PLAYER_INDEX() && _NETWORK_IS_PLAYER_VALID(plParam0, true, true))
-		return IS_BIT_SET(Global_2658291[plParam0 /*468*/].f_325, 3);
+		return IS_BIT_SET(Global_2658293[plParam0 /*468*/].f_325, 3);
 
 	return false;
 }
@@ -1096,9 +1115,9 @@ ePedComponentType _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPla
 					return PV_COMP_HEAD;
 		
 			if (bUnk)
-				if (type == Global_2673271.f_3)
-					return Global_2673271.f_2;
-				else if (Global_2658291[type /*468*/] != 4)
+				if (type == Global_2673273.f_3)
+					return Global_2673273.f_2;
+				else if (Global_2658293[type /*468*/] != 4)
 					return PV_COMP_HEAD;
 		
 			return PV_COMP_BERD;
@@ -1115,10 +1134,10 @@ Player _INVALID_PLAYER_INDEX() // Position - 0x12A4 (4772)
 
 BOOL func_67(Player plParam0) // Position - 0x12AD (4781)
 {
-	if (IS_BIT_SET(Global_1845250[plParam0 /*880*/].f_260.f_37, 14))
+	if (IS_BIT_SET(Global_1845298[plParam0 /*881*/].f_260.f_37, 14))
 		return true;
 
-	if (IS_BIT_SET(Global_1845250[plParam0 /*880*/].f_260.f_37, 11))
+	if (IS_BIT_SET(Global_1845298[plParam0 /*881*/].f_260.f_37, 11))
 		return true;
 
 	return false;
@@ -1129,15 +1148,15 @@ BOOL func_68(Player plParam0, BOOL bParam1, BOOL bParam2) // Position - 0x12E6 (
 	if (plParam0 == _INVALID_PLAYER_INDEX())
 		return false;
 
-	if (IS_BIT_SET(Global_1845250[plParam0 /*880*/].f_260.f_37, 0))
+	if (IS_BIT_SET(Global_1845298[plParam0 /*881*/].f_260.f_37, 0))
 		return true;
 
 	if (bParam1)
-		if (IS_BIT_SET(Global_1845250[plParam0 /*880*/].f_260.f_37, 1))
+		if (IS_BIT_SET(Global_1845298[plParam0 /*881*/].f_260.f_37, 1))
 			return true;
 
 	if (bParam2)
-		if (Global_2658291[plParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
+		if (Global_2658293[plParam0 /*468*/].f_325.f_8 != PV_COMP_INVALID)
 			return true;
 
 	return false;
@@ -1249,7 +1268,7 @@ void func_72(int* piParam0) // Position - 0x14EB (5355)
 
 BOOL func_73(Player plParam0) // Position - 0x1520 (5408)
 {
-	return plParam0 != -1 && IS_BIT_SET(Global_1845250[plParam0 /*880*/].f_867, 1);
+	return plParam0 != -1 && IS_BIT_SET(Global_1845298[plParam0 /*881*/].f_867, 1);
 }
 
 BOOL func_74(int* piParam0) // Position - 0x153F (5439)
@@ -1316,7 +1335,7 @@ void func_78(int* piParam0) // Position - 0x1615 (5653)
 
 BOOL func_79() // Position - 0x1626 (5670)
 {
-	return IS_BIT_SET(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867, 1);
+	return IS_BIT_SET(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867, 1);
 }
 
 BOOL func_80() // Position - 0x163E (5694)
@@ -1382,14 +1401,14 @@ BOOL func_83() // Position - 0x16F1 (5873)
 
 BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x1705 (5893)
 {
-	if (Global_1575062 == false)
+	if (Global_1575066 == false)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 			return true;
 
 	if (func_91())
 		return true;
 
-	if (Global_2699567)
+	if (Global_2699678)
 		return true;
 
 	if (func_90())
@@ -1428,7 +1447,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x1789 (6025)
 
 Hash func_86() // Position - 0x17BC (6076)
 {
-	switch (Global_2699676)
+	switch (Global_2699787)
 	{
 		case 0:
 			return joaat("freemode");
@@ -1442,12 +1461,12 @@ Hash func_86() // Position - 0x17BC (6076)
 
 eHudColour func_87() // Position - 0x17E0 (6112)
 {
-	return Global_33775;
+	return Global_33815;
 }
 
 BOOL func_88() // Position - 0x17EB (6123)
 {
-	return Global_2685150.f_700;
+	return Global_2685152.f_726;
 }
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x17FA (6138)
@@ -1460,12 +1479,12 @@ BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x17FA (6138)
 
 BOOL func_90() // Position - 0x1811 (6161)
 {
-	return Global_2696964;
+	return Global_2697072;
 }
 
-ePedComponentType func_91() // Position - 0x181D (6173)
+BOOL func_91() // Position - 0x181D (6173)
 {
-	return Global_2685150.f_695;
+	return Global_2685152.f_721;
 }
 
 BOOL func_92(int* piParam0) // Position - 0x182C (6188)
@@ -1518,6 +1537,6 @@ BOOL func_93() // Position - 0x18A6 (6310)
 
 BOOL func_94() // Position - 0x18C3 (6339)
 {
-	return IS_BIT_SET(Global_1845250[PLAYER::PLAYER_ID() /*880*/].f_867, 6);
+	return IS_BIT_SET(Global_1845298[PLAYER::PLAYER_ID() /*881*/].f_867, 6);
 }
 

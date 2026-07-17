@@ -964,17 +964,17 @@ BOOL func_3(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4) // 
 
 BOOL func_4() // Position - 0x17D8 (6104)
 {
-	if (Global_2698704 == -15)
+	if (Global_2698812 == -15)
 	{
-		Global_2698704 = func_23();
-		func_15(&Global_2698704, 0, 0, 0, 1, 0, 0);
+		Global_2698812 = func_23();
+		func_15(&Global_2698812, 0, 0, 0, 1, 0, 0);
 		return 1;
 	}
 
-	if (func_5(func_23(), Global_2698704))
+	if (func_5(func_23(), Global_2698812))
 	{
-		Global_2698704 = func_23();
-		func_15(&Global_2698704, 0, 0, 0, 1, 0, 0);
+		Global_2698812 = func_23();
+		func_15(&Global_2698812, 0, 0, 0, 1, 0, 0);
 		return 1;
 	}
 

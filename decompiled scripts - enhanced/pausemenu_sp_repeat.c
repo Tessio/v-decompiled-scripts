@@ -11,42 +11,42 @@
 	int iLocal_9 = 0;
 	int iLocal_10 = 0;
 	int iLocal_11 = 0;
-	float fLocal_12 = 0f;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	int iLocal_15 = 0;
-	var uLocal_16 = 0;
+	var uLocal_12 = 0;
+	var uLocal_13 = -2;
+	var uLocal_14 = -2;
+	var uLocal_15 = -2;
+	var uLocal_16 = 5;
 	var uLocal_17 = 0;
-	char* sLocal_18 = 0;
-	float fLocal_19 = 0f;
+	var uLocal_18 = 0;
+	var uLocal_19 = 0;
 	var uLocal_20 = 0;
 	var uLocal_21 = 0;
-	var uLocal_22 = 0;
-	float fLocal_23 = 0f;
-	float fLocal_24 = 0f;
-	var uLocal_25 = 0;
+	var uLocal_22 = 2;
+	var uLocal_23 = 0;
+	var uLocal_24 = 0;
+	var uLocal_25 = 2;
 	var uLocal_26 = 0;
 	var uLocal_27 = 0;
-	var uLocal_28 = 94;
+	var uLocal_28 = 2;
 	var uLocal_29 = 0;
 	var uLocal_30 = 0;
-	var uLocal_31 = 0;
+	float fLocal_31 = 0f;
 	var uLocal_32 = 0;
 	var uLocal_33 = 0;
-	var uLocal_34 = 0;
+	int iLocal_34 = 0;
 	var uLocal_35 = 0;
 	var uLocal_36 = 0;
-	var uLocal_37 = 0;
-	var uLocal_38 = 0;
+	char* sLocal_37 = 0;
+	float fLocal_38 = 0f;
 	var uLocal_39 = 0;
 	var uLocal_40 = 0;
 	var uLocal_41 = 0;
-	var uLocal_42 = 0;
-	var uLocal_43 = 0;
+	float fLocal_42 = 0f;
+	float fLocal_43 = 0f;
 	var uLocal_44 = 0;
 	var uLocal_45 = 0;
 	var uLocal_46 = 0;
-	var uLocal_47 = 0;
+	var uLocal_47 = 94;
 	var uLocal_48 = 0;
 	var uLocal_49 = 0;
 	var uLocal_50 = 0;
@@ -216,6 +216,25 @@
 	var uLocal_214 = 0;
 	var uLocal_215 = 0;
 	var uLocal_216 = 0;
+	var uLocal_217 = 0;
+	var uLocal_218 = 0;
+	var uLocal_219 = 0;
+	var uLocal_220 = 0;
+	var uLocal_221 = 0;
+	var uLocal_222 = 0;
+	var uLocal_223 = 0;
+	var uLocal_224 = 0;
+	var uLocal_225 = 0;
+	var uLocal_226 = 0;
+	var uLocal_227 = 0;
+	var uLocal_228 = 0;
+	var uLocal_229 = 0;
+	var uLocal_230 = 0;
+	var uLocal_231 = 0;
+	var uLocal_232 = 0;
+	var uLocal_233 = 0;
+	var uLocal_234 = 0;
+	var uLocal_235 = 0;
 	int iScriptParam_0 = 0;
 	var uScriptParam_1 = 0;
 	var uScriptParam_2 = 0;
@@ -234,12 +253,12 @@ void main() // Position - 0x0 (0)
 	iLocal_9 = 1;
 	iLocal_10 = 12;
 	iLocal_11 = 12;
-	fLocal_12 = 0.001f;
-	iLocal_15 = -1;
-	sLocal_18 = "NULL";
-	fLocal_19 = 0f;
-	fLocal_23 = -0.0375f;
-	fLocal_24 = 0.17f;
+	fLocal_31 = 0.001f;
+	iLocal_34 = -1;
+	sLocal_37 = "NULL";
+	fLocal_38 = 0f;
+	fLocal_42 = -0.0375f;
+	fLocal_43 = 0.17f;
 
 	if (Global_2883694)
 	{
@@ -327,7 +346,7 @@ void main() // Position - 0x0 (0)
 						func_30(false, 1);
 						func_29(2, false);
 						func_82();
-						Global_80555 = 0;
+						Global_80612 = 0;
 						func_28(-1);
 					}
 					else if (iScriptParam_0.f_1 == 5)
@@ -348,7 +367,7 @@ void main() // Position - 0x0 (0)
 						if (!(iScriptParam_0.f_1 == 52) && !(iScriptParam_0.f_1 == 154))
 							func_29(1, false);
 					
-						Global_80555 = 0;
+						Global_80612 = 0;
 						func_28(-1);
 					}
 					break;
@@ -359,7 +378,7 @@ void main() // Position - 0x0 (0)
 			switch (iScriptParam_0.f_1)
 			{
 				case 5:
-					switch (Global_80555)
+					switch (Global_80612)
 					{
 						case 1:
 							func_83(1, 1, 0);
@@ -380,9 +399,9 @@ void main() // Position - 0x0 (0)
 					break;
 			
 				case 76:
-					if (Global_80572 != -1)
+					if (Global_80629 != -1)
 					{
-						func_1(Global_80572, Global_80555);
+						func_1(Global_80629, Global_80612);
 						func_28(-1);
 						HUD::SET_FRONTEND_ACTIVE(false);
 						CAM::DO_SCREEN_FADE_OUT(0);
@@ -390,7 +409,7 @@ void main() // Position - 0x0 (0)
 					
 						if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false))
 							if (VEHICLE::IS_VEHICLE_DRIVEABLE(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), false), false))
-								Global_80557 = { ENTITY::GET_ENTITY_VELOCITY(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), false)) };
+								Global_80614 = { ENTITY::GET_ENTITY_VELOCITY(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), false)) };
 					
 						if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 							ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), true, false);
@@ -406,14 +425,14 @@ void main() // Position - 0x0 (0)
 
 void func_1(eCharacter echParam0, int iParam1) // Position - 0x321 (801)
 {
-	Global_80552 = echParam0;
-	Global_80552.f_1 = iParam1;
+	Global_80609 = echParam0;
+	Global_80609.f_1 = iParam1;
 
 	if (iParam1 == 7)
 		if (echParam0 >= CHAR_MICHAEL && echParam0 < CHAR_MRS_THORNHILL)
-			Global_114018[echParam0 /*10*/].f_3 = 1;
+			Global_114077[echParam0 /*10*/].f_3 = 1;
 
-	MISC::SET_BIT(&Global_80554, 0);
+	MISC::SET_BIT(&Global_80611, 0);
 	return;
 }
 
@@ -424,7 +443,7 @@ void func_2(int iParam0, int iParam1) // Position - 0x362 (866)
 		if (func_5(iParam0))
 		{
 			func_4(2);
-			func_33(Global_80572, iParam1);
+			func_33(Global_80629, iParam1);
 			func_3(true);
 		}
 	}
@@ -469,7 +488,7 @@ BOOL func_5(int iParam0) // Position - 0x3D1 (977)
 
 BOOL func_6() // Position - 0x404 (1028)
 {
-	if (Global_114931.f_18581.f_380 > 0)
+	if (Global_114990.f_18583.f_380 > 0)
 		return 1;
 
 	return 0;
@@ -491,7 +510,7 @@ BOOL func_7() // Position - 0x41F (1055)
 	
 		return 0;
 	}
-	else if (Global_114931.f_10023.f_21 > 0)
+	else if (Global_114990.f_10025.f_21 > 0)
 	{
 		return 1;
 	}
@@ -509,7 +528,7 @@ int func_8() // Position - 0x477 (1143)
 		return 0;
 	}
 
-	if (Global_80566 == true)
+	if (Global_80623 == true)
 		return 0;
 
 	if (Global_2883694)
@@ -527,7 +546,7 @@ int func_8() // Position - 0x477 (1143)
 	if (func_25(false))
 		return 0;
 
-	if (func_24(Global_113955, 256))
+	if (func_24(Global_114014, 256))
 		return 2;
 
 	if (func_23())
@@ -553,10 +572,10 @@ int func_8() // Position - 0x477 (1143)
 			if (ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), 207.43358f, -1019.7954f, -100.47276f, 189.93378f, -1019.6235f, -95.56883f, 17.1875f, false, true, 0) && PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), true))
 				return 3;
 
-	if (Global_80303)
+	if (Global_80360)
 		return 2;
 
-	if (Global_79095.f_577)
+	if (Global_79152.f_577)
 		return 4;
 
 	return -1;
@@ -597,12 +616,12 @@ BOOL func_12(int iParam0, int iParam1, BOOL bParam2) // Position - 0x634 (1588)
 		return false;
 
 	if (bParam2)
-		return IS_BIT_SET(Global_102506.f_1442[iParam0], iParam1);
+		return IS_BIT_SET(Global_102563.f_1442[iParam0], iParam1);
 	else if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 		if (func_18() == 0)
 			return IS_BIT_SET(func_13(func_17(iParam0), -1), iParam1);
 	else
-		return IS_BIT_SET(Global_114931.f_668[iParam0], iParam1);
+		return IS_BIT_SET(Global_114990.f_668[iParam0], iParam1);
 
 	return false;
 }
@@ -612,7 +631,7 @@ int func_13(int iParam0, int iParam1) // Position - 0x694 (1684)
 	Hash statHash;
 	int outValue;
 
-	if (iParam0 != 18486)
+	if (iParam0 != 18535)
 	{
 		statHash = func_14(iParam0, iParam1);
 	
@@ -641,13 +660,13 @@ int func_15(int iParam0) // Position - 0x6D8 (1752)
 	
 		if (num2 > -1)
 		{
-			Global_2741524 = 0;
+			Global_2741717 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2741524 = 1;
+			Global_2741717 = 1;
 		}
 	}
 
@@ -656,7 +675,7 @@ int func_15(int iParam0) // Position - 0x6D8 (1752)
 
 int func_16() // Position - 0x70C (1804)
 {
-	return Global_1574927;
+	return Global_1574928;
 }
 
 int func_17(int iParam0) // Position - 0x718 (1816)
@@ -796,7 +815,7 @@ int func_17(int iParam0) // Position - 0x718 (1816)
 			return 875;
 	
 		case 44:
-			return 14766;
+			return 14815;
 	
 		case 45:
 			return 3811;
@@ -862,32 +881,32 @@ int func_17(int iParam0) // Position - 0x718 (1816)
 			break;
 	}
 
-	return 18486;
+	return 18535;
 }
 
 int func_18() // Position - 0xAFC (2812)
 {
-	return Global_33792;
+	return Global_33832;
 }
 
 BOOL func_19() // Position - 0xB07 (2823)
 {
-	return Global_102506.f_417 > 0;
+	return Global_102563.f_417 > 0;
 }
 
 BOOL func_20() // Position - 0xB18 (2840)
 {
-	return Global_102506.f_418 > 0;
+	return Global_102563.f_418 > 0;
 }
 
 BOOL func_21() // Position - 0xB29 (2857)
 {
-	return IS_BIT_SET(Global_80554, 9);
+	return IS_BIT_SET(Global_80611, 9);
 }
 
 BOOL func_22() // Position - 0xB38 (2872)
 {
-	return IS_BIT_SET(Global_80554, 8);
+	return IS_BIT_SET(Global_80611, 8);
 }
 
 BOOL func_23() // Position - 0xB47 (2887)
@@ -909,17 +928,17 @@ BOOL func_25(BOOL bParam0) // Position - 0xCCB (3275)
 	if (!bParam0 && SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("benchmark")) > 0)
 		return true;
 
-	return IS_BIT_SET(Global_80554, 0);
+	return IS_BIT_SET(Global_80611, 0);
 }
 
 BOOL func_26(int iParam0) // Position - 0xCF3 (3315)
 {
-	return Global_44886 == iParam0;
+	return Global_44938 == iParam0;
 }
 
 BOOL func_27() // Position - 0xD01 (3329)
 {
-	if (Global_44886 == 15)
+	if (Global_44938 == 15)
 		return false;
 
 	return true;
@@ -927,7 +946,7 @@ BOOL func_27() // Position - 0xD01 (3329)
 
 void func_28(int iParam0) // Position - 0xD16 (3350)
 {
-	Global_80572 = iParam0;
+	Global_80629 = iParam0;
 	return;
 }
 
@@ -964,27 +983,27 @@ void func_30(BOOL bParam0, int iParam1) // Position - 0xD53 (3411)
 			switch (num)
 			{
 				case 0:
-					str = "PM_RPB_SM_1" /*No puedes repetir durante una misión. Cuando hayas terminado la misión actual, podrás probar de nuevo para intentar conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_SM_1" /*No puedes repetir durante una misión. Cuando hayas terminado la misión actual, podrás intentar de nuevo para tratar de conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores en rockstargames.com, donde podrás compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 2:
-					str = "PM_RPB_SM_2" /*No puedes repetir misiones mientras ves una secuencia.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_SM_2" /*No puedes repetir durante una cinemática.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores en rockstargames.com, donde podrás compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 3:
-					str = "PM_RPB_SM_3" /*No puedes repetir misiones mientras estás de compras.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_SM_3" /*No puedes repetir cuando estás de compras.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores en rockstargames.com, donde podrás compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 1:
-					str = "PM_RPB_SM_4" /*No puedes repetir misiones mientras utilizas el creador.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_SM_4" /*No puedes repetir mientras se está usando el creador.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores en rockstargames.com, donde podrás compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 4:
-					str = "PM_RPB_SM_5" /*No puedes repetir desde esta ubicación.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_SM_5" /*La repetición no está disponible en este lugar.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores en rockstargames.com, donde podrás compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 5:
-					str = "PM_RPB_SM_6" /*No puedes repetir mientras el modo director esté en ejecución. Cuando hayas salido del modo director podrás volver a repetir misiones para intentar conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_SM_6" /*No se puede repetir misiones cuando el modo Director está en funcionamiento. Al salir del modo Director, podrás repetir misiones ya superadas e intentar conseguir el oro en cada una.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores en rockstargames.com, donde podrás compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				default:
@@ -996,27 +1015,27 @@ void func_30(BOOL bParam0, int iParam1) // Position - 0xD53 (3411)
 			switch (num)
 			{
 				case 0:
-					str = "PM_RPB_RC_1" /*No puedes repetir durante una misión. Cuando hayas terminado la misión actual, podrás probar de nuevo para intentar conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver qué "Extraños y locos" te quedan por encontrar, así como compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://rockstargames.com/es/~s~ para recibir más información y ver las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_RC_1" /*No puedes repetir durante una misión. Cuando hayas terminado la misión actual, podrás intentar de nuevo para tratar de conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, puedes ver qué extraños y locos te faltan por conocer, y podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 2:
-					str = "PM_RPB_RC_2" /*No puedes repetir misiones mientras ves una secuencia.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver qué "Extraños y locos" te quedan por encontrar, así como compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para recibir más información y ver las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_RC_2" /*No puedes repetir durante una cinemática.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para más información y para ver las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 3:
-					str = "PM_RPB_RC_3" /*No puedes repetir misiones mientras estás de compras.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver qué "Extraños y locos" te quedan por encontrar, así como compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para recibir más información y ver las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_RC_3" /*No puedes repetir cuando estás de compras.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para más información y para ver las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 1:
-					str = "PM_RPB_RC_4" /*No puedes repetir misiones mientras utilizas el creador.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver qué "Extraños y locos" te quedan por encontrar, así como compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para recibir más información y ver las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_RC_4" /*No puedes repetir mientras se está usando el creador.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para más información y para ver las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 4:
-					str = "PM_RPB_RC_5" /*No puedes repetir desde esta ubicación.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_RC_5" /*La repetición no está disponible en este lugar,~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para más información y para ver las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				case 5:
-					str = "PM_RPB_RC_6" /*No puedes repetir mientras el modo director esté en ejecución. Cuando hayas salido del modo director podrás volver a repetir misiones para intentar conseguir el oro.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+					str = "PM_RPB_RC_6" /*No puedes repetir cuando el modo Director está en funcionamiento. Cuando salgas del modo Director, podrás repetir misiones ya superadas e intentar conseguir el oro en cada una.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para más información y para ver las estadísticas de tu carrera a profundidad.*/;
 					break;
 			
 				default:
@@ -1031,12 +1050,12 @@ void func_30(BOOL bParam0, int iParam1) // Position - 0xD53 (3411)
 		if (iParam1 == 1)
 		{
 			str2 = "PM_RP_HELPT" /*Repetir*/;
-			str = "PM_RP_HELP" /*Repite misiones ya superadas e intenta conseguir el oro en cada una. Puedes probar a conseguirlo en un intento o también objetivo a objetivo.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+			str = "PM_RP_HELP" /*Repite misiones ya superadas e intenta conseguir el oro en cada una. Puedes tratar de lograrlo en un intento o también objetivo a objetivo.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores en rockstargames.com, donde podrás compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 		}
 		else
 		{
 			str2 = "PM_RP_HELPT3" /*Repetir*/;
-			str = "PM_RP_HELP3" /*Elige un encuentro con extraños y locos para repetirlo.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+			str = "PM_RP_HELP3" /*Elige un encuentro con extraños y locos para repetirlo.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para más información y para ver las estadísticas de tu carrera a profundidad.*/;
 		}
 	}
 	else
@@ -1046,12 +1065,12 @@ void func_30(BOOL bParam0, int iParam1) // Position - 0xD53 (3411)
 		if (iParam1 == 1)
 		{
 			str2 = "PM_RP_HELPT1" /*Repetir*/;
-			str = "PM_RP_HELP1" /*Actualmente no hay ninguna misión que puedas repetir. Cuando hayas jugado unas cuantas, podrás probar de nuevo e intentar conseguir el oro en cada una.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores de https://www.rockstargames.com/es/, donde podrás compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+			str = "PM_RP_HELP1" /*Actualmente no hay ninguna misión que puedas repetir. Cuando hayas jugado unas cuantas, podrás intentar de nuevo y tratar de conseguir el oro en cada una.~n~~n~Si tienes una cuenta de Rockstar Games, las estadísticas de las misiones se guardan en los marcadores en rockstargames.com, donde podrás compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para ver los marcadores y las estadísticas de tu carrera a profundidad.*/;
 		}
 		else
 		{
 			str2 = "PM_RP_HELPT3" /*Repetir*/;
-			str = "PM_RP_HELP4" /*Actualmente no hay ningún encuentro con extraños y locos que puedas repetir.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de Crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~https://www.rockstargames.com/es/~s~ para ver los marcadores y las estadísticas de tu trayectoria en profundidad.*/;
+			str = "PM_RP_HELP4" /*Actualmente no hay ningún encuentro con extraños y locos que puedas repetir.~n~~n~Si tienes una cuenta de Rockstar Games, podrás ver los extraños y locos con los que todavía no te has encontrado y compararte con tus amigos y compañeros de crew. Visita ~HUD_COLOUR_SOCIAL_CLUB~rockstargames.com~s~ para más información y para ver las estadísticas de tu carrera a profundidad.*/;
 		}
 	}
 
@@ -1088,17 +1107,17 @@ void func_33(int iParam0, int iParam1) // Position - 0xF0E (3854)
 {
 	if (func_8() == -1)
 	{
-		if (func_5(Global_80555))
+		if (func_5(Global_80612))
 		{
 			func_28(iParam0);
 			func_47(iParam0);
 		
-			if (Global_80556 > 16)
+			if (Global_80613 > 16)
 			{
 				if (iParam1 == 0)
 					func_36();
 			
-				func_34(func_35(iParam0), Global_80556);
+				func_34(func_35(iParam0), Global_80613);
 			}
 		}
 	}
@@ -1123,7 +1142,7 @@ int func_35(int iParam0) // Position - 0xF87 (3975)
 
 	for (i = 0; i <= 94 - 1; i = i + 1)
 	{
-		if (uLocal_28[i /*2*/] == iParam0)
+		if (uLocal_47[i /*2*/] == iParam0)
 			return i;
 	}
 
@@ -1132,14 +1151,14 @@ int func_35(int iParam0) // Position - 0xF87 (3975)
 
 void func_36() // Position - 0xFB5 (4021)
 {
-	switch (Global_80555)
+	switch (Global_80612)
 	{
 		case 1:
-			Global_80556 = func_37(&uLocal_28, 1, 0, 1);
+			Global_80613 = func_37(&uLocal_47, 1, 0, 1);
 			break;
 	
 		case 7:
-			Global_80556 = func_37(&uLocal_28, 0, 1, 1);
+			Global_80613 = func_37(&uLocal_47, 0, 1, 1);
 			break;
 	
 		default:
@@ -1279,7 +1298,7 @@ BOOL func_40(int iParam0, int iParam1) // Position - 0x11B7 (4535)
 	switch (iParam1)
 	{
 		case 1:
-			return !IS_BIT_SET(Global_93217[iParam0 /*34*/].f_15, 5);
+			return !IS_BIT_SET(Global_93274[iParam0 /*34*/].f_15, 5);
 	
 		case 7:
 			return func_41(iParam0);
@@ -1496,10 +1515,10 @@ int func_42(int iParam0, int iParam1) // Position - 0x153B (5435)
 	switch (iParam1)
 	{
 		case 1:
-			return Global_114931.f_9092.f_330[iParam0 /*6*/].f_3;
+			return Global_114990.f_9094.f_330[iParam0 /*6*/].f_3;
 	
 		case 7:
-			return Global_114931.f_18581[iParam0 /*6*/].f_3;
+			return Global_114990.f_18583[iParam0 /*6*/].f_3;
 	
 		default:
 			break;
@@ -1516,11 +1535,11 @@ BOOL func_43(int iParam0, int iParam1) // Position - 0x1583 (5507)
 			if (func_45(iParam0))
 				return func_44();
 			else
-				return Global_114931.f_9092.f_330[iParam0 /*6*/];
+				return Global_114990.f_9094.f_330[iParam0 /*6*/];
 			break;
 	
 		case 7:
-			return IS_BIT_SET(Global_114931.f_18581[iParam0 /*6*/], 3);
+			return IS_BIT_SET(Global_114990.f_18583[iParam0 /*6*/], 3);
 	
 		default:
 			break;
@@ -1531,7 +1550,7 @@ BOOL func_43(int iParam0, int iParam1) // Position - 0x1583 (5507)
 
 BOOL func_44() // Position - 0x15DC (5596)
 {
-	if (Global_114931.f_9092.f_330[24 /*6*/] == true || Global_114931.f_9092.f_330[25 /*6*/] == true || Global_114931.f_9092.f_330[26 /*6*/] == true || Global_114931.f_9092.f_330[27 /*6*/] == true)
+	if (Global_114990.f_9094.f_330[24 /*6*/] == true || Global_114990.f_9094.f_330[25 /*6*/] == true || Global_114990.f_9094.f_330[26 /*6*/] == true || Global_114990.f_9094.f_330[27 /*6*/] == true)
 		return 1;
 
 	return 0;
@@ -1576,7 +1595,7 @@ void func_47(int iParam0) // Position - 0x16A7 (5799)
 	int num5;
 	BOOL flag;
 
-	uLocal_26 = { func_79(iParam0, Global_80555) };
+	uLocal_45 = { func_79(iParam0, Global_80612) };
 
 	if (!func_4(2))
 		return;
@@ -1585,16 +1604,16 @@ void func_47(int iParam0) // Position - 0x16A7 (5799)
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND("SET_COLUMN_TITLE");
 	GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(2);
 	func_31("MISSTA" /*Estadísticas de misión*/);
-	func_31(&uLocal_26);
+	func_31(&uLocal_45);
 	GRAPHICS::END_SCALEFORM_MOVIE_METHOD();
 	num = -333;
 	num2 = -333;
 	num3 = 0;
 	num4 = 0;
 
-	for (i = 0; i < func_76(iParam0, Global_80555); i = i + 1)
+	for (i = 0; i < func_76(iParam0, Global_80612); i = i + 1)
 	{
-		num5 = func_74(iParam0, Global_80555, i);
+		num5 = func_74(iParam0, Global_80612, i);
 		flag = true;
 	
 		switch (num5)
@@ -1624,7 +1643,7 @@ void func_47(int iParam0) // Position - 0x16A7 (5799)
 				break;
 		}
 	
-		if (!Global_65252[num5 /*13*/].f_7 && flag)
+		if (!Global_65305[num5 /*13*/].f_7 && flag)
 		{
 			if (func_54(num5, num3, 0))
 				num4 = num4 + 1;
@@ -1769,42 +1788,42 @@ void func_53(int iParam0, var uParam1) // Position - 0x19AA (6570)
 {
 	int num;
 
-	if (Global_80555 == 7)
+	if (Global_80612 == 7)
 	{
 		num = iParam0;
 	
 		switch (num)
 		{
 			case 52:
-				*uParam1 = Global_114931.f_2359[0 /*2*/];
+				*uParam1 = Global_114990.f_2359[0 /*2*/];
 			
 				if (*uParam1 == 0)
 					*uParam1 = 1;
 				break;
 		
 			case 53:
-				*uParam1 = Global_114931.f_2359[1 /*2*/];
+				*uParam1 = Global_114990.f_2359[1 /*2*/];
 			
 				if (*uParam1 == 0)
 					*uParam1 = 1;
 				break;
 		
 			case 54:
-				*uParam1 = Global_114931.f_2359[2 /*2*/];
+				*uParam1 = Global_114990.f_2359[2 /*2*/];
 			
 				if (*uParam1 == 0)
 					*uParam1 = 1;
 				break;
 		
 			case 55:
-				*uParam1 = Global_114931.f_2359[3 /*2*/];
+				*uParam1 = Global_114990.f_2359[3 /*2*/];
 			
 				if (*uParam1 == 0)
 					*uParam1 = 1;
 				break;
 		
 			case 56:
-				*uParam1 = Global_114931.f_2359[4 /*2*/];
+				*uParam1 = Global_114990.f_2359[4 /*2*/];
 			
 				if (*uParam1 == 0)
 					*uParam1 = 1;
@@ -1826,10 +1845,10 @@ BOOL func_54(int iParam0, int iParam1, int iParam2) // Position - 0x1A6A (6762)
 		if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(iParam2))
 			return false;
 
-	if (Global_65252[iParam0 /*13*/].f_7)
+	if (Global_65305[iParam0 /*13*/].f_7)
 		return true;
 
-	num = { Global_65252[iParam0 /*13*/] };
+	num = { Global_65305[iParam0 /*13*/] };
 	num2 = func_64(iParam0);
 
 	switch (iParam0)
@@ -4420,7 +4439,7 @@ char* func_63(int iParam0) // Position - 0x320D (12813)
 
 int func_64(int iParam0) // Position - 0x43BF (17343)
 {
-	if (func_65(iParam0, func_72(Global_65252[iParam0 /*13*/].f_4)))
+	if (func_65(iParam0, func_72(Global_65305[iParam0 /*13*/].f_4)))
 		return 1;
 
 	return 0;
@@ -4431,7 +4450,7 @@ BOOL func_65(int iParam0, int iParam1) // Position - 0x43E2 (17378)
 	if (iParam1 < 0)
 		return false;
 
-	switch (Global_65252[iParam0 /*13*/])
+	switch (Global_65305[iParam0 /*13*/])
 	{
 		case 1:
 		case 2:
@@ -4446,13 +4465,13 @@ BOOL func_65(int iParam0, int iParam1) // Position - 0x43E2 (17378)
 	if (iParam1 == 2147483647)
 		return false;
 
-	if (iParam0 == 881 || iParam0 == 889 || iParam0 == 897 && Global_114931.f_24911[4 /*4*/] == _GET_CURRENT_PLAYER_CHARACTER())
-		Global_65252[iParam0 /*13*/].f_2 = 0;
+	if (iParam0 == 881 || iParam0 == 889 || iParam0 == 897 && Global_114990.f_24913[4 /*4*/] == _GET_CURRENT_PLAYER_CHARACTER())
+		Global_65305[iParam0 /*13*/].f_2 = 0;
 
-	if (Global_65252[iParam0 /*13*/].f_3)
-		if (iParam1 < Global_65252[iParam0 /*13*/].f_2)
+	if (Global_65305[iParam0 /*13*/].f_3)
+		if (iParam1 < Global_65305[iParam0 /*13*/].f_2)
 			return true;
-	else if (iParam1 >= Global_65252[iParam0 /*13*/].f_2)
+	else if (iParam1 >= Global_65305[iParam0 /*13*/].f_2)
 		return true;
 
 	return false;
@@ -4461,7 +4480,7 @@ BOOL func_65(int iParam0, int iParam1) // Position - 0x43E2 (17378)
 eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0x44AC (17580)
 {
 	func_67();
-	return Global_114931.f_2370.f_539.f_4321;
+	return Global_114990.f_2370.f_539.f_4321;
 }
 
 void func_67() // Position - 0x44C5 (17605)
@@ -4470,30 +4489,30 @@ void func_67() // Position - 0x44C5 (17605)
 
 	if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()))
 	{
-		if (_GET_CHARACTER_MODEL(Global_114931.f_2370.f_539.f_4321) != ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()))
+		if (_GET_CHARACTER_MODEL(Global_114990.f_2370.f_539.f_4321) != ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()))
 		{
 			character = _GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID());
 		
-			if (func_68(character) && !func_26(14) || Global_113879)
+			if (func_68(character) && !func_26(14) || Global_113936)
 			{
-				if (Global_114931.f_2370.f_539.f_4321 != character && func_68(Global_114931.f_2370.f_539.f_4321))
-					Global_114931.f_2370.f_539.f_4322 = Global_114931.f_2370.f_539.f_4321;
+				if (Global_114990.f_2370.f_539.f_4321 != character && func_68(Global_114990.f_2370.f_539.f_4321))
+					Global_114990.f_2370.f_539.f_4322 = Global_114990.f_2370.f_539.f_4321;
 			
-				Global_114931.f_2370.f_539.f_4323 = character;
-				Global_114931.f_2370.f_539.f_4321 = character;
+				Global_114990.f_2370.f_539.f_4323 = character;
+				Global_114990.f_2370.f_539.f_4321 = character;
 				return;
 			}
 		}
 		else
 		{
-			if (Global_114931.f_2370.f_539.f_4321 != _CHAR_NULL)
-				Global_114931.f_2370.f_539.f_4323 = Global_114931.f_2370.f_539.f_4321;
+			if (Global_114990.f_2370.f_539.f_4321 != _CHAR_NULL)
+				Global_114990.f_2370.f_539.f_4323 = Global_114990.f_2370.f_539.f_4321;
 		
 			return;
 		}
 	}
 
-	Global_114931.f_2370.f_539.f_4321 = 145;
+	Global_114990.f_2370.f_539.f_4321 = 145;
 	return;
 }
 
@@ -4533,7 +4552,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x460B (17931)
 
 Hash func_71(eCharacter echParam0) // Position - 0x4630 (17968)
 {
-	return Global_2339[echParam0 /*29*/];
+	return Global_2349[echParam0 /*29*/];
 }
 
 int func_72(Hash hParam0) // Position - 0x463F (17983)
@@ -4553,7 +4572,7 @@ int func_73(int iParam0) // Position - 0x4668 (18024)
 {
 	int num;
 
-	num = func_72(Global_65252[iParam0 /*13*/].f_4);
+	num = func_72(Global_65305[iParam0 /*13*/].f_4);
 
 	if (num > -2)
 		return num;
@@ -4566,7 +4585,7 @@ int func_74(int iParam0, int iParam1, int iParam2) // Position - 0x468D (18061)
 	switch (iParam1)
 	{
 		case 1:
-			return Global_93217[iParam0 /*34*/].f_17[iParam2];
+			return Global_93274[iParam0 /*34*/].f_17[iParam2];
 	
 		case 7:
 			return func_75(iParam0, iParam2);
@@ -5230,7 +5249,7 @@ int func_76(int iParam0, int iParam1) // Position - 0x4DB4 (19892)
 	switch (iParam1)
 	{
 		case 1:
-			return Global_93217[iParam0 /*34*/].f_16;
+			return Global_93274[iParam0 /*34*/].f_16;
 	
 		case 7:
 			return func_77(iParam0);
@@ -5405,13 +5424,13 @@ struct<2> func_79(int iParam0, int iParam1) // Position - 0x4FC5 (20421)
 		case 1:
 			if (iParam0 == 80 || iParam0 == 81 || iParam0 == 82)
 			{
-				TEXT_LABEL_APPEND_STRING(&unk, &(Global_93217[iParam0 /*34*/].f_8), 8);
+				TEXT_LABEL_APPEND_STRING(&unk, &(Global_93274[iParam0 /*34*/].f_8), 8);
 				TEXT_LABEL_APPEND_STRING(&unk, "A", 8);
 			}
 			else
 			{
 				TEXT_LABEL_ASSIGN_STRING(&unk, "M_", 8);
-				TEXT_LABEL_APPEND_STRING(&unk, &(Global_93217[iParam0 /*34*/].f_8), 8);
+				TEXT_LABEL_APPEND_STRING(&unk, &(Global_93274[iParam0 /*34*/].f_8), 8);
 			
 				if (iParam0 == 90)
 					TEXT_LABEL_APPEND_STRING(&unk, "A", 8);
@@ -5735,10 +5754,10 @@ void func_83(int iParam0, int iParam1, int iParam2) // Position - 0x5516 (21782)
 
 	num = 0;
 
-	if (Global_80555 != iParam0 || iParam2 == 1)
+	if (Global_80612 != iParam0 || iParam2 == 1)
 		num = 1;
 
-	Global_80555 = iParam0;
+	Global_80612 = iParam0;
 	func_4(2);
 
 	if (func_8() != -1 || !func_5(iParam0))
@@ -5758,7 +5777,7 @@ void func_83(int iParam0, int iParam1, int iParam2) // Position - 0x5516 (21782)
 			func_78(1);
 			func_78(2);
 			func_84();
-			func_28(uLocal_28[0 /*2*/]);
+			func_28(uLocal_47[0 /*2*/]);
 		}
 	
 		if (iParam1 == 1)
@@ -5784,10 +5803,10 @@ void func_84() // Position - 0x55B0 (21936)
 
 	func_36();
 
-	if (Global_80556 > 16)
+	if (Global_80613 > 16)
 	{
 		func_86();
-		func_34(0, Global_80556);
+		func_34(0, Global_80613);
 	}
 	else
 	{
@@ -5797,19 +5816,19 @@ void func_84() // Position - 0x55B0 (21936)
 	num2 = 0;
 	num3 = 0;
 
-	for (i = 0; i < Global_80556; i = i + 1)
+	for (i = 0; i < Global_80613; i = i + 1)
 	{
 		num2 = 0;
 		num3 = 0;
 		num7 = -1;
-		num = uLocal_28[i /*2*/];
-		uLocal_26 = { func_79(num, Global_80555) };
+		num = uLocal_47[i /*2*/];
+		uLocal_45 = { func_79(num, Global_80612) };
 	
-		for (j = 0; j < func_76(num, Global_80555); j = j + 1)
+		for (j = 0; j < func_76(num, Global_80612); j = j + 1)
 		{
-			num4 = func_74(num, Global_80555, j);
+			num4 = func_74(num, Global_80612, j);
 		
-			if (!Global_65252[num4 /*13*/].f_7)
+			if (!Global_65305[num4 /*13*/].f_7)
 			{
 				if (func_64(num4) == 1)
 					num3 = num3 + 1;
@@ -5836,7 +5855,7 @@ void func_84() // Position - 0x55B0 (21936)
 		if (num7 > -1)
 			num6 = num7;
 	
-		func_85(1, i, 1076, num, true, &uLocal_26, func_50(num6));
+		func_85(1, i, 1076, num, true, &uLocal_45, func_50(num6));
 	}
 
 	func_48(1);

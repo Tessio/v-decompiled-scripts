@@ -11,32 +11,32 @@
 	int iLocal_9 = 0;
 	int iLocal_10 = 0;
 	int iLocal_11 = 0;
-	float fLocal_12 = 0f;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	int iLocal_15 = 0;
-	var uLocal_16 = 0;
+	var uLocal_12 = 0;
+	var uLocal_13 = -2;
+	var uLocal_14 = -2;
+	var uLocal_15 = -2;
+	var uLocal_16 = 5;
 	var uLocal_17 = 0;
-	var uLocal_18 = 45;
+	var uLocal_18 = 0;
 	var uLocal_19 = 0;
 	var uLocal_20 = 0;
 	var uLocal_21 = 0;
-	var uLocal_22 = 0;
+	var uLocal_22 = 2;
 	var uLocal_23 = 0;
 	var uLocal_24 = 0;
-	var uLocal_25 = 0;
+	var uLocal_25 = 2;
 	var uLocal_26 = 0;
 	var uLocal_27 = 0;
-	var uLocal_28 = 0;
+	var uLocal_28 = 2;
 	var uLocal_29 = 0;
 	var uLocal_30 = 0;
-	var uLocal_31 = 0;
+	float fLocal_31 = 0f;
 	var uLocal_32 = 0;
 	var uLocal_33 = 0;
-	var uLocal_34 = 0;
+	int iLocal_34 = 0;
 	var uLocal_35 = 0;
 	var uLocal_36 = 0;
-	var uLocal_37 = 0;
+	var uLocal_37 = 45;
 	var uLocal_38 = 0;
 	var uLocal_39 = 0;
 	var uLocal_40 = 0;
@@ -63,7 +63,7 @@
 	var uLocal_61 = 0;
 	var uLocal_62 = 0;
 	var uLocal_63 = 0;
-	var uLocal_64 = 19;
+	var uLocal_64 = 0;
 	var uLocal_65 = 0;
 	var uLocal_66 = 0;
 	var uLocal_67 = 0;
@@ -82,8 +82,8 @@
 	var uLocal_80 = 0;
 	var uLocal_81 = 0;
 	var uLocal_82 = 0;
-	var uLocal_83 = 0;
-	var uLocal_84 = 76;
+	var uLocal_83 = 19;
+	var uLocal_84 = 0;
 	var uLocal_85 = 0;
 	var uLocal_86 = 0;
 	var uLocal_87 = 0;
@@ -102,7 +102,7 @@
 	var uLocal_100 = 0;
 	var uLocal_101 = 0;
 	var uLocal_102 = 0;
-	var uLocal_103 = 0;
+	var uLocal_103 = 76;
 	var uLocal_104 = 0;
 	var uLocal_105 = 0;
 	var uLocal_106 = 0;
@@ -160,7 +160,7 @@
 	var uLocal_158 = 0;
 	var uLocal_159 = 0;
 	var uLocal_160 = 0;
-	var uLocal_161 = 102;
+	var uLocal_161 = 0;
 	var uLocal_162 = 0;
 	var uLocal_163 = 0;
 	var uLocal_164 = 0;
@@ -179,7 +179,7 @@
 	var uLocal_177 = 0;
 	var uLocal_178 = 0;
 	var uLocal_179 = 0;
-	var uLocal_180 = 0;
+	var uLocal_180 = 102;
 	var uLocal_181 = 0;
 	var uLocal_182 = 0;
 	var uLocal_183 = 0;
@@ -263,7 +263,7 @@
 	var uLocal_261 = 0;
 	var uLocal_262 = 0;
 	var uLocal_263 = 0;
-	var uLocal_264 = 9;
+	var uLocal_264 = 0;
 	var uLocal_265 = 0;
 	var uLocal_266 = 0;
 	var uLocal_267 = 0;
@@ -273,14 +273,33 @@
 	var uLocal_271 = 0;
 	var uLocal_272 = 0;
 	var uLocal_273 = 0;
-	BOOL bLocal_274 = 0;
-	BOOL bLocal_275 = 0;
-	var uLocal_276 = 1;
+	var uLocal_274 = 0;
+	var uLocal_275 = 0;
+	var uLocal_276 = 0;
 	var uLocal_277 = 0;
-	BOOL bLocal_278 = 0;
-	var uLocal_279 = 1;
+	var uLocal_278 = 0;
+	var uLocal_279 = 0;
 	var uLocal_280 = 0;
-	BOOL bLocal_281 = 0;
+	var uLocal_281 = 0;
+	var uLocal_282 = 0;
+	var uLocal_283 = 9;
+	var uLocal_284 = 0;
+	var uLocal_285 = 0;
+	var uLocal_286 = 0;
+	var uLocal_287 = 0;
+	var uLocal_288 = 0;
+	var uLocal_289 = 0;
+	var uLocal_290 = 0;
+	var uLocal_291 = 0;
+	var uLocal_292 = 0;
+	BOOL bLocal_293 = 0;
+	BOOL bLocal_294 = 0;
+	var uLocal_295 = 1;
+	var uLocal_296 = 0;
+	BOOL bLocal_297 = 0;
+	var uLocal_298 = 1;
+	var uLocal_299 = 0;
+	BOOL bLocal_300 = 0;
 #endregion
 
 void main() // Position - 0x0 (0)
@@ -295,8 +314,8 @@ void main() // Position - 0x0 (0)
 	iLocal_9 = 1;
 	iLocal_10 = 12;
 	iLocal_11 = 12;
-	fLocal_12 = 0.001f;
-	iLocal_15 = -1;
+	fLocal_31 = 0.001f;
+	iLocal_34 = -1;
 
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(34))
 		func_40();
@@ -306,9 +325,9 @@ void main() // Position - 0x0 (0)
 	while (true)
 	{
 		if (func_23(13) || func_23(14))
-			if (bLocal_275)
+			if (bLocal_294)
 				func_15();
-		else if (!bLocal_275)
+		else if (!bLocal_294)
 			func_24();
 	
 		func_14();
@@ -321,35 +340,35 @@ void main() // Position - 0x0 (0)
 
 void func_1() // Position - 0x87 (135)
 {
-	if (!bLocal_274)
+	if (!bLocal_293)
 	{
 		if (func_13(75))
 		{
 			func_10();
-			bLocal_274 = true;
+			bLocal_293 = true;
 		}
 	}
 
-	if (!bLocal_278)
+	if (!bLocal_297)
 	{
 		if (func_13(75))
 		{
 			if (_IS_EXCLUSIVE_CONTENT_UNLOCKED())
 			{
 				func_6();
-				bLocal_278 = true;
+				bLocal_297 = true;
 			}
 		}
 	}
 
-	if (!bLocal_281)
+	if (!bLocal_300)
 	{
 		if (func_5(62))
 		{
 			if (_IS_EXCLUSIVE_CONTENT_UNLOCKED())
 			{
 				func_2();
-				bLocal_281 = true;
+				bLocal_300 = true;
 			}
 		}
 	}
@@ -379,8 +398,8 @@ void func_3(int iParam0, Hash hParam1, float fParam2, float fParam3, float fPara
 	if (bParam5)
 		MISC::SET_BIT(&address, 3);
 
-	uLocal_279[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(hParam1, func_4(iParam0), fParam2, address, -1, 2, true, 0);
-	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_279[iParam0], 600000);
+	uLocal_298[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(hParam1, func_4(iParam0), fParam2, address, -1, 2, true, 0);
+	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_298[iParam0], 600000);
 	return;
 }
 
@@ -400,7 +419,7 @@ BOOL func_5(int iParam0) // Position - 0x195 (405)
 	if (iParam0 == 94 || iParam0 == -1)
 		return false;
 
-	return Global_114931.f_9092.f_330[iParam0 /*6*/];
+	return Global_114990.f_9094.f_330[iParam0 /*6*/];
 }
 
 void func_6() // Position - 0x1C1 (449)
@@ -425,8 +444,8 @@ void func_7(int iParam0, Hash hParam1, float fParam2, float fParam3, float fPara
 	if (bParam5)
 		MISC::SET_BIT(&address, 3);
 
-	uLocal_276[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(hParam1, func_8(iParam0), fParam2, address, -1, 2, true, 0);
-	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_276[iParam0], 600000);
+	uLocal_295[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(hParam1, func_8(iParam0), fParam2, address, -1, 2, true, 0);
+	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_295[iParam0], 600000);
 	return;
 }
 
@@ -445,9 +464,9 @@ BOOL _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0x271 (625)
 {
 	int profileSetting;
 
-	if (Global_153815 == 2)
+	if (Global_153876 == 2)
 		return true;
-	else if (Global_153815 == 3)
+	else if (Global_153876 == 3)
 		return false;
 
 	if (NETWORK::NETWORK_IS_SIGNED_IN())
@@ -525,8 +544,8 @@ void func_11(int iParam0, Hash hParam1, float fParam2, float fParam3, float fPar
 			MISC::SET_BIT(&address, 3);
 	}
 
-	uLocal_264[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(hParam1, func_12(iParam0), fParam2, address, -1, 2, true, 0);
-	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_264[iParam0], 600000);
+	uLocal_283[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(hParam1, func_12(iParam0), fParam2, address, -1, 2, true, 0);
+	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_283[iParam0], 600000);
 	return;
 }
 
@@ -570,55 +589,55 @@ BOOL func_13(int iParam0) // Position - 0x589 (1417)
 	if (iParam0 == 146 || iParam0 == -1)
 		return false;
 
-	return Global_114931.f_9092.f_99.f_58[iParam0];
+	return Global_114990.f_9094.f_99.f_58[iParam0];
 }
 
 void func_14() // Position - 0x5B6 (1462)
 {
-	switch (Global_34037)
+	switch (Global_34077)
 	{
 		case 0:
 			break;
 	
 		case 1:
-			switch (Global_34038)
+			switch (Global_34078)
 			{
 				case 0:
-					if (OBJECT::DOES_PICKUP_EXIST(uLocal_18[Global_34039]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_18[Global_34039]))
-						Global_34040 = false;
+					if (OBJECT::DOES_PICKUP_EXIST(uLocal_37[Global_34079]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_37[Global_34079]))
+						Global_34080 = false;
 					else
-						Global_34040 = true;
+						Global_34080 = true;
 					break;
 			
 				case 1:
-					if (OBJECT::DOES_PICKUP_EXIST(uLocal_84[Global_34039]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_84[Global_34039]))
-						Global_34040 = false;
+					if (OBJECT::DOES_PICKUP_EXIST(uLocal_103[Global_34079]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_103[Global_34079]))
+						Global_34080 = false;
 					else
-						Global_34040 = true;
+						Global_34080 = true;
 					break;
 			
 				case 2:
-					if (OBJECT::DOES_PICKUP_EXIST(uLocal_161[Global_34039]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_161[Global_34039]))
-						Global_34040 = false;
+					if (OBJECT::DOES_PICKUP_EXIST(uLocal_180[Global_34079]) && OBJECT::DOES_PICKUP_OBJECT_EXIST(uLocal_180[Global_34079]))
+						Global_34080 = false;
 					else
-						Global_34040 = true;
+						Global_34080 = true;
 					break;
 			
 				case 3:
-					Global_34037 = 3;
+					Global_34077 = 3;
 					break;
 			}
 		
-			Global_34037 = 2;
+			Global_34077 = 2;
 			break;
 	
 		case 2:
 			break;
 	
 		case 3:
-			Global_34039 = 0;
-			Global_34040 = false;
-			Global_34037 = 0;
+			Global_34079 = 0;
+			Global_34080 = false;
+			Global_34077 = 0;
 			break;
 	}
 
@@ -632,16 +651,16 @@ void func_15() // Position - 0x6A5 (1701)
 	func_20();
 	func_19();
 
-	if (bLocal_274)
+	if (bLocal_293)
 		func_18();
 
-	if (bLocal_278)
+	if (bLocal_297)
 		func_17();
 
-	if (bLocal_281)
+	if (bLocal_300)
 		func_16();
 
-	bLocal_275 = false;
+	bLocal_294 = false;
 	return;
 }
 
@@ -651,11 +670,11 @@ void func_16() // Position - 0x6DF (1759)
 
 	for (i = 0; i < 1; i = i + 1)
 	{
-		if (OBJECT::DOES_PICKUP_EXIST(uLocal_279[i]))
-			OBJECT::REMOVE_PICKUP(uLocal_279[i]);
+		if (OBJECT::DOES_PICKUP_EXIST(uLocal_298[i]))
+			OBJECT::REMOVE_PICKUP(uLocal_298[i]);
 	}
 
-	bLocal_281 = false;
+	bLocal_300 = false;
 	return;
 }
 
@@ -665,11 +684,11 @@ void func_17() // Position - 0x716 (1814)
 
 	for (i = 0; i < 1; i = i + 1)
 	{
-		if (OBJECT::DOES_PICKUP_EXIST(uLocal_276[i]))
-			OBJECT::REMOVE_PICKUP(uLocal_276[i]);
+		if (OBJECT::DOES_PICKUP_EXIST(uLocal_295[i]))
+			OBJECT::REMOVE_PICKUP(uLocal_295[i]);
 	}
 
-	bLocal_278 = false;
+	bLocal_297 = false;
 	return;
 }
 
@@ -679,11 +698,11 @@ void func_18() // Position - 0x74D (1869)
 
 	for (i = 0; i < 9; i = i + 1)
 	{
-		if (OBJECT::DOES_PICKUP_EXIST(uLocal_264[i]))
-			OBJECT::REMOVE_PICKUP(uLocal_264[i]);
+		if (OBJECT::DOES_PICKUP_EXIST(uLocal_283[i]))
+			OBJECT::REMOVE_PICKUP(uLocal_283[i]);
 	}
 
-	bLocal_274 = false;
+	bLocal_293 = false;
 	return;
 }
 
@@ -693,8 +712,8 @@ void func_19() // Position - 0x785 (1925)
 
 	for (i = 0; i < 102; i = i + 1)
 	{
-		if (OBJECT::DOES_PICKUP_EXIST(uLocal_161[i]))
-			OBJECT::REMOVE_PICKUP(uLocal_161[i]);
+		if (OBJECT::DOES_PICKUP_EXIST(uLocal_180[i]))
+			OBJECT::REMOVE_PICKUP(uLocal_180[i]);
 	}
 
 	return;
@@ -706,8 +725,8 @@ void func_20() // Position - 0x7B7 (1975)
 
 	for (i = 0; i < 76; i = i + 1)
 	{
-		if (OBJECT::DOES_PICKUP_EXIST(uLocal_84[i]))
-			OBJECT::REMOVE_PICKUP(uLocal_84[i]);
+		if (OBJECT::DOES_PICKUP_EXIST(uLocal_103[i]))
+			OBJECT::REMOVE_PICKUP(uLocal_103[i]);
 	}
 
 	return;
@@ -719,8 +738,8 @@ void func_21() // Position - 0x7E9 (2025)
 
 	for (i = 0; i < 19; i = i + 1)
 	{
-		if (OBJECT::DOES_PICKUP_EXIST(uLocal_64[i]))
-			OBJECT::REMOVE_PICKUP(uLocal_64[i]);
+		if (OBJECT::DOES_PICKUP_EXIST(uLocal_83[i]))
+			OBJECT::REMOVE_PICKUP(uLocal_83[i]);
 	}
 
 	return;
@@ -732,8 +751,8 @@ void func_22() // Position - 0x81B (2075)
 
 	for (i = 0; i < 45; i = i + 1)
 	{
-		if (OBJECT::DOES_PICKUP_EXIST(uLocal_18[i]))
-			OBJECT::REMOVE_PICKUP(uLocal_18[i]);
+		if (OBJECT::DOES_PICKUP_EXIST(uLocal_37[i]))
+			OBJECT::REMOVE_PICKUP(uLocal_37[i]);
 	}
 
 	return;
@@ -741,7 +760,7 @@ void func_22() // Position - 0x81B (2075)
 
 BOOL func_23(int iParam0) // Position - 0x84D (2125)
 {
-	return Global_44886 == iParam0;
+	return Global_44938 == iParam0;
 }
 
 void func_24() // Position - 0x85B (2139)
@@ -750,7 +769,7 @@ void func_24() // Position - 0x85B (2139)
 	func_33();
 	func_29();
 	func_25();
-	bLocal_275 = true;
+	bLocal_294 = true;
 	return;
 }
 
@@ -875,11 +894,11 @@ void func_26(int iParam0, Hash hParam1, float fParam2, float fParam3, float fPar
 	if (bParam5)
 		MISC::SET_BIT(&address, 3);
 
-	uLocal_161[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(hParam1, func_28(iParam0, false), fParam2, address, -1, 2, true, 0);
-	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_161[iParam0], 600000);
+	uLocal_180[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(hParam1, func_28(iParam0, false), fParam2, address, -1, 2, true, 0);
+	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_180[iParam0], 600000);
 
 	if (bParam6)
-		INTERIOR::ADD_PICKUP_TO_INTERIOR_ROOM_BY_NAME(uLocal_161[iParam0], func_27(iParam0));
+		INTERIOR::ADD_PICKUP_TO_INTERIOR_ROOM_BY_NAME(uLocal_180[iParam0], func_27(iParam0));
 
 	return;
 }
@@ -1489,11 +1508,11 @@ void func_30(int iParam0, float fParam1, float fParam2, float fParam3, BOOL bPar
 	if (!bParam4)
 		MISC::SET_BIT(&address, 3);
 
-	uLocal_84[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(joaat("PICKUP_HEALTH_STANDARD"), func_32(iParam0, false), fParam1, address, -1, 2, true, 0);
-	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_84[iParam0], 600000);
+	uLocal_103[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(joaat("PICKUP_HEALTH_STANDARD"), func_32(iParam0, false), fParam1, address, -1, 2, true, 0);
+	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_103[iParam0], 600000);
 
 	if (bParam5)
-		INTERIOR::ADD_PICKUP_TO_INTERIOR_ROOM_BY_NAME(uLocal_84[iParam0], func_31(iParam0));
+		INTERIOR::ADD_PICKUP_TO_INTERIOR_ROOM_BY_NAME(uLocal_103[iParam0], func_31(iParam0));
 
 	return;
 }
@@ -2044,8 +2063,8 @@ void func_34(int iParam0, float fParam1, float fParam2, float fParam3, BOOL bPar
 	if (bParam4)
 		MISC::SET_BIT(&address, 3);
 
-	uLocal_64[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(joaat("PICKUP_WEAPON_PETROLCAN"), func_35(iParam0), fParam1, address, -1, 2, true, 0);
-	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_64[iParam0], 600000);
+	uLocal_83[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(joaat("PICKUP_WEAPON_PETROLCAN"), func_35(iParam0), fParam1, address, -1, 2, true, 0);
+	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_83[iParam0], 600000);
 	return;
 }
 
@@ -2179,11 +2198,11 @@ void func_37(int iParam0, float fParam1, float fParam2, float fParam3, BOOL bPar
 	if (bParam4)
 		MISC::SET_BIT(&address, 3);
 
-	uLocal_18[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(joaat("PICKUP_ARMOUR_STANDARD"), func_39(iParam0, false), fParam1, address, -1, 2, true, 0);
-	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_18[iParam0], 600000);
+	uLocal_37[iParam0] = OBJECT::CREATE_PICKUP_ROTATE(joaat("PICKUP_ARMOUR_STANDARD"), func_39(iParam0, false), fParam1, address, -1, 2, true, 0);
+	OBJECT::SET_PICKUP_REGENERATION_TIME(uLocal_37[iParam0], 600000);
 
 	if (bParam5)
-		INTERIOR::ADD_PICKUP_TO_INTERIOR_ROOM_BY_NAME(uLocal_18[iParam0], func_38(iParam0));
+		INTERIOR::ADD_PICKUP_TO_INTERIOR_ROOM_BY_NAME(uLocal_37[iParam0], func_38(iParam0));
 
 	return;
 }
@@ -2462,13 +2481,13 @@ void func_40() // Position - 0x4189 (16777)
 	func_20();
 	func_19();
 
-	if (bLocal_274)
+	if (bLocal_293)
 		func_18();
 
-	if (bLocal_278)
+	if (bLocal_297)
 		func_17();
 
-	if (bLocal_281)
+	if (bLocal_300)
 		func_16();
 
 	SCRIPT::TERMINATE_THIS_THREAD();
